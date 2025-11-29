@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Monday Neon Sign</title>
+    <!-- Importing a font that mimics rounded neon tubes -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100&family=Comfortaa:wght@300;700&family=Tilt+Neon&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --neon-cyan: #00ffff;
+            --neon-white: #e6ffff;
+            --bg-dark: #0a0a0a;
+            --brick-color: #111;
+            --mortar-color: #050505;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--bg-dark);
+            font-family: 'Comfortaa', cursive;
+            /* Rounded sans-serif looks like bent tubes */
+            overflow: hidden;
+        }
+
+        /* CSS Brick Wall Background */
+        .brick-wall {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-color: var(--mortar-color);
+            background-image:
+                linear-gradient(335deg, rgba(20, 20, 20, 0.8) 23px, transparent 23px),
+                linear-gradient(155deg, rgba(20, 20, 20, 0.8) 23px, transparent 23px),
+                linear-gradient(335deg, rgba(20, 20, 20, 0.8) 23px, transparent 23px),
+                linear-gradient(155deg, rgba(20, 20, 20, 0.8) 23px, transparent 23px);
+            background-size: 58px 58px;
+            background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+            /* Vignette effect */
+            box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.9);
+        }
+
+        .sign-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 20px;
+            /* Subtle reflection on the "wall" */
+            filter: drop-shadow(0 0 50px rgba(0, 255, 255, 0.1));
+        }
+
+        /* Wire simulation behind the text */
+        .wires {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .wire {
+            position: absolute;
+            border: 2px solid #111;
+            border-radius: 50%;
+            opacity: 0.6;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        /* NEW: Neon style for the wires */
+        .neon-wire {
+            stroke: var(--neon-cyan);
+            stroke-width: 3;
+            fill: none;
+            /* Glowing effect specifically for the SVG strokes */
+            filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 5px var(--neon-cyan)) drop-shadow(0 0 10px var(--neon-cyan));
+            opacity: 0.6;
+            animation: wire-pulse 4s infinite alternate;
+        }
+
+        @keyframes wire-pulse {
+            0% {
+                opacity: 0.4;
+                filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 3px var(--neon-cyan));
+            }
+
+            100% {
+                opacity: 0.7;
+                filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 8px var(--neon-cyan));
+            }
+        }
+
+        .text-line {
+            position: relative;
+            z-index: 1;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 15vw;
+            /* Responsive size */
+            line-height: 1;
+            text-transform: uppercase;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            /* The Neon Glow */
+            text-shadow:
+                0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 20px var(--neon-cyan),
+                0 0 40px var(--neon-cyan),
+                0 0 80px var(--neon-cyan),
+                0 0 90px var(--neon-cyan),
+                0 0 100px var(--neon-cyan);
+
+            /* Add flickering animation */
+            animation: flicker 3s infinite alternate;
+        }
+
+        /* Desktop size adjustment */
+        @media (min-width: 768px) {
+            .text-line {
+                font-size: 120px;
+                letter-spacing: 15px;
+            }
+        }
+
+        .top-line {
+            margin-bottom: 10px;
+            animation-delay: 0.5s;
+        }
+
+        .bottom-line {
+            /* Slightly different timing for realism */
+            animation-duration: 3.2s;
+            animation-delay: 0s;
+        }
+
+        /* Specific letter flickering for realism (The 'M' flickers) */
+        .flicker-letter {
+            animation: deep-flicker 4s infinite;
+        }
+
+        /* Flicker Animations */
+        @keyframes flicker {
+
+            0%,
+            18%,
+            22%,
+            25%,
+            53%,
+            57%,
+            100% {
+                text-shadow:
+                    0 0 5px #fff,
+                    0 0 10px #fff,
+                    0 0 20px var(--neon-cyan),
+                    0 0 40px var(--neon-cyan),
+                    0 0 80px var(--neon-cyan),
+                    0 0 90px var(--neon-cyan);
+                opacity: 1;
+            }
+
+            20%,
+            24%,
+            55% {
+                text-shadow: none;
+                opacity: 0.5;
+                /* Dimmed state */
+            }
+        }
+
+        @keyframes deep-flicker {
+
+            0%,
+            19%,
+            21%,
+            23%,
+            25%,
+            54%,
+            56%,
+            100% {
+                text-shadow:
+                    0 0 5px #fff,
+                    0 0 10px #fff,
+                    0 0 20px var(--neon-cyan),
+                    0 0 40px var(--neon-cyan),
+                    0 0 80px var(--neon-cyan),
+                    0 0 90px var(--neon-cyan);
+                color: rgba(255, 255, 255, 0.8);
+                opacity: 1;
+            }
+
+            20%,
+            24%,
+            55% {
+                text-shadow: none;
+                color: rgba(40, 40, 40, 0.5);
+                /* Almost off */
+                opacity: 0.2;
+            }
+        }
+
+        /* Overlay to darken corners */
+        .vignette {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 50%, rgba(0, 0, 0, 0.8) 100%);
+            pointer-events: none;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="brick-wall"></div>
+    <div class="vignette"></div>
+
+    <div class="sign-container">
+        <!-- SVG Wires decorative background -->
+        <svg class="wires" viewBox="0 0 600 300" preserveAspectRatio="none">
+            <!-- Updated wires to be neon with the new class -->
+            <path d="M50,80 Q150,150 250,80" class="neon-wire" />
+            <path d="M350,80 Q450,10 550,80" class="neon-wire" />
+            <path d="M100,200 Q200,250 300,200" class="neon-wire" />
+            <path d="M300,200 Q400,150 500,200" class="neon-wire" />
+
+            <!-- Connecting wires between letters (structural supports kept dark) -->
+            <path d="M120,80 L120,60" fill="none" stroke="#111" stroke-width="4" />
+            <path d="M480,80 L480,60" fill="none" stroke="#111" stroke-width="4" />
+            <path d="M150,220 L150,240" fill="none" stroke="#111" stroke-width="4" />
+            <path d="M450,220 L450,240" fill="none" stroke="#111" stroke-width="4" />
+        </svg>
+
+        <div class="text-line top-line">CYBER</div>
+        <div class="text-line bottom-line">
+            M<span class="flicker-letter">O</span>NDAY
+        </div>
+    </div>
+
+</body>
+
+</html>

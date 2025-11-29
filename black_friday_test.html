@@ -10,7 +10,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&amp;display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Comfortaa:wght@300;700&family=Tilt+Neon&display=swap"
+        rel="stylesheet">
 
     <style>
         body {
@@ -252,21 +254,113 @@
                 gap: 12px;
                 width: 100%;
                 min-height: 600px;
-                justify-content: center;
-                box-sizing: border-box;
             }
 
+
             /* --- TYPOGRAPHY --- */
-            .bf-neon-title {
+            /* --- MIXED TITLE STYLES --- */
+            .combined-title {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+                margin: 0;
+                line-height: 1;
+                text-align: center;
+            }
+
+            .bf-style {
+                font-family: 'Inter', sans-serif;
                 font-size: 64px;
-                line-height: 0.9;
                 font-weight: 900;
                 color: white;
                 text-transform: uppercase;
-                margin: 0;
                 letter-spacing: -2px;
-                text-align: center;
                 text-shadow: 0 0 20px var(--bf-red);
+            }
+
+            .separator {
+                font-family: 'Inter', sans-serif;
+                font-size: 48px;
+                font-weight: 300;
+                color: #555;
+            }
+
+            .cm-style {
+                font-family: 'Comfortaa', cursive;
+                font-size: 58px;
+                font-weight: 700;
+                color: rgba(255, 255, 255, 0.8);
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                text-shadow:
+                    0 0 5px #fff,
+                    0 0 10px #fff,
+                    0 0 20px #00ffff,
+                    0 0 40px #00ffff,
+                    0 0 80px #00ffff;
+                animation: flicker 3s infinite alternate;
+            }
+
+            .flicker-letter {
+                animation: deep-flicker 4s infinite;
+            }
+
+            /* Flicker Animations */
+            @keyframes flicker {
+
+                0%,
+                18%,
+                22%,
+                25%,
+                53%,
+                57%,
+                100% {
+                    text-shadow:
+                        0 0 5px #fff,
+                        0 0 10px #fff,
+                        0 0 20px #00ffff,
+                        0 0 40px #00ffff,
+                        0 0 80px #00ffff;
+                    opacity: 1;
+                }
+
+                20%,
+                24%,
+                55% {
+                    text-shadow: none;
+                    opacity: 0.5;
+                }
+            }
+
+            @keyframes deep-flicker {
+
+                0%,
+                19%,
+                21%,
+                23%,
+                25%,
+                54%,
+                56%,
+                100% {
+                    text-shadow:
+                        0 0 5px #fff,
+                        0 0 10px #fff,
+                        0 0 20px #00ffff,
+                        0 0 40px #00ffff,
+                        0 0 80px #00ffff;
+                    color: rgba(255, 255, 255, 0.8);
+                    opacity: 1;
+                }
+
+                20%,
+                24%,
+                55% {
+                    text-shadow: none;
+                    color: rgba(40, 40, 40, 0.5);
+                    opacity: 0.2;
+                }
             }
 
             .bf-typing-container {
@@ -514,8 +608,21 @@
                     gap: 30px;
                 }
 
-                .bf-neon-title {
+                .bf-style,
+                .cm-style {
                     font-size: 42px;
+                }
+
+                .separator {
+                    display: none;
+                    width: 100%;
+                    height: 0;
+                    margin: 0;
+                }
+
+                .combined-title {
+                    flex-direction: column;
+                    gap: 5px;
                 }
 
                 .bf-neon-btn {
@@ -576,7 +683,11 @@
 
             <!-- Cleaned up structure: Wrapper is now direct child of Section Container -->
             <div class="bf-hero-wrapper">
-                <h2 class="bf-neon-title">Cyber Monday</h2>
+                <div class="combined-title">
+                    <span class="bf-style">BLACK FRIDAY</span>
+                    <span class="separator">+</span>
+                    <span class="cm-style">CYBER M<span class="flicker-letter">O</span>NDAY</span>
+                </div>
 
                 <!-- Typing Text Container (Animated on Desktop) -->
                 <div class="bf-typing-container">
