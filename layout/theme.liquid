@@ -1,0 +1,446 @@
+{%- comment -%}
+------------------------------------------------------------------------------------------------------------------------
+NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing this theme as much as we did for
+  developing it. We have put a lot of work to make this theme as developer friendly as possible by offering you
+  hooks to integrate into critical parts of the theme. You will find the complete technical documentation (including
+  all events, dependencies...) in the "documentation.txt" file, located in the Assets folder.
+------------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<!doctype html>
+
+<html lang="{{ request.locale.iso_code }}" dir="{% render 'direction' %}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="theme-color" content="{{ settings.header_background }}">
+
+    <title>{% if page_title == blank %}{{ shop.name }}{% else %}{{ page_title }}{% if current_page != 1 %} &ndash; {{ 'general.page' | t: page: current_page }}{% endif %}{% endif %}</title>
+
+    {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+
+    <link rel="canonical" href="{{ canonical_url }}">
+
+    {%- if settings.favicon -%}
+      <link rel="shortcut icon" href="{{ settings.favicon | image_url: width: 96 }}">
+      <link rel="apple-touch-icon" href="{{ settings.favicon | image_url: width: 180 }}">
+    {%- endif -%}
+
+    {%- comment -%}Few prefetch to increase performance on commonly used third-parties{%- endcomment -%}
+    <link rel="preconnect" href="https://cdn.shopify.com">
+    <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+    <link rel="dns-prefetch" href="https://productreviews.shopifycdn.com">
+
+    {%- unless settings.heading_font.system? -%}
+      <link rel="preload" href="{{ settings.heading_font | font_url }}" as="font" type="font/woff2" crossorigin>
+    {%- endunless -%}
+
+    {%- unless settings.text_font.system? -%}
+      <link rel="preload" href="{{ settings.text_font | font_url }}" as="font" type="font/woff2" crossorigin>
+    {%- endunless -%}
+
+    {%- render 'social-meta-tags' -%}
+    {%- render 'microdata-schema' -%}
+    {%- render 'css-variables' -%}
+    {%- render 'js-variables' -%}
+
+    <script type="importmap">
+      {%- comment -%}On Safari 16.3 and lower, a polyfill is used to load importmap{%- endcomment -%}
+      {
+        "imports": {
+          "vendor": "{{ 'vendor.min.js' | asset_url }}",
+          "theme": "{{ 'theme.js' | asset_url }}",
+          "photoswipe": "{{ 'photoswipe.min.js' | asset_url }}"
+        }
+      }
+    </script>
+
+    <script type="module" src="{{ 'vendor.min.js' | asset_url }}"></script>
+    <script type="module" src="{{ 'theme.js' | asset_url }}"></script>
+
+    {{ content_for_header }}
+
+    {{- 'theme.css' | asset_url | stylesheet_tag: preload: true -}}
+  </head>
+
+  <body class="{% if settings.zoom_image_on_hover %}zoom-image--enabled{% endif %}">
+    {%- render 'shadow-dom-templates' -%}
+
+    <a href="#main" class="skip-to-content sr-only">{{ 'general.accessibility.skip_to_content' | t }}</a>
+
+    {%- if request.page_type != 'password' -%}
+      {%- sections 'header-group' -%}
+      {%- sections 'overlay-group' -%}
+
+      {%- if settings.cart_type == 'popover' -%}
+        <cart-notification-drawer open-from="bottom" class="quick-buy-drawer drawer"></cart-notification-drawer>
+      {%- endif -%}
+    {%- endif -%}
+
+    {%- if request.page_type == 'customers/account' or request.page_type == 'customers/order' or request.page_type == 'customers/addresses' -%}
+      {%- section 'account-banner' -%}
+    {%- endif -%}
+
+    <main role="main" id="main" class="anchor">
+      {{ content_for_layout }}
+
+      {%- comment -%}
+      IMPLEMENTATION NOTE: due to the very complex logic of margin/padding collapsing in Impact, the footer group is
+      added into the main element to ensure that dynamic sections added into the footer group are properly laid out.
+      {%- endcomment -%}
+      {%- if request.page_type != 'password' -%}
+        {%- sections 'footer-group' -%}
+      {%- endif -%}
+    </main>
+<script>
+// 🚀 @raphael.feliz - START BLACK FRIDAY INJECTION SCRIPT (Announcement Bar Only v3.13 - Force Resize) 🚀
+(function() {
+    // ==========================================
+    // ⚙️ CONFIGURATION
+    // ==========================================
+    const BF_VERSION = "v3.13 (Force Resize)"; 
+    const BF_STATUS = "live"; 
+    
+    const CONFIG = {
+        RED_PRIMARY: "#D4212C",
+        RED_DARK: "#ad1c25",
+        YELLOW_GLOW: "#FFD700",
+        GREEN_GLOW: "#3CB371",
+        IDS: {
+            ANNOUNCEMENT_BAR: "shopify-section-sections--24966839730450__announcement-bar"
+        }
+    };
+
+    // ==========================================
+    // 🕵️ STATUS CHECK
+    // ==========================================
+    console.log(`%c BF Script ${BF_VERSION}: Status [${BF_STATUS.toUpperCase()}]`, "background: #D4212C; color: #fff; font-weight: bold; padding: 4px 8px; font-size: 12px;");
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const isTestUrl = urlParams.has('test') && urlParams.get('test') === 'bf';
+    const shouldRun = (BF_STATUS === 'live') || (BF_STATUS === 'test' && isTestUrl);
+
+    if (!shouldRun) {
+        console.log(`BF Script ${BF_VERSION}: Inactive.`);
+        return;
+    }
+    
+    console.log(`BF Script ${BF_VERSION}: Active! Starting injection...`);
+
+    // ==========================================
+    // 🎨 STYLES
+    // ==========================================
+    const injectStyles = () => {
+        const styles = `
+        <style>
+            /* ANIMATIONS */
+            @keyframes bf-gradient { 0% {background-position: 100% 0;} 100% {background-position: -100% 0;} }
+            @keyframes bf-pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+            @keyframes bf-glow { 0% { box-shadow: 0 0 8px rgba(212, 33, 44, 0.4); border-color: rgba(212, 33, 44, 0.6); } 50% { box-shadow: 0 0 25px rgba(212, 33, 44, 0.7); border-color: rgba(212, 33, 44, 1); } 100% { box-shadow: 0 0 8px rgba(212, 33, 44, 0.4); border-color: rgba(212, 33, 44, 0.6); } }
+            @keyframes bf-red-glow { 0%, 100% { box-shadow: 0 0 5px ${CONFIG.RED_PRIMARY}; } 50% { box-shadow: 0 0 10px ${CONFIG.RED_PRIMARY}; } }
+            @keyframes bf-yellow-glow { 0%, 100% { box-shadow: 0 0 5px ${CONFIG.YELLOW_GLOW}; } 50% { box-shadow: 0 0 10px ${CONFIG.YELLOW_GLOW}; } }
+            @keyframes bf-green-glow { 0%, 100% { box-shadow: 0 0 5px ${CONFIG.GREEN_GLOW}; } 50% { box-shadow: 0 0 10px ${CONFIG.GREEN_GLOW}; } }
+
+            :root {
+                --bf-red: ${CONFIG.RED_PRIMARY};
+                --bf-bg: #050505;
+                --bf-card: #161616;
+                --bf-yellow-glow: ${CONFIG.YELLOW_GLOW};
+                --bf-green-glow: ${CONFIG.GREEN_GLOW};
+            }
+
+            #${CONFIG.IDS.ANNOUNCEMENT_BAR} { background-color: var(--bf-red); color: white; font-family: 'Inter', sans-serif; position: relative; z-index: 100; }
+            
+            /* TRIGGER BAR */
+            .bf-trigger-bar { 
+                height: 48px; display: flex; align-items: center; justify-content: center; gap: 12px; cursor: pointer; 
+                font-weight: 700; font-size: 0.9rem; text-transform: uppercase; user-select: none;
+                background: linear-gradient(90deg, ${CONFIG.RED_DARK}, var(--bf-red), ${CONFIG.RED_DARK}); 
+                background-size: 200% 100%; animation: bf-gradient 3s infinite linear; 
+            }
+            
+            .bf-urgent-badge { background: black; color: var(--bf-red); padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; animation: bf-pulse 1s infinite; }
+            
+            /* EXPANDED PANEL */
+            .bf-expanded-panel { 
+                position: absolute; top: 100%; left: 0; width: 100%; 
+                background-color: var(--bf-bg); border-bottom: 3px solid var(--bf-red); 
+                max-height: 0; opacity: 0; visibility: hidden; 
+                transform: translateY(-10px); 
+                transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
+                box-shadow: 0 20px 50px rgba(0,0,0,0.8); 
+                overflow: hidden; z-index: 101; 
+            }
+            
+            /* ACTIVE STATE (JS TOGGLED) */
+            .bf-expanded-panel.bf-visible { 
+                max-height: 80vh; 
+                opacity: 1; visibility: visible; transform: translateY(0); 
+                overflow-y: auto; 
+            }
+            
+            /* CLOSE BUTTON */
+            .bf-close-btn {
+                position: absolute; top: 10px; right: 10px;
+                background: rgba(255, 255, 255, 0.1); border: none; color: white;
+                width: 32px; height: 32px; border-radius: 50%;
+                font-size: 20px; line-height: 1; cursor: pointer;
+                display: flex; align-items: center; justify-content: center;
+                transition: background 0.2s; z-index: 20;
+            }
+            .bf-close-btn:hover { background: var(--bf-red); }
+
+            /* WRAPPER */
+            .bf-wrapper { 
+                max-width: 1200px; margin: 0 auto; 
+                padding: 20px 15px; 
+                display: grid; gap: 20px; 
+                grid-template-columns: 1fr; align-items: flex-start; 
+                width: 100%; box-sizing: border-box; 
+            }
+            @media (min-width: 900px) { .bf-wrapper { grid-template-columns: 1fr 1.5fr; padding: 40px 30px; gap: 30px; } }
+            
+            /* TEXT CONTENT */
+            .bf-content { text-align: center; display: flex; flex-direction: column; gap: 5px; }
+            @media (min-width: 900px) { .bf-content { text-align: left; align-items: flex-start; gap: 10px; } }
+            
+            /* STATUS ROW */
+            .bf-status-row { display: none; gap: 10px; justify-content: center; color: #fbbf24; font-weight: 600; font-size: 0.9rem; }
+            @media (min-width: 900px) { .bf-status-row { display: flex; justify-content: flex-start; } }
+            
+            /* HEADLINE */
+            .bf-headline { font-size: 2.2rem; line-height: 0.9; font-weight: 900; text-transform: uppercase; margin: 0; }
+            @media (min-width: 900px) { .bf-headline { font-size: 3rem; } }
+
+            .bf-subheadline { font-size: 1.2rem; color: var(--bf-red); font-weight: 800; }
+            @media (min-width: 900px) { .bf-subheadline { font-size: 1.4rem; } }
+            
+            /* STOCK NOTICE */
+            .bf-stock-notice {
+                color: #fff; font-size: 0.9rem; background: rgba(255,255,255,0.1); 
+                padding: 6px 10px; border-radius: 6px; margin-top: 5px; 
+                border-left: 4px solid var(--bf-red);
+            }
+            @media (min-width: 900px) { 
+                .bf-stock-notice { font-size: 1rem; padding: 8px 12px; margin-top: 8px; } 
+            }
+
+            /* --- PRODUCT CAROUSEL/GRID --- */
+            .bf-products-container { position: relative; width: 100%; overflow: hidden; }
+            
+            .bf-products { 
+                display: flex; gap: 15px; 
+                overflow-x: auto; scroll-snap-type: x mandatory;
+                padding-bottom: 10px; 
+                -webkit-overflow-scrolling: touch; scrollbar-width: none; width: 100%;
+            }
+            .bf-products::-webkit-scrollbar { display: none; }
+
+            @media (min-width: 900px) {
+                /* FORCE SINGLE LINE with !important */
+                .bf-products { 
+                    flex-wrap: nowrap !important; 
+                    justify-content: center !important; 
+                    overflow-x: visible !important; 
+                    padding-bottom: 0; 
+                    gap: 15px !important; 
+                }
+            }
+            
+            /* PRODUCT CARD */
+            .bf-card { 
+                background: var(--bf-card); border: 1px solid #333; border-radius: 12px; padding: 0; 
+                flex: 0 0 75%; width: 75%; max-width: 75%;
+                scroll-snap-align: center; display: flex; flex-direction: column; text-decoration: none; 
+                transition: transform 0.2s, border-color 0.2s; position: relative; overflow: hidden; 
+            }
+            
+            @media (min-width: 600px) { .bf-card { flex: 0 0 45%; min-width: 45%; } }
+            
+            @media (min-width: 900px) { 
+                /* FORCE SIZE with !important */
+                .bf-card { 
+                    flex: 1 1 auto !important; 
+                    width: 32% !important; 
+                    max-width: 230px !important; 
+                    min-width: 0 !important; /* Allow shrinking */
+                } 
+            }
+
+            .bf-card:hover { border-color: #666; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); }
+            
+            /* CAROUSEL ARROWS */
+            .bf-nav-btn {
+                position: absolute; top: 40%; transform: translateY(-50%);
+                background: rgba(0,0,0,0.8); color: white; border: 1px solid #333;
+                width: 32px; height: 32px; border-radius: 50%;
+                display: flex; align-items: center; justify-content: center; cursor: pointer;
+                z-index: 20; font-size: 16px; user-select: none;
+            }
+            .bf-nav-btn:active { transform: translateY(-50%) scale(0.9); }
+            .bf-nav-btn.prev { left: -5px; }
+            .bf-nav-btn.next { right: -5px; }
+            @media (min-width: 900px) { .bf-nav-btn { display: none; } }
+
+            /* BADGES & IMAGE */
+            .bf-stock-badge { 
+                position: absolute; bottom: 8px; right: 8px; width: auto !important; max-width: fit-content !important; height: auto !important;
+                background: #000000; color: white; font-size: 0.7rem; font-weight: 800; padding: 3px 6px; border-radius: 4px; z-index: 10; 
+                box-shadow: 0 0 5px var(--bf-yellow-glow); animation: bf-yellow-glow 3s infinite ease-in-out;
+                white-space: nowrap; max-width: 90%; overflow: hidden; text-overflow: ellipsis;
+            }
+            .bf-stock-badge.critical { box-shadow: 0 0 5px var(--bf-red); animation: bf-red-glow 3s infinite ease-in-out; }
+            .bf-stock-badge.green-glow { box-shadow: 0 0 5px var(--bf-green-glow); animation: bf-green-glow 3s infinite ease-in-out; }
+
+            .bf-card-img-container { 
+                background: #fff; width: 100%; aspect-ratio: 1 / 1; 
+                display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; 
+                padding: 0; 
+            }
+            .bf-card-img { width: 100%; height: 100%; object-fit: contain; padding: 0; transition: transform 0.3s; }
+            .bf-card:hover .bf-card-img { transform: scale(1.05); }
+
+            /* CARD INFO */
+            .bf-card-info { padding: 10px; display: flex; flex-direction: column; gap: 4px; flex-grow: 1; }
+            .bf-card-title { color: white; font-size: 0.95rem; font-weight: 600; line-height: 1.3; margin: 0; }
+            .bf-price-row { margin-top: auto; display: flex; gap: 8px; align-items: baseline;}
+            .bf-old-price { color: #ffffff; font-size: 0.85rem; text-decoration: line-through; text-decoration-color: var(--bf-red); text-decoration-thickness: 2px; opacity: 1.0; }
+            .bf-new-price { color: var(--bf-red); font-size: 1.1rem; font-weight: 900; }
+            
+            .bf-card-btn { 
+                margin-top: 8px; background: transparent; border: 1px solid #444; color: white; 
+                font-size: 0.8rem; text-align: center; padding: 6px 0; border-radius: 6px; 
+                font-weight: 600; transition: all 0.2s; text-transform: uppercase; display: block; 
+            }
+            .bf-card:hover .bf-card-btn { background: var(--bf-red); border-color: var(--bf-red); animation: bf-glow 2s infinite ease-in-out; }
+        </style>`;
+        document.head.insertAdjacentHTML("beforeend", styles);
+    };
+    
+    injectStyles();
+
+    // ==========================================
+    // 🏗️ HELPER: Create Card HTML
+    // ==========================================
+    const createCardHtml = (product) => `
+        <a href="${product.link}" class="bf-card">
+            <div class="bf-card-img-container">
+                ${product.badge ? `<div class="bf-stock-badge ${product.badgeClass || ''}">${product.badge}</div>` : ''}
+                <img src="${product.image}" class="bf-card-img" alt="${product.title}" onerror="this.onerror=null; this.src='https://placehold.co/260x260/FFFFFF/000000?text=Product'">
+            </div>
+            <div class="bf-card-info">
+                <div class="bf-card-title">${product.title}</div>
+                <div class="bf-price-row">
+                    <span class="bf-old-price">${product.oldPrice}</span>
+                    <span class="bf-new-price">${product.newPrice}</span>
+                </div>
+                <div class="bf-card-btn">Shop Now</div>
+            </div>
+        </a>
+    `;
+
+    const PRODUCTS = [
+        {
+            link: "https://brighttools.com.au/products/caravan-cleaning-bundle?_pos=1&_psq=caravan&_ss=e&_v=1.0",
+            image: "https://brighttools.com.au/cdn/shop/files/caravan_cleaning_bundle__Silicone.png",
+            title: "Caravan Cleaning Bundle",
+            oldPrice: "A$234.95", newPrice: "A$169.95",
+            badge: "💖 Client’s top choice", badgeClass: "critical"
+        },
+        {
+            link: "https://brighttools.com.au/products/bright-squeegee-pack-squeegee-quick-mop-floor-wipes",
+            image: "https://brighttools.com.au/cdn/shop/files/squeegee_floor_wipes_quick_mop_pack.png",
+            title: "Bright Squeegee Pack",
+            oldPrice: "A$71.90", newPrice: "A$59.95",
+            badge: "🔝selling fast today", badgeClass: ""
+        },
+        {
+            link: "https://brighttools.com.au/products/home-cleaning-bundle?srsltid=AfmBOopEQ9UweBxxLLmQhwlzUU_5hAPglv9yznTZJ3D4dt7FhDpvSGAa",
+            image: "https://brighttools.com.au/cdn/shop/files/Home_Floor_Cleaning_Bundle_Quick_Mop_Main.jpg?v=1757482350&width=800?v=1738625666&width=800",
+            title: "Home Cleaning Bundle",
+            oldPrice: "A$244.00", newPrice: "A$179.95",
+            badge: "⭐ Recommended", badgeClass: "green-glow"
+        }
+    ];
+
+    // ==========================================
+    // ⚡ EXECUTION & INTERACTIONS
+    // ==========================================
+    const replaceAnnouncementBar = () => {
+        const targetElement = document.getElementById(CONFIG.IDS.ANNOUNCEMENT_BAR);
+        if (!targetElement) return console.warn(`BF Script: Target not found.`);
+
+        const navProductsHtml = PRODUCTS.map(createCardHtml).join('');
+
+        const html = `
+            <div class="bf-trigger-bar" id="bf-trigger">
+                <span class="bf-urgent-badge">ENDING SOON</span>
+                <span>Get Black Friday Deals Now</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <div class="bf-expanded-panel" id="bf-panel">
+                <button class="bf-close-btn" id="bf-close">✕</button>
+                <div class="bf-wrapper">
+                    <div class="bf-content">
+                        <div class="bf-status-row"><span>● LIVE NOW</span><span>|</span><span>LAST FEW DAYS</span></div>
+                        <h2 class="bf-headline">Black Friday</h2>
+                        <div class="bf-subheadline">UP TO 50% OFF STOREWIDE</div>
+                        <div class="bf-stock-notice">⚠️ <strong>See What’s Flying Off the Shelves</strong> </div>
+                    </div>
+                    <div class="bf-products-container">
+                        <div class="bf-nav-btn prev" id="bf-prev">❮</div>
+                        <div class="bf-products" id="bf-products-list">${navProductsHtml}</div>
+                        <div class="bf-nav-btn next" id="bf-next">❯</div>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        const wrapper = document.createElement('aside');
+        wrapper.id = CONFIG.IDS.ANNOUNCEMENT_BAR; 
+        wrapper.className = targetElement.className; 
+        wrapper.innerHTML = html;
+        targetElement.replaceWith(wrapper);
+        document.documentElement.style.setProperty('--announcement-bar-height', '48px');
+        
+        // --- ATTACH EVENTS ---
+        const trigger = wrapper.querySelector('#bf-trigger');
+        const panel = wrapper.querySelector('#bf-panel');
+        const closeBtn = wrapper.querySelector('#bf-close');
+        const prevBtn = wrapper.querySelector('#bf-prev');
+        const nextBtn = wrapper.querySelector('#bf-next');
+        const productList = wrapper.querySelector('#bf-products-list');
+
+        const openPanel = () => {
+            panel.classList.add('bf-visible');
+            trigger.style.display = 'none'; // Hide the red trigger bar
+        };
+
+        const closePanel = (e) => {
+            if(e) e.stopPropagation();
+            panel.classList.remove('bf-visible');
+            trigger.style.display = 'flex'; // Show the red trigger bar
+        };
+
+        trigger.addEventListener('click', openPanel);
+        closeBtn.addEventListener('click', closePanel);
+
+        prevBtn.addEventListener('click', () => {
+            const scrollAmount = productList.clientWidth;
+            productList.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+        nextBtn.addEventListener('click', () => {
+            const scrollAmount = productList.clientWidth;
+            productList.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+
+        console.log(`BF Script ${BF_VERSION}: ✅ Replaced & Interactive`);
+    };
+
+    setTimeout(replaceAnnouncementBar, 50); 
+})();
+</script>
+  </body>
+</html>

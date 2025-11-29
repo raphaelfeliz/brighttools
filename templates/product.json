@@ -1,0 +1,616 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h2"
+          }
+        },
+        "634d1b35-6dc5-46dc-aef4-50491431091b": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "rating": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+            "show_empty": true
+          }
+        },
+        "ce4dfcc3-25d6-462a-be54-e9d3662f7ecc": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>EAN: {{ product.metafields.custom.ean.value }}</p>"
+          }
+        },
+        "badges": {
+          "type": "badges",
+          "settings": {}
+        },
+        "17058414-3a21-480c-b032-4d4f48fa8431": {
+          "type": "sku",
+          "disabled": true,
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "liquid_EtHPXe": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "{% comment %}\n  Usage: {% render 'black-friday-badge' %}\n  This snippet is self-contained with its own CSS.\n{% endcomment %}\n\n<style>\n  .bf-badge-container {\n    position: relative;\n    width: 280px; /* Reduzido de 400px */\n    max-width: 100%; /* Responsive */\n    height: 140px; /* Reduzido de 200px */\n    background-color: #050505;\n    border-radius: 18px; /* Reduzido de 25px */\n    box-shadow: 0 5px 14px rgba(211, 47, 47, 0.5); /* Sombra ajustada */\n    overflow: hidden; /* Clips the shine animation */\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    font-family: \"Arial Black\", \"Helvetica Neue\", sans-serif;\n    \n    /* Left Alignment Changes */\n    margin: 0; \n    padding: 0;\n    left: 0;\n  }\n\n  /* The White Dashed Inset Border */\n  .bf-dashed-border {\n    position: absolute;\n    top: 6px;  /* Reduzido de 8px */\n    left: 6px;\n    right: 6px;\n    bottom: 6px;\n    border: 2px dashed #FFFFFF; /* Reduzido de 3px */\n    border-radius: 14px; /* Reduzido de 20px */\n    pointer-events: none; /* Let clicks pass through */\n    z-index: 2;\n  }\n\n  /* Text Styling */\n  .bf-text {\n    color: #FFFFFF;\n    font-weight: 900;\n    font-size: 34px; /* Reduzido de 48px */\n    line-height: 1.1;\n    text-align: center;\n    z-index: 3;\n    position: relative;\n  }\n\n  /* Red Underline with Pulse Animation */\n  .bf-underline {\n    height: 3px; /* Reduzido de 4px */\n    background-color: #D32F2F;\n    margin-top: 7px; /* Reduzido de 10px */\n    border-radius: 2px;\n    width: 84px; /* Reduzido de 120px */\n    animation: pulseWidth 5s infinite ease-in-out; /* Loop every 5s */\n    z-index: 3;\n  }\n\n  /* The Circle + Image in Top Right */\n  .bf-icon-circle {\n    position: absolute;\n    top: 25px;   /* Reduzido de 35px */\n    right: 25px;\n    width: 25px; /* Reduzido de 36px */\n    height: 25px;\n    background-color: #FFFFFF;\n    border-radius: 50%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    z-index: 4;\n    transform: translate(50%, -50%); /* Centers anchor point */\n  }\n\n  .bf-icon-circle img {\n    width: 20px; /* Reduzido de 28px */\n    height: 20px;\n    object-fit: contain;\n  }\n\n  /* Shine Animation */\n  .bf-shine {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background: linear-gradient(\n      to right, \n      rgba(255,255,255,0) 0%, \n      rgba(255,255,255,0.3) 50%, \n      rgba(255,255,255,0) 100%\n    );\n    transform: skewX(-20deg) translateX(-150%);\n    animation: shineMove 2.5s infinite linear; /* Speed of shine loop */\n    pointer-events: none;\n    z-index: 1;\n  }\n\n  /* CSS Animations to replace JS */\n  @keyframes pulseWidth {\n    0% { width: 84px; } /* Reduzido de 120px */\n    10% { width: 112px; } /* Reduzido de 160px */\n    20% { width: 84px; } /* Contract back */\n    100% { width: 84px; } /* Stay still for rest of 5s */\n  }\n\n  @keyframes shineMove {\n    0% { transform: skewX(-20deg) translateX(-150%); }\n    40% { transform: skewX(-20deg) translateX(200%); } /* Fly across */\n    100% { transform: skewX(-20deg) translateX(200%); } /* Wait */\n  }\n</style>\n\n<div class=\"bf-badge-container\">\n  <!-- Shine Effect -->\n  <div class=\"bf-shine\"></div>\n\n  <!-- Dashed Border -->\n  <div class=\"bf-dashed-border\"></div>\n\n  <!-- Icon Top Right -->\n  <div class=\"bf-icon-circle\">\n    <img src=\"https://brighttools.com.au/cdn/shop/files/favicon.png?v=1686217152&width=96\" alt=\"Logo\" loading=\"lazy\">\n  </div>\n\n  <!-- Content -->\n  <div class=\"bf-text\">BLACK</div>\n  <div class=\"bf-text\">FRIDAY</div>\n  \n  <!-- Animated Underline -->\n  <div class=\"bf-underline\"></div>\n</div>"
+          }
+        },
+        "e61e426c-407a-45aa-9616-04c8f4cd0237": {
+          "type": "inventory",
+          "settings": {
+            "low_inventory_threshold": 25
+          }
+        },
+        "payment_terms": {
+          "type": "payment_terms",
+          "settings": {}
+        },
+        "separator": {
+          "type": "separator",
+          "settings": {}
+        },
+        "15d8ec07-a634-405e-af3e-46aaee2d75e0": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ product.metafields.custom.selling_points | metafield_tag }}</p>"
+          }
+        },
+        "dealeasy_mm_bundle_builder_fmBMLK": {
+          "type": "shopify://apps/dealeasy/blocks/mm-bundle-builder/e47a8634-0496-480d-9e46-6f7fafd34b30",
+          "settings": {
+            "lb-product-handle": "",
+            "lb-product-id": ""
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch",
+            "variant_image_options": "",
+            "size_chart_page": ""
+          }
+        },
+        "selleasy_lb_upsell_widget_pal_mCVBx9": {
+          "type": "shopify://apps/selleasy/blocks/lb-upsell-widget-pal/790c1a03-a71f-4bc1-9869-00dad526d3c2",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "show_gift_card_recipient": true,
+            "atc_button_background": "#f2f2f2",
+            "atc_button_text_color": "#d80925",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "dealeasy_vd_cards_RDTz3J": {
+          "type": "shopify://apps/dealeasy/blocks/vd-cards/e47a8634-0496-480d-9e46-6f7fafd34b30",
+          "settings": {
+            "lb-product-handle": "",
+            "lb-product-id": ""
+          }
+        },
+        "dealeasy_app_block_AyxLph": {
+          "type": "shopify://apps/dealeasy/blocks/app-block/e47a8634-0496-480d-9e46-6f7fafd34b30",
+          "settings": {
+            "lb-product-handle": "",
+            "lb-product-id": ""
+          }
+        },
+        "c56cbf9f-dbd5-4b49-b209-862319158955": {
+          "type": "offer",
+          "settings": {
+            "text_alignment": "start",
+            "icon_position": "aligned",
+            "icon": "picto-timer",
+            "custom_icon": "shopify://shop_images/website-icons.png",
+            "icon_width": 32,
+            "title": "Fast Shipping",
+            "content": "<p>Dispatched in <a href=\"/policies/shipping-policy\" target=\"_blank\" title=\"Shipping Policy\">24hrs</a> from Our Melbourne Warehouse</p>",
+            "background": "#f0f0f0",
+            "text_color": "#000000"
+          }
+        },
+        "selleasy_lb_upsell_widget_cpal_3p8djb": {
+          "type": "shopify://apps/selleasy/blocks/lb-upsell-widget-cpal/790c1a03-a71f-4bc1-9869-00dad526d3c2",
+          "settings": {}
+        },
+        "cb13e52a-aaac-4a85-b16d-4649199dfc46": {
+          "type": "associated_products",
+          "settings": {
+            "title": "Buy it with",
+            "stack_products": true,
+            "products_count": 3,
+            "background": "",
+            "text_color": "#000000"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "collapse_content": false
+          }
+        },
+        "dealeasy_mm_bundle_builder_CaEWD8": {
+          "type": "shopify://apps/dealeasy/blocks/mm-bundle-builder/e47a8634-0496-480d-9e46-6f7fafd34b30",
+          "settings": {
+            "lb-product-handle": "",
+            "lb-product-id": ""
+          }
+        },
+        "dealeasy_vd_cards_GyDHKk": {
+          "type": "shopify://apps/dealeasy/blocks/vd-cards/e47a8634-0496-480d-9e46-6f7fafd34b30",
+          "settings": {
+            "lb-product-handle": "",
+            "lb-product-id": ""
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "634d1b35-6dc5-46dc-aef4-50491431091b",
+        "rating",
+        "ce4dfcc3-25d6-462a-be54-e9d3662f7ecc",
+        "badges",
+        "17058414-3a21-480c-b032-4d4f48fa8431",
+        "price",
+        "liquid_EtHPXe",
+        "e61e426c-407a-45aa-9616-04c8f4cd0237",
+        "payment_terms",
+        "separator",
+        "15d8ec07-a634-405e-af3e-46aaee2d75e0",
+        "dealeasy_mm_bundle_builder_fmBMLK",
+        "quantity_selector",
+        "variant_picker",
+        "selleasy_lb_upsell_widget_pal_mCVBx9",
+        "buy_buttons",
+        "dealeasy_vd_cards_RDTz3J",
+        "dealeasy_app_block_AyxLph",
+        "c56cbf9f-dbd5-4b49-b209-862319158955",
+        "selleasy_lb_upsell_widget_cpal_3p8djb",
+        "cb13e52a-aaac-4a85-b16d-4649199dfc46",
+        "description",
+        "dealeasy_mm_bundle_builder_CaEWD8",
+        "dealeasy_vd_cards_GyDHKk"
+      ],
+      "settings": {
+        "full_width": false,
+        "show_fixed_add_to_cart": true,
+        "desktop_media_width": 50,
+        "desktop_media_layout": "carousel_thumbnails_left",
+        "mobile_media_size": "contained",
+        "mobile_carousel_control": "dots",
+        "enable_video_autoplay": false,
+        "enable_video_looping": true,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3,
+        "background": "#ffffff",
+        "background_gradient": "",
+        "text_color": "",
+        "input_background": "rgba(0,0,0,0)",
+        "input_text_color": ""
+      }
+    },
+    "image_with_text_overlay_PN3fEk": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_y8iDRa": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        },
+        "heading_dPtqMt": {
+          "type": "heading",
+          "settings": {
+            "text": "How to Use the Window Cleaner",
+            "heading_tag": "h3"
+          }
+        },
+        "richtext_fVaJJC": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Super Simple Steps to Crystal-Clear Windows  </p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_y8iDRa",
+        "heading_dPtqMt",
+        "richtext_fVaJJC"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "image_size": "auto",
+        "image": "shopify://shop_images/hand_held_multi_surface_cleaner_window.jpg",
+        "mobile_image": "shopify://shop_images/hand_held_multi_surface_cleaner_window_mobile.jpg",
+        "mobile_text_position": "place-self-center-start text-start",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30
+      }
+    },
+    "image_link_blocks_XVQbdn": {
+      "type": "image-link-blocks",
+      "blocks": {
+        "item_YW3yP9": {
+          "type": "item",
+          "settings": {
+            "stretch_image": true,
+            "link_text": "",
+            "link_url": "",
+            "background": "",
+            "text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "item_6hJiYR": {
+          "type": "item",
+          "settings": {
+            "stretch_image": true,
+            "link_text": "",
+            "link_url": "",
+            "background": "",
+            "text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "item_nmyqBC": {
+          "type": "item",
+          "settings": {
+            "stretch_image": true,
+            "link_text": "",
+            "link_url": "",
+            "background": "",
+            "text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "item_EQPiWf": {
+          "type": "item",
+          "settings": {
+            "stretch_image": true,
+            "link_text": "",
+            "link_url": "",
+            "background": "",
+            "text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "item_YW3yP9",
+        "item_6hJiYR",
+        "item_nmyqBC",
+        "item_EQPiWf"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "block_size": "large",
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "link_url": "",
+        "link_text": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": ""
+      }
+    },
+    "1753838657087a16ba": {
+      "type": "apps",
+      "blocks": {
+        "selleasy_lb_upsell_widget_bl_kEkG69": {
+          "type": "shopify://apps/selleasy/blocks/lb-upsell-widget-bl/790c1a03-a71f-4bc1-9869-00dad526d3c2",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "selleasy_lb_upsell_widget_bl_kEkG69"
+      ],
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "c4a43766-4a19-4d00-9898-bcd0d58a97ac": {
+      "type": "media-with-text",
+      "settings": {
+        "full_width": false,
+        "alternate_media_position": false,
+        "spacing": "small"
+      }
+    },
+    "17485239401e7c4d52": {
+      "type": "apps",
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "1688642188a9c7bb7d": {
+      "type": "apps",
+      "blocks": {
+        "ff35ce0e-0a35-448d-9e7a-6a4e259b11b4": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        },
+        "b5105084-2bb1-4862-8681-a2147b658640": {
+          "type": "shopify://apps/judge-me-reviews/blocks/featured_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {
+            "maxwidth": 1080
+          }
+        },
+        "b7e2de39-0094-44a6-a7cf-4c0719648fda": {
+          "type": "shopify://apps/judge-me-reviews/blocks/ugc_media_grid/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "ff35ce0e-0a35-448d-9e7a-6a4e259b11b4",
+        "b5105084-2bb1-4862-8681-a2147b658640",
+        "b7e2de39-0094-44a6-a7cf-4c0719648fda"
+      ],
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "background": "#f0f0f0",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "2cc557d9-4240-49af-87a6-619ffb9c14fe": {
+      "type": "related-products",
+      "settings": {
+        "recommendations_count": 10,
+        "products": "{{ product.metafields[\"shopify--discovery--product_recommendation\"].complementary_products.value }}",
+        "full_width": true,
+        "stack_products": false,
+        "show_progress_bar": true,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "subheading": "",
+        "title": "You may also like",
+        "content": "",
+        "background": "#f0f0f0",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "product_card_background": "",
+        "product_card_text_color": ""
+      }
+    },
+    "beeafe09-2cb1-4ed4-9a41-c04f9f65c5d4": {
+      "type": "faq",
+      "blocks": {
+        "template--19202935849234__beeafe09-2cb1-4ed4-9a41-c04f9f65c5d4-168657506649ab31c8-0": {
+          "type": "item",
+          "settings": {
+            "title": "Are Bright Tools products suitable for both professionals and amateurs?",
+            "content": "<p>Absolutely! Our tools are designed to cater to the needs of professionals as well as hobbyists and DIY enthusiasts. We strive to offer products that are user-friendly, reliable, and suitable for various skill levels.</p>"
+          }
+        },
+        "template--19202935849234__beeafe09-2cb1-4ed4-9a41-c04f9f65c5d4-168657506649ab31c8-1": {
+          "type": "item",
+          "settings": {
+            "title": "How quickly do you dispatch orders within Australia, and what shipping options do you offer?",
+            "content": "<p>We dispatch all orders Australia-wide within 24 hours, so your cleaning tools will arrive at your door without delay. Our products are sent via trackable Australia Post and with express options available you can feel secure in our fast shipping delivery. </p>"
+          }
+        },
+        "fc47d9e3-e809-41ad-a3a4-afa79b9bd8ba": {
+          "type": "item",
+          "settings": {
+            "title": "Is it possible to receive a full refund or exchange for a product if I am not satisfied with my purchase?",
+            "content": "<p>We’re here to make your life easier. If you’re not fully satisfied with any Bright Tools product we offer a full refund or exchange with proof of purchase within 30 days. We’re so confident in our range and giving you the best cleaning experience at home, if you’re not floored, then we make returns easy. </p>"
+          }
+        },
+        "e478ad9a-f406-475f-be47-70bbcc894202": {
+          "type": "item",
+          "settings": {
+            "title": "What is the warranty duration for Bright Tools' household cleaning products, and what sets your warranty and product longevity apart from other cleaning brands in Australia?",
+            "content": "<p>Bright Tools offer a unique 2 year warranty on all of our household cleaning products. We stand behind the quality and durability of our superior tools and our sustainable silicone. Unlike any other cleaning brand in Australia, you’ll get guaranteed longevity with every product purchase. </p>"
+          }
+        },
+        "template--19202935849234__beeafe09-2cb1-4ed4-9a41-c04f9f65c5d4-168657506649ab31c8-2": {
+          "type": "item",
+          "settings": {
+            "title": "What payment options are available?",
+            "content": "<p>We accept various payment methods, including major credit cards (Visa, Mastercard, American Express), PayPal, and bank transfers. Rest assured that all transactions are securely processed to protect your sensitive information.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--19202935849234__beeafe09-2cb1-4ed4-9a41-c04f9f65c5d4-168657506649ab31c8-0",
+        "template--19202935849234__beeafe09-2cb1-4ed4-9a41-c04f9f65c5d4-168657506649ab31c8-1",
+        "fc47d9e3-e809-41ad-a3a4-afa79b9bd8ba",
+        "e478ad9a-f406-475f-be47-70bbcc894202",
+        "template--19202935849234__beeafe09-2cb1-4ed4-9a41-c04f9f65c5d4-168657506649ab31c8-2"
+      ],
+      "settings": {
+        "full_width": true,
+        "subheading": "FAQs",
+        "title": "Have a question?",
+        "content": "",
+        "team_avatar": "shopify://shop_images/team-fff.webp",
+        "team_avatar_width": 160,
+        "support_hours": "Our customer support is available monday to friday: 8am-8:30pm.",
+        "answer_time": "Average answer time: 24h",
+        "button_text": "Contact us",
+        "button_url": "shopify://pages/contact",
+        "text_position": "start",
+        "background": "#f0f0f0",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "#1a1a1a",
+        "button_text_color": "",
+        "accordion_background": "",
+        "accordion_text_color": ""
+      }
+    },
+    "4dd2b973-8a00-4f25-9139-08a7467cbda6": {
+      "type": "testimonials",
+      "blocks": {
+        "template--19202935849234__4dd2b973-8a00-4f25-9139-08a7467cbda6-1686575320f0560e2c-0": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "John S.",
+            "title": "Testimonial 1",
+            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+          }
+        },
+        "template--19202935849234__4dd2b973-8a00-4f25-9139-08a7467cbda6-1686575320f0560e2c-2": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Joshua A.",
+            "title": "Testimonial 3",
+            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+          }
+        },
+        "template--19202935849234__4dd2b973-8a00-4f25-9139-08a7467cbda6-1686575320f0560e2c-1": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Mary U.",
+            "title": "Testimonial 2",
+            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+          }
+        },
+        "d19e8bc6-3478-4836-ae5b-d6f7793f42f8": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 4,
+            "author": "",
+            "title": "Testimonial",
+            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--19202935849234__4dd2b973-8a00-4f25-9139-08a7467cbda6-1686575320f0560e2c-0",
+        "template--19202935849234__4dd2b973-8a00-4f25-9139-08a7467cbda6-1686575320f0560e2c-2",
+        "template--19202935849234__4dd2b973-8a00-4f25-9139-08a7467cbda6-1686575320f0560e2c-1",
+        "d19e8bc6-3478-4836-ae5b-d6f7793f42f8"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "stack_testimonials": true,
+        "subheading": "",
+        "title": "Customer Reviews",
+        "content": "",
+        "link_url": "",
+        "link_text": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "testimonial_card_background": "",
+        "testimonial_card_text_color": ""
+      }
+    },
+    "1688645804e1409c6c": {
+      "type": "apps",
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_with_text_overlay_PN3fEk",
+    "image_link_blocks_XVQbdn",
+    "1753838657087a16ba",
+    "c4a43766-4a19-4d00-9898-bcd0d58a97ac",
+    "17485239401e7c4d52",
+    "1688642188a9c7bb7d",
+    "2cc557d9-4240-49af-87a6-619ffb9c14fe",
+    "beeafe09-2cb1-4ed4-9a41-c04f9f65c5d4",
+    "4dd2b973-8a00-4f25-9139-08a7467cbda6",
+    "1688645804e1409c6c"
+  ]
+}

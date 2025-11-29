@@ -1,0 +1,1445 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "fa95f284-181b-4406-8a6c-5bfa9c07b9f7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/cleaning_product_home.webp",
+            "mobile_image": "shopify://shop_images/cleaning_products_tools_main.jpg",
+            "content_max_width": 720,
+            "mobile_text_position": "place-self-end-start text-start",
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "subheading": "High-Performance Cleaning Tools",
+            "title": "BLACK FRIDAY UP TO 50% OFF",
+            "heading_tag": "h2",
+            "button_text": "SHOP SALE",
+            "button_link": "shopify://collections/shop-all",
+            "text_color": "#ffffff",
+            "button_background": "#272727",
+            "button_text_color": "#ffffff",
+            "overlay_color": "#272727",
+            "overlay_opacity": 25,
+            "background": "#ffffff",
+            "background_gradient": "linear-gradient(318deg, rgba(242, 242, 242, 1), rgba(68, 68, 68, 1) 100%)"
+          }
+        },
+        "f6b5d4ad-5a6a-4b7f-bd75-a17f44cbb985": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Quick_Mop_Floor_Wipes_Main_Banner2_2.webp",
+            "mobile_image": "shopify://shop_images/Untitled_1200_x_1600_px_6.png",
+            "content_max_width": 780,
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-end-start sm:text-start",
+            "subheading": "Get a Free Gift Bag for orders over $49.95",
+            "title": "Fresh in a Flash",
+            "heading_tag": "h1",
+            "button_text": "SHOP WIPES SALE",
+            "button_link": "shopify://collections/wipes",
+            "text_color": "#1a1a1a",
+            "button_background": "#ffffff",
+            "button_text_color": "#7f48b0",
+            "overlay_color": "#000000",
+            "overlay_opacity": 5,
+            "background": "",
+            "background_gradient": "linear-gradient(170deg, rgba(155, 103, 167, 1) 13%, rgba(255, 255, 255, 1) 100%)"
+          }
+        }
+      },
+      "block_order": [
+        "fa95f284-181b-4406-8a6c-5bfa9c07b9f7",
+        "f6b5d4ad-5a6a-4b7f-bd75-a17f44cbb985"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "allow_transparent_header": true,
+        "show_initial_transition": false,
+        "image_size": "auto",
+        "controls_type": "outline_arrows",
+        "transition_type": "fade_with_text",
+        "autoplay": true,
+        "cycle_speed": 10,
+        "background": "#d80925",
+        "background_gradient": "linear-gradient(228deg, rgba(21, 209, 252, 1) 42%, rgba(61, 64, 60, 0.63) 58%)"
+      }
+    },
+    "custom_html_NNajbw": {
+      "type": "custom-html",
+      "name": "Custom HTML",
+      "settings": {
+        "full_width": false,
+        "remove_vertical_spacing": true,
+        "remove_horizontal_spacing": true,
+        "html": "<!-- DEPENDENCIES: Remove these if your site already loads Tailwind or Inter font --><script src=\"https://cdn.tailwindcss.com\"></script>\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin=\"\">\n<link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&amp;display=swap\" rel=\"stylesheet\">\n\n<style>\n    /* --- SCOPED CSS VARIABLES & CONTAINER --- */\n    #bf-section-container {\n        /* Ensure font applies specifically to this section */\n        font-family: 'Inter', sans-serif;\n        \n        --bf-red: #D4212C;\n        --bf-bg: #050505;\n        --bf-card: #161616;\n        --bf-yellow-glow: #FFD700;\n        --bf-green-glow: #3CB371;\n        \n        /* Background definition including the subtle gradient texture */\n        background-color: var(--bf-bg);\n        \n        /* 1. The SVG Noise Texture (Top Layer) - static tile */\n        /* 2. The Radial Gradients (Bottom Layers) - moving spotlights */\n        background-image: \n            url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E\"),\n            /* CRITICAL CHANGE: Increased lightness/size of gradient spotlights for visibility */\n            radial-gradient(circle at 20% 30%, rgba(80, 80, 80, 0.6) 0%, rgba(20, 20, 20, 0.8) 40%, rgba(5, 5, 5, 1) 100%),\n            radial-gradient(circle at 80% 70%, rgba(80, 80, 80, 0.6) 0%, rgba(20, 20, 20, 0.8) 40%, rgba(5, 5, 5, 1) 100%);\n        \n        /* Blend mode to mix the noise with the dark background */\n        background-blend-mode: overlay, normal, normal;\n\n        /* CRITICAL CHANGE: Increase size of gradient layers significantly (200%) */\n        /* Layer 1 (Noise): Small tile size */\n        /* Layer 2 & 3 (Gradients): 200% of container size */\n        background-size: 200px 200px, 200% 200%, 200% 200%;\n\n        /* Added vertical padding */\n        padding: 40px 0;\n        margin: 0;\n        width: 100%;\n        overflow: hidden; \n        box-sizing: border-box;\n\n        /* CRITICAL CHANGE: Decrease duration for faster movement (10s) */\n        animation: gradient-move 10s ease-in-out infinite alternate;\n    }\n\n    /* --- ANIMATIONS --- */\n    @keyframes bf-glow { \n        0% { box-shadow: 0 0 8px rgba(212, 33, 44, 0.4); border-color: rgba(212, 33, 44, 0.6); } \n        50% { box-shadow: 0 0 25px rgba(212, 33, 44, 0.7); border-color: rgba(212, 33, 44, 1); } \n        100% { box-shadow: 0 0 8px rgba(212, 33, 44, 0.4); border-color: rgba(212, 33, 44, 0.6); } \n    }\n    @keyframes bf-red-glow { 0%, 100% { box-shadow: 0 0 5px var(--bf-red); } 50% { box-shadow: 0 0 10px var(--bf-red); } }\n    @keyframes bf-yellow-glow { 0%, 100% { box-shadow: 0 0 5px var(--bf-yellow-glow); } 50% { box-shadow: 0 0 10px var(--bf-yellow-glow); } }\n    @keyframes bf-green-glow { 0%, 100% { box-shadow: 0 0 5px var(--bf-green-glow); } 50% { box-shadow: 0 0 10px var(--bf-green-glow); } }\n    \n    /* Sequence animation controls which phrase is visible */\n    @keyframes bf-seq-1 { 0%, 33% { opacity: 1; z-index: 1; } 33.1%, 100% { opacity: 0; z-index: 0; } }\n    @keyframes bf-seq-2 { 0%, 33% { opacity: 0; z-index: 0; } 33.1%, 66% { opacity: 1; z-index: 1; } 66.1%, 100% { opacity: 0; z-index: 0; } }\n    @keyframes bf-seq-3 { 0%, 66% { opacity: 0; z-index: 0; } 66.1%, 100% { opacity: 1; z-index: 1; } }\n    \n    /* Typing effect animates the width */\n    @keyframes bf-type { 0% { width: 0; } 20% { width: 100%; } 80% { width: 100%; } 95% { width: 0; } 100% { width: 0; } }\n\n    /* New animation for STRONGER background gradient movement */\n    @keyframes gradient-move {\n        /* Move only layers 2 and 3 (the gradients), keep layer 1 (noise) static at 0 0 */\n        0% { \n            background-position: 0 0, 0% 0%, 100% 100%; \n        }\n        100% { \n            background-position: 0 0, 100% 100%, 0% 0%; \n        }\n    }\n\n    /* --- LAYOUT --- */\n    \n    .bf-hero-wrapper {\n        max-width: 1600px; \n        margin: 0 auto; \n        padding: 0 2rem;\n        \n        /* Flex layout */\n        display: flex; \n        flex-direction: column; \n        align-items: center; \n        /* REDUCED GAP: Tightens the relationship between all items */\n        gap: 12px; \n        width: 100%; \n        min-height: 600px; \n        justify-content: center;\n        box-sizing: border-box;\n    }\n\n    /* --- TYPOGRAPHY --- */\n    .bf-neon-title { \n        font-size: 64px; \n        line-height: 0.9; \n        font-weight: 900; \n        color: white; \n        text-transform: uppercase; \n        margin: 0; \n        letter-spacing: -2px; \n        text-align: center; \n    }\n\n    .bf-typing-container { \n        position: relative; \n        height: 0.8em; \n        min-width: 650px; \n        /* Moved closer to title (0 margin) */\n        margin-top: 0px; \n        /* Added margin bottom to separate header group from product group */\n        margin-bottom: 40px;\n        text-align: center; \n        display:flex; \n        justify-content:center;\n    }\n\n    .bf-highlight-row { \n        font-size: 32px; \n        color: var(--bf-red); \n        font-weight: 900; \n        letter-spacing: 0px; \n        text-shadow: 0 0 20px rgba(212, 33, 44, 0.6); \n        position: absolute; \n        /* ADDED: For desktop animation, prevent wrapping */\n        white-space: nowrap; \n        overflow: hidden; \n        border-right: none; \n        opacity: 0; \n        width: 0; \n    }\n\n    /* Applying the combined animations */\n    .bf-phrase-1 { animation: bf-seq-1 9s infinite, bf-type 3s steps(30, end) infinite; }\n    .bf-phrase-2 { animation: bf-seq-2 9s infinite, bf-type 3s steps(20, end) infinite; animation-delay: 0s, 3s; }\n    .bf-phrase-3 { animation: bf-seq-3 9s infinite, bf-type 3s steps(20, end) infinite; animation-delay: 0s, 6s; }\n\n    .bf-section-label { \n        color: #fff; \n        font-size: 1.2rem; \n        letter-spacing: 2px; \n        text-transform: uppercase; \n        /* Removed negative margin so it respects the small 12px flex gap */\n        margin-bottom: 0; \n        opacity: 0.8; \n    }\n\n    /* --- CARDS --- */\n    .bf-products { \n        display: flex; \n        flex-wrap: wrap; \n        justify-content: center; \n        gap: 20px; \n        width: 100%; \n        /* Removed top margin to bring cards closer to label */\n        margin-top: 0; \n    }\n    \n    .bf-card { \n        background: var(--bf-card); \n        border: 1px solid #333; \n        border-radius: 12px; \n        padding: 0; \n        width: 100%; \n        max-width: 260px; \n        display: flex; \n        flex-direction: column; \n        text-decoration: none; \n        transition: transform 0.2s, border-color 0.2s; \n        position: relative; \n        overflow: hidden; \n    }\n    .bf-card:hover { border-color: #666; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); }\n    \n    /* Badges */\n    .bf-stock-badge { \n        position: absolute; bottom: 10px; right: 10px; top: auto; left: auto;\n        background: #000000; color: white; font-size: 0.75rem; font-weight: 800; \n        padding: 4px 8px; border-radius: 4px; z-index: 10; \n        box-shadow: 0 0 5px var(--bf-yellow-glow); \n        animation: bf-yellow-glow 3s infinite ease-in-out;\n        white-space: nowrap; max-width: 90%; overflow: hidden; text-overflow: ellipsis;\n    }\n    .bf-stock-badge.critical { box-shadow: 0 0 5px var(--bf-red); animation: bf-red-glow 3s infinite ease-in-out; }\n    .bf-stock-badge.green-glow { box-shadow: 0 0 5px var(--bf-green-glow); animation: bf-green-glow 3s infinite ease-in-out; }\n\n    /* Images */\n    .bf-card-img-container { \n        background: #fff; \n        width: 100%; \n        /* Fixed aspect ratio for consistent card size */\n        aspect-ratio: 1 / 1; \n        display: flex; \n        align-items: center; \n        justify-content: center; \n        position: relative; \n        overflow: hidden; \n    }\n    .bf-card-img { \n        width: 100%; \n        height: 100%; \n        object-fit: cover; \n        padding: 0; \n        box-sizing: border-box; \n        transition: transform 0.3s; \n    }\n    .bf-card:hover .bf-card-img { transform: scale(1.05); }\n\n    /* Info & Button */\n    .bf-card-info { padding: 15px; display: flex; flex-direction: column; gap: 6px; flex-grow: 1; }\n    .bf-card-title { color: white; font-size: 1rem; font-weight: 600; line-height: 1.3; margin: 0; }\n    .bf-price-row { margin-top: auto; display: flex; gap: 10px; align-items: baseline; }\n    .bf-old-price { \n        color: #ffffff; \n        font-size: 0.9rem; \n        text-decoration: line-through; \n        text-decoration-color: var(--bf-red); \n        text-decoration-thickness: 2px; \n        opacity: 1.0; \n    }\n    .bf-new-price { color: var(--bf-red); font-size: 1.2rem; font-weight: 900; }\n    .bf-card-btn { \n        margin-top: 10px; \n        background: transparent; \n        border: 1px solid #444; \n        color: white; \n        font-size: 0.85rem; \n        text-align: center; \n        padding: 8px 0; \n        border-radius: 6px; \n        font-weight: 600; \n        transition: all 0.2s; \n        text-transform: uppercase; \n        display: block; \n    }\n    .bf-card:hover .bf-card-btn { \n        background: var(--bf-red); \n        border-color: var(--bf-red); \n        animation: bf-glow 2s infinite ease-in-out; \n    }\n\n    /* Hero Button */\n    .bf-neon-btn { \n        display: inline-flex; \n        align-items: center; \n        justify-content: center; \n        background-color: rgba(0, 0, 0, 0.5); \n        color: #ffffff; \n        border: 2px solid var(--bf-red); \n        padding: 18px 48px; \n        font-size: 16px; \n        font-weight: 800; \n        text-transform: uppercase; \n        letter-spacing: 0.1em; \n        text-decoration: none; \n        transition: all 0.3s ease; \n        /* Increased margin top to separate button from products */\n        margin-top: 30px; \n        backdrop-filter: blur(4px); \n        z-index: 2; \n        border-radius: 9999px; \n        box-shadow: 0 0 8px rgba(212, 33, 44, 0.4); \n        animation: bf-glow 2s infinite ease-in-out; \n    }\n    .bf-neon-btn:hover { \n        background-color: var(--bf-red); \n        color: white; \n        box-shadow: 0 0 50px rgba(212, 33, 44, 0.9); \n        border-color: var(--bf-red); \n        transform: translateY(-2px); \n        animation: none; \n    }\n\n    /* Mobile Responsiveness */\n    @media(max-width: 768px) {\n        .bf-hero-wrapper { padding: 40px 20px; min-height: auto; gap: 30px; } \n        .bf-neon-title { font-size: 42px; } \n        .bf-neon-btn { width: 100%; padding: 15px 20px; }\n        \n        /* Disable typing animation and display the first phrase statically on mobile */\n        .bf-highlight-row { \n            /* FIXED: Allow text to wrap on mobile devices */\n            white-space: normal;\n            \n            font-size: 24px; \n            position: static; /* Change to static positioning */\n            display: block; \n            margin: 0 auto; \n            width: auto !important; \n            opacity: 1 !important; \n            animation: none !important; /* Disable all animations */\n            text-align: center;\n            border-right: none;\n        }\n        .bf-typing-container { \n            min-width: auto; \n            height: auto; \n            display: flex; \n            flex-direction: column; \n            gap: 5px; \n            align-items: center; \n            /* Ensures the container doesn't reserve space for invisible elements */\n            min-height: 24px; \n            margin-bottom: 20px; /* Reduced spacing on mobile */\n        }\n        /* Hide subsequent phrases on mobile */\n        .bf-phrase-2, .bf-phrase-3 { display: none; }\n        .bf-products { justify-content: center; }\n        \n        /* Adjusted mobile padding since container box is gone */\n        .bf-hero-wrapper { padding: 40px 1rem; }\n    }\n</style>\n\n<!-- Main Section Container with Gradient Texture --><div id=\"bf-section-container\">\n    \n    <!-- Cleaned up structure: Wrapper is now direct child of Section Container --><div class=\"bf-hero-wrapper\">\n        <h2 class=\"bf-neon-title\">Black Friday</h2>\n        \n        <!-- Typing Text Container (Animated on Desktop) --><div class=\"bf-typing-container\">\n            <span class=\"bf-highlight-row bf-phrase-1\">Premium Cleaning Solutions</span>\n            <span class=\"bf-highlight-row bf-phrase-2\">up to 50% OFF</span>\n            <span class=\"bf-highlight-row bf-phrase-3\">sale ends soon!</span>\n        </div>\n\n        <div class=\"bf-section-label\">Best Sellers:</div>\n\n        <div class=\"bf-products bf-hero-products\">\n            \n            <!-- Card 1: Caravan Cleaning Bundle (Updated Link) --><a href=\"https://brighttools.com.au/products/caravan-cleaning-bundle?_pos=1&amp;_psq=caravan&amp;_ss=e&amp;_v=1.0\" class=\"bf-card\">\n                <div class=\"bf-card-img-container\">\n                    <div class=\"bf-stock-badge critical\">💖 Customers' Top Choice</div>\n                    <!-- Added onerror fallback for images --><img src=\"https://brighttools.com.au/cdn/shop/files/caravan_cleaning_bundle__Silicone.png\" class=\"bf-card-img\" alt=\"Caravan Cleaning Bundle\" onerror=\"this.onerror=null; this.src='https://placehold.co/260x260/000000/FFFFFF?text=Product+1'\">\n                </div>\n                <div class=\"bf-card-info\">\n                    <div class=\"bf-card-title\">Caravan Cleaning Bundle</div>\n                    <div class=\"bf-price-row\">\n                        <span class=\"bf-old-price\">A$234.95 </span>\n                        <span class=\"bf-new-price\">A$169.95 </span>\n                    </div>\n                    <div class=\"bf-card-btn\">Shop Now</div>\n                </div>\n            </a>\n\n            <!-- Card 2: Bright Squeegee Pack (Updated Title, Link, Image, Prices) --><a href=\"https://brighttools.com.au/products/bright-squeegee-pack-squeegee-quick-mop-floor-wipes\" class=\"bf-card\">\n                <div class=\"bf-card-img-container\">\n                    <div class=\"bf-stock-badge\">🔝Selling Fast Today</div>\n                    <img src=\"https://brighttools.com.au/cdn/shop/files/squeegee_floor_wipes_quick_mop_pack.png\" class=\"bf-card-img\" alt=\"Bright Squeegee Pack\" onerror=\"this.onerror=null; this.src='https://placehold.co/260x260/000000/FFFFFF?text=Product+2'\">\n                </div>\n                <div class=\"bf-card-info\">\n                    <div class=\"bf-card-title\">Bright Squeegee Pack</div>\n                    <div class=\"bf-price-row\">\n                        <span class=\"bf-old-price\">A$71.90 </span>\n                        <span class=\"bf-new-price\">A$59.95 </span>\n                    </div>\n                    <div class=\"bf-card-btn\">Shop Now</div>\n                </div>\n            </a>\n\n            <!-- Card 3: Home Cleaning Bundle (Updated Title, Link, Image, Prices) --><a href=\"https://brighttools.com.au/products/home-cleaning-bundle?srsltid=AfmBOopEQ9UweBxxLLmQhwlzUU_5hAPglv9yznTZJ3D4dt7FhDpvSGAa\" class=\"bf-card\">\n                <div class=\"bf-card-img-container\">\n                    <div class=\"bf-stock-badge green-glow\">⭐ Recommended</div>\n                    <!-- UPDATED IMAGE SRC --><img src=\"https://brighttools.com.au/cdn/shop/files/Home_Floor_Cleaning_Bundle_Quick_Mop_Main.jpg?v=1757482350&amp;width=800\" class=\"bf-card-img\" alt=\"Home Cleaning Bundle\" onerror=\"this.onerror=null; this.src='https://placehold.co/260x260/000000/FFFFFF?text=Product+3'\">\n                </div>\n                <div class=\"bf-card-info\">\n                    <div class=\"bf-card-title\">Home Cleaning Bundle</div>\n                    <div class=\"bf-price-row\">\n                        <span class=\"bf-old-price\">A$244.00 </span>\n                        <span class=\"bf-new-price\">A$179.95 </span>\n                    </div>\n                    <div class=\"bf-card-btn\">Shop Now</div>\n                </div>\n            </a>\n\n        </div>\n\n        <!-- Neon CTA Button (Link Updated) --><a href=\"https://brighttools.com.au/collections/shop-all\" class=\"bf-neon-btn\">Shop All Sale</a>\n    </div>\n</div>",
+        "background": "{{ metaobjects[\"shopify--color-pattern\"].black.color.value }}",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "image-link-blocks": {
+      "type": "image-link-blocks",
+      "blocks": {
+        "1664424046b00c932c-0": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/window_cleaner_main.webp",
+            "stretch_image": true,
+            "link_text": "Window Cleaners",
+            "link_url": "shopify://collections/magnetic-window",
+            "background": "",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "e4a0ef18-1856-4ddd-83d8-871a60d7acac": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/quick_mop_floor_wipes_main.webp",
+            "stretch_image": true,
+            "link_text": "Floor Wipes",
+            "link_url": "shopify://collections/wipes",
+            "background": "",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "1664424046b00c932c-2": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/broom_main_brighttools.webp",
+            "stretch_image": true,
+            "link_text": "Brooms",
+            "link_url": "shopify://collections/brooms",
+            "background": "",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "item_EprWAJ": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/toilet_brush_silicone_brighttools_ded29ba2-179b-4e0f-a348-e035db54739d.webp",
+            "stretch_image": true,
+            "link_text": "Toilet Brushes",
+            "link_url": "shopify://collections/toilet-brushes",
+            "background": "",
+            "text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "1664424046b00c932c-1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/squeegees_floor_main.webp",
+            "stretch_image": true,
+            "link_text": "Squeegees",
+            "link_url": "shopify://collections/squeegee",
+            "background": "",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "3133ac27-0a53-47f2-b3de-032eb1f97f87": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/mop_main_brighttools.webp",
+            "stretch_image": true,
+            "link_text": "Mops",
+            "link_url": "shopify://collections/mops",
+            "background": "",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "ea90b8ec-3ee5-494e-88a3-341fa8d41a73": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/dustpan_main_brighttools.webp",
+            "stretch_image": true,
+            "link_text": "Dustpans",
+            "link_url": "shopify://collections/dustpans",
+            "background": "",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "1664424046b00c932c-3": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/cleaning_product_bundle_brighttools.webp",
+            "stretch_image": true,
+            "link_text": "Bundles",
+            "link_url": "shopify://collections/bundles",
+            "background": "",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "item_C8WtrN": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Sano_New_Banner_product_main_mobile.webp",
+            "stretch_image": true,
+            "link_text": "Sano Products",
+            "link_url": "shopify://collections/cleaning-products-new",
+            "background": "",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "1664424046b00c932c-0",
+        "e4a0ef18-1856-4ddd-83d8-871a60d7acac",
+        "1664424046b00c932c-2",
+        "item_EprWAJ",
+        "1664424046b00c932c-1",
+        "3133ac27-0a53-47f2-b3de-032eb1f97f87",
+        "ea90b8ec-3ee5-494e-88a3-341fa8d41a73",
+        "1664424046b00c932c-3",
+        "item_C8WtrN"
+      ],
+      "settings": {
+        "full_width": true,
+        "block_size": "large",
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "link_url": "shopify://collections/all",
+        "link_text": "",
+        "background": "#f2f2f2",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": ""
+      }
+    },
+    "b6f77e74-e738-4ee2-bc2b-f6e4d94f6d0c": {
+      "type": "impact-text",
+      "blocks": {
+        "template--19202935619858__b6f77e74-e738-4ee2-bc2b-f6e4d94f6d0c-item-1": {
+          "type": "item",
+          "settings": {
+            "title": "",
+            "subheading": "",
+            "content": "<h2>Better Cleaning</h2><p><strong>We guarantee a better cleaning experience. Our premium cleaning tools & products are made to last and work better - it's that simple. Welcome to your shiniest home ever!</strong></p>",
+            "button_text": "Shop All Products",
+            "button_url": "shopify://collections/shop-all",
+            "animate_impact_text": false,
+            "animate_impact_text_duration": 2
+          }
+        }
+      },
+      "block_order": [
+        "template--19202935619858__b6f77e74-e738-4ee2-bc2b-f6e4d94f6d0c-item-1"
+      ],
+      "settings": {
+        "full_width": true,
+        "stack_mobile": false,
+        "text_alignment": "center",
+        "impact_text_style": "fill",
+        "text_divider": "none",
+        "impact_text_size_ratio": 0.5,
+        "background": "#f2f2f2",
+        "background_gradient": "",
+        "heading_text_color": "",
+        "heading_gradient": "",
+        "text_color": "",
+        "button_background": "#d80925",
+        "button_text_color": ""
+      }
+    },
+    "b63ec45a-06ed-43f1-91e3-471a42b3ff4d": {
+      "type": "media-grid",
+      "blocks": {
+        "template--20493667369234__b63ec45a-06ed-43f1-91e3-471a42b3ff4d-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_17.webp",
+            "title": "Magnetic Window Cleaners",
+            "heading_tag": "h4",
+            "link_url": "shopify://collections/magnetic-window",
+            "link_text": "Window Cleaners",
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_column_span": 2,
+            "desktop_row_span": 2,
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "background": "#000000",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "#d80925",
+            "button_text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 15
+          }
+        },
+        "27b29869-2426-4b60-9c92-9a18aca2be7f": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1_d789d6de-87b2-4359-a831-7c62b2320f24.webp",
+            "title": "",
+            "heading_tag": "h5",
+            "link_url": "shopify://collections/brooms",
+            "link_text": "Brooms",
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_column_span": 1,
+            "desktop_row_span": 1,
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "background": "#000000",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "#d80925",
+            "button_text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 15
+          }
+        },
+        "26b47c66-7549-4e86-b30a-6209a0d51917": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/floor_wipws_quick_mop_main2.webp",
+            "title": "Quick Mop Floor Wipes",
+            "heading_tag": "h4",
+            "link_url": "shopify://collections/wipes",
+            "link_text": "Shop Wipes",
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_column_span": 2,
+            "desktop_row_span": 2,
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "background": "#000000",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "#d80925",
+            "button_text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 15
+          }
+        },
+        "image_9eAKiq": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/toilet_brush_silicone.webp",
+            "title": "Toilet Brush Sets",
+            "heading_tag": "h3",
+            "link_url": "shopify://collections/toilet-brushes",
+            "link_text": "Toilet Brushes",
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_column_span": 2,
+            "desktop_row_span": 2,
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "background": "#000000",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "#000000",
+            "button_text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 20
+          }
+        },
+        "6457fc90-b854-4e60-800d-f5c4a9b62f75": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/floor_squeegee_main_mobile_d3a5a903-b22c-4ac3-add9-27a36b584fb7.webp",
+            "title": "",
+            "heading_tag": "h6",
+            "link_url": "shopify://collections/squeegee",
+            "link_text": "Squeegees",
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_column_span": 1,
+            "desktop_row_span": 1,
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "background": "#000000",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "#d80925",
+            "button_text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 14
+          }
+        },
+        "bb918325-b47d-4486-8e52-a4925a512cf7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Your_paragraph_75.webp",
+            "title": "",
+            "heading_tag": "h5",
+            "link_url": "shopify://collections/dustpans",
+            "link_text": "Dustpans",
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_column_span": 1,
+            "desktop_row_span": 1,
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "background": "#000000",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "#d80925",
+            "button_text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 22
+          }
+        },
+        "0a04a4e5-97f5-4f92-acf1-ac6378690f27": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/146.webp",
+            "title": "",
+            "heading_tag": "h5",
+            "link_url": "shopify://collections/mops",
+            "link_text": "Mops",
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_column_span": 1,
+            "desktop_row_span": 1,
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "background": "#000000",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "#d80925",
+            "button_text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 15
+          }
+        }
+      },
+      "block_order": [
+        "template--20493667369234__b63ec45a-06ed-43f1-91e3-471a42b3ff4d-image-1",
+        "27b29869-2426-4b60-9c92-9a18aca2be7f",
+        "26b47c66-7549-4e86-b30a-6209a0d51917",
+        "image_9eAKiq",
+        "6457fc90-b854-4e60-800d-f5c4a9b62f75",
+        "bb918325-b47d-4486-8e52-a4925a512cf7",
+        "0a04a4e5-97f5-4f92-acf1-ac6378690f27"
+      ],
+      "settings": {
+        "full_width": true,
+        "reduce_width": true,
+        "desktop_row_height": 260,
+        "mobile_row_height": 170,
+        "background": "#f2f2f2",
+        "background_gradient": ""
+      }
+    },
+    "0764c8ed-9e3c-4daf-b5f4-6f7782754a68": {
+      "type": "hot-spots",
+      "blocks": {
+        "template--20493667369234__0764c8ed-9e3c-4daf-b5f4-6f7782754a68-item-1": {
+          "type": "item",
+          "settings": {
+            "horizontal_position": 24,
+            "vertical_position": 70,
+            "horizontal_position_mobile": 24,
+            "vertical_position_mobile": 70,
+            "icon_width": 32,
+            "title": "Rubber Dustpan Multi Purpose, Large, Dry & Wet",
+            "content": "<p>100% rubber for a durable, long-lasting design. Collect various types of waste effectively. Sweeps with one motion.<br/></p>"
+          }
+        },
+        "template--20493667369234__0764c8ed-9e3c-4daf-b5f4-6f7782754a68-item-2": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "horizontal_position": 62,
+            "vertical_position": 14,
+            "horizontal_position_mobile": 62,
+            "vertical_position_mobile": 14,
+            "icon_width": 32,
+            "title": "Feature name",
+            "content": "<p>Share useful information about your product features.</p>"
+          }
+        },
+        "template--20493667369234__0764c8ed-9e3c-4daf-b5f4-6f7782754a68-item-3": {
+          "type": "item",
+          "settings": {
+            "horizontal_position": 83,
+            "vertical_position": 75,
+            "horizontal_position_mobile": 83,
+            "vertical_position_mobile": 75,
+            "icon_width": 32,
+            "title": "Silicone Broom & Squeegee",
+            "content": "<p>Versatile design: Broom and squeegee in one. Flexible joint for reaching tight spots. Slanted bristles for full wall coverage. Durable silicone construction for high performance and longevity</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--20493667369234__0764c8ed-9e3c-4daf-b5f4-6f7782754a68-item-1",
+        "template--20493667369234__0764c8ed-9e3c-4daf-b5f4-6f7782754a68-item-2",
+        "template--20493667369234__0764c8ed-9e3c-4daf-b5f4-6f7782754a68-item-3"
+      ],
+      "settings": {
+        "full_width": false,
+        "image": "shopify://shop_images/dustpan_broom_main_home_b680bed0-2553-4e68-ada7-b0e4e5958f2d.webp",
+        "mobile_image": "shopify://shop_images/dustpan_broom_main_home_b680bed0-2553-4e68-ada7-b0e4e5958f2d.webp",
+        "title": "",
+        "content": "<h4>Bright On - Dust Off</h4><p>You’ll instantly feel the difference with every sweep, swish and glide of our Brooms, Mops, Toilet Cleaners and Quick Mop Floor Wipes. We know you want to spend more time doing what you love and less time cleaning - we do too.</p>",
+        "button_text": "Learn More",
+        "button_url": "shopify://collections/all",
+        "desktop_text_position": "place-self-start-center text-center",
+        "image_background": "#f2f2f2",
+        "image_background_gradient": "",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "overlay_text_color": "#ffffff",
+        "overlay_button_background": "#d80925",
+        "overlay_button_text_color": "#ffffff",
+        "hot_spot_dot_background": "#ffffff",
+        "hot_spot_dot_text_color": "#000000",
+        "hot_spot_content_background": "#ffffff",
+        "hot_spot_content_text_color": "#000000",
+        "hot_spot_content_opacity": 90,
+        "hot_spot_content_blur_radius": 3
+      }
+    },
+    "29eb21bf-ae72-415f-9b8e-771ecae14071": {
+      "type": "collection-list",
+      "blocks": {
+        "template--19202935619858__29eb21bf-ae72-415f-9b8e-771ecae14071-1686655418fe40a052-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "magnetic-window",
+            "image": "shopify://shop_images/Untitled_design_17.png",
+            "subheading": "Magnetic Window Cleaners",
+            "title": "Bright & shine your hard to reach windows",
+            "url": "shopify://collections/magnetic-window",
+            "heading_tag": "h3",
+            "text_position": "place-self-end-start text-start",
+            "text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 15
+          }
+        },
+        "template--19202935619858__29eb21bf-ae72-415f-9b8e-771ecae14071-1686655418fe40a052-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "squeegee",
+            "image": "shopify://shop_images/4_68d3805b-5db8-44e6-89df-cbb721f4f236.png",
+            "subheading": "Squeegee",
+            "title": "Perfection with each sweep",
+            "url": "shopify://collections/squeegee",
+            "heading_tag": "h3",
+            "text_position": "place-self-end-start text-start",
+            "text_color": "#ffffff",
+            "overlay_color": "#1a1a1a",
+            "overlay_opacity": 15
+          }
+        },
+        "20181423-009d-418c-add8-907a0915d02c": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/5_eeb3c9e2-7dfc-4c4c-8c47-b6bb5f0c4fc9.png",
+            "subheading": "Floor Wipes",
+            "title": "Clean, Shine & leave your home smelling fresh",
+            "url": "shopify://collections/wipes",
+            "heading_tag": "h3",
+            "text_position": "place-self-end-start text-start",
+            "text_color": "#ffffff",
+            "overlay_color": "#1a1a1a",
+            "overlay_opacity": 15
+          }
+        },
+        "template--19202935619858__29eb21bf-ae72-415f-9b8e-771ecae14071-1686655418fe40a052-0": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "brooms",
+            "image": "shopify://shop_images/1_d789d6de-87b2-4359-a831-7c62b2320f24.png",
+            "subheading": "Brooms",
+            "title": "A sweep above the rest",
+            "url": "shopify://collections/brooms",
+            "heading_tag": "h3",
+            "text_position": "place-self-end-start text-start",
+            "text_color": "#ffffff",
+            "overlay_color": "#1a1a1a",
+            "overlay_opacity": 15
+          }
+        },
+        "e6282528-5c9c-4e66-aeb8-d48dd9169a2d": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "subheading": "Mops",
+            "title": "Polished to perfection",
+            "url": "shopify://collections/mops",
+            "heading_tag": "h3",
+            "text_position": "place-self-end-start text-start",
+            "text_color": "#ffffff",
+            "overlay_color": "#1a1a1a",
+            "overlay_opacity": 15
+          }
+        },
+        "f437d223-fd9d-484e-ae9c-9d21b3aed344": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "dustpans",
+            "image": "shopify://shop_images/3_2155716d-2407-4182-8446-732cbb906998.png",
+            "subheading": "Dustpans",
+            "title": "Bright on – Dust off",
+            "url": "shopify://collections/dustpans",
+            "heading_tag": "h3",
+            "text_position": "place-self-end-start text-start",
+            "text_color": "#ffffff",
+            "overlay_color": "#1a1a1a",
+            "overlay_opacity": 15
+          }
+        },
+        "71944290-fd21-4b03-aeb8-8ab73a3e4e31": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/microfiber_cloth_sano_brighttools1_1.jpg",
+            "subheading": "",
+            "title": "Microfiber Cloth",
+            "url": "shopify://collections/cloth",
+            "heading_tag": "h2",
+            "text_position": "place-self-end-start text-start",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#ffffff",
+            "overlay_opacity": 20
+          }
+        },
+        "1cad7435-4109-4785-b7d5-13bd98c03dc2": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "subheading": "",
+            "title": "Bundels",
+            "url": "shopify://collections/bundles",
+            "heading_tag": "h2",
+            "text_position": "place-self-end-start text-start",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#ffffff",
+            "overlay_opacity": 20
+          }
+        },
+        "3e1bd5a0-ea59-4ae3-99e9-26d2068f9d18": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/Your-paragraph-6-400x400.jpg",
+            "subheading": "",
+            "title": "Shop All",
+            "url": "shopify://collections",
+            "heading_tag": "h2",
+            "text_position": "place-self-end-start text-start",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#ffffff",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_kJXjgn": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "toilet-brushes",
+            "image": "shopify://shop_images/toilet_brush_silicone_main1.jpg",
+            "subheading": "",
+            "title": "",
+            "url": "",
+            "heading_tag": "h2",
+            "text_position": "place-self-center text-center",
+            "text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "template--19202935619858__29eb21bf-ae72-415f-9b8e-771ecae14071-1686655418fe40a052-1",
+        "template--19202935619858__29eb21bf-ae72-415f-9b8e-771ecae14071-1686655418fe40a052-2",
+        "20181423-009d-418c-add8-907a0915d02c",
+        "template--19202935619858__29eb21bf-ae72-415f-9b8e-771ecae14071-1686655418fe40a052-0",
+        "e6282528-5c9c-4e66-aeb8-d48dd9169a2d",
+        "f437d223-fd9d-484e-ae9c-9d21b3aed344",
+        "71944290-fd21-4b03-aeb8-8ab73a3e4e31",
+        "1cad7435-4109-4785-b7d5-13bd98c03dc2",
+        "3e1bd5a0-ea59-4ae3-99e9-26d2068f9d18",
+        "collection_kJXjgn"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "stack_collections": false,
+        "collections_per_row_mobile": "1",
+        "collections_per_row": 3,
+        "show_progress_bar": false,
+        "subheading": "",
+        "title": "Shop The Range",
+        "content": "",
+        "link_url": "shopify://collections/all",
+        "link_text": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": ""
+      }
+    },
+    "scrolling-text": {
+      "type": "scrolling-text",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "text": "Quick Mop Floor Wipes - No bucket, no water no fuss!",
+        "text_size": "medium",
+        "text_style": "fill",
+        "scrolling_mode": "auto",
+        "scrolling_speed": 10,
+        "background": "#f2f2f2",
+        "background_gradient": "",
+        "text_color": "",
+        "text_gradient": "linear-gradient(46deg, rgba(68, 68, 68, 1) 13%, rgba(197, 197, 197, 1) 86%)"
+      }
+    },
+    "3a9e9c02-143d-438e-b1f9-c8d8e3ee8a85": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "",
+        "products": [
+          "caravan-cleaning-bundle",
+          "bright-squeegee-pack-squeegee-quick-mop-floor-wipes",
+          "glider-d-2-afc-magnetic-window-cleaner-2-18mm",
+          "bright-broom-bundle-broom-squeegee-1pk-quick-mop-floor-wipes",
+          "pet-cleaning-bundle",
+          "high-window-cleaner",
+          "home-cleaning-bundle",
+          "antibacterial-toilet-brush-grey",
+          "choose-your-bundle-of-5-packs-quick-mop-floor-wipes",
+          "microfiber-silicone-mop",
+          "push-pull-silicone-squeegee",
+          "silicone-broom-squeegee",
+          "glider-s-1-magnetic-window-cleaner-2-8mm",
+          "magic-dustpan",
+          "handheld-silicone-squeegee",
+          "stainless-steel-telescopic-handle-80cm-150cm",
+          "floor-silicone-squeegee-knuckle-joint-45cm",
+          "japanese-rubber-broom-30cm-knuckle-joint"
+        ],
+        "full_width": true,
+        "stack_products": false,
+        "show_progress_bar": false,
+        "products_count": 18,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 5,
+        "subheading": "",
+        "title": "Best sellers",
+        "content": "",
+        "link_url": "",
+        "link_text": "",
+        "background": "#f2f2f2",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "product_card_background": "",
+        "product_card_text_color": "#000000"
+      }
+    },
+    "a875ec0a-2fc7-4a59-a6a7-67326efad5e0": {
+      "type": "text-with-icons",
+      "blocks": {
+        "template--20493667369234__a875ec0a-2fc7-4a59-a6a7-67326efad5e0-item-1": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-truck",
+            "custom_icon": "shopify://shop_images/website-icons.png",
+            "mobile_icon_width": 36,
+            "icon_width": 40,
+            "icon_background_type": "circle",
+            "icon_background": "#ffffff",
+            "icon_color": "#e34f4f",
+            "title": "Fast Shipping",
+            "content": "<p>Dispatching all orders Australia-wide within 24 hours ensures prompt delivery of your cleaning tools.</p>"
+          }
+        },
+        "template--20493667369234__a875ec0a-2fc7-4a59-a6a7-67326efad5e0-item-2": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-return",
+            "custom_icon": "shopify://shop_images/website_icons_red-03.png",
+            "mobile_icon_width": 36,
+            "icon_width": 40,
+            "icon_background_type": "circle",
+            "icon_background": "#ffffff",
+            "icon_color": "#e34f4f",
+            "title": "Easy Return & 30 Days Money Back",
+            "content": "<p>We offer a full refund or exchange within 30 days if you’re not fully satisfied.</p>"
+          }
+        },
+        "template--20493667369234__a875ec0a-2fc7-4a59-a6a7-67326efad5e0-item-3": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-validation",
+            "custom_icon": "shopify://shop_images/website-icons-02.png",
+            "mobile_icon_width": 36,
+            "icon_width": 40,
+            "icon_background_type": "circle",
+            "icon_background": "#ffffff",
+            "icon_color": "#e34f4f",
+            "title": "2 Year Warranty ",
+            "content": "<p>We guarantee the quality and durability of our cleaning tools, ensuring long-lasting performance.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--20493667369234__a875ec0a-2fc7-4a59-a6a7-67326efad5e0-item-1",
+        "template--20493667369234__a875ec0a-2fc7-4a59-a6a7-67326efad5e0-item-2",
+        "template--20493667369234__a875ec0a-2fc7-4a59-a6a7-67326efad5e0-item-3"
+      ],
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "title": "",
+        "heading_tag": "h6",
+        "text_alignment": "center",
+        "icon_spacing": "small",
+        "background": "#f2f2f2",
+        "background_gradient": "",
+        "text_color": "#000000"
+      }
+    },
+    "2cb2ef96-e59b-492b-937f-0ae9784f403e": {
+      "type": "impact-text",
+      "blocks": {
+        "template--19202935619858__2cb2ef96-e59b-492b-937f-0ae9784f403e-item-1": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "title": "Quick Mop Floor Wipes",
+            "subheading": "No bucket, no water no fuss!",
+            "content": "<h3></h3><h5></h5>",
+            "button_text": "",
+            "button_url": "",
+            "animate_impact_text": false,
+            "animate_impact_text_duration": 2
+          }
+        }
+      },
+      "block_order": [
+        "template--19202935619858__2cb2ef96-e59b-492b-937f-0ae9784f403e-item-1"
+      ],
+      "settings": {
+        "full_width": true,
+        "stack_mobile": true,
+        "text_alignment": "center",
+        "impact_text_style": "fill",
+        "text_divider": "none",
+        "impact_text_size_ratio": 0.5,
+        "background": "#e6daed",
+        "background_gradient": "linear-gradient(89deg, rgba(219, 149, 250, 1) 27%, rgba(203, 174, 255, 1) 68%)",
+        "heading_text_color": "",
+        "heading_gradient": "",
+        "text_color": "#272727",
+        "button_background": "#7f48b0",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "5fb99d86-36b3-4859-9930-54cbc9dc88e9": {
+      "type": "media-grid",
+      "blocks": {
+        "ea9685b3-2004-40db-8516-42ba1fb7d2a3": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/main-video.mp4",
+            "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "show_video_controls": false,
+            "title": "Quick Mop Floor Wipes",
+            "heading_tag": "h2",
+            "link_url": "shopify://collections/wipes",
+            "link_text": "Shop Wipes",
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_column_span": 4,
+            "desktop_row_span": 2,
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "background": "#000000",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "#7f48b0",
+            "button_text_color": "#ffffff",
+            "overlay_color": "#1a1a1a",
+            "overlay_opacity": 30
+          }
+        },
+        "template--19202935619858__5fb99d86-36b3-4859-9930-54cbc9dc88e9-1687449263d481eaf0-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/floor_wipes_quick_mop_home14.webp",
+            "title": "Fresh Home",
+            "heading_tag": "h4",
+            "link_url": "shopify://collections/wipes",
+            "link_text": "",
+            "mobile_text_position": "place-self-end-center text-center",
+            "desktop_column_span": 1,
+            "desktop_row_span": 1,
+            "desktop_text_position": "sm:place-self-end-center sm:text-center",
+            "background": "#ffffff",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "#000000",
+            "button_text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 10
+          }
+        },
+        "template--19202935619858__5fb99d86-36b3-4859-9930-54cbc9dc88e9-1687449263d481eaf0-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/floor_wipes_quick_mop_home12_62497d7d-d4c2-4d01-bfa5-bad137e072bf.webp",
+            "title": "Wooden Floor",
+            "heading_tag": "h4",
+            "link_url": "shopify://collections/wipes",
+            "link_text": "",
+            "mobile_text_position": "place-self-end-center text-center",
+            "desktop_column_span": 1,
+            "desktop_row_span": 1,
+            "desktop_text_position": "sm:place-self-end-center sm:text-center",
+            "background": "#000000",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "#000000",
+            "button_text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 20
+          }
+        },
+        "78487099-8d18-4312-9f25-6fc38efc3e22": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/floor_wipes_quick_mop_home13_d00a91c3-6769-4b49-a937-4654c1dda80f.webp",
+            "title": "Lavender Scent",
+            "heading_tag": "h4",
+            "link_url": "",
+            "link_text": "",
+            "mobile_text_position": "place-self-end-center text-center",
+            "desktop_column_span": 1,
+            "desktop_row_span": 1,
+            "desktop_text_position": "sm:place-self-end-center sm:text-center",
+            "background": "#000000",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "#000000",
+            "button_text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 20
+          }
+        },
+        "7ceb8230-de04-4afd-914f-be718bb12084": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/quick_mop_floor_wipes_Long-lasting_boutique_hotel_scent.webp",
+            "title": "Blossom Scent",
+            "heading_tag": "h4",
+            "link_url": "",
+            "link_text": "",
+            "mobile_text_position": "place-self-end-center text-center",
+            "desktop_column_span": 1,
+            "desktop_row_span": 1,
+            "desktop_text_position": "sm:place-self-end-center sm:text-center",
+            "background": "#000000",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "#000000",
+            "button_text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 20
+          }
+        }
+      },
+      "block_order": [
+        "ea9685b3-2004-40db-8516-42ba1fb7d2a3",
+        "template--19202935619858__5fb99d86-36b3-4859-9930-54cbc9dc88e9-1687449263d481eaf0-1",
+        "template--19202935619858__5fb99d86-36b3-4859-9930-54cbc9dc88e9-1687449263d481eaf0-0",
+        "78487099-8d18-4312-9f25-6fc38efc3e22",
+        "7ceb8230-de04-4afd-914f-be718bb12084"
+      ],
+      "settings": {
+        "full_width": true,
+        "reduce_width": true,
+        "desktop_row_height": 240,
+        "mobile_row_height": 150,
+        "background": "#ffffff",
+        "background_gradient": ""
+      }
+    },
+    "image_with_text_overlay_R8hkxz": {
+      "type": "image-with-text-overlay",
+      "name": "Image with text overlay",
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "image_size": "auto",
+        "image": "shopify://shop_images/Desktop_Image_V3.jpg",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "69061dc1-1957-439d-85e0-647f9240d34a": {
+      "type": "testimonials",
+      "blocks": {
+        "template--19202935619858__69061dc1-1957-439d-85e0-647f9240d34a-16874987123080cf72-0": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Glider_Adjustable_D2_AFC_2_18mm_magnetic_window_cleaner_3.jpg",
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Shona Lewis, QLD",
+            "title": "Glider D2 AFC - Problem solver for 8th floor apartment",
+            "content": "<p>8th storey apartment! This is surprisingly good. Takes some practise but worth the investment.</p>"
+          }
+        },
+        "template--19202935619858__69061dc1-1957-439d-85e0-647f9240d34a-16874987123080cf72-2": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/floor_wipes_quick_mop_blue3.jpg",
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Nikki S, VIC",
+            "title": "Quick Mop Floor Wipes - Awesome wipes!",
+            "content": "<p>Super handy and quick way to refresh the house after a busy day home with the kids. So good not to have to get the mop out today!</p>"
+          }
+        },
+        "template--19202935619858__69061dc1-1957-439d-85e0-647f9240d34a-16874987123080cf72-1": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/squeegee_floor_brighttools-2-400x400.jpg",
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Juliet Roberts, NSW",
+            "title": "Flexible Joint, Silicone Squeegee 45cm - Great squeegee",
+            "content": "<p>The squeegee works extremely well for my walk-in shower. I am very happy with it.</p>"
+          }
+        },
+        "21d6fa35-96b8-461a-9e7b-a907c06281dc": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/BrightTools_Cleaning_Instruments_4.png",
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "RH, VIC",
+            "title": "Dust Blade Rubber Broom - Easy to Manoeuvre and Clean Well",
+            "content": "<p>The broom exceeds expectation. I am so impressed with its performance that I have ordered another one with a dustpan.</p>"
+          }
+        },
+        "d0d19f57-05a3-472d-bce8-26a1f7143299": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Your_paragraph_70.jpg",
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Natasha Sanderson, QLD",
+            "title": "Quick Mop Floor Wipes - Brilliant",
+            "content": "<p>These are brilliant, easy to use and make the house smell wonderful</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--19202935619858__69061dc1-1957-439d-85e0-647f9240d34a-16874987123080cf72-0",
+        "template--19202935619858__69061dc1-1957-439d-85e0-647f9240d34a-16874987123080cf72-2",
+        "template--19202935619858__69061dc1-1957-439d-85e0-647f9240d34a-16874987123080cf72-1",
+        "21d6fa35-96b8-461a-9e7b-a907c06281dc",
+        "d0d19f57-05a3-472d-bce8-26a1f7143299"
+      ],
+      "settings": {
+        "full_width": true,
+        "stack_testimonials": false,
+        "subheading": "",
+        "title": "Our Happy Customers",
+        "content": "",
+        "link_url": "",
+        "link_text": "",
+        "background": "#f2f2f2",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "testimonial_card_background": "",
+        "testimonial_card_text_color": ""
+      }
+    },
+    "collection-list": {
+      "type": "collection-list",
+      "blocks": {
+        "collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/wood_clean_kit-400x400.jpg",
+            "subheading": "",
+            "title": "",
+            "url": "",
+            "heading_tag": "h2",
+            "text_position": "place-self-center text-center",
+            "text_color": "#ffa34a",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "collection-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/clean_kit_home-500x500.jpg",
+            "subheading": "",
+            "title": "",
+            "url": "",
+            "heading_tag": "h2",
+            "text_position": "place-self-center text-center",
+            "text_color": "#6f7381",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "collection-3": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/windows_clean_kit-500x500.jpg",
+            "subheading": "",
+            "title": "",
+            "url": "",
+            "heading_tag": "h2",
+            "text_position": "place-self-center text-center",
+            "text_color": "#3d9cd1",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "1105d73a-e477-4c2f-a19f-e0c7210f9d15": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/start_clean_kit-1-500x500.jpg",
+            "subheading": "",
+            "title": "",
+            "url": "shopify://collections/bundles",
+            "heading_tag": "h2",
+            "text_position": "place-self-center text-center",
+            "text_color": "#595252",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "collection-1",
+        "collection-2",
+        "collection-3",
+        "1105d73a-e477-4c2f-a19f-e0c7210f9d15"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "stack_collections": false,
+        "collections_per_row_mobile": "1",
+        "collections_per_row": 4,
+        "show_progress_bar": false,
+        "subheading": "",
+        "title": "Bundle and save up to 20%",
+        "content": "<p>Check out our kits and get the essentials for the best price! </p>",
+        "link_url": "shopify://collections/bundles",
+        "link_text": "See All Kits",
+        "background": "#f0f0f0",
+        "background_gradient": "",
+        "text_color": "#000000",
+        "heading_color": "",
+        "heading_gradient": ""
+      }
+    },
+    "press": {
+      "type": "press",
+      "blocks": {
+        "16644243327ba53d2a-0": {
+          "type": "quote",
+          "settings": {
+            "logo": "shopify://shop_images/Testimonials-2.png",
+            "logo_width": 150,
+            "author": "George Astudillo, Australia",
+            "content": "Amazingly strong magnets. I guess I never thought it would work, but it did. No other way to do it, 6 floors up and no balcony. Thankfully the magnets are super strong.",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "16644243327ba53d2a-1": {
+          "type": "quote",
+          "settings": {
+            "logo": "shopify://shop_images/Testimonials-1.png",
+            "logo_width": 100,
+            "author": "L.S., Australia",
+            "content": "Rav Mag rubber broom light and easy to use for my balconing floor and windows",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "fe6bf754-e2ab-4654-ab08-c0d22b610836": {
+          "type": "quote",
+          "settings": {
+            "logo": "shopify://shop_images/brush-review.png",
+            "logo_width": 100,
+            "author": "Lanna, Australia",
+            "content": "I own x2 of the grey ones and they are great. So much better than bristles.",
+            "show_rating": true,
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "16644243327ba53d2a-0",
+        "16644243327ba53d2a-1",
+        "fe6bf754-e2ab-4654-ab08-c0d22b610836"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "content_size": "medium",
+        "background": "#848484",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "logo_item_background": "",
+        "logo_item_border": ""
+      }
+    },
+    "b5385aeb-4a34-4a6d-a487-108e7124135c": {
+      "type": "video",
+      "blocks": {
+        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-play-1": {
+          "type": "play",
+          "settings": {}
+        },
+        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "",
+            "heading_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-play-1",
+        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-heading-1"
+      ],
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "autoplay": true,
+        "video_size": "sm",
+        "video": "shopify://files/videos/window-cleaner-optmized.mp4",
+        "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "impact-text": {
+      "type": "impact-text",
+      "settings": {
+        "full_width": true,
+        "stack_mobile": true,
+        "text_alignment": "center",
+        "impact_text_style": "fill",
+        "text_divider": "none",
+        "impact_text_size_ratio": 1,
+        "background": "rgba(0,0,0,0)",
+        "background_gradient": "",
+        "heading_text_color": "rgba(0,0,0,0)",
+        "heading_gradient": "linear-gradient(180deg, rgba(26, 26, 26, 0.2), rgba(26, 26, 26, 0) 100%)",
+        "text_color": "#000000",
+        "button_background": "",
+        "button_text_color": ""
+      }
+    },
+    "multiple-images-with-text": {
+      "type": "multiple-images-with-text",
+      "blocks": {
+        "1664424486a2b084ab-0": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/About_us.png",
+            "image_rotation_degrees": -3.5,
+            "subheading": "",
+            "title": "About BrightTools",
+            "content": "<p>BrightTools wants to make a world of difference in your life and inside your home. We want you to experience daily cleaning that’s fun, easy and as fresh as your floors. With every touch, with every sweep our cleaning tools are designed to feel different and to target dirt with minimum effort and maximum shine.</p><p></p><p>We guarantee faster cleans, better cleaning tools and supplies for fresher floors and surfaces. Welcome to your shiniest home ever.</p><p>Our cleaning tools work better, it’s that simple. We know you want to spend more time doing what you love and less time cleaning, we do too.</p><p>So we’ve improved the average brooms, mops, floor wipes and toilet brushes to include a range with innovative design elements for an easier, faster, more efficient and stress-free clean.</p><p>Born in Melbourne in 2018, we’re the exclusive suppliers of the Tyroler revolutionary range of high quality natural  rubber, magnetic, 100% silicone and heavy-duty brooms, mops, dustpans, squeegees, window cleaners and more. </p>",
+            "button_url": "",
+            "button_text": ""
+          }
+        },
+        "9bb416a8-b0fc-430d-8cc9-b99a29c3bba9": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/About_us_1.png",
+            "image_rotation_degrees": 0,
+            "subheading": "",
+            "title": "Solutions for Every Cleaning Problem",
+            "content": "<p>With long-lasting benefits like ergonomic swivel heads and flexible handles for easy-reach in every corner of a room, rubber dust-pans that actually stick to the surface so dirt won’t fly and silicone brooms that work on versatile flooring from carpet to timber, you’ll find a solution for every cleaning problem with our smarter tool technology.</p><p>Our once in a lifetime cleaning tools are sustainably made with natural rubbers and 100% silicone for durability, ease and a deeper clean.</p><p>You’ll instantly feel the difference with every sweep, swish and glide of our brooms, mops and toilet cleaning products.</p>",
+            "button_url": "",
+            "button_text": ""
+          }
+        },
+        "66716c0f-e5c2-4a56-8678-d793a6f2c3cf": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/About_us_2.png",
+            "image_rotation_degrees": 0,
+            "subheading": "",
+            "title": "Ethically-Made Premium Cleaning Tools",
+            "content": "<p>No other brand is like us in Australia, we’ve got a handle on durability and sustainability, placing it right in the palm of your hands.</p><p>Our natural rubber bristles have an electrostatic charge that picks up the finest dirt and hair, giving you an ideal clean, and our floor wipes cover more surface and are fragrance fresh for everyday home maintenance that doesn’t feel like a chore. You’ll feel the difference with every product you clean with – and every product is so easy to clean.</p><p>A step up from the rest, our ethically-made premium cleaning tools will last you years, saving you time and promising customer satisfaction so Australian households feel bright at home.</p>",
+            "button_url": "",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "1664424486a2b084ab-0",
+        "9bb416a8-b0fc-430d-8cc9-b99a29c3bba9",
+        "66716c0f-e5c2-4a56-8678-d793a6f2c3cf"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "images_layout": "scattered",
+        "collage_images_alignment": "top",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "button_background": "",
+        "button_text_color": ""
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "166442457738b23caf-0": {
+          "type": "item",
+          "settings": {
+            "title": "Do you ship overseas?",
+            "content": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+          }
+        },
+        "166442457738b23caf-1": {
+          "type": "item",
+          "settings": {
+            "title": "How long will it take to get my orders?",
+            "content": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+          }
+        },
+        "166442457738b23caf-2": {
+          "type": "item",
+          "settings": {
+            "title": "Any question?",
+            "content": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "166442457738b23caf-0",
+        "166442457738b23caf-1",
+        "166442457738b23caf-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "subheading": "",
+        "title": "FAQ",
+        "content": "<p>Use this text to share information about your product or shipping policies.</p>",
+        "team_avatar_width": 160,
+        "support_hours": "Our customer support is available Monday to Friday: 8am-8:30pm.",
+        "answer_time": "Average answer time: 24h",
+        "button_text": "",
+        "button_url": "",
+        "text_position": "start",
+        "background": "#ffffff",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "",
+        "button_text_color": "",
+        "accordion_background": "",
+        "accordion_text_color": ""
+      }
+    },
+    "custom_liquid_tMk6Fx": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "Custom Liquid",
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<p style=\"text-align: center\">Write or copy/paste Liquid code</p>",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    }
+  },
+  "order": [
+    "slideshow",
+    "custom_html_NNajbw",
+    "image-link-blocks",
+    "b6f77e74-e738-4ee2-bc2b-f6e4d94f6d0c",
+    "b63ec45a-06ed-43f1-91e3-471a42b3ff4d",
+    "0764c8ed-9e3c-4daf-b5f4-6f7782754a68",
+    "29eb21bf-ae72-415f-9b8e-771ecae14071",
+    "scrolling-text",
+    "3a9e9c02-143d-438e-b1f9-c8d8e3ee8a85",
+    "a875ec0a-2fc7-4a59-a6a7-67326efad5e0",
+    "2cb2ef96-e59b-492b-937f-0ae9784f403e",
+    "5fb99d86-36b3-4859-9930-54cbc9dc88e9",
+    "image_with_text_overlay_R8hkxz",
+    "69061dc1-1957-439d-85e0-647f9240d34a",
+    "collection-list",
+    "press",
+    "b5385aeb-4a34-4a6d-a487-108e7124135c",
+    "impact-text",
+    "multiple-images-with-text",
+    "faq",
+    "custom_liquid_tMk6Fx"
+  ]
+}

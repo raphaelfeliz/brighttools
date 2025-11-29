@@ -1,0 +1,530 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "c64ef42a-bbfb-4516-9ff4-0a5d868181cd": {
+      "type": "slideshow",
+      "blocks": {
+        "template--19575487660306__c64ef42a-bbfb-4516-9ff4-0a5d868181cd-168777459616fd7373-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/BrightTools_7.png",
+            "mobile_image": "shopify://shop_images/BrightTools_1200_x_1600_px_4.png",
+            "content_max_width": 780,
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-start sm:text-start",
+            "subheading": "Bright on – Dust Off.",
+            "title": "Dustpans",
+            "heading_tag": "h1",
+            "button_text": "",
+            "button_link": "",
+            "text_color": "#1a1a1a",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "background": "#f5f5f5",
+            "background_gradient": "linear-gradient(270deg, rgba(242, 242, 242, 1), rgba(68, 68, 68, 1) 100%)"
+          }
+        }
+      },
+      "block_order": [
+        "template--19575487660306__c64ef42a-bbfb-4516-9ff4-0a5d868181cd-168777459616fd7373-0"
+      ],
+      "settings": {
+        "full_width": false,
+        "allow_transparent_header": true,
+        "show_initial_transition": false,
+        "image_size": "sm",
+        "controls_type": "dots",
+        "transition_type": "fade_with_text",
+        "autoplay": false,
+        "cycle_speed": 6,
+        "background": "#f2f2f2",
+        "background_gradient": ""
+      }
+    },
+    "banner": {
+      "type": "collection-banner",
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "full_width": false,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "show_collection_title": true,
+        "show_collection_description": true,
+        "show_collection_image": true,
+        "collection_title_size": "h1",
+        "image_size": "lg",
+        "image": "shopify://shop_images/BrightTools_2.png",
+        "mobile_text_position": "place-self-end-start text-start",
+        "desktop_text_position": "sm:place-self-center-start sm:text-start",
+        "featured_product": "floor-silicone-squeegee-30cm-knuckle-joint",
+        "featured_product_heading": "Featured product",
+        "text_color": "#000000",
+        "overlay_color": "#1a1a1a",
+        "overlay_opacity": 0
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "blocks": {
+        "66cfa78e-6528-423d-a772-72058586d69c": {
+          "type": "promotion_image",
+          "disabled": true,
+          "settings": {
+            "position": 4,
+            "column_span": "1",
+            "image": "shopify://shop_images/Untitled_design_2_1.png",
+            "title": "Promote a product or a temporary offer",
+            "content": "",
+            "link_url": "shopify://collections/dustpans",
+            "link_text": "View all",
+            "heading_tag": "h4",
+            "text_position": "place-self-end-start text-start",
+            "text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "66cfa78e-6528-423d-a772-72058586d69c"
+      ],
+      "settings": {
+        "products_per_page": 50,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "filter_layout": "horizontal",
+        "show_sort_by": true,
+        "show_filters": false,
+        "show_filter_group_name": true,
+        "show_filter_values_count": true,
+        "open_first_filter_group": true
+      }
+    },
+    "6d9821d0-9b6c-4de4-854a-1bdb36a222bd": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "template--19202935587090__6d9821d0-9b6c-4de4-854a-1bdb36a222bd-1686730398910c9c90-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Squeegees",
+            "heading_tag": "h1"
+          }
+        },
+        "template--19202935587090__6d9821d0-9b6c-4de4-854a-1bdb36a222bd-1686730398910c9c90-2": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Perfection with each sweep</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--19202935587090__6d9821d0-9b6c-4de4-854a-1bdb36a222bd-1686730398910c9c90-1",
+        "template--19202935587090__6d9821d0-9b6c-4de4-854a-1bdb36a222bd-1686730398910c9c90-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "image_size": "md",
+        "image": "shopify://shop_images/BrightTools_2.png",
+        "mobile_image": "shopify://shop_images/Untitled_1300_x_1500_px_1.png",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 10
+      }
+    },
+    "4eb75113-401d-44ee-b1f8-0e8a9d432f24": {
+      "type": "rich-text",
+      "blocks": {
+        "template--19575487660306__4eb75113-401d-44ee-b1f8-0e8a9d432f24-16877746580fb4404c-0": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        },
+        "template--19575487660306__4eb75113-401d-44ee-b1f8-0e8a9d432f24-16877746580fb4404c-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Dustpans",
+            "heading_tag": "h2",
+            "text_color": "",
+            "gradient": ""
+          }
+        },
+        "template--19575487660306__4eb75113-401d-44ee-b1f8-0e8a9d432f24-16877746580fb4404c-2": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Long handle broom and dustpan is made from a single piece of 100% natural rubber allowing it to hug tightly to the floor leaving no gaps for dirt to escape. The Long Handle Dustpan & Brush offers unmatched durability that easily surpasses that of any plastic large dustpan and broom. Uniquely designed slanted bristles make the brush and dustpan long handle a breeze to clean up any mess without hassles.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--19575487660306__4eb75113-401d-44ee-b1f8-0e8a9d432f24-16877746580fb4404c-0",
+        "template--19575487660306__4eb75113-401d-44ee-b1f8-0e8a9d432f24-16877746580fb4404c-1",
+        "template--19575487660306__4eb75113-401d-44ee-b1f8-0e8a9d432f24-16877746580fb4404c-2"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_width": "medium",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "397d7191-df1d-4a09-a3f1-c28dc3293eba": {
+      "type": "video",
+      "blocks": {
+        "template--19575487660306__397d7191-df1d-4a09-a3f1-c28dc3293eba-16877765676bfd419b-0": {
+          "type": "play",
+          "settings": {}
+        },
+        "template--19575487660306__397d7191-df1d-4a09-a3f1-c28dc3293eba-16877765676bfd419b-1": {
+          "type": "heading",
+          "settings": {
+            "text": "",
+            "heading_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "template--19575487660306__397d7191-df1d-4a09-a3f1-c28dc3293eba-16877765676bfd419b-0",
+        "template--19575487660306__397d7191-df1d-4a09-a3f1-c28dc3293eba-16877765676bfd419b-1"
+      ],
+      "settings": {
+        "full_width": false,
+        "allow_transparent_header": false,
+        "autoplay": true,
+        "video_size": "md",
+        "video": "shopify://files/videos/Premium Dustpan and Broom Set - The Best Cleaning Tools.mp4",
+        "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "6cbcae3f-acd0-440c-811a-ca44827bfc12": {
+      "type": "rich-text",
+      "blocks": {
+        "template--19575487660306__6cbcae3f-acd0-440c-811a-ca44827bfc12-16877746580fb4404c-0": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "text": "Subheading"
+          }
+        },
+        "template--19575487660306__6cbcae3f-acd0-440c-811a-ca44827bfc12-16877746580fb4404c-1": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "text": "Heading",
+            "heading_tag": "h1",
+            "text_color": "",
+            "gradient": ""
+          }
+        },
+        "template--19575487660306__6cbcae3f-acd0-440c-811a-ca44827bfc12-16877746580fb4404c-2": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>With Tyroler BrightTools, you can be sure that you are getting a high-quality product that will effectively clean your home and last a long time. Our brooms are perfect for homes with pets, as they effectively remove pet hair. They also have a unique technology that allows them to clean effectively on all surfaces, from carpets to hardwood floors. Upgrade your cleaning game and make your home spotless with Tyroler BrightTools brooms.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--19575487660306__6cbcae3f-acd0-440c-811a-ca44827bfc12-16877746580fb4404c-0",
+        "template--19575487660306__6cbcae3f-acd0-440c-811a-ca44827bfc12-16877746580fb4404c-1",
+        "template--19575487660306__6cbcae3f-acd0-440c-811a-ca44827bfc12-16877746580fb4404c-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "b5eb9b24-78f0-401a-8f72-fc58eabe19d7": {
+      "type": "media-with-text",
+      "blocks": {
+        "template--19575487660306__b5eb9b24-78f0-401a-8f72-fc58eabe19d7-1687775920dc2f797d-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/floor-Squeegees--400x400.jpg",
+            "media_width": 50,
+            "media_position": "start",
+            "text_position": "place-self-center text-center",
+            "icon": "none",
+            "custom_icon": "shopify://shop_images/BrightTools_icons_6.png",
+            "icon_width": 76,
+            "subheading": "",
+            "title": "Lifetime Durability",
+            "content": "<p>Made from natural rubber and <strong>100% silicone,</strong> our squeegees have a unique design that offers lifetime durability.</p><p>No need to buy and replace your cleaning tools every few months. All of our floor squeegees, window squeegees and squeegee heads are built for heavy use to give you a <strong>commercial-grade clean</strong> inside your home without ever losing their shape.</p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "#444444",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        },
+        "17a7c390-9436-4569-a372-e0c5a6829043": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Squeegee-silicon-600x600.jpg",
+            "media_width": 50,
+            "media_position": "end",
+            "text_position": "place-self-center text-center",
+            "icon": "none",
+            "custom_icon": "shopify://shop_images/BrightTools_icons_6.png",
+            "icon_width": 76,
+            "subheading": "",
+            "title": "Ultra Fast Drying",
+            "content": "<p>Our fast drying action means that you can get your windows, kitchen, bathroom, and floors cleaner, faster.</p><p>Our squeegees feature <strong>high quality ergonomic blades</strong> that capture more water with a single glide and leave surfaces completely dry.</p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "#444444",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        },
+        "a56afb7d-eb39-451f-bc40-e1b3922d7852": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Squeegees-600x600.jpg",
+            "media_width": 50,
+            "media_position": "start",
+            "text_position": "place-self-center text-center",
+            "icon": "none",
+            "custom_icon": "shopify://shop_images/BrightTools_icons_6.png",
+            "icon_width": 76,
+            "subheading": "",
+            "title": "Streak-Free Clean",
+            "content": "<p>With flexible joint action and an extra wide blade, our squeegees slide easy without leaving streaks behind.</p><p>We’ve got the moves, so no going over floor spots and windows again and again, you’ll get a fast and efficient, <strong>streak-free clean</strong> every time.</p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "#444444",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        },
+        "17cfe458-367c-4de6-a287-97d19b3b2f75": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/silicone-Squeegees-400x400.jpg",
+            "media_width": 55,
+            "media_position": "end",
+            "text_position": "place-self-center text-center",
+            "icon": "none",
+            "custom_icon": "shopify://shop_images/BrightTools_icons_6.png",
+            "icon_width": 76,
+            "subheading": "",
+            "title": "Superior Comfort",
+            "content": "<p>Built for comfortable use and ease, all of our online squeegees require little effort and no extreme force.</p><p>With an adjustable joint to get into hard to reach places and an extendable handle that makes light work with a soft pressure touch, so you can clean in complete comfort.</p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "#444444",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--19575487660306__b5eb9b24-78f0-401a-8f72-fc58eabe19d7-1687775920dc2f797d-0",
+        "17a7c390-9436-4569-a372-e0c5a6829043",
+        "a56afb7d-eb39-451f-bc40-e1b3922d7852",
+        "17cfe458-367c-4de6-a287-97d19b3b2f75"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "spacing": "small"
+      }
+    },
+    "b9b043b0-6f7d-46c8-af7e-abe869a1461a": {
+      "type": "rich-text",
+      "blocks": {
+        "template--19575487660306__b9b043b0-6f7d-46c8-af7e-abe869a1461a-16877746580fb4404c-0": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "text": "Subheading"
+          }
+        },
+        "template--19575487660306__b9b043b0-6f7d-46c8-af7e-abe869a1461a-16877746580fb4404c-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Floor Squeegee Tips",
+            "heading_tag": "h3",
+            "text_color": "",
+            "gradient": ""
+          }
+        },
+        "template--19575487660306__b9b043b0-6f7d-46c8-af7e-abe869a1461a-16877746580fb4404c-2": {
+          "type": "richtext",
+          "settings": {
+            "content": "<ul><li>Choose a squeegee made from strong materials like <strong>Rubber or Silicone</strong> for high quality and performance.</li><li>Use warm water and vinegar to spray on surfaces and follow with a flexible <strong>floor squeegee</strong>.</li><li>For <strong>streak-free</strong> windows and no repetition, use single cast squeegees that give you a total clean with your first glide.</li><li>Find better control with gripped handles and <strong>adjustable joint</strong> squeegees, only light pressure needed to achieve optimum results.</li><li><strong>Store easily</strong> with a hanging handle hole and clean your squeegee simply under warm water.</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "template--19575487660306__b9b043b0-6f7d-46c8-af7e-abe869a1461a-16877746580fb4404c-0",
+        "template--19575487660306__b9b043b0-6f7d-46c8-af7e-abe869a1461a-16877746580fb4404c-1",
+        "template--19575487660306__b9b043b0-6f7d-46c8-af7e-abe869a1461a-16877746580fb4404c-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "93b3dd98-8014-44ba-af23-a7338412744e": {
+      "type": "impact-text",
+      "blocks": {
+        "template--19575487660306__93b3dd98-8014-44ba-af23-a7338412744e-168777733896fb06a0-0": {
+          "type": "item",
+          "settings": {
+            "title": "",
+            "subheading": "A better, faster way to be home and dry, a squeegee clean like no other.",
+            "content": "<p>BrightTools squeegees are designed with individual surfaces in mind, you’ll feel the difference with each motion and in every room.</p>",
+            "button_text": "",
+            "button_url": "",
+            "animate_impact_text": true,
+            "animate_impact_text_duration": 2
+          }
+        }
+      },
+      "block_order": [
+        "template--19575487660306__93b3dd98-8014-44ba-af23-a7338412744e-168777733896fb06a0-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "stack_mobile": true,
+        "text_alignment": "center",
+        "impact_text_style": "fill",
+        "text_divider": "none",
+        "impact_text_size_ratio": 1,
+        "background": "",
+        "background_gradient": "",
+        "heading_text_color": "",
+        "heading_gradient": "",
+        "text_color": "",
+        "button_background": "",
+        "button_text_color": ""
+      }
+    },
+    "d9e91537-6225-4b57-bd84-e5d10e8558b3": {
+      "type": "faq",
+      "blocks": {
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-0": {
+          "type": "item",
+          "settings": {
+            "title": " How do you clean the dustpan?",
+            "content": "<p>A rubber dustpan can be washed with water and soap or with bleach. To clean a plastic dustpan, use only water and soap.</p>"
+          }
+        },
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-1": {
+          "type": "item",
+          "settings": {
+            "title": "How do you pick up dirt without a dustpan?",
+            "content": "<p>It is almost impossible to collect dirt without a dustpan, unless you use a vacuum. Simply sweep the dust and dirt unto the dustpan with a brush or broom.</p>"
+          }
+        },
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-2": {
+          "type": "item",
+          "settings": {
+            "title": " Should you dust or vacuum first?",
+            "content": "<p>When cleaning your home, you should always dust before vacuuming. This way you can vacuum up the particles that are eft floating in the air.</p>"
+          }
+        },
+        "dc709b98-8f74-4f10-9911-a3d0da4bdcf4": {
+          "type": "item",
+          "settings": {
+            "title": " What is the use of a dustpan?",
+            "content": "<p>A dustpan is used for scooping the dirt and wastes from the floor after you finish sweeping it.</p>"
+          }
+        },
+        "2c9dcd01-fed9-4467-ace6-293b63ab1d31": {
+          "type": "item",
+          "settings": {
+            "title": "How long before you have to change a dustpan",
+            "content": "<p>Usually, dustpans don’t servive for a very long time. They get broken or a in bad shape after 2-4 months. Tyroler dustpans are made from 100% natural rubber, so they can’t barke or get a bad shape for years at least.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-0",
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-1",
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-2",
+        "dc709b98-8f74-4f10-9911-a3d0da4bdcf4",
+        "2c9dcd01-fed9-4467-ace6-293b63ab1d31"
+      ],
+      "settings": {
+        "full_width": false,
+        "subheading": "FAQs",
+        "title": "Have a question?",
+        "content": "",
+        "team_avatar": "shopify://shop_images/team-fff.webp",
+        "team_avatar_width": 160,
+        "support_hours": "Our customer support is available monday to friday: 8am-8:30pm.",
+        "answer_time": "Average answer time: 24h",
+        "button_text": "Contact us",
+        "button_url": "shopify://pages/contact",
+        "text_position": "start",
+        "background": "#ffffff",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "#1a1a1a",
+        "button_text_color": "",
+        "accordion_background": "",
+        "accordion_text_color": ""
+      }
+    }
+  },
+  "order": [
+    "c64ef42a-bbfb-4516-9ff4-0a5d868181cd",
+    "banner",
+    "main",
+    "6d9821d0-9b6c-4de4-854a-1bdb36a222bd",
+    "4eb75113-401d-44ee-b1f8-0e8a9d432f24",
+    "397d7191-df1d-4a09-a3f1-c28dc3293eba",
+    "6cbcae3f-acd0-440c-811a-ca44827bfc12",
+    "b5eb9b24-78f0-401a-8f72-fc58eabe19d7",
+    "b9b043b0-6f7d-46c8-af7e-abe869a1461a",
+    "93b3dd98-8014-44ba-af23-a7338412744e",
+    "d9e91537-6225-4b57-bd84-e5d10e8558b3"
+  ]
+}

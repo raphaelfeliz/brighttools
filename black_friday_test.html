@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Monday Test - Full Experience</title>
+
+    <!-- Dependencies -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&amp;display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* Mock header */
+        header {
+            padding: 20px;
+            text-align: center;
+            background: white;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ========================================== -->
+    <!-- 1. ANNOUNCEMENT BAR TARGET                 -->
+    <!-- ========================================== -->
+    <div id="shopify-section-sections--24966839730450__announcement-bar"
+        style="background: #000; color: white; text-align: center; padding: 10px;">
+        Original Announcement Bar (Will be replaced)
+    </div>
+
+    <header>
+        <h1>Bright Tools - Local Test</h1>
+        <p>Cyber Monday Announcement Bar (Top) + Hero Section (Below)</p>
+    </header>
+
+    <main>
+        <!-- ========================================== -->
+        <!-- 2. HERO SECTION (bf-section-container)     -->
+        <!-- ========================================== -->
+
+        <style>
+            /* --- SCOPED CSS VARIABLES & CONTAINER --- */
+            #bf-section-container {
+                /* Ensure font applies specifically to this section */
+                font-family: 'Inter', sans-serif;
+
+                --bf-red: #00F0FF;
+                /* CYBER BLUE */
+                --bf-bg: #050505;
+                --bf-card: #111;
+                --bf-yellow-glow: #9D00FF;
+                /* CYBER PURPLE */
+                --bf-green-glow: #39FF14;
+                /* CYBER GREEN */
+
+                /* Background definition including the subtle gradient texture */
+                background-color: var(--bf-bg);
+
+                /* 1. The SVG Noise Texture (Top Layer) - static tile */
+                /* 2. The Radial Gradients (Bottom Layers) - moving spotlights */
+                background-image:
+                    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E"),
+                    /* CRITICAL CHANGE: Increased lightness/size of gradient spotlights for visibility */
+                    radial-gradient(circle at 20% 30%, rgba(0, 240, 255, 0.15) 0%, rgba(20, 20, 20, 0.8) 40%, rgba(5, 5, 5, 1) 100%),
+                    radial-gradient(circle at 80% 70%, rgba(157, 0, 255, 0.15) 0%, rgba(20, 20, 20, 0.8) 40%, rgba(5, 5, 5, 1) 100%);
+
+                /* Blend mode to mix the noise with the dark background */
+                background-blend-mode: overlay, normal, normal;
+
+                /* CRITICAL CHANGE: Increase size of gradient layers significantly (200%) */
+                /* Layer 1 (Noise): Small tile size */
+                /* Layer 2 & 3 (Gradients): 200% of container size */
+                background-size: 200px 200px, 200% 200%, 200% 200%;
+
+                /* Added vertical padding */
+                padding: 40px 0;
+                margin: 0;
+                width: 100%;
+                overflow: hidden;
+                box-sizing: border-box;
+
+                /* CRITICAL CHANGE: Decrease duration for faster movement (10s) */
+                animation: gradient-move 10s ease-in-out infinite alternate;
+            }
+
+            /* --- ANIMATIONS --- */
+            @keyframes bf-glow {
+                0% {
+                    box-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+                    border-color: rgba(0, 240, 255, 0.6);
+                }
+
+                50% {
+                    box-shadow: 0 0 25px rgba(157, 0, 255, 0.7);
+                    border-color: rgba(157, 0, 255, 1);
+                }
+
+                100% {
+                    box-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+                    border-color: rgba(0, 240, 255, 0.6);
+                }
+            }
+
+            @keyframes bf-red-glow {
+
+                0%,
+                100% {
+                    box-shadow: 0 0 5px var(--bf-red);
+                }
+
+                50% {
+                    box-shadow: 0 0 10px var(--bf-red);
+                }
+            }
+
+            @keyframes bf-yellow-glow {
+
+                0%,
+                100% {
+                    box-shadow: 0 0 5px var(--bf-yellow-glow);
+                }
+
+                50% {
+                    box-shadow: 0 0 10px var(--bf-yellow-glow);
+                }
+            }
+
+            @keyframes bf-green-glow {
+
+                0%,
+                100% {
+                    box-shadow: 0 0 5px var(--bf-green-glow);
+                }
+
+                50% {
+                    box-shadow: 0 0 10px var(--bf-green-glow);
+                }
+            }
+
+            /* Sequence animation controls which phrase is visible */
+            @keyframes bf-seq-1 {
+
+                0%,
+                33% {
+                    opacity: 1;
+                    z-index: 1;
+                }
+
+                33.1%,
+                100% {
+                    opacity: 0;
+                    z-index: 0;
+                }
+            }
+
+            @keyframes bf-seq-2 {
+
+                0%,
+                33% {
+                    opacity: 0;
+                    z-index: 0;
+                }
+
+                33.1%,
+                66% {
+                    opacity: 1;
+                    z-index: 1;
+                }
+
+                66.1%,
+                100% {
+                    opacity: 0;
+                    z-index: 0;
+                }
+            }
+
+            @keyframes bf-seq-3 {
+
+                0%,
+                66% {
+                    opacity: 0;
+                    z-index: 0;
+                }
+
+                66.1%,
+                100% {
+                    opacity: 1;
+                    z-index: 1;
+                }
+            }
+
+            /* Typing effect animates the width */
+            @keyframes bf-type {
+                0% {
+                    width: 0;
+                }
+
+                20% {
+                    width: 100%;
+                }
+
+                80% {
+                    width: 100%;
+                }
+
+                95% {
+                    width: 0;
+                }
+
+                100% {
+                    width: 0;
+                }
+            }
+
+            /* New animation for STRONGER background gradient movement */
+            @keyframes gradient-move {
+
+                /* Move only layers 2 and 3 (the gradients), keep layer 1 (noise) static at 0 0 */
+                0% {
+                    background-position: 0 0, 0% 0%, 100% 100%;
+                }
+
+                100% {
+                    background-position: 0 0, 100% 100%, 0% 0%;
+                }
+            }
+
+            /* --- LAYOUT --- */
+
+            .bf-hero-wrapper {
+                max-width: 1600px;
+                margin: 0 auto;
+                padding: 0 2rem;
+
+                /* Flex layout */
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                /* REDUCED GAP: Tightens the relationship between all items */
+                gap: 12px;
+                width: 100%;
+                min-height: 600px;
+                justify-content: center;
+                box-sizing: border-box;
+            }
+
+            /* --- TYPOGRAPHY --- */
+            .bf-neon-title {
+                font-size: 64px;
+                line-height: 0.9;
+                font-weight: 900;
+                color: white;
+                text-transform: uppercase;
+                margin: 0;
+                letter-spacing: -2px;
+                text-align: center;
+                text-shadow: 0 0 20px var(--bf-red);
+            }
+
+            .bf-typing-container {
+                position: relative;
+                height: 0.8em;
+                min-width: 650px;
+                /* Moved closer to title (0 margin) */
+                margin-top: 0px;
+                /* Added margin bottom to separate header group from product group */
+                margin-bottom: 40px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .bf-highlight-row {
+                font-size: 32px;
+                color: var(--bf-red);
+                font-weight: 900;
+                letter-spacing: 0px;
+                text-shadow: 0 0 20px rgba(0, 240, 255, 0.6);
+                position: absolute;
+                /* ADDED: For desktop animation, prevent wrapping */
+                white-space: nowrap;
+                overflow: hidden;
+                border-right: none;
+                opacity: 0;
+                width: 0;
+            }
+
+            /* Applying the combined animations */
+            .bf-phrase-1 {
+                animation: bf-seq-1 9s infinite, bf-type 3s steps(30, end) infinite;
+            }
+
+            .bf-phrase-2 {
+                animation: bf-seq-2 9s infinite, bf-type 3s steps(20, end) infinite;
+                animation-delay: 0s, 3s;
+            }
+
+            .bf-phrase-3 {
+                animation: bf-seq-3 9s infinite, bf-type 3s steps(20, end) infinite;
+                animation-delay: 0s, 6s;
+            }
+
+            .bf-section-label {
+                color: #fff;
+                font-size: 1.2rem;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                /* Removed negative margin so it respects the small 12px flex gap */
+                margin-bottom: 0;
+                opacity: 0.8;
+            }
+
+            /* --- CARDS --- */
+            .bf-products {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+                width: 100%;
+                /* Removed top margin to bring cards closer to label */
+                margin-top: 0;
+            }
+
+            .bf-card {
+                background: var(--bf-card);
+                border: 1px solid #333;
+                border-radius: 12px;
+                padding: 0;
+                width: 100%;
+                max-width: 260px;
+                display: flex;
+                flex-direction: column;
+                text-decoration: none;
+                transition: transform 0.2s, border-color 0.2s;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .bf-card:hover {
+                border-color: var(--bf-red);
+                transform: translateY(-5px);
+                box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+            }
+
+            /* Badges */
+            .bf-stock-badge {
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+                top: auto;
+                left: auto;
+                background: #000000;
+                color: white;
+                font-size: 0.75rem;
+                font-weight: 800;
+                padding: 4px 8px;
+                border-radius: 4px;
+                z-index: 10;
+                box-shadow: 0 0 5px var(--bf-yellow-glow);
+                animation: bf-yellow-glow 3s infinite ease-in-out;
+                white-space: nowrap;
+                max-width: 90%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .bf-stock-badge.critical {
+                box-shadow: 0 0 5px var(--bf-red);
+                animation: bf-red-glow 3s infinite ease-in-out;
+            }
+
+            .bf-stock-badge.green-glow {
+                box-shadow: 0 0 5px var(--bf-green-glow);
+                animation: bf-green-glow 3s infinite ease-in-out;
+            }
+
+            /* Images */
+            .bf-card-img-container {
+                background: #fff;
+                width: 100%;
+                /* Fixed aspect ratio for consistent card size */
+                aspect-ratio: 1 / 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .bf-card-img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                padding: 0;
+                box-sizing: border-box;
+                transition: transform 0.3s;
+            }
+
+            .bf-card:hover .bf-card-img {
+                transform: scale(1.05);
+            }
+
+            /* Info & Button */
+            .bf-card-info {
+                padding: 15px;
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                flex-grow: 1;
+            }
+
+            .bf-card-title {
+                color: white;
+                font-size: 1rem;
+                font-weight: 600;
+                line-height: 1.3;
+                margin: 0;
+            }
+
+            .bf-price-row {
+                margin-top: auto;
+                display: flex;
+                gap: 10px;
+                align-items: baseline;
+            }
+
+            .bf-old-price {
+                color: #ffffff;
+                font-size: 0.9rem;
+                text-decoration: line-through;
+                text-decoration-color: var(--bf-red);
+                text-decoration-thickness: 2px;
+                opacity: 1.0;
+            }
+
+            .bf-new-price {
+                color: var(--bf-red);
+                font-size: 1.2rem;
+                font-weight: 900;
+            }
+
+            .bf-card-btn {
+                margin-top: 10px;
+                background: transparent;
+                border: 1px solid #444;
+                color: white;
+                font-size: 0.85rem;
+                text-align: center;
+                padding: 8px 0;
+                border-radius: 6px;
+                font-weight: 600;
+                transition: all 0.2s;
+                text-transform: uppercase;
+                display: block;
+            }
+
+            .bf-card:hover .bf-card-btn {
+                background: var(--bf-red);
+                border-color: var(--bf-red);
+                color: black;
+                animation: bf-glow 2s infinite ease-in-out;
+            }
+
+            /* Hero Button */
+            .bf-neon-btn {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                background-color: rgba(0, 0, 0, 0.5);
+                color: #ffffff;
+                border: 2px solid var(--bf-red);
+                padding: 18px 48px;
+                font-size: 16px;
+                font-weight: 800;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                /* Increased margin top to separate button from products */
+                margin-top: 30px;
+                backdrop-filter: blur(4px);
+                z-index: 2;
+                border-radius: 9999px;
+                box-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+                animation: bf-glow 2s infinite ease-in-out;
+            }
+
+            .bf-neon-btn:hover {
+                background-color: var(--bf-red);
+                color: black;
+                box-shadow: 0 0 50px rgba(0, 240, 255, 0.9);
+                border-color: var(--bf-red);
+                transform: translateY(-2px);
+                animation: none;
+            }
+
+            /* Mobile Responsiveness */
+            @media(max-width: 768px) {
+                .bf-hero-wrapper {
+                    padding: 40px 20px;
+                    min-height: auto;
+                    gap: 30px;
+                }
+
+                .bf-neon-title {
+                    font-size: 42px;
+                }
+
+                .bf-neon-btn {
+                    width: 100%;
+                    padding: 15px 20px;
+                }
+
+                /* Disable typing animation and display the first phrase statically on mobile */
+                .bf-highlight-row {
+                    /* FIXED: Allow text to wrap on mobile devices */
+                    white-space: normal;
+
+                    font-size: 24px;
+                    position: static;
+                    /* Change to static positioning */
+                    display: block;
+                    margin: 0 auto;
+                    width: auto !important;
+                    opacity: 1 !important;
+                    animation: none !important;
+                    /* Disable all animations */
+                    text-align: center;
+                    border-right: none;
+                }
+
+                .bf-typing-container {
+                    min-width: auto;
+                    height: auto;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                    align-items: center;
+                    /* Ensures the container doesn't reserve space for invisible elements */
+                    min-height: 24px;
+                    margin-bottom: 20px;
+                    /* Reduced spacing on mobile */
+                }
+
+                /* Hide subsequent phrases on mobile */
+                .bf-phrase-2,
+                .bf-phrase-3 {
+                    display: none;
+                }
+
+                .bf-products {
+                    justify-content: center;
+                }
+
+                /* Adjusted mobile padding since container box is gone */
+                .bf-hero-wrapper {
+                    padding: 40px 1rem;
+                }
+            }
+        </style>
+
+        <!-- Main Section Container with Gradient Texture -->
+        <div id="bf-section-container">
+
+            <!-- Cleaned up structure: Wrapper is now direct child of Section Container -->
+            <div class="bf-hero-wrapper">
+                <h2 class="bf-neon-title">Cyber Monday</h2>
+
+                <!-- Typing Text Container (Animated on Desktop) -->
+                <div class="bf-typing-container">
+                    <span class="bf-highlight-row bf-phrase-1">Cyber Exclusive Deals</span>
+                    <span class="bf-highlight-row bf-phrase-2">Extra 10% OFF Everything</span>
+                    <span class="bf-highlight-row bf-phrase-3">Use Code: CM25</span>
+                </div>
+
+                <div class="bf-section-label">Cyber Deals:</div>
+
+                <div class="bf-products bf-hero-products">
+
+                    <!-- Card 1: Caravan Cleaning Bundle (Updated Link) --><a
+                        href="https://brighttools.com.au/products/caravan-cleaning-bundle?_pos=1&amp;_psq=caravan&amp;_ss=e&amp;_v=1.0"
+                        class="bf-card">
+                        <div class="bf-card-img-container">
+                            <div class="bf-stock-badge critical">⚡ CYBER BESTSELLER</div>
+                            <!-- Added onerror fallback for images --><img
+                                src="https://brighttools.com.au/cdn/shop/files/caravan_cleaning_bundle__Silicone.png"
+                                class="bf-card-img" alt="Caravan Cleaning Bundle"
+                                onerror="this.onerror=null; this.src='https://placehold.co/260x260/000000/FFFFFF?text=Product+1'">
+                        </div>
+                        <div class="bf-card-info">
+                            <div class="bf-card-title">Caravan Cleaning Bundle</div>
+                            <div class="bf-price-row">
+                                <span class="bf-old-price">A$234.95 </span>
+                                <span class="bf-new-price">A$152.95 </span>
+                            </div>
+                            <div class="bf-card-btn">Shop Cyber Deal</div>
+                        </div>
+                    </a>
+
+                    <!-- Card 2: Bright Squeegee Pack (Updated Title, Link, Image, Prices) --><a
+                        href="https://brighttools.com.au/products/bright-squeegee-pack-squeegee-quick-mop-floor-wipes"
+                        class="bf-card">
+                        <div class="bf-card-img-container">
+                            <div class="bf-stock-badge">🔥 SELLING FAST</div>
+                            <img src="https://brighttools.com.au/cdn/shop/files/squeegee_floor_wipes_quick_mop_pack.png"
+                                class="bf-card-img" alt="Bright Squeegee Pack"
+                                onerror="this.onerror=null; this.src='https://placehold.co/260x260/000000/FFFFFF?text=Product+2'">
+                        </div>
+                        <div class="bf-card-info">
+                            <div class="bf-card-title">Bright Squeegee Pack</div>
+                            <div class="bf-price-row">
+                                <span class="bf-old-price">A$71.90 </span>
+                                <span class="bf-new-price">A$53.95 </span>
+                            </div>
+                            <div class="bf-card-btn">Shop Cyber Deal</div>
+                        </div>
+                    </a>
+
+                    <!-- Card 3: Home Cleaning Bundle (Updated Title, Link, Image, Prices) --><a
+                        href="https://brighttools.com.au/products/home-cleaning-bundle?srsltid=AfmBOopEQ9UweBxxLLmQhwlzUU_5hAPglv9yznTZJ3D4dt7FhDpvSGAa"
+                        class="bf-card">
+                        <div class="bf-card-img-container">
+                            <div class="bf-stock-badge green-glow">⭐ CYBER PICK</div>
+                            <!-- UPDATED IMAGE SRC --><img
+                                src="https://brighttools.com.au/cdn/shop/files/Home_Floor_Cleaning_Bundle_Quick_Mop_Main.jpg?v=1757482350&amp;width=800"
+                                class="bf-card-img" alt="Home Cleaning Bundle"
+                                onerror="this.onerror=null; this.src='https://placehold.co/260x260/000000/FFFFFF?text=Product+3'">
+                        </div>
+                        <div class="bf-card-info">
+                            <div class="bf-card-title">Home Cleaning Bundle</div>
+                            <div class="bf-price-row">
+                                <span class="bf-old-price">A$244.00 </span>
+                                <span class="bf-new-price">A$161.95 </span>
+                            </div>
+                            <div class="bf-card-btn">Shop Cyber Deal</div>
+                        </div>
+                    </a>
+
+                </div>
+
+                <!-- Neon CTA Button (Link Updated) --><a href="https://brighttools.com.au/collections/shop-all"
+                    class="bf-neon-btn">Shop All Cyber Deals</a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ========================================== -->
+    <!-- 3. SCRIPT (Announcement Bar Logic)         -->
+    <!-- ========================================== -->
+    <script>
+        // 🚀 @raphael.feliz - START CYBER MONDAY INJECTION SCRIPT (Announcement Bar Only v4.0 - Cyber Edition) 🚀
+        (function () {
+            // ==========================================
+            // ⚙️ CONFIGURATION
+            // ==========================================
+            const CM_VERSION = "v4.0 (Cyber Edition)";
+            const CM_STATUS = "live";
+
+            const CONFIG = {
+                CYBER_BLUE: "#00F0FF",
+                CYBER_PURPLE: "#9D00FF",
+                CYBER_GREEN: "#39FF14",
+                BG_DARK: "#050505",
+                IDS: {
+                    ANNOUNCEMENT_BAR: "shopify-section-sections--24966839730450__announcement-bar"
+                }
+            };
+
+            // ==========================================
+            // 🕵️ STATUS CHECK
+            // ==========================================
+            console.log(`%c CM Script ${CM_VERSION}: Status [${CM_STATUS.toUpperCase()}]`, `background: ${CONFIG.CYBER_PURPLE}; color: #fff; font-weight: bold; padding: 4px 8px; font-size: 12px;`);
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const isTestUrl = urlParams.has('test') && urlParams.get('test') === 'cm';
+            const shouldRun = (CM_STATUS === 'live') || (CM_STATUS === 'test' && isTestUrl);
+
+            if (!shouldRun) {
+                console.log(`CM Script ${CM_VERSION}: Inactive.`);
+                return;
+            }
+
+            console.log(`CM Script ${CM_VERSION}: Active! Starting injection...`);
+
+            // ==========================================
+            // 🎨 STYLES
+            // ==========================================
+            const injectStyles = () => {
+                const styles = `
+            <style>
+                /* ANIMATIONS */
+                @keyframes cm-gradient { 0% {background-position: 100% 0;} 100% {background-position: -100% 0;} }
+                @keyframes cm-pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+                @keyframes cm-glow { 
+                    0% { box-shadow: 0 0 5px ${CONFIG.CYBER_BLUE}, 0 0 10px ${CONFIG.CYBER_PURPLE}; border-color: ${CONFIG.CYBER_BLUE}; } 
+                    50% { box-shadow: 0 0 20px ${CONFIG.CYBER_BLUE}, 0 0 30px ${CONFIG.CYBER_PURPLE}; border-color: ${CONFIG.CYBER_PURPLE}; } 
+                    100% { box-shadow: 0 0 5px ${CONFIG.CYBER_BLUE}, 0 0 10px ${CONFIG.CYBER_PURPLE}; border-color: ${CONFIG.CYBER_BLUE}; } 
+                }
+                @keyframes cm-text-glitch {
+                    0% { text-shadow: 2px 0 ${CONFIG.CYBER_BLUE}, -2px 0 ${CONFIG.CYBER_PURPLE}; }
+                    25% { text-shadow: -2px 0 ${CONFIG.CYBER_BLUE}, 2px 0 ${CONFIG.CYBER_PURPLE}; }
+                    50% { text-shadow: 2px 0 ${CONFIG.CYBER_BLUE}, -2px 0 ${CONFIG.CYBER_PURPLE}; }
+                    75% { text-shadow: -2px 0 ${CONFIG.CYBER_BLUE}, 2px 0 ${CONFIG.CYBER_PURPLE}; }
+                    100% { text-shadow: 2px 0 ${CONFIG.CYBER_BLUE}, -2px 0 ${CONFIG.CYBER_PURPLE}; }
+                }
+
+                :root {
+                    --cm-blue: ${CONFIG.CYBER_BLUE};
+                    --cm-purple: ${CONFIG.CYBER_PURPLE};
+                    --cm-green: ${CONFIG.CYBER_GREEN};
+                    --cm-bg: ${CONFIG.BG_DARK};
+                    --cm-card: #111;
+                }
+
+                #${CONFIG.IDS.ANNOUNCEMENT_BAR} { background-color: black; color: white; font-family: 'Inter', sans-serif; position: relative; z-index: 100; }
+                
+                /* TRIGGER BAR */
+                .cm-trigger-bar { 
+                    height: 48px; display: flex; align-items: center; justify-content: center; gap: 12px; cursor: pointer; 
+                    font-weight: 700; font-size: 0.9rem; text-transform: uppercase; user-select: none;
+                    background: linear-gradient(90deg, #000, var(--cm-purple), #000); 
+                    background-size: 200% 100%; animation: cm-gradient 3s infinite linear; 
+                    border-bottom: 1px solid var(--cm-blue);
+                }
+                
+                .cm-urgent-badge { 
+                    background: var(--cm-blue); color: black; padding: 2px 8px; border-radius: 4px; 
+                    font-size: 0.75rem; font-weight: 900; animation: cm-pulse 1s infinite; 
+                }
+                
+                /* EXPANDED PANEL */
+                .cm-expanded-panel { 
+                    position: absolute; top: 100%; left: 0; width: 100%; 
+                    background-color: var(--cm-bg); border-bottom: 3px solid var(--cm-blue); 
+                    max-height: 0; opacity: 0; visibility: hidden; 
+                    transform: translateY(-10px); 
+                    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
+                    box-shadow: 0 20px 50px rgba(0,240,255,0.2); 
+                    overflow: hidden; z-index: 101; 
+                }
+                
+                /* ACTIVE STATE (JS TOGGLED) */
+                .cm-expanded-panel.cm-visible { 
+                    max-height: 80vh; 
+                    opacity: 1; visibility: visible; transform: translateY(0); 
+                    overflow-y: auto; 
+                }
+                
+                /* CLOSE BUTTON */
+                .cm-close-btn {
+                    position: absolute; top: 10px; right: 10px;
+                    background: rgba(255, 255, 255, 0.1); border: none; color: white;
+                    width: 32px; height: 32px; border-radius: 50%;
+                    font-size: 20px; line-height: 1; cursor: pointer;
+                    display: flex; align-items: center; justify-content: center;
+                    transition: background 0.2s; z-index: 20;
+                }
+                .cm-close-btn:hover { background: var(--cm-blue); color: black; }
+
+                /* WRAPPER */
+                .cm-wrapper { 
+                    max-width: 1200px; margin: 0 auto; 
+                    padding: 20px 15px; 
+                    display: grid; gap: 20px; 
+                    grid-template-columns: 1fr; align-items: flex-start; 
+                    width: 100%; box-sizing: border-box; 
+                }
+                @media (min-width: 900px) { .cm-wrapper { grid-template-columns: 1fr 1.5fr; padding: 40px 30px; gap: 30px; } }
+                
+                /* TEXT CONTENT */
+                .cm-content { text-align: center; display: flex; flex-direction: column; gap: 10px; }
+                @media (min-width: 900px) { .cm-content { text-align: left; align-items: flex-start; gap: 10px; } }
+                
+                /* HEADLINE */
+                .cm-headline { 
+                    font-size: 2.5rem; line-height: 0.9; font-weight: 900; text-transform: uppercase; margin: 0; 
+                    color: white; text-shadow: 0 0 10px var(--cm-blue);
+                }
+                @media (min-width: 900px) { .cm-headline { font-size: 3.5rem; } }
+
+                .cm-subheadline { font-size: 1.2rem; color: var(--cm-blue); font-weight: 800; letter-spacing: 1px; }
+                @media (min-width: 900px) { .cm-subheadline { font-size: 1.4rem; } }
+                
+                /* COUNTDOWN TIMER */
+                .cm-timer-container {
+                    display: flex; gap: 10px; justify-content: center; margin-top: 10px;
+                    background: rgba(0, 240, 255, 0.1); padding: 10px; border-radius: 8px;
+                    border: 1px solid var(--cm-blue);
+                }
+                @media (min-width: 900px) { .cm-timer-container { justify-content: flex-start; } }
+                
+                .cm-timer-block { text-align: center; min-width: 40px; }
+                .cm-timer-val { font-size: 1.5rem; font-weight: 900; color: white; line-height: 1; font-variant-numeric: tabular-nums; }
+                .cm-timer-label { font-size: 0.6rem; color: var(--cm-blue); text-transform: uppercase; letter-spacing: 1px; }
+                .cm-timer-sep { font-size: 1.5rem; color: var(--cm-blue); font-weight: 900; line-height: 1; }
+
+                /* CODE COPY */
+                .cm-code-box {
+                    display: inline-flex; align-items: center; gap: 10px;
+                    background: black; border: 2px dashed var(--cm-green);
+                    padding: 8px 16px; border-radius: 6px; cursor: pointer;
+                    transition: all 0.2s; margin-top: 10px;
+                }
+                .cm-code-box:hover { background: rgba(57, 255, 20, 0.1); transform: scale(1.02); }
+                .cm-code-text { font-family: monospace; font-size: 1.2rem; font-weight: 700; color: var(--cm-green); }
+                .cm-code-label { color: white; font-size: 0.8rem; text-transform: uppercase; }
+
+                /* --- PRODUCT CAROUSEL/GRID --- */
+                .cm-products-container { position: relative; width: 100%; overflow: hidden; }
+                
+                .cm-products { 
+                    display: flex; gap: 15px; 
+                    overflow-x: auto; scroll-snap-type: x mandatory;
+                    padding-bottom: 10px; 
+                    -webkit-overflow-scrolling: touch; scrollbar-width: none; width: 100%;
+                }
+                .cm-products::-webkit-scrollbar { display: none; }
+
+                @media (min-width: 900px) {
+                    .cm-products { 
+                        flex-wrap: nowrap !important; 
+                        justify-content: center !important; 
+                        overflow-x: visible !important; 
+                        padding-bottom: 0; 
+                        gap: 15px !important; 
+                    }
+                }
+                
+                /* PRODUCT CARD */
+                .cm-card { 
+                    background: var(--cm-card); border: 1px solid #333; border-radius: 12px; padding: 0; 
+                    flex: 0 0 75%; width: 75%; max-width: 75%;
+                    scroll-snap-align: center; display: flex; flex-direction: column; text-decoration: none; 
+                    transition: transform 0.2s, border-color 0.2s; position: relative; overflow: hidden; 
+                }
+                
+                @media (min-width: 600px) { .cm-card { flex: 0 0 45%; min-width: 45%; } }
+                
+                @media (min-width: 900px) { 
+                    .cm-card { 
+                        flex: 1 1 auto !important; 
+                        width: 32% !important; 
+                        max-width: 230px !important; 
+                        min-width: 0 !important; 
+                    } 
+                }
+
+                .cm-card:hover { border-color: var(--cm-blue); transform: translateY(-5px); box-shadow: 0 0 15px rgba(0, 240, 255, 0.3); }
+                
+                /* CAROUSEL ARROWS */
+                .cm-nav-btn {
+                    position: absolute; top: 40%; transform: translateY(-50%);
+                    background: rgba(0,0,0,0.8); color: white; border: 1px solid var(--cm-blue);
+                    width: 32px; height: 32px; border-radius: 50%;
+                    display: flex; align-items: center; justify-content: center; cursor: pointer;
+                    z-index: 20; font-size: 16px; user-select: none;
+                }
+                .cm-nav-btn:active { transform: translateY(-50%) scale(0.9); }
+                .cm-nav-btn.prev { left: -5px; }
+                .cm-nav-btn.next { right: -5px; }
+                @media (min-width: 900px) { .cm-nav-btn { display: none; } }
+
+                /* BADGES & IMAGE */
+                .cm-stock-badge { 
+                    position: absolute; bottom: 8px; right: 8px; width: auto !important; max-width: fit-content !important; height: auto !important;
+                    background: #000000; color: white; font-size: 0.7rem; font-weight: 800; padding: 3px 6px; border-radius: 4px; z-index: 10; 
+                    box-shadow: 0 0 5px var(--cm-blue); border: 1px solid var(--cm-blue);
+                    white-space: nowrap; max-width: 90%; overflow: hidden; text-overflow: ellipsis;
+                }
+                
+                .cm-card-img-container { 
+                    background: #fff; width: 100%; aspect-ratio: 1 / 1; 
+                    display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; 
+                    padding: 0; 
+                }
+                .cm-card-img { width: 100%; height: 100%; object-fit: contain; padding: 0; transition: transform 0.3s; }
+                .cm-card:hover .cm-card-img { transform: scale(1.05); }
+
+                /* CARD INFO */
+                .cm-card-info { padding: 10px; display: flex; flex-direction: column; gap: 4px; flex-grow: 1; }
+                .cm-card-title { color: white; font-size: 0.95rem; font-weight: 600; line-height: 1.3; margin: 0; }
+                .cm-price-row { margin-top: auto; display: flex; gap: 8px; align-items: baseline;}
+                .cm-old-price { color: #888; font-size: 0.85rem; text-decoration: line-through; }
+                .cm-new-price { color: var(--cm-green); font-size: 1.1rem; font-weight: 900; text-shadow: 0 0 5px rgba(57, 255, 20, 0.5); }
+                
+                .cm-card-btn { 
+                    margin-top: 8px; background: transparent; border: 1px solid #444; color: white; 
+                    font-size: 0.8rem; text-align: center; padding: 6px 0; border-radius: 6px; 
+                    font-weight: 600; transition: all 0.2s; text-transform: uppercase; display: block; 
+                }
+                .cm-card:hover .cm-card-btn { background: var(--cm-blue); border-color: var(--cm-blue); color: black; box-shadow: 0 0 10px var(--cm-blue); }
+            </style>`;
+                document.head.insertAdjacentHTML("beforeend", styles);
+            };
+
+            injectStyles();
+
+            // ==========================================
+            // 🏗️ HELPER: Create Card HTML
+            // ==========================================
+            const createCardHtml = (product) => `
+            <a href="${product.link}" class="cm-card">
+                <div class="cm-card-img-container">
+                    ${product.badge ? `<div class="cm-stock-badge">${product.badge}</div>` : ''}
+                    <img src="${product.image}" class="cm-card-img" alt="${product.title}" onerror="this.onerror=null; this.src='https://placehold.co/260x260/FFFFFF/000000?text=Product'">
+                </div>
+                <div class="cm-card-info">
+                    <div class="cm-card-title">${product.title}</div>
+                    <div class="cm-price-row">
+                        <span class="cm-old-price">${product.oldPrice}</span>
+                        <span class="cm-new-price">${product.newPrice}</span>
+                    </div>
+                    <div class="cm-card-btn">Shop Cyber Deal</div>
+                </div>
+            </a>
+        `;
+
+            const PRODUCTS = [
+                {
+                    link: "https://brighttools.com.au/products/caravan-cleaning-bundle?_pos=1&_psq=caravan&_ss=e&_v=1.0",
+                    image: "https://brighttools.com.au/cdn/shop/files/caravan_cleaning_bundle__Silicone.png",
+                    title: "Caravan Cleaning Bundle",
+                    oldPrice: "A$234.95", newPrice: "A$152.95", // 10% extra off
+                    badge: "⚡ CYBER BESTSELLER"
+                },
+                {
+                    link: "https://brighttools.com.au/products/bright-squeegee-pack-squeegee-quick-mop-floor-wipes",
+                    image: "https://brighttools.com.au/cdn/shop/files/squeegee_floor_wipes_quick_mop_pack.png",
+                    title: "Bright Squeegee Pack",
+                    oldPrice: "A$71.90", newPrice: "A$53.95", // 10% extra off
+                    badge: "🔥 SELLING FAST"
+                },
+                {
+                    link: "https://brighttools.com.au/products/home-cleaning-bundle?srsltid=AfmBOopEQ9UweBxxLLmQhwlzUU_5hAPglv9yznTZJ3D4dt7FhDpvSGAa",
+                    image: "https://brighttools.com.au/cdn/shop/files/Home_Floor_Cleaning_Bundle_Quick_Mop_Main.jpg?v=1757482350&width=800?v=1738625666&width=800",
+                    title: "Home Cleaning Bundle",
+                    oldPrice: "A$244.00", newPrice: "A$161.95", // 10% extra off
+                    badge: "⭐ CYBER PICK"
+                }
+            ];
+
+            // ==========================================
+            // ⚡ EXECUTION & INTERACTIONS
+            // ==========================================
+            const replaceAnnouncementBar = () => {
+                const targetElement = document.getElementById(CONFIG.IDS.ANNOUNCEMENT_BAR);
+                if (!targetElement) return console.warn(`CM Script: Target not found.`);
+
+                const navProductsHtml = PRODUCTS.map(createCardHtml).join('');
+
+                const html = `
+                <div class="cm-trigger-bar" id="cm-trigger">
+                    <span class="cm-urgent-badge">24H ONLY</span>
+                    <span>CYBER MONDAY IS HERE</span>
+                    <span style="color: var(--cm-green); font-weight: 900;">USE CODE: CM25</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                </div>
+                <div class="cm-expanded-panel" id="cm-panel">
+                    <button class="cm-close-btn" id="cm-close">✕</button>
+                    <div class="cm-wrapper">
+                        <div class="cm-content">
+                            <h2 class="cm-headline">CYBER MONDAY</h2>
+                            <div class="cm-subheadline">BF PRICES + EXTRA 10% OFF</div>
+                            
+                            <!-- COUNTDOWN TIMER -->
+                            <div class="cm-timer-container" id="cm-timer">
+                                <div class="cm-timer-block"><div class="cm-timer-val" id="cm-h">23</div><div class="cm-timer-label">Hrs</div></div>
+                                <div class="cm-timer-sep">:</div>
+                                <div class="cm-timer-block"><div class="cm-timer-val" id="cm-m">59</div><div class="cm-timer-label">Mins</div></div>
+                                <div class="cm-timer-sep">:</div>
+                                <div class="cm-timer-block"><div class="cm-timer-val" id="cm-s">59</div><div class="cm-timer-label">Secs</div></div>
+                            </div>
+
+                            <!-- COPY CODE -->
+                            <div class="cm-code-box" id="cm-copy-btn" onclick="navigator.clipboard.writeText('CM25'); alert('Code CM25 Copied!');">
+                                <span class="cm-code-label">Use Code:</span>
+                                <span class="cm-code-text">CM25</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            </div>
+                        </div>
+                        <div class="cm-products-container">
+                            <div class="cm-nav-btn prev" id="cm-prev">❮</div>
+                            <div class="cm-products" id="cm-products-list">${navProductsHtml}</div>
+                            <div class="cm-nav-btn next" id="cm-next">❯</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+                const wrapper = document.createElement('aside');
+                wrapper.id = CONFIG.IDS.ANNOUNCEMENT_BAR;
+                wrapper.className = targetElement.className;
+                wrapper.innerHTML = html;
+                targetElement.replaceWith(wrapper);
+                document.documentElement.style.setProperty('--announcement-bar-height', '48px');
+
+                // --- ATTACH EVENTS ---
+                const trigger = wrapper.querySelector('#cm-trigger');
+                const panel = wrapper.querySelector('#cm-panel');
+                const closeBtn = wrapper.querySelector('#cm-close');
+                const prevBtn = wrapper.querySelector('#cm-prev');
+                const nextBtn = wrapper.querySelector('#cm-next');
+                const productList = wrapper.querySelector('#cm-products-list');
+
+                const openPanel = () => {
+                    panel.classList.add('cm-visible');
+                    trigger.style.display = 'none';
+                };
+
+                const closePanel = (e) => {
+                    if (e) e.stopPropagation();
+                    panel.classList.remove('cm-visible');
+                    trigger.style.display = 'flex';
+                };
+
+                trigger.addEventListener('click', openPanel);
+                closeBtn.addEventListener('click', closePanel);
+
+                prevBtn.addEventListener('click', () => {
+                    const scrollAmount = productList.clientWidth;
+                    productList.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                });
+                nextBtn.addEventListener('click', () => {
+                    const scrollAmount = productList.clientWidth;
+                    productList.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                });
+
+                // --- COUNTDOWN LOGIC (24H Fixed) ---
+                const startTimer = () => {
+                    // Set end time to midnight tonight (or 24h from now)
+                    const now = new Date();
+                    const end = new Date();
+                    end.setHours(24, 0, 0, 0); // Midnight tonight
+
+                    const update = () => {
+                        const current = new Date();
+                        const diff = end - current;
+
+                        if (diff <= 0) {
+                            document.getElementById('cm-timer').innerHTML = "EXPIRED";
+                            return;
+                        }
+
+                        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                        const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+                        document.getElementById('cm-h').innerText = h.toString().padStart(2, '0');
+                        document.getElementById('cm-m').innerText = m.toString().padStart(2, '0');
+                        document.getElementById('cm-s').innerText = s.toString().padStart(2, '0');
+                    };
+
+                    setInterval(update, 1000);
+                    update();
+                };
+                startTimer();
+
+                console.log(`CM Script ${CM_VERSION}: ✅ Replaced & Interactive`);
+            };
+
+            setTimeout(replaceAnnouncementBar, 50);
+        })();
+    </script>
+</body>
+
+</html>

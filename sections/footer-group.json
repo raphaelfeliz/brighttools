@@ -1,0 +1,152 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "text-with-icons": {
+      "type": "text-with-icons",
+      "blocks": {
+        "customer-support": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-return",
+            "custom_icon": "shopify://shop_images/website_icons_red-03.png",
+            "mobile_icon_width": 44,
+            "icon_width": 60,
+            "icon_background_type": "none",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "Easy Return & 30 Days Money Back",
+            "content": "<p>We offer a full <a href=\"/policies/refund-policy\" title=\"Refund Policy\">refund or exchange</a> if you’re not fully satisfied within 30 days.</p>"
+          }
+        },
+        "free-shipping": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-truck",
+            "custom_icon": "shopify://shop_images/website-icons.png",
+            "mobile_icon_width": 44,
+            "icon_width": 60,
+            "icon_background_type": "none",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "Fast Shipping",
+            "content": "<p>Orders dispatched within <a href=\"/policies/shipping-policy\" title=\"Shipping Policy\"><strong>24 hours</strong></a></p>"
+          }
+        },
+        "discount": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-shield",
+            "custom_icon": "shopify://shop_images/website-icons-02.png",
+            "mobile_icon_width": 44,
+            "icon_width": 60,
+            "icon_background_type": "none",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "2 Year Warranty",
+            "content": "<p>We stand behind the quality & durability of our cleaning tools.</p>"
+          }
+        },
+        "payment": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-leaf",
+            "custom_icon": "shopify://shop_images/website_icons_red-04.png",
+            "mobile_icon_width": 44,
+            "icon_width": 60,
+            "icon_background_type": "none",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "Eco Friendly",
+            "content": "<p>Innovative technology make your cleaning tools work better, last longer and reduce consumption</p>"
+          }
+        }
+      },
+      "block_order": [
+        "customer-support",
+        "free-shipping",
+        "discount",
+        "payment"
+      ],
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "title": "",
+        "heading_tag": "h6",
+        "text_alignment": "center",
+        "icon_spacing": "small",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "newsletter": {
+          "type": "newsletter",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/slogan.png",
+            "image_width": 180,
+            "heading_size": "h3",
+            "title": "Sign up for news, updates & 10% off your first order.",
+            "content": ""
+          }
+        },
+        "bfac4d52-ae58-4f6b-be04-f514ab8e92b7": {
+          "type": "links",
+          "settings": {
+            "menu": "shop",
+            "show_menu_title": true,
+            "menu_title": ""
+          }
+        },
+        "links": {
+          "type": "links",
+          "settings": {
+            "menu": "footer",
+            "show_menu_title": true,
+            "menu_title": ""
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "title": "Company",
+            "content": "<p><a href=\"/pages/about-us-1\" title=\"About Us\">About BrightTools</a></p><p>387–389 Glen Huntly Rd, Elsternwick, Melbourne, Victoria, Australia 3185</p><p><a href=\"mailto:info@brighttools.com.au\" target=\"_blank\">info@brighttools.com.au</a><br/>Call us: <a href=\"tel:1300246979\" target=\"_blank\">1300 246 979</a></p>",
+            "enable_follow_on_shop": true
+          }
+        }
+      },
+      "block_order": [
+        "newsletter",
+        "bfac4d52-ae58-4f6b-be04-f514ab8e92b7",
+        "links",
+        "text"
+      ],
+      "settings": {
+        "show_social_media": true,
+        "show_payment_icons": true,
+        "show_policy_links": false,
+        "show_country_selector": true,
+        "show_country_flag": true,
+        "show_country_name": true,
+        "show_locale_selector": true
+      }
+    }
+  },
+  "order": [
+    "text-with-icons",
+    "footer"
+  ]
+}

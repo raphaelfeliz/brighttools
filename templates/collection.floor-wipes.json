@@ -1,0 +1,840 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "c64ef42a-bbfb-4516-9ff4-0a5d868181cd": {
+      "type": "slideshow",
+      "blocks": {
+        "template--19575487660306__c64ef42a-bbfb-4516-9ff4-0a5d868181cd-168777459616fd7373-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Quick_Mop_Floor_Wipes_Main_Banner1.png",
+            "mobile_image": "shopify://shop_images/Untitled_1200_x_1600_px_6.png",
+            "content_max_width": 780,
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-end-start sm:text-start",
+            "subheading": "Fresh In a Flash",
+            "title": "Floor Wipes",
+            "heading_tag": "h1",
+            "button_text": "",
+            "button_link": "",
+            "text_color": "#272727",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "background": "#f5f5f5",
+            "background_gradient": "linear-gradient(270deg, rgba(242, 242, 242, 1), rgba(155, 103, 167, 1) 100%)"
+          }
+        }
+      },
+      "block_order": [
+        "template--19575487660306__c64ef42a-bbfb-4516-9ff4-0a5d868181cd-168777459616fd7373-0"
+      ],
+      "settings": {
+        "full_width": false,
+        "allow_transparent_header": true,
+        "show_initial_transition": false,
+        "image_size": "auto",
+        "controls_type": "none",
+        "transition_type": "fade_with_text",
+        "autoplay": false,
+        "cycle_speed": 6,
+        "background": "#f2f2f2",
+        "background_gradient": ""
+      }
+    },
+    "banner": {
+      "type": "collection-banner",
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "full_width": false,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "show_collection_title": true,
+        "show_collection_description": true,
+        "show_collection_image": true,
+        "collection_title_size": "h1",
+        "image_size": "lg",
+        "image": "shopify://shop_images/BrightTools_2.png",
+        "mobile_text_position": "place-self-end-start text-start",
+        "desktop_text_position": "sm:place-self-center-start sm:text-start",
+        "featured_product": "floor-silicone-squeegee-30cm-knuckle-joint",
+        "featured_product_heading": "Featured product",
+        "text_color": "#000000",
+        "overlay_color": "#1a1a1a",
+        "overlay_opacity": 0
+      }
+    },
+    "custom_html_NmX3Pz": {
+      "type": "custom-html",
+      "name": "Custom HTML",
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": true,
+        "remove_horizontal_spacing": true,
+        "html": "<!-- \n    Black Friday Product Feature Page \n    Uses Tailwind CSS for utility classes and custom CSS for a dark, neon-glow aesthetic.\n    The layout is fully responsive, stacking elements on mobile devices.\n-->\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n\n<!-- DEPENDENCIES: Load Tailwind and Inter font -->\n<script src=\"https://cdn.tailwindcss.com\"></script>\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin=\"\">\n<link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&amp;display=swap\" rel=\"stylesheet\">\n\n<style>\n    /* --- SCOPED CSS VARIABLES & CONTAINER --- */\n    #bf-section-container {\n        font-family: 'Inter', sans-serif;\n        \n        --bf-red: #D4212C;\n        --bf-bg: #050505;\n        --bf-card: #161616;\n        --bf-yellow-glow: #FFD700;\n        --bf-green-glow: #3CB371;\n        --bf-text-muted: #a1a1aa;\n        \n        /* Background definition */\n        background-color: var(--bf-bg);\n        \n        /* 1. Noise Texture | 2. Spotlight Gradients */\n        background-image: \n            url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E\"),\n            radial-gradient(circle at 20% 30%, rgba(80, 80, 80, 0.6) 0%, rgba(20, 20, 20, 0.8) 40%, rgba(5, 5, 5, 1) 100%),\n            radial-gradient(circle at 80% 70%, rgba(80, 80, 80, 0.6) 0%, rgba(20, 20, 20, 0.8) 40%, rgba(5, 5, 5, 1) 100%);\n        \n        background-blend-mode: overlay, normal, normal;\n        background-size: 200px 200px, 200% 200%, 200% 200%;\n\n        padding: 60px 0;\n        margin: 0;\n        width: 100%;\n        min-height: 100vh;\n        overflow: hidden; \n        box-sizing: border-box;\n        animation: gradient-move 10s ease-in-out infinite alternate;\n    }\n\n    /* --- ANIMATIONS --- */\n    /* Neon Glow Pulse for Buttons */\n    @keyframes bf-glow { \n        0% { box-shadow: 0 0 8px rgba(212, 33, 44, 0.4); border-color: rgba(212, 33, 44, 0.6); } \n        50% { box-shadow: 0 0 25px rgba(212, 33, 44, 0.7); border-color: rgba(212, 33, 44, 1); } \n        100% { box-shadow: 0 0 8px rgba(212, 33, 44, 0.4); border-color: rgba(212, 33, 44, 0.6); } \n    }\n    /* Yellow Badge Glow */\n    @keyframes bf-yellow-glow { 0%, 100% { box-shadow: 0 0 5px var(--bf-yellow-glow); } 50% { box-shadow: 0 0 10px var(--bf-yellow-glow); } }\n    /* Subtle Background Movement */\n    @keyframes gradient-move {\n        0% { background-position: 0 0, 0% 0%, 100% 100%; }\n        100% { background-position: 0 0, 100% 100%, 0% 0%; }\n    }\n    /* Typing Text Sequence */\n    @keyframes bf-seq-1 { 0%, 33% { opacity: 1; z-index: 1; } 33.1%, 100% { opacity: 0; z-index: 0; } }\n    @keyframes bf-seq-2 { 0%, 33% { opacity: 0; z-index: 0; } 33.1%, 66% { opacity: 1; z-index: 1; } 66.1%, 100% { opacity: 0; z-index: 0; } }\n    @keyframes bf-seq-3 { 0%, 66% { opacity: 0; z-index: 0; } 66.1%, 100% { opacity: 1; z-index: 1; } }\n    @keyframes bf-type { 0% { width: 0; } 20% { width: 100%; } 80% { width: 100%; } 95% { width: 0; } 100% { width: 0; } }\n\n    /* --- LAYOUT --- */\n    .bf-hero-wrapper {\n        max-width: 1200px; \n        margin: 0 auto; \n        padding: 0 2rem;\n        display: flex; \n        flex-direction: column; \n        align-items: center; \n        gap: 12px; \n        width: 100%; \n        box-sizing: border-box;\n    }\n\n    /* --- TYPOGRAPHY --- */\n    .bf-neon-title { \n        font-size: 64px; \n        line-height: 0.9; \n        font-weight: 900; \n        color: white; \n        text-transform: uppercase; \n        margin: 0; \n        letter-spacing: -2px; \n        text-align: center; \n    }\n\n    .bf-typing-container { \n        position: relative; \n        height: 0.8em; \n        min-width: 650px; \n        margin-bottom: 40px;\n        text-align: center; \n        display:flex; \n        justify-content:center;\n    }\n\n    .bf-highlight-row { \n        font-size: 32px; \n        color: var(--bf-red); \n        font-weight: 900; \n        text-shadow: 0 0 20px rgba(212, 33, 44, 0.6); \n        position: absolute; \n        white-space: nowrap; \n        overflow: hidden; \n        opacity: 0; \n        width: 0; \n    }\n\n    .bf-phrase-1 { animation: bf-seq-1 9s infinite, bf-type 3s steps(30, end) infinite; }\n    .bf-phrase-2 { animation: bf-seq-2 9s infinite, bf-type 3s steps(20, end) infinite; animation-delay: 0s, 3s; }\n    .bf-phrase-3 { animation: bf-seq-3 9s infinite, bf-type 3s steps(20, end) infinite; animation-delay: 0s, 6s; }\n\n    /* --- HORIZONTAL PRODUCT CARD --- */\n    .bf-single-product-container {\n        width: 100%;\n        display: flex;\n        justify-content: center;\n        margin-bottom: 20px;\n    }\n\n    .bf-horizontal-card {\n        display: flex;\n        flex-direction: row; /* Horizontal Layout */\n        background: var(--bf-card);\n        border: 1px solid #333;\n        border-radius: 16px;\n        overflow: hidden;\n        width: 100%;\n        max-width: 900px; /* Wider constraint for single product */\n        text-decoration: none;\n        transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;\n        position: relative;\n    }\n\n    .bf-horizontal-card:hover {\n        border-color: #666;\n        transform: translateY(-2px);\n        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);\n    }\n\n    /* Left Side: Image Area */\n    .bf-h-img-wrapper {\n        width: 45%; /* Takes up slightly less than half */\n        position: relative;\n        background: #fff;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        overflow: hidden;\n    }\n\n    .bf-h-img {\n        width: 100%;\n        height: 100%;\n        object-fit: contain;\n        transition: transform 0.5s ease;\n    }\n    \n    .bf-horizontal-card:hover .bf-h-img {\n        transform: scale(1.05);\n    }\n\n    .bf-stock-badge { \n        position: absolute; \n        top: 15px; \n        left: 15px;\n        /* --- SHOPIFY FIX: Force Reset Sizing --- */\n        width: auto !important;\n        height: auto !important;\n        right: auto !important;\n        bottom: auto !important;\n        max-width: fit-content !important;\n        /* --------------------------------------- */\n        background: #000000; \n        color: white; \n        font-size: 0.85rem; \n        font-weight: 800; \n        padding: 6px 12px; \n        border-radius: 4px; \n        z-index: 10; \n        box-shadow: 0 0 5px var(--bf-yellow-glow); \n        animation: bf-yellow-glow 3s infinite ease-in-out;\n    }\n\n    /* Right Side: Content Area */\n    .bf-h-content {\n        width: 55%;\n        padding: 40px;\n        display: flex;\n        flex-direction: column;\n        justify-content: center;\n        text-align: left;\n    }\n\n    .bf-h-title {\n        color: white;\n        font-size: 2rem; \n        font-weight: 800;\n        line-height: 1.1;\n        margin-bottom: 15px;\n    }\n\n    .bf-h-desc {\n        color: var(--bf-text-muted);\n        font-size: 1rem;\n        line-height: 1.6;\n        margin-bottom: 25px;\n        font-weight: 400;\n    }\n\n    .bf-price-wrapper {\n        display: flex;\n        align-items: baseline;\n        gap: 15px;\n        margin-bottom: 25px;\n    }\n\n    .bf-old-price { \n        color: #ffffff; \n        font-size: 1.2rem; \n        text-decoration: line-through; \n        text-decoration-color: var(--bf-red); \n        text-decoration-thickness: 2px; \n    }\n    \n    .bf-new-price { \n        color: var(--bf-red); \n        font-size: 2rem; \n        font-weight: 900; \n    }\n\n    /* Shop Now Button (Now with Neon Glow) */\n    .bf-buy-btn {\n        background: transparent; \n        border: 2px solid var(--bf-red); \n        color: white; \n        font-size: 1rem; \n        text-align: center; \n        padding: 14px 0; \n        border-radius: 8px; \n        font-weight: 700; \n        transition: all 0.3s ease; \n        text-transform: uppercase; \n        display: block;\n        width: 100%;\n        letter-spacing: 1px;\n        box-shadow: 0 0 8px rgba(212, 33, 44, 0.4); \n        animation: bf-glow 2s infinite ease-in-out;\n    }\n\n    /* Highlight style for key promotional phrases */\n    .bf-key-highlight {\n        font-size: 1.125rem; /* A bit bigger than 1rem */\n        color: #F3F4F6; /* Lighter color, but not totally white (using a light gray) */\n    }\n\n    /* Change the hover state to match the neon button's hover effect (strong shadow, no animation) */\n    .bf-horizontal-card:hover .bf-buy-btn { \n        background: var(--bf-red); \n        border-color: var(--bf-red); \n        box-shadow: 0 0 30px rgba(212, 33, 44, 0.9); \n        transform: translateY(-2px); \n        animation: none; \n    }\n\n    /* --- FEATURE CHIPS GRID --- */\n    .bf-features-grid {\n        display: grid;\n        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n        gap: 15px;\n        width: 100%;\n        max-width: 900px; /* Matches main card width */\n        margin-top: 0;\n    }\n\n    .bf-feature-card {\n        background: rgba(255, 255, 255, 0.03); \n        border: 1px solid #333;\n        border-radius: 12px;\n        padding: 15px 20px;\n        text-align: left;\n        transition: all 0.2s ease;\n        display: flex;\n        flex-direction: column;\n        gap: 5px;\n    }\n\n    .bf-feature-card:hover {\n        background: rgba(255, 255, 255, 0.08);\n        border-color: #555;\n        transform: translateY(-2px);\n    }\n\n    .bf-feature-title {\n        color: var(--bf-red);\n        font-size: 0.9rem;\n        font-weight: 800;\n        text-transform: uppercase;\n        letter-spacing: 0.5px;\n    }\n\n    .bf-feature-desc {\n        color: #ddd;\n        font-size: 0.85rem;\n        line-height: 1.4;\n        opacity: 0.9;\n    }\n\n    /* --- MOBILE RESPONSIVENESS --- */\n    @media(max-width: 768px) {\n        .bf-hero-wrapper { padding: 40px 20px; gap: 20px; } \n        .bf-neon-title { font-size: 42px; } \n        \n        /* Static text on mobile */\n        .bf-highlight-row { \n            white-space: normal; \n            font-size: 24px; \n            position: static; \n            display: block; \n            width: auto !important; \n            opacity: 1 !important; \n            animation: none !important; \n            text-align: center; \n        }\n        .bf-typing-container { \n            min-width: auto; \n            height: auto; \n            flex-direction: column; \n            gap: 5px; \n            margin-bottom: 20px; \n        }\n        .bf-phrase-2, .bf-phrase-3 { display: none; }\n\n        /* Card stacking on mobile */\n        .bf-horizontal-card {\n            flex-direction: column; /* Stack vertically */\n            max-width: 400px;\n        }\n        .bf-h-img-wrapper {\n            width: 100%;\n            height: 300px; /* Fixed height for image on mobile */\n        }\n        .bf-h-content {\n            width: 100%;\n            padding: 25px;\n            box-sizing: border-box;\n            text-align: center; /* Center align text on mobile */\n        }\n        .bf-h-title { font-size: 1.5rem; }\n        .bf-price-wrapper { justify-content: center; }\n        .bf-stock-badge { left: auto; right: 15px; }\n\n        /* Feature Grid on Mobile */\n        .bf-features-grid {\n            grid-template-columns: 1fr; /* Single column on mobile for better readability */\n            max-width: 400px; /* Align width with the main card mobile width */\n        }\n        .bf-feature-card {\n            text-align: center; /* Center align features on mobile */\n        }\n    }\n</style>\n\n<div id=\"bf-section-container\">\n    \n    <div class=\"bf-hero-wrapper\">\n        <h2 class=\"bf-neon-title\">Black Friday</h2>\n        \n        <div class=\"bf-typing-container\">\n            <span class=\"bf-highlight-row bf-phrase-1\">Bright Squeegee Deal</span>\n            <span class=\"bf-highlight-row bf-phrase-2\">up to 50% OFF</span>\n            <span class=\"bf-highlight-row bf-phrase-3\">sale ends soon!</span>\n        </div>\n\n        <!-- SINGLE HORIZONTAL PRODUCT CARD -->\n        <div class=\"bf-single-product-container\">\n            <a href=\"https://brighttools.com.au/products/bright-squeegee-pack-squeegee-quick-mop-floor-wipes\" class=\"bf-horizontal-card\">\n                \n                <!-- Left Side: Image -->\n                <div class=\"bf-h-img-wrapper\">\n                    <div class=\"bf-stock-badge\">🔝Selling Fast Today</div>\n                    <img src=\"https://brighttools.com.au/cdn/shop/files/squeegee_floor_wipes_quick_mop_pack.png\" class=\"bf-h-img\" alt=\"Bright Squeegee Pack\" onerror=\"this.onerror=null; this.src='https://placehold.co/600x600/000000/FFFFFF?text=Product+Image'\">\n                </div>\n\n                <!-- Right Side: Content -->\n                <div class=\"bf-h-content\">\n                    <h3 class=\"bf-h-title\">Bright Squeegee Pack</h3>\n                    \n                    <p class=\"bf-h-desc\">\n                        Whole floor cleaning system. Premium 45cm Silicone Squeegee with an adjustable joint &amp; a long ergonomic handle. Paired with our Quick Mop Floor Wipes for an instant refresh of your floors. <br><br>\n                        <strong class=\"bf-key-highlight\">No Buckets, No Water, No Fuss!</strong>\n                    </p>\n\n                    <div class=\"bf-price-wrapper\">\n                        <span class=\"bf-old-price\">A$71.90</span>\n                        <span class=\"bf-new-price\">A$59.95</span>\n                    </div>\n\n                    <div class=\"bf-buy-btn\">Shop Now</div>\n                </div>\n\n            </a>\n        </div>\n\n        <!-- NEW FEATURE CHIPS GRID -->\n        <div class=\"bf-features-grid\">\n            <!-- Chip 1 -->\n            <div class=\"bf-feature-card\">\n                <div class=\"bf-feature-title\">Durable Silicone Head</div>\n                <div class=\"bf-feature-desc\">100% Silicone glides smoothly without wearing or scratching.</div>\n            </div>\n            <!-- Chip 2 -->\n            <div class=\"bf-feature-card\">\n                <div class=\"bf-feature-title\">Effortless Angling</div>\n                <div class=\"bf-feature-desc\">Adjustable knuckle-joint to get under furniture and around tight spaces.</div>\n            </div>\n            <!-- Chip 3 -->\n            <div class=\"bf-feature-card\">\n                <div class=\"bf-feature-title\">Ergonomic Long Handle</div>\n                <div class=\"bf-feature-desc\">Four-part design reduces bending for comfortable cleaning.</div>\n            </div>\n            <!-- Chip 4 -->\n            <div class=\"bf-feature-card\">\n                <div class=\"bf-feature-title\">Instant Floor Refresh</div>\n                <div class=\"bf-feature-desc\">Effortless floor cleaning solution that leaves your home looking and smelling fresh.</div>\n            </div>\n        </div>\n\n    </div>\n</div>",
+        "background": "#272727",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "blocks": {
+        "66cfa78e-6528-423d-a772-72058586d69c": {
+          "type": "promotion_image",
+          "disabled": true,
+          "settings": {
+            "position": 4,
+            "column_span": "1",
+            "image": "shopify://shop_images/Untitled_design_2_1.png",
+            "title": "Promote a product or a temporary offer",
+            "content": "",
+            "link_url": "shopify://collections/dustpans",
+            "link_text": "View all",
+            "heading_tag": "h4",
+            "text_position": "place-self-end-start text-start",
+            "text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "66cfa78e-6528-423d-a772-72058586d69c"
+      ],
+      "settings": {
+        "products_per_page": 24,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "filter_layout": "horizontal",
+        "show_sort_by": true,
+        "show_filters": false,
+        "show_filter_group_name": true,
+        "show_filter_values_count": true,
+        "open_first_filter_group": true
+      }
+    },
+    "908950ea-fa2b-4498-8978-05abdc0cbd5b": {
+      "type": "rich-text",
+      "blocks": {
+        "template--20493668090130__908950ea-fa2b-4498-8978-05abdc0cbd5b-subheading-1": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--20493668090130__908950ea-fa2b-4498-8978-05abdc0cbd5b-subheading-1"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "397d7191-df1d-4a09-a3f1-c28dc3293eba": {
+      "type": "video",
+      "blocks": {
+        "template--19575487660306__397d7191-df1d-4a09-a3f1-c28dc3293eba-16877765676bfd419b-0": {
+          "type": "play",
+          "settings": {}
+        },
+        "template--19575487660306__397d7191-df1d-4a09-a3f1-c28dc3293eba-16877765676bfd419b-1": {
+          "type": "heading",
+          "settings": {
+            "text": "",
+            "heading_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "template--19575487660306__397d7191-df1d-4a09-a3f1-c28dc3293eba-16877765676bfd419b-0",
+        "template--19575487660306__397d7191-df1d-4a09-a3f1-c28dc3293eba-16877765676bfd419b-1"
+      ],
+      "settings": {
+        "full_width": false,
+        "allow_transparent_header": false,
+        "autoplay": true,
+        "video_size": "auto",
+        "video": "shopify://files/videos/Brightswipes AD1 MOBILE_6278ab51-3742-482c-bb63-52d3139bd2eb.mp4",
+        "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "4eb75113-401d-44ee-b1f8-0e8a9d432f24": {
+      "type": "rich-text",
+      "blocks": {
+        "template--19575487660306__4eb75113-401d-44ee-b1f8-0e8a9d432f24-16877746580fb4404c-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Quick Mop Floor Wipes",
+            "heading_tag": "h2",
+            "text_color": "",
+            "gradient": ""
+          }
+        },
+        "template--19575487660306__4eb75113-401d-44ee-b1f8-0e8a9d432f24-16877746580fb4404c-0": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        },
+        "template--19575487660306__4eb75113-401d-44ee-b1f8-0e8a9d432f24-16877746580fb4404c-2": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Revive your home with the newest cleaning innovation to hit the floors in Australia.</p><p>Our Floor Wipes are uniquely designed wet wipes that come in an extra large size to maximise your time for a better, faster clean.</p><p>It has never been easier to get that super fresh feeling without the fuss. With a range of fragrances, our wet wipes work on tiles, concrete, stone and protect timber and wooden floors without the bucket, mop and water. </p><p>Wipe efficiently, effectively and have fun while maintaining your home, a real cleaning solution that’s simply the best. Unlike other floor cleaning wipes, ours are fit to use with any existing broom / floor squeegee / mop you have at home and are disposable, so you clean the dirt and not the broom.</p><p>A quick, convenient and easy wet floor wipe with great features to give your floors a brilliant shine and a spotless clean, every day of the week.</p><p></p><p></p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--19575487660306__4eb75113-401d-44ee-b1f8-0e8a9d432f24-16877746580fb4404c-1",
+        "template--19575487660306__4eb75113-401d-44ee-b1f8-0e8a9d432f24-16877746580fb4404c-0",
+        "template--19575487660306__4eb75113-401d-44ee-b1f8-0e8a9d432f24-16877746580fb4404c-2"
+      ],
+      "settings": {
+        "full_width": false,
+        "content_width": "medium",
+        "text_position": "center",
+        "background": "#ffffff",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "cb929d4c-1c53-4be8-9c5d-f5cc730d8698": {
+      "type": "multiple-images-with-text",
+      "blocks": {
+        "template--20493668090130__cb929d4c-1c53-4be8-9c5d-f5cc730d8698-item-1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/BrightSwipe_LOw_Res.jpg",
+            "image_rotation_degrees": -2,
+            "subheading": "",
+            "title": "Easy to Use",
+            "content": "<p>Cleaning in a flash was never easier. No more stress when there’s a surprise guest, quickly clean after meals, playtime and muddy paws. When all you have to do is pull out a supersize floor wipe and slide it over the top of any broom / floor squeegee / mop at home, it’s a breeze to maintain your floors for more clean in less time.</p>",
+            "button_url": "",
+            "button_text": ""
+          }
+        },
+        "template--20493668090130__cb929d4c-1c53-4be8-9c5d-f5cc730d8698-item-2": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/quick_mop_floor_wipes_catalog1.jpg",
+            "image_rotation_degrees": 1.5,
+            "subheading": "",
+            "title": "Fresh Scent",
+            "content": "<p>Our wipes come in a range of fresh scents that you can’t get from the average mop and water. Most wipes are smaller and unscented, leaving a chemical smell and far less shine. When you use our floor wipes, you’ll feel the sparkling wet shine and fresh scents of lavender and luxury boutique hotels, that give you the look and smell of a superior deep clean.</p>",
+            "button_url": "",
+            "button_text": ""
+          }
+        },
+        "cfcc4b26-7467-4fd3-ba5c-b00144b5ca89": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/quick_mop_floor_wipes_catalog2.jpg",
+            "image_rotation_degrees": 0,
+            "subheading": "",
+            "title": "More Hygenic",
+            "content": "<p>Fresh Home Floor Wipes have an antibacterial quality, the simple way to disinfect your floors and home from dirt. No more spreading bacteria from dirty mop heads across your floors, our disposable wipes make it easy to wipe on, dirt off and dispose.</p>",
+            "button_url": "",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--20493668090130__cb929d4c-1c53-4be8-9c5d-f5cc730d8698-item-1",
+        "template--20493668090130__cb929d4c-1c53-4be8-9c5d-f5cc730d8698-item-2",
+        "cfcc4b26-7467-4fd3-ba5c-b00144b5ca89"
+      ],
+      "settings": {
+        "full_width": true,
+        "images_layout": "stacked",
+        "collage_images_alignment": "middle",
+        "background": "#ffffff",
+        "background_gradient": "",
+        "text_color": "#000000",
+        "button_background": "",
+        "button_text_color": ""
+      }
+    },
+    "b9b043b0-6f7d-46c8-af7e-abe869a1461a": {
+      "type": "rich-text",
+      "blocks": {
+        "6da2bca1-7bd4-441a-aa3b-7bdea2f6e4aa": {
+          "type": "icon",
+          "settings": {
+            "icon": "picto-star",
+            "icon_width": 76,
+            "icon_background_type": "none",
+            "icon_background": "",
+            "icon_color": "#7f48b0"
+          }
+        },
+        "20603c75-742b-4aa3-9bf1-45b12bc6e953": {
+          "type": "heading",
+          "settings": {
+            "text": "Easy to Use",
+            "heading_tag": "h2",
+            "text_color": "#7f48b0",
+            "gradient": ""
+          }
+        },
+        "ed5b4685-7bdc-4d20-9a20-0c3f90df0849": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Cleaning in a flash was never easier. No more stress when there’s a surprise guest, quickly clean after meals, playtime and muddy paws. When all you have to do is pull out a supersize floor wipe and slide it over the top of any broom / floor squeegee / mop at home, it’s a breeze to maintain your floors for more clean in less time.</p>"
+          }
+        },
+        "44b5f786-639e-4c42-94ad-1319a0c6d566": {
+          "type": "icon",
+          "settings": {
+            "icon": "picto-happy",
+            "icon_width": 84,
+            "icon_background_type": "none",
+            "icon_background": "",
+            "icon_color": "#f7d033"
+          }
+        },
+        "template--19575487660306__b9b043b0-6f7d-46c8-af7e-abe869a1461a-16877746580fb4404c-1": {
+          "type": "heading",
+          "settings": {
+            "text": "More Hygenic",
+            "heading_tag": "h2",
+            "text_color": "#f7d033",
+            "gradient": ""
+          }
+        },
+        "template--19575487660306__b9b043b0-6f7d-46c8-af7e-abe869a1461a-16877746580fb4404c-2": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Fresh Home Floor Wipes have an antibacterial quality, the simple way to disinfect your floors and home from dirt. No more spreading bacteria from dirty mop heads across your floors, our disposable wipes make it easy to wipe on, dirt off and dispose.</p>"
+          }
+        },
+        "3c1ba536-b759-485a-a1d6-4a0e2285b3b1": {
+          "type": "icon",
+          "settings": {
+            "icon": "picto-leaf",
+            "icon_width": 84,
+            "icon_background_type": "none",
+            "icon_background": "",
+            "icon_color": "#4888b0"
+          }
+        },
+        "93aab34e-8df3-4da3-bd0e-5957aca7930e": {
+          "type": "heading",
+          "settings": {
+            "text": "Fresh Scent",
+            "heading_tag": "h2",
+            "text_color": "#4888b0",
+            "gradient": ""
+          }
+        },
+        "5a0ca4b1-3ba2-4244-bb5c-8d4898861195": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Our wipes come in a range of fresh scents that you can’t get from the average mop and water. Most wipes are smaller and unscented, leaving a chemical smell and far less shine. When you use our floor wipes, you’ll feel the sparkling wet shine and fresh scents of lavender and luxury boutique hotels, that give you the look and smell of a superior deep clean.</p>"
+          }
+        },
+        "bcae4e72-3928-4c2c-a157-3faf38d62f0c": {
+          "type": "icon",
+          "settings": {
+            "icon": "picto-love",
+            "icon_width": 84,
+            "icon_background_type": "none",
+            "icon_background": "#fb33a6",
+            "icon_color": "#7f48b0"
+          }
+        },
+        "9eb88661-770b-4d1a-8df2-31cfdc83f9a2": {
+          "type": "heading",
+          "settings": {
+            "text": "Daily Routine",
+            "heading_tag": "h2",
+            "text_color": "#7f48b0",
+            "gradient": ""
+          }
+        },
+        "0e61e33d-d7df-49ef-889f-02e604013471": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Households across Australia can’t get enough of our Fresh Home Floor Wipes. You’ll get addicted to the scent and the shine from one quick and easy swipe. Cleaning made so simple you’ll want to wipe your floors on the daily.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "6da2bca1-7bd4-441a-aa3b-7bdea2f6e4aa",
+        "20603c75-742b-4aa3-9bf1-45b12bc6e953",
+        "ed5b4685-7bdc-4d20-9a20-0c3f90df0849",
+        "44b5f786-639e-4c42-94ad-1319a0c6d566",
+        "template--19575487660306__b9b043b0-6f7d-46c8-af7e-abe869a1461a-16877746580fb4404c-1",
+        "template--19575487660306__b9b043b0-6f7d-46c8-af7e-abe869a1461a-16877746580fb4404c-2",
+        "3c1ba536-b759-485a-a1d6-4a0e2285b3b1",
+        "93aab34e-8df3-4da3-bd0e-5957aca7930e",
+        "5a0ca4b1-3ba2-4244-bb5c-8d4898861195",
+        "bcae4e72-3928-4c2c-a157-3faf38d62f0c",
+        "9eb88661-770b-4d1a-8df2-31cfdc83f9a2",
+        "0e61e33d-d7df-49ef-889f-02e604013471"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "content_width": "medium",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "93b3dd98-8014-44ba-af23-a7338412744e": {
+      "type": "impact-text",
+      "blocks": {
+        "template--19575487660306__93b3dd98-8014-44ba-af23-a7338412744e-168777733896fb06a0-0": {
+          "type": "item",
+          "settings": {
+            "title": "",
+            "subheading": "A better, faster way to be home and dry, a squeegee clean like no other.",
+            "content": "<p>BrightTools squeegees are designed with individual surfaces in mind, you’ll feel the difference with each motion and in every room.</p>",
+            "button_text": "",
+            "button_url": "",
+            "animate_impact_text": true,
+            "animate_impact_text_duration": 2
+          }
+        }
+      },
+      "block_order": [
+        "template--19575487660306__93b3dd98-8014-44ba-af23-a7338412744e-168777733896fb06a0-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "stack_mobile": true,
+        "text_alignment": "center",
+        "impact_text_style": "fill",
+        "text_divider": "none",
+        "impact_text_size_ratio": 1,
+        "background": "",
+        "background_gradient": "",
+        "heading_text_color": "",
+        "heading_gradient": "",
+        "text_color": "",
+        "button_background": "",
+        "button_text_color": ""
+      }
+    },
+    "2f1c8e4a-0b18-41f5-a174-e98ba708c08a": {
+      "type": "testimonials",
+      "blocks": {
+        "template--20493668090130__2f1c8e4a-0b18-41f5-a174-e98ba708c08a-testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/squeegee_pack_quick_mop_floor_wipes.png",
+            "round_avatar": false,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Scicluna Lily",
+            "title": "Exceptional customer service",
+            "content": "<p>Products do what they are advertised to do, exceptional quality tools, I would not hesitate to recommend to my family and friends.<br/>Exceptional customer service.</p>"
+          }
+        },
+        "3081704d-686f-4d7a-a86a-a94d3e194c7f": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/silicone_broom-bundle-floor-wipes_quick_mop.jpg",
+            "round_avatar": false,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Kate Smith",
+            "title": "Simply The Best",
+            "content": "<p>Absolutely thrilled with all the products purchased, take it from me throw away all you useless mops that are a complete waste of money. My favourite bright tool is \"The Broom\" which becomes a mop with the throw over divine smelling cloth. The squeeze side is brilliant on my wood floors hardly need to get out the vac. all handled both broom and mop can be made to the height required so if you're tall no more bending over.<br/>I highly recommend all the products</p>"
+          }
+        },
+        "00dae38f-bcf3-456f-b277-e6f64edf9a16": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/QuickMop_FloorWipes_ChooseyourBundleof3_6659832e-8ad4-47a2-96d8-f3e19f235e09.jpg",
+            "round_avatar": false,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Ines",
+            "title": "Wet (Timber) Floor Wipes",
+            "content": "<p>I was after something I can use to clean the floors in between the regular cleaning. The wipes are absolutely perfect for this.<br/>Great big size and I love the hole in them for the broomstick.</p>"
+          }
+        },
+        "d24802f7-83b4-4e65-b9b6-a0d5203739ea": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/silicone_broom-bundle-floor-wipes_quick_mop.jpg",
+            "round_avatar": false,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Di ",
+            "title": "Great for a quick clean up",
+            "content": "<p>Large wet wipes, stay damp to do a large area for a streak free finish. Perfect for a tidy up between thorough deep cleans.</p>"
+          }
+        },
+        "template--20493668090130__2f1c8e4a-0b18-41f5-a174-e98ba708c08a-testimonial-2": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/QuickMop_FloorWipes_ChooseyourBundleof3_6659832e-8ad4-47a2-96d8-f3e19f235e09.jpg",
+            "round_avatar": false,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Carol Mackay",
+            "title": "Quick Mop – Floor Wipes – Choose your Bundle of 5",
+            "content": "<p>So easy to use, much better than mop and bucket</p>"
+          }
+        },
+        "693c4952-4e7c-4036-b1cf-64be4a97f731": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/QuickMop_FloorWipes_ChooseyourBundleof3_6659832e-8ad4-47a2-96d8-f3e19f235e09.jpg",
+            "round_avatar": false,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Margaret Barnes",
+            "title": "Fantastic",
+            "content": "<p>Smell great & cleans up messes fast & easily!!</p>"
+          }
+        },
+        "0a5ac9a3-1159-45e6-9cb0-3ff18f53820c": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/quick_mop_floor_wipes_fresh_home_main1.jpg",
+            "round_avatar": false,
+            "show_rating": true,
+            "rating": 5,
+            "author": "April Jeffery",
+            "title": "Awesome",
+            "content": "<p>Love the fresh scent makes my house smell lovely have just ordered my second lot</p>"
+          }
+        },
+        "ef66ab81-f7fd-42bc-bcd5-6501112f0d3d": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/QuickMop_FloorWipes_ChooseyourBundleof3_6659832e-8ad4-47a2-96d8-f3e19f235e09.jpg",
+            "round_avatar": false,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Matilde Abade",
+            "title": "excellent product",
+            "content": "<p>Love them, Excellent product, cleans the floors quickly without getting out the mop.<br/>too easy</p>"
+          }
+        },
+        "9ef84153-5135-4c16-aadf-572e3977ef0e": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/squeegee_pack_quick_mop_floor_wipes.png",
+            "round_avatar": false,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Rima",
+            "title": "Would recommend",
+            "content": "<p>I love how easy and lightweight this product is to use. My floors co</p>"
+          }
+        },
+        "adba3df5-40c3-4f9a-bce4-8012abcdcee6": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/squeegee_pack_quick_mop_floor_wipes.png",
+            "round_avatar": false,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Ushtana Antia",
+            "title": "Great manoeuvrability",
+            "content": "<p>A handy tool to have. Narrow so it gets into small gaps like behind the fridge. Flexible with swivel head or fixed as needed</p>"
+          }
+        },
+        "template--20493668090130__2f1c8e4a-0b18-41f5-a174-e98ba708c08a-testimonial-3": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/QuickMop_FloorWipes_ChooseyourBundleof3_6659832e-8ad4-47a2-96d8-f3e19f235e09.jpg",
+            "round_avatar": false,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Barb Hartmann",
+            "title": "Quick Mop – Floor Wipes – Choose your Bundle of 5",
+            "content": "<p>Great product. Saves time and keeps the floor clean. House smells so clean and fresh</p>"
+          }
+        },
+        "b55e8b6f-b131-4878-9d57-60b87d4b21b7": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/silicone_broom-bundle-floor-wipes_quick_mop.jpg",
+            "round_avatar": false,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Zeena Anwar",
+            "title": "Broom bundle",
+            "content": "<p>A must for every household. Easy to use, floor wet wipes are just amazing.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--20493668090130__2f1c8e4a-0b18-41f5-a174-e98ba708c08a-testimonial-1",
+        "3081704d-686f-4d7a-a86a-a94d3e194c7f",
+        "00dae38f-bcf3-456f-b277-e6f64edf9a16",
+        "d24802f7-83b4-4e65-b9b6-a0d5203739ea",
+        "template--20493668090130__2f1c8e4a-0b18-41f5-a174-e98ba708c08a-testimonial-2",
+        "693c4952-4e7c-4036-b1cf-64be4a97f731",
+        "0a5ac9a3-1159-45e6-9cb0-3ff18f53820c",
+        "ef66ab81-f7fd-42bc-bcd5-6501112f0d3d",
+        "9ef84153-5135-4c16-aadf-572e3977ef0e",
+        "adba3df5-40c3-4f9a-bce4-8012abcdcee6",
+        "template--20493668090130__2f1c8e4a-0b18-41f5-a174-e98ba708c08a-testimonial-3",
+        "b55e8b6f-b131-4878-9d57-60b87d4b21b7"
+      ],
+      "settings": {
+        "full_width": true,
+        "stack_testimonials": false,
+        "subheading": "Check out some of our",
+        "title": "Reviews",
+        "content": "",
+        "link_url": "",
+        "link_text": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "testimonial_card_background": "",
+        "testimonial_card_text_color": ""
+      }
+    },
+    "d9e91537-6225-4b57-bd84-e5d10e8558b3": {
+      "type": "faq",
+      "blocks": {
+        "item_DLntwV": {
+          "type": "item",
+          "settings": {
+            "title": "How can I make the most of my clean?",
+            "content": "<p>Clean until you find that the Wipe is dry and or dirty, and then flip the tool 360 degrees to use the other side of the wipe. Once both<br/>sides are dirty, you can remove the Wipe completely and put it back over the handle inside-out to use the other side. If you feel that the Wipe is too dry, but not yet dirty, you can also run the Wipe briefly under water to further moisten it.</p>"
+          }
+        },
+        "item_nkCiz9": {
+          "type": "item",
+          "settings": {
+            "title": "Do the Wipes leave the floors wet / slippery?",
+            "content": "<p>Upon application the Wipes leave the floors moist, however will dry up in a few short minutes and will not leave the floors slippery. </p>"
+          }
+        },
+        "item_gbaLKR": {
+          "type": "item",
+          "settings": {
+            "title": "What makes Quick Mop Floor Wipes superior to other wipes on the market?",
+            "content": "<p>Our Wipes are supersized to cover more floor surface, have the perfect amount of moisture, and smell awesome! Our Wipes have an in-built hole in the middle to slot over any cleaning tool handle. To put it simply, our Wipes are a step above the rest, and will leave your floors looking and smelling fresh in moments. </p>"
+          }
+        },
+        "item_ATRXDy": {
+          "type": "item",
+          "settings": {
+            "title": "Can the Wipes be used on the cleaning tool I already haveat home?",
+            "content": "<p>Yes! Our Quick Mop Floor Wipes can be placed over the handle of the broom / squeegee you already have at home. However, for ultimate results, we suggest them to be paired with our BrightTools range of Brooms and or Squeegees.</p>"
+          }
+        },
+        "item_ikMTTN": {
+          "type": "item",
+          "settings": {
+            "title": "Are the Wipes safe for my pets and or children?",
+            "content": "<p>Yes! Our Wipes have been trialled and tested for many years and are made from a special mix of ingredients that are safe to use around animals and children. If you have a pet and or child who are sensitive to chemicals, we suggest removing the pet and or child from the space whilst using the Wipes and waiting a few minutes for the floors to dry before bringing them<br/>back into the room. </p>"
+          }
+        },
+        "item_JiUKf8": {
+          "type": "item",
+          "settings": {
+            "title": "Can I use the Poliwix on tiles or other floor types that aren’t wooden?",
+            "content": "<p>Yes! Out of our range of Wipes, Poliwix were crafted with a special mix of ingredients that maintain the natural shine of the wood and are most effective for cleaning wooden floors. However, they will work effectively on other floor types too (tiles, parquet, cement, etc). At the same time, many customers use our other scents for wooden floors, and are very happy with the results too. </p>"
+          }
+        },
+        "item_BX64wX": {
+          "type": "item",
+          "settings": {
+            "title": "Where should I begin my clean?",
+            "content": "<p>Anywhere around the house, except for the bathroom! Begin cleaning in loungeroom, dining room, kitchen, bedrooms and corridors before<br/>finishing off in bathroom. We recommend the bathroom as the last place to clean so that germs from the toilet don’t get spread around the house. </p>"
+          }
+        },
+        "item_ELCYMT": {
+          "type": "item",
+          "settings": {
+            "title": "What are the benefits of the Quick Mop Floor Wipes cleaning system over traditional mopping?",
+            "content": "<p>Safer – no water or spills!</p><p>Easier – don’t need to bend, carry heavy buckers!</p><p>Effective & quick - can get behind fridge and under<br/>furniture without bending!</p><p>More hygienic – doesn’t continue to spread germs around the<br/>house, use after use!</p>"
+          }
+        },
+        "item_QhLHeQ": {
+          "type": "item",
+          "settings": {
+            "title": "Are the scents overwhelming?",
+            "content": "<p>The scents of the floor Wipes are quite strong when initially applied, however the strength of the odour begin to fade over time and leave a pleasant and fresh odour in the space. </p>"
+          }
+        },
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-0": {
+          "type": "item",
+          "settings": {
+            "title": "Can I use the floor Wipes for other surfaces besides floors?",
+            "content": "<p>Absolutely! While our wet floor wipes are primarily designed for floors, they can also be used on other surfaces. Feel free to use them on countertops, tables, and other hard surfaces that need a quick and effective clean. Just make sure to follow the instructions and test a small area first.</p>"
+          }
+        },
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-1": {
+          "type": "item",
+          "settings": {
+            "title": "How should I use BrightTools Quick Mop Floor Wipes?",
+            "content": "<p>Using BrightTools Wipes is super easy! Simply remove a wipe from the packaging, using the hole in the middle of the Wipe place it over the  cleaning tool handle you are using and gently glide it over the surface you want to clean. For stubborn stains or spills, you can apply a bit of pressure. Once you're done, toss the used wipe in the trash. It's that simple!</p>"
+          }
+        },
+        "item_3KHiz3": {
+          "type": "item",
+          "settings": {
+            "title": "Do the Wipes leave residue?",
+            "content": "<p>No! Upon application the Wipes leave the floors moist, however will dry up in a few short minutes.</p>"
+          }
+        },
+        "item_Ck3d9j": {
+          "type": "item",
+          "settings": {
+            "title": "How many Wipes are in a pack?",
+            "content": "<p>Each pack comes with 10 supersized wipes. You can also purchase one of our bundles and save (i.e. 3 Pack or 5 Pack Bundle)! We are currently working on a subscription platform, which will give you the opportunity to replenish your wipes according to need, offering substantial discounts. </p>"
+          }
+        },
+        "item_CjQVim": {
+          "type": "item",
+          "settings": {
+            "title": "Do you have any fragrance-free Wipes?",
+            "content": "<p>No, not at this stage. Our Wipes have been trialled and tested for many years and the scents have been perfected based on our customers’ feedback. The strength of the fragrances fade a short time after application and leave a pleasant and fresh odour in the space.</p>"
+          }
+        },
+        "item_RRDBJH": {
+          "type": "item",
+          "settings": {
+            "title": "Do the Wipes have a chemical odour?",
+            "content": "<p>Our answer is no, however as with all fragrances, they are a<br/>matter of personal taste. Our Wipes have been trialled and tested and the feedback from our customers is that they love the smell of our<br/>Wipes. The strength of the fragrances fade a short time after application and leave a pleasant and fresh odour in the space.</p>"
+          }
+        },
+        "item_treNRt": {
+          "type": "item",
+          "settings": {
+            "title": "Are the Wipes made to replace a deep clean?",
+            "content": "<p>No. The Wipes are for daily floor cleaning maintenance. Whilst many of our customers do use the Wipes in place of a regular floor mop,<br/>we recommend our Microfiber Silicone Mop in addition to the Wipes for a weekly deep clean.</p>"
+          }
+        },
+        "item_6rFt8d": {
+          "type": "item",
+          "settings": {
+            "title": "Are your Wipes Environmentally friendly / biodegradable /compostable?",
+            "content": "<p>Unfortunately not. We are currently working with our manufacturer to develop a product that matches the quality of our current Wipes that are environmentally friendly. Whilst we do so, a positive environmental<br/>factor to consider is the amount of water our Wipes save in comparison to traditional floor cleaning methods. </p>"
+          }
+        },
+        "item_XdrFyG": {
+          "type": "item",
+          "settings": {
+            "title": "Where is our warehouse located?",
+            "content": "<p>Our warehouse is located in Elsternwick, Melbourne. </p>"
+          }
+        },
+        "item_aTBcVY": {
+          "type": "item",
+          "settings": {
+            "title": "What is the most ideal floor cleaning solution for small spaces such as caravans / tiny homes / bathrooms?",
+            "content": "<p>The Compact Squeegee Pack! It comes with our narrowest 30cm<br/>Squeegee with knuckle-joint that can easily maneuver around tight spaces. The Squeegee has a 4-part handle, which can be disassembled for easy storage. </p>"
+          }
+        },
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-2": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "title": "Do BrightTools Squeegees come with a warranty?",
+            "content": "<p>Absolutely! We stand behind the quality of our squeegees. Each one is backed by a 2 year <a href=\"/pages/warranty\" target=\"_blank\" title=\"Warranty\">warranty</a>.</p>"
+          }
+        },
+        "dc709b98-8f74-4f10-9911-a3d0da4bdcf4": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "title": "I have a question that is not listed here. How can I get in touch with BrightTools?",
+            "content": "<p>No problem at all! We're here to help. If you have any additional questions or need further assistance, simply visit our <a href=\"/pages/contact\" target=\"_blank\" title=\"Contact\">contact page.</a></p>"
+          }
+        },
+        "item_tYHJ9Q": {
+          "type": "item",
+          "settings": {
+            "title": "Which scent is the nicest?",
+            "content": "<p>This is a question of personal taste! All of the scents are pleasant and will leave your floors smelling fresh. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_DLntwV",
+        "item_nkCiz9",
+        "item_gbaLKR",
+        "item_ATRXDy",
+        "item_ikMTTN",
+        "item_JiUKf8",
+        "item_BX64wX",
+        "item_ELCYMT",
+        "item_QhLHeQ",
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-0",
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-1",
+        "item_3KHiz3",
+        "item_Ck3d9j",
+        "item_CjQVim",
+        "item_RRDBJH",
+        "item_treNRt",
+        "item_6rFt8d",
+        "item_XdrFyG",
+        "item_aTBcVY",
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-2",
+        "dc709b98-8f74-4f10-9911-a3d0da4bdcf4",
+        "item_tYHJ9Q"
+      ],
+      "settings": {
+        "full_width": false,
+        "subheading": "",
+        "title": "Have a question?",
+        "content": "",
+        "team_avatar": "shopify://shop_images/team-fff.webp",
+        "team_avatar_width": 160,
+        "support_hours": "Our customer support is available monday to friday: 8am-8:30pm.",
+        "answer_time": "Average answer time: 24h",
+        "button_text": "Contacts us",
+        "button_url": "shopify://pages/contact",
+        "text_position": "center",
+        "background": "#ffffff",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "",
+        "button_text_color": "",
+        "accordion_background": "",
+        "accordion_text_color": ""
+      }
+    }
+  },
+  "order": [
+    "c64ef42a-bbfb-4516-9ff4-0a5d868181cd",
+    "banner",
+    "custom_html_NmX3Pz",
+    "main",
+    "908950ea-fa2b-4498-8978-05abdc0cbd5b",
+    "397d7191-df1d-4a09-a3f1-c28dc3293eba",
+    "4eb75113-401d-44ee-b1f8-0e8a9d432f24",
+    "cb929d4c-1c53-4be8-9c5d-f5cc730d8698",
+    "b9b043b0-6f7d-46c8-af7e-abe869a1461a",
+    "93b3dd98-8014-44ba-af23-a7338412744e",
+    "2f1c8e4a-0b18-41f5-a174-e98ba708c08a",
+    "d9e91537-6225-4b57-bd84-e5d10e8558b3"
+  ]
+}

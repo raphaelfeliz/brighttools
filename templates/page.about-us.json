@@ -1,0 +1,157 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_width": "80ch"
+      }
+    },
+    "c7fb45d5-ec97-4878-aa39-80ab50892d0c": {
+      "type": "before-after-image",
+      "settings": {
+        "full_width": true,
+        "subheading": "",
+        "title": "Our Cleaning Tools Work Better",
+        "content": "<p>We know you want to spend more time doing what you love and less time cleaning, we do too.</p><p>So we’ve improved the average brooms, mops, floor wipes and toilet brushes to include a range with innovative design elements for an easier, faster, more efficient and stress-free clean.</p>",
+        "before_image": "shopify://shop_images/brighttools_about_us_black.jpg",
+        "after_image": "shopify://shop_images/brighttools_about_us_white.jpg",
+        "expand_image": false,
+        "text_position": "start",
+        "before_after_text_position": "top",
+        "before_text": "",
+        "after_text": "",
+        "drag_initial_position": 50,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "before_text_color": "#ffffff",
+        "after_text_color": "#ffffff",
+        "drag_cursor_background": "#ffffff",
+        "drag_cursor_color": "#000000"
+      }
+    },
+    "7b586584-3186-4f53-9c03-29438b9061ae": {
+      "type": "impact-text",
+      "settings": {
+        "full_width": true,
+        "stack_mobile": true,
+        "text_alignment": "center",
+        "impact_text_style": "fill",
+        "text_divider": "none",
+        "impact_text_size_ratio": 1,
+        "background": "",
+        "background_gradient": "",
+        "heading_text_color": "",
+        "heading_gradient": "",
+        "text_color": "",
+        "button_background": "",
+        "button_text_color": ""
+      }
+    },
+    "fb43149e-c1e3-4935-9d4c-99d987e463a7": {
+      "type": "impact-text",
+      "blocks": {
+        "template--19386613530898__fb43149e-c1e3-4935-9d4c-99d987e463a7-168665261365396182-0": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "title": "100%",
+            "subheading": "Sustainable & Eco-Friendly",
+            "content": "<p>Our once in a lifetime cleaning tools are sustainably made with natural rubbers and 100% silicone for durability, ease and a deeper clean.</p><p>You’ll instantly feel the difference with every sweep, swish and glide of our brooms, mops and toilet cleaning products.</p>",
+            "button_text": "See Products",
+            "button_url": "shopify://collections",
+            "animate_impact_text": false,
+            "animate_impact_text_duration": 2
+          }
+        }
+      },
+      "block_order": [
+        "template--19386613530898__fb43149e-c1e3-4935-9d4c-99d987e463a7-168665261365396182-0"
+      ],
+      "settings": {
+        "full_width": true,
+        "stack_mobile": true,
+        "text_alignment": "center",
+        "impact_text_style": "fill",
+        "text_divider": "none",
+        "impact_text_size_ratio": 1,
+        "background": "",
+        "background_gradient": "",
+        "heading_text_color": "",
+        "heading_gradient": "",
+        "text_color": "",
+        "button_background": "#c84332",
+        "button_text_color": ""
+      }
+    },
+    "6102cdd6-471a-4da7-96c1-3d1c6ecd4fa8": {
+      "type": "images-with-text-scrolling",
+      "blocks": {
+        "template--19386613530898__6102cdd6-471a-4da7-96c1-3d1c6ecd4fa8-168665268062273bb2-0": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/About_us.png",
+            "icon": "none",
+            "icon_width": 48,
+            "title": "About BrightTools",
+            "content": "<p>BrightTools wants to make a world of difference in your life and inside your home. We want you to experience daily cleaning that’s fun, easy and as fresh as your floors. With every touch, with every sweep our cleaning tools are designed to feel different and to target dirt with minimum effort and maximum shine.</p><p>Born in Melbourne in 2018, we’re the exclusive suppliers of the Tyroler revolutionary range of high quality rubber, magnetic, 100% natural silicone and heavy-duty brooms, mops, dustpans, squeegees, window cleaners and more. </p>"
+          }
+        },
+        "template--19386613530898__6102cdd6-471a-4da7-96c1-3d1c6ecd4fa8-168665268062273bb2-1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/About_us_1.png",
+            "icon": "none",
+            "icon_width": 48,
+            "title": "Solutions for Every Cleaning Problem",
+            "content": "<p>With long-lasting benefits like ergonomic swivel heads and flexible handles for easy-reach in every corner of a room, rubber dust-pans that actually stick to the surface so dirt won’t fly and silicone brooms that work on versatile flooring from carpet to timber, you’ll find a solution for every cleaning problem with our smarter tool technology.</p>"
+          }
+        },
+        "03265a34-0f5f-48b7-b94e-68fc30ab6827": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/About_us_2.png",
+            "icon": "none",
+            "icon_width": 48,
+            "title": "Ethically-Made Premium Cleaning Tools",
+            "content": "<p>No other brand is like us in Australia, we’ve got a handle on durability and sustainability, placing it right in the palm of your hands.</p><p>Our natural rubber bristles have an electrostatic charge that picks up the finest dirt and hair, giving you an ideal clean, and our floor wipes cover more surface and are fragrance fresh for everyday home maintenance that doesn’t feel like a chore. You’ll feel the difference with every product you clean with – and every product is so easy to clean.</p><p>A step up from the rest, our ethically-made premium cleaning tools will last you years, saving you time and promising customer satisfaction so Australian households feel bright at home.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--19386613530898__6102cdd6-471a-4da7-96c1-3d1c6ecd4fa8-168665268062273bb2-0",
+        "template--19386613530898__6102cdd6-471a-4da7-96c1-3d1c6ecd4fa8-168665268062273bb2-1",
+        "03265a34-0f5f-48b7-b94e-68fc30ab6827"
+      ],
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "show_counter": true,
+        "desktop_image_effect": "reveal",
+        "image_position": "end",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "c7fb45d5-ec97-4878-aa39-80ab50892d0c",
+    "7b586584-3186-4f53-9c03-29438b9061ae",
+    "fb43149e-c1e3-4935-9d4c-99d987e463a7",
+    "6102cdd6-471a-4da7-96c1-3d1c6ecd4fa8"
+  ]
+}

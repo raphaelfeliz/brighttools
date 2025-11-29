@@ -1,0 +1,99 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-list-collections",
+      "settings": {
+        "collections": [
+          "brooms",
+          "bundles",
+          "dustpans",
+          "mops",
+          "toilet-brushes",
+          "wipes",
+          "magnetic-window",
+          "cloth",
+          "squeegee",
+          "shop-all"
+        ],
+        "collections_per_row": 3,
+        "text_color": "#000000",
+        "overlay_color": "#ffffff",
+        "overlay_opacity": 37
+      }
+    },
+    "08847d48-2faf-4c3e-ae21-86975541b408": {
+      "type": "faq",
+      "blocks": {
+        "template--19202935652626__08847d48-2faf-4c3e-ae21-86975541b408-1686725178a8124102-0": {
+          "type": "item",
+          "settings": {
+            "title": "Are BrightTools products suitable for both professionals and amateurs?",
+            "content": "<p>Absolutely! Our tools are designed to cater to the needs of professionals as well as hobbyists and DIY enthusiasts. We strive to offer products that are user-friendly, reliable, and suitable for various skill levels.</p><p>Can I track the status of my order?</p><p></p><p>What payment options are available?</p><p></p><p>Do you offer international shipping?</p><p></p>"
+          }
+        },
+        "template--19202935652626__08847d48-2faf-4c3e-ae21-86975541b408-1686725178a8124102-1": {
+          "type": "item",
+          "settings": {
+            "title": "Can I track the status of my order?",
+            "content": "<p>Yes, once your order is confirmed, we will provide you with a tracking number. You can use this number to track the status of your shipment. We also send regular updates via email, keeping you informed about the progress of your order.</p>"
+          }
+        },
+        "template--19202935652626__08847d48-2faf-4c3e-ae21-86975541b408-1686725178a8124102-2": {
+          "type": "item",
+          "settings": {
+            "title": "What payment options are available?",
+            "content": "<p>We accept various payment methods, including major credit cards (Visa, Mastercard, American Express), PayPal, and bank transfers. Rest assured that all transactions are securely processed to protect your sensitive information.</p>"
+          }
+        },
+        "5b6fa21f-9997-4b9b-9c9d-3432badb073f": {
+          "type": "item",
+          "settings": {
+            "title": "Do you offer international shipping?",
+            "content": "<p>Yes, we offer international shipping to select countries. However, please note that shipping fees and delivery times may vary depending on the destination. During the checkout process, you can enter your location to view the available shipping options and associated costs.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--19202935652626__08847d48-2faf-4c3e-ae21-86975541b408-1686725178a8124102-0",
+        "template--19202935652626__08847d48-2faf-4c3e-ae21-86975541b408-1686725178a8124102-1",
+        "template--19202935652626__08847d48-2faf-4c3e-ae21-86975541b408-1686725178a8124102-2",
+        "5b6fa21f-9997-4b9b-9c9d-3432badb073f"
+      ],
+      "settings": {
+        "full_width": false,
+        "subheading": "FAQs",
+        "title": "Have a question?",
+        "content": "",
+        "team_avatar": "shopify://shop_images/team-fff.webp",
+        "team_avatar_width": 160,
+        "support_hours": "Our customer support is available monday to friday: 8am-8:30pm.",
+        "answer_time": "Average answer time: 24h",
+        "button_text": "Contact us",
+        "button_url": "shopify://pages/contact",
+        "text_position": "start",
+        "background": "#ffffff",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "#1a1a1a",
+        "button_text_color": "",
+        "accordion_background": "",
+        "accordion_text_color": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "08847d48-2faf-4c3e-ae21-86975541b408"
+  ]
+}

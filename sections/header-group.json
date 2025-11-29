@@ -1,0 +1,132 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "Header group",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "aa4a361a-7b26-4411-a72b-7e5e39eed953": {
+          "type": "message",
+          "settings": {
+            "text": "BLACK FRIDAY SALE -  UP TO 50% OFF",
+            "url": "shopify://collections/shop-all"
+          }
+        },
+        "message_xH7FpF": {
+          "type": "message",
+          "settings": {
+            "text": "🎁  Free Gift Bag on orders over $49.95 AU",
+            "url": "shopify://collections/shop-all"
+          }
+        },
+        "df4acc60-42ce-4164-9099-e86eae5fbd97": {
+          "type": "message",
+          "settings": {
+            "text": "📦 Free shipping on orders over $179",
+            "url": "shopify://collections/shop-all"
+          }
+        },
+        "dab02eb5-c0b3-4d7c-97ff-e28e8815c70e": {
+          "type": "message",
+          "settings": {
+            "text": "🚚💨 Same/Next Business Day dispatch with tracking",
+            "url": "shopify://collections/shop-all"
+          }
+        },
+        "message": {
+          "type": "message",
+          "settings": {
+            "text": "💸 30 day money back guarantee",
+            "url": "shopify://collections/shop-all"
+          }
+        }
+      },
+      "block_order": [
+        "aa4a361a-7b26-4411-a72b-7e5e39eed953",
+        "message_xH7FpF",
+        "df4acc60-42ce-4164-9099-e86eae5fbd97",
+        "dab02eb5-c0b3-4d7c-97ff-e28e8815c70e",
+        "message"
+      ],
+      "settings": {
+        "enable_sticky": false,
+        "navigation_mode": "arrows",
+        "autoplay": false,
+        "cycle_speed": 6,
+        "scrolling_speed": 30,
+        "text_size": "text-xs",
+        "background": "#d80925",
+        "background_gradient": "linear-gradient(180deg, rgba(216, 9, 37, 1), rgba(221, 39, 57, 0.88) 100%)",
+        "text_color": "#ffffff"
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "a8298f8c-c1f5-4141-a330-97b516dda72a": {
+          "type": "mega_menu",
+          "settings": {
+            "menu_item": "Shop",
+            "layout": "drawer",
+            "submenu_style": "bold_text",
+            "image_heading_1": "Quick Mop Floor Wipes",
+            "image_link_1": "shopify://collections/wipes",
+            "image_text_color_1": "#000000",
+            "image_heading_2": "Rubber Broom",
+            "image_link_2": "shopify://products/adjustable-dust-blade-rubber-broom-squeegee",
+            "image_text_color_2": "#000000",
+            "image_heading_3": "Microfibre Cloths x 2",
+            "image_link_3": "shopify://products/high-window-cleaner-microfiber-cloth-x-2",
+            "image_text_color_3": "#000000",
+            "product": "",
+            "product_card_background": "",
+            "product_card_text_color": "",
+            "promo_content_layout": "carousel",
+            "stretch_promo": false,
+            "drawer_link_image": "show"
+          }
+        }
+      },
+      "block_order": [
+        "a8298f8c-c1f5-4141-a330-97b516dda72a"
+      ],
+      "custom_css": [],
+      "settings": {
+        "enable_sticky": true,
+        "hide_on_scroll": false,
+        "logo": "shopify://shop_images/slogan.png",
+        "logo_max_width": 195,
+        "logo_mobile_max_width": 170,
+        "menu": "main-menu",
+        "sidebar_menu": "shop",
+        "secondary_menu": "",
+        "menu_open_trigger": "click",
+        "opening_from": "left",
+        "layout": "logo_left_navigation_center",
+        "show_social_media": true,
+        "show_locale_selector": true,
+        "show_country_selector": false,
+        "show_country_flag": false,
+        "show_country_name": false,
+        "transparent_header_text_color": "#000000",
+        "transparent_logo": "shopify://shop_images/slogan.png",
+        "reduce_padding": false,
+        "background_opacity": 100,
+        "background_blur_radius": 0
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}
