@@ -58,13 +58,13 @@
                 /* Ensure font applies specifically to this section */
                 font-family: 'Inter', sans-serif;
 
-                --bf-red: #00F0FF;
-                /* CYBER BLUE */
+                --bf-red: #f9e504;
+                /* YELLOW */
                 --bf-bg: #050505;
                 --bf-card: #111;
-                --bf-yellow-glow: #9D00FF;
-                /* CYBER PURPLE */
-                --bf-green-glow: #39FF14;
+                --bf-yellow-glow: #9a69a7;
+                /* PURPLE */
+                --bf-green-glow: #4e859e;
                 /* CYBER GREEN */
 
                 /* Background definition including the subtle gradient texture */
@@ -75,8 +75,8 @@
                 background-image:
                     url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E"),
                     /* CRITICAL CHANGE: Increased lightness/size of gradient spotlights for visibility */
-                    radial-gradient(circle at 20% 30%, rgba(0, 240, 255, 0.15) 0%, rgba(20, 20, 20, 0.8) 40%, rgba(5, 5, 5, 1) 100%),
-                    radial-gradient(circle at 80% 70%, rgba(157, 0, 255, 0.15) 0%, rgba(20, 20, 20, 0.8) 40%, rgba(5, 5, 5, 1) 100%);
+                    radial-gradient(circle at 20% 30%, rgba(78, 133, 158, 0.15) 0%, rgba(20, 20, 20, 0.8) 40%, rgba(5, 5, 5, 1) 100%), /* blue #4e859e */
+                    radial-gradient(circle at 80% 70%, rgba(154, 105, 167, 0.15) 0%, rgba(20, 20, 20, 0.8) 40%, rgba(5, 5, 5, 1) 100%); /* purple #9a69a7 */
 
                 /* Blend mode to mix the noise with the dark background */
                 background-blend-mode: overlay, normal, normal;
@@ -99,18 +99,18 @@
 
             @keyframes bf-glow {
                 0% {
-                    box-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
-                    border-color: rgba(0, 240, 255, 0.6);
+                    box-shadow: 0 0 8px rgba(78, 133, 158, 0.4); /* blue #4e859e */
+                    border-color: rgba(78, 133, 158, 0.6); /* blue #4e859e */
                 }
 
                 50% {
-                    box-shadow: 0 0 25px rgba(157, 0, 255, 0.7);
-                    border-color: rgba(157, 0, 255, 1);
+                    box-shadow: 0 0 25px rgba(154, 105, 167, 0.7); /* purple #9a69a7 */
+                    border-color: rgba(154, 105, 167, 1); /* purple #9a69a7 */
                 }
 
                 100% {
-                    box-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
-                    border-color: rgba(0, 240, 255, 0.6);
+                    box-shadow: 0 0 8px rgba(78, 133, 158, 0.4); /* blue #4e859e */
+                    border-color: rgba(78, 133, 158, 0.6); /* blue #4e859e */
                 }
             }
 
@@ -279,7 +279,7 @@
                 font-family: 'Comfortaa', cursive;
                 font-size: 58px;
                 font-weight: 700;
-                color: rgba(255, 255, 255, 0.8);
+                color: rgba(255, 255, 255, 0.8); /* white */
                 text-transform: uppercase;
                 letter-spacing: 2px;
                 text-shadow:
@@ -338,7 +338,7 @@
                         0 0 20px #00ffff,
                         0 0 40px #00ffff,
                         0 0 80px #00ffff;
-                    color: rgba(255, 255, 255, 0.8);
+                    color: rgba(255, 255, 255, 0.8); /* white */
                     opacity: 1;
                 }
 
@@ -346,7 +346,7 @@
                 24%,
                 55% {
                     text-shadow: none;
-                    color: rgba(40, 40, 40, 0.5);
+                    color: rgba(40, 40, 40, 0.5); /* dark gray */
                     opacity: 0.2;
                 }
             }
@@ -369,7 +369,7 @@
                 color: var(--bf-red);
                 font-weight: 900;
                 letter-spacing: 0px;
-                text-shadow: 0 0 20px rgba(0, 240, 255, 0.6);
+                text-shadow: 0 0 20px rgba(78, 133, 158, 0.6); /* blue #4e859e */
                 position: absolute;
                 /* ADDED: For desktop animation, prevent wrapping */
                 white-space: nowrap;
@@ -433,7 +433,7 @@
             .bf-card:hover {
                 border-color: var(--bf-red);
                 transform: translateY(-5px);
-                box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+                box-shadow: 0 0 20px rgba(78, 133, 158, 0.3); /* blue #4e859e */
             }
 
             /* Badges */
@@ -560,7 +560,7 @@
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
-                background-color: rgba(0, 0, 0, 0.5);
+                background-color: rgba(0, 0, 0, 0.5); /* black */
                 color: #ffffff;
                 border: 2px solid var(--bf-red);
                 padding: 18px 48px;
@@ -575,14 +575,14 @@
                 backdrop-filter: blur(4px);
                 z-index: 2;
                 border-radius: 9999px;
-                box-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+                box-shadow: 0 0 8px rgba(78, 133, 158, 0.4); /* blue #4e859e */
                 animation: bf-glow 2s infinite ease-in-out;
             }
 
             .bf-neon-btn:hover {
                 background-color: var(--bf-red);
                 color: black;
-                box-shadow: 0 0 50px rgba(0, 240, 255, 0.9);
+                box-shadow: 0 0 50px rgba(78, 133, 158, 0.9); /* blue #4e859e */
                 border-color: var(--bf-red);
                 transform: translateY(-2px);
                 animation: none;
@@ -769,9 +769,9 @@
             const CM_STATUS = "live";
 
             const CONFIG = {
-                CYBER_BLUE: "#00F0FF",
-                CYBER_PURPLE: "#9D00FF",
-                CYBER_GREEN: "#39FF14",
+                CYBER_BLUE: "#4e859e",
+                CYBER_PURPLE: "#9a69a7",
+                CYBER_GREEN: "#f9e504",
                 BG_DARK: "#050505",
                 IDS: {
                     ANNOUNCEMENT_BAR: "shopify-section-sections--24966839730450__announcement-bar"
@@ -846,7 +846,7 @@
                     max-height: 0; opacity: 0; visibility: hidden; 
                     transform: translateY(-10px); 
                     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
-                    box-shadow: 0 20px 50px rgba(0,240,255,0.2); 
+                    box-shadow: 0 20px 50px rgba(78, 133, 158, 0.2); /* blue #4e859e */ 
                     overflow: hidden; z-index: 101; 
                 }
                 
@@ -895,7 +895,7 @@
                 /* COUNTDOWN TIMER */
                 .cm-timer-container {
                     display: flex; gap: 10px; justify-content: center; margin-top: 10px;
-                    background: rgba(0, 240, 255, 0.1); padding: 10px; border-radius: 8px;
+                    background: rgba(78, 133, 158, 0.1); /* blue #4e859e */ padding: 10px; border-radius: 8px;
                     border: 1px solid var(--cm-blue);
                 }
                 @media (min-width: 900px) { .cm-timer-container { justify-content: flex-start; } }
@@ -912,7 +912,7 @@
                     padding: 8px 16px; border-radius: 6px; cursor: pointer;
                     transition: all 0.2s; margin-top: 10px;
                 }
-                .cm-code-box:hover { background: rgba(57, 255, 20, 0.1); transform: scale(1.02); }
+                .cm-code-box:hover { background: rgba(249, 229, 4, 0.1); /* yellow #f9e504 */ transform: scale(1.02); }
                 .cm-code-text { font-family: monospace; font-size: 1.2rem; font-weight: 700; color: var(--cm-green); }
                 .cm-code-label { color: white; font-size: 0.8rem; text-transform: uppercase; }
 
@@ -956,7 +956,7 @@
                     } 
                 }
 
-                .cm-card:hover { border-color: var(--cm-blue); transform: translateY(-5px); box-shadow: 0 0 15px rgba(0, 240, 255, 0.3); }
+                .cm-card:hover { border-color: var(--cm-blue); transform: translateY(-5px); box-shadow: 0 0 15px rgba(78, 133, 158, 0.3); /* blue #4e859e */ }
                 
                 /* CAROUSEL ARROWS */
                 .cm-nav-btn {
@@ -992,7 +992,7 @@
                 .cm-card-title { color: white; font-size: 0.95rem; font-weight: 600; line-height: 1.3; margin: 0; }
                 .cm-price-row { margin-top: auto; display: flex; gap: 8px; align-items: baseline;}
                 .cm-old-price { color: #888; font-size: 0.85rem; text-decoration: line-through; }
-                .cm-new-price { color: var(--cm-green); font-size: 1.1rem; font-weight: 900; text-shadow: 0 0 5px rgba(57, 255, 20, 0.5); }
+                .cm-new-price { color: var(--cm-green); font-size: 1.1rem; font-weight: 900; text-shadow: 0 0 5px rgba(249, 229, 4, 0.5); /* yellow #f9e504 */ }
                 
                 .cm-card-btn { 
                     margin-top: 8px; background: transparent; border: 1px solid #444; color: white; 
