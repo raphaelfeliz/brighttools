@@ -1138,23 +1138,45 @@
 
                 // --- COUNTDOWN LOGIC (24H Fixed) ---
                 const startTimer = () => {
-                    // Set end time to midnight tonight (or 24h from now)
-                    const now = new Date();
-                    const end = new Date();
-                    end.setHours(24, 0, 0, 0); // Midnight tonight
+                    // Set end time to the end of Monday (23:59:59) in Melbourne, Australia time
+                    // Melbourne is UTC+10 (standard), UTC+11 (daylight savings, AEDT)
+                    // Use Australia/Melbourne timezone
+                    // Get current time in UTC
+                    const nowUtc = new Date();
+                    // Get current time in Melbourne
+                    const melbourneNowStr = nowUtc.toLocaleString('en-US', { timeZone: 'Australia/Melbourne' });
+                    const melbourneNow = new Date(melbourneNowStr);
+                    // Calculate end of Monday in Melbourne
+                    let endMelbourne = new Date(melbourneNow);
+                    if (melbourneNow.getDay() === 1) {
+                        // Today is Monday in Melbourne
+                        endMelbourne.setHours(23, 59, 59, 999);
+                    } else {
+                        // Next Monday
+                        const daysUntilMonday = (8 - melbourneNow.getDay()) % 7;
+                        endMelbourne.setDate(melbourneNow.getDate() + daysUntilMonday);
+                        endMelbourne.setHours(23, 59, 59, 999);
+                    }
+                    // Get timestamp for endMelbourne in Melbourne time
+                    const endMelbourneTimestamp = endMelbourne.getTime();
 
                     const update = () => {
-                        const current = new Date();
-                        const diff = end - current;
+                        // Get current time in Melbourne
+                        const nowUtc = new Date();
+                        const melbourneNowStr = nowUtc.toLocaleString('en-US', { timeZone: 'Australia/Melbourne' });
+                        const melbourneNow = new Date(melbourneNowStr);
+                        const nowTimestamp = melbourneNow.getTime();
+                        const diff = endMelbourneTimestamp - nowTimestamp;
 
                         if (diff <= 0) {
                             document.getElementById('cm-timer').innerHTML = "EXPIRED";
                             return;
                         }
 
-                        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                        const s = Math.floor((diff % (1000 * 60)) / 1000);
+                        const totalSeconds = Math.floor(diff / 1000);
+                        const h = Math.floor(totalSeconds / 3600);
+                        const m = Math.floor((totalSeconds % 3600) / 60);
+                        const s = totalSeconds % 60;
 
                         document.getElementById('cm-h').innerText = h.toString().padStart(2, '0');
                         document.getElementById('cm-m').innerText = m.toString().padStart(2, '0');
