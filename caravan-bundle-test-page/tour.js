@@ -37,7 +37,8 @@ const tourSteps = [
     {
         element: '#tour-guarantee',
         title: 'Risk Reversal',
-        description: 'A bold guarantee removes the fear of buyer\'s remorse. Placing it near the final call-to-action acts as a safety net for the purchase decision.'
+        description: 'A bold guarantee removes the fear of buyer\'s remorse. Placing it near the final call-to-action acts as a safety net for the purchase decision.',
+        slideIndex: 0 // Ensure we are on the first slide
     }
 ];
 
@@ -59,6 +60,13 @@ class Tour {
         // Bind events
         window.addEventListener('resize', () => {
             if (this.isActive) this.positionTooltip();
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (this.isActive && e.key === 'Escape') {
+                this.endTour();
+            }
         });
     }
 
@@ -109,12 +117,22 @@ class Tour {
         this.overlay.classList.remove('active');
         this.tooltip.classList.remove('active');
         this.removeHighlight();
+
+        // Resume carousel if it was paused
+        if (window.CaravanCarousel && window.CaravanCarousel.resume) {
+            window.CaravanCarousel.resume();
+        }
     }
 
     removeHighlight() {
         const highlighted = document.querySelector('.tour-highlight');
         if (highlighted) {
             highlighted.classList.remove('tour-highlight');
+            // Remove inline bg if we added it (checked via data attribute)
+            if (highlighted.dataset.tourBgFixed) {
+                highlighted.style.backgroundColor = '';
+                delete highlighted.dataset.tourBgFixed;
+            }
         }
     }
 
@@ -125,6 +143,12 @@ class Tour {
         this.currentStep = index;
 
         const step = this.steps[index];
+
+        // Handle Carousel Slide
+        if (typeof step.slideIndex !== 'undefined' && window.CaravanCarousel) {
+            window.CaravanCarousel.goToSlide(step.slideIndex, false); // false = pause auto-play
+        }
+
         const element = document.querySelector(step.element);
 
         if (element) {
@@ -134,6 +158,16 @@ class Tour {
             // Highlight element
             // We use a timeout to wait for scroll to finish/start
             setTimeout(() => {
+                // Smart Background Logic
+                const computedStyle = window.getComputedStyle(element);
+                const bgColor = computedStyle.backgroundColor;
+
+                // If background is transparent (rgba(0,0,0,0)), set it to white
+                if (bgColor === 'rgba(0, 0, 0, 0)' || bgColor === 'transparent') {
+                    element.style.backgroundColor = '#ffffff';
+                    element.dataset.tourBgFixed = 'true';
+                }
+
                 element.classList.add('tour-highlight');
                 this.updateTooltipContent(step);
                 this.positionTooltip(element);
@@ -156,30 +190,52 @@ class Tour {
 
     positionTooltip(targetElement) {
         if (!targetElement) targetElement = document.querySelector(this.steps[this.currentStep].element);
+        if (!targetElement) return;
 
         const rect = targetElement.getBoundingClientRect();
         const tooltipRect = this.tooltip.getBoundingClientRect();
+        const margin = 20; // Space between element and tooltip
+        const padding = 20; // Min distance from screen edge
 
-        // Default position: Bottom
-        let top = rect.bottom + 15 + window.scrollY;
-        let left = rect.left + (rect.width / 2) - (tooltipRect.width / 2) + window.scrollX;
+        // Calculate available space
+        const spaceTop = rect.top;
+        const spaceBottom = window.innerHeight - rect.bottom;
+        const spaceLeft = rect.left;
+        const spaceRight = window.innerWidth - rect.right;
 
-        // Check if off-screen (right)
-        if (left + tooltipRect.width > window.innerWidth) {
-            left = window.innerWidth - tooltipRect.width - 20;
+        let top, left;
+
+        // Determine best position (prefer Bottom -> Top -> Right -> Left)
+        // Check if Bottom fits
+        if (spaceBottom >= tooltipRect.height + margin) {
+            top = rect.bottom + margin;
+            left = rect.left + (rect.width / 2) - (tooltipRect.width / 2);
         }
-        // Check if off-screen (left)
-        if (left < 20) {
-            left = 20;
+        // Check if Top fits
+        else if (spaceTop >= tooltipRect.height + margin) {
+            top = rect.top - tooltipRect.height - margin;
+            left = rect.left + (rect.width / 2) - (tooltipRect.width / 2);
+        }
+        // Fallback: Center on screen if element is huge or weird
+        else {
+            top = (window.innerHeight - tooltipRect.height) / 2;
+            left = (window.innerWidth - tooltipRect.width) / 2;
         }
 
-        // Check if off-screen (bottom) - flip to top
-        if (rect.bottom + tooltipRect.height + 20 > window.innerHeight + window.scrollY) {
-            top = rect.top - tooltipRect.height - 15 + window.scrollY;
+        // Clamp Horizontal
+        if (left < padding) left = padding;
+        if (left + tooltipRect.width > window.innerWidth - padding) {
+            left = window.innerWidth - tooltipRect.width - padding;
         }
 
-        this.tooltip.style.top = `${top}px`;
-        this.tooltip.style.left = `${left}px`;
+        // Clamp Vertical (just in case)
+        if (top < padding) top = padding;
+        if (top + tooltipRect.height > window.innerHeight - padding) {
+            top = window.innerHeight - tooltipRect.height - padding;
+        }
+
+        this.tooltip.style.top = `${top + window.scrollY}px`;
+        this.tooltip.style.left = `${left + window.scrollX}px`;
     }
 
     nextStep() {
