@@ -1,0 +1,5 @@
+template: "page.contact.json"
+description: "Template for the page.contact page, featuring sections: main-page, contact."
+sections:
+  - "main (main-page)"
+  - "contact (contact)"

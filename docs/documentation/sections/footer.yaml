@@ -1,0 +1,16 @@
+section: "footer.liquid"
+description: "Liquid section template for Footer."
+blocks:
+  - "@app ()"
+  - "text (Text)"
+  - "links (Links)"
+  - "newsletter (Newsletter)"
+settings:
+  - "show_social_media (checkbox)"
+  - "show_payment_icons (checkbox)"
+  - "show_powered_by_shopify (checkbox)"
+  - "show_policy_links (checkbox)"
+  - "show_country_selector (checkbox)"
+  - "show_country_flag (checkbox)"
+  - "show_country_name (checkbox)"
+  - "show_locale_selector (checkbox)"

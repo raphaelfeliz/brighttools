@@ -1,0 +1,8 @@
+template: "page.about-us.json"
+description: "Template for the page.about-us page, featuring sections: main-page, before-after-image, impact-text, impact-text, images-with-text-scrolling."
+sections:
+  - "main (main-page)"
+  - "c7fb45d5-ec97-4878-aa39-80ab50892d0c (before-after-image)"
+  - "7b586584-3186-4f53-9c03-29438b9061ae (impact-text)"
+  - "fb43149e-c1e3-4935-9d4c-99d987e463a7 (impact-text)"
+  - "6102cdd6-471a-4da7-96c1-3d1c6ecd4fa8 (images-with-text-scrolling)"

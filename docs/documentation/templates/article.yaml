@@ -1,0 +1,4 @@
+template: "article.json"
+description: "Template for the article page, featuring sections: main-article."
+sections:
+  - "main (main-article)"

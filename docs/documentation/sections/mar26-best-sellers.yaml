@@ -1,0 +1,13 @@
+section: "mar26-best-sellers.liquid"
+description: "Liquid section template for MAR26 Best Sellers UI."
+blocks:
+  - "product (MAR26 Featured Product)"
+settings:
+  - "badge_text (text)"
+  - "primary_text (text)"
+  - "highlight_text (text)"
+  - "autoplay_enabled (checkbox)"
+  - "color_background (color)"
+  - "color_primary_text (color)"
+  - "color_highlight (color)"
+  - "color_badge_text (color)"

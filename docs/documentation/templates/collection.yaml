@@ -1,0 +1,9 @@
+template: "collection.json"
+description: "Template for the collection page, featuring sections: image-with-text-overlay, collection-banner, slideshow, slideshow, main-collection, faq."
+sections:
+  - "6d9821d0-9b6c-4de4-854a-1bdb36a222bd (image-with-text-overlay)"
+  - "banner (collection-banner)"
+  - "slideshow_pjCyDK (slideshow)"
+  - "slideshow_UwWwaD (slideshow)"
+  - "main (main-collection)"
+  - "d9e91537-6225-4b57-bd84-e5d10e8558b3 (faq)"

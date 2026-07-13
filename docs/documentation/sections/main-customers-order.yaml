@@ -1,0 +1,4 @@
+section: "main-customers-order.liquid"
+description: "Liquid section template for Customer order."
+blocks:
+settings:

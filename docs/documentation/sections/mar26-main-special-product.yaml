@@ -1,0 +1,13 @@
+section: "mar26-main-special-product.liquid"
+description: "Liquid section template for mar26 Special Product."
+blocks:
+  - "gallery_image (Gallery Image)"
+  - "@app ()"
+settings:
+  - "pre_title (text)"
+  - "title_line_1 (text)"
+  - "title_line_2 (text)"
+  - "title_line_3 (text)"
+  - "description (textarea)"
+  - "btn_primary_text (text)"
+  - "btn_secondary_text (text)"

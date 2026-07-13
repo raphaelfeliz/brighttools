@@ -1,0 +1,6 @@
+section: "mar26-buy-flow.liquid"
+description: "Liquid section template for MAR26 Buy Flow."
+blocks:
+  - "addon (Add-on Product)"
+settings:
+  - "title (text)"

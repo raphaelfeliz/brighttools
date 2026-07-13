@@ -1,0 +1,4 @@
+template: "customers/login.json"
+description: "Template for the customers/login page, featuring sections: main-customers-login."
+sections:
+  - "main (main-customers-login)"

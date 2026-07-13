@@ -1,0 +1,11 @@
+section: "revealed-image-on-scroll.liquid"
+description: "Liquid section template for Revealed image on scroll."
+blocks:
+settings:
+  - "image (image_picker)"
+  - "mobile_image (image_picker)"
+  - "subheading (text)"
+  - "title (text)"
+  - "background (color)"
+  - "text_color_inside (color)"
+  - "text_color_outside (color)"

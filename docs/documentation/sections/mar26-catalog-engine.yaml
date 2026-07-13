@@ -1,0 +1,5 @@
+section: "mar26-catalog-engine.liquid"
+description: "Liquid section template for MAR26 Catalog Engine."
+blocks:
+  - "category_banner (Category Banner)"
+settings:

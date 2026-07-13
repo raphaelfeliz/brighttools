@@ -1,0 +1,12 @@
+template: "product.caravan-c-b-page.json"
+description: "Template for the product.caravan-c-b-page page, featuring sections: mar26-main-special-product, mar26-bundle-items, mar26-buy-flow, mar26-whats-included, mar26-highlights, media-with-text, mar26-testimonials, faq, mar26-best-sellers."
+sections:
+  - "hero_shell (mar26-main-special-product)"
+  - "bundle_items (mar26-bundle-items)"
+  - "buy_flow (mar26-buy-flow)"
+  - "whats_included (mar26-whats-included)"
+  - "mar26_highlights (mar26-highlights)"
+  - "video_demo (media-with-text)"
+  - "mar26_testimonials (mar26-testimonials)"
+  - "faq (faq)"
+  - "mar26_best_sellers (mar26-best-sellers)"

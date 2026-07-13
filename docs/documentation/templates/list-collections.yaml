@@ -1,0 +1,5 @@
+template: "list-collections.json"
+description: "Template for the list-collections page, featuring sections: main-list-collections, faq."
+sections:
+  - "main (main-list-collections)"
+  - "08847d48-2faf-4c3e-ae21-86975541b408 (faq)"

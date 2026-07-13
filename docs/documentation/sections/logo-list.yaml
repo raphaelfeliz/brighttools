@@ -1,0 +1,18 @@
+section: "logo-list.liquid"
+description: "Liquid section template for Logo list."
+blocks:
+  - "logo (Logo)"
+settings:
+  - "full_width (checkbox)"
+  - "stack_mobile (checkbox)"
+  - "title (text)"
+  - "content (richtext)"
+  - "text_alignment (select)"
+  - "items_per_row (range)"
+  - "background (color)"
+  - "background_gradient (color_background)"
+  - "text_color (color)"
+  - "heading_color (color)"
+  - "heading_gradient (color_background)"
+  - "logo_item_background (color)"
+  - "logo_item_border (color)"

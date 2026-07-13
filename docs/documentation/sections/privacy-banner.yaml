@@ -1,0 +1,6 @@
+section: "privacy-banner.liquid"
+description: "Liquid section template for Privacy banner."
+blocks:
+settings:
+  - "privacy_bar_title (text)"
+  - "privacy_bar_content (richtext)"

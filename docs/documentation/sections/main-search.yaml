@@ -1,0 +1,13 @@
+section: "main-search.liquid"
+description: "Liquid section template for Search."
+blocks:
+settings:
+  - "products_per_page (range)"
+  - "products_per_row_mobile (select)"
+  - "products_per_row_desktop (range)"
+  - "filter_layout (select)"
+  - "show_sort_by (checkbox)"
+  - "show_filters (checkbox)"
+  - "show_filter_group_name (checkbox)"
+  - "show_filter_values_count (checkbox)"
+  - "open_first_filter_group (checkbox)"

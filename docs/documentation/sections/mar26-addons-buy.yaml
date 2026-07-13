@@ -1,0 +1,14 @@
+section: "mar26-addons-buy.liquid"
+description: "Liquid section template for MAR26 Addons Grid."
+blocks:
+  - "@app ()"
+  - "variant_picker (Variant picker)"
+  - "quantity_selector (Quantity selector)"
+  - "mar26_quantity_price (MAR26 Quantity + Buy)"
+  - "buy_buttons (Buy buttons)"
+  - "associated_products (Complementary products)"
+settings:
+  - "full_width (checkbox)"
+  - "background (color)"
+  - "background_gradient (color_background)"
+  - "text_color (color)"

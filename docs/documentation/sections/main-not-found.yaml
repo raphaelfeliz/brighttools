@@ -1,0 +1,4 @@
+section: "main-not-found.liquid"
+description: "Liquid section template for 404."
+blocks:
+settings:

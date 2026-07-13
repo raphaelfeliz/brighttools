@@ -1,0 +1,8 @@
+section: "search-drawer.liquid"
+description: "Liquid section template for Search drawer."
+blocks:
+settings:
+  - "full_width (checkbox)"
+  - "show_article_category (checkbox)"
+  - "search_menu (link_list)"
+  - "search_menu_show_title (checkbox)"

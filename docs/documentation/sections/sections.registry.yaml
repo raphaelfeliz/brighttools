@@ -1,0 +1,488 @@
+# Sections Registry (Cross-Referenced with Templates)
+# Displays custom and standard sections, showing which target templates utilize them.
+
+bt_custom_sections:
+  description: "Custom BrightTools sections using the bt- namespace or suffix."
+  sections:
+    - section: "bt-header-group.json"
+      used_by_templates:
+        []
+    - section: "bt-header.liquid"
+      used_by_templates:
+        []
+
+mar26_custom_sections:
+  description: "Custom sections using the mar26 namespace."
+  sections:
+    - section: "mar26-addons-buy.liquid"
+      used_by_templates:
+        - "product.mar26-product.json"
+        - "product.mar26-with-bundle-builder.json"
+    - section: "mar26-bento-collection.liquid"
+      used_by_templates:
+        - "index.json"
+    - section: "mar26-best-sellers.liquid"
+      used_by_templates:
+        - "collection.brooms-bt.json"
+        - "collection.bundles-bt.json"
+        - "collection.cleaningproducts-bt.json"
+        - "collection.dustpans-bt.json"
+        - "collection.floor-wipes-bt.json"
+        - "collection.microfibre-bt.json"
+        - "collection.mops-bt.json"
+        - "collection.shop-all-bt.json"
+        - "collection.squeegees-bt.json"
+        - "collection.toilet-bt.json"
+        - "collection.windows-care-bt.json"
+        - "index.json"
+        - "product.bt-brooms.json"
+        - "product.caravan-c-b-page.json"
+        - "product.mar26-with-bundle-builder.json"
+        - "product.mar26.json"
+    - section: "mar26-bestsellerpage-hero.liquid"
+      used_by_templates:
+        - "product.mar26-caravan-bundle-page.json"
+    - section: "mar26-bestsellerpage-included-grid.liquid"
+      used_by_templates:
+        - "product.mar26-caravan-bundle-page.json"
+    - section: "mar26-bundle-items.liquid"
+      used_by_templates:
+        - "product.caravan-c-b-page.json"
+    - section: "mar26-bundles.liquid"
+      used_by_templates:
+        - "collection.bundles-bt.json"
+        - "collection.windows-care-bt.json"
+        - "index.json"
+    - section: "mar26-buy-flow.liquid"
+      used_by_templates:
+        - "product.caravan-c-b-page.json"
+    - section: "mar26-carousel.liquid"
+      used_by_templates:
+        - "index.json"
+    - section: "mar26-catalog-engine.liquid"
+      used_by_templates:
+        - "collection.brooms-bt.json"
+        - "collection.bundles-bt.json"
+        - "collection.cleaningproducts-bt.json"
+        - "collection.dustpans-bt.json"
+        - "collection.floor-wipes-bt.json"
+        - "collection.microfibre-bt.json"
+        - "collection.mops-bt.json"
+        - "collection.shop-all-bt.json"
+        - "collection.squeegees-bt.json"
+        - "collection.toilet-bt.json"
+        - "collection.windows-care-bt.json"
+    - section: "mar26-footer-group.json"
+      used_by_templates:
+        []
+    - section: "mar26-footer.liquid"
+      used_by_templates:
+        []
+    - section: "mar26-header-group.json"
+      used_by_templates:
+        []
+    - section: "mar26-header.liquid"
+      used_by_templates:
+        []
+    - section: "mar26-hero.liquid"
+      used_by_templates:
+        - "index.json"
+    - section: "mar26-highlights.liquid"
+      used_by_templates:
+        - "collection.brooms-bt.json"
+        - "collection.bundles-bt.json"
+        - "collection.cleaningproducts-bt.json"
+        - "collection.dustpans-bt.json"
+        - "collection.floor-wipes-bt.json"
+        - "collection.microfibre-bt.json"
+        - "collection.mops-bt.json"
+        - "collection.shop-all-bt.json"
+        - "collection.squeegees-bt.json"
+        - "collection.toilet-bt.json"
+        - "collection.windows-care-bt.json"
+        - "index.json"
+        - "product.bt-brooms.json"
+        - "product.caravan-c-b-page.json"
+        - "product.mar26-with-bundle-builder.json"
+        - "product.mar26.json"
+    - section: "mar26-main-product.liquid"
+      used_by_templates:
+        - "product.bt-brooms.json"
+        - "product.mar26-with-bundle-builder.json"
+        - "product.mar26.json"
+    - section: "mar26-main-special-product.liquid"
+      used_by_templates:
+        - "product.caravan-c-b-page.json"
+    - section: "mar26-mediagrid.liquid"
+      used_by_templates:
+        - "collection.bundles-bt.json"
+        - "collection.windows-care-bt.json"
+        - "index.json"
+    - section: "mar26-panorama-slices.liquid"
+      used_by_templates:
+        - "index.json"
+    - section: "mar26-svg-transition.liquid"
+      used_by_templates:
+        []
+    - section: "mar26-testimonials.liquid"
+      used_by_templates:
+        - "collection.brooms-bt.json"
+        - "collection.bundles-bt.json"
+        - "collection.cleaningproducts-bt.json"
+        - "collection.dustpans-bt.json"
+        - "collection.floor-wipes-bt.json"
+        - "collection.microfibre-bt.json"
+        - "collection.mops-bt.json"
+        - "collection.shop-all-bt.json"
+        - "collection.squeegees-bt.json"
+        - "collection.toilet-bt.json"
+        - "collection.windows-care-bt.json"
+        - "index.json"
+        - "product.bt-brooms.json"
+        - "product.caravan-c-b-page.json"
+        - "product.mar26-with-bundle-builder.json"
+        - "product.mar26.json"
+    - section: "mar26-top-image.liquid"
+      used_by_templates:
+        - "collection.brooms-bt.json"
+        - "collection.bundles-bt.json"
+        - "collection.cleaningproducts-bt.json"
+        - "collection.dustpans-bt.json"
+        - "collection.floor-wipes-bt.json"
+        - "collection.microfibre-bt.json"
+        - "collection.mops-bt.json"
+        - "collection.shop-all-bt.json"
+        - "collection.squeegees-bt.json"
+        - "collection.toilet-bt.json"
+        - "collection.windows-care-bt.json"
+    - section: "mar26-whats-included.liquid"
+      used_by_templates:
+        - "product.caravan-c-b-page.json"
+        - "product.mar26-with-bundle-builder.json"
+        - "product.mar26.json"
+    - section: "mar26-window-collection.liquid"
+      used_by_templates:
+        []
+
+standard_sections:
+  description: "Standard Shopify theme sections."
+  sections:
+    - section: "_blocks.liquid"
+      used_by_templates:
+        - "collection.bundles-bt.json"
+        - "collection.windows-care-bt.json"
+        - "index.json"
+        - "product.bt-brooms.json"
+        - "product.mar26-with-bundle-builder.json"
+        - "product.mar26.json"
+    - section: "accordion-content.liquid"
+      used_by_templates:
+        []
+    - section: "account-banner.liquid"
+      used_by_templates:
+        []
+    - section: "announcement-bar.liquid"
+      used_by_templates:
+        []
+    - section: "apps.liquid"
+      used_by_templates:
+        - "product.floor-wipes-fresh-home.json"
+        - "product.json"
+        - "product.mar26-product.json"
+    - section: "before-after-image.liquid"
+      used_by_templates:
+        []
+    - section: "blog-posts.liquid"
+      used_by_templates:
+        []
+    - section: "cart-drawer.liquid"
+      used_by_templates:
+        []
+    - section: "collection-banner.liquid"
+      used_by_templates:
+        - "collection.brooms-bt.json"
+        - "collection.cleaningproducts-bt.json"
+        - "collection.dustpans-bt.json"
+        - "collection.floor-wipes-bt.json"
+        - "collection.microfibre-bt.json"
+        - "collection.mops-bt.json"
+        - "collection.squeegees-bt.json"
+        - "collection.toilet-bt.json"
+    - section: "collection-list.liquid"
+      used_by_templates:
+        - "collection.bundles-bt.json"
+        - "collection.windows-care-bt.json"
+        - "index.json"
+    - section: "comparison-table.liquid"
+      used_by_templates:
+        []
+    - section: "contact.liquid"
+      used_by_templates:
+        []
+    - section: "custom-html.liquid"
+      used_by_templates:
+        []
+    - section: "custom-liquid.liquid"
+      used_by_templates:
+        - "product.bt-brooms.json"
+        - "product.mar26-with-bundle-builder.json"
+        - "product.mar26.json"
+    - section: "faq.liquid"
+      used_by_templates:
+        - "collection.brooms-bt.json"
+        - "collection.bundles-bt.json"
+        - "collection.cleaningproducts-bt.json"
+        - "collection.dustpans-bt.json"
+        - "collection.floor-wipes-bt.json"
+        - "collection.microfibre-bt.json"
+        - "collection.mops-bt.json"
+        - "collection.shop-all-bt.json"
+        - "collection.squeegees-bt.json"
+        - "collection.toilet-bt.json"
+        - "collection.windows-care-bt.json"
+        - "index.json"
+        - "product.bt-brooms.json"
+        - "product.caravan-c-b-page.json"
+        - "product.floor-wipes-fresh-home.json"
+        - "product.json"
+        - "product.mar26-product.json"
+        - "product.mar26-with-bundle-builder.json"
+        - "product.mar26.json"
+    - section: "feature-chart.liquid"
+      used_by_templates:
+        []
+    - section: "featured-collection.liquid"
+      used_by_templates:
+        []
+    - section: "featured-product.liquid"
+      used_by_templates:
+        []
+    - section: "footer-group.json"
+      used_by_templates:
+        []
+    - section: "footer.liquid"
+      used_by_templates:
+        []
+    - section: "header-group.json"
+      used_by_templates:
+        []
+    - section: "header.liquid"
+      used_by_templates:
+        []
+    - section: "hot-spots.liquid"
+      used_by_templates:
+        []
+    - section: "image-link-blocks.liquid"
+      used_by_templates:
+        - "product.json"
+        - "product.mar26-product.json"
+    - section: "image-with-text-overlay.liquid"
+      used_by_templates:
+        - "product.json"
+        - "product.mar26-product.json"
+    - section: "images-with-text-scrolling.liquid"
+      used_by_templates:
+        []
+    - section: "impact-text.liquid"
+      used_by_templates:
+        - "collection.brooms-bt.json"
+        - "collection.cleaningproducts-bt.json"
+        - "collection.dustpans-bt.json"
+        - "collection.floor-wipes-bt.json"
+        - "collection.microfibre-bt.json"
+        - "collection.mops-bt.json"
+        - "collection.squeegees-bt.json"
+        - "collection.toilet-bt.json"
+        - "collection.windows-care-bt.json"
+        - "index.json"
+    - section: "logo-list.liquid"
+      used_by_templates:
+        []
+    - section: "main-article.liquid"
+      used_by_templates:
+        []
+    - section: "main-blog.liquid"
+      used_by_templates:
+        []
+    - section: "main-cart.liquid"
+      used_by_templates:
+        []
+    - section: "main-collection.liquid"
+      used_by_templates:
+        []
+    - section: "main-customers-account.liquid"
+      used_by_templates:
+        []
+    - section: "main-customers-activate-account.liquid"
+      used_by_templates:
+        []
+    - section: "main-customers-addresses.liquid"
+      used_by_templates:
+        []
+    - section: "main-customers-login.liquid"
+      used_by_templates:
+        []
+    - section: "main-customers-order.liquid"
+      used_by_templates:
+        []
+    - section: "main-customers-register.liquid"
+      used_by_templates:
+        []
+    - section: "main-customers-reset-password.liquid"
+      used_by_templates:
+        []
+    - section: "main-gift-card.liquid"
+      used_by_templates:
+        []
+    - section: "main-list-collections.liquid"
+      used_by_templates:
+        []
+    - section: "main-not-found.liquid"
+      used_by_templates:
+        []
+    - section: "main-page.liquid"
+      used_by_templates:
+        []
+    - section: "main-password.liquid"
+      used_by_templates:
+        []
+    - section: "main-product.liquid"
+      used_by_templates:
+        - "product.floor-wipes-fresh-home.json"
+        - "product.json"
+        - "product.mar-page.json"
+        - "product.mar26-product.json"
+        - "product.pre-order.json"
+    - section: "main-search.liquid"
+      used_by_templates:
+        []
+    - section: "media-grid-original.liquid"
+      used_by_templates:
+        []
+    - section: "media-grid.liquid"
+      used_by_templates:
+        []
+    - section: "media-with-text.liquid"
+      used_by_templates:
+        - "collection.brooms-bt.json"
+        - "collection.bundles-bt.json"
+        - "collection.cleaningproducts-bt.json"
+        - "collection.dustpans-bt.json"
+        - "collection.floor-wipes-bt.json"
+        - "collection.microfibre-bt.json"
+        - "collection.mops-bt.json"
+        - "collection.shop-all-bt.json"
+        - "collection.squeegees-bt.json"
+        - "collection.toilet-bt.json"
+        - "collection.windows-care-bt.json"
+        - "product.bt-brooms.json"
+        - "product.caravan-c-b-page.json"
+        - "product.floor-wipes-fresh-home.json"
+        - "product.json"
+        - "product.mar26-product.json"
+        - "product.mar26-with-bundle-builder.json"
+        - "product.mar26.json"
+    - section: "multi-column.liquid"
+      used_by_templates:
+        []
+    - section: "multiple-images-with-text.liquid"
+      used_by_templates:
+        - "collection.brooms-bt.json"
+        - "collection.cleaningproducts-bt.json"
+        - "collection.dustpans-bt.json"
+        - "collection.floor-wipes-bt.json"
+        - "collection.microfibre-bt.json"
+        - "collection.mops-bt.json"
+        - "collection.squeegees-bt.json"
+        - "collection.toilet-bt.json"
+    - section: "newsletter-popup.liquid"
+      used_by_templates:
+        []
+    - section: "newsletter.liquid"
+      used_by_templates:
+        []
+    - section: "overlay-group.json"
+      used_by_templates:
+        []
+    - section: "press.liquid"
+      used_by_templates:
+        - "collection.bundles-bt.json"
+        - "index.json"
+    - section: "privacy-banner.liquid"
+      used_by_templates:
+        []
+    - section: "recently-viewed-products.liquid"
+      used_by_templates:
+        []
+    - section: "related-products.liquid"
+      used_by_templates:
+        - "product.floor-wipes-fresh-home.json"
+        - "product.json"
+        - "product.mar26-product.json"
+    - section: "revealed-image-on-scroll.liquid"
+      used_by_templates:
+        []
+    - section: "rich-text.liquid"
+      used_by_templates:
+        - "collection.brooms-bt.json"
+        - "collection.cleaningproducts-bt.json"
+        - "collection.dustpans-bt.json"
+        - "collection.floor-wipes-bt.json"
+        - "collection.microfibre-bt.json"
+        - "collection.mops-bt.json"
+        - "collection.shop-all-bt.json"
+        - "collection.squeegees-bt.json"
+        - "collection.toilet-bt.json"
+        - "collection.windows-care-bt.json"
+        - "product.bt-brooms.json"
+        - "product.mar26-with-bundle-builder.json"
+        - "product.mar26.json"
+    - section: "scrolling-text.liquid"
+      used_by_templates:
+        []
+    - section: "search-drawer.liquid"
+      used_by_templates:
+        []
+    - section: "shop-the-look.liquid"
+      used_by_templates:
+        []
+    - section: "slideshow.liquid"
+      used_by_templates:
+        []
+    - section: "specification-table.liquid"
+      used_by_templates:
+        []
+    - section: "tabs.liquid"
+      used_by_templates:
+        []
+    - section: "testimonials.liquid"
+      used_by_templates:
+        - "product.floor-wipes-fresh-home.json"
+        - "product.json"
+        - "product.mar26-product.json"
+    - section: "text-with-icons.liquid"
+      used_by_templates:
+        []
+    - section: "timeline.liquid"
+      used_by_templates:
+        []
+    - section: "variant-added.liquid"
+      used_by_templates:
+        []
+    - section: "video.liquid"
+      used_by_templates:
+        - "collection.brooms-bt.json"
+        - "collection.bundles-bt.json"
+        - "collection.cleaningproducts-bt.json"
+        - "collection.dustpans-bt.json"
+        - "collection.floor-wipes-bt.json"
+        - "collection.microfibre-bt.json"
+        - "collection.mops-bt.json"
+        - "collection.shop-all-bt.json"
+        - "collection.squeegees-bt.json"
+        - "collection.toilet-bt.json"
+        - "collection.windows-care-bt.json"
+        - "index.json"
+        - "product.bt-brooms.json"
+        - "product.floor-wipes-fresh-home.json"
+        - "product.mar26.json"

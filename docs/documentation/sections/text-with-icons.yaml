@@ -1,0 +1,14 @@
+section: "text-with-icons.liquid"
+description: "Liquid section template for Text with icons."
+blocks:
+  - "item (Text with icon)"
+settings:
+  - "full_width (checkbox)"
+  - "stack_on_mobile (checkbox)"
+  - "title (text)"
+  - "heading_tag (select)"
+  - "text_alignment (select)"
+  - "icon_spacing (select)"
+  - "background (color)"
+  - "background_gradient (color_background)"
+  - "text_color (color)"

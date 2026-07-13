@@ -1,0 +1,4 @@
+template: "product.pre-order.json"
+description: "Template for the product.pre-order page, featuring sections: main-product."
+sections:
+  - "main (main-product)"

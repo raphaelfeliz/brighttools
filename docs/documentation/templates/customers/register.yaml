@@ -1,0 +1,4 @@
+template: "customers/register.json"
+description: "Template for the customers/register page, featuring sections: main-customers-register."
+sections:
+  - "main (main-customers-register)"

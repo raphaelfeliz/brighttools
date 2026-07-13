@@ -1,0 +1,14 @@
+section: "press.liquid"
+description: "Liquid section template for Press."
+blocks:
+  - "quote (Quote)"
+settings:
+  - "full_width (checkbox)"
+  - "content_size (select)"
+  - "background (color)"
+  - "background_gradient (color_background)"
+  - "text_color (color)"
+  - "heading_color (color)"
+  - "heading_gradient (color_background)"
+  - "logo_item_background (color)"
+  - "logo_item_border (color)"

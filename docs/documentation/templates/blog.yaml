@@ -1,0 +1,5 @@
+template: "blog.json"
+description: "Template for the blog page, featuring sections: main-blog, blog-posts."
+sections:
+  - "main (main-blog)"
+  - "704cef37-92e6-4c99-b526-a6bf9e0d1e58 (blog-posts)"

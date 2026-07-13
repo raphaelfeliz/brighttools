@@ -1,0 +1,4 @@
+template: "customers/account.json"
+description: "Template for the customers/account page, featuring sections: main-customers-account."
+sections:
+  - "main (main-customers-account)"

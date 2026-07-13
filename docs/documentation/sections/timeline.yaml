@@ -1,0 +1,9 @@
+section: "timeline.liquid"
+description: "Liquid section template for Timeline."
+blocks:
+  - "slide (Slide)"
+settings:
+  - "full_width (checkbox)"
+  - "background (color)"
+  - "background_gradient (color_background)"
+  - "text_color (color)"

@@ -1,0 +1,10 @@
+template: "collection.toilet-brushes.json"
+description: "Template for the collection.toilet-brushes page, featuring sections: image-with-text-overlay, slideshow, collection-banner, main-collection, rich-text, video, faq."
+sections:
+  - "6d9821d0-9b6c-4de4-854a-1bdb36a222bd (image-with-text-overlay)"
+  - "slideshow_UwWwaD (slideshow)"
+  - "banner (collection-banner)"
+  - "main (main-collection)"
+  - "rich_text_3tyjzT (rich-text)"
+  - "video_HyenMh (video)"
+  - "d9e91537-6225-4b57-bd84-e5d10e8558b3 (faq)"

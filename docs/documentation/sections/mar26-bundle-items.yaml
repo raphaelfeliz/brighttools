@@ -1,0 +1,6 @@
+section: "mar26-bundle-items.liquid"
+description: "Liquid section template for Mar26 Bundle Items."
+blocks:
+  - "item (Bundle Item)"
+settings:
+  - "heading (text)"

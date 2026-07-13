@@ -1,0 +1,120 @@
+# Templates Registry
+# Organized by prefix/suffix or standard categories
+
+bt_custom_templates:
+  description: "Custom BrightTools templates using the -bt suffix. These are actively used in the Shopify store."
+  templates:
+    - template: "collection.brooms-bt.json"
+      active: true
+    - template: "collection.bundles-bt.json"
+      active: true
+    - template: "collection.cleaningproducts-bt.json"
+      active: true
+    - template: "collection.dustpans-bt.json"
+      active: true
+    - template: "collection.floor-wipes-bt.json"
+      active: true
+    - template: "collection.microfibre-bt.json"
+      active: true
+    - template: "collection.mops-bt.json"
+      active: true
+    - template: "collection.shop-all-bt.json"
+      active: true
+    - template: "collection.squeegees-bt.json"
+      active: true
+    - template: "collection.toilet-bt.json"
+      active: true
+    - template: "collection.windows-care-bt.json"
+      active: true
+
+mar26_custom_templates:
+  description: "Custom templates using the mar26 namespace."
+  templates:
+    - template: "collection.mar26-catalog.json"
+      active: null # Leave open
+    - template: "product.mar26-caravan-bundle-page.json"
+      active: null # Leave open
+    - template: "product.mar26-product.json"
+      active: null # Leave open
+    - template: "product.mar26-with-bundle-builder.json"
+      active: null # Leave open
+    - template: "product.mar26.json"
+      active: null # Leave open
+
+standard_templates:
+  description: "Standard Shopify theme templates and customer accounts templates."
+  templates:
+    - template: "404.json"
+      active: null # Leave open
+    - template: "article.json"
+      active: null # Leave open
+    - template: "blog.json"
+      active: null # Leave open
+    - template: "cart.json"
+      active: null # Leave open
+    - template: "collection.brooms.json"
+      active: null # Leave open
+    - template: "collection.cleaning-products.json"
+      active: null # Leave open
+    - template: "collection.dustpans.json"
+      active: null # Leave open
+    - template: "collection.floor-wipes.json"
+      active: null # Leave open
+    - template: "collection.json"
+      active: null # Leave open
+    - template: "collection.magnetic-window-cleaners.json"
+      active: null # Leave open
+    - template: "collection.mops.json"
+      active: null # Leave open
+    - template: "collection.squeegee.json"
+      active: null # Leave open
+    - template: "collection.toilet-brushes.json"
+      active: null # Leave open
+    - template: "customers/account.json"
+      active: null # Leave open
+    - template: "customers/activate_account.json"
+      active: null # Leave open
+    - template: "customers/addresses.json"
+      active: null # Leave open
+    - template: "customers/login.json"
+      active: null # Leave open
+    - template: "customers/order.json"
+      active: null # Leave open
+    - template: "customers/register.json"
+      active: null # Leave open
+    - template: "customers/reset_password.json"
+      active: null # Leave open
+    - template: "gift_card.liquid"
+      active: null # Leave open
+    - template: "index.json"
+      active: null # Leave open
+    - template: "list-collections.json"
+      active: null # Leave open
+    - template: "page.about-us.json"
+      active: null # Leave open
+    - template: "page.contact.json"
+      active: null # Leave open
+    - template: "page.faq.json"
+      active: null # Leave open
+    - template: "page.json"
+      active: null # Leave open
+    - template: "page.list-collections.json"
+      active: null # Leave open
+    - template: "page.sms-subscription.json"
+      active: null # Leave open
+    - template: "password.json"
+      active: null # Leave open
+    - template: "product.bt-brooms.json"
+      active: null # Leave open
+    - template: "product.caravan-c-b-page.json"
+      active: null # Leave open
+    - template: "product.floor-wipes-fresh-home.json"
+      active: null # Leave open
+    - template: "product.json"
+      active: null # Leave open
+    - template: "product.mar-page.json"
+      active: null # Leave open
+    - template: "product.pre-order.json"
+      active: null # Leave open
+    - template: "search.json"
+      active: null # Leave open

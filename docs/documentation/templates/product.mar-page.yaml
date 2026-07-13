@@ -1,0 +1,4 @@
+template: "product.mar-page.json"
+description: "Template for the product.mar-page page, featuring sections: main-product."
+sections:
+  - "main (main-product)"

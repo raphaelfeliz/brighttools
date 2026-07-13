@@ -1,0 +1,6 @@
+section: "mar26-bestsellerpage-included-grid.liquid"
+description: "Liquid section template for MAR26 Bestseller Grid."
+blocks:
+  - "product_card (Sidekick Card)"
+settings:
+  - "accent_color (color)"

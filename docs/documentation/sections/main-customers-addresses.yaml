@@ -1,0 +1,4 @@
+section: "main-customers-addresses.liquid"
+description: "Liquid section template for Customer addresses."
+blocks:
+settings:

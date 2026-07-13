@@ -1,0 +1,4 @@
+template: "cart.json"
+description: "Template for the cart page, featuring sections: main-cart."
+sections:
+  - "main (main-cart)"

@@ -1,0 +1,4 @@
+section: "media-with-text.liquid"
+description: "Liquid section template for media-with-text."
+blocks:
+settings:

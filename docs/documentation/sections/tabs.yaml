@@ -1,0 +1,17 @@
+section: "tabs.liquid"
+description: "Liquid section template for Tabs."
+blocks:
+  - "tab (Rich-text content)"
+  - "liquid (Liquid code)"
+settings:
+  - "full_width (checkbox)"
+  - "content_size (select)"
+  - "subheading (text)"
+  - "title (text)"
+  - "text_alignment (text_alignment)"
+  - "first_tab_open (checkbox)"
+  - "background (color)"
+  - "background_gradient (color_background)"
+  - "text_color (color)"
+  - "heading_color (color)"
+  - "heading_gradient (color_background)"

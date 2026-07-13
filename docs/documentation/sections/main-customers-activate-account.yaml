@@ -1,0 +1,4 @@
+section: "main-customers-activate-account.liquid"
+description: "Liquid section template for Customer activate account."
+blocks:
+settings:

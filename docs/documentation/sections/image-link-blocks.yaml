@@ -1,0 +1,17 @@
+section: "image-link-blocks.liquid"
+description: "Liquid section template for Image link blocks."
+blocks:
+  - "item (Link block)"
+settings:
+  - "full_width (checkbox)"
+  - "block_size (select)"
+  - "subheading (text)"
+  - "title (text)"
+  - "content (richtext)"
+  - "link_url (url)"
+  - "link_text (text)"
+  - "background (color)"
+  - "background_gradient (color_background)"
+  - "text_color (color)"
+  - "heading_color (color)"
+  - "heading_gradient (color_background)"

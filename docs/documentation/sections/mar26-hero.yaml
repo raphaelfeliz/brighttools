@@ -1,0 +1,14 @@
+section: "mar26-hero.liquid"
+description: "Liquid section template for MAR26 Hero."
+blocks:
+settings:
+  - "subheading (text)"
+  - "headline_line_1 (text)"
+  - "headline_line_2 (text)"
+  - "headline_line_3 (text)"
+  - "button_1_text (text)"
+  - "button_1_link (url)"
+  - "button_2_text (text)"
+  - "button_2_link (url)"
+  - "hero_image (image_picker)"
+  - "hero_image_mobile (image_picker)"

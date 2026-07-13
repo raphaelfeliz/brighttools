@@ -1,0 +1,13 @@
+template: "product.bt-brooms.json"
+description: "Template for the product.bt-brooms page, featuring sections: custom-liquid, mar26-main-product, video, media-with-text, faq, mar26-highlights, rich-text, _blocks, mar26-testimonials, mar26-best-sellers."
+sections:
+  - "custom_liquid_bYgJK7 (custom-liquid)"
+  - "main (mar26-main-product)"
+  - "video_PBmR83 (video)"
+  - "video_demo (media-with-text)"
+  - "faq (faq)"
+  - "mar26_highlights_djAVBa (mar26-highlights)"
+  - "rich_text_JhBcCr (rich-text)"
+  - "blocks_jiJwFP (_blocks)"
+  - "mar26_testimonials (mar26-testimonials)"
+  - "mar26_best_sellers (mar26-best-sellers)"

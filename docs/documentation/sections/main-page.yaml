@@ -1,0 +1,5 @@
+section: "main-page.liquid"
+description: "Liquid section template for Page."
+blocks:
+settings:
+  - "content_width (select)"

@@ -1,0 +1,4 @@
+template: "customers/order.json"
+description: "Template for the customers/order page, featuring sections: main-customers-order."
+sections:
+  - "main (main-customers-order)"

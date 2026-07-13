@@ -1,0 +1,13 @@
+template: "collection.shop-all-bt.json"
+description: "Template for the collection.shop-all-bt page, featuring sections: mar26-top-image, mar26-catalog-engine, video, mar26-best-sellers, faq, video, rich-text, media-with-text, mar26-highlights, mar26-testimonials."
+sections:
+  - "mar26_top_image (mar26-top-image)"
+  - "main (mar26-catalog-engine)"
+  - "video_promo (video)"
+  - "best_sellers (mar26-best-sellers)"
+  - "d9e91537-6225-4b57-bd84-e5d10e8558b3 (faq)"
+  - "b5385aeb-4a34-4a6d-a487-108e7124135c (video)"
+  - "rich_text_zi6Wjd (rich-text)"
+  - "media_with_text_naB3qr (media-with-text)"
+  - "mar26-highlights (mar26-highlights)"
+  - "mar26_testimonials_73q9Ud (mar26-testimonials)"

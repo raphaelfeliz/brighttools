@@ -1,0 +1,17 @@
+section: "mar26-bestsellerpage-hero.liquid"
+description: "Liquid section template for MAR26 Bestseller Hero."
+blocks:
+settings:
+  - "image_desktop (image_picker)"
+  - "image_mobile (image_picker)"
+  - "badge_text (text)"
+  - "title_main (text)"
+  - "title_accent (text)"
+  - "description (textarea)"
+  - "cta_text (text)"
+  - "cta_link (url)"
+  - "price_now (text)"
+  - "price_was (text)"
+  - "currency_code (text)"
+  - "accent_color (color)"
+  - "badge_text_color (color)"

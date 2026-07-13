@@ -1,0 +1,11 @@
+section: "apps.liquid"
+description: "Liquid section template for Apps."
+blocks:
+  - "@app ()"
+settings:
+  - "full_width (checkbox)"
+  - "remove_vertical_spacing (checkbox)"
+  - "remove_horizontal_spacing (checkbox)"
+  - "background (color)"
+  - "background_gradient (color_background)"
+  - "text_color (color)"

@@ -138,55 +138,6 @@
         "input_text_color": ""
       }
     },
-    "mar26_addons_buy_AdDm7w": {
-      "type": "mar26-addons-buy",
-      "blocks": {
-        "dealeasy_mm_bundle_builder_7ni3Je": {
-          "type": "shopify://apps/dealeasy/blocks/mm-bundle-builder/e47a8634-0496-480d-9e46-6f7fafd34b30",
-          "settings": {
-            "lb-product-handle": "",
-            "lb-product-id": ""
-          }
-        },
-        "associated_products_fFNUTf": {
-          "type": "associated_products",
-          "settings": {
-            "title": "Buy it with",
-            "stack_products": true,
-            "products_count": 5,
-            "background": "",
-            "text_color": ""
-          }
-        },
-        "quantity_selector_yKkLwG": {
-          "type": "quantity_selector",
-          "disabled": true,
-          "settings": {}
-        },
-        "buy_buttons_TL7eaQ": {
-          "type": "buy_buttons",
-          "disabled": true,
-          "settings": {
-            "show_payment_button": true,
-            "atc_button_background": "",
-            "atc_button_text_color": ""
-          }
-        }
-      },
-      "block_order": [
-        "dealeasy_mm_bundle_builder_7ni3Je",
-        "associated_products_fFNUTf",
-        "quantity_selector_yKkLwG",
-        "buy_buttons_TL7eaQ"
-      ],
-      "name": "MAR26 Addons Grid",
-      "settings": {
-        "full_width": true,
-        "background": "#ffffff",
-        "background_gradient": "",
-        "text_color": ""
-      }
-    },
     "whats_included": {
       "type": "mar26-whats-included",
       "blocks": {
@@ -242,6 +193,37 @@
         "subheading": "Everything you need for an effortless, water-saving clean on the road.",
         "columns": "4",
         "outline_color": "#e2e8f0"
+      }
+    },
+    "video_PBmR83": {
+      "type": "video",
+      "blocks": {
+        "play_F3GfTR": {
+          "type": "play",
+          "settings": {}
+        },
+        "heading_6VXJqE": {
+          "type": "heading",
+          "settings": {
+            "text": "Video",
+            "heading_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "play_F3GfTR",
+        "heading_6VXJqE"
+      ],
+      "name": "Video",
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "autoplay": false,
+        "video_size": "auto",
+        "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30
       }
     },
     "mar26_highlights_djAVBa": {
@@ -587,8 +569,8 @@
   "order": [
     "custom_liquid_bYgJK7",
     "main",
-    "mar26_addons_buy_AdDm7w",
     "whats_included",
+    "video_PBmR83",
     "mar26_highlights_djAVBa",
     "video_demo",
     "rich_text_JhBcCr",

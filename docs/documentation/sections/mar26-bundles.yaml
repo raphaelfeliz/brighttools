@@ -1,0 +1,16 @@
+section: "mar26-bundles.liquid"
+description: "Liquid section template for MAR26 Bundles."
+blocks:
+  - "bundle (Bundle)"
+settings:
+  - "badge_text (text)"
+  - "primary_text (text)"
+  - "highlight_text (text)"
+  - "color_background (color)"
+  - "color_primary_text (color)"
+  - "color_highlight (color)"
+  - "color_badge_text (color)"
+  - "cta_text (text)"
+  - "cta_link (url)"
+  - "cta_color (color)"
+  - "cta_text_color (select)"

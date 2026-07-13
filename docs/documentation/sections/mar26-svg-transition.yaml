@@ -1,0 +1,11 @@
+section: "mar26-svg-transition.liquid"
+description: "Liquid section template for MAR26 SVG Transition."
+blocks:
+settings:
+  - "gradient_start (color)"
+  - "gradient_end (color)"
+  - "desktop_height (range)"
+  - "mobile_height (range)"
+  - "pull_up (checkbox)"
+  - "overlap_amount (range)"
+  - "z_index (range)"

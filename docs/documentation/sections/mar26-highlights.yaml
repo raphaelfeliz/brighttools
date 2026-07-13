@@ -1,0 +1,11 @@
+section: "mar26-highlights.liquid"
+description: "Liquid section template for MAR26 Highlights."
+blocks:
+  - "highlight_card (MAR26 Highlight Card)"
+settings:
+  - "section_subtitle (text)"
+  - "section_title_black (text)"
+  - "section_title_gradient (text)"
+  - "section_grad_color_1 (color)"
+  - "section_grad_color_2 (color)"
+  - "color_background (color)"

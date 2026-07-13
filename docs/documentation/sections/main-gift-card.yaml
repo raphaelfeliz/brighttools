@@ -1,0 +1,8 @@
+section: "main-gift-card.liquid"
+description: "Liquid section template for Gift card."
+blocks:
+settings:
+  - "image (image_picker)"
+  - "show_qr_code (checkbox)"
+  - "amount_background (color)"
+  - "amount_text_color (color)"

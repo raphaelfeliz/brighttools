@@ -1,0 +1,16 @@
+section: "slideshow.liquid"
+description: "Liquid section template for Slideshow."
+blocks:
+  - "image (Image)"
+  - "video (Video)"
+settings:
+  - "full_width (checkbox)"
+  - "allow_transparent_header (checkbox)"
+  - "show_initial_transition (checkbox)"
+  - "image_size (select)"
+  - "controls_type (select)"
+  - "transition_type (select)"
+  - "autoplay (checkbox)"
+  - "cycle_speed (range)"
+  - "background (color)"
+  - "background_gradient (color_background)"

@@ -1,0 +1,14 @@
+section: "main-cart.liquid"
+description: "Liquid section template for Cart."
+blocks:
+  - "@app ()"
+  - "totals (Totals)"
+  - "cart_note (Cart note)"
+  - "text (Text)"
+  - "checkout_button (Checkout button)"
+  - "accelerated_buttons (Accelerated buttons)"
+  - "offer (Offer)"
+settings:
+  - "allow_discount_application (checkbox)"
+  - "show_shipping_estimator (checkbox)"
+  - "show_payment_icons (checkbox)"

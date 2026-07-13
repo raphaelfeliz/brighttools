@@ -1,0 +1,12 @@
+section: "newsletter-popup.liquid"
+description: "Liquid section template for Newsletter popup."
+blocks:
+settings:
+  - "apparition_delay (range)"
+  - "show_only_on_index (checkbox)"
+  - "show_only_for_visitors (checkbox)"
+  - "show_only_once (checkbox)"
+  - "image (image_picker)"
+  - "title (text)"
+  - "button_text (text)"
+  - "subtext (inline_richtext)"

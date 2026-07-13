@@ -1,0 +1,16 @@
+section: "multi-column.liquid"
+description: "Liquid section template for Multi-column."
+blocks:
+  - "item (Item)"
+  - "spacer (Spacer)"
+settings:
+  - "full_width (checkbox)"
+  - "stack_on_mobile (checkbox)"
+  - "gap (select)"
+  - "text_alignment (select)"
+  - "subheading (text)"
+  - "title (text)"
+  - "content (richtext)"
+  - "background (color)"
+  - "background_gradient (color_background)"
+  - "text_color (color)"

@@ -1,0 +1,5 @@
+template: "product.mar26-caravan-bundle-page.json"
+description: "Template for the product.mar26-caravan-bundle-page page, featuring sections: mar26-bestsellerpage-hero, mar26-bestsellerpage-included-grid."
+sections:
+  - "mar26_bestsellerpage_hero (mar26-bestsellerpage-hero)"
+  - "mar26_bestsellerpage_included_grid (mar26-bestsellerpage-included-grid)"

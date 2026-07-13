@@ -1,0 +1,9 @@
+template: "page.faq.json"
+description: "Template for the page.faq page, featuring sections: main-page, impact-text, faq, faq, faq, contact."
+sections:
+  - "main (main-page)"
+  - "a3ad2559-64dc-449a-b568-b920eb3a0a3f (impact-text)"
+  - "753ac891-1535-4bd0-894c-f819891378dd (faq)"
+  - "a2fe73cf-8dc2-4566-9aa5-8b7623a59bcb (faq)"
+  - "fdbfeca9-52af-4ff6-8084-6bcf9c671604 (faq)"
+  - "6c70ec51-09c0-492b-a20c-d7a8d189af52 (contact)"

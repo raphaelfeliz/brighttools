@@ -1,0 +1,16 @@
+section: "newsletter.liquid"
+description: "Liquid section template for Newsletter."
+blocks:
+settings:
+  - "full_width (checkbox)"
+  - "image (image_picker)"
+  - "show_icon (checkbox)"
+  - "title (text)"
+  - "content (richtext)"
+  - "button_text (text)"
+  - "subtext (text)"
+  - "background (color)"
+  - "background_gradient (color_background)"
+  - "text_color (color)"
+  - "button_background (color)"
+  - "button_text_color (color)"

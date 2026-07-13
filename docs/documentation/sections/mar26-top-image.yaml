@@ -1,0 +1,9 @@
+section: "mar26-top-image.liquid"
+description: "Liquid section template for MAR26 Top Image."
+blocks:
+settings:
+  - "full_width (checkbox)"
+  - "image (image_picker)"
+  - "mobile_image (image_picker)"
+  - "max_width (range)"
+  - "border_radius (range)"

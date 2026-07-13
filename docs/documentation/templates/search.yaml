@@ -1,0 +1,4 @@
+template: "search.json"
+description: "Template for the search page, featuring sections: main-search."
+sections:
+  - "main (main-search)"

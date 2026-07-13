@@ -1,29 +1,155 @@
-﻿# Template Summary (Shopify custom -bt templates)
+# Template Summary (Custom -bt templates, Homepage, & Product templates)
 
-This document registers and describes the custom Shopify templates containing the suffix -bt used in the BrightTools storefront.
+This document registers and describes the custom Shopify templates containing the suffix -bt, the homepage, and product templates used in the BrightTools storefront.
 
-## Custom Templates (Summary)
+## Custom, Homepage & Product Templates (Summary)
 
 | Template File | Description | Active Custom Sections |
 | --- | --- | --- |
+| [index.json](file:///C:/code/BrightTools/worktrees/main/templates/index.json) | Template for the homepage page, featuring sections: mar26-hero, mar26-carousel, impact-text, mar26-mediagrid, mar26-panorama-slices, mar26-bundles, _blocks, _blocks, mar26-bento-collection, video, mar26-best-sellers, mar26-highlights, mar26-testimonials, collection-list, press, faq. | "mar26-hero", "mar26-carousel", "impact-text", "mar26-mediagrid", "mar26-panorama-slices", "mar26-bundles", "_blocks", "mar26-bento-collection", "video", "mar26-best-sellers", "mar26-highlights", "mar26-testimonials", "collection-list", "press", "faq" |
+| [product.json](file:///C:/code/BrightTools/worktrees/main/templates/product.json) | Template for the default product page, featuring sections: main-product, image-with-text-overlay, image-link-blocks, apps, media-with-text, apps, apps, related-products, faq, testimonials, apps. | "main-product", "image-with-text-overlay", "image-link-blocks", "apps", "media-with-text", "related-products", "faq", "testimonials" |
+| [product.bt-brooms.json](file:///C:/code/BrightTools/worktrees/main/templates/product.bt-brooms.json) | Template for the product.bt-brooms page, featuring sections: custom-liquid, mar26-main-product, video, media-with-text, faq, mar26-highlights, rich-text, _blocks, mar26-testimonials, mar26-best-sellers. | "custom-liquid", "mar26-main-product", "video", "media-with-text", "faq", "mar26-highlights", "rich-text", "_blocks", "mar26-testimonials", "mar26-best-sellers" |
+| [product.caravan-c-b-page.json](file:///C:/code/BrightTools/worktrees/main/templates/product.caravan-c-b-page.json) | Template for the product.caravan-c-b-page page, featuring sections: mar26-main-special-product, mar26-bundle-items, mar26-buy-flow, mar26-whats-included, mar26-highlights, media-with-text, mar26-testimonials, faq, mar26-best-sellers. | "mar26-main-special-product", "mar26-bundle-items", "mar26-buy-flow", "mar26-whats-included", "mar26-highlights", "media-with-text", "mar26-testimonials", "faq", "mar26-best-sellers" |
+| [product.floor-wipes-fresh-home.json](file:///C:/code/BrightTools/worktrees/main/templates/product.floor-wipes-fresh-home.json) | Template for the product.floor-wipes-fresh-home page, featuring sections: main-product, media-with-text, video, apps, related-products, faq, testimonials, apps. | "main-product", "media-with-text", "video", "apps", "related-products", "faq", "testimonials" |
+| [product.mar-page.json](file:///C:/code/BrightTools/worktrees/main/templates/product.mar-page.json) | Template for the product.mar-page page, featuring sections: main-product. | "main-product" |
+| [product.mar26-caravan-bundle-page.json](file:///C:/code/BrightTools/worktrees/main/templates/product.mar26-caravan-bundle-page.json) | Template for the product.mar26-caravan-bundle-page page, featuring sections: mar26-bestsellerpage-hero, mar26-bestsellerpage-included-grid. | "mar26-bestsellerpage-hero", "mar26-bestsellerpage-included-grid" |
+| [product.mar26-product.json](file:///C:/code/BrightTools/worktrees/main/templates/product.mar26-product.json) | Template for the product.mar26-product page, featuring sections: main-product, image-with-text-overlay, image-link-blocks, mar26-addons-buy, apps, media-with-text, apps, apps, related-products, faq, testimonials, apps. | "main-product", "image-with-text-overlay", "image-link-blocks", "mar26-addons-buy", "apps", "media-with-text", "related-products", "faq", "testimonials" |
+| [product.mar26-with-bundle-builder.json](file:///C:/code/BrightTools/worktrees/main/templates/product.mar26-with-bundle-builder.json) | Template for the product.mar26-with-bundle-builder page, featuring sections: custom-liquid, mar26-main-product, mar26-addons-buy, _blocks, mar26-whats-included, mar26-highlights, media-with-text, rich-text, _blocks, mar26-testimonials, faq, mar26-best-sellers. | "custom-liquid", "mar26-main-product", "mar26-addons-buy", "_blocks", "mar26-whats-included", "mar26-highlights", "media-with-text", "rich-text", "mar26-testimonials", "faq", "mar26-best-sellers" |
+| [product.mar26.json](file:///C:/code/BrightTools/worktrees/main/templates/product.mar26.json) | Template for the product.mar26 page, featuring sections: custom-liquid, mar26-main-product, mar26-whats-included, video, mar26-highlights, media-with-text, rich-text, _blocks, mar26-testimonials, faq, mar26-best-sellers. | "custom-liquid", "mar26-main-product", "mar26-whats-included", "video", "mar26-highlights", "media-with-text", "rich-text", "_blocks", "mar26-testimonials", "faq", "mar26-best-sellers" |
+| [product.pre-order.json](file:///C:/code/BrightTools/worktrees/main/templates/product.pre-order.json) | Template for the product.pre-order page, featuring sections: main-product. | "main-product" |
 | [collection.brooms-bt.json](file:///C:/code/BrightTools/worktrees/main/templates/collection.brooms-bt.json) | Template for the collection.brooms-bt page, featuring sections: mar26-top-image, mar26-catalog-engine, video, rich-text, media-with-text, faq, collection-banner, multiple-images-with-text, rich-text, impact-text, mar26-best-sellers, mar26-highlights, mar26-testimonials. | "mar26-top-image", "mar26-catalog-engine", "video", "rich-text", "media-with-text", "faq", "collection-banner", "multiple-images-with-text", "impact-text", "mar26-best-sellers", "mar26-highlights", "mar26-testimonials" |
 | [collection.bundles-bt.json](file:///C:/code/BrightTools/worktrees/main/templates/collection.bundles-bt.json) | Template for the collection.bundles-bt page, featuring sections: mar26-top-image, mar26-catalog-engine, video, mar26-best-sellers, media-with-text, faq, mar26-bundles, _blocks, _blocks, mar26-highlights, mar26-mediagrid, mar26-testimonials, collection-list, press. | "mar26-top-image", "mar26-catalog-engine", "video", "mar26-best-sellers", "media-with-text", "faq", "mar26-bundles", "_blocks", "mar26-highlights", "mar26-mediagrid", "mar26-testimonials", "collection-list", "press" |
-| [collection.cleaningproducts-bt.json](file:///C:/code/BrightTools/worktrees/main/templates/collection.cleaningproducts-bt.json) | Template for the collection.cleaningproducts-bt page, featuring sections: mar26-top-image, mar26-catalog-engine, mar26-best-sellers, faq, collection-banner, multiple-images-with-text, rich-text, impact-text, video, rich-text, media-with-text, mar26-highlights, mar26-testimonials. | "mar26-top-image", "mar26-catalog-engine", "mar26-best-sellers", "faq", "collection-banner", "multiple-images-with-text", "rich-text", "impact-text", "video", "media-with-text", "mar26-highlights", "mar26-testimonials" |
+| [collection.cleaningproducts-bt.json](file:///C:/code/BrightTools/worktrees/main/templates/collection.cleaningproducts-bt.json) | Template for the collection.cleaningproducts-bt page, featuring sections: mar26-top-image, mar26-catalog-engine, video, rich-text, media-with-text, faq, collection-banner, multiple-images-with-text, rich-text, impact-text, mar26-best-sellers, mar26-highlights, mar26-testimonials. | "mar26-top-image", "mar26-catalog-engine", "video", "rich-text", "media-with-text", "faq", "collection-banner", "multiple-images-with-text", "impact-text", "mar26-best-sellers", "mar26-highlights", "mar26-testimonials" |
 | [collection.dustpans-bt.json](file:///C:/code/BrightTools/worktrees/main/templates/collection.dustpans-bt.json) | Template for the collection.dustpans-bt page, featuring sections: mar26-top-image, mar26-catalog-engine, video, rich-text, media-with-text, faq, collection-banner, multiple-images-with-text, rich-text, impact-text, mar26-best-sellers, mar26-highlights, mar26-testimonials. | "mar26-top-image", "mar26-catalog-engine", "video", "rich-text", "media-with-text", "faq", "collection-banner", "multiple-images-with-text", "impact-text", "mar26-best-sellers", "mar26-highlights", "mar26-testimonials" |
 | [collection.floor-wipes-bt.json](file:///C:/code/BrightTools/worktrees/main/templates/collection.floor-wipes-bt.json) | Template for the collection.floor-wipes-bt page, featuring sections: mar26-top-image, mar26-catalog-engine, video, rich-text, multiple-images-with-text, media-with-text, faq, collection-banner, rich-text, rich-text, impact-text, mar26-best-sellers, mar26-highlights, mar26-testimonials. | "mar26-top-image", "mar26-catalog-engine", "video", "rich-text", "multiple-images-with-text", "media-with-text", "faq", "collection-banner", "impact-text", "mar26-best-sellers", "mar26-highlights", "mar26-testimonials" |
-| [collection.microfibre-bt.json](file:///C:/code/BrightTools/worktrees/main/templates/collection.microfibre-bt.json) | Template for the collection.microfibre-bt page, featuring sections: mar26-top-image, mar26-catalog-engine, mar26-best-sellers, faq, collection-banner, multiple-images-with-text, rich-text, impact-text, video, rich-text, media-with-text, mar26-highlights, mar26-testimonials. | "mar26-top-image", "mar26-catalog-engine", "mar26-best-sellers", "faq", "collection-banner", "multiple-images-with-text", "rich-text", "impact-text", "video", "media-with-text", "mar26-highlights", "mar26-testimonials" |
-| [collection.mops-bt.json](file:///C:/code/BrightTools/worktrees/main/templates/collection.mops-bt.json) | Template for the collection.mops-bt page, featuring sections: mar26-top-image, mar26-catalog-engine, mar26-best-sellers, faq, collection-banner, multiple-images-with-text, rich-text, impact-text, video, rich-text, media-with-text, mar26-highlights, mar26-testimonials. | "mar26-top-image", "mar26-catalog-engine", "mar26-best-sellers", "faq", "collection-banner", "multiple-images-with-text", "rich-text", "impact-text", "video", "media-with-text", "mar26-highlights", "mar26-testimonials" |
-| [collection.shop-all-bt.json](file:///C:/code/BrightTools/worktrees/main/templates/collection.shop-all-bt.json) | Template for the collection.shop-all-bt page, featuring sections: mar26-top-image, mar26-catalog-engine, video, mar26-best-sellers, faq, video, rich-text, media-with-text, mar26-highlights, mar26-testimonials. | "mar26-top-image", "mar26-catalog-engine", "video", "mar26-best-sellers", "faq", "rich-text", "media-with-text", "mar26-highlights", "mar26-testimonials" |
+| [collection.microfibre-bt.json](file:///C:/code/BrightTools/worktrees/main/templates/collection.microfibre-bt.json) | Template for the collection.microfibre-bt page, featuring sections: mar26-top-image, mar26-catalog-engine, video, rich-text, media-with-text, faq, collection-banner, multiple-images-with-text, rich-text, impact-text, mar26-best-sellers, mar26-highlights, mar26-testimonials. | "mar26-top-image", "mar26-catalog-engine", "video", "rich-text", "media-with-text", "faq", "collection-banner", "multiple-images-with-text", "impact-text", "mar26-best-sellers", "mar26-highlights", "mar26-testimonials" |
+| [collection.mops-bt.json](file:///C:/code/BrightTools/worktrees/main/templates/collection.mops-bt.json) | Template for the collection.mops-bt page, featuring sections: mar26-top-image, mar26-catalog-engine, video, rich-text, media-with-text, faq, collection-banner, multiple-images-with-text, rich-text, impact-text, mar26-best-sellers, mar26-highlights, mar26-testimonials. | "mar26-top-image", "mar26-catalog-engine", "video", "rich-text", "media-with-text", "faq", "collection-banner", "multiple-images-with-text", "impact-text", "mar26-best-sellers", "mar26-highlights", "mar26-testimonials" |
+| [collection.shop-all-bt.json](file:///C:/code/BrightTools/worktrees/main/templates/collection.shop-all-bt.json) | Template for the collection.shop-all-bt page, featuring sections: mar26-top-image, mar26-catalog-engine, video, rich-text, media-with-text, video, faq, mar26-best-sellers, mar26-highlights, mar26-testimonials. | "mar26-top-image", "mar26-catalog-engine", "video", "rich-text", "media-with-text", "faq", "mar26-best-sellers", "mar26-highlights", "mar26-testimonials" |
 | [collection.squeegees-bt.json](file:///C:/code/BrightTools/worktrees/main/templates/collection.squeegees-bt.json) | Template for the collection.squeegees-bt page, featuring sections: mar26-top-image, mar26-catalog-engine, video, rich-text, media-with-text, faq, collection-banner, multiple-images-with-text, rich-text, impact-text, mar26-best-sellers, mar26-highlights, mar26-testimonials. | "mar26-top-image", "mar26-catalog-engine", "video", "rich-text", "media-with-text", "faq", "collection-banner", "multiple-images-with-text", "impact-text", "mar26-best-sellers", "mar26-highlights", "mar26-testimonials" |
-| [collection.toilet-bt.json](file:///C:/code/BrightTools/worktrees/main/templates/collection.toilet-bt.json) | Template for the collection.toilet-bt page, featuring sections: mar26-top-image, mar26-catalog-engine, mar26-best-sellers, faq, collection-banner, multiple-images-with-text, rich-text, impact-text, video, rich-text, media-with-text, mar26-highlights, mar26-testimonials. | "mar26-top-image", "mar26-catalog-engine", "mar26-best-sellers", "faq", "collection-banner", "multiple-images-with-text", "rich-text", "impact-text", "video", "media-with-text", "mar26-highlights", "mar26-testimonials" |
-| [collection.windows-care-bt.json](file:///C:/code/BrightTools/worktrees/main/templates/collection.windows-care-bt.json) | Template for the collection.windows-care-bt page, featuring sections: mar26-top-image, mar26-catalog-engine, video, video, rich-text, media-with-text, faq, rich-text, rich-text, rich-text, rich-text, rich-text, impact-text, mar26-bundles, _blocks, _blocks, mar26-mediagrid, collection-list, mar26-best-sellers, mar26-highlights, mar26-testimonials. | "mar26-top-image", "mar26-catalog-engine", "video", "rich-text", "media-with-text", "faq", "impact-text", "mar26-bundles", "_blocks", "mar26-mediagrid", "collection-list", "mar26-best-sellers", "mar26-highlights", "mar26-testimonials" |
+| [collection.toilet-bt.json](file:///C:/code/BrightTools/worktrees/main/templates/collection.toilet-bt.json) | Template for the collection.toilet-bt page, featuring sections: mar26-top-image, mar26-catalog-engine, video, rich-text, media-with-text, faq, collection-banner, multiple-images-with-text, rich-text, impact-text, mar26-best-sellers, mar26-highlights, mar26-testimonials. | "mar26-top-image", "mar26-catalog-engine", "video", "rich-text", "media-with-text", "faq", "collection-banner", "multiple-images-with-text", "impact-text", "mar26-best-sellers", "mar26-highlights", "mar26-testimonials" |
+| [collection.windows-care-bt.json](file:///C:/code/BrightTools/worktrees/main/templates/collection.windows-care-bt.json) | Template for the collection.windows-care-bt page, featuring sections: mar26-top-image, mar26-catalog-engine, video, rich-text, media-with-text, rich-text, rich-text, rich-text, rich-text, rich-text, impact-text, video, faq, mar26-bundles, _blocks, _blocks, mar26-mediagrid, collection-list, mar26-best-sellers, mar26-highlights, mar26-testimonials. | "mar26-top-image", "mar26-catalog-engine", "video", "rich-text", "media-with-text", "impact-text", "faq", "mar26-bundles", "_blocks", "mar26-mediagrid", "collection-list", "mar26-best-sellers", "mar26-highlights", "mar26-testimonials" |
 
 ---
 
 ## Raw Registry (AI / Script Optimized)
 
-`yaml
+```yaml
 registry:
+  - template: "index.json"
+    sections:
+      - "mar26_hero_8Fyf4a (mar26-hero)"
+      - "image-link-blocks (mar26-carousel)"
+      - "impact_text_LyqaqM (impact-text)"
+      - "5fb99d86-36b3-4859-9930-54cbc9dc88e9 (mar26-mediagrid)"
+      - "panorama-slices (mar26-panorama-slices)"
+      - "mar26_bundles_a3P3wM (mar26-bundles)"
+      - "17768877856cc1fa17 (_blocks)"
+      - "blocks_BPWLPX (_blocks)"
+      - "b63ec45a-06ed-43f1-91e3-471a42b3ff4d (mar26-bento-collection)"
+      - "b5385aeb-4a34-4a6d-a487-108e7124135c (video)"
+      - "mar26_best_sellers_7tLt6d (mar26-best-sellers)"
+      - "mar26-highlights (mar26-highlights)"
+      - "mar26_testimonials_73q9Ud (mar26-testimonials)"
+      - "29eb21bf-ae72-415f-9b8e-771ecae14071 (collection-list)"
+      - "press (press)"
+      - "faq (faq)"
+  - template: "product.json"
+    sections:
+      - "main (main-product)"
+      - "image_with_text_overlay_PN3fEk (image-with-text-overlay)"
+      - "image_link_blocks_XVQbdn (image-link-blocks)"
+      - "1753838657087a16ba (apps)"
+      - "c4a43766-4a19-4d00-9898-bcd0d58a97ac (media-with-text)"
+      - "17485239401e7c4d52 (apps)"
+      - "1688642188a9c7bb7d (apps)"
+      - "2cc557d9-4240-49af-87a6-619ffb9c14fe (related-products)"
+      - "beeafe09-2cb1-4ed4-9a41-c04f9f65c5d4 (faq)"
+      - "4dd2b973-8a00-4f25-9139-08a7467cbda6 (testimonials)"
+      - "1688645804e1409c6c (apps)"
+  - template: "product.bt-brooms.json"
+    sections:
+      - "custom_liquid_bYgJK7 (custom-liquid)"
+      - "main (mar26-main-product)"
+      - "video_PBmR83 (video)"
+      - "video_demo (media-with-text)"
+      - "faq (faq)"
+      - "mar26_highlights_djAVBa (mar26-highlights)"
+      - "rich_text_JhBcCr (rich-text)"
+      - "blocks_jiJwFP (_blocks)"
+      - "mar26_testimonials (mar26-testimonials)"
+      - "mar26_best_sellers (mar26-best-sellers)"
+  - template: "product.caravan-c-b-page.json"
+    sections:
+      - "hero_shell (mar26-main-special-product)"
+      - "bundle_items (mar26-bundle-items)"
+      - "buy_flow (mar26-buy-flow)"
+      - "whats_included (mar26-whats-included)"
+      - "mar26_highlights (mar26-highlights)"
+      - "video_demo (media-with-text)"
+      - "mar26_testimonials (mar26-testimonials)"
+      - "faq (faq)"
+      - "mar26_best_sellers (mar26-best-sellers)"
+  - template: "product.floor-wipes-fresh-home.json"
+    sections:
+      - "main (main-product)"
+      - "c4a43766-4a19-4d00-9898-bcd0d58a97ac (media-with-text)"
+      - "5713877b-7f32-4b02-9506-0d4105301c00 (video)"
+      - "1688642188a9c7bb7d (apps)"
+      - "2cc557d9-4240-49af-87a6-619ffb9c14fe (related-products)"
+      - "beeafe09-2cb1-4ed4-9a41-c04f9f65c5d4 (faq)"
+      - "4dd2b973-8a00-4f25-9139-08a7467cbda6 (testimonials)"
+      - "1688645804e1409c6c (apps)"
+  - template: "product.mar-page.json"
+    sections:
+      - "main (main-product)"
+  - template: "product.mar26-caravan-bundle-page.json"
+    sections:
+      - "mar26_bestsellerpage_hero (mar26-bestsellerpage-hero)"
+      - "mar26_bestsellerpage_included_grid (mar26-bestsellerpage-included-grid)"
+  - template: "product.mar26-product.json"
+    sections:
+      - "main (main-product)"
+      - "image_with_text_overlay_PN3fEk (image-with-text-overlay)"
+      - "image_link_blocks_XVQbdn (image-link-blocks)"
+      - "mar26_addons_buy_eL6BAC (mar26-addons-buy)"
+      - "1753838657087a16ba (apps)"
+      - "c4a43766-4a19-4d00-9898-bcd0d58a97ac (media-with-text)"
+      - "17485239401e7c4d52 (apps)"
+      - "1688642188a9c7bb7d (apps)"
+      - "2cc557d9-4240-49af-87a6-619ffb9c14fe (related-products)"
+      - "beeafe09-2cb1-4ed4-9a41-c04f9f65c5d4 (faq)"
+      - "4dd2b973-8a00-4f25-9139-08a7467cbda6 (testimonials)"
+      - "1688645804e1409c6c (apps)"
+  - template: "product.mar26-with-bundle-builder.json"
+    sections:
+      - "custom_liquid_bYgJK7 (custom-liquid)"
+      - "main (mar26-main-product)"
+      - "mar26_addons_buy_AdDm7w (mar26-addons-buy)"
+      - "17750007465d59e430 (_blocks)"
+      - "whats_included (mar26-whats-included)"
+      - "mar26_highlights_djAVBa (mar26-highlights)"
+      - "video_demo (media-with-text)"
+      - "rich_text_JhBcCr (rich-text)"
+      - "blocks_jiJwFP (_blocks)"
+      - "mar26_testimonials (mar26-testimonials)"
+      - "faq (faq)"
+      - "mar26_best_sellers (mar26-best-sellers)"
+  - template: "product.mar26.json"
+    sections:
+      - "custom_liquid_bYgJK7 (custom-liquid)"
+      - "main (mar26-main-product)"
+      - "whats_included (mar26-whats-included)"
+      - "video_PBmR83 (video)"
+      - "mar26_highlights_djAVBa (mar26-highlights)"
+      - "video_demo (media-with-text)"
+      - "rich_text_JhBcCr (rich-text)"
+      - "blocks_jiJwFP (_blocks)"
+      - "mar26_testimonials (mar26-testimonials)"
+      - "faq (faq)"
+      - "mar26_best_sellers (mar26-best-sellers)"
+  - template: "product.pre-order.json"
+    sections:
+      - "main (main-product)"
   - template: "collection.brooms-bt.json"
     sections:
       - "mar26_top_image (mar26-top-image)"
@@ -59,15 +185,15 @@ registry:
     sections:
       - "mar26_top_image (mar26-top-image)"
       - "main (mar26-catalog-engine)"
-      - "best_sellers (mar26-best-sellers)"
+      - "b5385aeb-4a34-4a6d-a487-108e7124135c (video)"
+      - "rich_text_zi6Wjd (rich-text)"
+      - "media_with_text_naB3qr (media-with-text)"
       - "d9e91537-6225-4b57-bd84-e5d10e8558b3 (faq)"
       - "banner (collection-banner)"
       - "cb929d4c-1c53-4be8-9c5d-f5cc730d8698 (multiple-images-with-text)"
       - "b9b043b0-6f7d-46c8-af7e-abe869a1461a (rich-text)"
       - "93b3dd98-8014-44ba-af23-a7338412744e (impact-text)"
-      - "b5385aeb-4a34-4a6d-a487-108e7124135c (video)"
-      - "rich_text_zi6Wjd (rich-text)"
-      - "media_with_text_naB3qr (media-with-text)"
+      - "best_sellers (mar26-best-sellers)"
       - "mar26-highlights (mar26-highlights)"
       - "mar26_testimonials_73q9Ud (mar26-testimonials)"
   - template: "collection.dustpans-bt.json"
@@ -105,42 +231,42 @@ registry:
     sections:
       - "mar26_top_image (mar26-top-image)"
       - "main (mar26-catalog-engine)"
-      - "best_sellers (mar26-best-sellers)"
+      - "b5385aeb-4a34-4a6d-a487-108e7124135c (video)"
+      - "rich_text_zi6Wjd (rich-text)"
+      - "media_with_text_naB3qr (media-with-text)"
       - "d9e91537-6225-4b57-bd84-e5d10e8558b3 (faq)"
       - "banner (collection-banner)"
       - "cb929d4c-1c53-4be8-9c5d-f5cc730d8698 (multiple-images-with-text)"
       - "b9b043b0-6f7d-46c8-af7e-abe869a1461a (rich-text)"
       - "93b3dd98-8014-44ba-af23-a7338412744e (impact-text)"
-      - "b5385aeb-4a34-4a6d-a487-108e7124135c (video)"
-      - "rich_text_zi6Wjd (rich-text)"
-      - "media_with_text_naB3qr (media-with-text)"
+      - "best_sellers (mar26-best-sellers)"
       - "mar26-highlights (mar26-highlights)"
       - "mar26_testimonials_73q9Ud (mar26-testimonials)"
   - template: "collection.mops-bt.json"
     sections:
       - "mar26_top_image (mar26-top-image)"
       - "main (mar26-catalog-engine)"
-      - "best_sellers (mar26-best-sellers)"
+      - "b5385aeb-4a34-4a6d-a487-108e7124135c (video)"
+      - "rich_text_zi6Wjd (rich-text)"
+      - "media_with_text_naB3qr (media-with-text)"
       - "d9e91537-6225-4b57-bd84-e5d10e8558b3 (faq)"
       - "banner (collection-banner)"
       - "cb929d4c-1c53-4be8-9c5d-f5cc730d8698 (multiple-images-with-text)"
       - "b9b043b0-6f7d-46c8-af7e-abe869a1461a (rich-text)"
       - "93b3dd98-8014-44ba-af23-a7338412744e (impact-text)"
-      - "b5385aeb-4a34-4a6d-a487-108e7124135c (video)"
-      - "rich_text_zi6Wjd (rich-text)"
-      - "media_with_text_naB3qr (media-with-text)"
+      - "best_sellers (mar26-best-sellers)"
       - "mar26-highlights (mar26-highlights)"
       - "mar26_testimonials_73q9Ud (mar26-testimonials)"
   - template: "collection.shop-all-bt.json"
     sections:
       - "mar26_top_image (mar26-top-image)"
       - "main (mar26-catalog-engine)"
-      - "video_promo (video)"
-      - "best_sellers (mar26-best-sellers)"
-      - "d9e91537-6225-4b57-bd84-e5d10e8558b3 (faq)"
       - "b5385aeb-4a34-4a6d-a487-108e7124135c (video)"
       - "rich_text_zi6Wjd (rich-text)"
       - "media_with_text_naB3qr (media-with-text)"
+      - "video_promo (video)"
+      - "d9e91537-6225-4b57-bd84-e5d10e8558b3 (faq)"
+      - "best_sellers (mar26-best-sellers)"
       - "mar26-highlights (mar26-highlights)"
       - "mar26_testimonials_73q9Ud (mar26-testimonials)"
   - template: "collection.squeegees-bt.json"
@@ -162,15 +288,15 @@ registry:
     sections:
       - "mar26_top_image (mar26-top-image)"
       - "main (mar26-catalog-engine)"
-      - "best_sellers (mar26-best-sellers)"
+      - "b5385aeb-4a34-4a6d-a487-108e7124135c (video)"
+      - "rich_text_zi6Wjd (rich-text)"
+      - "media_with_text_naB3qr (media-with-text)"
       - "d9e91537-6225-4b57-bd84-e5d10e8558b3 (faq)"
       - "banner (collection-banner)"
       - "cb929d4c-1c53-4be8-9c5d-f5cc730d8698 (multiple-images-with-text)"
       - "b9b043b0-6f7d-46c8-af7e-abe869a1461a (rich-text)"
       - "93b3dd98-8014-44ba-af23-a7338412744e (impact-text)"
-      - "b5385aeb-4a34-4a6d-a487-108e7124135c (video)"
-      - "rich_text_zi6Wjd (rich-text)"
-      - "media_with_text_naB3qr (media-with-text)"
+      - "best_sellers (mar26-best-sellers)"
       - "mar26-highlights (mar26-highlights)"
       - "mar26_testimonials_73q9Ud (mar26-testimonials)"
   - template: "collection.windows-care-bt.json"
@@ -178,16 +304,16 @@ registry:
       - "mar26_top_image (mar26-top-image)"
       - "main (mar26-catalog-engine)"
       - "video_YxW6xG (video)"
-      - "b5385aeb-4a34-4a6d-a487-108e7124135c (video)"
       - "rich_text_zi6Wjd (rich-text)"
       - "media_with_text_naB3qr (media-with-text)"
-      - "faq_W8bJFX (faq)"
       - "rich_text_DK3Upb (rich-text)"
       - "rich_text_c34qcP (rich-text)"
       - "rich_text_rXBMYU (rich-text)"
       - "rich_text_DNKLN4 (rich-text)"
       - "rich_text_R6yrtQ (rich-text)"
       - "impact_text_J9CYCC (impact-text)"
+      - "b5385aeb-4a34-4a6d-a487-108e7124135c (video)"
+      - "faq_W8bJFX (faq)"
       - "mar26_bundles_a3P3wM (mar26-bundles)"
       - "blocks_BPWLPX (_blocks)"
       - "17768877856cc1fa17 (_blocks)"
@@ -196,4 +322,4 @@ registry:
       - "mar26_best_sellers_7tLt6d (mar26-best-sellers)"
       - "mar26-highlights (mar26-highlights)"
       - "mar26_testimonials_73q9Ud (mar26-testimonials)"
-``n
+```

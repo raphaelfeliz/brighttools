@@ -1,0 +1,13 @@
+section: "multiple-images-with-text.liquid"
+description: "Liquid section template for Multiple images with text."
+blocks:
+  - "item (Item)"
+settings:
+  - "full_width (checkbox)"
+  - "images_layout (select)"
+  - "collage_images_alignment (select)"
+  - "background (color)"
+  - "background_gradient (color_background)"
+  - "text_color (color)"
+  - "button_background (color)"
+  - "button_text_color (color)"

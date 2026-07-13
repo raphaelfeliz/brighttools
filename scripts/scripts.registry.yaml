@@ -1,0 +1,13 @@
+scripts:
+  - file: "generate_templates_registry.py"
+    description: "Generates templates.registry.yaml by categorizing template JSON/Liquid files."
+  - file: "generate_sections_metadata_and_registry.py"
+    description: "Parses section Liquid schema config to individual metadata YAMLs and sections.registry.yaml."
+  - file: "generate_custom_templates_summary.py"
+    description: "Generates a markdown table summary (templates.summary.md) for custom -bt.json templates."
+  - file: "generate_templates_metadata_yamls.py"
+    description: "Generates individual metadata YAML files describing the sections used by all templates."
+  - file: "scaffold-workspace.js"
+    description: "Scaffolds directory structure and empty files from a YAML-like tree structure configuration file."
+  - file: "generate_sections_registry.py"
+    description: "Generates sections.registry.yaml showing cross-references between sections and -bt templates."

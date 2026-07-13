@@ -1,0 +1,14 @@
+section: "announcement-bar.liquid"
+description: "Liquid section template for Announcement bar."
+blocks:
+  - "message (Message)"
+settings:
+  - "enable_sticky (checkbox)"
+  - "navigation_mode (select)"
+  - "autoplay (checkbox)"
+  - "cycle_speed (range)"
+  - "scrolling_speed (range)"
+  - "text_size (select)"
+  - "background (color)"
+  - "background_gradient (color_background)"
+  - "text_color (color)"

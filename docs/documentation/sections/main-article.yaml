@@ -1,0 +1,18 @@
+section: "main-article.liquid"
+description: "Liquid section template for Blog post."
+blocks:
+  - "navigation (Prev/next blog posts)"
+  - "comments (Comments)"
+settings:
+  - "allow_transparent_header (checkbox)"
+  - "layout (select)"
+  - "image (image_picker)"
+  - "show_author (checkbox)"
+  - "show_date (checkbox)"
+  - "show_comments_count (checkbox)"
+  - "show_share_buttons (checkbox)"
+  - "banner_background (color)"
+  - "banner_text_color (color)"
+  - "overlay_color (color)"
+  - "overlay_opacity (range)"
+  - "content_width (select)"

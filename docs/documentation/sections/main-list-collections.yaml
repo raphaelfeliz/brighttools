@@ -1,0 +1,10 @@
+section: "main-list-collections.liquid"
+description: "Liquid section template for List collections."
+blocks:
+settings:
+  - "collections (collection_list)"
+  - "collections_per_row_mobile (select)"
+  - "collections_per_row (range)"
+  - "text_color (color)"
+  - "overlay_color (color)"
+  - "overlay_opacity (range)"

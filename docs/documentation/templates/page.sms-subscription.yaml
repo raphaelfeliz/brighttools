@@ -1,0 +1,4 @@
+template: "page.sms-subscription.json"
+description: "Template for the page.sms-subscription page, featuring sections: main-page."
+sections:
+  - "main (main-page)"

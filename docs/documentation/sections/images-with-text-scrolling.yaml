@@ -1,0 +1,15 @@
+section: "images-with-text-scrolling.liquid"
+description: "Liquid section template for Images and text scrolling."
+blocks:
+  - "item (Item)"
+settings:
+  - "full_width (checkbox)"
+  - "stack_on_mobile (checkbox)"
+  - "show_counter (checkbox)"
+  - "desktop_image_effect (select)"
+  - "image_position (select)"
+  - "background (color)"
+  - "background_gradient (color_background)"
+  - "text_color (color)"
+  - "heading_color (color)"
+  - "heading_gradient (color_background)"

@@ -1,0 +1,4 @@
+template: "page.json"
+description: "Template for the page page, featuring sections: main-page."
+sections:
+  - "main (main-page)"

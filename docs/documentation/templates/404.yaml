@@ -1,0 +1,4 @@
+template: "404.json"
+description: "Template for the 404 page, featuring sections: main-not-found."
+sections:
+  - "main (main-not-found)"

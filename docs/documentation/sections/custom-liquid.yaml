@@ -1,0 +1,11 @@
+section: "custom-liquid.liquid"
+description: "Liquid section template for Custom Liquid."
+blocks:
+settings:
+  - "full_width (checkbox)"
+  - "remove_vertical_spacing (checkbox)"
+  - "remove_horizontal_spacing (checkbox)"
+  - "liquid (liquid)"
+  - "background (color)"
+  - "background_gradient (color_background)"
+  - "text_color (color)"

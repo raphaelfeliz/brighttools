@@ -1,0 +1,13 @@
+section: "cart-drawer.liquid"
+description: "Liquid section template for Cart drawer."
+blocks:
+settings:
+  - "show_cart_note (checkbox)"
+  - "show_shipping_text (checkbox)"
+  - "allow_discount_application (checkbox)"
+  - "show_view_cart_button (checkbox)"
+  - "show_checkout_button (checkbox)"
+  - "recommendations_title (text)"
+  - "products (product_list)"
+  - "product_card_background (color)"
+  - "product_card_text_color (color)"

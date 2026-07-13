@@ -1,0 +1,4 @@
+template: "customers/activate_account.json"
+description: "Template for the customers/activate_account page, featuring sections: main-customers-activate-account."
+sections:
+  - "main (main-customers-activate-account)"

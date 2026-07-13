@@ -1,0 +1,12 @@
+section: "media-grid.liquid"
+description: "Liquid section template for Media grid."
+blocks:
+  - "image (Image)"
+  - "video (Video)"
+settings:
+  - "full_width (checkbox)"
+  - "reduce_width (checkbox)"
+  - "desktop_row_height (range)"
+  - "mobile_row_height (range)"
+  - "background (color)"
+  - "background_gradient (color_background)"

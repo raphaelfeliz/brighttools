@@ -1,0 +1,14 @@
+section: "scrolling-text.liquid"
+description: "Liquid section template for Scrolling text."
+blocks:
+settings:
+  - "full_width (checkbox)"
+  - "text (text)"
+  - "text_size (select)"
+  - "text_style (select)"
+  - "scrolling_mode (select)"
+  - "scrolling_speed (range)"
+  - "background (color)"
+  - "background_gradient (color_background)"
+  - "text_color (color)"
+  - "text_gradient (color_background)"

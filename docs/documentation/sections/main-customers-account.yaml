@@ -1,0 +1,7 @@
+section: "main-customers-account.liquid"
+description: "Liquid section template for Customer account."
+blocks:
+  - "@app ()"
+  - "liquid (Liquid)"
+  - "orders (Order list)"
+settings:

@@ -1,0 +1,9 @@
+section: "mar26-window-collection.liquid"
+description: "Liquid section template for MAR26 Window Collection."
+blocks:
+  - "@app ()"
+settings:
+  - "magnetic_video (video)"
+  - "reach_video (video)"
+  - "handheld_video (video)"
+  - "refill_video (video)"

@@ -1,0 +1,7 @@
+section: "mar26-testimonials.liquid"
+description: "Liquid section template for MAR26 Testimonials."
+blocks:
+  - "testimonial (MAR26 Testimonial)"
+settings:
+  - "title (text)"
+  - "subheading (text)"

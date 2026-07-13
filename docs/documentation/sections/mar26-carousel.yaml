@@ -1,0 +1,9 @@
+section: "mar26-carousel.liquid"
+description: "Liquid section template for MAR26 Carousel."
+blocks:
+  - "item (Link block)"
+settings:
+  - "heading_part1 (text)"
+  - "heading_part2 (text)"
+  - "highlight_color (color)"
+  - "autoplay_enabled (checkbox)"

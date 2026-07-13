@@ -1,0 +1,14 @@
+section: "mar26-whats-included.liquid"
+description: "Liquid section template for MAR26 What's Included."
+blocks:
+  - "item (MAR26 Included Item)"
+settings:
+  - "pre_title (text)"
+  - "pre_title_color (color)"
+  - "black_title (text)"
+  - "gradient_title (text)"
+  - "gradient_left_color (color)"
+  - "gradient_right_color (color)"
+  - "subheading (text)"
+  - "columns (select)"
+  - "outline_color (color)"

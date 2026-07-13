@@ -1,0 +1,9 @@
+section: "account-banner.liquid"
+description: "Liquid section template for Account banner."
+blocks:
+settings:
+  - "image (image_picker)"
+  - "image_size (select)"
+  - "text_color (color)"
+  - "overlay_color (color)"
+  - "overlay_opacity (range)"

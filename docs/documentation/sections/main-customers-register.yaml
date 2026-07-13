@@ -1,0 +1,14 @@
+section: "main-customers-register.liquid"
+description: "Liquid section template for Customer register."
+blocks:
+  - "@app ()"
+  - "fields (Fields)"
+  - "liquid (Liquid)"
+settings:
+  - "image (image_picker)"
+  - "background (color)"
+  - "background_gradient (color_background)"
+  - "text_color (color)"
+  - "heading_gradient (color_background)"
+  - "button_background (color)"
+  - "button_text_color (color)"

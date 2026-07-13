@@ -1,0 +1,4 @@
+template: "page.list-collections.json"
+description: "Template for the page.list-collections page, featuring sections: main-list-collections."
+sections:
+  - "main (main-list-collections)"

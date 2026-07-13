@@ -1,0 +1,18 @@
+section: "impact-text.liquid"
+description: "Liquid section template for Impact text."
+blocks:
+  - "item (Item)"
+settings:
+  - "full_width (checkbox)"
+  - "stack_mobile (checkbox)"
+  - "text_alignment (select)"
+  - "impact_text_style (select)"
+  - "text_divider (select)"
+  - "impact_text_size_ratio (range)"
+  - "background (color)"
+  - "background_gradient (color_background)"
+  - "heading_text_color (color)"
+  - "heading_gradient (color_background)"
+  - "text_color (color)"
+  - "button_background (color)"
+  - "button_text_color (color)"
