@@ -3,9 +3,9 @@
 file-summary: MAR26 main product section. Drives MAR26 mobile ordering, gallery layout variables, and product info composition.
 
 # Version Block (SOP: Always update for real changes)
-version-name: Fix Spacing Overlap Link
-version-number: 1.5.9
-version-summary: Increases buy-buttons block bottom margin to 30px to prevent the absolute-positioned more options link from overlapping.
+version-name: Left Align Content Elements
+version-number: 1.6.0
+version-summary: Aligns short description text and buy-buttons to the left edge of the page container on both desktop and mobile layouts.
 
 # Change rationale:
 # - Normal state: Black background / White text.
@@ -43,6 +43,17 @@ version-summary: Increases buy-buttons block bottom margin to 30px to prevent th
       --product-gallery-media-list-grid: {% if section.settings.desktop_media_layout contains 'grid' %}auto-flow dense / repeat({% if section.settings.desktop_media_layout == 'grid_one' %}1{% else %}2{% endif %}, minmax(0, 1fr)){% else %}auto / auto-flow 100%{% endif %};
       --product-gallery-media-list-gap: calc(var(--grid-gutter) / 2);
       --section-spacing-block-start: 0px !important;
+    }
+
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy-buttons"],
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy_buttons"] {
+      padding-left: 0 !important;
+      margin-left: 0 !important;
+    }
+
+    #shopify-section-{{ section.id }} .mar26-short-description-card {
+      padding-left: 0 !important;
+      margin-left: 0 !important;
     }
 
     {%- if section.settings.desktop_media_layout == 'grid_highlight' -%}
@@ -320,14 +331,6 @@ version-summary: Increases buy-buttons block bottom margin to 30px to prevent th
 
 
 
-    /* 2.25 MAR26 Short Description (Visual Polish) */
-    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26_short_description"],
-    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26-short-description"] {
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-      padding-inline: 0 !important;
-    }
-
     /* 2.3 Separator */
     #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="separator"] {
       display: block !important;
@@ -348,7 +351,7 @@ version-summary: Increases buy-buttons block bottom margin to 30px to prevent th
       margin-right: 0 !important;
       width: 100% !important;
       max-width: 100% !important;
-      padding: 5px !important;
+      padding: 5px 5px 5px 0 !important; /* Align left edge of content text */
     }
 
     /* 5. Pricing */
@@ -414,7 +417,7 @@ version-summary: Increases buy-buttons block bottom margin to 30px to prevent th
     <div class="product">
       <script>
       (function() {
-        var VERSION = 'v1.5.9';
+        var VERSION = 'v1.6.0';
         console.log('MAR26 Product Section: ' + VERSION + ' loaded');
 
         // Gate: only run diagnostics if ?debug=true is in the URL
