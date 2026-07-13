@@ -9,9 +9,9 @@ theme:
 
 git:
   local_root: "C:\\code\\BrightTools"
-  remote: null
+  remote: "git@github.com:raphaelfeliz/brighttools.git"
   branch: "main"
-  head_commit: null
+  head_commit: "91d3313"
 
 components:
   mar26-product-card-catalogv.liquid:

@@ -9,6 +9,10 @@
   - `docs/`: Stores project specifications, architecture guidelines, and SOPs.
   - `work/`: Tracks project tasks, increments, and sync metadata (initiatives).
 
+## GitHub Repository
+- **Remote URL**: `git@github.com:raphaelfeliz/brighttools.git`
+- **Primary Branch**: `main`
+
 ## Prerequisites
 - Node.js: `v24.13.0`
 - Package Manager: `pnpm` (`C:\Users\rapha\AppData\Local\nvm\v24.13.0\pnpm.CMD`)
