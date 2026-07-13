@@ -1,13 +1,13 @@
 /* 
   MAR26 FOUNDATION CSS
   ----------------------------------------------------------------------------------------------------------------------
-  VERSION: 0.8.7 - Add Sold out badge styling for catalogv cards
+  VERSION: 0.8.8 - Implement global Judge.me star color overrides
   This file serves as the single source of truth for the MAR26 design system.
   ----------------------------------------------------------------------------------------------------------------------
 */
 
 :root {
-  --mar26-foundation-version: '0.8.7';
+  --mar26-foundation-version: '0.8.8';
 
   /* Official Brand Colors */
   --mar26-clr-red: #f81b27;
@@ -841,9 +841,16 @@ html body .button.m26-btn--no-hover:not([disabled]):not(.button--outline):hover 
 /* 
   MAR26 JUDGE.ME WIDGET INTEGRATION OVERRIDES
   ----------------------------------------------------------------------------------------------------------------------
-  Overrides default Judge.me styling to match the Montserrat, 14px red-star design tokens of the March 2026 layouts.
+  Overrides default Judge.me styling to match the Montserrat, 14px star design tokens of the March 2026 layouts.
   Enforces an 18px min-height boundary on the preview badge to prevent layout shifts (CLS) when loading dynamically.
 */
+.jdgm-star {
+  color: rgb(var(--star-color)) !important;
+}
+.jdgm-widget, .jdgm-prev-badge {
+  --jdgm-star-color: rgb(var(--star-color)) !important;
+}
+
 .mar26-summary__rating .jdgm-widget.jdgm-preview-badge {
   display: block !important;
   min-height: 18px;
@@ -851,7 +858,6 @@ html body .button.m26-btn--no-hover:not([disabled]):not(.button--outline):hover 
 }
 
 .mar26-summary__rating .jdgm-star {
-  color: var(--mar26-clr-red) !important;
   font-size: 14px !important;
   margin-right: 1.2px !important;
 }
@@ -1122,7 +1128,7 @@ html body .button.m26-btn--no-hover:not([disabled]):not(.button--outline):hover 
 }
 
 .mar26-card-catalogv-ratings .jdgm-star {
-  color: var(--mar26-clr-red) !important;
+  color: rgb(var(--star-color)) !important;
   font-size: 14px !important;
   margin-right: 1.2px !important;
 }
@@ -1138,7 +1144,7 @@ html body .button.m26-btn--no-hover:not([disabled]):not(.button--outline):hover 
 /* Fallback stars styling scoped to catalogv */
 .mar26-card-catalogv-ratings .mar26-summary__stars {
   display: flex;
-  color: var(--mar26-clr-red);
+  color: rgb(var(--star-color));
   gap: 1.2px;
   align-items: center;
 }
