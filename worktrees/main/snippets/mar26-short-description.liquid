@@ -2,9 +2,9 @@
 ----------------------------------------------------------------------------------------------------------------------
 file-summary: MAR26 short description card. Renders the compact description and three highlight bullets.
 version-name: Adjustable Card Background Color
-version-number: 0.0.11
+version-number: 0.0.14
 version-date: 2026-07-13
-version-summary: Reads adjustable background_color setting from the block settings, defaulting to #FFF2CC.
+version-summary: Sets margin-left to 0 to align the fit-content card left on desktop.
 ----------------------------------------------------------------------------------------------------------------------
 {%- endcomment -%}
 
@@ -27,18 +27,18 @@ version-summary: Reads adjustable background_color setting from the block settin
       background-color: {{ block.settings.background_color | default: '#FFF2CC' }};
       border: none;
       border-radius: 1rem !important;
-      padding: 13px 13px 13px 0;
+      padding: 20px;
       margin-top: 23px;
       box-shadow: none;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      width: 100%;
+      width: fit-content;
       max-width: 100%;
       min-width: 0;
       box-sizing: border-box;
       overflow-wrap: anywhere;
-      margin-left: auto;
+      margin-left: 0;
       margin-right: auto;
     }
     .mar26-short-description-list {

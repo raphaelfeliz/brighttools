@@ -3,9 +3,9 @@
 file-summary: MAR26 main product section. Drives MAR26 mobile ordering, gallery layout variables, and product info composition.
 
 # Version Block (SOP: Always update for real changes)
-version-name: Adjustable Short Description BG Color
-version-number: 1.6.1
-version-summary: Adds custom color setting background_color to mar26_short_description block, defaulting to #FFF2CC.
+version-name: Mobile Typography Adjustments
+version-number: 1.6.5
+version-summary: Increases mobile title font-size by 2px and reduces mobile short description font-size by 2px.
 
 # Change rationale:
 # - Normal state: Black background / White text.
@@ -47,11 +47,6 @@ version-summary: Adds custom color setting background_color to mar26_short_descr
 
     #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy-buttons"],
     #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy_buttons"] {
-      padding-left: 0 !important;
-      margin-left: 0 !important;
-    }
-
-    #shopify-section-{{ section.id }} .mar26-short-description-card {
       padding-left: 0 !important;
       margin-left: 0 !important;
     }
@@ -331,6 +326,16 @@ version-summary: Adds custom color setting background_color to mar26_short_descr
 
 
 
+    /* 2.25 MAR26 Short Description (Visual Polish - Mobile Edge-to-Edge) */
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26_short_description"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26-short-description"] {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      padding-inline: 0 !important;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
+
     /* 2.3 Separator */
     #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="separator"] {
       display: block !important;
@@ -346,12 +351,24 @@ version-summary: Adds custom color setting background_color to mar26_short_descr
     }
 
     #shopify-section-{{ section.id }} .mar26-short-description-card {
-      margin-top: 5px !important;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
       margin-left: 0 !important;
       margin-right: 0 !important;
       width: 100% !important;
       max-width: 100% !important;
-      padding: 5px 5px 5px 0 !important; /* Align left edge of content text */
+      border-radius: 0 !important;
+      padding: 16px var(--container-gutter) !important;
+    }
+
+    /* 4. Mobile Typography Overrides */
+    #shopify-section-{{ section.id }} .product-info__title {
+      font-size: calc(var(--text-h1) + 2px) !important;
+    }
+
+    #shopify-section-{{ section.id }} .mar26-short-description-text,
+    #shopify-section-{{ section.id }} .mar26-short-description-item {
+      font-size: 18px !important;
     }
 
     /* 5. Pricing */
@@ -417,7 +434,7 @@ version-summary: Adds custom color setting background_color to mar26_short_descr
     <div class="product">
       <script>
       (function() {
-        var VERSION = 'v1.6.1';
+        var VERSION = 'v1.6.5';
         console.log('MAR26 Product Section: ' + VERSION + ' loaded');
 
         // Gate: only run diagnostics if ?debug=true is in the URL

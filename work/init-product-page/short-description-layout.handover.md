@@ -1,10 +1,10 @@
-# Handover: Left Align Product Page Elements
+# Handover: Short Description Layout Refinement
 
 ---
 wp_id: init-product-page
 parent_id: none
 status: completed
-timestamp: 2026-07-13T19:36:43-03:00
+timestamp: 2026-07-13T20:03:34-03:00
 
 files_changed:
   - path: worktrees/main/sections/mar26-main-product.liquid
@@ -18,9 +18,7 @@ commands_run:
     output_ref: none
 
 behavioral_change: |
-  Aligned the short description text and checkout buy-buttons vertically with the product title and price. Done by setting the short-description card left padding to 0, removing the mobile block item padding-left override (to inherit the mobile container margin), and adding desktop style overrides to force the buy-buttons and description card block items to have 0 left padding/margin.
+  Set short description card width to fit-content and margin-left to 0 on desktop to align it with the left edge of the page content. Set short description block item padding to 0 and card to border-radius 0 on mobile to span edge-to-edge (full width) while keeping internal padding (16px container-gutter) to prevent bleeding.
 
-evidence_links:
-  - path: none
-    type: text
+evidence_links: []
 ---
