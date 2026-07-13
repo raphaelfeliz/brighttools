@@ -11,7 +11,11 @@ git:
   local_root: "C:\\code\\BrightTools"
   remote: "git@github.com:raphaelfeliz/brighttools.git"
   branch: "main"
-  head_commit: "12288d5"
+  head_commit: "0e8747e"
+  summary: >
+    Changed font weight on product titles, reordered price below title and above reviews,
+    changed review star color dynamically to yellow, scaled short description elements to 20px,
+    and styled primary Add to Cart button like accelerated checkout (pill-shape, height 55px, no borders).
 
 components:
   mar26-product-card-catalogv.liquid:
@@ -21,5 +25,5 @@ components:
     version: "2.4.1"
     status: "synchronized"
   mar26-foundation.css.liquid:
-    version: "0.8.7"
+    version: "0.8.10"
     status: "synchronized"
