@@ -1,6 +1,12 @@
 # Storefront Product Page Updates - Summary of Changes
 
-A summary of recent improvements made to custom product pages (such as the Brooms template) on the storefront. These updates focus on layout neatness, visual hierarchy, readability, and brand alignment.
+A summary of recent improvements made to custom product pages on the storefront. These updates focus on layout neatness, visual hierarchy, readability, and brand alignment.
+
+---
+
+### Introduction: Product Family Customization
+* **What changed**: We are moving away from the generic `mar26-product` template to dedicated templates tailored for specific product families (such as Brooms).
+* **Why**: This allows us to display highly relevant and customized content (like specific feature cards, highlighted reviews, and custom details) built specifically for each product type instead of using a single layout for all items.
 
 ---
 
