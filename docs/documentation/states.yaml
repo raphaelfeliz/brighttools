@@ -11,11 +11,12 @@ git:
   local_root: "C:\\code\\BrightTools"
   remote: "git@github.com:raphaelfeliz/brighttools.git"
   branch: "main"
-  head_commit: "0e8747e"
+  head_commit: "a6a2fe9"
   summary: >
     Changed font weight on product titles, reordered price below title and above reviews,
     changed review star color dynamically to yellow, scaled short description elements to 20px,
-    and styled primary Add to Cart button like accelerated checkout (pill-shape, height 55px, no borders).
+    styled primary Add to Cart button like accelerated checkout (pill-shape, height 55px, no borders),
+    and synchronized Shopify editor content changes for the bt-brooms template.
 
 components:
   mar26-product-card-catalogv.liquid:
