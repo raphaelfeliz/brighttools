@@ -3,9 +3,9 @@
 file-summary: MAR26 main product section. Drives MAR26 mobile ordering, gallery layout variables, and product info composition.
 
 # Version Block (SOP: Always update for real changes)
-version-name: Remove Checkout Outline Halo
-version-number: 1.5.8
-version-summary: Removes border and box-shadow outlines on primary checkout buttons to eliminate the thin outline halo.
+version-name: Fix Spacing Overlap Link
+version-number: 1.5.9
+version-summary: Increases buy-buttons block bottom margin to 30px to prevent the absolute-positioned more options link from overlapping.
 
 # Change rationale:
 # - Normal state: Black background / White text.
@@ -193,7 +193,7 @@ version-summary: Removes border and box-shadow outlines on primary checkout butt
   #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy-buttons"],
   #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy_buttons"] {
     margin-top: 5px !important;
-    margin-bottom: 5px !important;
+    margin-bottom: 30px !important; /* Pushes subsequent sections down to accommodate absolute-positioned options link */
   }
 
   #shopify-section-{{ section.id }} buy-buttons.buy-buttons--multiple {
@@ -414,7 +414,7 @@ version-summary: Removes border and box-shadow outlines on primary checkout butt
     <div class="product">
       <script>
       (function() {
-        var VERSION = 'v1.5.8';
+        var VERSION = 'v1.5.9';
         console.log('MAR26 Product Section: ' + VERSION + ' loaded');
 
         // Gate: only run diagnostics if ?debug=true is in the URL
