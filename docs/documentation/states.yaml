@@ -11,7 +11,7 @@ git:
   local_root: "C:\\code\\BrightTools"
   remote: "git@github.com:raphaelfeliz/brighttools.git"
   branch: "main"
-  head_commit: "91d3313"
+  head_commit: "f2fe779"
 
 components:
   mar26-product-card-catalogv.liquid:
