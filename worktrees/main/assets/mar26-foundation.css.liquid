@@ -1,13 +1,13 @@
 /* 
   MAR26 FOUNDATION CSS
   ----------------------------------------------------------------------------------------------------------------------
-  VERSION: 0.8.8 - Implement global Judge.me star color overrides
+  VERSION: 0.8.10 - Remove border outline on primary buy buttons
   This file serves as the single source of truth for the MAR26 design system.
   ----------------------------------------------------------------------------------------------------------------------
 */
 
 :root {
-  --mar26-foundation-version: '0.8.8';
+  --mar26-foundation-version: '0.8.10';
 
   /* Official Brand Colors */
   --mar26-clr-red: #f81b27;
@@ -1221,3 +1221,27 @@ html body .button.m26-btn--no-hover:not([disabled]):not(.button--outline):hover 
     font-size: 11px !important;
   }
 }
+
+/* 
+  MAR26 BUY BUTTONS OVERRIDES 
+  ----------------------------------------------------------------------------------------------------------------------
+  Styles the primary Add to Cart button to match the visual properties of accelerated checkout buttons 
+  (Shop Pay/Buy with Shop) in height, border-radius, font-family, and alignment, while preserving theme colors.
+*/
+.product-info__block-item[data-block-type="buy-buttons"] .button,
+.product-info__block-item[data-block-type="buy_buttons"] .button {
+  height: 55px !important;
+  font-size: 20px !important;
+  font-family: Montserrat, var(--mar26-font-stack), sans-serif !important;
+  font-weight: 500 !important;
+  border-radius: 3.75rem !important; /* 60px pill shape */
+  border: none !important; /* Remove thin outline */
+  box-shadow: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding-block-start: 0 !important;
+  padding-block-end: 0 !important;
+  line-height: normal !important;
+}
+

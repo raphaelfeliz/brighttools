@@ -3,9 +3,9 @@
 file-summary: MAR26 main product section. Drives MAR26 mobile ordering, gallery layout variables, and product info composition.
 
 # Version Block (SOP: Always update for real changes)
-version-name: Yellow Reviews Badge Version Bump
-version-number: 1.5.6
-version-summary: Updated section version to verify loaded theme changes for yellow review stars.
+version-name: Remove Checkout Outline Halo
+version-number: 1.5.8
+version-summary: Removes border and box-shadow outlines on primary checkout buttons to eliminate the thin outline halo.
 
 # Change rationale:
 # - Normal state: Black background / White text.
@@ -172,8 +172,9 @@ version-summary: Updated section version to verify loaded theme changes for yell
   #shopify-section-{{ section.id }} .shopify-payment-button__button {
     background-color: #0F172A !important; /* Unified MAR26 Navy */
     color: #ffffff !important;
-    border-color: #0F172A !important;
-    border-radius: 10px !important; /* Geometric Synchronization */
+    border: none !important; /* Remove thin outline */
+    box-shadow: none !important;
+    border-radius: 3.75rem !important; /* Geometric Synchronization - Pill Shape */
     font-weight: 700 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.05em !important;
@@ -185,7 +186,8 @@ version-summary: Updated section version to verify loaded theme changes for yell
   #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy-buttons"] .button:focus {
     background-color: #1E293B !important;
     color: #ffffff !important;
-    border-color: #1E293B !important;
+    border: none !important;
+    box-shadow: none !important;
   }
 
   #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy-buttons"],
@@ -412,7 +414,7 @@ version-summary: Updated section version to verify loaded theme changes for yell
     <div class="product">
       <script>
       (function() {
-        var VERSION = 'v1.5.6';
+        var VERSION = 'v1.5.8';
         console.log('MAR26 Product Section: ' + VERSION + ' loaded');
 
         // Gate: only run diagnostics if ?debug=true is in the URL
