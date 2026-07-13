@@ -5,8 +5,8 @@ A summary of recent improvements made to custom product pages on the storefront.
 ---
 
 ### Introduction: Product Family Customization
-* **What changed**: We are moving away from the generic `mar26-product` template to dedicated templates tailored for specific product families (such as Brooms).
-* **Why**: This allows us to display highly relevant and customized content (like specific feature cards, highlighted reviews, and custom details) built specifically for each product type instead of using a single layout for all items.
+* **What changed**: We are moving away from the generic `mar26` page template in Shopify to dedicated templates tailored for specific product families (such as Brooms). Note that the main product section code ([mar26-main-product.liquid](file:///C:/code/BrightTools/worktrees/main/sections/mar26-main-product.liquid)) remains exactly the same and is shared across these templates; only the individual configurations (the JSON files) are split into separate templates.
+* **Why**: This allows us to configure and display highly relevant and customized content blocks (like specific feature lists and custom text) tailored for each product family on the storefront, without duplicating the underlying section code.
 
 ---
 

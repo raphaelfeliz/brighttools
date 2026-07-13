@@ -3,9 +3,9 @@
 file-summary: MAR26 main product section. Drives MAR26 mobile ordering, gallery layout variables, and product info composition.
 
 # Version Block (SOP: Always update for real changes)
-version-name: Left Align Content Elements
-version-number: 1.6.0
-version-summary: Aligns short description text and buy-buttons to the left edge of the page container on both desktop and mobile layouts.
+version-name: Adjustable Short Description BG Color
+version-number: 1.6.1
+version-summary: Adds custom color setting background_color to mar26_short_description block, defaulting to #FFF2CC.
 
 # Change rationale:
 # - Normal state: Black background / White text.
@@ -417,7 +417,7 @@ version-summary: Aligns short description text and buy-buttons to the left edge 
     <div class="product">
       <script>
       (function() {
-        var VERSION = 'v1.6.0';
+        var VERSION = 'v1.6.1';
         console.log('MAR26 Product Section: ' + VERSION + ' loaded');
 
         // Gate: only run diagnostics if ?debug=true is in the URL
@@ -745,7 +745,8 @@ version-summary: Aligns short description text and buy-buttons to the left edge 
         { "type": "text", "id": "highlight_1", "label": "Highlight 1", "default": "Industrial-grade microfibre technology" },
         { "type": "text", "id": "highlight_2", "label": "Highlight 2", "default": "Traps 99% of dust and allergens" },
         { "type": "text", "id": "highlight_3", "label": "Highlight 3", "default": "Machine washable up to 100 times" },
-        { "type": "color", "id": "icon_color", "label": "Icon Color", "default": "#e11d48" }
+        { "type": "color", "id": "icon_color", "label": "Icon Color", "default": "#e11d48" },
+        { "type": "color", "id": "background_color", "label": "Card Background Color", "default": "#FFF2CC" }
       ]
     },
     { "type": "share_buttons", "name": "Share buttons", "settings": [{ "type": "select", "id": "alignment", "label": "Alignment", "options": [{ "value": "start", "label": "Left" }, { "value": "center", "label": "Center" }, { "value": "end", "label": "Right" }], "default": "start" }] }

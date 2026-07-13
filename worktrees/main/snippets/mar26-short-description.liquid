@@ -1,10 +1,10 @@
 {%- comment -%}
 ----------------------------------------------------------------------------------------------------------------------
 file-summary: MAR26 short description card. Renders the compact description and three highlight bullets.
-version-name: Scale Elements to 1.667x (20px)
-version-number: 0.0.10
+version-name: Adjustable Card Background Color
+version-number: 0.0.11
 version-date: 2026-07-13
-version-summary: Scales font sizes to 20px and adjust checkmark icon/spacing proportionally (1.667x scale).
+version-summary: Reads adjustable background_color setting from the block settings, defaulting to #FFF2CC.
 ----------------------------------------------------------------------------------------------------------------------
 {%- endcomment -%}
 
@@ -24,7 +24,7 @@ version-summary: Scales font sizes to 20px and adjust checkmark icon/spacing pro
       max-width: 100%;
     }
     .mar26-short-description-card {
-      background-color: #fff;
+      background-color: {{ block.settings.background_color | default: '#FFF2CC' }};
       border: none;
       border-radius: 1rem !important;
       padding: 13px 13px 13px 0;
