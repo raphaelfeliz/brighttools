@@ -1,0 +1,24 @@
+{%- comment -%}
+* Version: 1.1.0
+* Change: Supports opt-in empty tag rows for stable summary layouts.
+{%- endcomment -%}
+{%- liquid
+  assign tag_product = product
+  assign tag_items = input_tags | default: tag_product.metafields.custom.color_tags.value
+-%}
+
+{%- if tag_items != blank or render_empty -%}
+  <div class="mar26-product-tags" data-mar26-element="product-tags">
+    {%- for tag_obj in tag_items -%}
+      {%- assign tag_bg = tag_obj.color.value | default: tag_obj.tag_color.value | default: '#007f96' -%}
+      {%- assign tag_text = tag_obj.name.value | default: tag_obj.tag_name.value | default: tag_obj.label.value | strip | default: 'Tag' -%}
+      {%- assign tag_icon = tag_obj.icon.value | default: tag_obj.emoji.value | default: tag_obj.icon_name.value -%}
+      <span class="mar26-product-tag" style="background-color: {{ tag_bg }};">
+        {%- if tag_icon != blank -%}
+          <span class="mar26-tag-icon" aria-hidden="true">{{ tag_icon }}</span>
+        {%- endif -%}
+        {{ tag_text | escape }}
+      </span>
+    {%- endfor -%}
+  </div>
+{%- endif -%}

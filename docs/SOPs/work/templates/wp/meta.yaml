@@ -1,0 +1,13 @@
+id: 01-wp-example
+slug: example
+type: work-package
+title: Example
+status: planned
+owner: unassigned
+agents: []
+parent: 01-incr-example
+depends_on: []
+blocks: []
+risk: medium
+created: YYYY-MM-DD
+updated: YYYY-MM-DD

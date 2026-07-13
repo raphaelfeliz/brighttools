@@ -1,0 +1,1182 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "mar26_hero_8Fyf4a": {
+      "type": "mar26-hero",
+      "name": "MAR26 Hero",
+      "settings": {
+        "subheading": "Your new favourite!",
+        "headline_line_1": "FASTER",
+        "headline_line_2": "CLEANER",
+        "headline_line_3": "SMARTER.",
+        "button_1_text": "WIPE BUNDLES",
+        "button_1_link": "shopify://collections/bundles",
+        "button_2_text": "DISCOVER TOOLS",
+        "button_2_link": "shopify://collections/shop-all",
+        "hero_image": "shopify://shop_images/Banner_HERO_BT_v8_b1982c44-96f8-4cb2-bd80-2aea3473266b.png",
+        "hero_image_mobile": "shopify://shop_images/Banner_HERO_BT_v11_3b8f5394-7e73-4ee8-8921-0119470748b8.png"
+      }
+    },
+    "image-link-blocks": {
+      "type": "mar26-carousel",
+      "blocks": {
+        "1664424046b00c932c-0": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/window_cleaner_main.webp",
+            "link_text": "WINDOWS CARE",
+            "link_url": "shopify://collections/magnetic-window",
+            "card_background": "#f8fafc",
+            "gradient_base_color": "#13809e"
+          }
+        },
+        "e4a0ef18-1856-4ddd-83d8-871a60d7acac": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/quick_mop_floor_wipes_main.webp",
+            "link_text": "FLOOR WIPES",
+            "link_url": "shopify://collections/wipes",
+            "card_background": "#f8fafc",
+            "gradient_base_color": "#9a69a7"
+          }
+        },
+        "1664424046b00c932c-3": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/cleaning_product_bundle_brighttools.webp",
+            "link_text": "BUNDLES",
+            "link_url": "shopify://collections/bundles",
+            "card_background": "#f8fafc",
+            "gradient_base_color": "#f81b27"
+          }
+        },
+        "ea90b8ec-3ee5-494e-88a3-341fa8d41a73": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/dustpan_main_brighttools.webp",
+            "link_text": "DUSTPANS",
+            "link_url": "shopify://collections/dustpans",
+            "card_background": "#f8fafc",
+            "gradient_base_color": "#000000"
+          }
+        },
+        "1664424046b00c932c-2": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/broom_main_brighttools.webp",
+            "link_text": "BROOMS",
+            "link_url": "shopify://collections/brooms",
+            "card_background": "#f8fafc",
+            "gradient_base_color": "#3762a9"
+          }
+        },
+        "item_C8WtrN": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Microfibre_Banner_-_final.jpg",
+            "link_text": "MICROFIBRES",
+            "link_url": "shopify://collections/cloth",
+            "card_background": "#f8fafc",
+            "gradient_base_color": "#8daedc"
+          }
+        },
+        "item_EprWAJ": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/toilet_brush_silicone_brighttools_ded29ba2-179b-4e0f-a348-e035db54739d.webp",
+            "link_text": "TOILET BRUSHES",
+            "link_url": "shopify://collections/toilet-brushes",
+            "card_background": "#f8fafc",
+            "gradient_base_color": "#303030"
+          }
+        },
+        "1664424046b00c932c-1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/squeegees_floor_main.webp",
+            "link_text": "SQUEEGEES",
+            "link_url": "shopify://collections/squeegee",
+            "card_background": "#f8fafc",
+            "gradient_base_color": "#7c7c7c"
+          }
+        },
+        "3133ac27-0a53-47f2-b3de-032eb1f97f87": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/mop_main_brighttools.webp",
+            "link_text": "MOPS",
+            "link_url": "shopify://collections/mops",
+            "card_background": "#f8fafc",
+            "gradient_base_color": "#fba5ac"
+          }
+        }
+      },
+      "block_order": [
+        "1664424046b00c932c-0",
+        "e4a0ef18-1856-4ddd-83d8-871a60d7acac",
+        "1664424046b00c932c-3",
+        "ea90b8ec-3ee5-494e-88a3-341fa8d41a73",
+        "1664424046b00c932c-2",
+        "item_C8WtrN",
+        "item_EprWAJ",
+        "1664424046b00c932c-1",
+        "3133ac27-0a53-47f2-b3de-032eb1f97f87"
+      ],
+      "settings": {
+        "heading_part1": "Premium",
+        "heading_part2": "Collections",
+        "highlight_color": "#f81b27",
+        "autoplay_enabled": false
+      }
+    },
+    "impact_text_LyqaqM": {
+      "type": "impact-text",
+      "blocks": {
+        "item_hEm8Cd": {
+          "type": "item",
+          "settings": {
+            "title": "",
+            "subheading": "",
+            "content": "<h1><strong>Better Cleaning</strong></h1><p>We guarantee a better cleaning experience. Our premium cleaning tools & products are made to last and work better - it's that simple. Welcome to your shiniest home ever!</p>",
+            "button_text": "Shop All Products",
+            "button_url": "shopify://collections/shop-all",
+            "animate_impact_text": false,
+            "animate_impact_text_duration": 2
+          }
+        }
+      },
+      "block_order": [
+        "item_hEm8Cd"
+      ],
+      "name": "Impact text",
+      "settings": {
+        "full_width": true,
+        "stack_mobile": true,
+        "text_alignment": "center",
+        "impact_text_style": "fill",
+        "text_divider": "none",
+        "impact_text_size_ratio": 1,
+        "background": "",
+        "background_gradient": "",
+        "heading_text_color": "",
+        "heading_gradient": "",
+        "text_color": "",
+        "button_background": "",
+        "button_text_color": ""
+      }
+    },
+    "5fb99d86-36b3-4859-9930-54cbc9dc88e9": {
+      "type": "mar26-mediagrid",
+      "settings": {
+        "video": "shopify://files/videos/main-video.mp4",
+        "external_video_url": "",
+        "btn_text": "SHOP QUICK MOP",
+        "hero_title": "Quick Mop Floor Wipes",
+        "btn_link": "shopify://collections/wipes",
+        "btn_bg_color": "#9a69a7",
+        "card_1_image": "shopify://shop_images/Boutique-Hotel-Wipes-Homepage-Image.jpg",
+        "card_1_link": "shopify://collections/wipes",
+        "card_2_image": "shopify://shop_images/Poliwix_-_Quick_mop_floor_wipes.jpg",
+        "card_2_link": "shopify://collections/wipes",
+        "card_3_image": "shopify://shop_images/Luxury_Hotel_-_Quick_mop_floor_wipes.jpg",
+        "card_3_link": "shopify://collections/wipes",
+        "card_4_image": "shopify://shop_images/Lavender_-_Quick_mop_floor_wipes_15c54579-c4af-4283-92b8-8261d5c8a4ef.jpg",
+        "card_4_link": "shopify://collections/wipes"
+      }
+    },
+    "panorama-slices": {
+      "type": "mar26-panorama-slices",
+      "settings": {
+        "s1_nav_title": "BUNDLES",
+        "s1_title": "BUNDLE & SAVE",
+        "s1_desc": "Our favourite cleaning essentials — bundled for convenience and value",
+        "s1_bg_active": "teal",
+        "s1_badge_bg": "red",
+        "s1_cta_text": "SHOP BUNDLES",
+        "s1_cta_link": "shopify://collections/bundles",
+        "s1_cta_size": "big",
+        "s1_cta_bg_color": "#0f172a",
+        "s1_cta_text_color": "white",
+        "s1_cta_outline": false,
+        "s1_cta_hover_activate": true,
+        "s1_cta_icon": "right",
+        "s1_c1_img": "shopify://shop_images/silicone-squeegee-floor-wipes-blue-handle_75f99191-7874-4421-abbd-919b4bdaea0b.jpg",
+        "s1_c1_text": "Bright Squeegee Pack - Blue",
+        "s1_c1_link": "shopify://products/bright-squeegee-pack-copy",
+        "s1_c2_img": "shopify://shop_images/Home_Cleaning_Bundle_Silicone_Mop_Broom_Squeegee.jpg",
+        "s1_c2_text": "Home Cleaning Bundle",
+        "s1_c2_link": "shopify://products/home-cleaning-bundle",
+        "s1_c3_img": "shopify://shop_images/caravan_cleaning_bundle__Silicone_5c955007-8d17-4009-b9a7-fa6bd1e5dd13.png",
+        "s1_c3_text": "Caravan Cleaning Bundle",
+        "s1_c3_link": "shopify://products/caravan-cleaning-bundle",
+        "s1_c4_img": "shopify://shop_images/floor_wipes_bundle_of_5.jpg",
+        "s1_c4_text": "5 Pack of Floor Wipes",
+        "s1_c4_link": "shopify://products/choose-your-bundle-of-5-packs-quick-mop-floor-wipes-1",
+        "s2_nav_title": "WINDOW CARE",
+        "s2_title": "WINDOW CARE",
+        "s2_desc": "The right tool for every window",
+        "s2_bg_active": "black",
+        "s2_badge_bg": "red",
+        "s2_cta_text": "SHOP WINDOWS",
+        "s2_cta_link": "shopify://collections/magnetic-window",
+        "s2_cta_size": "big",
+        "s2_cta_outline": false,
+        "s2_cta_hover_activate": false,
+        "s2_cta_color": "navy",
+        "s2_cta_icon": "right",
+        "s2_c1_img": "shopify://shop_images/Window_Cleaner_brighttools_01_main_tag_S.jpg",
+        "s2_c1_text": "High Window Cleaner Telescopic",
+        "s2_c1_link": "shopify://products/high-window-cleaner",
+        "s2_c2_img": "shopify://shop_images/Glider_Adjustable_D2_AFC_2_18mm_magnetic_window_cleaner_1_1.jpg",
+        "s2_c2_text": "Glider D2-AFC",
+        "s2_c2_link": "shopify://products/glider-d-2-afc-magnetic-window-cleaner-2-18mm",
+        "s2_c3_img": "shopify://shop_images/Handheld_three_in_one_Surface_Cleaner_main.jpg",
+        "s2_c3_text": "Mini Mop - Multi-Surface Cleaner",
+        "s2_c3_link": "shopify://products/handheld-silicone-squeegee-copy",
+        "s2_c4_img": "shopify://shop_images/High_reach_van_cleaner_tow_microfibre.jpg",
+        "s2_c4_text": "High Reach Van Cleaner",
+        "s2_c4_link": "shopify://products/high-window-cleaner-telescopic-copy",
+        "s3_nav_title": "FLOOR CARE",
+        "s3_title": "FLOOR CARE",
+        "s3_desc": "From deep cleans to a quick refresh",
+        "s3_bg_active": "purple",
+        "s3_badge_bg": "red",
+        "s3_cta_text": "SHOP FLOORS",
+        "s3_cta_link": "shopify://collections/wipes",
+        "s3_cta_size": "big",
+        "s3_cta_outline": false,
+        "s3_cta_hover_activate": true,
+        "s3_cta_color": "navy",
+        "s3_cta_icon": "right",
+        "s3_c1_img": "shopify://shop_images/silicone-squeegee-floor-wipes-blue-handle_75f99191-7874-4421-abbd-919b4bdaea0b.jpg",
+        "s3_c1_text": "Bright Squeegee Pack - Blue",
+        "s3_c1_link": "shopify://products/bright-squeegee-pack-copy",
+        "s3_c2_img": "shopify://shop_images/Mop_gray_01_main_v3_1-1_1.jpg",
+        "s3_c2_text": "Microfibre Silicone Mop",
+        "s3_c2_link": "shopify://products/microfiber-silicone-mop",
+        "s3_c3_img": "shopify://shop_images/floor_wipes_bundle_of_5.jpg",
+        "s3_c3_text": "5 Pack of Floor Wipes",
+        "s3_c3_link": "shopify://products/choose-your-bundle-of-5-packs-quick-mop-floor-wipes-1",
+        "s3_c4_img": "shopify://shop_images/rubber-broom-floor-wipes-red-handle_jpg_6348fbe6-d62c-4539-aebd-d53db13c7f18.jpg",
+        "s3_c4_text": "Bright Broom Bundle",
+        "s3_c4_link": "shopify://products/bright-broom-bundle-broom-squeegee-1pk-quick-mop-floor-wipes",
+        "s4_nav_title": "QUICK MOP",
+        "s4_title": "QUICK MOP",
+        "s4_desc": "Refresh your floors in a flash",
+        "s4_bg_active": "red",
+        "s4_badge_bg": "black",
+        "s4_cta_text": "SHOP QUICK MOP",
+        "s4_cta_link": "shopify://collections/wipes",
+        "s4_cta_size": "big",
+        "s4_cta_outline": false,
+        "s4_cta_hover_activate": true,
+        "s4_cta_color": "navy",
+        "s4_cta_icon": "right",
+        "s4_c1_img": "shopify://shop_images/Floor_Wipes_quick_Mop_Bundle_Three_Pack.jpg",
+        "s4_c1_text": "3 Pack of Floor Wipes",
+        "s4_c1_link": "shopify://products/choose-your-bundle-of-3-packs-quick-mop-floor-wipes-1",
+        "s4_c2_img": "shopify://shop_images/silicone-squeegee-floor-wipes-blue-handle_75f99191-7874-4421-abbd-919b4bdaea0b.jpg",
+        "s4_c2_text": "Bright Squeegee Pack - Blue",
+        "s4_c2_link": "shopify://products/bright-squeegee-pack-copy",
+        "s4_c3_img": "shopify://shop_images/rubber-broom-floor-wipes-red-handle_jpg_6348fbe6-d62c-4539-aebd-d53db13c7f18.jpg",
+        "s4_c3_text": "Bright Broom Bundle",
+        "s4_c3_link": "shopify://products/bright-broom-bundle-broom-squeegee-1pk-quick-mop-floor-wipes",
+        "s4_c4_img": "shopify://shop_images/floor_wipes_bundle_of_5.jpg",
+        "s4_c4_text": "5 Pack of Wipes",
+        "s4_c4_link": "shopify://products/choose-your-bundle-of-5-packs-quick-mop-floor-wipes-1"
+      }
+    },
+    "mar26_bundles_a3P3wM": {
+      "type": "mar26-bundles",
+      "blocks": {
+        "bundle_niP76P": {
+          "type": "bundle",
+          "settings": {
+            "product": "caravan-cleaning-bundle",
+            "reviews": 120
+          }
+        },
+        "bundle_VxU9nN": {
+          "type": "bundle",
+          "settings": {
+            "product": "home-cleaning-bundle",
+            "reviews": 120
+          }
+        }
+      },
+      "block_order": [
+        "bundle_niP76P",
+        "bundle_VxU9nN"
+      ],
+      "name": "MAR26 Bundles",
+      "settings": {
+        "badge_text": "BRIGHT ON - BUNDLE & SAVE",
+        "primary_text": "Most Loved",
+        "highlight_text": "Bundles",
+        "color_background": "#e8ebf0",
+        "color_primary_text": "#11141c",
+        "color_highlight": "#f81f2f",
+        "color_badge_text": "#a0a6b5",
+        "cta_text": "Shop Bundles",
+        "cta_link": "shopify://collections/bundles",
+        "cta_color": "#000000",
+        "cta_text_color": "white"
+      }
+    },
+    "17768877856cc1fa17": {
+      "type": "_blocks",
+      "blocks": {
+        "mar26-image-plus-text_DD8bwa": {
+          "type": "mar26-image-plus-text",
+          "settings": {
+            "background_image": "shopify://shop_images/Caravan__enhance__62002_v9.png",
+            "mobile_image": "shopify://shop_images/Caravan__enhance__62002_Mobile.png",
+            "heading": "Australia's Favourite Caravan Cleaning Bundle 🇦🇺",
+            "description": "Less mess, more adventure. Everything you need for an easier, faster caravan clean — all packed into one compact kit.",
+            "button_label": "Shop now",
+            "button_link": "shopify://products/caravan-cleaning-bundle",
+            "text_box_max_width": 350,
+            "text_box_padding": 20,
+            "text_box_background": "#00000099",
+            "heading_size": 28,
+            "heading_color": "#ffffff",
+            "description_size": 16,
+            "description_color": "#ffffff",
+            "button_border_radius": 12,
+            "button_text_size": 14,
+            "button_text_color": "#ffffff",
+            "button_border_color": "#ffffff",
+            "button_hover_background": "#ffffff",
+            "button_hover_text_color": "#000000",
+            "button_hover_border_color": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "mar26-image-plus-text_DD8bwa"
+      ],
+      "name": "Image, Text, Button",
+      "settings": {
+        "full_width": false,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "background": "#FFFFFF",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "blocks_BPWLPX": {
+      "type": "_blocks",
+      "blocks": {
+        "mar26_videos_WNY3ai": {
+          "type": "mar26-videos",
+          "settings": {
+            "video_1": "shopify://files/videos/clean-floor-wipes-optimized.mp4",
+            "video_2": "shopify://files/videos/Homepage Video - Window Cleaners_16x9.mp4",
+            "video_3": "shopify://files/videos/Homepage Video - Ninja.mp4",
+            "video_4": "shopify://files/videos/Homepage Video - Caravan Bundle_16x9.mp4",
+            "autoplay": true,
+            "loop": true,
+            "muted": true,
+            "controls": false,
+            "pause_on_exit": true,
+            "desktop_width_percent": 100,
+            "video_gap": 16,
+            "section_padding": 60,
+            "columns_mobile": "2",
+            "video_border_radius": 24,
+            "placeholder_background": "#f4f4f4",
+            "placeholder_text_color": "#666666"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "mar26_videos_WNY3ai"
+      ],
+      "name": "mar26-videos",
+      "settings": {
+        "full_width": false,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "b63ec45a-06ed-43f1-91e3-471a42b3ff4d": {
+      "type": "mar26-bento-collection",
+      "blocks": {
+        "template--20493667369234__b63ec45a-06ed-43f1-91e3-471a42b3ff4d-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_17.webp",
+            "title": "",
+            "heading_tag": "h4",
+            "link_url": "shopify://collections/magnetic-window",
+            "link_text": "WINDOWS",
+            "mobile_text_position": "place-self-start-end text-end",
+            "mobile_column_span": "2",
+            "desktop_column_span": 2,
+            "desktop_row_span": 2,
+            "desktop_text_position": "sm:place-self-start-end sm:text-end",
+            "background": "#000000",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "#000000",
+            "button_text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 15
+          }
+        },
+        "27b29869-2426-4b60-9c92-9a18aca2be7f": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1_d789d6de-87b2-4359-a831-7c62b2320f24.webp",
+            "title": "",
+            "heading_tag": "h5",
+            "link_url": "shopify://collections/brooms",
+            "link_text": "Brooms",
+            "mobile_text_position": "place-self-start-end text-end",
+            "mobile_column_span": "1",
+            "desktop_column_span": 1,
+            "desktop_row_span": 1,
+            "desktop_text_position": "sm:place-self-start-end sm:text-end",
+            "background": "#000000",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "#3762a9",
+            "button_text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 15
+          }
+        },
+        "bb918325-b47d-4486-8e52-a4925a512cf7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Your_paragraph_75.webp",
+            "title": "",
+            "heading_tag": "h5",
+            "link_url": "shopify://collections/dustpans",
+            "link_text": "Dustpans",
+            "mobile_text_position": "place-self-start-end text-end",
+            "mobile_column_span": "1",
+            "desktop_column_span": 1,
+            "desktop_row_span": 1,
+            "desktop_text_position": "sm:place-self-start-end sm:text-end",
+            "background": "#000000",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "#000000",
+            "button_text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 22
+          }
+        },
+        "26b47c66-7549-4e86-b30a-6209a0d51917": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Revised_2_Wipes_-_no_stairs_and_painting.jpg",
+            "title": "",
+            "heading_tag": "h4",
+            "link_url": "shopify://collections/wipes",
+            "link_text": "Floor Wipes",
+            "mobile_text_position": "place-self-start-end text-end",
+            "mobile_column_span": "2",
+            "desktop_column_span": 2,
+            "desktop_row_span": 2,
+            "desktop_text_position": "sm:place-self-start-end sm:text-end",
+            "background": "#000000",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "#9a69a7",
+            "button_text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 15
+          }
+        },
+        "image_9eAKiq": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/toilet_brush_silicone.webp",
+            "title": "",
+            "heading_tag": "h3",
+            "link_url": "shopify://collections/toilet-brushes",
+            "link_text": "Toilet Brushes",
+            "mobile_text_position": "place-self-start-end text-end",
+            "mobile_column_span": "2",
+            "desktop_column_span": 2,
+            "desktop_row_span": 2,
+            "desktop_text_position": "sm:place-self-start-end sm:text-end",
+            "background": "#000000",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "#dcb335",
+            "button_text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 20
+          }
+        },
+        "6457fc90-b854-4e60-800d-f5c4a9b62f75": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/floor_squeegee_main_mobile_d3a5a903-b22c-4ac3-add9-27a36b584fb7.webp",
+            "title": "",
+            "heading_tag": "h6",
+            "link_url": "shopify://collections/squeegee",
+            "link_text": "Squeegees",
+            "mobile_text_position": "place-self-start-end text-end",
+            "mobile_column_span": "1",
+            "desktop_column_span": 1,
+            "desktop_row_span": 1,
+            "desktop_text_position": "sm:place-self-start-end sm:text-end",
+            "background": "#000000",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "#7c7c7c",
+            "button_text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 14
+          }
+        },
+        "0a04a4e5-97f5-4f92-acf1-ac6378690f27": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/146.webp",
+            "title": "",
+            "heading_tag": "h5",
+            "link_url": "shopify://collections/mops",
+            "link_text": "Mops",
+            "mobile_text_position": "place-self-start-end text-end",
+            "mobile_column_span": "1",
+            "desktop_column_span": 1,
+            "desktop_row_span": 1,
+            "desktop_text_position": "sm:place-self-start-end sm:text-end",
+            "background": "#000000",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "#fba5ac",
+            "button_text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 15
+          }
+        }
+      },
+      "block_order": [
+        "template--20493667369234__b63ec45a-06ed-43f1-91e3-471a42b3ff4d-image-1",
+        "27b29869-2426-4b60-9c92-9a18aca2be7f",
+        "bb918325-b47d-4486-8e52-a4925a512cf7",
+        "26b47c66-7549-4e86-b30a-6209a0d51917",
+        "image_9eAKiq",
+        "6457fc90-b854-4e60-800d-f5c4a9b62f75",
+        "0a04a4e5-97f5-4f92-acf1-ac6378690f27"
+      ],
+      "settings": {
+        "full_width": false,
+        "reduce_width": true,
+        "desktop_row_height": 240,
+        "mobile_row_height": 170,
+        "background": "#f2f2f2",
+        "background_gradient": ""
+      }
+    },
+    "b5385aeb-4a34-4a6d-a487-108e7124135c": {
+      "type": "video",
+      "blocks": {
+        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-play-1": {
+          "type": "play",
+          "settings": {}
+        },
+        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "",
+            "heading_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-play-1",
+        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-heading-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "autoplay": true,
+        "video_size": "sm",
+        "video": "shopify://files/videos/window-cleaner-optmized.mp4",
+        "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "mar26_best_sellers_7tLt6d": {
+      "type": "mar26-best-sellers",
+      "blocks": {
+        "product_Hgncmy": {
+          "type": "product",
+          "settings": {
+            "product": "moppy-shmoppy"
+          }
+        },
+        "product_KicnJR": {
+          "type": "product",
+          "settings": {
+            "product": "toilet-cleaner-for-the-water-tank-green-copy"
+          }
+        },
+        "product_PgLMgh": {
+          "type": "product",
+          "settings": {
+            "product": "japanese-rubber-broom-30cm-knuckle-joint"
+          }
+        },
+        "product_eARWMX": {
+          "type": "product",
+          "settings": {
+            "product": "glider-d-2-afc-magnetic-window-cleaner-2-18mm"
+          }
+        },
+        "product_cTgnmf": {
+          "type": "product",
+          "settings": {
+            "product": "professional-microfiber-cloth-2pk-xxl-80cmx60cm"
+          }
+        },
+        "product_Kxmn9X": {
+          "type": "product",
+          "settings": {
+            "product": "handheld-silicone-squeegee-copy"
+          }
+        },
+        "product_HQwpPz": {
+          "type": "product",
+          "settings": {
+            "product": "bright-squeegee-pack-copy"
+          }
+        },
+        "product_9ENVqp": {
+          "type": "product",
+          "settings": {
+            "product": "choose-your-bundle-of-3-packs-quick-mop-floor-wipes-1"
+          }
+        },
+        "product_6W9Tkm": {
+          "type": "product",
+          "settings": {
+            "product": "bright-broom-bundle-blue-edition"
+          }
+        },
+        "product_epWxnx": {
+          "type": "product",
+          "settings": {
+            "product": "high-window-cleaner"
+          }
+        }
+      },
+      "block_order": [
+        "product_Hgncmy",
+        "product_KicnJR",
+        "product_PgLMgh",
+        "product_eARWMX",
+        "product_cTgnmf",
+        "product_Kxmn9X",
+        "product_HQwpPz",
+        "product_9ENVqp",
+        "product_6W9Tkm",
+        "product_epWxnx"
+      ],
+      "name": "MAR26 Best Sellers",
+      "settings": {
+        "badge_text": "Bright On - Dust Off",
+        "primary_text": "Better Cleaning",
+        "highlight_text": "Best Sellers",
+        "autoplay_enabled": true,
+        "color_background": "#f8fafc",
+        "color_primary_text": "#0f172a",
+        "color_highlight": "#f81f2f",
+        "color_badge_text": "#64748b"
+      }
+    },
+    "mar26-highlights": {
+      "type": "mar26-highlights",
+      "blocks": {
+        "highlight-1": {
+          "type": "highlight_card",
+          "settings": {
+            "image": "shopify://shop_images/arms.png",
+            "bg_color": "#ffffff",
+            "color_text_1": "#000000",
+            "color_text_2": "#f81b27",
+            "top_title": "Heavy",
+            "gradient_title": "Duty",
+            "subtitle_1": "Pro-Grade Tools",
+            "subtitle_2": "for everyday messes."
+          }
+        },
+        "highlight-3": {
+          "type": "highlight_card",
+          "settings": {
+            "image": "shopify://shop_images/love-or-return.png",
+            "bg_color": "#ffc9cd",
+            "color_text_1": "#000000",
+            "color_text_2": "#f81b27",
+            "top_title": "Zero",
+            "gradient_title": "Risk",
+            "subtitle_1": "Love it or send it back.",
+            "subtitle_2": "We make returns simple."
+          }
+        },
+        "highlight-2": {
+          "type": "highlight_card",
+          "settings": {
+            "image": "shopify://shop_images/2-year-warranty.png",
+            "bg_color": "#000000",
+            "color_text_1": "#ffffff",
+            "color_text_2": "#f81b27",
+            "top_title": "Fully",
+            "gradient_title": "Covered",
+            "subtitle_1": "Comprehensive 2 Year Warranty",
+            "subtitle_2": "on all tools."
+          }
+        }
+      },
+      "block_order": [
+        "highlight-1",
+        "highlight-3",
+        "highlight-2"
+      ],
+      "settings": {
+        "section_subtitle": "PREMIUM STANDARDS",
+        "section_title_black": "Built",
+        "section_title_gradient": "Different.",
+        "section_grad_color_1": "#ff1423",
+        "section_grad_color_2": "#ff1423",
+        "color_background": "#f8fafc"
+      }
+    },
+    "mar26_testimonials_73q9Ud": {
+      "type": "mar26-testimonials",
+      "blocks": {
+        "testimonial_63cUpE": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Evelyn M.",
+            "country": "australia",
+            "content": "<p>This Wipes have been brilliant for me as I’ve got sciatica and using this floor mop has done a great job of cleaning the house without too much effort.</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_agixfB": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Carmen",
+            "country": "australia",
+            "content": "<p>Time saver! 100% easier than a mop and bucket, left my home sparkling & smelling beautifully fresh. Highly recommend!</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_KAnGUX": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Sylvie V.",
+            "country": "new_zealand",
+            "content": "<p>I love my magnetic window cleaner! I have windows very hard to clean from the outside and now they’re super clean!</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_dARCyM": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Sonia",
+            "country": "australia",
+            "content": "<p>The floor wipes leave my home smelling so fresh. I have a dog and I use these every night once he goes to bed to freshen his play area.</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_zm3YtV": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Tracy A.",
+            "country": "australia",
+            "content": "<p>The mop I didn’t know I needed! This has made quick clean ups so much easier and works perfectly along our skirting boards / walls </p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_gLrFHM": {
+          "type": "testimonial",
+          "settings": {
+            "author": "James Anderson",
+            "country": "australia",
+            "content": "<p>The Japanese Rubber Broom changed how I handle large floor areas. It's indispensable.</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_DbHRyQ": {
+          "type": "testimonial",
+          "settings": {
+            "author": "David R.",
+            "country": "new_zealand",
+            "content": "<p>The Caravan Kit is brilliant. No buckets, no mess, stores away perfectly.</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_63cUpE",
+        "testimonial_agixfB",
+        "testimonial_KAnGUX",
+        "testimonial_dARCyM",
+        "testimonial_zm3YtV",
+        "testimonial_gLrFHM",
+        "testimonial_DbHRyQ"
+      ],
+      "name": "MAR26 Testimonials",
+      "settings": {
+        "title": "What they're saying",
+        "subheading": "Join thousands already cleaning faster, easier, and better with BrightTools."
+      }
+    },
+    "29eb21bf-ae72-415f-9b8e-771ecae14071": {
+      "type": "collection-list",
+      "blocks": {
+        "template--19202935619858__29eb21bf-ae72-415f-9b8e-771ecae14071-1686655418fe40a052-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "magnetic-window",
+            "image": "shopify://shop_images/Untitled_design_17.png",
+            "subheading": "Magnetic Window Cleaners",
+            "title": "Bright & shine your hard to reach windows",
+            "url": "shopify://collections/magnetic-window",
+            "heading_tag": "h3",
+            "text_position": "place-self-end-start text-start",
+            "text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 15
+          }
+        },
+        "template--19202935619858__29eb21bf-ae72-415f-9b8e-771ecae14071-1686655418fe40a052-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "squeegee",
+            "image": "shopify://shop_images/4_68d3805b-5db8-44e6-89df-cbb721f4f236.png",
+            "subheading": "Squeegee",
+            "title": "Perfection with each sweep",
+            "url": "shopify://collections/squeegee",
+            "heading_tag": "h3",
+            "text_position": "place-self-end-start text-start",
+            "text_color": "#ffffff",
+            "overlay_color": "#1a1a1a",
+            "overlay_opacity": 15
+          }
+        },
+        "20181423-009d-418c-add8-907a0915d02c": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/5_eeb3c9e2-7dfc-4c4c-8c47-b6bb5f0c4fc9.png",
+            "subheading": "Floor Wipes",
+            "title": "Clean, Shine & leave your home smelling fresh",
+            "url": "shopify://collections/wipes",
+            "heading_tag": "h3",
+            "text_position": "place-self-end-start text-start",
+            "text_color": "#ffffff",
+            "overlay_color": "#1a1a1a",
+            "overlay_opacity": 15
+          }
+        },
+        "template--19202935619858__29eb21bf-ae72-415f-9b8e-771ecae14071-1686655418fe40a052-0": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "brooms",
+            "image": "shopify://shop_images/1_d789d6de-87b2-4359-a831-7c62b2320f24.png",
+            "subheading": "Brooms",
+            "title": "A sweep above the rest",
+            "url": "shopify://collections/brooms",
+            "heading_tag": "h3",
+            "text_position": "place-self-end-start text-start",
+            "text_color": "#ffffff",
+            "overlay_color": "#1a1a1a",
+            "overlay_opacity": 15
+          }
+        },
+        "e6282528-5c9c-4e66-aeb8-d48dd9169a2d": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "subheading": "Mops",
+            "title": "Polished to perfection",
+            "url": "shopify://collections/mops",
+            "heading_tag": "h3",
+            "text_position": "place-self-end-start text-start",
+            "text_color": "#ffffff",
+            "overlay_color": "#1a1a1a",
+            "overlay_opacity": 15
+          }
+        },
+        "f437d223-fd9d-484e-ae9c-9d21b3aed344": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "dustpans",
+            "image": "shopify://shop_images/3_2155716d-2407-4182-8446-732cbb906998.png",
+            "subheading": "Dustpans",
+            "title": "Bright on – Dust off",
+            "url": "shopify://collections/dustpans",
+            "heading_tag": "h3",
+            "text_position": "place-self-end-start text-start",
+            "text_color": "#ffffff",
+            "overlay_color": "#1a1a1a",
+            "overlay_opacity": 15
+          }
+        },
+        "71944290-fd21-4b03-aeb8-8ab73a3e4e31": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/microfiber_cloth_sano_brighttools1_1.jpg",
+            "subheading": "",
+            "title": "Microfiber Cloth",
+            "url": "shopify://collections/cloth",
+            "heading_tag": "h2",
+            "text_position": "place-self-end-start text-start",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#ffffff",
+            "overlay_opacity": 20
+          }
+        },
+        "1cad7435-4109-4785-b7d5-13bd98c03dc2": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "subheading": "",
+            "title": "Bundels",
+            "url": "shopify://collections/bundles",
+            "heading_tag": "h2",
+            "text_position": "place-self-end-start text-start",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#ffffff",
+            "overlay_opacity": 20
+          }
+        },
+        "3e1bd5a0-ea59-4ae3-99e9-26d2068f9d18": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/Your-paragraph-6-400x400.jpg",
+            "subheading": "",
+            "title": "Shop All",
+            "url": "shopify://collections",
+            "heading_tag": "h2",
+            "text_position": "place-self-end-start text-start",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#ffffff",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_kJXjgn": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "toilet-brushes",
+            "image": "shopify://shop_images/toilet_brush_silicone_main1.jpg",
+            "subheading": "",
+            "title": "",
+            "url": "",
+            "heading_tag": "h2",
+            "text_position": "place-self-center text-center",
+            "text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "template--19202935619858__29eb21bf-ae72-415f-9b8e-771ecae14071-1686655418fe40a052-1",
+        "template--19202935619858__29eb21bf-ae72-415f-9b8e-771ecae14071-1686655418fe40a052-2",
+        "20181423-009d-418c-add8-907a0915d02c",
+        "template--19202935619858__29eb21bf-ae72-415f-9b8e-771ecae14071-1686655418fe40a052-0",
+        "e6282528-5c9c-4e66-aeb8-d48dd9169a2d",
+        "f437d223-fd9d-484e-ae9c-9d21b3aed344",
+        "71944290-fd21-4b03-aeb8-8ab73a3e4e31",
+        "1cad7435-4109-4785-b7d5-13bd98c03dc2",
+        "3e1bd5a0-ea59-4ae3-99e9-26d2068f9d18",
+        "collection_kJXjgn"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "stack_collections": false,
+        "collections_per_row_mobile": "1",
+        "collections_per_row": 3,
+        "show_progress_bar": false,
+        "subheading": "",
+        "title": "Shop The Range",
+        "content": "",
+        "link_url": "shopify://collections/all",
+        "link_text": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": ""
+      }
+    },
+    "press": {
+      "type": "press",
+      "blocks": {
+        "16644243327ba53d2a-0": {
+          "type": "quote",
+          "settings": {
+            "logo": "shopify://shop_images/Testimonials-2.png",
+            "logo_width": 150,
+            "author": "George Astudillo, Australia",
+            "content": "Amazingly strong magnets. I guess I never thought it would work, but it did. No other way to do it, 6 floors up and no balcony. Thankfully the magnets are super strong.",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "16644243327ba53d2a-1": {
+          "type": "quote",
+          "settings": {
+            "logo": "shopify://shop_images/Testimonials-1.png",
+            "logo_width": 100,
+            "author": "L.S., Australia",
+            "content": "Rav Mag rubber broom light and easy to use for my balconing floor and windows",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "fe6bf754-e2ab-4654-ab08-c0d22b610836": {
+          "type": "quote",
+          "settings": {
+            "logo": "shopify://shop_images/brush-review.png",
+            "logo_width": 100,
+            "author": "Lanna, Australia",
+            "content": "I own x2 of the grey ones and they are great. So much better than bristles.",
+            "show_rating": true,
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "16644243327ba53d2a-0",
+        "16644243327ba53d2a-1",
+        "fe6bf754-e2ab-4654-ab08-c0d22b610836"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "content_size": "medium",
+        "background": "#848484",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "logo_item_background": "",
+        "logo_item_border": ""
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "166442457738b23caf-0": {
+          "type": "item",
+          "settings": {
+            "title": "Do you ship overseas?",
+            "content": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+          }
+        },
+        "166442457738b23caf-1": {
+          "type": "item",
+          "settings": {
+            "title": "How long will it take to get my orders?",
+            "content": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+          }
+        },
+        "166442457738b23caf-2": {
+          "type": "item",
+          "settings": {
+            "title": "Any question?",
+            "content": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "166442457738b23caf-0",
+        "166442457738b23caf-1",
+        "166442457738b23caf-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "subheading": "",
+        "title": "FAQ",
+        "content": "<p>Use this text to share information about your product or shipping policies.</p>",
+        "team_avatar_width": 160,
+        "support_hours": "Our customer support is available Monday to Friday: 8am-8:30pm.",
+        "answer_time": "Average answer time: 24h",
+        "button_text": "",
+        "button_url": "",
+        "text_position": "start",
+        "background": "#ffffff",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "",
+        "button_text_color": "",
+        "accordion_background": "",
+        "accordion_text_color": ""
+      }
+    }
+  },
+  "order": [
+    "mar26_hero_8Fyf4a",
+    "image-link-blocks",
+    "impact_text_LyqaqM",
+    "5fb99d86-36b3-4859-9930-54cbc9dc88e9",
+    "panorama-slices",
+    "mar26_bundles_a3P3wM",
+    "17768877856cc1fa17",
+    "blocks_BPWLPX",
+    "b63ec45a-06ed-43f1-91e3-471a42b3ff4d",
+    "b5385aeb-4a34-4a6d-a487-108e7124135c",
+    "mar26_best_sellers_7tLt6d",
+    "mar26-highlights",
+    "mar26_testimonials_73q9Ud",
+    "29eb21bf-ae72-415f-9b8e-771ecae14071",
+    "press",
+    "faq"
+  ]
+}

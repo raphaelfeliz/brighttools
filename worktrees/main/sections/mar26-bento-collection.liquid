@@ -1,0 +1,825 @@
+{%- render 'section-spacing-collapsing' -%}
+
+{%- comment -%}
+------------------------------------------------------------------------------------------------------------------------
+MAR26 VISUAL COLLECTION (BENTO COLLAGE)
+VERSION: 2.4.0 - Mobile column span control
+------------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<script>
+  console.log('MAR26 Bento - Version: 2.4.0');
+</script>
+{%- comment -%}
+------------------------------------------------------------------------------------------------------------------------
+CSS
+------------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<style>
+  #shopify-section-{{ section.id }} {
+    --media-grid-row-height: {{ section.settings.mobile_row_height }}px;
+    max-width: calc(1300px + 48px);
+    margin: 24px auto !important;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  @media screen and (min-width: 700px) {
+    #shopify-section-{{ section.id }} {
+      --media-grid-row-height: {{ section.settings.desktop_row_height }}px;
+      margin: 24px auto !important;
+      padding: 0 24px;
+    }
+  }
+
+  {%- for block in section.blocks -%}
+    #media-grid-{{ block.id }} {
+      --content-over-media-overlay: {{ block.settings.overlay_color.rgb }} /{{ block.settings.overlay_opacity | divided_by: 100.0 }};
+
+      {%- if block.settings.heading_tag == 'h5' or block.settings.heading_tag == 'h6' -%}
+        --content-over-media-gap: 1rem;
+      {%- endif -%}
+    }
+
+    {%- if block.settings.heading_tag == 'h5' or block.settings.heading_tag == 'h6' -%}
+      @media screen and (min-width: 740px) {
+        #media-grid-{{ block.id }} {
+          --content-over-media-gap: 1.5rem;
+        }
+      }
+    {%- endif -%}
+  {%- endfor -%}
+
+  #shopify-section-{{ section.id }} .mar26-section {
+    font-family: var(--mar26-font-stack);
+  }
+  #shopify-section-{{ section.id }} .media-grid__item.group {
+    border-radius: 1.25rem; /* Standardized brand radius (20px) */
+    transition: all 500ms ease;
+    background-color: #18181b; /* zinc-900 */
+    overflow: hidden;
+  }
+
+  /* HOVER: Elevate & Border Glow */
+  #shopify-section-{{ section.id }} .media-grid__item.group:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--mar26-shadow-stronger) !important;
+  }
+
+  /* MEDIA SCALING */
+  #shopify-section-{{ section.id }} .content-over-media__media {
+    transition: transform 700ms ease-out !important;
+    opacity: 0.9;
+  }
+
+  #shopify-section-{{ section.id }} .media-grid__item.group:hover .content-over-media__media {
+    transform: scale(1.1) !important;
+  }
+
+  /* OVERLAY DARKENING */
+  /* Shopify's base content-over-media uses ::after for the overlay */
+  #shopify-section-{{ section.id }} .content-over-media::after {
+    transition: opacity 500ms ease !important;
+    /* Force initial opacity if missing */
+    opacity: 0.6; 
+  }
+
+  #shopify-section-{{ section.id }} .media-grid__item.group:hover .content-over-media::after {
+    opacity: 0.8 !important;
+  }
+
+
+  /* MOBILE: 2-column grid with per-tile column span control */
+  @media screen and (max-width: 699px) {
+    #shopify-section-{{ section.id }} .media-grid {
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr) !important;
+      grid-auto-rows: auto !important;
+      gap: 0.5rem !important;
+    }
+    #shopify-section-{{ section.id }} .media-grid__item {
+      grid-column: span var(--media-grid-mobile-column-span, 2) !important;
+      grid-row: span 1 !important;
+      width: 100% !important;
+      aspect-ratio: 1 / 1 !important;
+      height: auto !important;
+    }
+    #shopify-section-{{ section.id }} .content-over-media__media.zoom-image {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center !important;
+      display: block !important;
+    }
+  }
+
+  /* Standardized Tag Buttons */
+  #shopify-section-{{ section.id }} .m26-btn {
+    padding: 0.7rem 1.25rem !important;
+    font-size: 0.875rem !important;
+    border-radius: 10px !important;
+    min-width: 120px;
+    justify-content: center;
+  }
+</style>
+
+{%- comment -%}
+------------------------------------------------------------------------------------------------------------------------
+LIQUID
+------------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<div class="mar26-section">
+  <div class="mar26-container">
+    <media-grid class="media-grid" data-mar26-element="bento-grid">
+    {%- for block in section.blocks -%}
+      <a {% if block.settings.link_url != blank %}href="{{ block.settings.link_url }}"{% endif %} class="media-grid__item shadow group" reveal-js style="--media-grid-column-span: {{ block.settings.desktop_column_span }}; --media-grid-row-span: {{ block.settings.desktop_row_span }}; --media-grid-mobile-column-span: {{ block.settings.mobile_column_span | default: 2 }};" {{ block.shopify_attributes }} data-mar26-element="bento-tile">
+        <div id="media-grid-{{ block.id }}" {% render 'surface', class: 'content-over-media rounded', background: block.settings.background, background_gradient: block.settings.background_gradient, text_color: block.settings.text_color %}>
+          {%- liquid
+            assign loading_strategy = nil
+  
+            if section.index > 3 or forloop.index > 3
+              assign loading_strategy = 'lazy'
+            endif
+          -%}
+          
+          {%- case block.type -%}
+            {%- when 'image' -%}
+              {%- if block.settings.image -%}
+                {%- capture sizes -%}(max-width: 699px) 100vw, min({{ 390 | times: block.settings.desktop_column_span }}px, {{ 25 | times: block.settings.desktop_column_span }}vw){%- endcapture -%}
+                {{- block.settings.image | image_url: width: block.settings.image.width | image_tag: loading: loading_strategy, sizes: sizes, widths: '200,300,400,500,600,700,800,1000,1200,1400,1600,1800,2000,2200,2400', class: 'content-over-media__media zoom-image' -}}
+              {%- endif -%}
+
+            {%- when 'video' -%}
+              {%- if block.settings.video -%}
+                <video-media autoplay style="--aspect-ratio: auto">
+                  {%- if block.settings.show_video_controls -%}
+                    {%- assign loop_video = false -%}
+                  {%- else -%}
+                    {%- assign loop_video = true -%}
+                  {%- endif -%}
+
+                  {{- block.settings.video | video_tag: playsinline: true, muted: true, loop: loop_video, controls: block.settings.show_video_controls, preload: 'metadata', class: 'object-fill' -}}
+                </video-media>
+              {%- else -%}
+                <video-media host="{{ block.settings.external_video_url.type }}" autoplay style="--aspect-ratio: auto">
+                  <template>
+                    {%- if block.settings.external_video_url.type == 'youtube' -%}
+                      <iframe src="https://www.youtube.com/embed/{{ block.settings.external_video_url.id }}?playsinline=1&autoplay=1&controls=0&mute=1&loop=1&playlist={{ block.settings.external_video_url.id }}&enablejsapi=1&rel=0&modestbranding=1&origin={{ 'https://' | append: request.host | url_encode }}" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
+                    {%- elsif block.settings.external_video_url.type == 'vimeo' -%}
+                      <iframe src="https://player.vimeo.com/video/{{ block.settings.external_video_url.id }}?autoplay=1&autopause=1&background=1&loop=1&muted=1&transparent=0&responsive=1&portrait=0&title=0&byline=0&color={{ settings.text_color | remove_first: '#' }}" allow="autoplay; encrypted-media;" allowfullscreen="allowfullscreen"></iframe>
+                    {%- endif -%}
+                  </template>
+                </video-media>
+              {%- endif -%}
+          {%- endcase -%}
+
+          {%- if block.settings.title != blank or block.settings.link_text != blank -%}
+            <div class="{{ block.settings.mobile_text_position }} {{ block.settings.desktop_text_position }}">
+              <div class="prose">
+                  {%- liquid
+                    assign badge_bg = '#f81b27'
+                    assign category_text = block.settings.title | default: block.settings.link_text | downcase
+                    
+                    if category_text contains 'dustpan'
+                      assign badge_bg = '#000000'
+                    elsif category_text contains 'window'
+                      assign badge_bg = '#13809e'
+                    elsif category_text contains 'mop'
+                      assign badge_bg = '#fba5ac'
+                    elsif category_text contains 'broom'
+                      assign badge_bg = '#3762a9'
+                    elsif category_text contains 'wipe'
+                      assign badge_bg = '#9a69a7'
+                    elsif category_text contains 'squeegee'
+                      assign badge_bg = '#7c7c7c'
+                    elsif category_text contains 'cloth' or category_text contains 'microfiber'
+                      assign badge_bg = '#65b2a5'
+                    elsif category_text contains 'toilet'
+                      assign badge_bg = '#dcb335'
+                    elsif category_text contains 'product'
+                      assign badge_bg = '#8daedc'
+                    endif
+                    # Allow manual override if set in block settings
+                    if block.settings.button_background != blank and block.settings.button_background != 'rgba(0,0,0,0)' and block.settings.button_background != '#000000'
+                       assign badge_bg = block.settings.button_background
+                    endif
+                  -%}
+                {%- if block.settings.title != blank -%}
+
+                  <div class="mar26-big-tag-wrap" style="margin-bottom: 1.5rem;">
+                    <span class="m26-btn" style="background-color: {{ badge_bg }}; color: var(--mar26-clr-white); pointer-events: none; border: none; font-size: clamp(1rem, 2vw, 1.25rem) !important; padding: 6px 16px !important; border-radius: 10px !important; box-shadow: var(--mar26-shadow-light);">
+                      {% render 'styled-text', content: block.settings.title, gradient: block.settings.text_gradient %}
+                    </span>
+                  </div>
+                {%- endif -%}
+
+                {%- if block.settings.link_text != blank -%}
+                  <div class="m26-btn" style="background-color: {{ badge_bg }}; color: var(--mar26-clr-white); border: none; box-shadow: var(--mar26-shadow-light); border-radius: 10px !important;">
+                    <span class="m26-btn__text" style="text-transform: uppercase; font-weight: 800;">{{ block.settings.link_text }}</span>
+                  </div>
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+      </a>
+    {%- endfor -%}
+  </media-grid>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "MAR26 Bento Collection",
+  "class": "shopify-section--media-grid",
+  "tag": "section",
+  "disabled_on": {
+    "templates": ["password"],
+    "groups": ["header", "custom.overlay"]
+  },
+  "max_blocks": 15,
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "1000 x 1500px .jpg recommended (portrait) or 1500 x 1500px .jpg recommended (square)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Promote your products"
+        },
+        {
+          "type": "select",
+          "id": "heading_tag",
+          "label": "Heading size",
+          "options": [
+            {
+              "value": "h1",
+              "label": "X-Large"
+            },
+            {
+              "value": "h2",
+              "label": "Large"
+            },
+            {
+              "value": "h3",
+              "label": "Medium"
+            },
+            {
+              "value": "h4",
+              "label": "Small"
+            },
+            {
+              "value": "h5",
+              "label": "X-Small"
+            },
+            {
+              "value": "h6",
+              "label": "XX-Small"
+            }
+          ],
+          "default": "h4"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link text"
+        },
+        {
+          "type": "header",
+          "content": "Mobile"
+        },
+        {
+          "type": "select",
+          "id": "mobile_text_position",
+          "label": "Content position",
+          "options": [
+            {
+              "value": "place-self-start text-start",
+              "label": "Top left"
+            },
+            {
+              "value": "place-self-start-center text-center",
+              "label": "Top center"
+            },
+            {
+              "value": "place-self-start-end text-end",
+              "label": "Top right"
+            },
+            {
+              "value": "place-self-center-start text-start",
+              "label": "Middle left"
+            },
+            {
+              "value": "place-self-center text-center",
+              "label": "Middle center"
+            },
+            {
+              "value": "place-self-center-end text-end",
+              "label": "Middle right"
+            },
+            {
+              "value": "place-self-end-start text-start",
+              "label": "Bottom left"
+            },
+            {
+              "value": "place-self-end-center text-center",
+              "label": "Bottom center"
+            },
+            {
+              "value": "place-self-end text-end",
+              "label": "Bottom right"
+            }
+          ],
+          "default": "place-self-center text-center"
+        },
+        {
+          "type": "select",
+          "id": "mobile_column_span",
+          "label": "Column span",
+          "info": "1 = half row (shares with another tile), 2 = full row",
+          "options": [
+            { "value": "1", "label": "1 — Half row" },
+            { "value": "2", "label": "2 — Full row" }
+          ],
+          "default": "2"
+        },
+        {
+          "type": "header",
+          "content": "Desktop",
+          "info": "When using a 1x1 tile, we recommend not using text on top of media."
+        },
+        {
+          "type": "range",
+          "id": "desktop_column_span",
+          "label": "Column",
+          "min": 1,
+          "max": 4,
+          "default": 2
+        },
+        {
+          "type": "range",
+          "id": "desktop_row_span",
+          "label": "Row",
+          "min": 1,
+          "max": 3,
+          "default": 2
+        },
+        {
+          "type": "select",
+          "id": "desktop_text_position",
+          "label": "Content position",
+          "options": [
+            {
+              "value": "sm:place-self-start sm:text-start",
+              "label": "Top left"
+            },
+            {
+              "value": "sm:place-self-start-center sm:text-center",
+              "label": "Top center"
+            },
+            {
+              "value": "sm:place-self-start-end sm:text-end",
+              "label": "Top right"
+            },
+            {
+              "value": "sm:place-self-center-start sm:text-start",
+              "label": "Middle left"
+            },
+            {
+              "value": "sm:place-self-center sm:text-center",
+              "label": "Middle center"
+            },
+            {
+              "value": "sm:place-self-center-end sm:text-end",
+              "label": "Middle right"
+            },
+            {
+              "value": "sm:place-self-end-start sm:text-start",
+              "label": "Bottom left"
+            },
+            {
+              "value": "sm:place-self-end-center sm:text-center",
+              "label": "Bottom center"
+            },
+            {
+              "value": "sm:place-self-end sm:text-end",
+              "label": "Bottom right"
+            }
+          ],
+          "default": "sm:place-self-center sm:text-center"
+        },
+        {
+          "type": "header",
+          "content": "Colors",
+          "info": "Gradient replaces solid colors when set. Background is ignored when image is used."
+        },
+        {
+          "type": "color",
+          "id": "background",
+          "label": "Background",
+          "default": "#000000"
+        },
+        {
+          "type": "color_background",
+          "id": "background_gradient",
+          "label": "Background gradient"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color_background",
+          "id": "text_gradient",
+          "label": "Text gradient"
+        },
+        {
+          "type": "color",
+          "id": "button_background",
+          "label": "Button background",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Button text",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "overlay_color",
+          "label": "Overlay",
+          "default": "#000000"
+        },
+        {
+          "type": "range",
+          "id": "overlay_opacity",
+          "label": "Overlay opacity",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "default": 0
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Video are muted to allow autoplay. For best visual results and avoid platform branding, we recommend uploading a MP4 file."
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video",
+          "info": "Replaces external video if both are set."
+        },
+        {
+          "type": "video_url",
+          "id": "external_video_url",
+          "accept": ["vimeo", "youtube"],
+          "label": "Video URL",
+          "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_video_controls",
+          "label": "Show video controls",
+          "info": "Only applicable for MP4 videos. When controls are shown, loop is disabled.",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Promote your products"
+        },
+        {
+          "type": "select",
+          "id": "heading_tag",
+          "label": "Heading size",
+          "options": [
+            {
+              "value": "h1",
+              "label": "X-Large"
+            },
+            {
+              "value": "h2",
+              "label": "Large"
+            },
+            {
+              "value": "h3",
+              "label": "Medium"
+            },
+            {
+              "value": "h4",
+              "label": "Small"
+            },
+            {
+              "value": "h5",
+              "label": "X-Small"
+            },
+            {
+              "value": "h6",
+              "label": "XX-Small"
+            }
+          ],
+          "default": "h4"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link text"
+        },
+        {
+          "type": "header",
+          "content": "Mobile"
+        },
+        {
+          "type": "select",
+          "id": "mobile_text_position",
+          "label": "Content position",
+          "options": [
+            {
+              "value": "place-self-start text-start",
+              "label": "Top left"
+            },
+            {
+              "value": "place-self-start-center text-center",
+              "label": "Top center"
+            },
+            {
+              "value": "place-self-start-end text-end",
+              "label": "Top right"
+            },
+            {
+              "value": "place-self-center-start text-start",
+              "label": "Middle left"
+            },
+            {
+              "value": "place-self-center text-center",
+              "label": "Middle center"
+            },
+            {
+              "value": "place-self-center-end text-end",
+              "label": "Middle right"
+            },
+            {
+              "value": "place-self-end-start text-start",
+              "label": "Bottom left"
+            },
+            {
+              "value": "place-self-end-center text-center",
+              "label": "Bottom center"
+            },
+            {
+              "value": "place-self-end text-end",
+              "label": "Bottom right"
+            }
+          ],
+          "default": "place-self-center text-center"
+        },
+        {
+          "type": "select",
+          "id": "mobile_column_span",
+          "label": "Column span",
+          "info": "1 = half row (shares with another tile), 2 = full row",
+          "options": [
+            { "value": "1", "label": "1 — Half row" },
+            { "value": "2", "label": "2 — Full row" }
+          ],
+          "default": "2"
+        },
+        {
+          "type": "header",
+          "content": "Desktop",
+          "info": "When using a 1x1 tile, we recommend not using text on top of media."
+        },
+        {
+          "type": "range",
+          "id": "desktop_column_span",
+          "label": "Column",
+          "min": 1,
+          "max": 4,
+          "default": 2
+        },
+        {
+          "type": "range",
+          "id": "desktop_row_span",
+          "label": "Row",
+          "min": 1,
+          "max": 3,
+          "default": 2
+        },
+        {
+          "type": "select",
+          "id": "desktop_text_position",
+          "label": "Content position",
+          "options": [
+            {
+              "value": "sm:place-self-start sm:text-start",
+              "label": "Top left"
+            },
+            {
+              "value": "sm:place-self-start-center sm:text-center",
+              "label": "Top center"
+            },
+            {
+              "value": "sm:place-self-start-end sm:text-end",
+              "label": "Top right"
+            },
+            {
+              "value": "sm:place-self-center-start sm:text-start",
+              "label": "Middle left"
+            },
+            {
+              "value": "sm:place-self-center sm:text-center",
+              "label": "Middle center"
+            },
+            {
+              "value": "sm:place-self-center-end sm:text-end",
+              "label": "Middle right"
+            },
+            {
+              "value": "sm:place-self-end-start sm:text-start",
+              "label": "Bottom left"
+            },
+            {
+              "value": "sm:place-self-end-center sm:text-center",
+              "label": "Bottom center"
+            },
+            {
+              "value": "sm:place-self-end sm:text-end",
+              "label": "Bottom right"
+            }
+          ],
+          "default": "sm:place-self-center sm:text-center"
+        },
+        {
+          "type": "header",
+          "content": "Colors",
+          "info": "Gradient replaces solid colors when set. Background is ignored when image is used."
+        },
+        {
+          "type": "color",
+          "id": "background",
+          "label": "Background",
+          "default": "#000000"
+        },
+        {
+          "type": "color_background",
+          "id": "background_gradient",
+          "label": "Background gradient"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color_background",
+          "id": "text_gradient",
+          "label": "Text gradient"
+        },
+        {
+          "type": "color",
+          "id": "button_background",
+          "label": "Button background",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Button text",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "overlay_color",
+          "label": "Overlay",
+          "default": "#000000"
+        },
+        {
+          "type": "range",
+          "id": "overlay_opacity",
+          "label": "Overlay opacity",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "default": 0
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "reduce_width",
+      "label": "Reduce width on large screens",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Row height",
+      "info": "Define the height of a single row, from which the grid is dynamically created."
+    },
+    {
+      "type": "range",
+      "id": "desktop_row_height",
+      "label": "Desktop row height",
+      "min": 150,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "default": 290
+    },
+    {
+      "type": "range",
+      "id": "mobile_row_height",
+      "label": "Mobile row height",
+      "min": 120,
+      "max": 260,
+      "step": 10,
+      "unit": "px",
+      "default": 150
+    },
+    {
+      "type": "header",
+      "content": "Colors",
+      "info": "Gradient replaces solid colors when set."
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background"
+    },
+    {
+      "type": "color_background",
+      "id": "background_gradient",
+      "label": "Background gradient"
+    }
+  ],
+  "presets": [
+    {
+      "name": "MAR26 Bento Collection",
+      "category": "Media",
+      "blocks": [
+        {
+          "type": "image",
+          "settings": {
+            "desktop_column_span": 2,
+            "desktop_row_span": 1
+          }
+        },
+        {
+          "type": "image",
+          "settings": {
+            "desktop_column_span": 2,
+            "desktop_row_span": 2
+          }
+        },
+        {
+          "type": "image",
+          "settings": {
+            "desktop_column_span": 2,
+            "desktop_row_span": 1
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

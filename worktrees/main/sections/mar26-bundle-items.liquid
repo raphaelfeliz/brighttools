@@ -1,0 +1,579 @@
+{% comment %}
+  MAR26 - INSIDE YOUR BUNDLE (TABBED CAROUSEL)
+  Parity Target: caravan-v4-b.html [Line 377]
+  Version: v0.4.0 — Added Mouse-Swipe (Click-to-Drag) interaction for desktop users.
+                   Improved card layout and layout-bleed.
+{% endcomment %}
+
+<style>
+  .mar26-bundle-breakdown {
+    background-color: #111111;
+    color: #ffffff;
+    padding: 12px 0 16px 0;
+    overflow: hidden;
+  }
+
+  .mar26-bundle-header {
+    width: 100%;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .mar26-bundle-header h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    margin: 0;
+    line-height: 1;
+  }
+
+  .mar26-bundle-header .red-text {
+    color: #ff101f;
+  }
+
+  .mar26-bundle-icon {
+    width: 32px;
+    height: 32px;
+    color: #ff101f;
+    transition: transform 0.3s ease;
+  }
+
+  .mar26-bundle-icon.active {
+    transform: rotate(180deg);
+  }
+
+  /* Tab Controls */
+  .mar26-tab-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+    justify-content: center;
+    padding: 0 16px;
+  }
+
+  .mar26-tab-btn {
+    background-color: #ffb1b6;
+    color: #111111;
+    padding: 6px 12px;
+    border-radius: 9999px;
+    font-weight: 900;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 2px solid transparent;
+    opacity: 0.6;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  .mar26-tab-btn.active {
+    opacity: 1;
+    border-color: #ffffff;
+  }
+
+  /* Carousel */
+  .mar26-tab-carousel {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 32px 0;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .mar26-tab-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mar26-tab-carousel.is-dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+    cursor: grabbing;
+  }
+
+  .mar26-tab-carousel:not(.is-dragging) {
+    cursor: grab;
+  }
+
+  .mar26-tab-carousel.is-dragging .mar26-tab-panel {
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* Padding offset for center snap */
+  .mar26-tab-carousel::before,
+  .mar26-tab-carousel::after {
+    content: '';
+    flex-shrink: 0;
+    width: calc(50vw - 40vw); /* Mobile spacing */
+  }
+
+  @media (min-width: 768px) {
+    .mar26-tab-carousel::before,
+    .mar26-tab-carousel::after {
+      width: calc(50% - 160px);
+    }
+  }
+
+  .mar26-tab-panel {
+    flex-shrink: 0;
+    width: 80vw;
+    max-width: 330px;
+    height: 160px; /* Locked height for premium uniformity */
+    background-color: #ffffff;
+    color: #111111;
+    border-radius: 2rem;
+    display: grid;
+    grid-template-columns: 130px 1fr; /* Stronger image presence */
+    overflow: hidden;
+    scroll-snap-align: center;
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.25);
+  }
+
+  @media (min-width: 768px) {
+    .mar26-tab-panel {
+      grid-template-columns: 140px 1fr;
+    }
+  }
+
+  /* Duplicate .active declaration removed — consolidated below with animation block */
+
+  .mar26-panel-image {
+    background-color: #f7f7f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .mar26-panel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Essential for bleed effect */
+  }
+
+  .mar26-panel-content {
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column; /* Fixed typo from flex-col */
+    justify-content: center; /* Vertically centered stack */
+  }
+
+  .mar26-panel-content h3 {
+    font-size: 1.1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0 0 4px 0;
+    line-height: 1;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .mar26-panel-content p {
+    font-size: 10px;
+    font-weight: 700;
+    color: #6b7280;
+    margin-bottom: 8px;
+    line-height: 1.2;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .mar26-panel-accent {
+    width: 32px;
+    height: 4px;
+    background-color: #ff101f;
+    border-radius: 9999px;
+    margin-top: auto;
+  }
+
+  .mar26-bundle-content {
+    transition: max-height 0.5s ease-in-out, opacity 0.3s ease;
+    max-height: 1000px;
+    opacity: 1;
+  }
+
+  .mar26-bundle-content.hidden {
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  /* GCP-04.01: Entrance Animations & Keyframes (v0.1.0 fix) */
+  @keyframes mar26SlideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Initial hidden state — panels start invisible until observer fires */
+  .mar26-tab-panel.is-pre-animate {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  /* Animation trigger — longhand props to avoid shorthand order bugs */
+  .mar26-tab-panel.animate-in {
+    animation-name: mar26SlideInUp;
+    animation-duration: 0.6s;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    animation-delay: var(--animation-delay, 0s);
+    animation-fill-mode: forwards;
+  }
+
+  /* GCP-04.03: Active state — transition only box-shadow to avoid fighting entrance transform */
+  .mar26-tab-panel {
+    transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .mar26-tab-panel.active {
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.35);
+  }
+
+  /* Accessibility: Respect motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .mar26-tab-panel.is-pre-animate,
+    .mar26-tab-panel.animate-in {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+</style>
+
+<section id="bundle-breakdown" class="mar26-bundle-breakdown">
+  <div class="max-w-[1200px] mx-auto">
+    
+    <button id="mar26-accordion-toggle" class="mar26-bundle-header" aria-expanded="false">
+      <h2>Inside <span class="red-text">Your Bundle</span></h2>
+      <span class="mar26-bundle-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </span>
+    </button>
+
+    <div id="mar26-bundle-body" class="mar26-bundle-content hidden">
+      <!-- Tabs -->
+      <div class="mar26-tab-controls">
+        {% for block in section.blocks %}
+          <button 
+            class="mar26-tab-btn {% if forloop.first %}active{% endif %}" 
+            data-index="{{ forloop.index0 }}"
+            onclick="mar26SwitchTab({{ forloop.index0 }})"
+          >
+            {{ block.settings.tab_label }}
+          </button>
+        {% endfor %}
+      </div>
+
+      <!-- Carousel -->
+      <div id="mar26-tab-carousel" class="mar26-tab-carousel">
+        {% for block in section.blocks %}
+          <div 
+            class="mar26-tab-panel {% if forloop.first %}active{% endif %}" 
+            data-index="{{ forloop.index0 }}"
+          >
+            <div class="mar26-panel-image">
+              {% if block.settings.image != blank %}
+                <img src="{{ block.settings.image | image_url: width: 400 }}" alt="{{ block.settings.title }}">
+              {% else %}
+                <div class="w-full h-24 bg-gray-200 flex items-center justify-center rounded">Image</div>
+              {% endif %}
+            </div>
+            <div class="mar26-panel-content">
+              <h3>{{ block.settings.title }}</h3>
+              <p>{{ block.settings.description }}</p>
+              <div class="mar26-panel-accent"></div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const MAR26_BUNDLE_VERSION = 'v0.4.0';
+  const MAR26_TAG = '[mar26-bundle-items]';
+  const mar26Log = (level, label, data) => {
+    const ts = new Date().toISOString().substring(11, 23);
+    const fn = console[level] || console.log;
+    if (data !== undefined) fn(`${MAR26_TAG} ${ts} ${label}`, data);
+    else fn(`${MAR26_TAG} ${ts} ${label}`);
+  };
+  mar26Log('log', '[BOOT] Script loaded — version: ' + MAR26_BUNDLE_VERSION);
+
+  function mar26SwitchTab(index) {
+    const carousel = document.getElementById('mar26-tab-carousel');
+    const panels = carousel.querySelectorAll('.mar26-tab-panel');
+    const targetPanel = Array.from(panels).find(p => parseInt(p.dataset.index) === index);
+    if (targetPanel) {
+      const scrollTarget = targetPanel.offsetLeft - (carousel.clientWidth / 2) + (targetPanel.clientWidth / 2);
+      carousel.scrollTo({ left: scrollTarget, behavior: 'smooth' });
+      mar26Log('log', `[TAB] switchTab → index:${index} | scrollTarget:${scrollTarget}`);
+    } else {
+      mar26Log('warn', `[TAB] switchTab → NO PANEL for index:${index}`);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    mar26Log('log', '[INIT] DOMContentLoaded — initializing…');
+
+    const carousel = document.getElementById('mar26-tab-carousel');
+    const toggleBtn = document.getElementById('mar26-accordion-toggle');
+    const body = document.getElementById('mar26-bundle-body');
+    const icon = toggleBtn ? toggleBtn.querySelector('.mar26-bundle-icon') : null;
+    const panels = document.querySelectorAll('.mar26-tab-panel');
+    const tabBtns = document.querySelectorAll('.mar26-tab-btn');
+
+    mar26Log('log', '[INIT] DOM nodes', {
+      carousel: !!carousel, toggleBtn: !!toggleBtn, body: !!body, icon: !!icon,
+      panelCount: panels.length, tabBtnCount: tabBtns.length,
+      bodyInitialHidden: body ? body.classList.contains('hidden') : 'n/a'
+    });
+
+    if (!carousel || !toggleBtn || !body || panels.length === 0) {
+      mar26Log('error', '[INIT] ABORT — required DOM nodes missing.');
+      return;
+    }
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    mar26Log('log', '[INIT] Env', {
+      IntersectionObserver: 'IntersectionObserver' in window,
+      prefersReducedMotion,
+      userAgent: navigator.userAgent.substring(0, 80)
+    });
+
+    /* ───────── Animation trigger (no IntersectionObserver) ─────────
+       Root cause of prior failure: when accordion has `.hidden` (max-height:0;
+       overflow:hidden), panels have 0 visible area → IO intersectionRatio=0 forever.
+       New approach: trigger on the semantic signal we already control — accordion open. */
+    let animationTriggered = false;
+
+    const triggerEntranceAnimation = (source) => {
+      if (animationTriggered) {
+        mar26Log('log', `[ANIM] SKIP (already triggered) — source:${source}`);
+        return;
+      }
+      animationTriggered = true;
+      mar26Log('log', `[ANIM] ▶ TRIGGER — source:${source} | panels:${panels.length}`);
+
+      panels.forEach((panel, i) => {
+        const delay = (i * 0.1) + 's';
+        panel.style.setProperty('--animation-delay', delay);
+        panel.classList.remove('is-pre-animate');
+        panel.classList.add('animate-in');
+        const rect = panel.getBoundingClientRect();
+        const cs = window.getComputedStyle(panel);
+        mar26Log('log', `[ANIM] panel[${i}] applied`, {
+          delay,
+          classes: panel.className.split(' ').filter(c => c.startsWith('mar26') || c === 'animate-in' || c === 'is-pre-animate' || c === 'active'),
+          rect: { w: Math.round(rect.width), h: Math.round(rect.height), top: Math.round(rect.top) },
+          animationName: cs.animationName,
+          animationDuration: cs.animationDuration,
+          animationDelay: cs.animationDelay,
+          opacity: cs.opacity,
+          transform: cs.transform
+        });
+      });
+
+      /* Watchdog — confirm the animation actually ran. */
+      setTimeout(() => {
+        panels.forEach((panel, i) => {
+          const cs = window.getComputedStyle(panel);
+          const opacityOk = parseFloat(cs.opacity) > 0.9;
+          mar26Log(opacityOk ? 'log' : 'warn',
+            `[ANIM] watchdog panel[${i}] t+1s — opacity:${cs.opacity} transform:${cs.transform} ${opacityOk ? '✓' : '⚠ STILL HIDDEN'}`);
+          if (!opacityOk) {
+            panel.classList.remove('is-pre-animate');
+            panel.style.opacity = '1';
+            panel.style.transform = 'none';
+            mar26Log('warn', `[ANIM] watchdog force-reveal panel[${i}]`);
+          }
+        });
+      }, 1000);
+    };
+
+    /* Prime panels — they must start invisible so the keyframe `from` state is visible. */
+    if (!prefersReducedMotion) {
+      panels.forEach(panel => panel.classList.add('is-pre-animate'));
+      mar26Log('log', `[INIT] Primed ${panels.length} panels with .is-pre-animate`);
+    } else {
+      mar26Log('log', '[INIT] Reduced motion preferred — skipping prime.');
+    }
+
+    /* Accordion control. */
+    const toggleAccordion = (forceOpen = false) => {
+      const wasHidden = body.classList.contains('hidden');
+      if (forceOpen && !wasHidden) return;
+      const shouldHide = forceOpen ? false : !wasHidden;
+      body.classList.toggle('hidden', shouldHide);
+      icon.classList.toggle('active', !shouldHide);
+      toggleBtn.setAttribute('aria-expanded', String(!shouldHide));
+      mar26Log('log', `[ACC] toggled → hidden:${shouldHide} (wasHidden:${wasHidden})`);
+      if (!shouldHide) {
+        requestAnimationFrame(() => triggerEntranceAnimation('accordion-open'));
+      }
+    };
+
+    toggleBtn.addEventListener('click', () => toggleAccordion());
+    document.querySelectorAll('a[href="#bundle-breakdown"]').forEach(anchor => {
+      anchor.addEventListener('click', () => {
+        mar26Log('log', '[ACC] Hero anchor click → force-expand');
+        toggleAccordion(true);
+      });
+    });
+
+    /* Tab sync observer — unchanged; only watches carousel center-point. */
+    const tabSyncObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const index = parseInt(entry.target.dataset.index);
+          tabBtns.forEach((btn, i) => btn.classList.toggle('active', i === index));
+          panels.forEach(panel => {
+            panel.classList.toggle('active', parseInt(panel.dataset.index) === index);
+          });
+        }
+      });
+    }, { root: carousel, threshold: 0.6 });
+    panels.forEach(panel => tabSyncObserver.observe(panel));
+    mar26Log('log', `[INIT] tabSyncObserver attached to ${panels.length} panels`);
+
+    /* If accordion is already open at init (not hidden), trigger immediately. */
+    if (!body.classList.contains('hidden')) {
+      mar26Log('log', '[INIT] Accordion open at init → triggering animation.');
+      requestAnimationFrame(() => triggerEntranceAnimation('init-open'));
+    } else {
+      mar26Log('log', '[INIT] Accordion collapsed at init → waiting for open event.');
+      /* Hard safety net: if user never opens accordion but scrolls near it,
+         trigger anyway after 8s of inactivity. Prevents permanent invisible state. */
+      setTimeout(() => {
+        if (!animationTriggered) {
+          mar26Log('warn', '[ANIM] 8s safety net — revealing panels despite closed accordion.');
+          panels.forEach(panel => { panel.classList.remove('is-pre-animate'); });
+        }
+      }, 8000);
+    }
+
+    /* ───────── Mouse Click-to-Drag Implementation (Phase 08) ───────── */
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    let walk = 0;
+
+    carousel.addEventListener('mousedown', (e) => {
+      isDown = true;
+      carousel.classList.add('is-dragging');
+      startX = e.pageX - carousel.offsetLeft;
+      scrollLeft = carousel.scrollLeft;
+      mar26Log('log', `[DRAG] Start — startX:${startX} scrollLeft:${scrollLeft}`);
+    });
+
+    carousel.addEventListener('mouseleave', () => {
+      if (!isDown) return;
+      isDown = false;
+      carousel.classList.remove('is-dragging');
+      mar26Log('log', '[DRAG] End (mouseleave)');
+    });
+
+    carousel.addEventListener('mouseup', () => {
+      if (!isDown) return;
+      isDown = false;
+      carousel.classList.remove('is-dragging');
+      mar26Log('log', '[DRAG] End (mouseup)');
+    });
+
+    carousel.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - carousel.offsetLeft;
+      walk = (x - startX) * 2; // Drag multiplier for sensitivity
+      carousel.scrollLeft = scrollLeft - walk;
+    });
+
+    mar26Log('log', '[INIT] ✓ complete — Mouse Swipe Active');
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Mar26 Bundle Items",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Inside Your Bundle"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Bundle Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_label",
+          "label": "Tab Label",
+          "default": "Broom"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Silicone Broom"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Microstatics act on visible hair and dust from any surface without scratching."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "rotation",
+          "min": -10,
+          "max": 10,
+          "step": 1,
+          "unit": "deg",
+          "label": "Image Rotation",
+          "default": 3
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Mar26 Bundle Items",
+      "blocks": [
+        { "type": "item", "settings": { "tab_label": "Broom", "title": "Silicone Broom" } },
+        { "type": "item", "settings": { "tab_label": "Squeegee", "title": "Silicone Squeegee" } },
+        { "type": "item", "settings": { "tab_label": "Dustpan", "title": "Floor Dustpan" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,813 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "mar26_top_image": {
+      "type": "mar26-top-image",
+      "settings": {
+        "full_width": false,
+        "image": "shopify://shop_images/DESKTOP_BANNER_-_TOILET.png",
+        "mobile_image": "shopify://shop_images/MOBILE_BANNER_-_TOILET.png",
+        "max_width": 1400,
+        "border_radius": 24
+      }
+    },
+    "main": {
+      "type": "mar26-catalog-engine",
+      "blocks": {
+        "floor_wipes": {
+          "type": "category_banner",
+          "settings": {
+            "selected_products": [
+              "antibacterial-toilet-brush-grey",
+              "antibacterial-toilet-brush-black",
+              "antibacterial-toilet-brush-white",
+              "toilet-cleaner-for-the-water-tank-green-copy",
+              "hygienic-toilet-cleaner-for-the-water-tank-blue",
+              "hygienic-toilet-cleaner-for-the-water-tank-green"
+            ],
+            "pre_title": "Toilet Brush Sets & Cleaners",
+            "title": "Toilet Cleaners",
+            "description": "",
+            "bg_color": "#faf8fc",
+            "text_color": "#1e293b"
+          }
+        }
+      },
+      "block_order": [
+        "floor_wipes"
+      ],
+      "settings": {}
+    },
+    "best_sellers": {
+      "type": "mar26-best-sellers",
+      "blocks": {
+        "prod_1": {
+          "type": "product",
+          "settings": {
+            "product": "bright-broom-bundle-blue-edition"
+          }
+        },
+        "prod_2": {
+          "type": "product",
+          "settings": {
+            "product": "easy-cleaning-bundle-for-limited-mobility"
+          }
+        },
+        "prod_3": {
+          "type": "product",
+          "settings": {
+            "product": "adjustable-dust-blade-rubber-broom-squeegee"
+          }
+        },
+        "prod_4": {
+          "type": "product",
+          "settings": {
+            "product": "jet-all-purpose-cleaning-spray-with-vinegar-and-lavender-copy"
+          }
+        }
+      },
+      "block_order": [
+        "prod_1",
+        "prod_2",
+        "prod_3",
+        "prod_4"
+      ],
+      "settings": {
+        "badge_text": "Bright On - Dust Off",
+        "primary_text": "Better Cleaning",
+        "highlight_text": "Best Sellers",
+        "autoplay_enabled": true,
+        "color_background": "#f8fafc",
+        "color_primary_text": "#0f172a",
+        "color_highlight": "#f81f2f",
+        "color_badge_text": "#f81b27"
+      }
+    },
+    "d9e91537-6225-4b57-bd84-e5d10e8558b3": {
+      "type": "faq",
+      "blocks": {
+        "item_DLntwV": {
+          "type": "item",
+          "settings": {
+            "title": "How can I make the most of my clean?",
+            "content": "<p>Clean until you find that the Wipe is dry and or dirty, and then flip the tool 360 degrees to use the other side of the wipe. Once both<br/>sides are dirty, you can remove the Wipe completely and put it back over the handle inside-out to use the other side. If you feel that the Wipe is too dry, but not yet dirty, you can also run the Wipe briefly under water to further moisten it.</p>"
+          }
+        },
+        "item_nkCiz9": {
+          "type": "item",
+          "settings": {
+            "title": "Do the Wipes leave the floors wet / slippery?",
+            "content": "<p>Upon application the Wipes leave the floors moist, however will dry up in a few short minutes and will not leave the floors slippery. </p>"
+          }
+        },
+        "item_gbaLKR": {
+          "type": "item",
+          "settings": {
+            "title": "What makes Quick Mop Floor Wipes superior to other wipes on the market?",
+            "content": "<p>Our Wipes are supersized to cover more floor surface, have the perfect amount of moisture, and smell awesome! Our Wipes have an in-built hole in the middle to slot over any cleaning tool handle. To put it simply, our Wipes are a step above the rest, and will leave your floors looking and smelling fresh in moments. </p>"
+          }
+        },
+        "item_ATRXDy": {
+          "type": "item",
+          "settings": {
+            "title": "Can the Wipes be used on the cleaning tool I already have at home?",
+            "content": "<p>Yes! Our Quick Mop Floor Wipes can be placed over the handle of the broom / squeegee you already have at home. However, for ultimate results, we suggest them to be paired with our BrightTools range of Brooms and or Squeegees.</p>"
+          }
+        },
+        "item_ikMTTN": {
+          "type": "item",
+          "settings": {
+            "title": "Are the Wipes safe for my pets and or children?",
+            "content": "<p>Yes! Our Wipes have been trialled and tested for many years and are made from a special mix of ingredients that are safe to use around animals and children. If you have a pet and or child who are sensitive to chemicals, we suggest removing the pet and or child from the space whilst using the Wipes and waiting a few minutes for the floors to dry before bringing them<br/>back into the room. </p>"
+          }
+        },
+        "item_JiUKf8": {
+          "type": "item",
+          "settings": {
+            "title": "Can I use the Poliwix on tiles or other floor types that aren’t wooden?",
+            "content": "<p>Yes! Out of our range of Wipes, Poliwix were crafted with a special mix of ingredients that maintain the natural shine of the wood and are most effective for cleaning wooden floors. However, they will work effectively on other floor types too (tiles, parquet, cement, etc). At the same time, many customers use our other scents for wooden floors, and are very happy with the results too. </p>"
+          }
+        },
+        "item_BX64wX": {
+          "type": "item",
+          "settings": {
+            "title": "Where should I begin my clean?",
+            "content": "<p>Anywhere around the house, except for the bathroom! Begin cleaning in loungeroom, dining room, kitchen, bedrooms and corridors before<br/>finishing off in bathroom. We recommend the bathroom as the last place to clean so that germs from the toilet don’t get spread around the house. </p>"
+          }
+        },
+        "item_ELCYMT": {
+          "type": "item",
+          "settings": {
+            "title": "What are the benefits of the Quick Mop Floor Wipes cleaning system over traditional mopping?",
+            "content": "<p>Safer – no water or spills!</p><p>Easier – don’t need to bend, carry heavy buckers!</p><p>Effective & quick - can get behind fridge and under<br/>furniture without bending!</p><p>More hygienic – doesn’t continue to spread germs around the<br/>house, use after use!</p>"
+          }
+        },
+        "item_QhLHeQ": {
+          "type": "item",
+          "settings": {
+            "title": "Are the scents overwhelming?",
+            "content": "<p>The scents of the floor Wipes are quite strong when initially applied, however the strength of the odour begin to fade over time and leave a pleasant and fresh odour in the space. </p>"
+          }
+        },
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-0": {
+          "type": "item",
+          "settings": {
+            "title": "Can I use the floor Wipes for other surfaces besides floors?",
+            "content": "<p>Absolutely! While our wet floor wipes are primarily designed for floors, they can also be used on other surfaces. Feel free to use them on countertops, tables, and other hard surfaces that need a quick and effective clean. Just make sure to follow the instructions and test a small area first.</p>"
+          }
+        },
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-1": {
+          "type": "item",
+          "settings": {
+            "title": "How should I use BrightTools Quick Mop Floor Wipes?",
+            "content": "<p>Using BrightTools Wipes is super easy! Simply remove a wipe from the packaging, using the hole in the middle of the Wipe place it over the cleaning tool handle you are using and gently glide it over the surface you want to clean. For stubborn stains or spills, you can apply a bit of pressure. Once you're done, toss the used wipe in the trash. It's that simple!</p>"
+          }
+        },
+        "item_3KHiz3": {
+          "type": "item",
+          "settings": {
+            "title": "Do the Wipes leave residue?",
+            "content": "<p>No! Upon application the Wipes leave the floors moist, however will dry up in a few short minutes.</p>"
+          }
+        },
+        "item_Ck3d9j": {
+          "type": "item",
+          "settings": {
+            "title": "How many Wipes are in a pack?",
+            "content": "<p>Each pack comes with 10 supersized wipes. You can also purchase one of our bundles and save (i.e. 3 Pack or 5 Pack Bundle)! We are currently working on a subscription platform, which will give you the opportunity to replenish your wipes according to need, offering substantial discounts. </p>"
+          }
+        },
+        "item_CjQVim": {
+          "type": "item",
+          "settings": {
+            "title": "Do you have any fragrance-free Wipes?",
+            "content": "<p>No, not at this stage. Our Wipes have been trialled and tested for many years and the scents have been perfected based on our customers’ feedback. The strength of the fragrances fade a short time after application and leave a pleasant and fresh odour in the space.</p>"
+          }
+        },
+        "item_RRDBJH": {
+          "type": "item",
+          "settings": {
+            "title": "Do the Wipes have a chemical odour?",
+            "content": "<p>Our answer is no, however as with all fragrances, they are a<br/>matter of personal taste. Our Wipes have been trialled and tested and the feedback from our customers is that they love the smell of our<br/>Wipes. The strength of the fragrances fade a short time after application and leave a pleasant and fresh odour in the space.</p>"
+          }
+        },
+        "item_treNRt": {
+          "type": "item",
+          "settings": {
+            "title": "Are the Wipes made to replace a deep clean?",
+            "content": "<p>No. The Wipes are for daily floor cleaning maintenance. Whilst many of our customers do use the Wipes in place of a regular floor mop,<br/>we recommend our Microfiber Silicone Mop in addition to the Wipes for a weekly deep clean.</p>"
+          }
+        },
+        "item_6rFt8d": {
+          "type": "item",
+          "settings": {
+            "title": "Are your Wipes Environmentally friendly / biodegradable /compostable?",
+            "content": "<p>Unfortunately not. We are currently working with our manufacturer to develop a product that matches the quality of our current Wipes that are environmentally friendly. Whilst we do so, a positive environmental<br/>factor to consider is the amount of water our Wipes save in comparison to traditional floor cleaning methods. </p>"
+          }
+        },
+        "item_XdrFyG": {
+          "type": "item",
+          "settings": {
+            "title": "Where is our warehouse located?",
+            "content": "<p>Our warehouse is located in Elsternwick, Melbourne. </p>"
+          }
+        },
+        "item_aTBcVY": {
+          "type": "item",
+          "settings": {
+            "title": "What is the most ideal floor cleaning solution for small spaces such as caravans / tiny homes / bathrooms?",
+            "content": "<p>The Compact Squeegee Pack! It comes with our narrowest 30cm<br/>Squeegee with knuckle-joint that can easily maneuver around tight spaces. The Squeegee has a 4-part handle, which can be disassembled for easy storage. </p>"
+          }
+        },
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-2": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "title": "Do BrightTools Squeegees come with a warranty?",
+            "content": "<p>Absolutely! We stand behind the quality of our squeegees. Each one is backed by a 2 year <a href=\"/pages/warranty\" target=\"_blank\" title=\"Warranty\">warranty</a>.</p>"
+          }
+        },
+        "dc709b98-8f74-4f10-9911-a3d0da4bdcf4": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "title": "I have a question that is not listed here. How can I get in touch with BrightTools?",
+            "content": "<p>No problem at all! We're here to help. If you have any additional questions or need further assistance, simply visit our <a href=\"/pages/contact\" target=\"_blank\" title=\"Contact\">contact page.</a></p>"
+          }
+        },
+        "item_tYHJ9Q": {
+          "type": "item",
+          "settings": {
+            "title": "Which scent is the nicest?",
+            "content": "<p>This is a question of personal taste! All of the scents are pleasant and will leave your floors smelling fresh. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_DLntwV",
+        "item_nkCiz9",
+        "item_gbaLKR",
+        "item_ATRXDy",
+        "item_ikMTTN",
+        "item_JiUKf8",
+        "item_BX64wX",
+        "item_ELCYMT",
+        "item_QhLHeQ",
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-0",
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-1",
+        "item_3KHiz3",
+        "item_Ck3d9j",
+        "item_CjQVim",
+        "item_RRDBJH",
+        "item_treNRt",
+        "item_6rFt8d",
+        "item_XdrFyG",
+        "item_aTBcVY",
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-2",
+        "dc709b98-8f74-4f10-9911-a3d0da4bdcf4",
+        "item_tYHJ9Q"
+      ],
+      "settings": {
+        "full_width": false,
+        "subheading": "",
+        "title": "Have a question?",
+        "content": "",
+        "team_avatar": "shopify://shop_images/team-fff.webp",
+        "team_avatar_width": 160,
+        "support_hours": "Our customer support is available monday to friday: 8am-8:30pm.",
+        "answer_time": "Average answer time: 24h",
+        "button_text": "Contacts us",
+        "button_url": "shopify://pages/contact",
+        "text_position": "center",
+        "background": "#ffffff",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "",
+        "button_text_color": "",
+        "accordion_background": "",
+        "accordion_text_color": ""
+      }
+    },
+    "banner": {
+      "type": "collection-banner",
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "full_width": false,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "show_collection_title": true,
+        "show_collection_description": true,
+        "show_collection_image": true,
+        "collection_title_size": "h1",
+        "image_size": "lg",
+        "image": "shopify://shop_images/BrightTools_2.png",
+        "mobile_text_position": "place-self-end-start text-start",
+        "desktop_text_position": "sm:place-self-center-start sm:text-start",
+        "featured_product": "floor-silicone-squeegee-30cm-knuckle-joint",
+        "featured_product_heading": "Featured product",
+        "text_color": "#000000",
+        "overlay_color": "#1a1a1a",
+        "overlay_opacity": 0
+      }
+    },
+    "cb929d4c-1c53-4be8-9c5d-f5cc730d8698": {
+      "type": "multiple-images-with-text",
+      "blocks": {
+        "template--20493668090130__cb929d4c-1c53-4be8-9c5d-f5cc730d8698-item-1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/BrightSwipe_LOw_Res.jpg",
+            "image_rotation_degrees": -2,
+            "subheading": "",
+            "title": "Easy to Use",
+            "content": "<p>Cleaning in a flash was never easier. No more stress when there’s a surprise guest, quickly clean after meals, playtime and muddy paws. When all you have to do is pull out a supersize floor wipe and slide it over the top of any broom / floor squeegee / mop at home, it’s a breeze to maintain your floors for more clean in less time.</p>",
+            "button_url": "",
+            "button_text": ""
+          }
+        },
+        "template--20493668090130__cb929d4c-1c53-4be8-9c5d-f5cc730d8698-item-2": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/quick_mop_floor_wipes_catalog1.jpg",
+            "image_rotation_degrees": 1.5,
+            "subheading": "",
+            "title": "Fresh Scent",
+            "content": "<p>Our wipes come in a range of fresh scents that you can’t get from the average mop and water. Most wipes are smaller and unscented, leaving a chemical smell and far less shine. When you use our floor wipes, you’ll feel the sparkling wet shine and fresh scents of lavender and luxury boutique hotels, that give you the look and smell of a superior deep clean.</p>",
+            "button_url": "",
+            "button_text": ""
+          }
+        },
+        "cfcc4b26-7467-4fd3-ba5c-b00144b5ca89": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/quick_mop_floor_wipes_catalog2.jpg",
+            "image_rotation_degrees": 0,
+            "subheading": "",
+            "title": "More Hygenic",
+            "content": "<p>Fresh Home Floor Wipes have an antibacterial quality, the simple way to disinfect your floors and home from dirt. No more spreading bacteria from dirty mop heads across your floors, our disposable wipes make it easy to wipe on, dirt off and dispose.</p>",
+            "button_url": "",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--20493668090130__cb929d4c-1c53-4be8-9c5d-f5cc730d8698-item-1",
+        "template--20493668090130__cb929d4c-1c53-4be8-9c5d-f5cc730d8698-item-2",
+        "cfcc4b26-7467-4fd3-ba5c-b00144b5ca89"
+      ],
+      "settings": {
+        "full_width": true,
+        "images_layout": "stacked",
+        "collage_images_alignment": "middle",
+        "background": "#ffffff",
+        "background_gradient": "",
+        "text_color": "#000000",
+        "button_background": "",
+        "button_text_color": ""
+      }
+    },
+    "b9b043b0-6f7d-46c8-af7e-abe869a1461a": {
+      "type": "rich-text",
+      "blocks": {
+        "6da2bca1-7bd4-441a-aa3b-7bdea2f6e4aa": {
+          "type": "icon",
+          "settings": {
+            "icon": "picto-star",
+            "icon_width": 76,
+            "icon_background_type": "none",
+            "icon_background": "",
+            "icon_color": "#7f48b0"
+          }
+        },
+        "20603c75-742b-4aa3-9bf1-45b12bc6e953": {
+          "type": "heading",
+          "settings": {
+            "text": "Easy to Use",
+            "heading_tag": "h2",
+            "text_color": "#7f48b0",
+            "gradient": ""
+          }
+        },
+        "ed5b4685-7bdc-4d20-9a20-0c3f90df0849": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Cleaning in a flash was never easier. No more stress when there’s a surprise guest, quickly clean after meals, playtime and muddy paws. When all you have to do is pull out a supersize floor wipe and slide it over the top of any broom / floor squeegee / mop at home, it’s a breeze to maintain your floors for more clean in less time.</p>"
+          }
+        },
+        "44b5f786-639e-4c42-94ad-1319a0c6d566": {
+          "type": "icon",
+          "settings": {
+            "icon": "picto-happy",
+            "icon_width": 84,
+            "icon_background_type": "none",
+            "icon_background": "",
+            "icon_color": "#f7d033"
+          }
+        },
+        "template--19575487660306__b9b043b0-6f7d-46c8-af7e-abe869a1461a-16877746580fb4404c-1": {
+          "type": "heading",
+          "settings": {
+            "text": "More Hygenic",
+            "heading_tag": "h2",
+            "text_color": "#f7d033",
+            "gradient": ""
+          }
+        },
+        "template--19575487660306__b9b043b0-6f7d-46c8-af7e-abe869a1461a-16877746580fb4404c-2": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Fresh Home Floor Wipes have an antibacterial quality, the simple way to disinfect your floors and home from dirt. No more spreading bacteria from dirty mop heads across your floors, our disposable wipes make it easy to wipe on, dirt off and dispose.</p>"
+          }
+        },
+        "3c1ba536-b759-485a-a1d6-4a0e2285b3b1": {
+          "type": "icon",
+          "settings": {
+            "icon": "picto-leaf",
+            "icon_width": 84,
+            "icon_background_type": "none",
+            "icon_background": "",
+            "icon_color": "#4888b0"
+          }
+        },
+        "93aab34e-8df3-4da3-bd0e-5957aca7930e": {
+          "type": "heading",
+          "settings": {
+            "text": "Fresh Scent",
+            "heading_tag": "h2",
+            "text_color": "#4888b0",
+            "gradient": ""
+          }
+        },
+        "5a0ca4b1-3ba2-4244-bb5c-8d4898861195": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Our wipes come in a range of fresh scents that you can’t get from the average mop and water. Most wipes are smaller and unscented, leaving a chemical smell and far less shine. When you use our floor wipes, you’ll feel the sparkling wet shine and fresh scents of lavender and luxury boutique hotels, that give you the look and smell of a superior deep clean.</p>"
+          }
+        },
+        "bcae4e72-3928-4c2c-a157-3faf38d62f0c": {
+          "type": "icon",
+          "settings": {
+            "icon": "picto-love",
+            "icon_width": 84,
+            "icon_background_type": "none",
+            "icon_background": "#fb33a6",
+            "icon_color": "#7f48b0"
+          }
+        },
+        "9eb88661-770b-4d1a-8df2-31cfdc83f9a2": {
+          "type": "heading",
+          "settings": {
+            "text": "Daily Routine",
+            "heading_tag": "h2",
+            "text_color": "#7f48b0",
+            "gradient": ""
+          }
+        },
+        "0e61e33d-d7df-49ef-889f-02e604013471": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Households across Australia can’t get enough of our Fresh Home Floor Wipes. You’ll get addicted to the scent and the shine from one quick and easy swipe. Cleaning made so simple you’ll want to wipe your floors on the daily.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "6da2bca1-7bd4-441a-aa3b-7bdea2f6e4aa",
+        "20603c75-742b-4aa3-9bf1-45b12bc6e953",
+        "ed5b4685-7bdc-4d20-9a20-0c3f90df0849",
+        "44b5f786-639e-4c42-94ad-1319a0c6d566",
+        "template--19575487660306__b9b043b0-6f7d-46c8-af7e-abe869a1461a-16877746580fb4404c-1",
+        "template--19575487660306__b9b043b0-6f7d-46c8-af7e-abe869a1461a-16877746580fb4404c-2",
+        "3c1ba536-b759-485a-a1d6-4a0e2285b3b1",
+        "93aab34e-8df3-4da3-bd0e-5957aca7930e",
+        "5a0ca4b1-3ba2-4244-bb5c-8d4898861195",
+        "bcae4e72-3928-4c2c-a157-3faf38d62f0c",
+        "9eb88661-770b-4d1a-8df2-31cfdc83f9a2",
+        "0e61e33d-d7df-49ef-889f-02e604013471"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "content_width": "medium",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "93b3dd98-8014-44ba-af23-a7338412744e": {
+      "type": "impact-text",
+      "blocks": {
+        "template--19575487660306__93b3dd98-8014-44ba-af23-a7338412744e-168777733896fb06a0-0": {
+          "type": "item",
+          "settings": {
+            "title": "",
+            "subheading": "A better, faster way to be home and dry, a squeegee clean like no other.",
+            "content": "<p>BrightTools squeegees are designed with individual surfaces in mind, you’ll feel the difference with each motion and in every room.</p>",
+            "button_text": "",
+            "button_url": "",
+            "animate_impact_text": true,
+            "animate_impact_text_duration": 2
+          }
+        }
+      },
+      "block_order": [
+        "template--19575487660306__93b3dd98-8014-44ba-af23-a7338412744e-168777733896fb06a0-0"
+      ],
+      "settings": {
+        "full_width": true,
+        "stack_mobile": true,
+        "text_alignment": "center",
+        "impact_text_style": "fill",
+        "text_divider": "none",
+        "impact_text_size_ratio": 1,
+        "background": "",
+        "background_gradient": "",
+        "heading_text_color": "",
+        "heading_gradient": "",
+        "text_color": "",
+        "button_background": "",
+        "button_text_color": ""
+      }
+    },
+    "b5385aeb-4a34-4a6d-a487-108e7124135c": {
+      "type": "video",
+      "blocks": {
+        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-play-1": {
+          "type": "play",
+          "settings": {}
+        },
+        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "",
+            "heading_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-play-1",
+        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-heading-1"
+      ],
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "autoplay": true,
+        "video_size": "sm",
+        "video": "shopify://files/videos/window-cleaner-optmized.mp4",
+        "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "rich_text_zi6Wjd": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_rpXief": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        },
+        "heading_CizMbW": {
+          "type": "heading",
+          "settings": {
+            "text": "Magnetic Window Cleaners",
+            "heading_tag": "h2",
+            "text_color": "",
+            "gradient": ""
+          }
+        },
+        "richtext_P3nXP4": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Our innovative window cleaning products are specially designed with you in mind to make every window within reach.</p><p>The revolutionary solution for double-sided windows and high windows in your home, our unique magnetic gliders and extendable window cleaners are efficient, effective, and sustainable to use on your own.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_rpXief",
+        "heading_CizMbW",
+        "richtext_P3nXP4"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_width": "medium",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "media_with_text_naB3qr": {
+      "type": "media-with-text",
+      "blocks": {
+        "image_UgxkAx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/bt_delete.png",
+            "media_width": 30,
+            "media_position": "start",
+            "text_position": "place-self-center text-center",
+            "icon": "none",
+            "icon_width": 32,
+            "subheading": "",
+            "title": "",
+            "content": "<h4>🧹 Sweep & Squeegee in One</h4><h4></h4><h4>🔄 Reaches Tight Spaces</h4><h4></h4><h4>💪 Tough & Surface-Safe</h4><p></p><p>Clean faster with one tool built for every mess.<br/>Strong, versatile, and made to last — the Tyroler 2-in-1 is a cleaning essential.</p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "#8d5b97",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        },
+        "video_block": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/Brightswipes AD1 MOBILE_6278ab51-3742-482c-bb63-52d3139bd2eb.mp4",
+            "external_video_url": "https://www.youtube.com/watch?v=oDjHs1ZLcss",
+            "autoplay": true,
+            "media_width": 55,
+            "media_position": "end",
+            "text_position": "place-self-center text-center",
+            "icon": "none",
+            "icon_width": 32,
+            "subheading": "",
+            "title": "",
+            "content": "<h4>🧹 Sweep & Squeegee in One</h4><h4></h4><h4>🔄 Reaches Tight Spaces</h4><h4></h4><h4>💪 Tough & Surface-Safe</h4><p></p><p>Clean faster with one tool built for every mess.<br/>Strong, versatile, and made to last — the Tyroler 2-in-1 is a cleaning essential.</p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "#0f172a",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "#e11d48",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "image_UgxkAx",
+        "video_block"
+      ],
+      "settings": {
+        "full_width": false,
+        "alternate_media_position": false,
+        "spacing": "none"
+      }
+    },
+    "mar26-highlights": {
+      "type": "mar26-highlights",
+      "blocks": {
+        "highlight-1": {
+          "type": "highlight_card",
+          "settings": {
+            "image": "shopify://shop_images/arms.png",
+            "bg_color": "#ffffff",
+            "color_text_1": "#000000",
+            "color_text_2": "#f81b27",
+            "top_title": "Heavy",
+            "gradient_title": "Duty",
+            "subtitle_1": "Pro-Grade Tools",
+            "subtitle_2": "for everyday messes."
+          }
+        },
+        "highlight-3": {
+          "type": "highlight_card",
+          "settings": {
+            "image": "shopify://shop_images/love-or-return.png",
+            "bg_color": "#ffc9cd",
+            "color_text_1": "#000000",
+            "color_text_2": "#f81b27",
+            "top_title": "Worry",
+            "gradient_title": "Free",
+            "subtitle_1": "Comprehensive warranty",
+            "subtitle_2": "on all core tools."
+          }
+        },
+        "highlight-2": {
+          "type": "highlight_card",
+          "settings": {
+            "image": "shopify://shop_images/2-year-warranty.png",
+            "bg_color": "#000000",
+            "color_text_1": "#ffffff",
+            "color_text_2": "#f81b27",
+            "top_title": "Zero",
+            "gradient_title": "Risk",
+            "subtitle_1": "Love it or send it back.",
+            "subtitle_2": "We make returns simple."
+          }
+        }
+      },
+      "block_order": [
+        "highlight-1",
+        "highlight-3",
+        "highlight-2"
+      ],
+      "settings": {
+        "section_subtitle": "PREMIUM STANDARDS",
+        "section_title_black": "Built",
+        "section_title_gradient": "Different.",
+        "section_grad_color_1": "#ff1423",
+        "section_grad_color_2": "#ff1423",
+        "color_background": "#f8fafc"
+      }
+    },
+    "mar26_testimonials_73q9Ud": {
+      "type": "mar26-testimonials",
+      "blocks": {
+        "testimonial_agixfB": {
+          "type": "testimonial",
+          "settings": {
+            "author": "James Anderson",
+            "country": "australia",
+            "content": "<p>The Japanese Rubber Broom changed how I handle large floor areas. It's indestructible.</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_KAnGUX": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Sarah Jenkins",
+            "country": "new_zealand",
+            "content": "<p>I've tried every cleaner on the market, but the Glider S-1 is the only one that delivers.</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_dARCyM": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Emma Watson",
+            "country": "australia",
+            "content": "<p>If you have a dog that sheds, you need these tools. It literally pulls fur out of carpets.</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_zm3YtV": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Michael Chen",
+            "country": "australia",
+            "content": "<p>The build quality is industrial-grade. Durability is honestly unmatched.</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_DbHRyQ": {
+          "type": "testimonial",
+          "settings": {
+            "author": "David Ross",
+            "country": "new_zealand",
+            "content": "<p>The Caravan Kit is brilliant. No buckets, no mess, stores away perfectly.</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_agixfB",
+        "testimonial_KAnGUX",
+        "testimonial_dARCyM",
+        "testimonial_zm3YtV",
+        "testimonial_DbHRyQ"
+      ],
+      "name": "MAR26 Testimonials",
+      "settings": {
+        "title": "What they're saying",
+        "subheading": "Join thousands already cleaning faster, easier, and better with BrightTools."
+      }
+    }
+  },
+  "order": [
+    "mar26_top_image",
+    "main",
+    "b5385aeb-4a34-4a6d-a487-108e7124135c",
+    "rich_text_zi6Wjd",
+    "media_with_text_naB3qr",
+    "d9e91537-6225-4b57-bd84-e5d10e8558b3",
+    "banner",
+    "cb929d4c-1c53-4be8-9c5d-f5cc730d8698",
+    "b9b043b0-6f7d-46c8-af7e-abe869a1461a",
+    "93b3dd98-8014-44ba-af23-a7338412744e",
+    "best_sellers",
+    "mar26-highlights",
+    "mar26_testimonials_73q9Ud"
+  ]
+}

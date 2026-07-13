@@ -1,0 +1,13 @@
+timestamp: '2026-07-13T14:58:45.000Z'
+command: shopify theme pull --theme 180366573842 --path C:\code\BrightTools\worktrees\main --store brighttools-au.myshopify.com
+status: success
+output: The theme has been pulled successfully.
+folders_downloaded:
+  - assets
+  - blocks
+  - config
+  - layout
+  - locales
+  - sections
+  - snippets
+  - templates

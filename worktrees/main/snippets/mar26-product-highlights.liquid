@@ -1,0 +1,155 @@
+{%- comment -%}
+----------------------------------------------------------------------------------------------------------------------
+file-summary: MAR26 short description and highlights card. Renders the description panel and highlight checklist.
+version-name: Mobile Spacing Tighten
+version-number: 0.0.1
+version-summary: Added file metadata header and reduced internal mobile spacing for the short description card.
+----------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+{%- assign h1 = block.settings.highlight_1 -%}
+{%- assign h2 = block.settings.highlight_2 -%}
+{%- assign h3 = block.settings.highlight_3 -%}
+
+{%- if h1 != blank or h2 != blank or h3 != blank -%}
+  <style>
+    .mar26-description-card {
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0; /* slate-200 */
+      border-radius: 1.5rem; /* rounded-mar-card */
+      padding: 10px; /* REDUCED (18px -> 10px min) */
+      margin-top: 10px; /* REDUCED (18px -> 10px min) */
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    .mar26-highlights-title {
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #0f172a; /* slate-900 */
+      margin: 0 0 10px 0; /* REDUCED (12px -> 10px min) */
+      display: block;
+    }
+
+    .mar26-highlights-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px; /* MIN 10px */
+    }
+
+    .mar26-highlights-description {
+      font-size: 13px;
+      color: #1e293b; /* slate-800 */
+      line-height: 1.6;
+      margin-bottom: 10px; /* REDUCED (18px -> 10px min) */
+    }
+    .mar26-highlights-description p { margin-bottom: 9px; }
+    .mar26-highlights-description p:last-child { margin-bottom: 0; }
+    .mar26-highlights-description h1,
+    .mar26-highlights-description h2,
+    .mar26-highlights-description h3,
+    .mar26-highlights-description h4 {
+      color: #0f172a; /* slate-900 */
+      margin: 24px 0 12px 0;
+      line-height: 1.2;
+    }
+    .mar26-highlights-description h1 { font-size: 1.5rem; }
+    .mar26-highlights-description h2 { font-size: 1.25rem; }
+    .mar26-highlights-description h3 { font-size: 1.125rem; }
+
+    .mar26-highlight-item {
+      display: flex;
+      align-items: center;
+      gap: 10px; /* MIN 10px */
+      font-size: 13px;
+      font-weight: 500;
+      color: #334155; /* slate-700 */
+      line-height: 1.4;
+    }
+
+    .mar26-highlight-icon {
+      width: 18px; /* REDUCED 25% (24px -> 18px) */
+      height: 18px; /* REDUCED 25% (24px -> 18px) */
+      flex-shrink: 0;
+      background-color: {{ block.settings.icon_color | default: '#e11d48' | color_modify: 'alpha', 0.1 }};
+      color: {{ block.settings.icon_color | default: '#e11d48' }};
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mar26-highlight-icon svg {
+      width: 9px; /* REDUCED 25% (12px -> 9px) */
+      height: 9px; /* REDUCED 25% (12px -> 9px) */
+      stroke-width: 3;
+    }
+
+    @media screen and (max-width: 999px) {
+      .mar26-description-card {
+        padding: 5px;
+        margin-top: 5px;
+      }
+
+      .mar26-highlights-title,
+      .mar26-highlights-description {
+        margin-bottom: 5px;
+      }
+
+      .mar26-highlights-list {
+        gap: 5px;
+      }
+
+      .mar26-highlight-item {
+        gap: 5px;
+      }
+    }
+  </style>
+
+  {%- assign description = product.metafields.custom.mar_26_highlights_description.value | default: block.settings.description -%}
+
+  <div class="mar26-description-card">
+    {%- if title != blank -%}
+      <h3 class="mar26-highlights-title">{{ title }}</h3>
+    {%- endif -%}
+
+    {%- if description != blank -%}
+      <div class="mar26-highlights-description">
+        {{- description -}}
+      </div>
+    {%- endif -%}
+
+    <ul class="mar26-highlights-list">
+      {%- if h1 != blank -%}
+        <li class="mar26-highlight-item">
+          <div class="mar26-highlight-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          {{ h1 }}
+        </li>
+      {%- endif -%}
+
+      {%- if h2 != blank -%}
+        <li class="mar26-highlight-item">
+          <div class="mar26-highlight-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          {{ h2 }}
+        </li>
+      {%- endif -%}
+
+      {%- if h3 != blank -%}
+        <li class="mar26-highlight-item">
+          <div class="mar26-highlight-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          {{ h3 }}
+        </li>
+      {%- endif -%}
+    </ul>
+  </div>
+{%- endif -%}

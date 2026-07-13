@@ -1,0 +1,744 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "mar26_top_image": {
+      "type": "mar26-top-image",
+      "settings": {
+        "full_width": false,
+        "image": "shopify://shop_images/DESKTOP_BANNER_-_SHOP_ALL.png",
+        "mobile_image": "shopify://shop_images/MOBILE_BANNER_-_SHOP_ALL.png",
+        "max_width": 1400,
+        "border_radius": 24
+      }
+    },
+    "main": {
+      "type": "mar26-catalog-engine",
+      "blocks": {
+        "category_banner_qi4tBe": {
+          "type": "category_banner",
+          "settings": {
+            "selected_products": [
+              "bright-broom-bundle-broom-squeegee-1pk-quick-mop-floor-wipes",
+              "choose-your-bundle-of-3-packs-quick-mop-floor-wipes-1",
+              "handheld-silicone-squeegee-copy",
+              "high-window-cleaner",
+              "bright-squeegee-pack-copy",
+              "choose-your-bundle-of-5-packs-quick-mop-floor-wipes-1",
+              "home-cleaning-bundle",
+              "caravan-cleaning-bundle",
+              "glider-s-1-magnetic-window-cleaner-2-8mm",
+              "glider-d-4-afc-magnetic-window-cleaner-2-40mm",
+              "bright-broom-bundle-blue-edition",
+              "bright-squeegee-pack-squeegee-quick-mop-floor-wipes",
+              "high-window-cleaner-telescopic-copy",
+              "professional-microfiber-cloth-2pk-xxl-80cmx60cm",
+              "adjustable-dust-blade-rubber-broom-squeegee",
+              "rubber-magic-dustpan-copy",
+              "floor-rubber-squeegee-extra-wide-60cm",
+              "push-pull-silicone-squeegee",
+              "hygienic-toilet-cleaner-for-the-water-tank-blue",
+              "toilet-cleaner-for-the-water-tank-green-copy",
+              "silicone-broom-squeegee",
+              "pet-cleaning-bundle",
+              "floor-silicone-squeegee-knuckle-joint-45cm",
+              "moppy-shmoppy",
+              "microfiber-silicone-mop",
+              "compact-squeegee-pack",
+              "antibacterial-toilet-brush-grey",
+              "antibacterial-toilet-brush-white",
+              "jet-all-purpose-cleaning-gel",
+              "easy-cleaning-bundle-for-limited-mobility",
+              "glider-d-2-magnetic-window-cleaner-2-18mm",
+              "glider-d-3-afc-magnetic-window-cleaner-2-28mm",
+              "japanese-rubber-broom-30cm-knuckle-joint",
+              "japanese-silicone-broom-head-30cm-with-swivel-head-dust-catcher",
+              "long-handle-dustpan-brush-made-of-100-natural-rubber",
+              "magic-dustpan",
+              "rubber-broom-head-37cm-with-in-built-squeegee",
+              "floor-silicone-squeegee-30cm-knuckle-joint",
+              "stick-to-floor-compact-rubber-dustpan",
+              "stick-to-floor-compact-silicone-dustpan",
+              "storage-bag",
+              "jet-multipurpose-wet-wipes-with-vinegar-copy",
+              "maxima-ultra-concentrated-laundry-softener-soft-silk-copy",
+              "quick-mop-floor-wipes-lavender-scent",
+              "quick-mop-floor-wipes-fresh-home-scent-copy",
+              "stainless-steel-4-piece-folding-handle",
+              "stainless-steel-4-piece-folding-handle-copy",
+              "wonder-sponge-extra-6-pack"
+            ],
+            "pre_title": "SERIES",
+            "title": "Best Sellers",
+            "description": "",
+            "bg_color": "#f8fbff",
+            "text_color": "#1e293b"
+          }
+        },
+        "windows": {
+          "type": "category_banner",
+          "settings": {
+            "selected_products": [
+              "glider-s-1-magnetic-window-cleaner-2-8mm",
+              "glider-d-2-magnetic-window-cleaner-2-18mm",
+              "glider-d-2-afc-magnetic-window-cleaner-2-18mm",
+              "glider-d-3-magnetic-window-cleaner-20-28mm",
+              "glider-d-3-afc-magnetic-window-cleaner-2-28mm",
+              "glider-d-4-afc-magnetic-window-cleaner-2-40mm",
+              "high-window-cleaner",
+              "handheld-silicone-squeegee-copy",
+              "high-window-cleaner-telescopic-copy",
+              "handheld-silicone-squeegee",
+              "waffle-cloths-3-pack-copy",
+              "professional-microfibre-cloth-xxl-80cm-60cm-copy",
+              "microfiber-cloth-for-glider-window-cleaner-4-pack-copy-copy",
+              "microfiber-cloth-for-glider-window-cleaner-4-pack-copy-1",
+              "high-window-cleaner-microfiber-cloth-x-2",
+              "high-window-cleaner-microfiber-cloth-x-4",
+              "replacement-microfiber-cleaning-cloth-for-glider-magnetic-window-cleaner-pack-of-2-pc",
+              "the-glider-magnetic-window-cleaner-microfiber-cloth-x-4",
+              "microfiber-cloth-for-glider-window-cleaner-4-pack-copy"
+            ],
+            "pre_title": "SERIES",
+            "title": "Windows Care",
+            "description": "<p>Professional magnetic window cleaners, squeegees, and accessories for effortless cleaning.</p>",
+            "bg_color": "#f8fbff",
+            "text_color": "#1e293b"
+          }
+        },
+        "quick_mop": {
+          "type": "category_banner",
+          "settings": {
+            "selected_products": [
+              "bright-squeegee-pack-squeegee-quick-mop-floor-wipes",
+              "bright-squeegee-pack-copy",
+              "bright-broom-bundle-broom-squeegee-1pk-quick-mop-floor-wipes",
+              "bright-broom-bundle-blue-edition",
+              "compact-squeegee-pack",
+              "caravan-cleaning-bundle",
+              "pet-cleaning-bundle",
+              "easy-cleaning-bundle-for-limited-mobility",
+              "choose-your-bundle-of-3-packs-quick-mop-floor-wipes-1",
+              "choose-your-bundle-of-5-packs-quick-mop-floor-wipes-1",
+              "quick-mop-floor-wipes-fresh-home-scent-copy",
+              "quick-mop-floor-wipes-ultra-fresh-scent",
+              "quick-mop-floor-wipes-lavender-scent",
+              "floor-wipes-for-wooden-floors",
+              "quick-mop-floor-wipes-fresh-home-scent",
+              "quick-mop-floor-wipes-fresh-home-blossom-scent",
+              "professional-microfiber-cloth-xxl-80cm-60cm",
+              "professional-microfiber-cloth-2pk-xxl-80cmx60cm"
+            ],
+            "pre_title": "SERIES",
+            "title": "Quick Mop Systems",
+            "description": "<p>Efficient floor cleaning systems, starter kits, and premium microfiber cloths.</p>",
+            "bg_color": "#f8fbff",
+            "text_color": "#1e293b"
+          }
+        },
+        "floor_wipes": {
+          "type": "category_banner",
+          "settings": {
+            "selected_products": [
+              "bright-squeegee-pack-squeegee-quick-mop-floor-wipes",
+              "bright-squeegee-pack-copy",
+              "bright-broom-bundle-broom-squeegee-1pk-quick-mop-floor-wipes",
+              "bright-broom-bundle-blue-edition",
+              "compact-squeegee-pack",
+              "caravan-cleaning-bundle",
+              "pet-cleaning-bundle",
+              "easy-cleaning-bundle-for-limited-mobility",
+              "choose-your-bundle-of-3-packs-quick-mop-floor-wipes-1",
+              "choose-your-bundle-of-5-packs-quick-mop-floor-wipes-1",
+              "quick-mop-floor-wipes-fresh-home-scent-copy",
+              "quick-mop-floor-wipes-ultra-fresh-scent",
+              "quick-mop-floor-wipes-lavender-scent",
+              "floor-wipes-for-wooden-floors",
+              "quick-mop-floor-wipes-fresh-home-scent",
+              "quick-mop-floor-wipes-fresh-home-blossom-scent"
+            ],
+            "pre_title": "SERIES",
+            "title": "Floor Wipes & Scents",
+            "description": "<p>Fragrant, hygienic floor wipes and bundles for sparkling clean floors.</p>",
+            "bg_color": "#f8fbff",
+            "text_color": "#1e293b"
+          }
+        },
+        "brooms": {
+          "type": "category_banner",
+          "settings": {
+            "selected_products": [
+              "long-handle-dustpan-brush-made-of-100-natural-rubber",
+              "bright-broom-bundle-broom-squeegee-1pk-quick-mop-floor-wipes",
+              "bright-broom-bundle-blue-edition",
+              "japanese-rubber-broom-30cm-knuckle-joint",
+              "japanese-silicone-broom-head-30cm-with-in-built-squeegee-dust-catcher",
+              "japanese-silicone-broom-30cm-knuckle-joint",
+              "rubber-broom-head-37cm-with-in-built-squeegee",
+              "silicone-broom-squeegee",
+              "adjustable-dust-blade-rubber-broom-squeegee"
+            ],
+            "pre_title": "SERIES",
+            "title": "Rubber & Silicone Brooms",
+            "description": "<p>Durable rubber and silicone brooms designed for superior sweeping on all surfaces.</p>",
+            "bg_color": "#f8fbff",
+            "text_color": "#1e293b"
+          }
+        },
+        "squeegees": {
+          "type": "category_banner",
+          "settings": {
+            "selected_products": [
+              "bright-squeegee-pack-squeegee-quick-mop-floor-wipes",
+              "bright-squeegee-pack-copy",
+              "compact-squeegee-pack",
+              "handheld-silicone-squeegee",
+              "floor-silicone-squeegee-30cm-knuckle-joint",
+              "floor-silicone-squeegee-knuckle-joint-45cm",
+              "push-pull-silicone-squeegee",
+              "floor-rubber-squeegee-extra-wide-60cm",
+              "handheld-silicone-squeegee-copy",
+              "moppy-shmoppy"
+            ],
+            "pre_title": "SERIES",
+            "title": "Silicone Floor & Hand Squeegees",
+            "description": "<p>Professional silicone squeegees for streak-free drying and water removal.</p>",
+            "bg_color": "#f8fbff",
+            "text_color": "#1e293b"
+          }
+        },
+        "bundles": {
+          "type": "category_banner",
+          "settings": {
+            "selected_products": [
+              "caravan-cleaning-bundle",
+              "pet-cleaning-bundle",
+              "easy-cleaning-bundle-for-limited-mobility",
+              "choose-your-bundle-of-3-packs-quick-mop-floor-wipes-1",
+              "choose-your-bundle-of-5-packs-quick-mop-floor-wipes-1"
+            ],
+            "pre_title": "SERIES",
+            "title": "Value Cleaning Bundles",
+            "description": "<p>Specially curated cleaning kits and bundles that offer maximum convenience and value.</p>",
+            "bg_color": "#f8fbff",
+            "text_color": "#1e293b"
+          }
+        },
+        "toilet": {
+          "type": "category_banner",
+          "settings": {
+            "selected_products": [
+              "antibacterial-toilet-brush-white",
+              "antibacterial-toilet-brush-grey",
+              "antibacterial-toilet-brush-black",
+              "hygienic-toilet-cleaner-for-the-water-tank-blue",
+              "hygienic-toilet-cleaner-for-the-water-tank-green",
+              "toilet-cleaner-for-the-water-tank-green-copy"
+            ],
+            "pre_title": "SERIES",
+            "title": "Hygienic Toilet Care",
+            "description": "<p>Antibacterial toilet brush sets and long-lasting tank cleaners.</p>",
+            "bg_color": "#f8fbff",
+            "text_color": "#1e293b"
+          }
+        },
+        "mops": {
+          "type": "category_banner",
+          "settings": {
+            "selected_products": [
+              "microfiber-silicone-mop",
+              "moppy-shmoppy",
+              "handheld-silicone-squeegee-copy",
+              "bright-squeegee-pack-squeegee-quick-mop-floor-wipes",
+              "bright-squeegee-pack-copy",
+              "bright-broom-bundle-broom-squeegee-1pk-quick-mop-floor-wipes",
+              "bright-broom-bundle-blue-edition",
+              "choose-your-bundle-of-3-packs-quick-mop-floor-wipes-1",
+              "choose-your-bundle-of-5-packs-quick-mop-floor-wipes-1",
+              "professional-microfiber-cloth-xxl-80cm-60cm",
+              "professional-microfiber-cloth-2pk-xxl-80cmx60cm",
+              "microfiber-replacement-mop-pads-x-1",
+              "microfiber-replacement-mop-pads-x-2",
+              "microfiber-cloth-for-glider-window-cleaner-4-pack-copy-copy",
+              "microfiber-cloth-for-glider-window-cleaner-4-pack-copy-1"
+            ],
+            "pre_title": "SERIES",
+            "title": "Versatile Floor Mops",
+            "description": "<p>Microfibre silicone mops, dual-action squeegee mops, and replacement pads.</p>",
+            "bg_color": "#f8fbff",
+            "text_color": "#1e293b"
+          }
+        },
+        "dustpans": {
+          "type": "category_banner",
+          "settings": {
+            "selected_products": [
+              "rubber-magic-dustpan-copy",
+              "long-handle-dustpan-brush-made-of-100-natural-rubber",
+              "japanese-rubber-broom-30cm-knuckle-joint",
+              "stick-to-floor-compact-silicone-dustpan",
+              "stainless-steel-3-piece-handle-for-compact-dustpan",
+              "stick-to-floor-compact-rubber-dustpan",
+              "rubber-dustpan-multi-purpose-extra-large-dry-wet"
+            ],
+            "pre_title": "SERIES",
+            "title": "Magic & Compact Dustpans",
+            "description": "<p>Rubber and silicone dustpans designed to hug the floor for perfect collection.</p>",
+            "bg_color": "#f8fbff",
+            "text_color": "#1e293b"
+          }
+        },
+        "microfibres": {
+          "type": "category_banner",
+          "settings": {
+            "selected_products": [
+              "professional-microfibre-cloth-xxl-80cm-60cm-copy",
+              "professional-microfiber-cloth-2pk-xxl-80cmx60cm",
+              "professional-microfiber-cloth-xxl-80cm-60cm",
+              "microfiber-cloth-for-glider-window-cleaner-4-pack-copy-1",
+              "microfiber-cloth-for-glider-window-cleaner-4-pack-copy-copy",
+              "microfiber-cloth-for-glider-window-cleaner-4-pack-copy",
+              "high-window-cleaner-microfiber-cloth-x-4",
+              "replacement-microfiber-cleaning-cloth-for-glider-magnetic-window-cleaner-pack-of-2-pc",
+              "high-window-cleaner-microfiber-cloth-x-2",
+              "master-cloth-xxl-microfiber-cloth-for-all-surfaces-wet-or-dry",
+              "the-glider-magnetic-window-cleaner-microfiber-cloth-x-4",
+              "microfiber-replacement-mop-pads-x-1",
+              "microfiber-replacement-mop-pads-x-2",
+              "waffle-cloths-3-pack-copy"
+            ],
+            "pre_title": "SERIES",
+            "title": "Microfibre Cloths",
+            "description": "<p>XXL microfibre cloths, replacement pads, and high-performance waffle cloths.</p>",
+            "bg_color": "#f8fbff",
+            "text_color": "#1e293b"
+          }
+        }
+      },
+      "block_order": [
+        "category_banner_qi4tBe",
+        "windows",
+        "quick_mop",
+        "floor_wipes",
+        "brooms",
+        "squeegees",
+        "bundles",
+        "toilet",
+        "mops",
+        "dustpans",
+        "microfibres"
+      ],
+      "settings": {}
+    },
+    "video_promo": {
+      "type": "video",
+      "blocks": {
+        "template--19575487660306__397d7191-df1d-4a09-a3f1-c28dc3293eba-16877765676bfd419b-0": {
+          "type": "play",
+          "settings": {}
+        },
+        "template--19575487660306__397d7191-df1d-4a09-a3f1-c28dc3293eba-16877765676bfd419b-1": {
+          "type": "heading",
+          "settings": {
+            "text": "",
+            "heading_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "template--19575487660306__397d7191-df1d-4a09-a3f1-c28dc3293eba-16877765676bfd419b-0",
+        "template--19575487660306__397d7191-df1d-4a09-a3f1-c28dc3293eba-16877765676bfd419b-1"
+      ],
+      "settings": {
+        "full_width": false,
+        "allow_transparent_header": false,
+        "autoplay": true,
+        "video_size": "auto",
+        "video": "shopify://files/videos/Brightswipes AD1 MOBILE_6278ab51-3742-482c-bb63-52d3139bd2eb.mp4",
+        "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "best_sellers": {
+      "type": "mar26-best-sellers",
+      "blocks": {
+        "prod_1": {
+          "type": "product",
+          "settings": {
+            "product": "bright-broom-bundle-blue-edition"
+          }
+        },
+        "prod_2": {
+          "type": "product",
+          "settings": {
+            "product": "easy-cleaning-bundle-for-limited-mobility"
+          }
+        },
+        "prod_3": {
+          "type": "product",
+          "settings": {
+            "product": "adjustable-dust-blade-rubber-broom-squeegee"
+          }
+        },
+        "prod_4": {
+          "type": "product",
+          "settings": {
+            "product": "jet-all-purpose-cleaning-spray-with-vinegar-and-lavender-copy"
+          }
+        }
+      },
+      "block_order": [
+        "prod_1",
+        "prod_2",
+        "prod_3",
+        "prod_4"
+      ],
+      "settings": {
+        "badge_text": "Bright On - Dust Off",
+        "primary_text": "Better Cleaning",
+        "highlight_text": "Best Sellers",
+        "autoplay_enabled": true,
+        "color_background": "#f8fafc",
+        "color_primary_text": "#0f172a",
+        "color_highlight": "#f81f2f",
+        "color_badge_text": "#f81b27"
+      }
+    },
+    "d9e91537-6225-4b57-bd84-e5d10e8558b3": {
+      "type": "faq",
+      "blocks": {
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-0": {
+          "type": "item",
+          "settings": {
+            "title": "Are BrightTools products suitable for both professionals and amateurs?",
+            "content": "<p>Absolutely! Our tools are designed to cater to the needs of professionals as well as hobbyists and DIY enthusiasts. We strive to offer products that are user-friendly, reliable, and suitable for various skill levels.</p>"
+          }
+        },
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-1": {
+          "type": "item",
+          "settings": {
+            "title": "Can I track the status of my order?",
+            "content": "<p>Yes, once your order is confirmed, we will provide you with a tracking number. You can use this number to track the status of your shipment. We also send regular updates via email, keeping you informed about the progress of your order.</p>"
+          }
+        },
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-2": {
+          "type": "item",
+          "settings": {
+            "title": "What payment options are available?",
+            "content": "<p>We accept various payment methods, including major credit cards (Visa, Mastercard, American Express), PayPal, and bank transfers. Rest assured that all transactions are securely processed to protect your sensitive information.</p>"
+          }
+        },
+        "dc709b98-8f74-4f10-9911-a3d0da4bdcf4": {
+          "type": "item",
+          "settings": {
+            "title": "Do you offer international shipping?",
+            "content": "<p>Yes, we offer international shipping to select countries. However, please note that shipping fees and delivery times may vary depending on the destination. During the checkout process, you can enter your location to view the available shipping options and associated costs.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-0",
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-1",
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-2",
+        "dc709b98-8f74-4f10-9911-a3d0da4bdcf4"
+      ],
+      "settings": {
+        "full_width": false,
+        "subheading": "FAQ",
+        "title": "Have a question?",
+        "content": "",
+        "team_avatar": "shopify://shop_images/team-fff.webp",
+        "team_avatar_width": 160,
+        "support_hours": "Our customer support is available monday to friday: 8am-8:30pm.",
+        "answer_time": "Average answer time: 24h",
+        "button_text": "Contact us",
+        "button_url": "shopify://pages/contact",
+        "text_position": "start",
+        "background": "#ffffff",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "#1a1a1a",
+        "button_text_color": "",
+        "accordion_background": "",
+        "accordion_text_color": ""
+      }
+    },
+    "b5385aeb-4a34-4a6d-a487-108e7124135c": {
+      "type": "video",
+      "blocks": {
+        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-play-1": {
+          "type": "play",
+          "settings": {}
+        },
+        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "",
+            "heading_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-play-1",
+        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-heading-1"
+      ],
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "autoplay": true,
+        "video_size": "sm",
+        "video": "shopify://files/videos/window-cleaner-optmized.mp4",
+        "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "rich_text_zi6Wjd": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_rpXief": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        },
+        "heading_CizMbW": {
+          "type": "heading",
+          "settings": {
+            "text": "Magnetic Window Cleaners",
+            "heading_tag": "h2",
+            "text_color": "",
+            "gradient": ""
+          }
+        },
+        "richtext_P3nXP4": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Our innovative window cleaning products are specially designed with you in mind to make every window within reach.</p><p>The revolutionary solution for double-sided windows and high windows in your home, our unique magnetic gliders and extendable window cleaners are efficient, effective, and sustainable to use on your own.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_rpXief",
+        "heading_CizMbW",
+        "richtext_P3nXP4"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_width": "medium",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "media_with_text_naB3qr": {
+      "type": "media-with-text",
+      "blocks": {
+        "image_UgxkAx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/bt_delete.png",
+            "media_width": 30,
+            "media_position": "start",
+            "text_position": "place-self-center text-center",
+            "icon": "none",
+            "icon_width": 32,
+            "subheading": "",
+            "title": "",
+            "content": "<h4>🧹 Sweep & Squeegee in One</h4><h4></h4><h4>🔄 Reaches Tight Spaces</h4><h4></h4><h4>💪 Tough & Surface-Safe</h4><p></p><p>Clean faster with one tool built for every mess.<br/>Strong, versatile, and made to last — the Tyroler 2-in-1 is a cleaning essential.</p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "#8d5b97",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        },
+        "video_block": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/Brightswipes AD1 MOBILE_6278ab51-3742-482c-bb63-52d3139bd2eb.mp4",
+            "external_video_url": "https://www.youtube.com/watch?v=oDjHs1ZLcss",
+            "autoplay": true,
+            "media_width": 55,
+            "media_position": "end",
+            "text_position": "place-self-center text-center",
+            "icon": "none",
+            "icon_width": 32,
+            "subheading": "",
+            "title": "",
+            "content": "<h4>🧹 Sweep & Squeegee in One</h4><h4></h4><h4>🔄 Reaches Tight Spaces</h4><h4></h4><h4>💪 Tough & Surface-Safe</h4><p></p><p>Clean faster with one tool built for every mess.<br/>Strong, versatile, and made to last — the Tyroler 2-in-1 is a cleaning essential.</p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "#0f172a",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "#e11d48",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "image_UgxkAx",
+        "video_block"
+      ],
+      "settings": {
+        "full_width": false,
+        "alternate_media_position": false,
+        "spacing": "none"
+      }
+    },
+    "mar26-highlights": {
+      "type": "mar26-highlights",
+      "blocks": {
+        "highlight-1": {
+          "type": "highlight_card",
+          "settings": {
+            "image": "shopify://shop_images/arms.png",
+            "bg_color": "#ffffff",
+            "color_text_1": "#000000",
+            "color_text_2": "#f81b27",
+            "top_title": "Heavy",
+            "gradient_title": "Duty",
+            "subtitle_1": "Pro-Grade Tools",
+            "subtitle_2": "for everyday messes."
+          }
+        },
+        "highlight-3": {
+          "type": "highlight_card",
+          "settings": {
+            "image": "shopify://shop_images/love-or-return.png",
+            "bg_color": "#ffc9cd",
+            "color_text_1": "#000000",
+            "color_text_2": "#f81b27",
+            "top_title": "Worry",
+            "gradient_title": "Free",
+            "subtitle_1": "Comprehensive warranty",
+            "subtitle_2": "on all core tools."
+          }
+        },
+        "highlight-2": {
+          "type": "highlight_card",
+          "settings": {
+            "image": "shopify://shop_images/2-year-warranty.png",
+            "bg_color": "#000000",
+            "color_text_1": "#ffffff",
+            "color_text_2": "#f81b27",
+            "top_title": "Zero",
+            "gradient_title": "Risk",
+            "subtitle_1": "Love it or send it back.",
+            "subtitle_2": "We make returns simple."
+          }
+        }
+      },
+      "block_order": [
+        "highlight-1",
+        "highlight-3",
+        "highlight-2"
+      ],
+      "settings": {
+        "section_subtitle": "PREMIUM STANDARDS",
+        "section_title_black": "Built",
+        "section_title_gradient": "Different.",
+        "section_grad_color_1": "#ff1423",
+        "section_grad_color_2": "#ff1423",
+        "color_background": "#f8fafc"
+      }
+    },
+    "mar26_testimonials_73q9Ud": {
+      "type": "mar26-testimonials",
+      "blocks": {
+        "testimonial_agixfB": {
+          "type": "testimonial",
+          "settings": {
+            "author": "James Anderson",
+            "country": "australia",
+            "content": "<p>The Japanese Rubber Broom changed how I handle large floor areas. It's indestructible.</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_KAnGUX": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Sarah Jenkins",
+            "country": "new_zealand",
+            "content": "<p>I've tried every cleaner on the market, but the Glider S-1 is the only one that delivers.</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_dARCyM": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Emma Watson",
+            "country": "australia",
+            "content": "<p>If you have a dog that sheds, you need these tools. It literally pulls fur out of carpets.</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_zm3YtV": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Michael Chen",
+            "country": "australia",
+            "content": "<p>The build quality is industrial-grade. Durability is honestly unmatched.</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_DbHRyQ": {
+          "type": "testimonial",
+          "settings": {
+            "author": "David Ross",
+            "country": "new_zealand",
+            "content": "<p>The Caravan Kit is brilliant. No buckets, no mess, stores away perfectly.</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_agixfB",
+        "testimonial_KAnGUX",
+        "testimonial_dARCyM",
+        "testimonial_zm3YtV",
+        "testimonial_DbHRyQ"
+      ],
+      "name": "MAR26 Testimonials",
+      "settings": {
+        "title": "What they're saying",
+        "subheading": "Join thousands already cleaning faster, easier, and better with BrightTools."
+      }
+    }
+  },
+  "order": [
+    "mar26_top_image",
+    "main",
+    "b5385aeb-4a34-4a6d-a487-108e7124135c",
+    "rich_text_zi6Wjd",
+    "media_with_text_naB3qr",
+    "video_promo",
+    "d9e91537-6225-4b57-bd84-e5d10e8558b3",
+    "best_sellers",
+    "mar26-highlights",
+    "mar26_testimonials_73q9Ud"
+  ]
+}

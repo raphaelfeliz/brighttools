@@ -1,0 +1,13 @@
+init-sync/
+  meta.yaml
+  blueprint.md
+  incr-initial-pull/
+    meta.yaml
+    blueprint.md
+    wp-pull-theme/
+      meta.yaml
+      todo.md
+      handover.md
+      evidence/
+        logs/
+          .gitkeep

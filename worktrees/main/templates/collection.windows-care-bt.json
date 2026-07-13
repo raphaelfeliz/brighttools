@@ -1,0 +1,1171 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "mar26_top_image": {
+      "type": "mar26-top-image",
+      "settings": {
+        "full_width": false,
+        "image": "shopify://shop_images/DESKTOP_BANNER_-_WINDOW_CLEANERS.png",
+        "mobile_image": "shopify://shop_images/MOBILE_BANNER_-_WINDOW_CLEANERS.png",
+        "max_width": 1400,
+        "border_radius": 24
+      }
+    },
+    "main": {
+      "type": "mar26-catalog-engine",
+      "blocks": {
+        "magnetic": {
+          "type": "category_banner",
+          "settings": {
+            "selected_products": [
+              "glider-s-1-magnetic-window-cleaner-2-8mm",
+              "glider-d-2-magnetic-window-cleaner-2-18mm",
+              "glider-d-3-magnetic-window-cleaner-20-28mm",
+              "glider-d-2-afc-magnetic-window-cleaner-2-18mm",
+              "glider-d-3-afc-magnetic-window-cleaner-2-28mm",
+              "glider-d-4-afc-magnetic-window-cleaner-2-40mm",
+              "the-glider-magnetic-window-cleaner-microfiber-cloth-x-4",
+              "microfiber-cloth-for-glider-window-cleaner-4-pack-copy"
+            ],
+            "pre_title": "SERIES",
+            "title": "Magnetic Window Cleaners",
+            "description": "<p>Professional magnetic window cleaners for single and double glazing.</p>",
+            "bg_color": "#f8fbff",
+            "text_color": "#1e293b"
+          }
+        },
+        "handheld": {
+          "type": "category_banner",
+          "settings": {
+            "selected_products": [
+              "high-window-cleaner",
+              "handheld-silicone-squeegee-copy",
+              "high-window-cleaner-telescopic-copy",
+              "handheld-silicone-squeegee",
+              "microfiber-cloth-for-glider-window-cleaner-4-pack-copy-copy",
+              "microfiber-cloth-for-glider-window-cleaner-4-pack-copy-1",
+              "high-window-cleaner-microfiber-cloth-x-2",
+              "high-window-cleaner-microfiber-cloth-x-4"
+            ],
+            "pre_title": "SERIES",
+            "title": "Handheld & Extendable Cleaners",
+            "description": "<p>Professional tools for easy-reach windows and glass surfaces.</p>",
+            "bg_color": "#f8fbff",
+            "text_color": "#1e293b"
+          }
+        },
+        "cloths_refills": {
+          "type": "category_banner",
+          "settings": {
+            "selected_products": [
+              "microfiber-cloth-for-glider-window-cleaner-4-pack-copy",
+              "the-glider-magnetic-window-cleaner-microfiber-cloth-x-4",
+              "microfiber-cloth-for-glider-window-cleaner-4-pack-copy-copy",
+              "microfiber-cloth-for-glider-window-cleaner-4-pack-copy-1",
+              "high-window-cleaner-microfiber-cloth-x-2",
+              "high-window-cleaner-microfiber-cloth-x-4",
+              "professional-microfibre-cloth-xxl-80cm-60cm-copy",
+              "waffle-cloths-3-pack-copy",
+              "replacement-microfiber-cleaning-cloth-for-glider-magnetic-window-cleaner-pack-of-2-pc"
+            ],
+            "pre_title": "SERIES",
+            "title": "Cloths & Refills",
+            "description": "<p>Replacement microfibre cloths and waffle drying towels.</p>",
+            "bg_color": "#f8fbff",
+            "text_color": "#1e293b"
+          }
+        }
+      },
+      "block_order": [
+        "magnetic",
+        "handheld",
+        "cloths_refills"
+      ],
+      "settings": {}
+    },
+    "video_YxW6xG": {
+      "type": "video",
+      "blocks": {
+        "play_FpiHBD": {
+          "type": "play",
+          "settings": {}
+        },
+        "heading_FrfRcy": {
+          "type": "heading",
+          "settings": {
+            "text": "",
+            "heading_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "play_FpiHBD",
+        "heading_FrfRcy"
+      ],
+      "settings": {
+        "full_width": false,
+        "allow_transparent_header": false,
+        "autoplay": true,
+        "video_size": "md",
+        "video": "shopify://files/videos/The Glider AFC Version.mp4",
+        "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "b5385aeb-4a34-4a6d-a487-108e7124135c": {
+      "type": "video",
+      "blocks": {
+        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-play-1": {
+          "type": "play",
+          "settings": {}
+        },
+        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "",
+            "heading_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-play-1",
+        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-heading-1"
+      ],
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "autoplay": true,
+        "video_size": "sm",
+        "video": "shopify://files/videos/window-cleaner-optmized.mp4",
+        "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "rich_text_zi6Wjd": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_rpXief": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        },
+        "heading_CizMbW": {
+          "type": "heading",
+          "settings": {
+            "text": "Magnetic Window Cleaners",
+            "heading_tag": "h2",
+            "text_color": "",
+            "gradient": ""
+          }
+        },
+        "richtext_P3nXP4": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Our innovative window cleaning products are specially designed with you in mind to make every window within reach.</p><p>The revolutionary solution for double-sided windows and high windows in your home, our unique magnetic gliders and extendable window cleaners are efficient, effective, and sustainable to use on your own.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_rpXief",
+        "heading_CizMbW",
+        "richtext_P3nXP4"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_width": "medium",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "media_with_text_naB3qr": {
+      "type": "media-with-text",
+      "blocks": {
+        "image_UgxkAx": {
+          "type": "image",
+          "settings": {
+            "media_width": 30,
+            "media_position": "start",
+            "text_position": "place-self-center text-center",
+            "icon": "none",
+            "icon_width": 32,
+            "subheading": "",
+            "title": "",
+            "content": "<h4>🧹 Sweep & Squeegee in One</h4><h4></h4><h4>🔄 Reaches Tight Spaces</h4><h4></h4><h4>💪 Tough & Surface-Safe</h4><p></p><p>Clean faster with one tool built for every mess.<br/>Strong, versatile, and made to last — the Tyroler 2-in-1 is a cleaning essential.</p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "#8d5b97",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        },
+        "video_block": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/Brightswipes AD1 MOBILE_6278ab51-3742-482c-bb63-52d3139bd2eb.mp4",
+            "external_video_url": "https://www.youtube.com/watch?v=oDjHs1ZLcss",
+            "autoplay": true,
+            "media_width": 55,
+            "media_position": "end",
+            "text_position": "place-self-center text-center",
+            "icon": "none",
+            "icon_width": 32,
+            "subheading": "",
+            "title": "",
+            "content": "<h4>🧹 Sweep & Squeegee in One</h4><h4></h4><h4>🔄 Reaches Tight Spaces</h4><h4></h4><h4>💪 Tough & Surface-Safe</h4><p></p><p>Clean faster with one tool built for every mess.<br/>Strong, versatile, and made to last — the Tyroler 2-in-1 is a cleaning essential.</p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "#0f172a",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "#e11d48",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "image_UgxkAx",
+        "video_block"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "alternate_media_position": false,
+        "spacing": "none"
+      }
+    },
+    "faq_W8bJFX": {
+      "type": "faq",
+      "blocks": {
+        "item_fPVkXg": {
+          "type": "item",
+          "settings": {
+            "title": "What is the difference between the Telescopic High Window Cleaner and the High Reach Van Cleaner?",
+            "content": "<p>Both window cleaners feature the same cleaning head. The Telescopic High Window Cleaner comes with a telescopic handle, whereas the High Reach Van Cleaner is sold as the cleaning head only and attaches to the 4-part-handle sold that comes with the Caravan Cleaning Bundle.</p>"
+          }
+        },
+        "item_egcamj": {
+          "type": "item",
+          "settings": {
+            "title": "How do I know which window cleaner to choose?",
+            "content": "<p>The best window cleaner for you depends on the type of windows you’re looking to clean.</p><p>Our <strong>Glider Magnetic Window Cleaners</strong> are ideal for cleaning both sides of your windows at the same time, where you have access to place the exterior cleaning pad.</p><p>Our <strong>Telescopic High Window Cleaner</strong> is designed for high and hard-to-reach windows, allowing you to clean safely from the ground.</p><p>For smaller, easily accessible areas, our <strong>Mini Mop</strong> is a versatile option that can be used by hand to clean windows and a variety of other surfaces around your home.</p>"
+          }
+        },
+        "item_DTBx6Q": {
+          "type": "item",
+          "settings": {
+            "title": "How high can the Telescopic High Window Cleaner reach?",
+            "content": "<p>The adjustable telescopic handle extends your reach, making it ideal for cleaning high windows, skylights, solar panels, awnings, glass doors and other hard-to-reach areas without the need for ladders. Fully extended, the handle itself is 177cm long.</p>"
+          }
+        },
+        "item_FfLXTg": {
+          "type": "item",
+          "settings": {
+            "title": "What surfaces can I use the BrightTools range of window cleaners on?",
+            "content": "<p>Our range of window cleaners are suitable for a variety of smooth surfaces including glass windows, mirrors, shower screens and glass doors. They are perfect for removing fingerprints, water marks, dust and everyday grime.</p>"
+          }
+        },
+        "item_3bNTBW": {
+          "type": "item",
+          "settings": {
+            "title": "Can I use the High Reach Window Cleaner without a ladder?",
+            "content": "<p>Yes! The telescopic handle is designed to help you clean high and hard-to-reach windows safely from the ground, making window cleaning easier, quicker and more convenient.</p>"
+          }
+        },
+        "item_FKDVgG": {
+          "type": "item",
+          "settings": {
+            "title": "How to clean high rise windows from inside?",
+            "content": "<p>The best way to clean high rise windows from inside is with our Telescopic High Window Cleaner. Use the microfibre pad first to scrub with water and soap, and then use the squeegee side to remove the excess water for a streak-free finish.</p>"
+          }
+        },
+        "item_PWrdrT": {
+          "type": "item",
+          "settings": {
+            "title": "How do you clean the outside of windows without having access?",
+            "content": "<p>Our Glider range of Magnetic Window Cleaners allows you to clean both sides of your windows at the same time. Simply place the exterior cleaning part on the outside of the window (where accessible) and the magnetic design keeps both sides connected for an effortless clean.</p>"
+          }
+        },
+        "item_CGMC84": {
+          "type": "item",
+          "settings": {
+            "title": "How do you clean high windows without a ladder?",
+            "content": "<p>You can clean high windows without a ladder using a high window cleaner (with a telescopic handle) or magnetic window cleaner for windows that there is no access to the outer part of the windows.</p>"
+          }
+        },
+        "item_yktDVD": {
+          "type": "item",
+          "settings": {
+            "title": "How do you get streak free windows?",
+            "content": "<p>In order to get streak free windows you have to use a high-quality window cleaner, wash the window with water and soap, use the squeegee side to remove excess water, and then dry the windows with a microfibre pad to remove any streaks.</p>"
+          }
+        },
+        "item_zjjzkE": {
+          "type": "item",
+          "settings": {
+            "title": "What to use to clean high windows?",
+            "content": "<p>Cleaning hard-to-reach windows is now easier with our High Reach Window Cleaner. Featuring a telescopic handle, microfibre cloth and squeegee, it allows you to wash, wipe and dry your windows from the safety of the ground. Simply scrub with the microfibre cloth, then remove water and streaks with the squeegee for a crystal-clear finish.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_fPVkXg",
+        "item_egcamj",
+        "item_DTBx6Q",
+        "item_FfLXTg",
+        "item_3bNTBW",
+        "item_FKDVgG",
+        "item_PWrdrT",
+        "item_CGMC84",
+        "item_yktDVD",
+        "item_zjjzkE"
+      ],
+      "settings": {
+        "full_width": false,
+        "subheading": "FAQs",
+        "title": "Have a question?",
+        "content": "",
+        "team_avatar": "shopify://shop_images/team-fff.webp",
+        "team_avatar_width": 160,
+        "support_hours": "Our customer support is available monday to friday: 8am-8:30pm.",
+        "answer_time": "Average answer time: 24h",
+        "button_text": "Contact us",
+        "button_url": "shopify://pages/contact",
+        "text_position": "start",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "",
+        "button_text_color": "",
+        "accordion_background": "",
+        "accordion_text_color": ""
+      }
+    },
+    "rich_text_DK3Upb": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_WBdiyK": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "text": "Subheading"
+          }
+        },
+        "heading_AmURQR": {
+          "type": "heading",
+          "settings": {
+            "text": "Streak-free Windows",
+            "heading_tag": "h3",
+            "text_color": "",
+            "gradient": ""
+          }
+        },
+        "richtext_ndBa3y": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Giving you a crystal clear view every time, our double-sided window cleaners are professional grade – never leaving streaks behind. The powerful magnetic grip easily moves water from side to side for a perfect, streak-free clean on all of your windows, pool gates, balcony doors and glass surfaces.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_WBdiyK",
+        "heading_AmURQR",
+        "richtext_ndBa3y"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "rich_text_c34qcP": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_K49ekb": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "text": "Subheading"
+          }
+        },
+        "heading_RnDiaL": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "text": "Heading",
+            "heading_tag": "h1",
+            "text_color": "",
+            "gradient": ""
+          }
+        },
+        "richtext_Whz4CW": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Clean with ease and extreme shine every time because our window cleaners are made to last a lifetime.</p><ul><li><strong>100% Natural Rubber</strong> squeegee blades</li><li>Dual window cleaning action</li><li>Extendable handles for high windows</li><li>Microfibre cloths for shine and dry</li><li>Streak-free window clean every time</li><li>Fast, free shipping, 2-year-warranty & satisfaction guaranteed</li><li>The <strong>original Tyroler BrightTools Glider</strong> Window Cleaners</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_K49ekb",
+        "heading_RnDiaL",
+        "richtext_Whz4CW"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "rich_text_rXBMYU": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_xKbDDM": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "text": "Subheading"
+          }
+        },
+        "heading_EgBbkz": {
+          "type": "heading",
+          "settings": {
+            "text": "Streak-free Windows",
+            "heading_tag": "h3",
+            "text_color": "",
+            "gradient": ""
+          }
+        },
+        "richtext_fya3aa": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Giving you a crystal clear view every time, our double-sided window cleaners are professional grade – never leaving streaks behind. The powerful magnetic grip easily moves water from side to side for a perfect, streak-free clean on all of your windows, pool gates, balcony doors and glass surfaces.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_xKbDDM",
+        "heading_EgBbkz",
+        "richtext_fya3aa"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "rich_text_DNKLN4": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_zkELRd": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "text": "Subheading"
+          }
+        },
+        "heading_PU96mb": {
+          "type": "heading",
+          "settings": {
+            "text": "Easy Magnetic Window Cleaning Tips",
+            "heading_tag": "h2",
+            "text_color": "",
+            "gradient": ""
+          }
+        },
+        "richtext_34RhiL": {
+          "type": "richtext",
+          "settings": {
+            "content": "<ul><li>Choose a <strong>magnetic window cleaner</strong> made from strong materials like <strong>100% Rubber</strong> for double-sided action, high quality and performance.</li><li>Select the right glider model for your window thickness from 2mm-40mm for single, double or triple glazed windows.</li><li>Invest in a high window cleaning solution with a 2-in-1 high window washer, <strong>extendable handle</strong> and flexible head to get up high while staying grounded.</li><li>Use cleaning liquid at the edge of your windows, the brilliant blades will push the solution along for you.</li><li>Let the magnets do the work. Safely and easily glide across your windows for extreme comfort and a streak-free clean.</li><li>Get to all those hard to reach places with minimum effort and clear as day shine.</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_zkELRd",
+        "heading_PU96mb",
+        "richtext_34RhiL"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "rich_text_R6yrtQ": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_Cb4Y3W": {
+          "type": "subheading",
+          "settings": {
+            "text": "Choosing Tyroler BrightTools over other magnetic window cleaners offers a variety of benefits, such as:"
+          }
+        },
+        "heading_iPYKg6": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "text": "",
+            "heading_tag": "h1",
+            "text_color": "",
+            "gradient": ""
+          }
+        },
+        "richtext_xzBQUP": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p></p><ul><li>Quality materials: Tyroler BrightTools uses rare earth magnets, metal, ABS, and 100% natural rubber to construct their magnetic window cleaners. This ensures that the product is durable and long-lasting.</li><li>Safe to use: Tyroler BrightTools uses fine microfiber cloths that are detergent-resistant and can be reused up to 300 times. This reduces the chance of scratches on the glass surface and ensures that the product is safe to use.</li><li>Cost-effective: The company offers replacement cloths, so you don’t have to purchase the whole product again when the cloths need to be replaced. This can save you money in the long run.</li><li>Eco-friendly: Tyroler BrightTools uses eco-friendly materials in their products and encourages reusability, which helps to save the environment.</li><li>Durable and long-lasting: The company ensures that the product is built to last a long time, reducing the need for frequent replacements, and saving you money in the long run.</li></ul><p>In summary, choosing Tyroler BrightTools over other magnetic window cleaners offers quality, safety, cost-effectiveness, eco-friendliness and durability.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_Cb4Y3W",
+        "heading_iPYKg6",
+        "richtext_xzBQUP"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "impact_text_J9CYCC": {
+      "type": "impact-text",
+      "blocks": {
+        "item_HQjwwQ": {
+          "type": "item",
+          "settings": {
+            "title": "",
+            "subheading": "It’s clear – you’ll never miss a spot",
+            "content": "<p>BrightTools window cleaners are designed with every window size, height and home in mind</p><p>You’ll feel the difference with every window now in reach.<br/>The glassy solution to every window</p>",
+            "button_text": "",
+            "button_url": "",
+            "animate_impact_text": false,
+            "animate_impact_text_duration": 2
+          }
+        }
+      },
+      "block_order": [
+        "item_HQjwwQ"
+      ],
+      "name": "Impact text",
+      "settings": {
+        "full_width": true,
+        "stack_mobile": true,
+        "text_alignment": "center",
+        "impact_text_style": "fill",
+        "text_divider": "none",
+        "impact_text_size_ratio": 1,
+        "background": "",
+        "background_gradient": "",
+        "heading_text_color": "",
+        "heading_gradient": "",
+        "text_color": "",
+        "button_background": "",
+        "button_text_color": ""
+      }
+    },
+    "mar26_bundles_a3P3wM": {
+      "type": "mar26-bundles",
+      "blocks": {
+        "bundle_niP76P": {
+          "type": "bundle",
+          "settings": {
+            "product": "caravan-cleaning-bundle",
+            "reviews": 120
+          }
+        },
+        "bundle_VxU9nN": {
+          "type": "bundle",
+          "settings": {
+            "product": "home-cleaning-bundle",
+            "reviews": 120
+          }
+        }
+      },
+      "block_order": [
+        "bundle_niP76P",
+        "bundle_VxU9nN"
+      ],
+      "disabled": true,
+      "name": "MAR26 Bundles",
+      "settings": {
+        "badge_text": "BRIGHT ON - BUNDLE & SAVE",
+        "primary_text": "Most Loved",
+        "highlight_text": "Bundles",
+        "color_background": "#e8ebf0",
+        "color_primary_text": "#11141c",
+        "color_highlight": "#f81f2f",
+        "color_badge_text": "#a0a6b5",
+        "cta_text": "Shop Bundles",
+        "cta_link": "shopify://collections/bundles",
+        "cta_color": "#000000",
+        "cta_text_color": "white"
+      }
+    },
+    "blocks_BPWLPX": {
+      "type": "_blocks",
+      "blocks": {
+        "mar26_videos_WNY3ai": {
+          "type": "mar26-videos",
+          "settings": {
+            "video_1": "shopify://files/videos/clean-floor-wipes-optimized.mp4",
+            "video_2": "shopify://files/videos/window-cleaner-optmized.mp4",
+            "video_3": "shopify://files/videos/Mop_squeegee_video.mp4",
+            "video_4": "shopify://files/videos/202403022354.mp4",
+            "autoplay": true,
+            "loop": true,
+            "muted": true,
+            "controls": false,
+            "pause_on_exit": true,
+            "desktop_width_percent": 100,
+            "video_gap": 16,
+            "section_padding": 40,
+            "columns_mobile": "2",
+            "video_border_radius": 24,
+            "placeholder_background": "#f4f4f4",
+            "placeholder_text_color": "#666666"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "mar26_videos_WNY3ai"
+      ],
+      "disabled": true,
+      "name": "mar26-videos",
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "17768877856cc1fa17": {
+      "type": "_blocks",
+      "blocks": {
+        "mar26-image-plus-text_DD8bwa": {
+          "type": "mar26-image-plus-text",
+          "settings": {
+            "background_image": "shopify://shop_images/Caravan__enhance__62002_v9.png",
+            "mobile_image": "shopify://shop_images/Caravan__enhance__62002_Mobile.png",
+            "heading": "Australia's #1 Caravan Cleaning Bundle 🇦🇺",
+            "description": "No more cleaning on your hands & knees! Everything you need for an easier, faster caravan clean — all in one smart bundle.",
+            "button_label": "Shop now",
+            "button_link": "shopify://products/caravan-cleaning-bundle",
+            "text_box_max_width": 350,
+            "text_box_padding": 20,
+            "text_box_background": "#00000099",
+            "heading_size": 28,
+            "heading_color": "#ffffff",
+            "description_size": 16,
+            "description_color": "#ffffff",
+            "button_border_radius": 12,
+            "button_text_size": 14,
+            "button_text_color": "#ffffff",
+            "button_border_color": "#ffffff",
+            "button_hover_background": "#ffffff",
+            "button_hover_text_color": "#000000",
+            "button_hover_border_color": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "mar26-image-plus-text_DD8bwa"
+      ],
+      "disabled": true,
+      "name": "Image, Text, Button",
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "5fb99d86-36b3-4859-9930-54cbc9dc88e9": {
+      "type": "mar26-mediagrid",
+      "disabled": true,
+      "settings": {
+        "video": "shopify://files/videos/main-video.mp4",
+        "external_video_url": "",
+        "btn_text": "SHOP WIPES",
+        "hero_title": "Quick Mop Floor Wipes",
+        "btn_link": "shopify://collections/wipes",
+        "btn_bg_color": "#9a69a7",
+        "card_1_image": "shopify://shop_images/floor_wipes_quick_mop_home14.webp",
+        "card_1_link": "shopify://collections/wipes",
+        "card_2_image": "shopify://shop_images/floor_wipes_quick_mop_home12_62497d7d-d4c2-4d01-bfa5-bad137e072bf.webp",
+        "card_2_link": "shopify://collections/wipes",
+        "card_3_image": "shopify://shop_images/floor_wipes_quick_mop_home13_d00a91c3-6769-4b49-a937-4654c1dda80f.webp",
+        "card_3_link": "shopify://collections/wipes",
+        "card_4_image": "shopify://shop_images/quick_mop_floor_wipes_Long-lasting_boutique_hotel_scent.webp",
+        "card_4_link": "shopify://collections/wipes"
+      }
+    },
+    "29eb21bf-ae72-415f-9b8e-771ecae14071": {
+      "type": "collection-list",
+      "blocks": {
+        "template--19202935619858__29eb21bf-ae72-415f-9b8e-771ecae14071-1686655418fe40a052-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "magnetic-window",
+            "image": "shopify://shop_images/Untitled_design_17.png",
+            "subheading": "Magnetic Window Cleaners",
+            "title": "Bright & shine your hard to reach windows",
+            "url": "shopify://collections/magnetic-window",
+            "heading_tag": "h3",
+            "text_position": "place-self-end-start text-start",
+            "text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 15
+          }
+        },
+        "template--19202935619858__29eb21bf-ae72-415f-9b8e-771ecae14071-1686655418fe40a052-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "squeegee",
+            "image": "shopify://shop_images/4_68d3805b-5db8-44e6-89df-cbb721f4f236.png",
+            "subheading": "Squeegee",
+            "title": "Perfection with each sweep",
+            "url": "shopify://collections/squeegee",
+            "heading_tag": "h3",
+            "text_position": "place-self-end-start text-start",
+            "text_color": "#ffffff",
+            "overlay_color": "#1a1a1a",
+            "overlay_opacity": 15
+          }
+        },
+        "20181423-009d-418c-add8-907a0915d02c": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/5_eeb3c9e2-7dfc-4c4c-8c47-b6bb5f0c4fc9.png",
+            "subheading": "Floor Wipes",
+            "title": "Clean, Shine & leave your home smelling fresh",
+            "url": "shopify://collections/wipes",
+            "heading_tag": "h3",
+            "text_position": "place-self-end-start text-start",
+            "text_color": "#ffffff",
+            "overlay_color": "#1a1a1a",
+            "overlay_opacity": 15
+          }
+        },
+        "template--19202935619858__29eb21bf-ae72-415f-9b8e-771ecae14071-1686655418fe40a052-0": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "brooms",
+            "image": "shopify://shop_images/1_d789d6de-87b2-4359-a831-7c62b2320f24.png",
+            "subheading": "Brooms",
+            "title": "A sweep above the rest",
+            "url": "shopify://collections/brooms",
+            "heading_tag": "h3",
+            "text_position": "place-self-end-start text-start",
+            "text_color": "#ffffff",
+            "overlay_color": "#1a1a1a",
+            "overlay_opacity": 15
+          }
+        },
+        "e6282528-5c9c-4e66-aeb8-d48dd9169a2d": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "subheading": "Mops",
+            "title": "Polished to perfection",
+            "url": "shopify://collections/mops",
+            "heading_tag": "h3",
+            "text_position": "place-self-end-start text-start",
+            "text_color": "#ffffff",
+            "overlay_color": "#1a1a1a",
+            "overlay_opacity": 15
+          }
+        },
+        "f437d223-fd9d-484e-ae9c-9d21b3aed344": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "dustpans",
+            "image": "shopify://shop_images/3_2155716d-2407-4182-8446-732cbb906998.png",
+            "subheading": "Dustpans",
+            "title": "Bright on – Dust off",
+            "url": "shopify://collections/dustpans",
+            "heading_tag": "h3",
+            "text_position": "place-self-end-start text-start",
+            "text_color": "#ffffff",
+            "overlay_color": "#1a1a1a",
+            "overlay_opacity": 15
+          }
+        },
+        "71944290-fd21-4b03-aeb8-8ab73a3e4e31": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/microfiber_cloth_sano_brighttools1_1.jpg",
+            "subheading": "",
+            "title": "Microfiber Cloth",
+            "url": "shopify://collections/cloth",
+            "heading_tag": "h2",
+            "text_position": "place-self-end-start text-start",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#ffffff",
+            "overlay_opacity": 20
+          }
+        },
+        "1cad7435-4109-4785-b7d5-13bd98c03dc2": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "subheading": "",
+            "title": "Bundels",
+            "url": "shopify://collections/bundles",
+            "heading_tag": "h2",
+            "text_position": "place-self-end-start text-start",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#ffffff",
+            "overlay_opacity": 20
+          }
+        },
+        "3e1bd5a0-ea59-4ae3-99e9-26d2068f9d18": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/Your-paragraph-6-400x400.jpg",
+            "subheading": "",
+            "title": "Shop All",
+            "url": "shopify://collections",
+            "heading_tag": "h2",
+            "text_position": "place-self-end-start text-start",
+            "text_color": "#1a1a1a",
+            "overlay_color": "#ffffff",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_kJXjgn": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "toilet-brushes",
+            "image": "shopify://shop_images/toilet_brush_silicone_main1.jpg",
+            "subheading": "",
+            "title": "",
+            "url": "",
+            "heading_tag": "h2",
+            "text_position": "place-self-center text-center",
+            "text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "template--19202935619858__29eb21bf-ae72-415f-9b8e-771ecae14071-1686655418fe40a052-1",
+        "template--19202935619858__29eb21bf-ae72-415f-9b8e-771ecae14071-1686655418fe40a052-2",
+        "20181423-009d-418c-add8-907a0915d02c",
+        "template--19202935619858__29eb21bf-ae72-415f-9b8e-771ecae14071-1686655418fe40a052-0",
+        "e6282528-5c9c-4e66-aeb8-d48dd9169a2d",
+        "f437d223-fd9d-484e-ae9c-9d21b3aed344",
+        "71944290-fd21-4b03-aeb8-8ab73a3e4e31",
+        "1cad7435-4109-4785-b7d5-13bd98c03dc2",
+        "3e1bd5a0-ea59-4ae3-99e9-26d2068f9d18",
+        "collection_kJXjgn"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "stack_collections": false,
+        "collections_per_row_mobile": "1",
+        "collections_per_row": 3,
+        "show_progress_bar": false,
+        "subheading": "",
+        "title": "Shop The Range",
+        "content": "",
+        "link_url": "shopify://collections/all",
+        "link_text": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": ""
+      }
+    },
+    "mar26_best_sellers_7tLt6d": {
+      "type": "mar26-best-sellers",
+      "blocks": {
+        "product_Hgncmy": {
+          "type": "product",
+          "settings": {
+            "product": "moppy-shmoppy"
+          }
+        },
+        "product_KicnJR": {
+          "type": "product",
+          "settings": {
+            "product": "toilet-cleaner-for-the-water-tank-green-copy"
+          }
+        },
+        "product_PgLMgh": {
+          "type": "product",
+          "settings": {
+            "product": "japanese-rubber-broom-30cm-knuckle-joint"
+          }
+        },
+        "product_eARWMX": {
+          "type": "product",
+          "settings": {
+            "product": "glider-d-2-afc-magnetic-window-cleaner-2-18mm"
+          }
+        },
+        "product_cTgnmf": {
+          "type": "product",
+          "settings": {
+            "product": "professional-microfiber-cloth-2pk-xxl-80cmx60cm"
+          }
+        },
+        "product_Kxmn9X": {
+          "type": "product",
+          "settings": {
+            "product": "handheld-silicone-squeegee-copy"
+          }
+        },
+        "product_HQwpPz": {
+          "type": "product",
+          "settings": {
+            "product": "bright-squeegee-pack-copy"
+          }
+        },
+        "product_9ENVqp": {
+          "type": "product",
+          "settings": {
+            "product": "choose-your-bundle-of-3-packs-quick-mop-floor-wipes-1"
+          }
+        },
+        "product_6W9Tkm": {
+          "type": "product",
+          "settings": {
+            "product": "bright-broom-bundle-blue-edition"
+          }
+        },
+        "product_epWxnx": {
+          "type": "product",
+          "settings": {
+            "product": "high-window-cleaner"
+          }
+        }
+      },
+      "block_order": [
+        "product_Hgncmy",
+        "product_KicnJR",
+        "product_PgLMgh",
+        "product_eARWMX",
+        "product_cTgnmf",
+        "product_Kxmn9X",
+        "product_HQwpPz",
+        "product_9ENVqp",
+        "product_6W9Tkm",
+        "product_epWxnx"
+      ],
+      "disabled": true,
+      "name": "MAR26 Best Sellers",
+      "settings": {
+        "badge_text": "",
+        "primary_text": "Better Cleaning",
+        "highlight_text": "Best Sellers",
+        "autoplay_enabled": true,
+        "color_background": "#f8fafc",
+        "color_primary_text": "#0f172a",
+        "color_highlight": "#f81f2f",
+        "color_badge_text": "#64748b"
+      }
+    },
+    "mar26-highlights": {
+      "type": "mar26-highlights",
+      "blocks": {
+        "highlight-1": {
+          "type": "highlight_card",
+          "settings": {
+            "image": "shopify://shop_images/arms.png",
+            "bg_color": "#ffffff",
+            "color_text_1": "#000000",
+            "color_text_2": "#f81b27",
+            "top_title": "Heavy",
+            "gradient_title": "Duty",
+            "subtitle_1": "Pro-Grade Tools",
+            "subtitle_2": "for everyday messes."
+          }
+        },
+        "highlight-3": {
+          "type": "highlight_card",
+          "settings": {
+            "image": "shopify://shop_images/love-or-return.png",
+            "bg_color": "#ffc9cd",
+            "color_text_1": "#000000",
+            "color_text_2": "#f81b27",
+            "top_title": "Worry",
+            "gradient_title": "Free",
+            "subtitle_1": "Comprehensive warranty",
+            "subtitle_2": "on all core tools."
+          }
+        },
+        "highlight-2": {
+          "type": "highlight_card",
+          "settings": {
+            "image": "shopify://shop_images/2-year-warranty.png",
+            "bg_color": "#000000",
+            "color_text_1": "#ffffff",
+            "color_text_2": "#f81b27",
+            "top_title": "Zero",
+            "gradient_title": "Risk",
+            "subtitle_1": "Love it or send it back.",
+            "subtitle_2": "We make returns simple."
+          }
+        }
+      },
+      "block_order": [
+        "highlight-1",
+        "highlight-3",
+        "highlight-2"
+      ],
+      "settings": {
+        "section_subtitle": "PREMIUM STANDARDS",
+        "section_title_black": "Built",
+        "section_title_gradient": "Different.",
+        "section_grad_color_1": "#ff1423",
+        "section_grad_color_2": "#ff1423",
+        "color_background": "#f8fafc"
+      }
+    },
+    "mar26_testimonials_73q9Ud": {
+      "type": "mar26-testimonials",
+      "blocks": {
+        "testimonial_agixfB": {
+          "type": "testimonial",
+          "settings": {
+            "author": "James Anderson",
+            "country": "australia",
+            "content": "<p>The Japanese Rubber Broom changed how I handle large floor areas. It's indestructible.</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_KAnGUX": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Sarah Jenkins",
+            "country": "new_zealand",
+            "content": "<p>I've tried every cleaner on the market, but the Glider S-1 is the only one that delivers.</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_dARCyM": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Emma Watson",
+            "country": "australia",
+            "content": "<p>If you have a dog that sheds, you need these tools. It literally pulls fur out of carpets.</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_zm3YtV": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Michael Chen",
+            "country": "australia",
+            "content": "<p>The build quality is industrial-grade. Durability is honestly unmatched.</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_DbHRyQ": {
+          "type": "testimonial",
+          "settings": {
+            "author": "David Ross",
+            "country": "new_zealand",
+            "content": "<p>The Caravan Kit is brilliant. No buckets, no mess, stores away perfectly.</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_agixfB",
+        "testimonial_KAnGUX",
+        "testimonial_dARCyM",
+        "testimonial_zm3YtV",
+        "testimonial_DbHRyQ"
+      ],
+      "name": "MAR26 Testimonials",
+      "settings": {
+        "title": "What they're saying",
+        "subheading": "Join thousands already cleaning faster, easier, and better with BrightTools."
+      }
+    }
+  },
+  "order": [
+    "mar26_top_image",
+    "main",
+    "video_YxW6xG",
+    "rich_text_zi6Wjd",
+    "media_with_text_naB3qr",
+    "rich_text_DK3Upb",
+    "rich_text_c34qcP",
+    "rich_text_rXBMYU",
+    "rich_text_DNKLN4",
+    "rich_text_R6yrtQ",
+    "impact_text_J9CYCC",
+    "b5385aeb-4a34-4a6d-a487-108e7124135c",
+    "faq_W8bJFX",
+    "mar26_bundles_a3P3wM",
+    "blocks_BPWLPX",
+    "17768877856cc1fa17",
+    "5fb99d86-36b3-4859-9930-54cbc9dc88e9",
+    "29eb21bf-ae72-415f-9b8e-771ecae14071",
+    "mar26_best_sellers_7tLt6d",
+    "mar26-highlights",
+    "mar26_testimonials_73q9Ud"
+  ]
+}

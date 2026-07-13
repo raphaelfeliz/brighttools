@@ -1,0 +1,25 @@
+theme:
+  store: brighttools-au.myshopify.com
+  active_id: 180366573842
+  active_name: "[live] July 1 2026"
+  backup_id: 180462649618
+  backup_name: "Backup [LIVE] May 27 2026"
+  copy_id: 180483850514
+  copy_name: "Copy of [live] July 1 2026"
+
+git:
+  local_root: "C:\\code\\BrightTools"
+  remote: null
+  branch: "main"
+  head_commit: null
+
+components:
+  mar26-product-card-catalogv.liquid:
+    version: "1.5.4"
+    status: "synchronized"
+  mar26-catalog-engine.liquid:
+    version: "2.4.1"
+    status: "synchronized"
+  mar26-foundation.css.liquid:
+    version: "0.8.7"
+    status: "synchronized"

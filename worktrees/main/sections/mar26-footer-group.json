@@ -1,0 +1,73 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "footer": {
+      "type": "mar26-footer",
+      "blocks": {
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {
+            "image": "shopify://shop_images/BRIGHTTOOLS_-_LOGO_-_WHITE_AND_RED_-_NO_BACKGROUND.png",
+            "image_width": 180,
+            "heading_size": "h3",
+            "title": "Sign up for news, updates & 10% off your first order.",
+            "content": ""
+          }
+        },
+        "bfac4d52-ae58-4f6b-be04-f514ab8e92b7": {
+          "type": "links",
+          "settings": {
+            "menu": "shop",
+            "show_menu_title": true,
+            "menu_title": ""
+          }
+        },
+        "links": {
+          "type": "links",
+          "settings": {
+            "menu": "footer",
+            "show_menu_title": true,
+            "menu_title": ""
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "title": "Company",
+            "content": "<p><a href=\"/pages/about-us-1\" title=\"About Us\">About BrightTools</a></p><p></p><p><a href=\"mailto:info@brighttools.com.au\" target=\"_blank\">info@brighttools.com.au</a><br/>Call us: <a href=\"tel:1300246979\" target=\"_blank\">1300 246 979</a></p>",
+            "enable_follow_on_shop": true
+          }
+        }
+      },
+      "block_order": [
+        "newsletter",
+        "bfac4d52-ae58-4f6b-be04-f514ab8e92b7",
+        "links",
+        "text"
+      ],
+      "settings": {
+        "show_social_media": true,
+        "show_payment_icons": true,
+        "show_powered_by_shopify": true,
+        "show_policy_links": false,
+        "show_country_selector": true,
+        "show_country_flag": true,
+        "show_country_name": true,
+        "show_locale_selector": true
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

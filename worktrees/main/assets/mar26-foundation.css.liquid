@@ -1,0 +1,1210 @@
+/* 
+  MAR26 FOUNDATION CSS
+  ----------------------------------------------------------------------------------------------------------------------
+  VERSION: 0.8.7 - Add Sold out badge styling for catalogv cards
+  This file serves as the single source of truth for the MAR26 design system.
+  ----------------------------------------------------------------------------------------------------------------------
+*/
+
+:root {
+  --mar26-foundation-version: '0.8.7';
+
+  /* Official Brand Colors */
+  --mar26-clr-red: #f81b27;
+  --mar26-clr-teal: #13809e;
+  --mar26-clr-pink: #fba5ac;
+  --mar26-clr-blue: #3762a9;
+  --mar26-clr-purple: #9a69a7;
+  --mar26-clr-grey: #7c7c7c;
+  --mar26-clr-gold: #dcb335;
+  --mar26-clr-green: #8dc63f;
+
+  /* Legacy / Functional Tokens */
+  --mar26-clr-orange: #f05322;
+  --mar26-clr-navy: #002d5b;
+
+  /* 
+    1. PRIMITIVE TOKENS (Brand Color Palette)
+    These are raw color values. Do not use these directly in components.
+  */
+  --mar26-clr-black: #000000;
+  --mar26-clr-teal: #13809e;
+  --mar26-clr-pink: #fba5ac;
+  --mar26-clr-blue: #3762a9;
+  --mar26-clr-purple: #9a69a7;
+  --mar26-clr-grey: #7c7c7c;
+  --mar26-clr-light-pink: #fdc8cc;
+  --mar26-clr-yellow: #f9e504;
+  --mar26-clr-green: #8dc63f;
+  --mar26-clr-gold: #dcb335;
+  --mar26-clr-microfiber: #65b2a5;
+  --mar26-clr-products: #8daedc;
+  --mar26-clr-white: #ffffff;
+
+  /* 
+    2. SEMANTIC TOKENS (Collection Mapping)
+    These map categories to brand colors. Components should use these.
+  */
+  --mar26-color-dustpans: var(--mar26-clr-black);
+  --mar26-color-window-cleaners: var(--mar26-clr-teal);
+  --mar26-color-mops: var(--mar26-clr-pink);
+  --mar26-color-brooms: var(--mar26-clr-blue);
+  --mar26-color-wipes: var(--mar26-clr-purple);
+  --mar26-color-squeegees: var(--mar26-clr-grey);
+  --mar26-color-microfiber: var(--mar26-clr-microfiber);
+  --mar26-color-toilet-brush: var(--mar26-clr-gold);
+  --mar26-color-cleaning-products: var(--mar26-clr-products);
+
+  /* 
+    3. TYPOGRAPHY TOKENS 
+  */
+  --mar26-font-stack: "Montserrat", sans-serif;
+  
+  /* Primitive Weights */
+  --mar26-fw-medium: 500;
+  --mar26-fw-semibold: 600;
+  --mar26-fw-bold: 700;
+  --mar26-fw-extrabold: 800;
+
+  /* Semantic Mapping */
+  --mar26-font-weight-title: var(--mar26-fw-extrabold);
+  --mar26-font-weight-body: var(--mar26-fw-medium);
+  --mar26-font-weight-button: var(--mar26-fw-semibold);
+
+  /* 
+    4. SHADOW TOKENS (Omnidirectional)
+    Standardized glows for consistent depth across the theme.
+  */
+  --mar26-shadow-light:    0 0 10px rgba(0, 0, 0, 0.12);
+  --mar26-shadow-standard: 0 0 25px rgba(0, 0, 0, 0.18);
+  --mar26-shadow-stronger: 0 0 45px rgba(0, 0, 0, 0.15);
+
+  /* 
+    5. LAYOUT TOKENS 
+  */
+  --mar26-header-margin-bottom: 2.5rem;
+}
+
+/* 
+  4. GLOBAL UTILITY CLASSES 
+*/
+
+/* Global Section Titles (Standardized Heading) */
+.mar26-section-title {
+  font-family: var(--mar26-font-stack) !important;
+  font-weight: var(--mar26-font-weight-title) !important;
+  color: var(--mar26-clr-black);
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+  font-size: clamp(1.75rem, 4vw, 2.25rem); /* Standardized Section Size */
+  margin: 0;
+}
+
+.mar26-section-title--highlight {
+  color: var(--mar26-title-highlight-color, var(--mar26-clr-red));
+  display: inline-block;
+}
+
+.mar26-header {
+  margin-bottom: var(--mar26-header-margin-bottom);
+}
+
+.mar26-header--no-margin {
+  margin-bottom: 0 !important;
+}
+
+.mar26-title {
+  font-family: var(--mar26-font-stack) !important;
+  font-weight: var(--mar26-font-weight-title) !important;
+  color: var(--mar26-clr-black);
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+}
+
+/* Modifiers */
+.mar26-title--accent {
+  color: var(--mar26-clr-red) !important;
+}
+
+.mar26-title--dynamic {
+  color: var(--mar26-dynamic-accent) !important;
+}
+
+.mar26-pre-title {
+  font-family: var(--mar26-font-stack) !important;
+  font-weight: var(--mar26-font-weight-title) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: clamp(0.75rem, 1.2vw, 0.875rem); /* Enforced 12px floor */
+}
+
+.mar26-content, 
+.mar26-description {
+  font-family: var(--mar26-font-stack) !important;
+  font-weight: var(--mar26-font-weight-body) !important;
+  line-height: 1.6;
+}
+
+/* Modifiers */
+.mar26-text--accent {
+  color: var(--mar26-clr-red) !important;
+}
+
+.mar26-text--dynamic {
+  color: var(--mar26-dynamic-accent) !important;
+}
+
+/* Carousel Specifics */
+.mar26-carousel-card-title {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  height: 2.5rem !important; /* Mobile height */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-family: var(--mar26-font-stack) !important;
+  font-weight: var(--mar26-font-weight-button) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  z-index: 20;
+  transition: background-color 0.3s ease;
+}
+
+@media screen and (min-width: 700px) {
+  .mar26-carousel-card-title {
+    height: 3.5rem !important; /* Desktop height */
+    font-size: 1rem !important;
+  }
+}
+
+/* Bento & Big Tag System */
+.mar26-big-tag-text {
+  font-family: var(--mar26-font-stack) !important;
+  font-weight: 800 !important; /* ExtraBold */
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  font-size: clamp(1.75rem, 5vw, 3.5rem);
+  color: var(--mar26-big-tag-color, inherit);
+  margin: 0;
+}
+
+/* Big Tag Color Modifiers */
+.mar26-big-tag-text--red    { --mar26-big-tag-color: var(--mar26-clr-red); }
+.mar26-big-tag-text--teal   { --mar26-big-tag-color: var(--mar26-clr-teal); }
+.mar26-big-tag-text--blue   { --mar26-big-tag-color: var(--mar26-clr-blue); }
+.mar26-big-tag-text--pink   { --mar26-big-tag-color: var(--mar26-clr-pink); }
+.mar26-big-tag-text--purple { --mar26-big-tag-color: var(--mar26-clr-purple); }
+.mar26-big-tag-text--gold   { --mar26-big-tag-color: var(--mar26-clr-gold); }
+.mar26-big-tag-text--green  { --mar26-big-tag-color: var(--mar26-clr-green); }
+.mar26-big-tag-text--white  { --mar26-big-tag-color: var(--mar26-clr-white); }
+.mar26-big-tag-text--black  { --mar26-big-tag-color: var(--mar26-clr-black); }
+
+/* Component Specific Atoms */
+.mar26-tag-button,
+.mar26-tag-button * {
+  font-family: var(--mar26-font-stack) !important;
+  font-weight: 600 !important; /* SemiBold per brand rules */
+  text-transform: uppercase !important;
+}
+
+/* UI Elements (legacy) */
+.btn-mar26 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  font-family: var(--mar26-font-family);
+  font-weight: var(--mar26-font-weight-button);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-mar26-primary {
+  background-color: var(--mar26-clr-red);
+  color: var(--mar26-clr-white);
+  border: 2px solid var(--mar26-clr-red);
+}
+
+.btn-mar26-primary:hover {
+  background-color: transparent;
+  color: var(--mar26-clr-red);
+}
+
+/*
+  MAR26 BUTTON SYSTEM (m26-btn) — v2.0.0
+  ----------------------------------------------------------------------------------------------------------------------
+  Use via snippets/mar26-button.liquid. Do not use these classes directly in section HTML.
+*/
+.m26-btn {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--mar26-font-stack);
+  font-weight: var(--mar26-fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: filter 0.2s ease;
+  cursor: pointer;
+  line-height: 1;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.m26-btn:hover {
+  filter: brightness(1.1);
+}
+
+.m26-btn--no-hover:hover,
+html body .button.m26-btn--no-hover:hover,
+html body .button.m26-btn--no-hover:not([disabled]):hover,
+html body .button.m26-btn--no-hover:not([disabled]):not(.button--outline):hover {
+  background-color: var(--m26-btn-bg, #0f172a) !important;
+  color: var(--m26-btn-color, #ffffff) !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+/* Sizes */
+.m26-btn--big    { padding: 0.55rem 0.55rem 0.55rem 1.5rem; font-size: 1rem;   gap: 0.65rem; }
+.m26-btn--medium { padding: 0.45rem 0.45rem 0.45rem 1.25rem; font-size: 0.85rem; gap: 0.5rem; }
+.m26-btn--small  { padding: 0.25rem 0.25rem 0.25rem 0.75rem; font-size: 0.7rem;  gap: 0.35rem; }
+
+/* No-icon variants restore symmetric padding */
+.m26-btn--big.m26-btn--no-icon    { padding: 0.6rem 1.5rem; }
+.m26-btn--medium.m26-btn--no-icon { padding: 0.5rem 1.25rem; }
+.m26-btn--small.m26-btn--no-icon  { padding: 0.3rem 0.9rem; }
+
+/* Width Variations */
+.m26-btn--long {
+  width: 100% !important;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .m26-btn--long {
+    width: 42.5% !important;
+    min-width: 250px; /* Standardizing the 'long' footprint */
+  }
+}
+
+/* Outline modifier */
+.m26-btn--outline {
+  border: 2px solid #ffffff !important;
+}
+.m26-btn--outline:hover {
+  filter: brightness(1.05);
+}
+
+/* Icon Badge — circular pill at the right */
+.m26-btn__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color: transparent;
+  flex-shrink: 0;
+}
+
+.m26-btn--big    .m26-btn__icon { width: 1.85rem; height: 1.85rem; }
+.m26-btn--medium .m26-btn__icon { width: 1.45rem; height: 1.45rem; }
+.m26-btn--small  .m26-btn__icon { width: 1.1rem;  height: 1.1rem;  }
+
+.m26-btn__icon svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.m26-btn--big    .m26-btn__icon svg { width: 0.85rem; height: 0.85rem; stroke-width: 2; }
+.m26-btn--medium .m26-btn__icon svg { width: 0.7rem;  height: 0.7rem;  stroke-width: 2; }
+.m26-btn--small  .m26-btn__icon svg { width: 0.5rem;  height: 0.5rem;  stroke-width: 2; }
+
+/* Round Variation - Standardized v3.3.0 */
+.m26-btn--round {
+  border-radius: 9999px !important;
+  aspect-ratio: 1 / 1 !important;
+  padding: 0 !important;
+  justify-content: center !important;
+  align-items: center !important;
+  overflow: hidden !important;
+  flex-shrink: 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  display: inline-flex !important;
+}
+
+.m26-btn--round.m26-btn--big    { width: 56px !important; height: 56px !important; }
+.m26-btn--round.m26-btn--medium { width: 44px !important; height: 44px !important; }
+.m26-btn--round.m26-btn--small  { width: 32px !important; height: 32px !important; }
+
+/* 
+  MAR26 TAG PILL SYSTEM (Badge/Chip)
+  ----------------------------------------------------------------------------------------------------------------------
+*/
+.mar26-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-family: var(--mar26-font-stack);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: var(--mar26-shadow-light);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.mar26-tag-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/*
+  MAR26 PRODUCT SUMMARY
+  ----------------------------------------------------------------------------------------------------------------------
+  Shared content block for product cards and bundle cards. Section files should position this block, not restyle internals.
+*/
+.mar26-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.714rem;
+  min-height: 0;
+  text-align: left;
+}
+
+.mar26-summary__content,
+.mar26-summary__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.714rem;
+  min-width: 0;
+}
+
+.mar26-summary__text-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 0;
+}
+
+.mar26-summary__title {
+  color: var(--mar26-clr-black);
+  font-family: var(--mar26-font-stack);
+  font-size: 17px;
+  font-weight: var(--mar26-fw-extrabold);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.mar26-summary__description {
+  color: #6b7280;
+  font-family: var(--mar26-font-stack);
+  font-size: 12px;
+  font-weight: var(--mar26-font-weight-body);
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.mar26-product-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0 0 0.2rem;
+}
+
+.mar26-product-tag {
+  color: var(--mar26-clr-white);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 5px;
+  border-radius: 9999px;
+  box-shadow: var(--mar26-shadow-light);
+  font-family: var(--mar26-font-stack);
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.mar26-product-tag .mar26-tag-icon {
+  font-size: 11px;
+}
+
+.mar26-summary__rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+}
+
+.mar26-summary__stars {
+  display: flex;
+  color: var(--mar26-clr-red);
+  gap: 1.2px;
+}
+
+.mar26-summary__stars svg {
+  width: 14px;
+  height: 14px;
+}
+
+.mar26-summary__review-count {
+  color: #9ca3af;
+  font-family: var(--mar26-font-stack);
+  font-size: 11px;
+  font-weight: var(--mar26-fw-semibold);
+}
+
+.mar26-summary__price {
+  color: var(--mar26-clr-black);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-family: var(--mar26-font-stack);
+  font-size: 22.5px;
+  font-weight: var(--mar26-fw-extrabold);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.mar26-summary__price sale-price {
+  font-size: 1em !important;
+}
+
+.mar26-summary__price compare-at-price {
+  font-size: 0.75em !important;
+}
+
+.mar26-summary__price * {
+  white-space: nowrap;
+}
+
+.mar26-summary.is-title-long .mar26-summary__description {
+  display: none;
+}
+
+.mar26-summary.is-title-long .mar26-summary__title {
+  -webkit-line-clamp: 3;
+}
+
+/*
+  MAR26 PRODUCT CARD SYSTEM
+  ----------------------------------------------------------------------------------------------------------------------
+*/
+.mar26-card-wrapper {
+  background-color: var(--mar26-clr-white);
+  border-radius: 1.25rem;
+  padding: 0.75rem;
+  box-shadow: var(--mar26-shadow-standard);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.mar26-card-wrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--mar26-shadow-stronger);
+}
+
+.mar26-mobile-top-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.mar26-card-image-box {
+  width: 90px;
+  height: 90px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.mar26-card-image-box a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.mar26-product-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.mar26-card-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.mar26-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid #f3f4f6;
+  padding-top: 12px;
+}
+
+.mar26-pricing {
+  display: flex;
+  flex-direction: column;
+}
+
+.mar26-current-price {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--mar26-clr-black);
+}
+
+.mar26-current-price.is-promo {
+  color: #f81b27 !important; /* Promo Red (forced) */
+}
+
+.mar26-compare-price {
+  font-size: 14px;
+  text-decoration: line-through;
+  color: #4b5563; /* Dark Gray */
+}
+
+.mar26-actions-wrap {
+  display: flex;
+  gap: 8px;
+}
+
+.mar26-actions-wrap .mar26-add-btn-form {
+  margin: 0;
+}
+
+.mar26-add-btn,
+.mar26-view-btn {
+  padding: 8px 12px !important;
+  font-size: 12px !important;
+  border-radius: 8px !important;
+  font-weight: 800;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.mar26-add-btn {
+  background-color: var(--mar26-clr-red);
+  color: var(--mar26-clr-white);
+  border: none;
+}
+
+.mar26-view-btn {
+  background-color: var(--mar26-clr-white);
+  color: var(--mar26-clr-black);
+  border: 1px solid #e5e7eb;
+}
+
+/* Modifier: Grid-based Card (Always grid - e.g. for Best Sellers carousel) */
+.mar26-card--grid {
+  display: grid;
+  grid-template-rows: 246px 1fr auto;
+  row-gap: 1.2rem;
+  height: 100%;
+  min-height: 535px;
+}
+
+.mar26-card--grid .mar26-mobile-top-row {
+  display: contents;
+}
+
+.mar26-card--grid .mar26-card-image-box {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+}
+
+.mar26-card--grid .mar26-product-img {
+  width: auto;
+  height: 100%;
+}
+
+.mar26-card--grid .mar26-card-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.mar26-card--grid .mar26-card-content .mar26-summary {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.mar26-card--grid .mar26-summary__text-wrap {
+  height: 72px;
+  overflow: hidden;
+}
+
+.mar26-card--grid .mar26-summary__title {
+  line-height: 22px;
+  margin: 0;
+  min-height: 44px;
+  max-height: 66px;
+  -webkit-line-clamp: 3;
+}
+
+.mar26-card--grid .mar26-summary__description {
+  line-height: 18px;
+  height: 18px;
+  margin: 0;
+  -webkit-line-clamp: 1;
+}
+
+.mar26-card--grid .mar26-summary__meta {
+  margin-top: auto;
+}
+
+.mar26-card--grid .mar26-card-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-top: none;
+  padding-top: 0;
+}
+
+.mar26-card--grid .mar26-pricing {
+  display: none; /* Hidden on desktop/grid footer, shown in summary instead */
+}
+
+.mar26-card--grid .mar26-actions-wrap {
+  display: flex;
+  gap: 1.02rem;
+  width: 100%;
+}
+
+.mar26-card--grid .mar26-actions-wrap .mar26-add-btn-form,
+.mar26-card--grid .mar26-actions-wrap .mar26-view-btn {
+  flex: 1;
+  width: 50% !important;
+}
+
+.mar26-card--grid .mar26-add-btn,
+.mar26-card--grid .mar26-view-btn {
+  width: 100% !important;
+  padding: 10px !important;
+  font-size: 13px !important;
+  border-radius: 10px !important;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .mar26-card--grid {
+    grid-template-rows: 258px 1fr auto;
+  }
+}
+
+/* Modifier: Catalog Card (Row/Flex on mobile, Grid on desktop) */
+.mar26-card--catalog {
+  /* Inherits standard flex/column structure on mobile */
+  box-shadow: var(--mar26-shadow-light);
+}
+
+/* On mobile catalog card, hide the meta in summary to prevent duplicate pricing/rating */
+.mar26-card--catalog .mar26-summary--catalog .mar26-summary__meta {
+  display: none !important;
+}
+
+@media (min-width: 768px) {
+  .mar26-card--catalog {
+    display: grid;
+    grid-template-rows: 258px 1fr auto;
+    row-gap: 1.2rem;
+    height: 535px;
+    box-shadow: var(--mar26-shadow-standard) !important;
+  }
+  
+  .mar26-card--catalog .mar26-mobile-top-row {
+    display: contents;
+  }
+  
+  .mar26-card--catalog .mar26-card-image-box {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+  }
+  
+  .mar26-card--catalog .mar26-product-img {
+    width: auto;
+    height: 100%;
+  }
+  
+  .mar26-card--catalog .mar26-card-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  
+  .mar26-card--catalog .mar26-card-content .mar26-summary {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.714rem;
+  }
+  
+  /* Show rating and price on desktop, align to bottom */
+  .mar26-card--catalog .mar26-summary--catalog .mar26-summary__meta {
+    display: flex !important;
+    margin-top: auto;
+  }
+  
+  .mar26-card--catalog .mar26-card-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-top: none;
+    padding-top: 0;
+  }
+  
+  .mar26-card--catalog .mar26-pricing {
+    display: none; /* Hidden on desktop/grid footer, shown in summary instead */
+  }
+  
+  .mar26-card--catalog .mar26-actions-wrap {
+    display: flex;
+    gap: 1.02rem;
+    width: 100%;
+  }
+  
+  .mar26-card--catalog .mar26-actions-wrap .mar26-add-btn-form,
+  .mar26-card--catalog .mar26-actions-wrap .mar26-view-btn {
+    flex: 1;
+    width: 50% !important;
+  }
+  
+  .mar26-card--catalog .mar26-add-btn,
+  .mar26-card--catalog .mar26-view-btn {
+    width: 100% !important;
+    padding: 10px !important;
+    font-size: 13px !important;
+    border-radius: 10px !important;
+    justify-content: center;
+  }
+}
+
+/* 
+  MAR26 JUDGE.ME WIDGET INTEGRATION OVERRIDES
+  ----------------------------------------------------------------------------------------------------------------------
+  Overrides default Judge.me styling to match the Montserrat, 14px red-star design tokens of the March 2026 layouts.
+  Enforces an 18px min-height boundary on the preview badge to prevent layout shifts (CLS) when loading dynamically.
+*/
+.mar26-summary__rating .jdgm-widget.jdgm-preview-badge {
+  display: block !important;
+  min-height: 18px;
+  line-height: 1.2;
+}
+
+.mar26-summary__rating .jdgm-star {
+  color: var(--mar26-clr-red) !important;
+  font-size: 14px !important;
+  margin-right: 1.2px !important;
+}
+
+.mar26-summary__rating .jdgm-prev-badge__text {
+  color: #9ca3af !important;
+  font-family: var(--mar26-font-stack) !important;
+  font-size: 11px !important;
+  font-weight: var(--mar26-fw-semibold) !important;
+  margin-left: 5px !important;
+}
+
+/* 
+  MAR26 CATALOG VERSION CARD VARIATION (catalogv)
+  ----------------------------------------------------------------------------------------------------------------------
+*/
+.mar26-card-catalogv-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  text-align: left;
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .mar26-card-catalogv-wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+.mar26-card-catalogv-image-box {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: var(--mar26-clr-white);
+  border-radius: 1.8rem;
+  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.18), 0 8px 16px -5px rgba(0,0,0,0.1);
+  border: 1px solid rgba(241, 245, 249, 0.5);
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .mar26-card-catalogv-image-box {
+    border-radius: 2rem;
+  }
+}
+
+.mar26-card-catalogv-image-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.mar26-card-catalogv-image-box .mar26-product-img {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+/* Sold out badge - top-left corner */
+.mar26-card-catalogv-badge-sold-out {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 5;
+  background-color: #dbdbdb;
+  color: #333333;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-family: var(--mar26-font-stack);
+  font-size: 11px;
+  font-weight: var(--mar26-fw-bold);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/* Red circle button overlay - bottom-right corner */
+.mar26-card-catalogv-cta {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  z-index: 5;
+}
+
+.mar26-card-catalogv-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f81b27;
+  color: var(--mar26-clr-white);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(248, 27, 39, 0.4);
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  padding: 0;
+}
+
+.mar26-card-catalogv-btn:hover:not([disabled]) {
+  transform: scale(1.08);
+  background-color: #d6121d;
+  box-shadow: 0 6px 14px rgba(248, 27, 39, 0.6);
+}
+
+.mar26-card-catalogv-btn[disabled] {
+  background-color: #cccccc;
+  color: #666666;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* Info container */
+.mar26-card-catalogv-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-grow: 1;
+  margin-top: 1rem;
+  padding: 0 0.25rem;
+}
+
+/* Text group wrapper (locked height for 3 rows) */
+.mar26-card-catalogv-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: 78px;
+  overflow: hidden;
+}
+
+/* Row 1: Product Title (Default 1-line clamp) */
+.mar26-card-catalogv-row-1 {
+  height: 22px;
+  overflow: hidden;
+}
+
+.mar26-card-catalogv-title {
+  font-family: var(--mar26-font-stack);
+  font-size: 15px;
+  font-weight: var(--mar26-fw-extrabold);
+  color: var(--mar26-clr-black);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 22px;
+  line-height: 22px;
+}
+
+.mar26-card-catalogv-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Row 2: Short Description (Default 1-line clamp) */
+.mar26-card-catalogv-row-2 {
+  height: 22px;
+  overflow: hidden;
+}
+
+.mar26-card-catalogv-desc {
+  font-family: var(--mar26-font-stack);
+  font-size: 12px;
+  font-weight: var(--mar26-font-weight-body);
+  color: #6b7280;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 22px;
+  line-height: 22px;
+}
+
+/* Row 3: Badges / Tags */
+.mar26-card-catalogv-row-3 {
+  height: 26px;
+  overflow: hidden;
+}
+
+.mar26-card-catalogv-badge-row {
+  height: 26px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.mar26-card-catalogv-badge-row .mar26-product-tags {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 4px;
+  overflow: hidden;
+  height: 20px;
+}
+
+.mar26-card-catalogv-badge-row .mar26-product-tag {
+  padding: 3px 5px !important;
+  font-weight: var(--mar26-fw-bold, bold) !important;
+}
+
+.mar26-card-catalogv-badge-row .mar26-product-tag .mar26-tag-icon {
+  font-size: 11px !important;
+}
+
+/* Dynamic Fallback Row Class Overrides */
+.mar26-card-catalogv-text-group.has-2-lines .mar26-card-catalogv-row-1 {
+  overflow: visible;
+}
+.mar26-card-catalogv-text-group.has-2-lines .mar26-card-catalogv-title {
+  -webkit-line-clamp: 2;
+  height: 48px;
+}
+.mar26-card-catalogv-text-group.has-2-lines .mar26-card-catalogv-row-2 .mar26-card-catalogv-desc {
+  display: none !important;
+}
+
+.mar26-card-catalogv-text-group.has-3-lines .mar26-card-catalogv-row-1,
+.mar26-card-catalogv-text-group.has-3-lines .mar26-card-catalogv-row-2 {
+  overflow: visible;
+}
+.mar26-card-catalogv-text-group.has-3-lines .mar26-card-catalogv-title {
+  -webkit-line-clamp: 3;
+  height: 78px;
+}
+.mar26-card-catalogv-text-group.has-3-lines .mar26-card-catalogv-row-2 .mar26-card-catalogv-desc,
+.mar26-card-catalogv-text-group.has-3-lines .mar26-card-catalogv-row-3 .mar26-card-catalogv-badge-row {
+  display: none !important;
+}
+
+/* Row 4: Ratings & Judge.me widget overrides */
+.mar26-card-catalogv-row-4 {
+  height: 20px;
+  overflow: hidden;
+}
+
+.mar26-card-catalogv-ratings {
+  white-space: nowrap;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  height: 20px;
+}
+
+.mar26-card-catalogv-ratings .jdgm-widget.jdgm-preview-badge {
+  display: block !important;
+  min-height: 18px;
+  line-height: 1.2;
+}
+
+.mar26-card-catalogv-ratings .jdgm-star {
+  color: var(--mar26-clr-red) !important;
+  font-size: 14px !important;
+  margin-right: 1.2px !important;
+}
+
+.mar26-card-catalogv-ratings .jdgm-prev-badge__text {
+  color: #9ca3af !important;
+  font-family: var(--mar26-font-stack) !important;
+  font-size: 11px !important;
+  font-weight: var(--mar26-fw-semibold) !important;
+  margin-left: 5px !important;
+}
+
+/* Fallback stars styling scoped to catalogv */
+.mar26-card-catalogv-ratings .mar26-summary__stars {
+  display: flex;
+  color: var(--mar26-clr-red);
+  gap: 1.2px;
+  align-items: center;
+}
+
+.mar26-card-catalogv-ratings .mar26-summary__stars svg {
+  width: 14px;
+  height: 14px;
+}
+
+.mar26-card-catalogv-ratings .mar26-summary__review-count {
+  color: #9ca3af;
+  font-family: var(--mar26-font-stack);
+  font-size: 11px;
+  font-weight: var(--mar26-fw-semibold);
+  margin-left: 5px;
+}
+
+/* Row 5: Pricing */
+.mar26-card-catalogv-row-5 {
+  height: 28px; /* Increased to prevent cropping */
+  overflow: hidden;
+}
+
+.mar26-card-catalogv-pricing {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: auto;
+  font-family: var(--mar26-font-stack);
+  font-size: 22px; /* Increased by 2px */
+  font-weight: var(--mar26-fw-extrabold);
+  color: var(--mar26-clr-black);
+  height: 28px; /* Increased */
+  line-height: 28px; /* Increased */
+}
+
+.mar26-card-catalogv-pricing .mar26-current-price {
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+.mar26-card-catalogv-pricing .mar26-compare-price {
+  font-size: 15px; /* Increased by 2px */
+  text-decoration: line-through;
+  color: #4b5563; /* Dark Gray */
+  font-weight: var(--mar26-fw-semibold);
+}
+
+/* Mobile responsive optimizations for Catalogv Card when side-by-side */
+@media (max-width: 480px) {
+  .mar26-card-catalogv-pricing {
+    font-size: 18px !important;
+    height: 24px !important;
+    line-height: 24px !important;
+  }
+  .mar26-card-catalogv-pricing .mar26-compare-price {
+    font-size: 13px !important;
+  }
+  .mar26-card-catalogv-image-box {
+    padding: 8px !important;
+    border-radius: 1.2rem !important;
+  }
+  .mar26-card-catalogv-badge-sold-out {
+    top: 8px;
+    left: 8px;
+    font-size: 9px !important;
+    padding: 3px 8px !important;
+  }
+  .mar26-card-catalogv-title {
+    font-size: 13px !important;
+  }
+  .mar26-card-catalogv-desc {
+    font-size: 11px !important;
+  }
+}

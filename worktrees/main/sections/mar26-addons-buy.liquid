@@ -1,0 +1,304 @@
+{%- comment -%}
+----------------------------------------------------------------------------------------------------------------------
+MAR26 ADDONS BUY SECTION
+VERSION: 1.0.3
+Dedicated section for interactive buy blocks, separated from the main product info.
+----------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+
+<style>
+  #shopify-section-{{ section.id }} {
+    --section-vertical-spacing-block-start: 0px !important;
+    --section-vertical-spacing-block-end: 0px !important;
+    --section-spacing-block-start: 0px !important;
+    --section-spacing-block-end: 0px !important;
+    margin: 0 !important;
+    padding: 0 15px !important;
+  }
+
+  #shopify-section-{{ section.id }} .mar26-addons-buy {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: flex-end;
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: auto !important;
+  }
+  
+  #shopify-section-{{ section.id }} .mar26-addons-buy > * {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  
+  /* Make sure the buy button container pushes to the right */
+  #shopify-section-{{ section.id }} .mar26-addons-buy > .mar26-buy-buttons-wrapper {
+    margin-left: auto;
+    flex: 1 1 300px;
+  }
+
+  /* Wide blocks */
+  #shopify-section-{{ section.id }} .mar26-addons-buy > .mar26-wide-block {
+    flex-basis: 100%;
+  }
+
+</style>
+
+<div class="section-full">
+  {%- assign product_form_id = 'product-form-' | append: section.id | append: '-' | append: product.id -%}
+
+  <product-info class="mar26-addons-buy">
+      
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when '@app' -%}
+          <div class="mar26-wide-block" {{ block.shopify_attributes }}>
+            {%- render block -%}
+          </div>
+
+        {%- when 'variant_picker' -%}
+          <div class="product-info__block-item" {{ block.shopify_attributes }}>
+            <div class="product-info__variant-picker">
+              {%- render 'variant-picker', 
+                product: product, 
+                form_id: product_form_id,
+                update_url: true, 
+                hide_sold_out_variants: block.settings.hide_sold_out_variants, 
+                block: block 
+              -%}
+            </div>
+          </div>
+
+        {%- when 'quantity_selector' -%}
+          <div class="product-info__block-item" {{ block.shopify_attributes }}>
+            <div class="product-info__quantity-selector">
+              <div class="form-control">
+                <label for="{{ product_form_id }}-quantity" class="block-label text-subdued">{{- 'product.quantity.label' | t -}}:</label>
+                <quantity-selector class="quantity-selector">
+                  <button type="button" class="quantity-selector__button" aria-label="{{ 'product.quantity.decrease_quantity' | t }}">{% render 'icon' with 'minus', width: 10, height: 2 %}</button>
+                  <input id="{{ product_form_id }}-quantity" type="text" is="quantity-input" inputmode="numeric" class="quantity-selector__input" name="quantity" form="{{ product_form_id }}" size="2" value="1" autocomplete="off">
+                  <button type="button" class="quantity-selector__button" aria-label="{{ 'product.quantity.increase_quantity' | t }}">{% render 'icon' with 'plus', width: 10, height: 10 %}</button>
+                </quantity-selector>
+              </div>
+            </div>
+          </div>
+
+        {%- when 'mar26_quantity_price' -%}
+          {%- assign main_form_exists = true -%}
+          <div class="product-info__block-item" {{ block.shopify_attributes }}>
+            {%- render 'mar26-quantity-buy', product: product, product_form_id: product_form_id, block: block -%}
+          </div>
+
+        {%- when 'buy_buttons' -%}
+          {%- assign main_form_exists = true -%}
+          <div class="mar26-buy-buttons-wrapper" {{ block.shopify_attributes }}>
+            <div class="product-info__buy-buttons" style="width: 100%;">
+              {%- render 'buy-buttons', product: product, form_id: product_form_id, show_payment_button: block.settings.show_payment_button, show_gift_card_recipient: block.settings.show_gift_card_recipient, atc_button_background: block.settings.atc_button_background, atc_button_text_color: block.settings.atc_button_text_color, payment_button_background: block.settings.payment_button_background, payment_button_text_color: block.settings.payment_button_text_color -%}
+            </div>
+          </div>
+
+        {%- when 'associated_products' -%}
+          <div class="mar26-wide-block" {{ block.shopify_attributes }}>
+            <product-recommendations class="block" product="{{ product.id }}" limit="{{ block.settings.products_count }}" intent="complementary">
+              {%- if recommendations.performed and recommendations.products_count > 0 -%}
+                <div class="product-info__complementary-products v-stack gap-3 sm:gap-4">
+                  {%- assign carousel_id = 'carousel-' | append: block.id -%}
+                  {%- if block.settings.title != blank or block.settings.stack_products == false and recommendations.products_count > 1 -%}
+                    <div class="h-stack justify-between gap-4">
+                      {%- if block.settings.title != blank -%}<p>{{ block.settings.title | escape }}</p>{%- endif -%}
+                    </div>
+                  {%- endif -%}
+                  {%- capture horizontal_products -%}
+                    {%- for associated_product in recommendations.products -%}
+                      {%- render 'horizontal-product', product: associated_product, show_add_to_cart: true, background: block.settings.background, text_color: block.settings.text_color -%}
+                    {%- endfor -%}
+                  {%- endcapture -%}
+                  {%- assign horizontal_products_blends = true -%}
+                  {%- assign section_background = section.settings.background_gradient | default: section.settings.background | default: settings.background -%}
+                  {%- if block.settings.background != 'rgba(0,0,0,0)' and block.settings.background != blank and block.settings.background != section_background -%}
+                    {%- assign horizontal_products_blends = false -%}
+                  {%- endif -%}
+                  {%- if block.settings.stack_products -%}
+                    <div class="horizontal-product-list {% if horizontal_products_blends %}border divide-y rounded-xs{% else %}separate{% endif %}">
+                      {{- horizontal_products -}}
+                    </div>
+                  {%- else -%}
+                    <scroll-carousel selector=".horizontal-product" id="{{ carousel_id }}" class="horizontal-product-list-carousel {% unless horizontal_products_blends %}separate{% endunless %} scroll-area bleed sm:unbleed">
+                      <div class="horizontal-product-list {% if horizontal_products_blends %}divide-x{% else %}separate{% endif %}">
+                        {{- horizontal_products -}}
+                      </div>
+                    </scroll-carousel>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            </product-recommendations>
+          </div>
+      {%- endcase -%}
+    {%- endfor -%}
+
+    {%- unless main_form_exists -%}
+      {%- form 'product', product, id: product_form_id, hidden: true -%}
+        <input type="hidden" disabled name="id" value="{{ product.selected_or_first_available_variant.id }}">
+      {%- endform -%}
+    {%- endunless -%}
+
+  </product-info>
+</div>
+
+{% schema %}
+{
+  "name": "MAR26 Addons Grid",
+  "class": "shopify-section--mar26-addons-buy",
+  "tag": "section",
+  "templates": ["product"],
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "variant_picker",
+      "name": "Variant picker",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "hide_sold_out_variants",
+          "label": "Hide sold out variants",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "quantity_selector",
+      "name": "Quantity selector",
+      "limit": 1
+    },
+    {
+      "type": "mar26_quantity_price",
+      "name": "MAR26 Quantity + Buy",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_payment_button",
+          "label": "Show dynamic checkout button",
+          "default": true
+        },
+        {
+          "type": "color",
+          "id": "atc_button_background",
+          "label": "Add to cart background"
+        },
+        {
+          "type": "color",
+          "id": "atc_button_text_color",
+          "label": "Add to cart color"
+        },
+        {
+          "type": "color",
+          "id": "payment_button_background",
+          "label": "Dynamic checkout background"
+        },
+        {
+          "type": "color",
+          "id": "payment_button_text_color",
+          "label": "Dynamic checkout color"
+        }
+      ]
+    },
+    {
+      "type": "buy_buttons",
+      "name": "Buy buttons",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_payment_button",
+          "label": "Show dynamic checkout button",
+          "default": true
+        },
+        {
+          "type": "color",
+          "id": "atc_button_background",
+          "label": "Add to cart background"
+        },
+        {
+          "type": "color",
+          "id": "atc_button_text_color",
+          "label": "Add to cart color"
+        }
+      ]
+    },
+    {
+      "type": "associated_products",
+      "name": "Complementary products",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Buy it with"
+        },
+        {
+          "type": "checkbox",
+          "id": "stack_products",
+          "label": "Stack products",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "products_count",
+          "min": 1,
+          "max": 10,
+          "label": "Products to show",
+          "default": 5
+        },
+        {
+          "type": "color",
+          "id": "background",
+          "label": "Background"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background"
+    },
+    {
+      "type": "color_background",
+      "id": "background_gradient",
+      "label": "Background gradient"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "MAR26 Addons Grid",
+      "blocks": [
+        { "type": "variant_picker" },
+        { "type": "mar26_quantity_price" }
+      ]
+    }
+  ]
+}
+{% endschema %}

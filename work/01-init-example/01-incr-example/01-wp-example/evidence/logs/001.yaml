@@ -1,0 +1,8 @@
+step_id: 1
+task_ref: "01. Replace this example with real work"
+type: check
+action: "Inspecting example project layout"
+status: success
+result_summary: "Confirmed the initial layout files are established."
+output_ref: ""
+learning: ""

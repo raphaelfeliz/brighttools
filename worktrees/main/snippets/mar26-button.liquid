@@ -1,0 +1,89 @@
+{%- comment -%}
+  ------------------------------------------------------------------------------------------------------------------------
+  MAR26 BUTTON SNIPPET — v2.4.0
+  ------------------------------------------------------------------------------------------------------------------------
+  Renders a standardized brand button using the .m26-btn CSS system.
+  Base CSS lives in: assets/mar26-foundation.css.liquid (globally loaded)
+
+  Parameters:
+    href            {String}   — Link target URL. Defaults to '#'.
+    text            {String}   — Button label text.
+    size            {String}   — 'big' | 'medium' | 'small'. Defaults to 'medium'.
+    bg_color        {String}   — Hex color for button background (e.g. '#0f172a'). Overrides class-based color.
+    text_color      {String}   — 'white' | 'black'. Defaults to 'white'.
+    outline         {Boolean}  — Pass true to add 2px solid white border.
+    width           {String}   — 'standard' | 'long'. Defaults to 'standard'.
+    icon            {String}   — 'right' | 'left' | 'no'. Defaults to 'no'.
+    class           {String}   — Extra modifier classes. Optional.
+    hover_activate  {Boolean}  — Pass false to disable hover transitions. Defaults to true.
+  ------------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+{%- liquid
+  assign btn_size       = size       | default: 'medium'
+  assign btn_text_color = text_color | default: 'white'
+  assign btn_icon       = icon       | default: 'no'
+  assign btn_width      = width      | default: 'standard'
+  assign btn_class      = class      | default: ''
+
+  assign btn_hover_activate = true
+  if hover_activate == false
+    assign btn_hover_activate = false
+  endif
+
+  if btn_text_color == 'black'
+    assign btn_text_hex = '#000000'
+  else
+    assign btn_text_hex = '#ffffff'
+  endif
+
+  assign btn_bg = bg_color | default: '#0f172a'
+
+  assign btn_outline_style = ''
+  if outline
+    assign btn_outline_style = 'border: 2px solid #ffffff;'
+  endif
+
+  assign btn_hover_class = ''
+  if btn_hover_activate == false
+    assign btn_hover_class = 'm26-btn--no-hover'
+  endif
+-%}
+
+{%- if btn_icon == 'no' -%}
+  {%- assign btn_no_icon_class = 'm26-btn--no-icon' -%}
+{%- else -%}
+  {%- assign btn_no_icon_class = '' -%}
+{%- endif -%}
+
+{%- if btn_width == 'long' -%}
+  {%- assign btn_width_class = 'm26-btn--long' -%}
+{%- else -%}
+  {%- assign btn_width_class = '' -%}
+{%- endif -%}
+
+<a
+  href="{{ href | default: '#' }}"
+  class="button m26-btn m26-btn--{{ btn_size }} {{ btn_no_icon_class }} {{ btn_width_class }} {{ btn_hover_class }} {{ btn_class }}"
+  style="background-color: {{ btn_bg }}; color: {{ btn_text_hex }}; --m26-btn-bg: {{ btn_bg }}; --m26-btn-color: {{ btn_text_hex }}; {{ btn_outline_style }}"
+>
+
+  {%- if btn_icon == 'left' -%}
+    <span class="m26-btn__icon" aria-hidden="true">
+      <svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6.5 2.5L3.5 5l3 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+  {%- endif -%}
+
+  <span class="m26-btn__text">{{- text -}}</span>
+
+  {%- if btn_icon == 'right' -%}
+    <span class="m26-btn__icon" aria-hidden="true">
+      <svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.5 2.5L6.5 5l-3 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+  {%- endif -%}
+
+</a>

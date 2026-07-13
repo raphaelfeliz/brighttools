@@ -1,0 +1,617 @@
+{%- comment -%}
+----------------------------------------------------------------------------------------------------------------------
+MAR26 WHAT'S INCLUDED
+VERSION: 1.2.0 - Architectural Hardening
+----------------------------------------------------------------------------------------------------------------------
+A grid-based "What's Included" section with pre-title, dual-tone heading (black +
+gradient), subheading, and per-block cards with image, title, description, and up
+to 3 optional spec lines. Cards are equal-height with text truncation.
+{%- endcomment -%}
+
+<script>
+  console.log("MAR26 What's Included - Version: 1.2.0");
+</script>
+
+<style>
+  #shopify-section-{{ section.id }} {
+    padding: 30px 0 !important;
+    background-color: #f8fafc;
+    margin: 0 !important;
+  }
+  #shopify-section-{{ section.id }} .mar26-included-sec {
+    position: relative;
+    background-color: transparent;
+    padding: 0 1.25rem !important; /* Standardized Mobile Gutters (20px) */
+    overflow: hidden;
+  }
+  @media (min-width: 640px) { #shopify-section-{{ section.id }} .mar26-included-sec { padding: 0 1.5rem !important; } }
+  @media (min-width: 1024px) { #shopify-section-{{ section.id }} .mar26-included-sec { padding: 0 2rem !important; } }
+
+  #shopify-section-{{ section.id }} .mar26-included-grain {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.03;
+    z-index: 1;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  #shopify-section-{{ section.id }} .mar26-included-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  #shopify-section-{{ section.id }} .mar26-included-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  #shopify-section-{{ section.id }} .mar26-included-pretitle {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin: 0 0 1rem 0;
+  }
+
+  #shopify-section-{{ section.id }} .mar26-included-heading {
+    font-size: 2.25rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    color: #0f172a;
+    margin: 0 0 1.5rem 0;
+  }
+  @media (min-width: 768px) {
+    #shopify-section-{{ section.id }} .mar26-included-heading { font-size: 3rem; }
+  }
+
+  #shopify-section-{{ section.id }} .mar26-included-heading-gradient {
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  #shopify-section-{{ section.id }} .mar26-included-subheading {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #475569;
+    margin: 0;
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Grid */
+  #shopify-section-{{ section.id }} .mar26-included-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1.5rem;
+    justify-content: center; /* Center align cards when fewer than full capacity */
+  }
+  @media (min-width: 640px) {
+    #shopify-section-{{ section.id }} .mar26-included-grid { 
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+      max-width: 100%;
+    }
+  }
+  @media (min-width: 1024px) {
+    #shopify-section-{{ section.id }} .mar26-included-grid--3 { 
+      grid-template-columns: repeat(auto-fit, minmax(320px, 380px)); 
+    }
+    #shopify-section-{{ section.id }} .mar26-included-grid--4 { 
+      grid-template-columns: repeat(auto-fit, minmax(280px, 320px)); 
+    }
+  }
+
+  /* Card */
+  #shopify-section-{{ section.id }} .mar26-included-card {
+    background-color: #ffffff;
+    border: none !important; 
+    border-radius: 1.25rem; /* 20px standard */
+    position: relative;
+    overflow: visible; 
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 0 8px 15px -8px rgba(0,0,0,0.1) !important; /* MAR26 Standard Shadow */
+  }
+
+  /* Sidekick Accent Bar */
+  #shopify-section-{{ section.id }} .mar26-included-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    left: -6px; /* The sidekick thickness */
+    z-index: -1;
+    background-color: var(--mar26-included-outline, #e2e8f0);
+    border-radius: 1.25rem;
+  }
+
+  /* Image Absolute Container Removed - Hover Logic below removed */
+
+  /* Card Image */
+  #shopify-section-{{ section.id }} .mar26-included-card-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    border-top-left-radius: 1.25rem;
+    border-top-right-radius: 1.25rem;
+  }
+  #shopify-section-{{ section.id }} .mar26-included-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px; /* Geometric Nesting Standard */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+
+  #shopify-section-{{ section.id }} .mar26-included-card-img-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: #94a3b8;
+  }
+  #shopify-section-{{ section.id }} .mar26-included-card-img-placeholder svg {
+    width: 48px;
+    height: 48px;
+    opacity: 0.5;
+  }
+
+  /* Card Body */
+  #shopify-section-{{ section.id }} .mar26-included-card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  #shopify-section-{{ section.id }} .mar26-included-card-badge {
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #e11d48;
+    background-color: #fff1f2;
+    border: 1px solid #fecdd3;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    display: inline-block;
+    width: max-content;
+    margin-bottom: 0.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .mar26-included-card-name {
+    font-size: 1.25rem;
+    font-weight: 800; /* Standardized Boldness */
+    font-family: var(--heading-font-family, "Montserrat", sans-serif);
+    color: #0f172a;
+    line-height: 1.2;
+    margin: 0 0 0.5rem 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} .mar26-included-card-desc {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #475569;
+    line-height: 1.6;
+    margin: 0 0 1.5rem 0;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  #shopify-section-{{ section.id }} .mar26-included-card-desc p { margin: 0; }
+
+  /* Specs */
+  #shopify-section-{{ section.id }} .mar26-included-card-specs {
+    border-top: 1px solid #f1f5f9;
+    padding-top: 1rem;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .mar26-included-spec {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+    overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} .mar26-included-spec svg {
+    width: 1rem;
+    height: 1rem;
+    color: #3b82f6;
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} .mar26-included-spec span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* MOBILE-ONLY: Horizontal High-Density Cards */
+  @media (max-width: 639px) {
+    #shopify-section-{{ section.id }} .mar26-included-card {
+      flex-direction: row !important;
+      height: auto !important;
+      min-height: 110px !important;
+      align-items: stretch !important;
+    }
+    #shopify-section-{{ section.id }} .mar26-included-card-img {
+      width: 110px !important;
+      height: auto !important;
+      flex: 0 0 110px !important;
+      aspect-ratio: auto !important;
+      padding: 5px !important;
+      background-color: #ffffff !important;
+      border-top-left-radius: 1.25rem !important;
+      border-bottom-left-radius: 1.25rem !important;
+      border-top-right-radius: 0 !important;
+    }
+    #shopify-section-{{ section.id }} .mar26-included-card-body {
+      padding: 0.75rem 1rem !important;
+      justify-content: center !important;
+      flex: 1 1 auto !important;
+    }
+    #shopify-section-{{ section.id }} .mar26-included-card-badge {
+       display: none !important;
+    }
+    #shopify-section-{{ section.id }} .mar26-included-card-name {
+      font-size: 0.93rem !important;
+      margin-bottom: 0.25rem !important;
+    }
+    #shopify-section-{{ section.id }} .mar26-included-card-desc {
+      font-size: 0.8rem !important;
+      -webkit-line-clamp: 2 !important;
+      margin-bottom: 0 !important;
+    }
+    #shopify-section-{{ section.id }} .mar26-included-card-specs {
+      display: none !important; /* Hide specs on mobile for extreme density */
+    }
+  }
+</style>
+
+{%- liquid
+  assign meta_items = product.metafields.custom.mar26_included_items.value
+  assign has_meta_items = false
+  if meta_items != blank and meta_items.count > 0
+    assign has_meta_items = true
+  endif
+
+  assign pre_title = product.metafields.custom.mar_26_included_pre_title.value | default: section.settings.pre_title
+  assign heading_main = product.metafields.custom.mar_26_included_heading.value | default: section.settings.black_title
+  assign subheading = product.metafields.custom.mar_26_included_subheading.value | default: section.settings.subheading
+
+  assign show_section = false
+  if has_meta_items or section.blocks.size > 0
+    assign show_section = true
+  endif
+-%}
+
+{%- if show_section -%}
+<section class="mar26-included-sec">
+  <div class="mar26-included-grain"></div>
+
+  <div class="mar26-included-inner">
+    <header class="mar26-included-header">
+      {%- if pre_title != blank -%}
+        <p class="mar26-included-pretitle" style="color: {{ section.settings.pre_title_color }};">{{ pre_title | escape }}</p>
+      {%- endif -%}
+
+      {%- if heading_main != blank or section.settings.gradient_title != blank -%}
+        <h2 class="mar26-included-heading">
+          {%- if heading_main != blank -%}
+            {{ heading_main | escape }}
+          {%- endif -%}
+          {%- if section.settings.gradient_title != blank -%}
+            {{ ' ' }}<span class="mar26-included-heading-gradient" style="background-image: linear-gradient(to right, {{ section.settings.gradient_left_color }}, {{ section.settings.gradient_right_color }}); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent;">{{ section.settings.gradient_title | escape }}</span>
+          {%- endif -%}
+        </h2>
+      {%- endif -%}
+
+      {%- if subheading != blank -%}
+        <p class="mar26-included-subheading">{{ subheading | escape }}</p>
+      {%- endif -%}
+    </header>
+
+    <div class="mar26-included-grid mar26-included-grid--{{ section.settings.columns }}">
+      {%- if has_meta_items -%}
+        {%- for item in meta_items -%}
+          <div class="mar26-included-card" style="--mar26-included-outline: {{ section.settings.outline_color }};">
+            <div class="mar26-included-card-img">
+              {%- if item.image != blank -%}
+                <img
+                  src="{{ item.image | image_url: width: 600 }}"
+                  alt="{{ item.title | escape }}"
+                  width="600"
+                  height="600"
+                  loading="lazy"
+                >
+              {%- else -%}
+                <div class="mar26-included-card-img-placeholder">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                </div>
+              {%- endif -%}
+            </div>
+
+            <div class="mar26-included-card-body">
+              <span class="mar26-included-card-badge">Included</span>
+
+              {%- if item.title != blank -%}
+                <h3 class="mar26-included-card-name">{{ item.title | escape }}</h3>
+              {%- endif -%}
+
+              {%- if item.description != blank -%}
+                <div class="mar26-included-card-desc">{{ item.description }}</div>
+              {%- endif -%}
+
+              {%- if item.spec_1 != blank or item.spec_2 != blank or item.spec_3 != blank -%}
+                <div class="mar26-included-card-specs">
+                  {%- if item.spec_1 != blank -%}
+                    <div class="mar26-included-spec">
+                      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                      <span>{{ item.spec_1 | escape }}</span>
+                    </div>
+                  {%- endif -%}
+                  {%- if item.spec_2 != blank -%}
+                    <div class="mar26-included-spec">
+                      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                      <span>{{ item.spec_2 | escape }}</span>
+                    </div>
+                  {%- endif -%}
+                  {%- if item.spec_3 != blank -%}
+                    <div class="mar26-included-spec">
+                      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                      <span>{{ item.spec_3 | escape }}</span>
+                    </div>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endfor -%}
+      {%- else -%}
+        {%- for block in section.blocks -%}
+          <div class="mar26-included-card" style="--mar26-included-outline: {{ block.settings.accent_color | default: section.settings.outline_color }};" {{ block.shopify_attributes }}>
+            <div class="mar26-included-card-img">
+              {%- if block.settings.image != blank -%}
+                <img
+                  src="{{ block.settings.image | image_url: width: 600 }}"
+                  alt="{{ block.settings.title | escape }}"
+                  width="600"
+                  height="600"
+                  loading="lazy"
+                >
+              {%- else -%}
+                <div class="mar26-included-card-img-placeholder">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                </div>
+              {%- endif -%}
+            </div>
+
+            <div class="mar26-included-card-body">
+              <span class="mar26-included-card-badge">Included</span>
+
+              {%- if block.settings.title != blank -%}
+                <h3 class="mar26-included-card-name">{{ block.settings.title | escape }}</h3>
+              {%- endif -%}
+
+              {%- if block.settings.description != blank -%}
+                <div class="mar26-included-card-desc">{{ block.settings.description }}</div>
+              {%- endif -%}
+
+              {%- if block.settings.spec_1 != blank or block.settings.spec_2 != blank or block.settings.spec_3 != blank -%}
+                <div class="mar26-included-card-specs">
+                  {%- if block.settings.spec_1 != blank -%}
+                    <div class="mar26-included-spec">
+                      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                      <span>{{ block.settings.spec_1 | escape }}</span>
+                    </div>
+                  {%- endif -%}
+                  {%- if block.settings.spec_2 != blank -%}
+                    <div class="mar26-included-spec">
+                      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                      <span>{{ block.settings.spec_2 | escape }}</span>
+                    </div>
+                  {%- endif -%}
+                  {%- if block.settings.spec_3 != blank -%}
+                    <div class="mar26-included-spec">
+                      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                      <span>{{ block.settings.spec_3 | escape }}</span>
+                    </div>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "MAR26 What's Included",
+  "tag": "section",
+  "class": "mar26-whats-included-wrap",
+  "settings": [
+    {
+      "type": "text",
+      "id": "pre_title",
+      "label": "Pre-title",
+      "default": "Complete System"
+    },
+    {
+      "type": "color",
+      "id": "pre_title_color",
+      "label": "Pre-title color",
+      "default": "#2563eb"
+    },
+    {
+      "type": "text",
+      "id": "black_title",
+      "label": "Heading (black part)",
+      "default": "What's"
+    },
+    {
+      "type": "text",
+      "id": "gradient_title",
+      "label": "Heading (gradient part)",
+      "default": "Included?"
+    },
+    {
+      "type": "color",
+      "id": "gradient_left_color",
+      "label": "Gradient left color",
+      "default": "#f43f5e"
+    },
+    {
+      "type": "color",
+      "id": "gradient_right_color",
+      "label": "Gradient right color",
+      "default": "#be123c"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Everything you need for an effortless, water-saving clean on the road."
+    },
+    {
+      "type": "select",
+      "id": "columns",
+      "label": "Columns (desktop)",
+      "options": [
+        { "value": "2", "label": "2 Columns" },
+        { "value": "3", "label": "3 Columns" },
+        { "value": "4", "label": "4 Columns" }
+      ],
+      "default": "4"
+    },
+    {
+      "type": "color",
+      "id": "outline_color",
+      "label": "Card outline color",
+      "default": "#e2e8f0"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "MAR26 Included Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Item Name"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "<p>A short description of what this item is and why it's included.</p>"
+        },
+        {
+          "type": "text",
+          "id": "spec_1",
+          "label": "Spec 1 (optional)"
+        },
+        {
+          "type": "text",
+          "id": "spec_2",
+          "label": "Spec 2 (optional)"
+        },
+        {
+          "type": "text",
+          "id": "spec_3",
+          "label": "Spec 3 (optional)"
+        },
+        {
+          "type": "color",
+          "id": "accent_color",
+          "label": "Accent Color",
+          "default": "#e2e8f0"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "MAR26 What's Included",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "title": "Japanese Silicone Broom (30cm)",
+            "description": "<p>100% silicone bristles create static electricity to quickly gather dust, hair, and crumbs.</p>",
+            "spec_1": "Adjustable Knuckle Joint",
+            "spec_2": "Furniture-Safe Soft Edge"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "title": "Silicone Squeegee (30cm)",
+            "description": "<p>Single cast 100% silicone for extreme durability without flimsy rubber strips.</p>",
+            "spec_1": "Multi-surface Use",
+            "spec_2": "Zero Water Streaks"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "title": "Stick-to-floor Dustpan",
+            "description": "<p>Crafted from a single piece of high-quality silicone that sticks entirely to the floor.</p>",
+            "spec_1": "Sweep without holding",
+            "spec_2": "Attaches to handles"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "title": "Quick Mop Floor Wipes",
+            "description": "<p>Supersized wet wipes safe for all floors. Poke the broom handle through and polish.</p>",
+            "spec_1": "5 Awesome Scents",
+            "spec_2": "Instantly discard after use"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

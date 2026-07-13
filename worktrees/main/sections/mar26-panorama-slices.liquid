@@ -1,0 +1,794 @@
+{%- comment -%}
+------------------------------------------------------------------------------------------------------------------------
+MAR26 PANORAMA SLICES
+VERSION: 3.7.0 - Reverted Slice Hover; Added Button Changes on Hover
+------------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+{%- comment -%}
+------------------------------------------------------------------------------------------------------------------------
+CSS
+------------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+<style>
+  /* ---- Section Reset ---- */
+  #shopify-section-{{ section.id }} {
+    --transition-snappy: 500ms cubic-bezier(0.25, 1, 0.5, 1);
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100vw;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  /* ---- Container ---- */
+  .panorama-container {
+    position: relative;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #0f172a;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media screen and (min-width: 768px) {
+    .panorama-container {
+      height: 440px;
+    }
+  }
+
+  /* ---- Slices Wrapper ---- */
+  .panorama-inner-wrapper {
+    position: relative;
+    flex: 1 1 0%;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    z-index: 2;
+  }
+
+  .panorama-slices-wrapper {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+  }
+
+  @media screen and (min-width: 768px) {
+    .panorama-slices-wrapper {
+      flex-direction: row;
+    }
+  }
+
+  /* ---- Individual Slice ---- */
+  .panorama-slice {
+    position: relative;
+    background-color: var(--bg-active);
+    cursor: pointer;
+    min-height: 0;
+    overflow: hidden;
+    color: #ffffff;
+  }
+
+  /* Mobile accordion */
+  @media screen and (max-width: 767px) {
+    .panorama-slice {
+      display: grid;
+      grid-template-rows: 60px 0fr;
+      width: 100%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: grid-template-rows var(--transition-snappy);
+    }
+    .panorama-slice[aria-expanded="false"] { z-index: 10; }
+    .panorama-slice[aria-expanded="true"] {
+      grid-template-rows: 60px 1fr;
+      z-index: 2000;
+      box-shadow: 0 -10px 25px -5px rgba(0, 0, 0, 0.3);
+      border-bottom: none;
+      background-color: var(--bg-active);
+    }
+  }
+
+  /* Desktop */
+  @media screen and (min-width: 768px) {
+    .panorama-slice {
+      height: 100%;
+      display: flex;
+      transition: flex var(--transition-snappy), background-color var(--transition-snappy);
+    }
+    .panorama-slice[aria-expanded="true"] {
+      flex: 0 0 70%;
+      z-index: 2000;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      background-color: var(--bg-active);
+    }
+    .panorama-slice[aria-expanded="false"] {
+      flex: 0 0 10%;
+      z-index: 10;
+      background-color: var(--bg-active);
+    }
+    .panorama-slice[aria-expanded="false"]:hover {
+      flex: 0 0 12%;
+    }
+
+    /* Left inner shadow on inactive slices — depth cue */
+    .panorama-slice[aria-expanded="false"]::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 100%;
+      background: linear-gradient(to right, rgba(0,0,0,0.4), transparent);
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    /* Right edge shadow */
+    .panorama-slice::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 40px;
+      height: 100%;
+      background: linear-gradient(to right, rgba(0,0,0,0.35), transparent);
+      pointer-events: none;
+      z-index: 2005;
+    }
+  }
+
+  /* ---- Slice Title ---- */
+  .slice-title {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.95rem;
+    font-weight: var(--mar26-fw-extrabold);
+    text-transform: uppercase;
+    border-radius: 4px;
+    background-color: var(--badge-bg);
+    color: #ffffff;
+    transition: opacity 300ms ease, transform 300ms ease;
+    margin: 0;
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  /* Hidden on mobile (accordion header takes over) */
+  @media screen and (max-width: 767px) {
+    .slice-title { display: none; }
+  }
+
+  /* Active: hidden — content speaks for itself */
+  .panorama-slice[aria-expanded="true"] > .slice-title {
+    display: none !important;
+  }
+
+  /* Inactive: rotated, centered, transparent */
+  @media screen and (min-width: 768px) {
+    .panorama-slice[aria-expanded="false"] .slice-title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-90deg);
+      background-color: transparent;
+      box-shadow: none;
+      font-size: 1.25rem;
+      padding: 0;
+      z-index: 50;
+    }
+  }
+
+  /* ---- Mobile Accordion Header ---- */
+  .mobile-accordion-header {
+    display: none;
+  }
+
+  @media screen and (max-width: 767px) {
+    .mobile-accordion-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+      height: 60px;
+      width: 100%;
+      font-family: var(--mar26-font-stack);
+      font-weight: var(--mar26-fw-extrabold);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #ffffff;
+      position: relative;
+      z-index: 40;
+      font-size: 1.125rem;
+    }
+    .accordion-chevron {
+      transition: transform 300ms ease;
+    }
+    .panorama-slice[aria-expanded="true"] .accordion-chevron {
+      transform: rotate(180deg);
+    }
+  }
+
+  /* ---- Content Wrapper ---- */
+  .slice-content-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    z-index: 30;
+    overflow: visible;
+    transition: opacity 300ms ease, transform 300ms ease;
+    height: 100%;
+    min-height: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    .slice-content-wrapper {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+  }
+
+  .panorama-slice[aria-expanded="true"] .slice-content-wrapper {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 300ms;
+    pointer-events: auto;
+  }
+
+  .panorama-slice[aria-expanded="false"] .slice-content-wrapper {
+    opacity: 0;
+    transform: translateY(1rem);
+    pointer-events: none;
+  }
+
+  /* ---- Active Grid (inner layout) ---- */
+  .slice-active-grid {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.125rem;
+    padding: 1.5rem 0.9rem;
+    background-color: transparent;
+  }
+
+  @media screen and (min-width: 768px) {
+    .slice-active-grid {
+      height: 100%;
+      flex-direction: row;
+      align-items: center;
+      padding: 0;
+    }
+  }
+
+  /* ---- Left Text Column ---- */
+  .slice-text-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.125rem;
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .slice-text-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.125rem;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 768px) {
+    .slice-text-column {
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1.2rem;
+      flex: 0 0 50%;
+      padding: 3rem 2rem 1.5rem 4rem;
+      height: 100%;
+      margin-bottom: 0;
+      box-sizing: border-box;
+    }
+    .slice-text-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.2rem;
+    }
+    .slice-text-stack .stagger-3 {
+      align-self: stretch;
+    }
+  }
+
+  /* ---- Description Box ---- */
+  .slice-description {
+    width: 100%;
+    max-width: 420px;
+    font-family: var(--mar26-font-stack);
+    font-size: 1.0625rem;
+    line-height: 1.2;
+    font-weight: 700;
+    text-align: center;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    padding: 0.85rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .slice-description {
+      font-size: 0.9rem;
+      width: fit-content;
+      max-width: 400px;
+      text-align: left;
+    }
+  }
+
+  /* ---- Right Component Column ---- */
+  .slice-component-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  @media screen and (min-width: 768px) {
+    .slice-component-column {
+      flex: 1;
+      height: 100%;
+      align-items: center;
+      overflow: hidden;
+    }
+  }
+
+  /* ---- Stagger Animations ---- */
+  .stagger-1, .stagger-2, .stagger-3 {
+    transition: opacity 500ms ease-out, transform 500ms ease-out;
+  }
+  .panorama-slice[aria-expanded="false"] .stagger-1,
+  .panorama-slice[aria-expanded="false"] .stagger-2,
+  .panorama-slice[aria-expanded="false"] .stagger-3 {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  .panorama-slice[aria-expanded="true"] .stagger-1 { opacity: 1; transform: translateY(0); transition-delay: 150ms; }
+  .panorama-slice[aria-expanded="true"] .stagger-2 { opacity: 1; transform: translateY(0); transition-delay: 300ms; }
+  .panorama-slice[aria-expanded="true"] .stagger-3 { opacity: 1; transform: translateY(0); transition-delay: 500ms; }
+
+  /* ---- Product Grid ---- */
+  .slice-product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
+    width: 100%;
+    max-width: 420px;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  @media screen and (min-width: 768px) {
+    .slice-product-grid {
+      padding: 0;
+      max-width: 400px;
+    }
+  }
+
+  /* ---- Product Card ---- */
+  .slice-product-card {
+    background: #ffffff;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: 1 / 1;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    transition: transform 300ms ease;
+    min-width: 0;
+    min-height: 0;
+  }
+  .slice-product-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .slice-product-card-img {
+    flex: 0 0 70%;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .slice-product-card-img img,
+  .slice-product-card-img svg {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  .slice-product-card-body {
+    flex: 0 0 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: #f1f5f9;
+  }
+
+  .slice-product-card-title {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1;
+    text-align: center;
+    padding: 0 4px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .slice-product-card-btn-wrapper {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 4px;
+    box-sizing: border-box;
+  }
+</style>
+
+{%- comment -%}
+------------------------------------------------------------------------------------------------------------------------
+LIQUID & HTML
+------------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+<panorama-slices class="panorama-container" data-section-id="{{ section.id }}">
+
+  <div class="panorama-inner-wrapper">
+    <div class="panorama-slices-wrapper">
+      {%- for i in (1..4) -%}
+        {%- liquid
+          assign is_active = false
+          if forloop.index0 == 0
+            assign is_active = true
+          endif
+
+          assign nav_title_key    = 's' | append: i | append: '_nav_title'
+          assign title_key        = 's' | append: i | append: '_title'
+          assign desc_key         = 's' | append: i | append: '_desc'
+          assign cta_text_key     = 's' | append: i | append: '_cta_text'
+          assign cta_link_key     = 's' | append: i | append: '_cta_link'
+          assign cta_size_key     = 's' | append: i | append: '_cta_size'
+          assign cta_outline_key  = 's' | append: i | append: '_cta_outline'
+          assign cta_bg_key       = 's' | append: i | append: '_cta_bg_color'
+          assign cta_text_clr_key = 's' | append: i | append: '_cta_text_color'
+          assign cta_icon_key     = 's' | append: i | append: '_cta_icon'
+          assign bg_active_key    = 's' | append: i | append: '_bg_active'
+          assign badge_bg_key     = 's' | append: i | append: '_badge_bg'
+          assign cta_hover_act_key = 's' | append: i | append: '_cta_hover_activate'
+
+          assign nav_title     = section.settings[nav_title_key]
+          assign title         = section.settings[title_key]
+          assign desc          = section.settings[desc_key]
+          assign cta_text      = section.settings[cta_text_key]
+          assign cta_link      = section.settings[cta_link_key]
+          assign cta_size      = section.settings[cta_size_key]     | default: 'big'
+          assign cta_outline   = section.settings[cta_outline_key]
+          assign cta_bg_color  = section.settings[cta_bg_key]       | default: '#0f172a'
+          assign cta_text_color = section.settings[cta_text_clr_key] | default: 'white'
+          assign cta_icon      = section.settings[cta_icon_key]     | default: 'right'
+
+          assign cta_hover_activate = true
+          if section.settings[cta_hover_act_key] == false
+            assign cta_hover_activate = false
+          endif
+
+          assign bg_active_name = section.settings[bg_active_key]   | default: 'teal'
+          assign badge_bg_name  = section.settings[badge_bg_key]    | default: 'red'
+
+          assign brand_colors = 'red:#f81b27,black:#000000,teal:#13809e,pink:#fba5ac,blue:#3762a9,purple:#9a69a7,grey:#7c7c7c' | split: ','
+
+          assign bg_active_hex = '#13809e'
+          assign badge_bg_hex  = '#f81b27'
+          for pair in brand_colors
+            assign color_data = pair | split: ':'
+            if color_data[0] == bg_active_name
+              assign bg_active_hex = color_data[1]
+            endif
+            if color_data[0] == badge_bg_name
+              assign badge_bg_hex = color_data[1]
+            endif
+          endfor
+        -%}
+
+        <div
+          class="panorama-slice"
+          aria-expanded="{{ is_active }}"
+          data-index="{{ forloop.index0 }}"
+          style="
+            z-index: {% if is_active %}2000{% else %}{{ 50 | minus: forloop.index0 }}{% endif %};
+            --bg-active: {{ bg_active_hex }};
+            --badge-bg: {{ badge_bg_hex }};
+          "
+        >
+          <h2 class="slice-title">{{ title }}</h2>
+
+          <!-- Mobile Accordion Header -->
+          <div class="mobile-accordion-header">
+            <span>{{ nav_title | default: title }}</span>
+            <svg class="accordion-chevron" viewBox="0 0 20 20" fill="currentColor" style="width: 20px; height: 20px;">
+              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </div>
+
+          <!-- Expanding Content -->
+          <div class="slice-content-wrapper">
+            <div class="slice-active-grid">
+
+              <!-- Left Text Column -->
+              <div class="slice-text-column">
+                <div class="slice-text-stack">
+                  <h2 class="slice-title stagger-1">{{ title }}</h2>
+                  <div class="slice-description stagger-2">
+                    {{ desc | escape }}
+                  </div>
+                  <div class="stagger-3">
+                    {%- render 'mar26-button',
+                      href: cta_link,
+                      text: cta_text,
+                      size: cta_size,
+                      bg_color: cta_bg_color,
+                      text_color: cta_text_color,
+                      outline: cta_outline,
+                      icon: cta_icon,
+                      hover_activate: cta_hover_activate
+                    -%}
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Component Column (Products Grid) -->
+              <div class="slice-component-column stagger-3">
+                <div class="slice-product-grid">
+                  {%- for j in (1..4) -%}
+                    {%- liquid
+                      assign card_img_key  = 's' | append: i | append: '_c' | append: j | append: '_img'
+                      assign card_text_key = 's' | append: i | append: '_c' | append: j | append: '_text'
+                      assign card_link_key = 's' | append: i | append: '_c' | append: j | append: '_link'
+                      assign card_img  = section.settings[card_img_key]
+                      assign card_text = section.settings[card_text_key] | default: 'Product'
+                      assign card_link = section.settings[card_link_key] | default: '#'
+                    -%}
+                    <div class="slice-product-card">
+                      <div class="slice-product-card-img">
+                        {%- if card_img != blank -%}
+                          {{ card_img | image_url: width: 400 | image_tag: loading: 'lazy', width: 400, height: 400, style: 'width:100%;height:100%;object-fit:contain;' }}
+                        {%- else -%}
+                          {{ 'product-' | append: j | placeholder_svg_tag }}
+                        {%- endif -%}
+                      </div>
+                      <div class="slice-product-card-body">
+                        <span class="slice-product-card-title">{{ card_text }}</span>
+                        <div class="slice-product-card-btn-wrapper">
+                          {%- render 'mar26-button', href: card_link, text: 'Shop', size: 'small', color: 'black', icon: 'no' -%}
+                        </div>
+                      </div>
+                    </div>
+                  {%- endfor -%}
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</panorama-slices>
+
+{%- comment -%}
+------------------------------------------------------------------------------------------------------------------------
+JAVASCRIPT LOGIC
+------------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+<script>
+  if (!customElements.get('panorama-slices')) {
+    customElements.define('panorama-slices', class PanoramaSlices extends HTMLElement {
+      constructor() {
+        super();
+        this.slices = this.querySelectorAll('.panorama-slice');
+
+        this.slices.forEach(slice => {
+          slice.addEventListener('click', (e) => this.handleActivate(e.currentTarget));
+        });
+      }
+
+      handleActivate(target) {
+        const index = target.getAttribute('data-index');
+        this.slices.forEach(slice => {
+          const isTarget = slice.getAttribute('data-index') === index;
+          slice.setAttribute('aria-expanded', isTarget ? 'true' : 'false');
+          slice.style.zIndex = isTarget ? '2000' : (50 - parseInt(slice.getAttribute('data-index')));
+        });
+      }
+    });
+  }
+</script>
+<script>
+  console.log('MAR26 Panorama Slices - Version: 3.7.0');
+</script>
+
+{%- comment -%}
+------------------------------------------------------------------------------------------------------------------------
+SCHEMA
+------------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+{% schema %}
+{
+  "name": "MAR26 Panorama Slices",
+  "class": "shopify-section--panorama-slices",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "custom.overlay"]
+  },
+  "settings": [
+    { "type": "header", "content": "slice 1 > content" },
+    { "type": "text", "id": "s1_nav_title", "label": "Tab Title (Mobile)", "default": "BUNDLES" },
+    { "type": "text", "id": "s1_title", "label": "Section Title", "default": "VALUE KITS" },
+    { "type": "textarea", "id": "s1_desc", "label": "Description", "default": "Curated collections bundled for maximum value." },
+    { "type": "select", "id": "s1_bg_active", "label": "Slice Color", "options": [{ "value": "red", "label": "Red" }, { "value": "black", "label": "Black" }, { "value": "teal", "label": "Teal" }, { "value": "pink", "label": "Pink" }, { "value": "blue", "label": "Blue" }, { "value": "purple", "label": "Purple" }, { "value": "grey", "label": "Grey" }], "default": "teal" },
+    { "type": "select", "id": "s1_badge_bg", "label": "Title Badge Color", "options": [{ "value": "red", "label": "Red" }, { "value": "black", "label": "Black" }, { "value": "teal", "label": "Teal" }, { "value": "pink", "label": "Pink" }, { "value": "blue", "label": "Blue" }, { "value": "purple", "label": "Purple" }, { "value": "grey", "label": "Grey" }], "default": "red" },
+    { "type": "header", "content": "slice 1 > button" },
+    { "type": "text", "id": "s1_cta_text", "label": "Button Text", "default": "SHOP BUNDLES" },
+    { "type": "url", "id": "s1_cta_link", "label": "Button Link" },
+    { "type": "select", "id": "s1_cta_size", "label": "Button Size", "options": [{ "value": "big", "label": "Big" }, { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" }], "default": "big" },
+    { "type": "color", "id": "s1_cta_bg_color", "label": "Button Background", "default": "#0f172a" },
+    { "type": "select", "id": "s1_cta_text_color", "label": "Button Text Color", "options": [{ "value": "white", "label": "White" }, { "value": "black", "label": "Black" }], "default": "white" },
+    { "type": "checkbox", "id": "s1_cta_outline", "label": "White Outline Border", "default": false },
+    { "type": "checkbox", "id": "s1_cta_hover_activate", "label": "Button Changes on Hover", "default": true },
+    { "type": "select", "id": "s1_cta_icon", "label": "Button Icon", "options": [{ "value": "right", "label": "Right Arrow" }, { "value": "left", "label": "Left Arrow" }, { "value": "no", "label": "No Icon" }], "default": "right" },
+
+    { "type": "header", "content": "Card 1" },
+    { "type": "image_picker", "id": "s1_c1_img", "label": "Image" },
+    { "type": "text", "id": "s1_c1_text", "label": "Label", "default": "Ultra Mop" },
+    { "type": "url", "id": "s1_c1_link", "label": "Link" },
+    { "type": "header", "content": "Card 2" },
+    { "type": "image_picker", "id": "s1_c2_img", "label": "Image" },
+    { "type": "text", "id": "s1_c2_text", "label": "Label", "default": "Window Kit" },
+    { "type": "url", "id": "s1_c2_link", "label": "Link" },
+    { "type": "header", "content": "Card 3" },
+    { "type": "image_picker", "id": "s1_c3_img", "label": "Image" },
+    { "type": "text", "id": "s1_c3_text", "label": "Label", "default": "Floor Bundle" },
+    { "type": "url", "id": "s1_c3_link", "label": "Link" },
+    { "type": "header", "content": "Card 4" },
+    { "type": "image_picker", "id": "s1_c4_img", "label": "Image" },
+    { "type": "text", "id": "s1_c4_text", "label": "Label", "default": "Value Pack" },
+    { "type": "url", "id": "s1_c4_link", "label": "Link" },
+
+    { "type": "header", "content": "slice 2 > content" },
+    { "type": "text", "id": "s2_nav_title", "label": "Tab Title (Mobile)", "default": "FLOOR CARE" },
+    { "type": "text", "id": "s2_title", "label": "Section Title", "default": "FLOOR CARE" },
+    { "type": "textarea", "id": "s2_desc", "label": "Description", "default": "Specialized tools for every floor type." },
+    { "type": "select", "id": "s2_bg_active", "label": "Slice Color", "options": [{ "value": "red", "label": "Red" }, { "value": "black", "label": "Black" }, { "value": "teal", "label": "Teal" }, { "value": "pink", "label": "Pink" }, { "value": "blue", "label": "Blue" }, { "value": "purple", "label": "Purple" }, { "value": "grey", "label": "Grey" }], "default": "black" },
+    { "type": "select", "id": "s2_badge_bg", "label": "Title Badge Color", "options": [{ "value": "red", "label": "Red" }, { "value": "black", "label": "Black" }, { "value": "teal", "label": "Teal" }, { "value": "pink", "label": "Pink" }, { "value": "blue", "label": "Blue" }, { "value": "purple", "label": "Purple" }, { "value": "grey", "label": "Grey" }], "default": "red" },
+    { "type": "header", "content": "slice 2 > button" },
+    { "type": "text", "id": "s2_cta_text", "label": "Button Text", "default": "SHOP FLOOR" },
+    { "type": "url", "id": "s2_cta_link", "label": "Button Link" },
+    { "type": "select", "id": "s2_cta_size", "label": "Button Size", "options": [{ "value": "big", "label": "Big" }, { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" }], "default": "big" },
+    { "type": "checkbox", "id": "s2_cta_outline", "label": "Outline Style", "default": false },
+    { "type": "checkbox", "id": "s2_cta_hover_activate", "label": "Button Changes on Hover", "default": true },
+    { "type": "select", "id": "s2_cta_color", "label": "Button Color", "options": [{ "value": "navy", "label": "Navy" }, { "value": "black", "label": "Black" }, { "value": "red", "label": "Red" }, { "value": "teal", "label": "Teal" }, { "value": "pink", "label": "Pink" }, { "value": "blue", "label": "Blue" }, { "value": "purple", "label": "Purple" }, { "value": "grey", "label": "Grey" }, { "value": "gold", "label": "Gold" }, { "value": "green", "label": "Green" }, { "value": "white", "label": "White" }], "default": "navy" },
+    { "type": "select", "id": "s2_cta_icon", "label": "Button Icon", "options": [{ "value": "right", "label": "Right Arrow" }, { "value": "left", "label": "Left Arrow" }, { "value": "no", "label": "No Icon" }], "default": "right" },
+
+    { "type": "header", "content": "Card 1" },
+    { "type": "image_picker", "id": "s2_c1_img", "label": "Image" },
+    { "type": "text", "id": "s2_c1_text", "label": "Label", "default": "Product" },
+    { "type": "url", "id": "s2_c1_link", "label": "Link" },
+    { "type": "header", "content": "Card 2" },
+    { "type": "image_picker", "id": "s2_c2_img", "label": "Image" },
+    { "type": "text", "id": "s2_c2_text", "label": "Label", "default": "Product" },
+    { "type": "url", "id": "s2_c2_link", "label": "Link" },
+    { "type": "header", "content": "Card 3" },
+    { "type": "image_picker", "id": "s2_c3_img", "label": "Image" },
+    { "type": "text", "id": "s2_c3_text", "label": "Label", "default": "Product" },
+    { "type": "url", "id": "s2_c3_link", "label": "Link" },
+    { "type": "header", "content": "Card 4" },
+    { "type": "image_picker", "id": "s2_c4_img", "label": "Image" },
+    { "type": "text", "id": "s2_c4_text", "label": "Label", "default": "Product" },
+    { "type": "url", "id": "s2_c4_link", "label": "Link" },
+
+    { "type": "header", "content": "slice 3 > content" },
+    { "type": "text", "id": "s3_nav_title", "label": "Tab Title (Mobile)", "default": "WINDOW CARE" },
+    { "type": "text", "id": "s3_title", "label": "Section Title", "default": "WINDOW CARE" },
+    { "type": "textarea", "id": "s3_desc", "label": "Description", "default": "Crystal clear views with half the effort." },
+    { "type": "select", "id": "s3_bg_active", "label": "Slice Color", "options": [{ "value": "red", "label": "Red" }, { "value": "black", "label": "Black" }, { "value": "teal", "label": "Teal" }, { "value": "pink", "label": "Pink" }, { "value": "blue", "label": "Blue" }, { "value": "purple", "label": "Purple" }, { "value": "grey", "label": "Grey" }], "default": "purple" },
+    { "type": "select", "id": "s3_badge_bg", "label": "Title Badge Color", "options": [{ "value": "red", "label": "Red" }, { "value": "black", "label": "Black" }, { "value": "teal", "label": "Teal" }, { "value": "pink", "label": "Pink" }, { "value": "blue", "label": "Blue" }, { "value": "purple", "label": "Purple" }, { "value": "grey", "label": "Grey" }], "default": "red" },
+    { "type": "header", "content": "slice 3 > button" },
+    { "type": "text", "id": "s3_cta_text", "label": "Button Text", "default": "SHOP WINDOW" },
+    { "type": "url", "id": "s3_cta_link", "label": "Button Link" },
+    { "type": "select", "id": "s3_cta_size", "label": "Button Size", "options": [{ "value": "big", "label": "Big" }, { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" }], "default": "big" },
+    { "type": "checkbox", "id": "s3_cta_outline", "label": "Outline Style", "default": false },
+    { "type": "checkbox", "id": "s3_cta_hover_activate", "label": "Button Changes on Hover", "default": true },
+    { "type": "select", "id": "s3_cta_color", "label": "Button Color", "options": [{ "value": "navy", "label": "Navy" }, { "value": "black", "label": "Black" }, { "value": "red", "label": "Red" }, { "value": "teal", "label": "Teal" }, { "value": "pink", "label": "Pink" }, { "value": "blue", "label": "Blue" }, { "value": "purple", "label": "Purple" }, { "value": "grey", "label": "Grey" }, { "value": "gold", "label": "Gold" }, { "value": "green", "label": "Green" }, { "value": "white", "label": "White" }], "default": "navy" },
+    { "type": "select", "id": "s3_cta_icon", "label": "Button Icon", "options": [{ "value": "right", "label": "Right Arrow" }, { "value": "left", "label": "Left Arrow" }, { "value": "no", "label": "No Icon" }], "default": "right" },
+
+    { "type": "header", "content": "Card 1" },
+    { "type": "image_picker", "id": "s3_c1_img", "label": "Image" },
+    { "type": "text", "id": "s3_c1_text", "label": "Label", "default": "Product" },
+    { "type": "url", "id": "s3_c1_link", "label": "Link" },
+    { "type": "header", "content": "Card 2" },
+    { "type": "image_picker", "id": "s3_c2_img", "label": "Image" },
+    { "type": "text", "id": "s3_c2_text", "label": "Label", "default": "Product" },
+    { "type": "url", "id": "s3_c2_link", "label": "Link" },
+    { "type": "header", "content": "Card 3" },
+    { "type": "image_picker", "id": "s3_c3_img", "label": "Image" },
+    { "type": "text", "id": "s3_c3_text", "label": "Label", "default": "Product" },
+    { "type": "url", "id": "s3_c3_link", "label": "Link" },
+    { "type": "header", "content": "Card 4" },
+    { "type": "image_picker", "id": "s3_c4_img", "label": "Image" },
+    { "type": "text", "id": "s3_c4_text", "label": "Label", "default": "Product" },
+    { "type": "url", "id": "s3_c4_link", "label": "Link" },
+
+    { "type": "header", "content": "slice 4 > content" },
+    { "type": "text", "id": "s4_nav_title", "label": "Tab Title (Mobile)", "default": "ULTRA MOP" },
+    { "type": "text", "id": "s4_title", "label": "Section Title", "default": "ULTRA MOP" },
+    { "type": "textarea", "id": "s4_desc", "label": "Description", "default": "The last mop you will ever need." },
+    { "type": "select", "id": "s4_bg_active", "label": "Slice Color", "options": [{ "value": "red", "label": "Red" }, { "value": "black", "label": "Black" }, { "value": "teal", "label": "Teal" }, { "value": "pink", "label": "Pink" }, { "value": "blue", "label": "Blue" }, { "value": "purple", "label": "Purple" }, { "value": "grey", "label": "Grey" }], "default": "red" },
+    { "type": "select", "id": "s4_badge_bg", "label": "Title Badge Color", "options": [{ "value": "red", "label": "Red" }, { "value": "black", "label": "Black" }, { "value": "teal", "label": "Teal" }, { "value": "pink", "label": "Pink" }, { "value": "blue", "label": "Blue" }, { "value": "purple", "label": "Purple" }, { "value": "grey", "label": "Grey" }], "default": "black" },
+    { "type": "header", "content": "slice 4 > button" },
+    { "type": "text", "id": "s4_cta_text", "label": "Button Text", "default": "SHOP MOP" },
+    { "type": "url", "id": "s4_cta_link", "label": "Button Link" },
+    { "type": "select", "id": "s4_cta_size", "label": "Button Size", "options": [{ "value": "big", "label": "Big" }, { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" }], "default": "big" },
+    { "type": "checkbox", "id": "s4_cta_outline", "label": "Outline Style", "default": false },
+    { "type": "checkbox", "id": "s4_cta_hover_activate", "label": "Button Changes on Hover", "default": true },
+    { "type": "select", "id": "s4_cta_color", "label": "Button Color", "options": [{ "value": "navy", "label": "Navy" }, { "value": "black", "label": "Black" }, { "value": "red", "label": "Red" }, { "value": "teal", "label": "Teal" }, { "value": "pink", "label": "Pink" }, { "value": "blue", "label": "Blue" }, { "value": "purple", "label": "Purple" }, { "value": "grey", "label": "Grey" }, { "value": "gold", "label": "Gold" }, { "value": "green", "label": "Green" }, { "value": "white", "label": "White" }], "default": "navy" },
+    { "type": "select", "id": "s4_cta_icon", "label": "Button Icon", "options": [{ "value": "right", "label": "Right Arrow" }, { "value": "left", "label": "Left Arrow" }, { "value": "no", "label": "No Icon" }], "default": "right" },
+
+    { "type": "header", "content": "Card 1" },
+    { "type": "image_picker", "id": "s4_c1_img", "label": "Image" },
+    { "type": "text", "id": "s4_c1_text", "label": "Label", "default": "Product" },
+    { "type": "url", "id": "s4_c1_link", "label": "Link" },
+    { "type": "header", "content": "Card 2" },
+    { "type": "image_picker", "id": "s4_c2_img", "label": "Image" },
+    { "type": "text", "id": "s4_c2_text", "label": "Label", "default": "Product" },
+    { "type": "url", "id": "s4_c2_link", "label": "Link" },
+    { "type": "header", "content": "Card 3" },
+    { "type": "image_picker", "id": "s4_c3_img", "label": "Image" },
+    { "type": "text", "id": "s4_c3_text", "label": "Label", "default": "Product" },
+    { "type": "url", "id": "s4_c3_link", "label": "Link" },
+    { "type": "header", "content": "Card 4" },
+    { "type": "image_picker", "id": "s4_c4_img", "label": "Image" },
+    { "type": "text", "id": "s4_c4_text", "label": "Label", "default": "Product" },
+    { "type": "url", "id": "s4_c4_link", "label": "Link" }
+  ],
+  "presets": [
+    {
+      "name": "MAR26 Panorama Slices"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,13 @@
+id: 01-init-example
+slug: example
+type: initiative
+title: Example
+status: planned
+owner: unassigned
+agents: []
+parent: null
+depends_on: []
+blocks: []
+risk: medium
+created: YYYY-MM-DD
+updated: YYYY-MM-DD

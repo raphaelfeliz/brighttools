@@ -1,0 +1,13 @@
+id: incr-initial-pull
+slug: initial-pull
+type: increment
+title: Initial Pull from Shopify
+status: completed
+owner: unassigned
+agents: []
+parent: init-sync
+depends_on: []
+blocks: []
+risk: low
+created: 2026-07-13
+updated: 2026-07-13

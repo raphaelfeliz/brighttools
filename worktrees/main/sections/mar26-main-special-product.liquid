@@ -1,0 +1,506 @@
+<!-- 
+  MAR26 SPECIAL PRODUCT HERO SHELL 
+  Version: 0.0.8 - "Sync Audit Reconciliation"
+  - Added: Dynamic Price Rendering (Hero Position)
+  - Added: Compare-at Price Support (Sale Logic)
+  - Locked: Primary Button to Anchor Link (#bundle-breakdown)
+  - Refined: Price styling for maximum visual impact (Montserrat 900)
+-->
+
+{{ 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap' | stylesheet_tag }}
+
+{% style %}
+  :root {
+    --mar26-red: #ff101f;
+    --mar26-slate: #111111;
+    --mar26-pink: #ffb1b6;
+    --mar26-base: #fcfcfc;
+  }
+
+  .mar26-special-hero {
+    background-color: var(--mar26-red);
+    position: relative;
+    overflow: hidden;
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+  }
+
+  @media (min-width: 768px) {
+    .mar26-special-hero {
+      min-height: 0;
+      padding: 15px;
+    }
+  }
+
+  .hero-rays {
+    position: absolute;
+    inset: 0;
+    opacity: 0.08;
+    pointer-events: none;
+    --ray-pos: 50% 25%;
+    background: conic-gradient(from 0deg at var(--ray-pos), transparent 0deg 15deg, #ffb1b6 15deg 30deg, transparent 30deg 45deg, #ffb1b6 45deg 60deg, transparent 60deg 75deg, #ffb1b6 75deg 90deg, transparent 90deg 105deg, #ffb1b6 105deg 120deg, transparent 120deg 135deg, #ffb1b6 135deg 150deg, transparent 150deg 165deg, #ffb1b6 165deg 180deg, transparent 180deg 195deg, #ffb1b6 195deg 210deg, transparent 210deg 225deg, #ffb1b6 225deg 240deg, transparent 240deg 255deg, #ffb1b6 255deg 270deg, transparent 270deg 285deg, #ffb1b6 285deg 300deg, transparent 300deg 315deg, #ffb1b6 315deg 330deg, transparent 330deg 345deg, #ffb1b6 345deg 360deg);
+  }
+
+  .mar26-hero-grid {
+    position: relative;
+    z-index: 10;
+    max-width: 1400px;
+    margin: 0 auto !important;
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  @media (min-width: 768px) {
+    .mar26-hero-grid {
+      flex-direction: row;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      height: clamp(400px, 63vh, 520px);
+    }
+    .hero-rays { --ray-pos: 75% 50%; }
+  }
+
+  .mar26-hero-content {
+    padding: 1.5rem 1.5rem 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @media (min-width: 768px) {
+    .mar26-hero-content {
+      padding: 2rem 2.5rem;
+      overflow: hidden;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .mar26-hero-content {
+      padding: 2.5rem 3rem;
+    }
+  }
+
+  .mar26-pre-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .mar26-pre-title { margin-bottom: 0.4rem; }
+  }
+
+  .mar26-title {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 900;
+    line-height: 0.9;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .mar26-title {
+      font-size: clamp(1.8rem, 4.5vw, 3rem);
+      margin-bottom: 0.6rem;
+    }
+  }
+  .mar26-title span.slate { color: var(--mar26-slate); }
+  .mar26-title span.pink { color: var(--mar26-pink); }
+
+  .mar26-description {
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    max-width: 550px;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .mar26-description {
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+    }
+  }
+
+  /* Price Hub Styling */
+  .mar26-price-hub {
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+  }
+
+  .mar26-price-main {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 900;
+    color: white;
+  }
+
+  .mar26-price-compare {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: line-through;
+    opacity: 0.6;
+    color: var(--mar26-pink);
+  }
+
+  @media (min-width: 768px) {
+    .mar26-price-hub {
+      margin-bottom: 0.75rem;
+      gap: 0.6rem;
+    }
+    .mar26-price-main { font-size: clamp(1.5rem, 3vw, 2rem); }
+    .mar26-price-compare { font-size: 1.1rem; }
+  }
+
+  .mar26-hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  @media (min-width: 640px) {
+    .mar26-hero-actions { flex-direction: row; }
+  }
+
+  .btn-mar26 {
+    flex: 1;
+    height: 3.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    font-weight: 900;
+    font-size: 15px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 0.75rem;
+    white-space: nowrap;
+    padding: 0 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .btn-mar26 {
+      height: 3rem;
+      font-size: 13px;
+      border-radius: 10px;
+      padding: 0 1rem;
+    }
+  }
+
+  .btn-primary {
+    background: white;
+    color: var(--mar26-red);
+    box-shadow: 0 12px 24px -6px rgba(0,0,0,0.2);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+
+  .btn-icon { width: 22px; height: 22px; flex-shrink: 0; }
+
+  /* Media Gallery Column */
+  .mar26-hero-media {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45vh;
+    min-height: 400px;
+  }
+
+  .hero-stack-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    perspective: 1200px;
+  }
+
+  .hero-card {
+    position: absolute;
+    width: 85%;
+    height: 80%;
+    left: 7.5%;
+    top: 10%;
+    background: var(--mar26-base);
+    border-radius: 2.5rem;
+    border: 10px solid white;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.3);
+    overflow: hidden;
+    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .hero-card img { width: 100%; height: 100%; object-fit: cover; }
+
+  .state-hidden {
+    opacity: 0;
+    transform: translateY(-60px) scale(1.1) rotate(calc(var(--target-rot) - 5deg));
+    pointer-events: none;
+  }
+
+  .state-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(var(--target-rot));
+    pointer-events: auto;
+  }
+
+{% endstyle %}
+
+<section class="mar26-special-hero" id="shopify-section-{{ section.id }}">
+  <div class="hero-rays"></div>
+  
+  <div class="mar26-hero-grid">
+    <!-- Left: Content -->
+    <div class="mar26-hero-content">
+      {% if section.settings.pre_title != blank %}
+        <div class="mar26-pre-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white" style="transform: rotate(-10deg);"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          {{ section.settings.pre_title }}
+        </div>
+      {% endif %}
+
+      <h1 class="mar26-title">
+        {{ section.settings.title_line_1 }}<br>
+        <span class="slate">{{ section.settings.title_line_2 }}</span><br>
+        <span class="pink">{{ section.settings.title_line_3 }}</span>
+      </h1>
+
+      {% if section.settings.description != blank %}
+        <p class="mar26-description">
+          {{ section.settings.description }}
+        </p>
+      {% endif %}
+
+      {%- for block in section.blocks -%}
+        {%- if block.type == '@app' -%}
+          <div class="mar26-hero-app-block" {{ block.shopify_attributes }}>
+            {%- render block -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+
+      <!-- Buy Flow: Price Display -->
+      <div class="mar26-price-hub">
+        {%- assign variant = product.selected_or_first_available_variant -%}
+        <span class="mar26-price-main">{{ variant.price | money }}</span>
+        {%- if variant.compare_at_price > variant.price -%}
+          <span class="mar26-price-compare">{{ variant.compare_at_price | money }}</span>
+        {%- endif -%}
+      </div>
+
+      <div class="mar26-hero-actions">
+         <a href="#addon-section" class="btn-mar26 btn-primary">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+            {{ section.settings.btn_primary_text | default: "Get Your Bundle" }}
+         </a>
+         <a href="#bundle-breakdown" class="btn-mar26 btn-secondary">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            {{ section.settings.btn_secondary_text | default: "Included" }}
+         </a>
+      </div>
+    </div>
+
+    <!-- Right: Media -->
+    <div class="mar26-hero-media">
+      <div class="hero-stack-container">
+        {%- assign visual_index = 0 -%}
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'gallery_image' and block.settings.image != blank -%}
+            {%- assign rotation = visual_index | times: 3 | minus: 4 -%}
+            <div class="hero-card {% if visual_index == 0 %}state-visible{% else %}state-hidden{% endif %}" 
+                 style="--target-rot: {{ rotation }}deg; z-index: {{ 10 | minus: visual_index }};"
+                 {{ block.shopify_attributes }}>
+                {{ block.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', class: 'gallery-img' }}
+            </div>
+            {%- assign visual_index = visual_index | plus: 1 -%}
+          {%- endif -%}{%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // ── MAR26 HERO ANIMATION — v0.0.8 ─────────────────────────────────────────
+  // Mirrors caravan-v4-b.html setInterval pattern exactly.
+  // Every diagnostic step logs so we can isolate any failure in the console.
+  // ─────────────────────────────────────────────────────────────────────────
+
+  const MAR26H_TAG = '[mar26-hero]';
+  const mar26HLog = (level, msg, data) => {
+    const ts = new Date().toISOString().substring(11, 23);
+    const fn = console[level] || console.log;
+    data !== undefined ? fn(`${MAR26H_TAG} ${ts} ${msg}`, data) : fn(`${MAR26H_TAG} ${ts} ${msg}`);
+  };
+
+  mar26HLog('log', '[BOOT] v0.0.8 hero script loaded');
+
+  document.addEventListener('DOMContentLoaded', () => {
+    mar26HLog('log', '[INIT] DOMContentLoaded fired');
+
+    const heroCards = document.querySelectorAll('.hero-stack-container .hero-card');
+    mar26HLog('log', `[INIT] hero-card elements found: ${heroCards.length}`);
+
+    if (heroCards.length === 0) {
+      mar26HLog('error', '[INIT] ABORT — no .hero-card elements found. Check that gallery_image blocks are configured in the theme editor.');
+      return;
+    }
+
+    // Log initial state of each card
+    heroCards.forEach((card, i) => {
+      const classes = [...card.classList].join(' ');
+      const rot = card.style.getPropertyValue('--target-rot');
+      const zIndex = card.style.zIndex;
+      mar26HLog('log', `[INIT] card[${i}] classes="${classes}" --target-rot="${rot}" z-index="${zIndex}"`);
+    });
+
+    // Verify card[0] starts visible
+    const firstCard = heroCards[0];
+    if (!firstCard.classList.contains('state-visible')) {
+      mar26HLog('warn', '[INIT] card[0] does NOT have .state-visible — forcing it now');
+      firstCard.classList.remove('state-hidden');
+      firstCard.classList.add('state-visible');
+    } else {
+      mar26HLog('log', '[INIT] card[0] confirmed .state-visible ✓');
+    }
+
+    if (heroCards.length < 2) {
+      mar26HLog('warn', '[INIT] Only 1 card — cycling disabled. Add more gallery_image blocks to see animation.');
+      return;
+    }
+
+    let currentCardIdx = 0;
+    let zIndexCounter = 10;
+    let tickCount = 0;
+
+    mar26HLog('log', `[INIT] Starting setInterval @ 2500ms for ${heroCards.length} cards`);
+
+    setInterval(() => {
+      tickCount++;
+      const prevIdx = currentCardIdx;
+      currentCardIdx = (currentCardIdx + 1) % heroCards.length;
+      const card = heroCards[currentCardIdx];
+
+      mar26HLog('log', `[TICK ${tickCount}] prevIdx:${prevIdx} → currentIdx:${currentCardIdx}`);
+
+      // Step 1: disable transition and snap to hidden state
+      card.style.transition = 'none';
+      card.classList.remove('state-visible');
+      card.classList.add('state-hidden');
+      card.style.zIndex = ++zIndexCounter;
+      mar26HLog('log', `[TICK ${tickCount}] Step 1 — card[${currentCardIdx}] snapped to state-hidden, zIndex:${zIndexCounter}`);
+
+      // Step 2: force reflow so browser registers hidden state before restoring transition
+      void card.offsetWidth;
+      mar26HLog('log', `[TICK ${tickCount}] Step 2 — reflow forced`);
+
+      // Step 3: restore transition and animate to visible
+      card.style.transition = 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
+      card.classList.remove('state-hidden');
+      card.classList.add('state-visible');
+      mar26HLog('log', `[TICK ${tickCount}] Step 3 — card[${currentCardIdx}] set to state-visible, transition restored`);
+
+      // Step 4: verify computed opacity 900ms later (after animation should be done)
+      setTimeout(() => {
+        const cs = window.getComputedStyle(card);
+        const opacityOk = parseFloat(cs.opacity) > 0.9;
+        mar26HLog(opacityOk ? 'log' : 'warn',
+          `[TICK ${tickCount}] t+900ms watchdog card[${currentCardIdx}] opacity:${cs.opacity} transform:${cs.transform.substring(0, 40)} ${opacityOk ? '✓' : '⚠ NOT VISIBLE'}`);
+      }, 900);
+
+    }, 2500);
+
+    mar26HLog('log', '[INIT] ✓ Hero cycling animation armed');
+  });
+</script>
+
+{% schema %}
+{
+  "name": "mar26 Special Product",
+  "settings": [
+    {
+      "type": "text",
+      "id": "pre_title",
+      "label": "Pre-title",
+      "default": "Cleaning Performance"
+    },
+    {
+      "type": "text",
+      "id": "title_line_1",
+      "label": "Title Line 1 (White)",
+      "default": "Caravan"
+    },
+    {
+      "type": "text",
+      "id": "title_line_2",
+      "label": "Title Line 2 (Slate)",
+      "default": "CLEANING"
+    },
+    {
+      "type": "text",
+      "id": "title_line_3",
+      "label": "Title Line 3 (Pink)",
+      "default": "BUNDLE"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Your time matters. Spend it enjoying your caravan, not cleaning it. Fast, effective tools for even the smallest spaces."
+    },
+    {
+      "type": "text",
+      "id": "btn_primary_text",
+      "label": "Primary Button Text",
+      "default": "Get Your Bundle"
+    },
+    {
+      "type": "text",
+      "id": "btn_secondary_text",
+      "label": "Secondary Button Text",
+      "default": "Included"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "gallery_image",
+      "name": "Gallery Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "mar26 Special Product"
+    }
+  ]
+}
+{% endschema %}

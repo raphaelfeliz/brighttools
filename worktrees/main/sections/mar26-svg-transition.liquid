@@ -1,0 +1,174 @@
+{%- comment -%}
+----------------------------------------------------------------------------------------------------------------------
+MAR26 SVG TRANSITION (Isolated Section)
+VERSION: 1.0.0
+----------------------------------------------------------------------------------------------------------------------
+A dedicated edge-to-edge SVG transition section.
+Designed to pull the following section up underneath it for a seamless visual blend.
+{%- endcomment -%}
+
+<style>
+  .mar26-svg-transition-{{ section.id }} {
+    /* 
+      Shopify themes sometimes wrap sections in a padded container. 
+      This trick forces the element to break out of any container and span 100vw.
+    */
+    width: 100vw !important;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+    z-index: {{ section.settings.z_index }};
+    pointer-events: none;
+    line-height: 0;
+    
+    {%- if section.settings.pull_up -%}
+      margin-bottom: -{{ section.settings.overlap_amount }}px;
+    {%- endif -%}
+  }
+  
+  .mar26-svg-{{ section.id }} {
+    width: 100%;
+    height: {{ section.settings.desktop_height }}px;
+    display: block;
+  }
+  
+  @media (max-width: 768px) {
+    .mar26-svg-{{ section.id }} {
+      height: {{ section.settings.mobile_height }}px;
+    }
+  }
+</style>
+
+<div class="mar26-svg-transition-{{ section.id }}">
+  <svg viewBox="0 0 1440 180" preserveAspectRatio="none" class="mar26-svg-{{ section.id }}">
+      <defs>
+          <filter id="softGlow-{{ section.id }}" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="8" result="blur" />
+          </filter>
+
+          <linearGradient id="ribbonFill-{{ section.id }}" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="{{ section.settings.gradient_start }}" stop-opacity="0.5" />
+              <stop offset="100%" stop-color="{{ section.settings.gradient_end }}" stop-opacity="0" />
+          </linearGradient>
+
+          <linearGradient id="ribbonStroke-{{ section.id }}" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#f43f5e" stop-opacity="1" />
+              <stop offset="50%" stop-color="#a855f7" stop-opacity="1" />
+              <stop offset="100%" stop-color="#6366f1" stop-opacity="1" />
+          </linearGradient>
+      </defs>
+
+      {%- comment -%} Back Layer - Softer, wider swell (Blurred) {%- endcomment -%}
+      <path
+          d="M0,100 C320,160 580,40 900,90 C1180,135 1320,60 1440,80 L1440,180 L0,180 Z"
+          fill="url(#ribbonFill-{{ section.id }})"
+          filter="url(#softGlow-{{ section.id }})"
+          transform="translate(0, 10)"
+          style="opacity: 0.4;"
+      />
+
+      {%- comment -%} Middle Layer - The defined ribbon (Blurred) {%- endcomment -%}
+      <path
+          d="M0,90 C360,30 640,160 1000,100 C1240,60 1380,110 1440,90 L1440,180 L0,180 Z"
+          fill="url(#ribbonFill-{{ section.id }})"
+          filter="url(#softGlow-{{ section.id }})"
+          style="opacity: 0.6; mix-blend-mode: multiply;"
+      />
+
+      {%- comment -%} Front distinct stroke line for definition {%- endcomment -%}
+      <path
+          d="M0,90 C360,30 640,160 1000,100 C1240,60 1380,110 1440,90"
+          fill="none"
+          stroke="url(#ribbonStroke-{{ section.id }})"
+          stroke-width="2"
+          style="opacity: 0.8; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));"
+      />
+
+      {%- comment -%} Upper thin accent line {%- endcomment -%}
+      <path
+          d="M0,85 C350,25 630,155 1010,95 C1250,55 1390,105 1440,85"
+          fill="none"
+          stroke="url(#ribbonStroke-{{ section.id }})"
+          stroke-width="1"
+          stroke-dasharray="4 6"
+          style="opacity: 0.4;"
+      />
+  </svg>
+</div>
+
+{% schema %}
+{
+  "name": "MAR26 SVG Transition",
+  "tag": "section",
+  "class": "mar26-svg-escape",
+  "settings": [
+    {
+      "type": "color",
+      "id": "gradient_start",
+      "label": "Top Gradient Color",
+      "default": "#d946ef"
+    },
+    {
+      "type": "color",
+      "id": "gradient_end",
+      "label": "Bottom Gradient Color",
+      "default": "#8b5cf6"
+    },
+    {
+      "type": "range",
+      "id": "desktop_height",
+      "min": 50,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "label": "Desktop Height",
+      "default": 180
+    },
+    {
+      "type": "range",
+      "id": "mobile_height",
+      "min": 50,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "label": "Mobile Height",
+      "default": 120
+    },
+    {
+      "type": "checkbox",
+      "id": "pull_up",
+      "label": "Overlap Next Section",
+      "info": "Pulls the section immediately below this one upwards so it sits 'behind' the transparent layer of the curve.",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "overlap_amount",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Overlap Amount (Px)",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "z_index",
+      "min": 1,
+      "max": 50,
+      "step": 1,
+      "label": "Z-Index",
+      "info": "Increase if the element below is sitting on top of the curve.",
+      "default": 10
+    }
+  ],
+  "presets": [
+    {
+      "name": "MAR26 SVG Transition",
+      "category": "March 2026 Layouts"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,467 @@
+{%- render 'section-spacing-collapsing' -%}
+
+{%- comment -%}
+----------------------------------------------------------------------------------------------------------------------
+MAR26 CAROUSEL
+VERSION: 3.5.1 - Surgical Spacing Adjustment
+----------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<script>
+  console.log("MAR26 Carousel - Version: 3.5.1");
+</script>
+
+{%- comment -%}
+------------------------------------------------------------------------------------------------------------------------
+CSS
+------------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+<style>
+  {%- assign block_size = section.settings.block_size -%}
+
+  #shopify-section-{{ section.id }} .mar26-carousel {
+    --image-link-blocks-item-width: {% if block_size == 'small' %}32vw{% elsif block_size == 'medium' %}38vw{% else %}48vw{% endif %};
+    --image-link-blocks-grid: auto / auto-flow var(--image-link-blocks-item-width);
+
+    --content-over-media-gap: var(--grid-gutter);
+
+    /* Disable snapping for marquee */
+    scroll-snap-type: none !important;
+    scroll-behavior: auto !important;
+    scrollbar-width: none !important;
+
+    /* Shadow Bleed Fix (v1.5.4) */
+    padding-top: 1.5rem !important;
+    padding-bottom: 2rem !important;
+    margin-top: -1.5rem !important;
+    margin-bottom: -2rem !important;
+  }
+  #shopify-section-{{ section.id }} .mar26-carousel::-webkit-scrollbar {
+    display: none !important;
+  }
+  #shopify-section-{{ section.id }} .mar26-carousel__item {
+    scroll-snap-align: none !important;
+  }
+
+  @media screen and (min-width: 700px) {
+    #shopify-section-{{ section.id }} .mar26-carousel {
+      --image-link-blocks-item-width: {% if block_size == 'small' %}16vw{% elsif block_size == 'medium' %}20vw{% else %}24vw{% endif %};
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    #shopify-section-{{ section.id }} .mar26-carousel {
+      --image-link-blocks-items-per-row: {% if block_size == 'small' %}6{% elsif block_size == 'medium' %}5{% else %}4{% endif %};
+      --image-link-blocks-grid: auto / auto-flow calc(var(--container-inner-width) / var(--image-link-blocks-items-per-row) - (var(--grid-gutter) / var(--image-link-blocks-items-per-row) * (var(--image-link-blocks-items-per-row) - 1)));
+    }
+  }
+
+  @media screen and (min-width: 1400px) {
+    #shopify-section-{{ section.id }} .mar26-carousel {
+      --image-link-blocks-items-per-row: {% if block_size == 'small' %}7{% elsif block_size == 'medium' %}6{% else %}5{% endif %};
+    }
+  }
+
+  /* PREMIUM CAROUSEL STYLES (March 26) */
+  #shopify-section-{{ section.id }} .mar26-carousel__item {
+    aspect-ratio: 4 / 4.75 !important;
+    border-radius: 1.25rem !important; /* Harmonized with brand card standard (20px) */
+    border: none !important;
+    box-shadow: var(--mar26-shadow-standard) !important; /* Standardized brand glow */
+    overflow: hidden;
+  }
+
+  /* Ensure content link fills the card area */
+  #shopify-section-{{ section.id }} .content-over-media {
+    display: block !important;
+    height: 100% !important;
+    width: 100% !important;
+    position: relative !important;
+  }
+
+  /* Image native scaling matching React group-hover:scale-110 */
+  #shopify-section-{{ section.id }} .zoom-image {
+    transition: transform 700ms ease-in-out !important;
+    object-fit: contain !important; /* Fits whatever is the bottleneck (width or height) */
+    object-position: top center !important; /* Force image to start from the very top */
+    height: 100% !important;
+    width: 100% !important; /* other dimension remains 'auto' proportionately via object-fit contain */
+    display: block !important;
+    margin: 0 auto !important;
+  }
+
+  #shopify-section-{{ section.id }} .mar26-carousel__item:hover .zoom-image {
+    transform: scale(1.1) !important;
+    transform-origin: top center !important; /* Scale out from the top center */
+  }
+
+  /* Solid Footer Colors based on block settings v3.1.0 roles */
+  {%- for block in section.blocks -%}
+    #block-{{ block.id }} {
+      --card-footer-bg: {{ block.settings.gradient_base_color | default: '#f81b27' }};
+      --card-footer-text: {{ block.settings.card_background | default: '#ffffff' }};
+    }
+  {%- endfor -%}
+
+  /* Solid Footer Bar Styling */
+  #shopify-section-{{ section.id }} .mar26-carousel-card-title {
+    background-color: var(--card-footer-bg) !important;
+    color: var(--card-footer-text) !important;
+  }
+  
+  /* Text flex child wrapper to guarantee center */
+  #shopify-section-{{ section.id }} .place-self-end-start .h-stack {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+  
+  /* Hide the native circled arrow icons to match React */
+  #shopify-section-{{ section.id }} .circle-chevron, 
+  #shopify-section-{{ section.id }} .icon-circle-button-right-clipped {
+    display: none !important;
+  }
+
+  /* Navigation Arrows - Standardized v3.3.0 */
+  #shopify-section-{{ section.id }} .mar26-carousel-nav .m26-btn {
+    background-color: var(--mar26-clr-black) !important;
+    color: var(--mar26-clr-white) !important;
+  }
+  
+  /* Override native gap to match standard header spacing */
+  #shopify-section-{{ section.id }} .section-stack {
+    gap: var(--mar26-header-margin-bottom, 2.5rem) !important;
+  }
+
+  /* Header adjustments for arrows */
+  #shopify-section-{{ section.id }} .mar26-carousel__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem; 
+    margin-bottom: 0; 
+    text-align: center;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    #shopify-section-{{ section.id }} .mar26-carousel__header {
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 0;
+      text-align: left;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .mar26-carousel__header .h-stack {
+    flex-shrink: 0;
+  }
+  #shopify-section-{{ section.id }} .mar26-carousel-nav .m26-btn:hover {
+    filter: brightness(1.1);
+  }
+  /* Gradient Heading Styles */
+
+
+
+  
+  /* Slider Navigation Arrows Visibility & Container Bleed Fix (v1.5.6) */
+  #shopify-section-{{ section.id }},
+  #shopify-section-{{ section.id }} .section-stack,
+  #shopify-section-{{ section.id }} .floating-controls-container {
+    --floating-controls-opacity: 1 !important;
+    overflow: visible !important; /* Ensure shadows reach the edges of the screen */
+  }
+  /* Hide nav buttons on mobile */
+  #shopify-section-{{ section.id }} .mar26-carousel-nav {
+    display: none !important;
+  }
+  @media screen and (min-width: 768px) {
+    #shopify-section-{{ section.id }} .mar26-carousel-nav {
+      display: flex !important;
+    }
+  }
+</style>
+
+{%- comment -%}
+------------------------------------------------------------------------------------------------------------------------
+LIQUID
+------------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<div {% render 'section-properties' %} id="mar26-carousel-section-{{ section.id }}" data-mar26-element="section-shell">
+  <div class="section-stack" data-mar26-element="carousel-container">
+    <div class="mar26-carousel__header px-4" id="mar26-carousel-header-{{ section.id }}" data-mar26-element="carousel-header">
+      {% render 'mar26-section-header',
+        section_id: section.id,
+        title: section.settings.heading_part1,
+        highlight: section.settings.heading_part2,
+        highlight_color: section.settings.highlight_color,
+        alignment: 'left',
+        no_margin: true
+      %}
+
+      {%- assign scroll_area_id = 'scroll-area-' | append: section.id -%}
+      <div class="h-stack gap-2 mar26-carousel-nav" data-controls="{{ scroll_area_id }}" id="mar26-carousel-nav-{{ section.id }}" data-mar26-element="nav-controls">
+        <button class="m26-btn m26-btn--small m26-btn--round" name="prev" aria-label="{{ 'general.accessibility.previous' | t }}" id="mar26-carousel-prev-{{ section.id }}" data-mar26-element="nav-prev">
+          <span class="m26-btn__icon">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 18px; height: 18px;">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
+            </svg>
+          </span>
+        </button>
+
+        <button class="m26-btn m26-btn--small m26-btn--round" name="next" aria-label="{{ 'general.accessibility.next' | t }}" id="mar26-carousel-next-{{ section.id }}" data-mar26-element="nav-next">
+          <span class="m26-btn__icon">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 18px; height: 18px;">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <div class="floating-controls-container">
+      <div id="{{ scroll_area_id }}" class="image-link-blocks mar26-carousel scroll-area bleed md:unbleed">
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign loading_strategy = nil
+  
+            if section.index > 3 or forloop.index > 3
+              assign loading_strategy = 'lazy'
+            endif
+          -%}
+
+          <div id="block-{{ block.id }}" {% render 'surface', class: 'image-link-blocks__item mar26-carousel__item group rounded-[2rem]', background: "", text_color: "", background_fallback: 'bg-secondary' %} style="background-color: var(--mar26-clr-white);" data-mar26-element="carousel-item" {{ block.shopify_attributes }}>
+            {%- capture item_content -%}
+              {%- if block.settings.image != blank -%}
+                {{- block.settings.image | image_url: width: block.settings.image.width | image_tag: loading: loading_strategy, sizes: '(max-width: 699px) 160px, 285px', widths: '200,300,400,500,600,700,800,900,1000,1200', class: 'zoom-image' -}}
+              {%- else -%}
+                {{- 'image' | placeholder_svg_tag: 'zoom-image placeholder' -}}
+              {%- endif -%}
+
+              {%- if block.settings.link_text != blank -%}
+                <div class="mar26-carousel-card-title" id="mar26-carousel-label-{{ block.id }}" data-mar26-element="item-label">
+                  {{ block.settings.link_text | escape }}
+                </div>
+              {%- endif -%}
+            {%- endcapture -%}
+
+            <a {% if block.settings.link_url %}href="{{ block.settings.link_url }}"{% endif %} class="content-over-media rounded">
+              {{- item_content -}}
+            </a>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const nav = document.querySelector('#shopify-section-{{ section.id }} .mar26-carousel-nav');
+    const isAutoplayEnabled = {{ section.settings.autoplay_enabled | json }};
+    if (!nav || !isAutoplayEnabled) return;
+
+    const scrollAreaId = nav.getAttribute('data-controls');
+    const scrollArea = document.getElementById(scrollAreaId);
+    if (!scrollArea) return;
+
+    const prevBtn = nav.querySelector('button[name="prev"]');
+    const nextBtn = nav.querySelector('button[name="next"]');
+
+    // Cloning logic
+    const items = Array.from(scrollArea.children);
+    if (items.length > 0) {
+      items.forEach(item => {
+        const clone = item.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        scrollArea.appendChild(clone);
+      });
+    }
+
+    // State management
+    let isPausedByHover = false;
+    let isPausedByInteraction = false;
+    let interactionTimeout = null;
+    let scrollPos = scrollArea.scrollLeft;
+    let lastTimestamp = 0;
+    let rafId = null;
+    let originalWidth = scrollArea.scrollWidth / 2;
+
+    const triggerInteractionPause = () => {
+      isPausedByInteraction = true;
+        interactionTimeout = setTimeout(() => {
+          isPausedByInteraction = false;
+          scrollPos = scrollArea.scrollLeft;
+          lastTimestamp = 0;
+        }, 2500); // 2.5 seconds
+      };
+
+    const handleStep = (timestamp) => {
+      if (!lastTimestamp) lastTimestamp = timestamp;
+      const delta = timestamp - lastTimestamp;
+      lastTimestamp = timestamp;
+
+      if (!isPausedByHover && !isPausedByInteraction) {
+        const speed = 0.0512; 
+        scrollPos += speed * delta;
+        
+        if (scrollPos >= originalWidth) {
+          scrollPos -= originalWidth;
+          scrollArea.scrollLeft = scrollPos;
+        } else {
+          scrollArea.scrollLeft = scrollPos;
+        }
+      }
+      rafId = requestAnimationFrame(handleStep);
+    };
+
+    const handleManualScroll = (direction) => {
+      triggerInteractionPause();
+      const firstItem = scrollArea.querySelector('.mar26-carousel__item');
+      if (!firstItem) return;
+      
+      const itemWidth = firstItem.clientWidth + 24;
+      const scrollAmount = direction === 'next' ? itemWidth : -itemWidth;
+      
+      scrollArea.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      
+      setTimeout(() => {
+        scrollPos = scrollArea.scrollLeft;
+      }, 600);
+    };
+
+    prevBtn?.addEventListener('click', () => handleManualScroll('prev'));
+    nextBtn?.addEventListener('click', () => handleManualScroll('next'));
+
+    scrollArea.addEventListener('mouseenter', () => isPausedByHover = true);
+    scrollArea.addEventListener('mouseleave', () => {
+      isPausedByHover = false;
+      lastTimestamp = 0;
+    });
+
+    scrollArea.addEventListener('touchstart', () => triggerInteractionPause(), { passive: true });
+    scrollArea.addEventListener('mousedown', () => triggerInteractionPause());
+
+    window.addEventListener('resize', () => {
+      originalWidth = scrollArea.scrollWidth / 2;
+    });
+
+    rafId = requestAnimationFrame(handleStep);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "MAR26 Carousel",
+  "class": "shopify-section--mar26-carousel",
+  "tag": "section",
+  "disabled_on": {
+    "templates": ["password"],
+    "groups": ["header", "custom.overlay"]
+  },
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Link block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link text"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL"
+        },
+        {
+          "type": "color",
+          "id": "card_background",
+          "label": "font color:",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "gradient_base_color",
+          "label": "Accent color:",
+          "default": "#f81b27"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_part1",
+      "label": "Heading Part 1",
+      "default": "PREMIUM"
+    },
+    {
+      "type": "text",
+      "id": "heading_part2",
+      "label": "Heading Part 2",
+      "default": "COLLECTIONS"
+    },
+    {
+      "type": "color",
+      "id": "highlight_color",
+      "label": "Highlight Color",
+      "default": "#f81b27"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay_enabled",
+      "label": "Enable Auto Scroll",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Carousel (MAR26)",
+      "category": "Media",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "link_text": "WINDOW CLEANERS",
+            "gradient_base_color": "#a468b6"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "link_text": "FLOOR WIPES",
+            "gradient_base_color": "#008c9e"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "link_text": "BROOMS",
+            "gradient_base_color": "#0059b3"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "link_text": "TOILET BRUSHES",
+            "gradient_base_color": "#f81b27"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "link_text": "SQUEEGEES",
+            "gradient_base_color": "#7f7f7f"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

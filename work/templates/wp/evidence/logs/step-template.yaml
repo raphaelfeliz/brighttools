@@ -1,0 +1,8 @@
+step_id: 1
+task_ref: "{task_number_or_name}"
+type: command | edit | check | rollback
+action: "{command_run_or_file_changed}"
+status: success | failure | discovery
+result_summary: "{concise_result_or_failure_details}"
+output_ref: "{evidence/output_file.log}"
+learning: "{actions_to_prevent_failure_recurrence}"

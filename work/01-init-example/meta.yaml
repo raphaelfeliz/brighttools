@@ -1,0 +1,13 @@
+id: 01-init-example
+slug: example
+type: initiative
+title: Example Initiative
+status: planned
+owner: unassigned
+agents: []
+parent: null
+depends_on: []
+blocks: []
+risk: low
+created: 2026-06-03
+updated: 2026-06-03

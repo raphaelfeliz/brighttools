@@ -1,0 +1,13 @@
+id: 01-incr-example
+slug: example
+type: increment
+title: Example Increment
+status: planned
+owner: unassigned
+agents: []
+parent: 01-init-example
+depends_on: []
+blocks: []
+risk: low
+created: 2026-06-03
+updated: 2026-06-03

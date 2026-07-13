@@ -1,0 +1,779 @@
+{%- comment -%}
+----------------------------------------------------------------------------------------------------------------------
+file-summary: MAR26 main product section. Drives MAR26 mobile ordering, gallery layout variables, and product info composition.
+
+# Version Block (SOP: Always update for real changes)
+version-name: Clear Payment Button Spacing
+version-number: 1.5.5
+version-summary: Cleared margin and padding on the .shopify-payment-button container to optimize button spacing.
+
+# Change rationale:
+# - Normal state: Black background / White text.
+# - Focus/Hover state: Dark Grey background / White text.
+# - Leverages internal <style> block for global section overrides.
+# - Includes all v1.4.9 mobile spacing fixes.
+----------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+{%- render 'section-spacing-collapsing' -%}
+
+<style>
+  #shopify-section-{{ section.id }} {
+    --product-grid: auto / minmax(0, 1fr);
+    --product-gallery-media-list-grid: auto / auto-flow {% if section.settings.mobile_carousel_control == 'free_scroll' %}{% if section.settings.mobile_media_size == 'expanded' %}84vw{% else %}73vw{% endif %}{% else %}100%{% endif %};
+    --product-gallery-media-list-gap: {% if section.settings.mobile_media_size == 'expanded' %}var(--spacing-0-5){% else %}var(--grid-gutter){% endif %};
+  }
+
+  @media screen and (max-width: 999px) {
+    #shopify-section-{{ section.id }} {
+      --section-spacing-block-start: {% if section.settings.mobile_media_size == 'expanded' %}0px{% else %}var(--container-gutter){% endif %};
+    }
+
+    {%- if section.settings.mobile_carousel_control == 'free_scroll' -%}
+      #shopify-section-{{ section.id }} .page-dots,
+      #shopify-section-{{ section.id }} .product-gallery__thumbnail-list-wrapper {
+        display: none !important;
+      }
+    {%- endif -%}
+  }
+
+  @media screen and (min-width: 1000px) {
+    #shopify-section-{{ section.id }} {
+      {%- assign media_ratio = section.settings.desktop_media_width | divided_by: 50.0 -%}
+      --product-grid: auto / minmax(0, {{ media_ratio }}fr) minmax(0, {{ 2.0 | minus: media_ratio }}fr);
+      --product-gallery-media-list-grid: {% if section.settings.desktop_media_layout contains 'grid' %}auto-flow dense / repeat({% if section.settings.desktop_media_layout == 'grid_one' %}1{% else %}2{% endif %}, minmax(0, 1fr)){% else %}auto / auto-flow 100%{% endif %};
+      --product-gallery-media-list-gap: calc(var(--grid-gutter) / 2);
+      --section-spacing-block-start: 0px !important;
+    }
+
+    {%- if section.settings.desktop_media_layout == 'grid_highlight' -%}
+      #shopify-section-{{ section.id }} .product-gallery__media-list > :not([hidden]) {
+        grid-column: span 2;
+      }
+
+      #shopify-section-{{ section.id }} .product-gallery__media-list > :not([hidden]) ~ *:not(.product-gallery__media--expand) {
+        grid-column: span 1;
+      }
+    {%- endif -%}
+
+    #shopify-section-{{ section.id }} .product {
+      gap: 0.875rem !important;
+    }
+
+    #shopify-section-{{ section.id }} .product-info__title {
+      font-size: clamp(1.9rem, 3vw, 2.85rem) !important;
+      line-height: 1.02 !important;
+    }
+
+    #shopify-section-{{ section.id }} .product-info__vendor,
+    #shopify-section-{{ section.id }} .product-info__sku,
+    #shopify-section-{{ section.id }} .product-info .text-sm,
+    #shopify-section-{{ section.id }} .product-info .text-xs {
+      line-height: 1.35 !important;
+    }
+  }
+
+  @media screen and (min-width: 1400px) {
+    #shopify-section-{{ section.id }} {
+      --product-gallery-media-list-gap: var(--grid-gutter);
+    }
+  }
+
+  .mar26-gradient-title {
+    background: linear-gradient(90deg, var(--gradient-color-1, #f43f5e), var(--gradient-color-2, #fbbf24));
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    text-fill-color: transparent !important;
+    display: inline-block;
+    line-height: 1.1;
+    margin: 0;
+    padding: 0;
+    word-break: break-word;
+    font-family: var(--heading-font-family);
+  }
+
+  .product-info__block-item {
+    margin-top: 12px !important;
+    margin-bottom: 0 !important;
+    width: 100% !important;
+  }
+
+  .product-info__block-item:first-child {
+    margin-top: 0 !important;
+  }
+
+  /* Specific override for Separator background spacing */
+  .product-info__block-item[data-block-type="separator"] {
+    display: block !important;
+    margin: 12px 0 !important;
+  }
+
+  .mar26-buy-buttons-wrapper,
+  .product-info__buy-buttons,
+  .product-info__buy-buttons > .v-stack {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    width: 100% !important;
+    flex: 1 1 100% !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .product-info__buy-buttons buy-buttons {
+    width: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    position: relative !important;
+    margin-inline: 0 !important;
+  }
+
+  .product-info__buy-buttons buy-buttons .button,
+  .product-info__buy-buttons buy-buttons .shopify-payment-button__button {
+    width: auto !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    flex: 0 0 auto !important;
+    margin: 0 !important;
+  }
+
+  .product-info__buy-buttons .shopify-payment-button {
+    width: auto !important;
+    flex: 0 0 auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Ensure the "More payment options" link doesn't break button-to-button vertical alignment */
+  .shopify-payment-button__more-options {
+    position: absolute !important;
+    top: calc(100% + 5px) !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: max-content !important;
+    font-size: 10px !important;
+    text-align: center !important;
+    margin: 0 !important;
+  }
+
+  .section.section--tight.section-blends.section-full {
+    padding: 6px !important;
+  }
+
+  /* MAR26 Buy Button Specific Styles (ISS-002) - Pill Synchronization */
+  #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy_buttons"] .button,
+  #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy-buttons"] .button,
+  #shopify-section-{{ section.id }} .shopify-payment-button__button {
+    background-color: #0F172A !important; /* Unified MAR26 Navy */
+    color: #ffffff !important;
+    border-color: #0F172A !important;
+    border-radius: 10px !important; /* Geometric Synchronization */
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+  }
+
+  #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy_buttons"] .button:hover,
+  #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy_buttons"] .button:focus,
+  #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy-buttons"] .button:hover,
+  #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy-buttons"] .button:focus {
+    background-color: #1E293B !important;
+    color: #ffffff !important;
+    border-color: #1E293B !important;
+  }
+
+  #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy-buttons"],
+  #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy_buttons"] {
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+  }
+
+  #shopify-section-{{ section.id }} buy-buttons.buy-buttons--multiple {
+    padding: 5px !important;
+  }
+
+  @media screen and (max-width: 999px) {
+    #shopify-section-{{ section.id }} .mar26-buy-buttons-wrapper,
+    #shopify-section-{{ section.id }} .product-info__buy-buttons,
+    #shopify-section-{{ section.id }} .product-info__buy-buttons > .v-stack {
+      align-items: stretch !important;
+      justify-content: center !important;
+      text-align: center !important;
+      width: 100% !important;
+    }
+
+    #shopify-section-{{ section.id }} .product-info__buy-buttons buy-buttons {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 12px !important;
+      width: 100% !important;
+      align-items: stretch !important;
+      justify-content: flex-start !important;
+      margin-inline: 0 !important;
+    }
+
+    #shopify-section-{{ section.id }} .product-info__buy-buttons buy-buttons > * {
+      width: 100% !important;
+      flex: 1 0 auto !important;
+    }
+
+    #shopify-section-{{ section.id }} .product {
+      display: flex !important;
+      flex-direction: column !important;
+      row-gap: 6px !important;
+    }
+
+    /* --- MOBILE ORCHESTRATION: THE SEQUENCE MAP --- */
+    /* Baseline: Everything defaults to 10, then specific rules below overwrite it */
+    #shopify-section-{{ section.id }} .product-info__block-item { order: 10 !important; }
+
+    /* Order 0: Images First */
+    #shopify-section-{{ section.id }} .product .product-gallery-column { order: 0 !important; }
+
+    /* Order 1: Product Identity (Title + Tags) */
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26-tags"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26_tags"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26-title-and-tags"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26_title_and_tags"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26-gradient-title"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26_gradient_title"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="title"] { order: 1 !important; }
+
+    /* Order 2: Social Proof (Reviews / Apps) */
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="@app"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="rating"] { order: 2 !important; }
+
+    /* Order 3: Value Proposition (Price) */
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="price"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26-quantity-price"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26_quantity_price"] { order: 3 !important; }
+
+    /* Order 4: Details (Description) */
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="description"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26-short-description"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26_short_description"],
+    #shopify-section-{{ section.id }} .product .mar26-description-card { order: 4 !important; }
+
+    /* Order 5: Call to Action (Add to cart) */
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="buy_buttons"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="buy-buttons"] { order: 5 !important; }
+
+    /* Secondary / Utility Blocks */
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="separator"] { order: 6 !important; }
+
+    /* Flatten columns to allow reordering of children */
+    #shopify-section-{{ section.id }} .product-gallery-column,
+    #shopify-section-{{ section.id }} .product-info {
+      display: contents !important;
+    }
+
+    /* 1. Gallery (Main Media + Thumbnails) */
+    /* 2. Standardized Block Gaps (Mobile) */
+    #shopify-section-{{ section.id }} .product-info__block-item {
+      padding: 0 var(--container-gutter) !important;
+      margin-top: 2px !important;
+      margin-bottom: 0 !important;
+      width: 100% !important;
+    }
+
+    #shopify-section-{{ section.id }} .product-info__block-item:first-child {
+      margin-top: 0 !important;
+    }
+
+    /* 2.1 MAR26 Gradient Title */
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26-gradient-title"] {
+      margin-top: 0 !important; /* Always zero if it's first in logic */
+    }
+
+    /* 2.15 MAR26 Tags & Unified Title */
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26-tags"],
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26_tags"] {
+      margin-top: 12px !important;
+      padding-bottom: 0 !important;
+    }
+
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26-title-and-tags"],
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26_title_and_tags"] {
+      margin-top: 12px !important;
+      padding-bottom: 0 !important;
+    }
+
+    /* App blocks (Judge.me badge etc.) and native rating block */
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="@app"],
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="rating"] {
+      margin-top: 2px !important;
+      margin-bottom: 0 !important;
+    }
+
+
+    /* 2.2 Standard Title (Fallback) */
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="title"] {
+    }
+
+
+
+    /* 2.25 MAR26 Short Description (Visual Polish) */
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26_short_description"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26-short-description"] {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      padding-inline: 0 !important;
+    }
+
+    /* 2.3 Separator */
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="separator"] {
+      display: block !important;
+      margin: 5px 0 !important; /* Vertical divide on mobile */
+    }
+
+    /* 3. Description / Highlights Card */
+    #shopify-section-{{ section.id }} .mar26-description-card {
+      margin-top: 3px !important;
+      margin-left: var(--container-gutter) !important;
+      margin-right: var(--container-gutter) !important;
+      padding: 5px !important;
+    }
+
+    #shopify-section-{{ section.id }} .mar26-short-description-card {
+      margin-top: 5px !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 5px !important;
+    }
+
+    /* 5. Pricing */
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="price"] {
+      padding: 0 var(--container-gutter) !important;
+      margin-top: 5px !important;
+    }
+
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26-quantity-price"] {
+      padding: 0 var(--container-gutter) !important;
+      margin-top: 5px !important;
+    }
+
+    /* 6. Everything Else (Buy Buttons, Variants, etc.) */
+    #shopify-section-{{ section.id }} .product-info__block-item {
+      padding: 0 var(--container-gutter) !important;
+      width: 100% !important;
+    }
+
+    /* 7. Complementary Products (Mobile High-Density) */
+    #shopify-section-{{ section.id }} .horizontal-product {
+      display: flex !important;
+      flex-direction: row !important;
+      padding: 4px !important;
+      gap: 5px !important;
+      min-height: 0 !important;
+      align-items: center !important;
+      width: 100% !important;
+    }
+    #shopify-section-{{ section.id }} .horizontal-product__image {
+      display: block !important;
+      width: 60px !important;
+      height: 60px !important;
+      flex: 0 0 60px !important;
+      object-fit: cover !important;
+    }
+    #shopify-section-{{ section.id }} .horizontal-product-list-carousel {
+       padding-bottom: 3px !important;
+    }
+    #shopify-section-{{ section.id }} .horizontal-product__info {
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      flex: 1 1 auto !important;
+      gap: 6px !important;
+    }
+    #shopify-section-{{ section.id }} .horizontal-product__cta {
+      margin: 0 !important;
+      flex: 0 0 auto !important;
+    }
+    #shopify-section-{{ section.id }} .horizontal-product__info .v-stack {
+      flex: 1 1 auto !important;
+    }
+  }
+</style>
+
+{%- capture product_form_id -%}product-form-{{ product.id }}-{{ section.id }}{%- endcapture -%}
+{%- assign short_description_position = section.settings.short_description_position | default: 'left' -%}
+
+<div {% render 'section-properties', tight: true %}>
+  <product-rerender id="product-info-{{ product.id }}-{{ section.id }}" observe-form="{{ product_form_id }}" allow-partial-rerender>
+    <div class="product">
+      <script>
+      (function() {
+        var VERSION = 'v1.4.8';
+        console.log('MAR26 Product Section: ' + VERSION + ' loaded');
+
+        // Gate: only run diagnostics if ?debug=true is in the URL
+        if (new URLSearchParams(window.location.search).get('debug') !== 'true') return;
+
+        console.log('%c[MAR26 DEBUG MODE ACTIVE]', 'background: #e11d48; color: white; padding: 4px 8px; font-weight: bold;');
+
+        // Wait for DOM to be fully painted
+        requestAnimationFrame(function() { setTimeout(function() {
+
+          // --- OPTION A: DOM Audit Table ---
+          var sectionEl = document.getElementById('shopify-section-{{ section.id }}');
+          if (!sectionEl) { console.warn('[MAR26 DEBUG] Section element not found'); return; }
+
+          // Find all direct layout children (gallery column + info blocks)
+          var product = sectionEl.querySelector('.product');
+          if (!product) { console.warn('[MAR26 DEBUG] .product element not found'); return; }
+
+          var children = product.children;
+          var audit = [];
+
+          for (var i = 0; i < children.length; i++) {
+            var el = children[i];
+            var tag = el.tagName.toLowerCase();
+            var blockType = el.getAttribute('data-block-type') || '(none)';
+            var classes = el.className ? el.className.split(' ').slice(0, 3).join(' ') : '';
+            var computed = window.getComputedStyle(el);
+            var order = computed.order;
+            var display = computed.display;
+            var text = (el.textContent || '').trim().substring(0, 50);
+
+            audit.push({
+              '#': i,
+              'tag': tag,
+              'data-block-type': blockType,
+              'classes (first 3)': classes,
+              'computed order': order,
+              'display': display,
+              'text preview': text
+            });
+
+            // If display:contents, also audit its children (they participate in flex ordering)
+            if (display === 'contents') {
+              var subChildren = el.children;
+              for (var j = 0; j < subChildren.length; j++) {
+                var sub = subChildren[j];
+                var subComputed = window.getComputedStyle(sub);
+                audit.push({
+                  '#': i + '.' + j,
+                  'tag': sub.tagName.toLowerCase(),
+                  'data-block-type': sub.getAttribute('data-block-type') || '(none)',
+                  'classes (first 3)': sub.className ? sub.className.split(' ').slice(0, 3).join(' ') : '',
+                  'computed order': subComputed.order,
+                  'display': subComputed.display,
+                  'text preview': (sub.textContent || '').trim().substring(0, 50)
+                });
+              }
+            }
+          }
+
+          console.log('%c--- MAR26 BLOCK AUDIT (v' + VERSION + ') ---', 'font-weight:bold; font-size:14px;');
+          console.table(audit);
+
+          // --- OPTION B: Colored Borders ---
+          var colors = {
+            'mar26_title_and_tags': '3px solid #e11d48',  /* red */
+            'mar26-title-and-tags': '3px solid #e11d48',  /* red (hyphen variant) */
+            'price':               '3px solid #2563eb',  /* blue */
+            'mar26_short_description': '3px solid #16a34a', /* green */
+            'mar26-short-description': '3px solid #16a34a', /* green (hyphen variant) */
+            'buy_buttons':         '3px solid #9333ea',  /* purple */
+            '@app':                '3px solid #f59e0b',  /* amber */
+            'rating':              '3px solid #f59e0b',  /* amber */
+            'description':         '3px solid #06b6d4',  /* cyan */
+            'separator':           '3px solid #6b7280',  /* gray */
+            'mar26-gradient-title':'3px solid #ec4899',  /* pink */
+            'quantity_selector':   '3px solid #8b5cf6',  /* violet */
+            'variant_picker':      '3px solid #14b8a6'   /* teal */
+          };
+
+          var allBlocks = sectionEl.querySelectorAll('[data-block-type]');
+          for (var k = 0; k < allBlocks.length; k++) {
+            var block = allBlocks[k];
+            var bt = block.getAttribute('data-block-type');
+            if (colors[bt]) {
+              block.style.outline = colors[bt];
+              block.style.outlineOffset = '-1px';
+            } else {
+              block.style.outline = '2px dashed #d1d5db';
+              block.style.outlineOffset = '-1px';
+            }
+            // Label each block
+            var label = document.createElement('div');
+            label.textContent = bt + ' (order: ' + window.getComputedStyle(block).order + ')';
+            label.style.cssText = 'position:absolute;top:0;left:0;background:rgba(0,0,0,0.75);color:#fff;font-size:10px;padding:2px 6px;z-index:9999;pointer-events:none;font-family:monospace;';
+            block.style.position = block.style.position || 'relative';
+            block.insertBefore(label, block.firstChild);
+          }
+
+          // Also label gallery column
+          var gallery = sectionEl.querySelector('.product-gallery-column');
+          if (gallery) {
+            gallery.style.outline = '3px solid #f97316'; /* orange */
+            var gLabel = document.createElement('div');
+            gLabel.textContent = 'product-gallery-column (order: ' + window.getComputedStyle(gallery).order + ')';
+            gLabel.style.cssText = 'position:fixed;top:0;left:0;background:#f97316;color:#fff;font-size:11px;padding:3px 8px;z-index:99999;font-family:monospace;';
+            document.body.appendChild(gLabel);
+          }
+
+          console.log('%c--- COLOR KEY ---', 'font-weight:bold;');
+          console.log('🔴 Red    = Title/Tags');
+          console.log('🔵 Blue   = Price');
+          console.log('🟢 Green  = Short Description');
+          console.log('🟣 Purple = Buy Buttons');
+          console.log('🟡 Amber  = App/Rating');
+          console.log('🟠 Orange = Gallery Column');
+          console.log('⚪ Dashed = Unknown/Unregistered');
+
+        }, 500); });
+      })();
+      </script>
+      {%- assign highlights_block = section.blocks | where: 'type', 'mar26_short_description' | first -%}
+      {%- if product.media.size > 0 -%}
+        <div class="product-gallery-column v-stack gap-4">
+          {%- if product.media.size > 0 -%}
+            {%- render 'mar26-product-gallery', product: product, product_form_id: product_form_id -%}
+          {%- endif -%}
+
+          {%- if highlights_block != blank and short_description_position == 'left' -%}
+            <div class="hidden md:block">
+              {%- render 'mar26-short-description', block: highlights_block, product: product -%}
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {%- render 'mar26-product-info', 
+        product: product, 
+        update_url: true,
+        product_form_id: product_form_id,
+        short_description_position: short_description_position,
+        context: 'main_product' -%}
+    </div>
+  </product-rerender>
+</div>
+
+{%- assign buy_buttons_block = section.blocks | where: 'type', 'buy_buttons' | first -%}
+
+{%- if section.settings.show_fixed_add_to_cart and product.available and buy_buttons_block != blank -%}
+  <product-rerender id="{{ product_form_id }}-sticky-bar" observe-form="{{ product_form_id }}">
+    {%- if product.selected_or_first_available_variant.available -%}
+      <product-quick-add form="{{ product_form_id }}" class="product-quick-add">
+        {%- assign button_label = 'product.general.add_to_cart_button' | t -%}
+
+        <buy-buttons template="{{ product.template_suffix }}" form="{{ product_form_id }}" class="sm:hidden">
+          {%- render 'button', type: 'submit', content: button_label, form: product_form_id, background: buy_buttons_block.settings.atc_button_background, text_color: buy_buttons_block.settings.atc_button_text_color, secondary: true, stretch: true, size: 'lg' -%}
+        </buy-buttons>
+
+        {%- assign image = product.selected_or_first_available_variant.featured_media | default: product.featured_media -%}
+
+        <div class="product-quick-add__variant {% if image == blank %}no-image{% endif %} hidden sm:grid">
+          {%- if image != blank -%}
+            <variant-media widths="80,160" form="{{ product_form_id }}">
+              {{- image | image_url: width: image.width | image_tag: loading: 'lazy', sizes: '80px', widths: '80,160', class: 'rounded-xs' -}}
+            </variant-media>
+          {%- endif -%}
+
+          <div class="v-stack gap-0.5">
+            {%- assign vendor_block = section.blocks | where: 'type', 'vendor' -%}
+
+            {%- if vendor_block != blank -%}
+              {%- render 'vendor' with product.vendor, class: 'text-xs' -%}
+            {%- endif -%}
+
+            <a href="{{ product.url }}" class="bold truncate-text">{{ product.title }}</a>
+            {%- render 'price-list', product: product, variant: product.selected_or_first_available_variant, form_id: product_form_id -%}
+          </div>
+
+          <buy-buttons template="{{ product.template_suffix }}" form="{{ product_form_id }}" force-secondary-button>
+            {%- render 'button', type: 'submit', content: button_label, form: product_form_id, background: buy_buttons_block.settings.atc_button_background, text_color: buy_buttons_block.settings.atc_button_text_color, secondary: true -%}
+          </buy-buttons>
+        </div>
+      </product-quick-add>
+    {%- endif -%}
+  </product-rerender>
+{%- endif -%}
+
+{%- render 'product-quick-buy', product: product -%}
+
+{% schema %}
+{
+  "name": "MAR26 Product page",
+  "class": "shopify-section--main-product",
+  "tag": "section",
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "mar26_title_and_tags",
+      "name": "Title and Tags (Unified)",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Tags are automatically pulled from the 'custom.color_tags' metaobject list on each product."
+        },
+        {
+          "type": "select",
+          "id": "heading_tag",
+          "label": "Title style",
+          "options": [
+            { "value": "h1", "label": "X-Large" },
+            { "value": "h2", "label": "Large" },
+            { "value": "h3", "label": "Medium" },
+            { "value": "h4", "label": "Small" },
+            { "value": "h5", "label": "X-Small" },
+            { "value": "h6", "label": "XX-Small" }
+          ],
+          "default": "h2"
+        }
+      ]
+    },
+    {
+      "type": "vendor",
+      "name": "Vendor",
+      "limit": 1
+    },
+    {
+      "type": "title",
+      "name": "Title",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "heading_tag",
+          "label": "Style",
+          "options": [
+            { "value": "h1", "label": "X-Large" },
+            { "value": "h2", "label": "Large" },
+            { "value": "h3", "label": "Medium" },
+            { "value": "h4", "label": "Small" },
+            { "value": "h5", "label": "X-Small" },
+            { "value": "h6", "label": "XX-Small" }
+          ],
+          "default": "h2"
+        }
+      ]
+    },
+
+    {
+      "type": "mar26_gradient_title",
+      "name": "MAR26 Gradient Title",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_on_mobile",
+          "label": "Show on mobile",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_on_desktop",
+          "label": "Show on desktop",
+          "default": true
+        },
+        { "type": "inline_richtext", "id": "text_top", "label": "Top Text (Solid)", "default": "Floor Wipes" },
+        { "type": "inline_richtext", "id": "text", "label": "Bottom Text (Gradient)", "info": "Leave empty to use the product title.", "default": "Fresh Home." },
+        { "type": "color", "id": "color_1", "label": "Color 1", "default": "#ec4899" },
+        { "type": "color", "id": "color_2", "label": "Color 2", "default": "#3b82f6" },
+        { "type": "range", "id": "font_size", "label": "Desktop Font size", "min": 20, "max": 200, "step": 2, "unit": "px", "default": 80 },
+        { "type": "range", "id": "font_size_mobile", "label": "Mobile Font size", "min": 20, "max": 120, "step": 2, "unit": "px", "default": 48 },
+        { "type": "select", "id": "font_weight", "label": "Font weight", "options": [
+            { "value": "400", "label": "Normal" },
+            { "value": "700", "label": "Bold" },
+            { "value": "800", "label": "Extra Bold" },
+            { "value": "900", "label": "Black" }
+          ], "default": "900" }
+      ]
+    },
+    { "type": "sku", "name": "SKU", "limit": 1 },
+    { "type": "badges", "name": "Badges", "limit": 1, "settings": [{ "type": "paragraph", "content": "Use metafields to add custom badges. [Learn more](https://support.maestrooo.com/article/75-collection-displaying-custom-label)" }] },
+    { "type": "price", "name": "Price", "limit": 1, "settings": [
+        { "type": "checkbox", "id": "show_taxes_notice", "label": "Show taxes notice", "default": false }
+      ] 
+    },
+    { "type": "mar26_quantity_price", "name": "MAR26 Quantity + Buy", "limit": 1, "settings": [
+        { "type": "checkbox", "id": "show_payment_button", "label": "Show dynamic checkout button", "default": true },
+        { "type": "color", "id": "atc_button_background", "label": "Add to cart background" },
+        { "type": "color", "id": "atc_button_text_color", "label": "Add to cart color" },
+        { "type": "color", "id": "payment_button_background", "label": "Dynamic checkout background" },
+        { "type": "color", "id": "payment_button_text_color", "label": "Dynamic checkout color" }
+      ]
+    },
+    { "type": "payment_terms", "name": "Payment installments", "limit": 1 },
+    { "type": "rating", "name": "Rating", "limit": 1 },
+    { "type": "separator", "name": "Separator" },
+    { "type": "description", "name": "Description", "limit": 1, "settings": [
+        { "type": "select", "id": "icon", "label": "Icon", "options": [{ "value": "none", "label": "None" }], "default": "none" },
+        { "type": "image_picker", "id": "custom_icon", "label": "Custom icon", "info": "96 x 96px .png or .svg recommended. Only used when content is collapsed." },
+        { "type": "range", "id": "icon_width", "min": 16, "max": 48, "step": 2, "unit": "px", "label": "Icon width", "default": 20 },
+        { "type": "checkbox", "id": "collapse_content", "label": "Collapse content", "default": false }
+      ]
+    },
+    { "type": "variant_picker", "name": "Variant picker", "limit": 1, "settings": [
+        { "type": "checkbox", "id": "hide_sold_out_variants", "label": "Hide sold out variants", "default": false },
+        { "type": "checkbox", "id": "stack_blocks", "label": "Stack options on mobile", "default": true },
+        { "type": "select", "id": "selector_style", "label": "Selector style", "options": [{ "value": "block", "label": "Block" }, { "value": "dropdown", "label": "Dropdown" }], "default": "block" },
+        { "type": "select", "id": "swatch_selector_style", "label": "Swatch selector style", "options": [{ "value": "swatch", "label": "Swatch" }, { "value": "block_swatch", "label": "Block with swatch" }, { "value": "none", "label": "None" }], "default": "swatch" }
+      ]
+    },
+    { "type": "quantity_selector", "name": "Quantity selector", "limit": 1 },
+    { "type": "buy_buttons", "name": "Buy buttons", "limit": 1, "settings": [
+        { "type": "checkbox", "id": "show_payment_button", "label": "Show dynamic checkout button", "default": true },
+        { "type": "color", "id": "atc_button_background", "label": "Add to cart background" },
+        { "type": "color", "id": "atc_button_text_color", "label": "Add to cart color" }
+      ]
+    },
+    {
+      "type": "mar26_short_description",
+      "name": "MAR26 Short Description",
+      "limit": 1,
+      "settings": [
+        { "type": "richtext", "id": "description", "label": "Description" },
+        { "type": "text", "id": "highlight_1", "label": "Highlight 1", "default": "Industrial-grade microfibre technology" },
+        { "type": "text", "id": "highlight_2", "label": "Highlight 2", "default": "Traps 99% of dust and allergens" },
+        { "type": "text", "id": "highlight_3", "label": "Highlight 3", "default": "Machine washable up to 100 times" },
+        { "type": "color", "id": "icon_color", "label": "Icon Color", "default": "#e11d48" }
+      ]
+    },
+    { "type": "share_buttons", "name": "Share buttons", "settings": [{ "type": "select", "id": "alignment", "label": "Alignment", "options": [{ "value": "start", "label": "Left" }, { "value": "center", "label": "Center" }, { "value": "end", "label": "Right" }], "default": "start" }] }
+  ],
+  "settings": [
+    { "type": "checkbox", "id": "full_width", "label": "Full width", "default": true },
+    { "type": "checkbox", "id": "show_fixed_add_to_cart", "label": "Show add to cart on scroll", "default": true },
+    { "type": "select", "id": "short_description_position", "label": "Short Description Position (Desktop)", "options": [
+        { "value": "left", "label": "Left column" },
+        { "value": "right", "label": "Right column" }
+      ], "default": "left" },
+    { "type": "range", "id": "desktop_media_width", "label": "Desktop media size", "min": 35, "max": 65, "step": 5, "unit": "%", "default": 55 },
+    { "type": "select", "id": "desktop_media_layout", "label": "Desktop media layout", "options": [
+        { "value": "grid_one", "label": "Grid (1x1)" },
+        { "value": "grid", "label": "Grid (2x2)" },
+        { "value": "grid_highlight", "label": "Grid (2x2) with highlighted media" },
+        { "value": "carousel_thumbnails_left", "label": "Thumbnails left (carousel)" },
+        { "value": "carousel_thumbnails_bottom", "label": "Thumbnails bottom (carousel)" },
+        { "value": "mar26-bottom-images", "label": "mar26-bottom-images" }
+      ], "default": "carousel_thumbnails_left" },
+    { "type": "select", "id": "mobile_media_size", "label": "Mobile media size", "options": [{ "value": "expanded", "label": "Expanded" }, { "value": "contained", "label": "Contained" }], "default": "expanded" },
+    { "type": "select", "id": "mobile_carousel_control", "label": "Mobile carousel control", "options": [{ "value": "dots", "label": "Dots" }, { "value": "floating_dots", "label": "Floating dots" }, { "value": "thumbnails", "label": "Thumbnails" }, { "value": "free_scroll", "label": "Free scroll" }], "default": "floating_dots" },
+    { "type": "checkbox", "id": "enable_video_autoplay", "label": "Enable video autoplay", "default": false },
+    { "type": "checkbox", "id": "enable_video_looping", "label": "Enable video looping", "default": true },
+    { "type": "checkbox", "id": "enable_image_zoom", "label": "Enable image zoom", "default": true },
+    { "type": "range", "id": "max_image_zoom_level", "min": 1, "max": 4, "step": 0.5, "label": "Max zoom level", "default": 3, "visible_if": "{{ section.settings.enable_image_zoom }}" },
+    { "type": "checkbox", "id": "show_nav_icons_desktop", "label": "Show navigation icons on desktop", "default": true },
+    { "type": "checkbox", "id": "show_nav_icons_mobile", "label": "Show navigation icons on mobile", "default": false },
+    { "type": "color", "id": "background", "label": "Background" },
+    { "type": "color_background", "id": "background_gradient", "label": "Background gradient" },
+    { "type": "color", "id": "text_color", "label": "Text" },
+    { "type": "color", "id": "input_background", "label": "Input background", "default": "rgba(0,0,0,0)" },
+    { "type": "color", "id": "input_text_color", "label": "Input text" }
+  ]
+}
+{% endschema %}

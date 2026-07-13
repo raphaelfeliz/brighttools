@@ -1,0 +1,16 @@
+# IDE
+.vscode/
+.idea/
+
+# System Files
+.DS_Store
+Thumbs.db
+*.log
+
+# Dependencies
+node_modules/
+pnpm-lock.yaml
+
+# Temp comparison worktrees
+worktrees/pull/
+worktrees/temp*/

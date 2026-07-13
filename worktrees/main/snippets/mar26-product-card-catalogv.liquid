@@ -1,0 +1,106 @@
+{%- comment -%}
+  Name: snippets/mar26-product-card-catalogv.liquid
+  Version: 1.5.4
+  Description: Renders the Catalog Version product card layout. Features a dynamic 5-row fallback layout with conditional is-promo class and Sold out badge.
+{%- endcomment -%}
+
+<div class="mar26-card-catalogv-wrapper">
+  
+  {%- comment -%} Image Box Container with CTA button overlay {%- endcomment -%}
+  <div class="mar26-card-catalogv-image-box">
+    {%- unless product.available -%}
+      <span class="mar26-card-catalogv-badge-sold-out">Sold out</span>
+    {%- endunless -%}
+    <a href="{{ product.url }}" class="mar26-card-catalogv-image-link">
+      {%- if product.featured_media -%}
+        {{ product.featured_media | image_url: width: 600 | image_tag: loading: 'lazy', class: 'mar26-product-img' }}
+      {%- else -%}
+        {{ 'product-1' | placeholder_svg_tag: 'mar26-product-img' }}
+      {%- endif -%}
+    </a>
+    
+    {%- comment -%} Red circle AJAX button overlay (bottom-right) {%- endcomment -%}
+    <div class="mar26-card-catalogv-cta">
+      {%- if product != blank -%}
+        {%- form 'product', product, is: 'product-form', class: 'mar26-add-btn-form-catalogv', style: 'margin:0; display:flex;' -%}
+          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+          <button 
+            type="submit" 
+            class="mar26-card-catalogv-btn" 
+            {% unless product.available %}disabled{% endunless %}
+            aria-label="{%- if product.available -%}Add to Cart{%- else -%}Out of Stock{%- endif -%}"
+          >
+            <svg style="width:20px; height:20px;" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+            </svg>
+          </button>
+        {%- endform -%}
+      {%- endif -%}
+    </div>
+  </div>
+
+  {%- comment -%} 5-Row Information Container {%- endcomment -%}
+  <div class="mar26-card-catalogv-info">
+    
+    <div class="mar26-card-catalogv-text-group" data-catalogv-text-group>
+      {%- comment -%} Row 1: Product Title (Dynamic wrapping up to 3 lines) {%- endcomment -%}
+      <div class="mar26-card-catalogv-row-1">
+        <h3 class="mar26-card-catalogv-title" data-catalogv-title>
+          <a href="{{ product.url }}">{{ product.title }}</a>
+        </h3>
+      </div>
+
+      {%- comment -%} Row 2: Short Description {%- endcomment -%}
+      <div class="mar26-card-catalogv-row-2">
+        <p class="mar26-card-catalogv-desc">
+          {{ product.metafields.custom.short_description.value | default: '' | strip_html | strip }}
+        </p>
+      </div>
+
+      {%- comment -%} Row 3: Badges / Tags {%- endcomment -%}
+      <div class="mar26-card-catalogv-row-3">
+        <div class="mar26-card-catalogv-badge-row">
+          {%- render 'mar26-product-tags', product: product -%}
+        </div>
+      </div>
+    </div>
+
+    {%- comment -%} Row 4: Ratings (Judge.me or mock stars inline) {%- endcomment -%}
+    <div class="mar26-card-catalogv-row-4">
+      <div class="mar26-card-catalogv-ratings">
+        {%- if product != blank -%}
+          <!-- Start of Judge.me code -->
+          <div class="jdgm-widget jdgm-preview-badge" data-id="{{ product.id }}">
+            {{ product.metafields.judgeme.badge }}
+          </div>
+          <!-- End of Judge.me code -->
+        {%- else -%}
+          <div class="mar26-summary__stars">
+            {%- for i in (1..5) -%}
+              <svg fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+            {%- endfor -%}
+          </div>
+          <span class="mar26-summary__review-count">(248)</span>
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- comment -%} Row 5: Pricing (Matches standard style) {%- endcomment -%}
+    <div class="mar26-card-catalogv-row-5">
+      <div class="mar26-card-catalogv-pricing">
+        <span class="mar26-current-price{% if product.compare_at_price > product.price %} is-promo{% endif %}">
+          {{ product.price | money }}
+        </span>
+        {%- if product.compare_at_price > product.price -%}
+          <span class="mar26-compare-price">
+            {{ product.compare_at_price | money }}
+          </span>
+        {%- endif -%}
+      </div>
+    </div>
+
+  </div>
+
+</div>
