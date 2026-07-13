@@ -31,6 +31,12 @@
             "heading_tag": "h3"
           }
         },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
         "judge_me_reviews_preview_badge_kG7NLt": {
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {}
@@ -58,12 +64,6 @@
             "font_size": 40,
             "font_size_mobile": 40,
             "font_weight": "900"
-          }
-        },
-        "price": {
-          "type": "price",
-          "settings": {
-            "show_taxes_notice": false
           }
         },
         "quantity_selector_dgjkJg": {
@@ -141,29 +141,25 @@
     "video_PBmR83": {
       "type": "video",
       "blocks": {
-        "play_F3GfTR": {
-          "type": "play",
-          "settings": {}
-        },
         "heading_6VXJqE": {
           "type": "heading",
           "settings": {
-            "text": "Video",
+            "text": "",
             "heading_tag": "h1"
           }
         }
       },
       "block_order": [
-        "play_F3GfTR",
         "heading_6VXJqE"
       ],
       "name": "Video",
       "settings": {
-        "full_width": true,
+        "full_width": false,
         "allow_transparent_header": false,
-        "autoplay": false,
-        "video_size": "auto",
-        "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "autoplay": true,
+        "video_size": "md",
+        "video": "shopify://files/videos/06SiliconeRubberBroom.mp4",
+        "external_video_url": "",
         "text_color": "#ffffff",
         "overlay_color": "#000000",
         "overlay_opacity": 30
@@ -421,6 +417,73 @@
         "text_color": ""
       }
     },
+    "mar26_whats_included_hwC8XQ": {
+      "type": "mar26-whats-included",
+      "blocks": {
+        "item_mPaejM": {
+          "type": "item",
+          "settings": {
+            "title": "Japanese Silicone Broom (30cm)",
+            "description": "<p>100% silicone bristles create static electricity to quickly gather dust, hair, and crumbs.</p>",
+            "spec_1": "Adjustable Knuckle Joint",
+            "spec_2": "Furniture-Safe Soft Edge",
+            "spec_3": "",
+            "accent_color": "#e2e8f0"
+          }
+        },
+        "item_6YK7ta": {
+          "type": "item",
+          "settings": {
+            "title": "Silicone Squeegee (30cm)",
+            "description": "<p>Single cast 100% silicone for extreme durability without flimsy rubber strips.</p>",
+            "spec_1": "Multi-surface Use",
+            "spec_2": "Zero Water Streaks",
+            "spec_3": "",
+            "accent_color": "#e2e8f0"
+          }
+        },
+        "item_7krkje": {
+          "type": "item",
+          "settings": {
+            "title": "Stick-to-floor Dustpan",
+            "description": "<p>Crafted from a single piece of high-quality silicone that sticks entirely to the floor.</p>",
+            "spec_1": "Sweep without holding",
+            "spec_2": "Attaches to handles",
+            "spec_3": "",
+            "accent_color": "#e2e8f0"
+          }
+        },
+        "item_XfYzVT": {
+          "type": "item",
+          "settings": {
+            "title": "Quick Mop Floor Wipes",
+            "description": "<p>Supersized wet wipes safe for all floors. Poke the broom handle through and polish.</p>",
+            "spec_1": "5 Awesome Scents",
+            "spec_2": "Instantly discard after use",
+            "spec_3": "",
+            "accent_color": "#e2e8f0"
+          }
+        }
+      },
+      "block_order": [
+        "item_mPaejM",
+        "item_6YK7ta",
+        "item_7krkje",
+        "item_XfYzVT"
+      ],
+      "name": "MAR26 What's Included",
+      "settings": {
+        "pre_title": "Complete System",
+        "pre_title_color": "#2563eb",
+        "black_title": "What's",
+        "gradient_title": "Included?",
+        "gradient_left_color": "#f43f5e",
+        "gradient_right_color": "#be123c",
+        "subheading": "Everything you need for an effortless, water-saving clean on the road.",
+        "columns": "4",
+        "outline_color": "#e2e8f0"
+      }
+    },
     "mar26_testimonials": {
       "type": "mar26-testimonials",
       "blocks": {
@@ -521,6 +584,7 @@
     "mar26_highlights_djAVBa",
     "rich_text_JhBcCr",
     "blocks_jiJwFP",
+    "mar26_whats_included_hwC8XQ",
     "mar26_testimonials",
     "mar26_best_sellers"
   ]

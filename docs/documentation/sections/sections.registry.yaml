@@ -157,6 +157,7 @@ mar26_custom_sections:
         - "collection.windows-care-bt.json"
     - section: "mar26-whats-included.liquid"
       used_by_templates:
+        - "product.bt-brooms.json"
         - "product.caravan-c-b-page.json"
         - "product.mar26-with-bundle-builder.json"
         - "product.mar26.json"
