@@ -24,13 +24,13 @@ This document describes the layout, sections rendering sequence, block compositi
 ## Main Product Info Block Order (`mar26-main-product`)
 
 * **Title and Tags (`mar26_title_and_tags_5z3hZR`)**: Displays the product title and dynamically pulls custom metadata tags.
+* **Price (`price`)**: Displays current pricing.
 * **Reviews Badge (`judge_me_reviews_preview_badge_kG7NLt`)**: Star rating preview from Judge.me reviews integration.
 * **Short Description (`mar26_short_description_tARAbB`)**: Displays highlight points tailored for brooms:
   - *Pivot head design for tight spaces*
   - *Fine particle dust catcher system*
   - *Effortless hair, dust & dirt pick-up*
 * **Gradient Title (`mar26_gradient_title_RMQCET`)**: Styled gradient title *(Disabled)*.
-* **Price (`price`)**: Displays current pricing.
 * **Quantity Selector (`quantity_selector_dgjkJg`)**: Quantity input field.
 * **Bundle Builder (`dealeasy_mm_bundle_builder_dCNcYL`)**: App-integrated bundle block *(Disabled)*.
 * **Description (`description`)**: Collapsible description row *(Disabled)*.

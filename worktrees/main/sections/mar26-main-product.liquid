@@ -245,14 +245,14 @@ version-summary: Cleared margin and padding on the .shopify-payment-button conta
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26_gradient_title"],
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="title"] { order: 1 !important; }
 
-    /* Order 2: Social Proof (Reviews / Apps) */
-    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="@app"],
-    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="rating"] { order: 2 !important; }
-
-    /* Order 3: Value Proposition (Price) */
+    /* Order 2: Value Proposition (Price) */
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="price"],
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26-quantity-price"],
-    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26_quantity_price"] { order: 3 !important; }
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26_quantity_price"] { order: 2 !important; }
+
+    /* Order 3: Social Proof (Reviews / Apps) */
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="@app"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="rating"] { order: 3 !important; }
 
     /* Order 4: Details (Description) */
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="description"],
