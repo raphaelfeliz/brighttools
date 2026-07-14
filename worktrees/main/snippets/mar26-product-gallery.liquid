@@ -1,5 +1,5 @@
 {%- comment -%}
-VERSION: 0.2.6
+VERSION: 0.2.9
 NAME: BT Product Gallery
 DESCRIPTION: Custom product gallery with image size reduction, mobile thumb hide logic, and a forced desktop 5-slot looping thumbnail window.
 ----------------------------------------------------------------------------------------------------------------------
@@ -53,9 +53,21 @@ only way to do it on Shopify right now.
 <style>
   @media screen and (min-width: 1000px) {
     .product-gallery__media {
-      /* SURGICAL FOCUS IMAGE REDUCTION: 30% OF ORIGINAL WIDTH (DESKTOP ONLY) */
-      max-width: 70% !important;
+      width: 100% !important;
+      max-width: 650px !important;
+      aspect-ratio: 1 / 1 !important;
+      border: 1px solid #e2e8f0 !important;
+      border-radius: 16px !important;
+      overflow: hidden !important;
       margin-inline: auto !important;
+    }
+
+    .product-gallery__media img,
+    .product-gallery__media video,
+    .product-gallery__media iframe {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
     }
 
     .mar26-thumbnail-carousel--bottom {

@@ -123,7 +123,7 @@
         "show_fixed_add_to_cart": true,
         "short_description_position": "right",
         "desktop_media_width": 50,
-        "desktop_media_layout": "carousel_thumbnails_bottom",
+        "desktop_media_layout": "carousel_thumbnails_left",
         "mobile_media_size": "contained",
         "mobile_carousel_control": "free_scroll",
         "enable_video_autoplay": true,

@@ -25,6 +25,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      overflow-x: hidden;
     }
     
     .playground-header {
@@ -91,6 +92,7 @@
       width: 100%;
       max-width: 450px;
       border-radius: 16px;
+      border: 1px solid #e2e8f0;
       overflow: hidden;
       background-color: #f8fafc;
       display: flex;
@@ -158,6 +160,57 @@
       height: 100%;
       object-fit: cover;
     }
+
+    .mobile-carousel {
+      display: none;
+    }
+
+    @media (max-width: 767px) {
+      .info-column {
+        align-items: center;
+      }
+
+      .gallery-main-viewport,
+      .thumbnails-row {
+        display: none;
+      }
+
+      .mobile-carousel {
+        display: flex;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        padding: 0 20px;
+        gap: 12px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-padding: 0 20px;
+        scrollbar-width: none;
+      }
+
+      .mobile-carousel::-webkit-scrollbar {
+        display: none;
+      }
+
+      .mobile-slide {
+        flex: 0 0 calc(85vw - 32px);
+        aspect-ratio: 1;
+        padding: 0;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        overflow: hidden;
+        background-color: #f8fafc;
+        cursor: pointer;
+        scroll-snap-align: start;
+      }
+
+      .mobile-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
     
     /* Right column - Product Info */
     .info-column {
@@ -169,7 +222,7 @@
     }
     
     .product-title {
-      font-size: 36px;
+      font-size: 32px;
       font-weight: 800;
       color: #000000;
       line-height: 1.1;
@@ -246,7 +299,7 @@
     }
     
     .highlight-text {
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 600;
       color: #334155;
     }
@@ -313,6 +366,22 @@
       cursor: pointer;
       margin-top: 4.6px;
     }
+
+    @media (max-width: 767px) {
+      .highlights-container {
+        width: calc(100% + 40px) !important;
+        max-width: none !important;
+        margin-left: -20px !important;
+        margin-right: -20px !important;
+        position: relative !important;
+        left: 0 !important;
+        transform: none !important;
+        border-radius: 0 !important;
+        padding-left: 24px !important; 
+        padding-right: 24px !important;
+        box-sizing: border-box !important;
+      }
+    }
     
   </style>
 </head>
@@ -354,6 +423,24 @@
         <div class="thumbnail-card" onclick="changeImage('../worktrees/main/assets/steel-bucket-full.png', this)">
           <img src="../worktrees/main/assets/steel-bucket-full.png" alt="Broom 5">
         </div>
+      </div>
+
+      <div class="mobile-carousel" aria-label="Product images">
+        <button class="mobile-slide active" type="button" onclick="selectMobileImage(this)" aria-label="View product image 1">
+          <img src="../work/init-product-page/evidence/image.png" alt="Tyroler Japanese Broom">
+        </button>
+        <button class="mobile-slide" type="button" onclick="selectMobileImage(this)" aria-label="View product image 2">
+          <img src="../worktrees/main/assets/love-or-return.png" alt="Love or Return">
+        </button>
+        <button class="mobile-slide" type="button" onclick="selectMobileImage(this)" aria-label="View product image 3">
+          <img src="../worktrees/main/assets/2-year-warranty.png" alt="2 Year Warranty">
+        </button>
+        <button class="mobile-slide" type="button" onclick="selectMobileImage(this)" aria-label="View product image 4">
+          <img src="../worktrees/main/assets/retire-bucket.png" alt="Retire me bucket">
+        </button>
+        <button class="mobile-slide" type="button" onclick="selectMobileImage(this)" aria-label="View product image 5">
+          <img src="../worktrees/main/assets/steel-bucket-full.png" alt="Steel bucket">
+        </button>
       </div>
     </div>
     
@@ -419,6 +506,12 @@
       document.getElementById('mainProductImg').src = src;
       document.querySelectorAll('.thumbnail-card').forEach(el => el.classList.remove('active'));
       element.classList.add('active');
+    }
+
+    function selectMobileImage(element) {
+      document.querySelectorAll('.mobile-slide').forEach(el => el.classList.remove('active'));
+      element.classList.add('active');
+      element.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
     }
   </script>
 </body>

@@ -3,9 +3,9 @@
 file-summary: MAR26 main product section. Drives MAR26 mobile ordering, gallery layout variables, and product info composition.
 
 # Version Block (SOP: Always update for real changes)
-version-name: Mobile Typography Adjustments
-version-number: 1.6.5
-version-summary: Increases mobile title font-size by 2px and reduces mobile short description font-size by 2px.
+version-name: Gallery Padding and Image Resizing
+version-number: 1.6.6
+version-summary: Constrains main product image size to around 250px on desktop and centers product grid with container margins to respect page padding.
 
 # Change rationale:
 # - Normal state: Black background / White text.
@@ -63,6 +63,8 @@ version-summary: Increases mobile title font-size by 2px and reduces mobile shor
 
     #shopify-section-{{ section.id }} .product {
       gap: 0.875rem !important;
+      margin-inline-start: max(var(--container-gutter), 50% - var(--container-max-width) / 2) !important;
+      margin-inline-end: max(var(--container-gutter), 50% - var(--container-max-width) / 2) !important;
     }
 
     #shopify-section-{{ section.id }} .product-info__title {
