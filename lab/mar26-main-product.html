@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BrightTools Product Page Playground</title>
+  <!-- Load Montserrat font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Clean CSS Reset and typography */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #ffffff;
+      color: #000000;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .playground-header {
+      width: 100%;
+      max-width: 1000px;
+      margin-bottom: 40px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 20px;
+    }
+    
+    .playground-header h1 {
+      font-size: 22px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #0F172A;
+    }
+    
+    .product-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      width: 100%;
+      max-width: 1000px;
+    }
+    
+    @media (min-width: 768px) {
+      .product-container {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 60px;
+      }
+    }
+    
+    /* Left column - Gallery */
+    .gallery-column {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    @media (min-width: 1024px) {
+      .gallery-column {
+        display: grid;
+        grid-template-columns: 64px minmax(0, 450px);
+        gap: 16px;
+        align-items: start;
+      }
+
+      .gallery-main-viewport {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .gallery-column .thumbnails-row {
+        grid-column: 1;
+        grid-row: 1;
+        flex-direction: column;
+        margin-top: 0;
+      }
+    }
+    
+    .gallery-main-viewport {
+      position: relative;
+      width: 100%;
+      max-width: 450px;
+      border-radius: 16px;
+      overflow: hidden;
+      background-color: #f8fafc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1;
+    }
+    
+    .gallery-main-viewport img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .zoom-btn {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    
+    .zoom-btn:hover {
+      transform: scale(1.05);
+    }
+    
+    .zoom-btn svg {
+      width: 18px;
+      height: 18px;
+      color: #000000;
+    }
+    
+    .thumbnails-row {
+      display: flex;
+      gap: 12px;
+      justify-content: flex-start;
+      margin-top: 8px;
+    }
+    
+    .thumbnail-card {
+      width: 64px;
+      height: 64px;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 2px solid transparent;
+      background-color: #f8fafc;
+    }
+    
+    .thumbnail-card.active {
+      border-color: #000000;
+    }
+    
+    .thumbnail-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    /* Right column - Product Info */
+    .info-column {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding-top: 10px;
+    }
+    
+    .product-title {
+      font-size: 42px;
+      font-weight: 800;
+      color: #000000;
+      line-height: 1.1;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+    
+    .product-price {
+      font-size: 24px;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 20px;
+    }
+    
+    .reviews-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 24px;
+    }
+    
+    .stars-list {
+      display: flex;
+      gap: 2px;
+    }
+    
+    .star-icon {
+      color: #ffb74a;
+      font-size: 20px;
+      line-height: 1;
+    }
+    
+    .reviews-text {
+      font-size: 14px;
+      font-weight: 500;
+      color: #475569;
+    }
+    
+    /* Highlights Container */
+    .highlights-container {
+      background-color: #f1f5f9;
+      border-radius: 16px;
+      padding: 24px;
+      width: 100%;
+      max-width: 440px;
+      margin-bottom: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .highlight-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    
+    .highlight-icon-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: #ffe4e6;
+      color: #e11d48;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    .highlight-icon-circle svg {
+      width: 16px;
+      height: 16px;
+      stroke-width: 3.5;
+    }
+    
+    .highlight-text {
+      font-size: 16px;
+      font-weight: 600;
+      color: #475569;
+    }
+    
+    /* Buying Actions */
+    .buying-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      max-width: 440px;
+      align-items: center;
+    }
+    
+    .buttons-row {
+      display: flex;
+      gap: 12px;
+      width: 100%;
+    }
+    
+    .action-btn {
+      flex: 1;
+      height: 55px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: none;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: opacity 0.2s ease;
+    }
+    
+    .action-btn:hover {
+      opacity: 0.9;
+    }
+    
+    .btn-add-to-cart {
+      background-color: #0F172A;
+      color: #ffffff;
+    }
+    
+    .btn-shop-pay {
+      background-color: #5a31f4;
+      color: #ffffff;
+      text-transform: none;
+      font-size: 15px;
+    }
+    
+    .btn-shop-pay span {
+      font-style: italic;
+      font-weight: 800;
+      margin-left: 4px;
+    }
+    
+    .payment-options-link {
+      font-size: 11px;
+      font-weight: 500;
+      color: #475569;
+      text-decoration: underline;
+      cursor: pointer;
+      margin-top: 4px;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <header class="playground-header">
+    <h1>BrightTools Product Page Playground</h1>
+  </header>
+
+  <div class="product-container">
+    
+    <!-- Gallery Column -->
+    <div class="gallery-column">
+      <div class="gallery-main-viewport">
+        <img id="mainProductImg" src="../work/init-product-page/evidence/image.png" alt="Tyroler Japanese Broom">
+        <button class="zoom-btn" aria-label="Zoom image">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            <line x1="11" y1="8" x2="11" y2="14"></line>
+            <line x1="8" y1="11" x2="14" y2="11"></line>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="thumbnails-row">
+        <div class="thumbnail-card active" onclick="changeImage('../work/init-product-page/evidence/image.png', this)">
+          <img src="../work/init-product-page/evidence/image.png" alt="Broom 1">
+        </div>
+        <div class="thumbnail-card" onclick="changeImage('../worktrees/main/assets/love-or-return.png', this)">
+          <img src="../worktrees/main/assets/love-or-return.png" alt="Love or Return">
+        </div>
+        <div class="thumbnail-card" onclick="changeImage('../worktrees/main/assets/2-year-warranty.png', this)">
+          <img src="../worktrees/main/assets/2-year-warranty.png" alt="2 Year Warranty">
+        </div>
+        <div class="thumbnail-card" onclick="changeImage('../worktrees/main/assets/retire-bucket.png', this)">
+          <img src="../worktrees/main/assets/retire-bucket.png" alt="Broom 4">
+        </div>
+        <div class="thumbnail-card" onclick="changeImage('../worktrees/main/assets/steel-bucket-full.png', this)">
+          <img src="../worktrees/main/assets/steel-bucket-full.png" alt="Broom 5">
+        </div>
+      </div>
+    </div>
+    
+    <!-- Info Column -->
+    <div class="info-column">
+      <h2 class="product-title">Japanese Broom</h2>
+      
+      <div class="product-price">$100.00 AUD</div>
+      
+      <div class="reviews-row">
+        <div class="stars-list">
+          <span class="star-icon">★</span>
+          <span class="star-icon">★</span>
+          <span class="star-icon">★</span>
+          <span class="star-icon">★</span>
+          <span class="star-icon">★</span>
+        </div>
+        <span class="reviews-text">3 sample reviews (only in preview)</span>
+      </div>
+      
+      <!-- Highlights Card -->
+      <div class="highlights-container">
+        <div class="highlight-item">
+          <div class="highlight-icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <span class="highlight-text">180° pivot head</span>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <span class="highlight-text">Dust catcher system</span>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <span class="highlight-text">Non-stick bristles</span>
+        </div>
+      </div>
+      
+      <!-- Buying Actions Container -->
+      <div class="buying-actions">
+        <div class="buttons-row">
+          <button class="action-btn btn-add-to-cart">Add To Cart</button>
+          <button class="action-btn btn-shop-pay">Buy with <span>shop</span></button>
+        </div>
+        <div class="payment-options-link">More payment options</div>
+      </div>
+    </div>
+    
+  </div>
+
+  <script>
+    function changeImage(src, element) {
+      document.getElementById('mainProductImg').src = src;
+      document.querySelectorAll('.thumbnail-card').forEach(el => el.classList.remove('active'));
+      element.classList.add('active');
+    }
+  </script>
+</body>
+</html>
