@@ -16,7 +16,7 @@ commands_run:
     output_ref: none
 
 behavioral_change: |
-  Increased the horizontal gap between the product gallery column and the product details column on desktop (min-width: 1000px) to exactly 60px. Mobile layouts and vertical wrapping row gaps (preserved at 0.875rem) remain unaffected. Pushed section version 1.6.8 to staging.
+  Increased the horizontal gap between the product gallery column and the product info column on desktop (min-width: 1000px) to exactly 45px. Also set the gap between the thumbnail list and the main selected image to exactly 45px. Mobile layouts and vertical wrapping row gaps (preserved at 0.875rem) remain unaffected. Pushed section version 1.7.0 to staging.
 
 evidence_links:
   - path: none
