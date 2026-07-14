@@ -44,12 +44,12 @@
         "mar26_short_description_tARAbB": {
           "type": "mar26_short_description",
           "settings": {
-            "description": "<p><strong>Japanese Brooms will save you time and effort.</strong></p>",
-            "highlight_1": "Compact design for tight spaces with 180° pivot head",
-            "highlight_2": "Dust catcher system for capturing fine particles",
-            "highlight_3": "Non-stick bristles for effortless hair, dust & dirt pickup",
+            "description": "",
+            "highlight_1": "180° pivot head",
+            "highlight_2": "Dust catcher system",
+            "highlight_3": "Non-stick bristles",
             "icon_color": "#e11d48",
-            "background_color": "#fff2cc"
+            "background_color": "#EFEFEF"
           }
         },
         "mar26_gradient_title_RMQCET": {
