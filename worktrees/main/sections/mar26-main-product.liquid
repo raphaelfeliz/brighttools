@@ -3,9 +3,9 @@
 file-summary: MAR26 main product section. Drives MAR26 mobile ordering, gallery layout variables, and product info composition.
 
 # Version Block (SOP: Always update for real changes)
-version-name: Buy Buttons Width Synchronization
-version-number: 1.7.1
-version-summary: Syncs desktop buy buttons wrapper width to 440px max-width to match the highlights/description card.
+version-name: Title Font Size Reduction
+version-number: 1.7.3
+version-summary: Reduces product title font-size by 10% on desktop (to 34px) and mobile (multiplying by 0.9).
 
 # Change rationale:
 # - Normal state: Black background / White text.
@@ -74,7 +74,7 @@ version-summary: Syncs desktop buy buttons wrapper width to 440px max-width to m
     }
 
     #shopify-section-{{ section.id }} .product-info__title {
-      font-size: 38px !important;
+      font-size: 34px !important;
       font-weight: 600 !important;
       line-height: 1.02 !important;
     }
@@ -368,13 +368,13 @@ version-summary: Syncs desktop buy buttons wrapper width to 440px max-width to m
       margin-right: 0 !important;
       width: 100% !important;
       max-width: 100% !important;
-      border-radius: 0 !important;
+      border-radius: 1rem !important;
       padding: 16px var(--container-gutter) !important;
     }
 
     /* 4. Mobile Typography Overrides */
     #shopify-section-{{ section.id }} .product-info__title {
-      font-size: calc(var(--text-h1) + 2px) !important;
+      font-size: calc((var(--text-h1) + 2px) * 0.9) !important;
     }
 
     #shopify-section-{{ section.id }} .mar26-short-description-text,

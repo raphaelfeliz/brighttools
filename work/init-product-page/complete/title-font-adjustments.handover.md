@@ -16,7 +16,10 @@ commands_run:
     output_ref: none
 
 behavioral_change: |
-  Adjusted the product title typography on desktop (min-width: 1000px) inside `mar26-main-product.liquid`. Reduced the font-size to exactly 38px and reduced the font-weight to 600 (semi-bold). Mobile title styling remains unchanged. Pushed section version 1.6.9 to staging.
+  Adjusted the product title typography on desktop (min-width: 1000px) and mobile inside `mar26-main-product.liquid`:
+  - Reduced the desktop font-size to exactly 34px (a 10% reduction from 38px) and set font-weight to 600 (semi-bold).
+  - Reduced the mobile font-size by 10% using a multiplier formula: `calc((var(--text-h1) + 2px) * 0.9)`.
+  - Pushed section version 1.7.3 to staging.
 
 evidence_links:
   - path: none

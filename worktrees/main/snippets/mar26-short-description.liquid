@@ -1,10 +1,10 @@
 {%- comment -%}
 ----------------------------------------------------------------------------------------------------------------------
 file-summary: MAR26 short description card. Renders the compact description and three highlight bullets.
-version-name: Card Spacing and Weight Tweaks
-version-number: 0.0.16
+version-name: Mobile Card Spacing and Radius
+version-number: 0.0.17
 version-date: 2026-07-14
-version-summary: Standardizes top and bottom margins to 20px (32px total gap) and lowers text weights to mid-ground levels (400 for text, 500 for items).
+version-summary: Restores card border-radius of 1rem on mobile viewports.
 ----------------------------------------------------------------------------------------------------------------------
 {%- endcomment -%}
 
@@ -106,7 +106,7 @@ version-summary: Standardizes top and bottom margins to 20px (32px total gap) an
       .mar26-short-description-stack {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         justify-content: center;
         width: min(100%, 32rem);
         margin-left: auto;
@@ -114,10 +114,10 @@ version-summary: Standardizes top and bottom margins to 20px (32px total gap) an
       }
 
       .mar26-short-description-card {
-        width: 100%;
-        max-width: 100%;
-        margin-left: 0;
-        margin-right: 0;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
         box-sizing: border-box;
         border-radius: 1rem !important;
       }
