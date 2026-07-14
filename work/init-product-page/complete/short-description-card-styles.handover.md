@@ -19,9 +19,10 @@ commands_run:
 
 behavioral_change: |
   - Updated the .mar26-short-description-card background color to a premium lighter grey (#F8FAFC) and added a 2px light grey outline (#E2E8F0).
-  - Darkened and boldened the text: changed main text color to #0F172A (weight 500) and highlight list items color to #0F172A (weight 600).
+  - Standardized card top and bottom margins to exactly 20px (producing a symmetric 32px gap above and below the card on desktop).
+  - Darkened and set text weights to a refined mid-ground: changed main text color to #0F172A (weight 400) and highlight list items color to #0F172A (weight 500).
   - Constrained desktop width of .mar26-short-description-card and buy-buttons to exactly 100% width with a max-width of 440px, aligning them vertically on desktop. Reverted buy-buttons max-width constraint to 100% on mobile.
-  - Bumped snippets/mar26-short-description.liquid version to 0.0.15 and sections/mar26-main-product.liquid to 1.7.1.
+  - Bumped snippets/mar26-short-description.liquid version to 0.0.16 and sections/mar26-main-product.liquid to 1.7.1.
 
 evidence_links:
   - path: none

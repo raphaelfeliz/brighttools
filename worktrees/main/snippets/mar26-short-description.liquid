@@ -1,10 +1,10 @@
 {%- comment -%}
 ----------------------------------------------------------------------------------------------------------------------
 file-summary: MAR26 short description card. Renders the compact description and three highlight bullets.
-version-name: Card Styling and Desktop Width Adjustments
-version-number: 0.0.15
+version-name: Card Spacing and Weight Tweaks
+version-number: 0.0.16
 version-date: 2026-07-14
-version-summary: Makes grey background slightly lighter, adds a 2px outline, darkens/boldens font, and sets desktop max-width to 440px.
+version-summary: Standardizes top and bottom margins to 20px (32px total gap) and lowers text weights to mid-ground levels (400 for text, 500 for items).
 ----------------------------------------------------------------------------------------------------------------------
 {%- endcomment -%}
 
@@ -28,7 +28,8 @@ version-summary: Makes grey background slightly lighter, adds a 2px outline, dar
       border: 2px solid #E2E8F0 !important;
       border-radius: 1rem !important;
       padding: 20px;
-      margin-top: 23px;
+      margin-top: 20px !important;
+      margin-bottom: 20px !important;
       box-shadow: none;
       display: flex;
       flex-direction: column;
@@ -53,7 +54,7 @@ version-summary: Makes grey background slightly lighter, adds a 2px outline, dar
     .mar26-short-description-text {
       font-size: 20px;
       color: #0F172A !important;
-      font-weight: 500 !important;
+      font-weight: 400 !important;
       line-height: 1.45;
       margin-bottom: 13px;
       text-align: left;
@@ -64,7 +65,7 @@ version-summary: Makes grey background slightly lighter, adds a 2px outline, dar
       align-items: flex-start;
       gap: 13px;
       font-size: 20px;
-      font-weight: 600 !important;
+      font-weight: 500 !important;
       color: #0F172A !important;
       line-height: 1.35;
       text-align: left;

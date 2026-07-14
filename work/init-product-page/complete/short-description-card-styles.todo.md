@@ -8,7 +8,8 @@ updated: 2026-07-14
 ## Scope
 Adjust the styling and desktop layout of the short description card:
 - Make the grey background slightly lighter (#F8FAFC) and add a 2px light grey outline.
-- Darken the font and increase weight (color #0F172A, weights 500/600).
+- Standardize top/bottom margins of the card on desktop to exactly 20px (symmetric 32px total gap).
+- Darken the font and set weights to mid-ground levels (color #0F172A, weights 400/500).
 - Align desktop width of the card and buy buttons by setting max-width to 440px.
 
 ## Approvals
@@ -20,7 +21,7 @@ Adjust the styling and desktop layout of the short description card:
   date: 2026-07-14
 
 ## Tasks
-- [x] 01. Update card, border, text color, and font-weight styles in `mar26-short-description.liquid`. Bump version to 0.0.15. [agent: 2703a6a2-1341-44fd-a732-82cec0707bca] [blocks: 02] [blocked_by: none]
+- [x] 01. Update card, border, margins, text color, and font-weight styles in `mar26-short-description.liquid`. Bump version to 0.0.16. [agent: 2703a6a2-1341-44fd-a732-82cec0707bca] [blocks: 02] [blocked_by: none]
 - [x] 02. Update desktop and mobile buy-buttons style rules in `mar26-main-product.liquid` to sync max-width to 440px on desktop and 100% on mobile. Bump version to 1.7.1. [agent: 2703a6a2-1341-44fd-a732-82cec0707bca] [blocks: 03] [blocked_by: 01]
 - [x] 03. Push modified files to Shopify staging using: `shopify theme push --theme 180366573842 --path C:\code\BrightTools\worktrees\main --store brighttools-au.myshopify.com --only snippets/mar26-short-description.liquid --only sections/mar26-main-product.liquid --allow-live`. [agent: 2703a6a2-1341-44fd-a732-82cec0707bca] [blocks: 04] [blocked_by: 02]
 - [x] 04. Verify in desktop and mobile viewports that the card background, outline, text weight, and button alignments are correct. [agent: Raphael] [blocks: 05] [blocked_by: 03]
