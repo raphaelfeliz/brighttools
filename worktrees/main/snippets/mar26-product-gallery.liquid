@@ -1,5 +1,5 @@
 {%- comment -%}
-VERSION: 0.2.9
+VERSION: 0.3.0
 NAME: BT Product Gallery
 DESCRIPTION: Custom product gallery with image size reduction, mobile thumb hide logic, and a forced desktop 5-slot looping thumbnail window.
 ----------------------------------------------------------------------------------------------------------------------
@@ -52,6 +52,10 @@ only way to do it on Shopify right now.
 
 <style>
   @media screen and (min-width: 1000px) {
+    .product-gallery {
+      column-gap: 45px !important;
+    }
+
     .product-gallery__media {
       width: 100% !important;
       max-width: 650px !important;

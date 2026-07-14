@@ -3,9 +3,9 @@
 file-summary: MAR26 main product section. Drives MAR26 mobile ordering, gallery layout variables, and product info composition.
 
 # Version Block (SOP: Always update for real changes)
-version-name: Gallery Padding and Image Resizing
-version-number: 1.6.6
-version-summary: Constrains main product image size to around 250px on desktop and centers product grid with container margins to respect page padding.
+version-name: Layout Grid Gap Adjustments
+version-number: 1.7.0
+version-summary: Adjusts desktop column-gap between gallery and info columns to 45px.
 
 # Change rationale:
 # - Normal state: Black background / White text.
@@ -21,6 +21,11 @@ version-summary: Constrains main product image size to around 250px on desktop a
     --product-grid: auto / minmax(0, 1fr);
     --product-gallery-media-list-grid: auto / auto-flow {% if section.settings.mobile_carousel_control == 'free_scroll' %}{% if section.settings.mobile_media_size == 'expanded' %}84vw{% else %}73vw{% endif %}{% else %}100%{% endif %};
     --product-gallery-media-list-gap: {% if section.settings.mobile_media_size == 'expanded' %}var(--spacing-0-5){% else %}var(--grid-gutter){% endif %};
+  }
+
+  #shopify-section-{{ section.id }} .section {
+    padding-block-start: 60px !important;
+    padding-block-end: 60px !important;
   }
 
   @media screen and (max-width: 999px) {
@@ -62,13 +67,15 @@ version-summary: Constrains main product image size to around 250px on desktop a
     {%- endif -%}
 
     #shopify-section-{{ section.id }} .product {
-      gap: 0.875rem !important;
+      row-gap: 0.875rem !important;
+      column-gap: 45px !important;
       margin-inline-start: max(var(--container-gutter), 50% - var(--container-max-width) / 2) !important;
       margin-inline-end: max(var(--container-gutter), 50% - var(--container-max-width) / 2) !important;
     }
 
     #shopify-section-{{ section.id }} .product-info__title {
-      font-size: clamp(1.9rem, 3vw, 2.85rem) !important;
+      font-size: 38px !important;
+      font-weight: 600 !important;
       line-height: 1.02 !important;
     }
 
