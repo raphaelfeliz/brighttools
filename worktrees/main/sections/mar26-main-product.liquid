@@ -3,9 +3,9 @@
 file-summary: MAR26 main product section. Drives MAR26 mobile ordering, gallery layout variables, and product info composition.
 
 # Version Block (SOP: Always update for real changes)
-version-name: Title Font Size Reduction
-version-number: 1.7.3
-version-summary: Reduces product title font-size by 10% on desktop (to 34px) and mobile (multiplying by 0.9).
+version-name: Highlights Richtext Conversion
+version-number: 1.7.8
+version-summary: Converts Highlights 1, 2, and 3 settings to rich text for rich formatting support.
 
 # Change rationale:
 # - Normal state: Black background / White text.
@@ -31,6 +31,11 @@ version-summary: Reduces product title font-size by 10% on desktop (to 34px) and
   @media screen and (max-width: 999px) {
     #shopify-section-{{ section.id }} {
       --section-spacing-block-start: {% if section.settings.mobile_media_size == 'expanded' %}0px{% else %}var(--container-gutter){% endif %};
+      --section-spacing-block-end: var(--container-gutter);
+    }
+
+    #shopify-section-{{ section.id }} .section {
+      padding-block-start: 20px !important;
     }
 
     {%- if section.settings.mobile_carousel_control == 'free_scroll' -%}
@@ -185,7 +190,8 @@ version-summary: Reduces product title font-size by 10% on desktop (to 34px) and
   /* MAR26 Buy Button Specific Styles (ISS-002) - Pill Synchronization */
   #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy_buttons"] .button,
   #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy-buttons"] .button,
-  #shopify-section-{{ section.id }} .shopify-payment-button__button {
+  #shopify-section-{{ section.id }} .shopify-payment-button__button,
+  #shopify-section-{{ section.id }} .product-quick-add .button {
     background-color: #0F172A !important; /* Unified MAR26 Navy */
     color: #ffffff !important;
     border: none !important; /* Remove thin outline */
@@ -194,16 +200,53 @@ version-summary: Reduces product title font-size by 10% on desktop (to 34px) and
     font-weight: 700 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.05em !important;
+    position: relative !important;
+    overflow: hidden !important;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s ease !important;
   }
 
+  /* Highlight Animation - Subtle Sweep */
+  #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy_buttons"] .button::after,
+  #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy-buttons"] .button::after,
+  #shopify-section-{{ section.id }} .shopify-payment-button__button::after,
+  #shopify-section-{{ section.id }} .product-quick-add .button::after {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent) !important;
+    transition: left 0.6s ease-in-out !important;
+    z-index: 1 !important;
+  }
+
+  /* Hover States */
   #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy_buttons"] .button:hover,
   #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy_buttons"] .button:focus,
   #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy-buttons"] .button:hover,
-  #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy-buttons"] .button:focus {
+  #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy-buttons"] .button:focus,
+  #shopify-section-{{ section.id }} .product-quick-add .button:hover,
+  #shopify-section-{{ section.id }} .product-quick-add .button:focus,
+  #shopify-section-{{ section.id }} .shopify-payment-button__button:hover,
+  #shopify-section-{{ section.id }} .shopify-payment-button__button:focus {
     background-color: #1E293B !important;
     color: #ffffff !important;
     border: none !important;
     box-shadow: none !important;
+    transform: scale(1.05) !important;
+  }
+
+  /* Trigger the Shine Sweep */
+  #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy_buttons"] .button:hover::after,
+  #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy_buttons"] .button:focus::after,
+  #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy-buttons"] .button:hover::after,
+  #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy-buttons"] .button:focus::after,
+  #shopify-section-{{ section.id }} .product-quick-add .button:hover::after,
+  #shopify-section-{{ section.id }} .product-quick-add .button:focus::after,
+  #shopify-section-{{ section.id }} .shopify-payment-button__button:hover::after,
+  #shopify-section-{{ section.id }} .shopify-payment-button__button:focus::after {
+    left: 100% !important;
   }
 
   #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy-buttons"],
@@ -770,9 +813,9 @@ version-summary: Reduces product title font-size by 10% on desktop (to 34px) and
       "limit": 1,
       "settings": [
         { "type": "richtext", "id": "description", "label": "Description" },
-        { "type": "text", "id": "highlight_1", "label": "Highlight 1", "default": "Industrial-grade microfibre technology" },
-        { "type": "text", "id": "highlight_2", "label": "Highlight 2", "default": "Traps 99% of dust and allergens" },
-        { "type": "text", "id": "highlight_3", "label": "Highlight 3", "default": "Machine washable up to 100 times" },
+        { "type": "richtext", "id": "highlight_1", "label": "Highlight 1", "default": "<p>Industrial-grade microfibre technology</p>" },
+        { "type": "richtext", "id": "highlight_2", "label": "Highlight 2", "default": "<p>Traps 99% of dust and allergens</p>" },
+        { "type": "richtext", "id": "highlight_3", "label": "Highlight 3", "default": "<p>Machine washable up to 100 times</p>" },
         { "type": "color", "id": "icon_color", "label": "Icon Color", "default": "#e11d48" },
         { "type": "color", "id": "background_color", "label": "Card Background Color", "default": "#FFF2CC" }
       ]

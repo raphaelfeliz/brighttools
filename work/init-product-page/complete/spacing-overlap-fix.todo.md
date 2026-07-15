@@ -8,14 +8,14 @@ updated: 2026-07-14
 ## Scope
 Adjust vertical spacing of the main product section:
 - Increase bottom margin of buy buttons (completed).
-- Set top and bottom margins/padding of the entire main product section to exactly 60px.
+- Set top and bottom margins/padding of the entire main product section to exactly 60px on desktop, while reducing mobile top padding to exactly 20px.
 
 ## Approvals
 - gate: start
   approver: Raphael
   decision: approved
   phrase: "asdf"
-  evidence: "User approved setting top and bottom margins of the main product section to exactly 60px."
+  evidence: "User approved reducing mobile top spacing between the product section and the header to 20px, keeping desktop margins at 60px."
   date: 2026-07-14
 
 ## Tasks
@@ -23,7 +23,7 @@ Adjust vertical spacing of the main product section:
 - [x] 02. Push modified file to Shopify staging (completed).
 - [x] 03. Verify in browser that buy buttons bottom margin resolves overlap (completed).
 - [x] 04. Approve the buy button bottom margin spacing change (completed).
-- [x] 05. Update style block in `mar26-main-product.liquid` to set `padding-top: 60px !important;` and `padding-bottom: 60px !important;` on `#shopify-section-{{ section.id }}` (or its wrapper `.section`) to ensure exactly 60px top and bottom margins. Bump section version to 1.6.7. [agent: 2703a6a2-1341-44fd-a732-82cec0707bca] [blocks: 06] [blocked_by: none]
+- [x] 05. Update style block in `mar26-main-product.liquid` to set `padding-top: 60px !important;` and `padding-bottom: 60px !important;` on `#shopify-section-{{ section.id }} .section` on desktop, and override mobile top padding to `20px !important`. Bump section version to 1.7.4. [agent: 2703a6a2-1341-44fd-a732-82cec0707bca] [blocks: 06] [blocked_by: none]
 - [x] 06. Push modified file to Shopify staging using: `shopify theme push --theme 180366573842 --path C:\code\BrightTools\worktrees\main --store brighttools-au.myshopify.com --only sections/mar26-main-product.liquid --allow-live`. [agent: 2703a6a2-1341-44fd-a732-82cec0707bca] [blocks: 07] [blocked_by: 05]
 - [x] 07. Verify in browser that the top and bottom margins of the main product section are exactly 60px. [agent: Raphael] [blocks: 08] [blocked_by: 06]
 - [x] 08. Approve the 60px top/bottom margins in the browser (human gate approval). Do not commit to git before this is approved. [agent: Raphael] [blocks: none] [blocked_by: 07]

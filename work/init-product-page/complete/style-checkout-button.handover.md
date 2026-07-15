@@ -22,7 +22,9 @@ commands_run:
     output_ref: none
 
 behavioral_change: |
-  Styled the primary Add to Cart button to match the visual layout of dynamic checkout buttons (pill-shaped, height 55px, Montserrat font, 20px size, medium weight). Added border: none and box-shadow: none to eliminate the browser's default thin outline and outline halo. Pushed version 0.8.10 of the stylesheet and version 1.5.8 of the product section (console log updated) to staging.
+  - Updated the checkout buttons (Add to Cart and Shop Pay buy buttons) inside the main product section to be solid navy pills with a background of #0F172A and white text (completed on 2026-07-13).
+  - Synchronized the sticky bar checkout buttons (.product-quick-add .button) on both mobile and desktop to use the same solid navy pill shape (#0F172A background, white text, 3.75rem border-radius) and dark slate (#1E293B) hover states.
+  - Implemented premium hover animations across all primary checkout buttons: a 5% physical scale increase (transform: scale(1.05)) paired with a subtle, left-to-right highlight sweeping shine effect via a gradient pseudo-element (completed on 2026-07-14, section version 1.7.7).
 
 evidence_links:
   - path: none

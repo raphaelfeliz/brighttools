@@ -1,10 +1,10 @@
 {%- comment -%}
 ----------------------------------------------------------------------------------------------------------------------
 file-summary: MAR26 short description card. Renders the compact description and three highlight bullets.
-version-name: Mobile Card Spacing and Radius
-version-number: 0.0.17
+version-name: Rich Text Highlights
+version-number: 0.0.18
 version-date: 2026-07-14
-version-summary: Restores card border-radius of 1rem on mobile viewports.
+version-summary: Changes highlight elements to div wrappers and strips default paragraph margins to support rich text.
 ----------------------------------------------------------------------------------------------------------------------
 {%- endcomment -%}
 
@@ -78,6 +78,9 @@ version-summary: Restores card border-radius of 1rem on mobile viewports.
       white-space: normal;
       overflow-wrap: anywhere;
     }
+    .mar26-short-description-item-text p {
+      margin: 0 !important;
+    }
     .mar26-short-description-icon {
       width: 27px;
       height: 27px;
@@ -140,7 +143,7 @@ version-summary: Restores card border-radius of 1rem on mobile viewports.
               <div class="mar26-short-description-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
               </div>
-              <span class="mar26-short-description-item-text">{{ h1 }}</span>
+              <div class="mar26-short-description-item-text">{{ h1 }}</div>
             </li>
           {%- endif -%}
           {%- if h2 != blank -%}
@@ -148,7 +151,7 @@ version-summary: Restores card border-radius of 1rem on mobile viewports.
               <div class="mar26-short-description-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
               </div>
-              <span class="mar26-short-description-item-text">{{ h2 }}</span>
+              <div class="mar26-short-description-item-text">{{ h2 }}</div>
             </li>
           {%- endif -%}
           {%- if h3 != blank -%}
@@ -156,7 +159,7 @@ version-summary: Restores card border-radius of 1rem on mobile viewports.
               <div class="mar26-short-description-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
               </div>
-              <span class="mar26-short-description-item-text">{{ h3 }}</span>
+              <div class="mar26-short-description-item-text">{{ h3 }}</div>
             </li>
           {%- endif -%}
         </ul>

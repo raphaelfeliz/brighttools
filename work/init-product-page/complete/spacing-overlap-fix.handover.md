@@ -17,7 +17,8 @@ commands_run:
 
 behavioral_change: |
   - Increased the bottom margin of the buy-buttons blocks inside the main product section from 5px to 30px to prevent the absolute-positioned more options link from overlapping onto the video section below (completed on 2026-07-13).
-  - Set top and bottom padding of the entire main product section wrapper (.section) to exactly 60px globally, overriding theme calculations (completed on 2026-07-14, section version 1.6.7).
+  - Set top and bottom padding of the entire main product section wrapper (.section) to exactly 60px on desktop, overriding theme calculations (completed on 2026-07-14, section version 1.6.7).
+  - Reduced the top margin/padding between the section and header on mobile viewports to exactly 20px, pulling the product content closer to the mobile header (completed on 2026-07-14, section version 1.7.4).
 
 evidence_links:
   - path: none
