@@ -1,14 +1,14 @@
 {%- comment -%}
   ----------------------------------------------------------------------------------------------------------------------
   MAR26 REVOLUTION TESTIMONIALS
-  VERSION: 1.7.0 - Phase 2 Global CSS Migration
+  VERSION: 1.8.2 - Subtle Star Drop Shadow
   ----------------------------------------------------------------------------------------------------------------------
   A high-impact, premium testimonial section with an SVG "Revolution" background
   and an infinite-looping spotlight carousel.
 {%- endcomment -%}
 
 <script>
-  console.log('MAR26 Testimonials - Version: 1.7.0');
+  console.log('MAR26 Testimonials - Version: 1.8.2');
 </script>
 
 <style>
@@ -43,12 +43,11 @@
 
     .mar26-testi-header h2 {
       font-size: 1.5rem !important;
-      gap: 0.5rem;
     }
 
-    .mar26-testi-header h2 svg {
-      width: 32px !important;
-      height: 32px !important;
+    .mar26-title-stars svg {
+      width: 24px !important;
+      height: 24px !important;
     }
 
     .mar26-testi-controls {
@@ -72,13 +71,30 @@
   /* Header Styles */
   .mar26-testi-header {
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     width: 100%;
     max-width: 64rem;
     padding: 0 1.5rem;
     color: var(--mar26-clr-white);
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mar26-title-stars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+  }
+  .mar26-title-stars svg {
+    width: 32px;
+    height: 32px;
+    fill: var(--mar26-clr-pink);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.18));
   }
 
   .mar26-testi-header h2 {
@@ -87,25 +103,28 @@
     text-transform: uppercase;
     letter-spacing: -0.05em;
     line-height: 1;
-    margin-bottom: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.8rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    text-align: center;
     color: var(--mar26-clr-white);
   }
   @media (min-width: 768px) {
     .mar26-testi-header h2 {
-      font-size: 3rem; /* Scaled down 20% */
+      font-size: 2.8rem;
+    }
+    .mar26-title-stars svg {
+      width: 36px;
+      height: 36px;
     }
   }
 
   .mar26-testi-header p {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.95);
     font-size: 0.9rem;
     font-weight: var(--mar26-fw-medium);
     max-width: 60rem;
     margin: 0 auto;
+    text-align: center;
   }
 
   /* Carousel Layout */
@@ -330,19 +349,22 @@
 
   {%- comment -%} MAIN CONTENT {%- endcomment -%}
   <mar26-testimonials class="mar26-testimonials-wrapper" data-total="{{ section.blocks.size }}">
-    <header class="mar26-testi-header">
+    <header class="mar26-testi-header stk-title-subtitle">
+      <div class="mar26-title-stars" aria-label="5 out of 5 stars">
+        {%- for i in (1..5) -%}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="36"
+            height="36"
+            viewBox="0 0 24 24"
+            fill="var(--mar26-clr-pink)"
+            stroke="none"
+          >
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+        {%- endfor -%}
+      </div>
       <h2 class="mar26-title">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="52"
-          height="52"
-          viewBox="0 0 24 24"
-          fill="var(--mar26-clr-pink)"
-          stroke="none"
-          style="transform: rotate(-15deg); flex-shrink: 0;"
-        >
-          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-        </svg>
         {{ section.settings.title | escape }}
       </h2>
       <p>{{ section.settings.subheading | escape }}</p>
