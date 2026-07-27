@@ -1,14 +1,14 @@
 {%- comment -%}
   ----------------------------------------------------------------------------------------------------------------------
   MAR26 REVOLUTION TESTIMONIALS
-  VERSION: 1.8.2 - Subtle Star Drop Shadow
+  VERSION: 1.9.5 - Fixed Stationary Nav Buttons
   ----------------------------------------------------------------------------------------------------------------------
   A high-impact, premium testimonial section with an SVG "Revolution" background
   and an infinite-looping spotlight carousel.
 {%- endcomment -%}
 
 <script>
-  console.log('MAR26 Testimonials - Version: 1.8.2');
+  console.log('MAR26 Testimonials - Version: 1.9.5');
 </script>
 
 <style>
@@ -200,6 +200,48 @@
     opacity: 0.5;
   }
 
+  /* Product Name & Clickable Card Styling */
+  .mar26-card-product-name {
+    font-size: 0.82rem;
+    font-weight: var(--mar26-fw-bold);
+    color: #475569; /* slate-600 dark grey */
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+    margin: 0.3rem 0 0.25rem 0;
+  }
+
+  .mar26-testi-card--link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+  .mar26-testi-card--link:hover {
+    transform: translateY(-4px);
+    border-color: #93c5fd;
+    box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.12);
+  }
+
+  .mar26-card-hover-hint {
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    font-size: 10px;
+    font-weight: var(--mar26-fw-extrabold);
+    color: #2563eb;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .mar26-testi-card--link:hover .mar26-card-hover-hint {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   .mar26-stars {
     display: flex;
     justify-content: center;
@@ -293,19 +335,23 @@
   /* Controls */
   .mar26-testi-controls {
     position: absolute;
-    top: 50%;
-    left: 1rem;
-    right: 1rem;
+    top: 65%;
+    left: 0;
+    right: 0;
     transform: translateY(-50%);
     display: flex;
     justify-content: space-between;
     pointer-events: none;
-    z-index: 30;
+    z-index: 40;
+    width: 100%;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
   }
   @media (min-width: 768px) {
     .mar26-testi-controls {
-      left: 3rem;
-      right: 3rem;
+      left: -1.5rem;
+      width: calc(100% + 3rem);
+      padding: 0;
     }
   }
 
@@ -379,8 +425,15 @@
           {%- endcomment -%}
           {%- for i in (1..3) -%}
             {%- for block in section.blocks -%}
+              {%- assign card_product = block.settings.product -%}
+              {%- assign display_product_name = block.settings.product_name | default: card_product.title -%}
+              {%- assign card_url = block.settings.custom_link | default: card_product.url -%}
               <div class="mar26-testi-slide" data-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
-                <div class="mar26-testi-card">
+                {%- if card_url != blank -%}
+                  <a href="{{ card_url }}" class="mar26-testi-card mar26-testi-card--link" title="See {{ display_product_name | escape }}">
+                {%- else -%}
+                  <div class="mar26-testi-card">
+                {%- endif -%}
                   <div class="mar26-badge">Verified User</div>
 
                   <div>
@@ -399,6 +452,11 @@
                         <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/>
                       </svg>
                     </div>
+
+                    {%- if display_product_name != blank -%}
+                      <div class="mar26-card-product-name">{{ display_product_name | escape }}</div>
+                    {%- endif -%}
+
                     {%- if block.settings.show_rating -%}
                       <div class="mar26-stars">
                         {%- for r in (1..5) -%}
@@ -452,8 +510,19 @@
                         <span class="mar26-country-chip__label">Australia</span>
                       </span>
                     {%- endif -%}
+
+                    {%- if card_url != blank -%}
+                      <div class="mar26-card-hover-hint">
+                        <span>See Product</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                      </div>
+                    {%- endif -%}
                   </div>
-                </div>
+                {%- if card_url != blank -%}
+                  </a>
+                {%- else -%}
+                  </div>
+                {%- endif -%}
               </div>
             {%- endfor -%}
           {%- endfor -%}
@@ -466,42 +535,42 @@
           </div>
         {%- endif -%}
       </div>
-
-      {%- if section.blocks.size > 0 -%}
-        <div class="mar26-testi-controls">
-          <button class="mar26-testi-btn" data-prev aria-label="Previous Testimonial">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="m15 18-6-6 6-6"/>
-            </svg>
-          </button>
-          <button class="mar26-testi-btn" data-next aria-label="Next Testimonial">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="m9 18 6-6-6-6"/>
-            </svg>
-          </button>
-        </div>
-      {%- endif -%}
     </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="mar26-testi-controls">
+        <button class="mar26-testi-btn" data-prev aria-label="Previous Testimonial">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m15 18-6-6 6-6"/>
+          </svg>
+        </button>
+        <button class="mar26-testi-btn" data-next aria-label="Next Testimonial">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"/>
+          </svg>
+        </button>
+      </div>
+    {%- endif -%}
   </mar26-testimonials>
 </section>
 
@@ -643,6 +712,26 @@
       "name": "MAR26 Testimonial",
       "settings": [
         {
+          "type": "header",
+          "content": "📌 INSTRUCTIONS:",
+          "info": "Link a product to make the entire card clickable with hover elevation.\n• Product: Select target product for card link & default title.\n• Product Name: Enter text to override displayed title in dark grey font."
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "product_name",
+          "label": "Product Name Override"
+        },
+        {
+          "type": "url",
+          "id": "custom_link",
+          "label": "Custom URL (Optional Link Override)"
+        },
+        {
           "type": "text",
           "id": "author",
           "label": "Name",
@@ -696,6 +785,7 @@
           "type": "testimonial",
           "settings": {
             "author": "James Anderson",
+            "product_name": "Japanese Rubber Broom",
             "country": "australia",
             "content": "<p>The Japanese Rubber Broom changed how I handle large floor areas. It's indestructible.</p>"
           }
@@ -704,6 +794,7 @@
           "type": "testimonial",
           "settings": {
             "author": "Sarah Jenkins",
+            "product_name": "Glider S-1 Window Cleaner",
             "country": "new_zealand",
             "content": "<p>I've tried every cleaner on the market, but the Glider S-1 is the only one that delivers.</p>"
           }
@@ -712,6 +803,7 @@
           "type": "testimonial",
           "settings": {
             "author": "Emma Watson",
+            "product_name": "Multi-Surface Pet Tool",
             "country": "australia",
             "content": "<p>If you have a dog that sheds, you need these tools. It literally pulls fur out of carpets.</p>"
           }
@@ -720,6 +812,7 @@
           "type": "testimonial",
           "settings": {
             "author": "Michael Chen",
+            "product_name": "Industrial Rubber Broom",
             "country": "new_zealand",
             "content": "<p>The build quality is industrial-grade. Durability is honestly unmatched.</p>"
           }
@@ -728,6 +821,7 @@
           "type": "testimonial",
           "settings": {
             "author": "David Ross",
+            "product_name": "Caravan Cleaning Kit",
             "country": "australia",
             "content": "<p>The Caravan Kit is brilliant. No buckets, no mess, stores away perfectly.</p>"
           }

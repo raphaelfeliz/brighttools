@@ -1,7 +1,17 @@
 section: "mar26-testimonials.liquid"
-description: "Liquid section template for MAR26 Testimonials."
-blocks:
-  - "testimonial (MAR26 Testimonial)"
+description: "Liquid section template for MAR26 Testimonials with infinite marquee carousel, 3-tier 5-star stack header, interactive product links, and stationary navigation controls."
+version: "1.9.5"
 settings:
   - "title (text)"
   - "subheading (text)"
+blocks:
+  - name: "testimonial (MAR26 Testimonial)"
+    settings:
+      - "product (product)"
+      - "product_name (text)"
+      - "custom_link (url)"
+      - "author (text)"
+      - "country (select)"
+      - "content (richtext)"
+      - "show_rating (checkbox)"
+      - "rating (range)"
