@@ -4,18 +4,17 @@ This registry tracks all custom product page templates adhering to the `product.
 
 ---
 
-## Registered `*-bt` Product Templates
+## Registered `*-bt` Product Templates (10 Active Templates)
 
-| Template | Status | Visible Section Flow (In Order) | Documentation |
+| Template | Status | Visible Section Flow (In Order) | Direct Theme Editor Link |
 | --- | --- | --- | --- |
-| `bt-brooms` | Published (0 products) | `custom-liquid` → `Top Product Info` → `video` → `media-with-text` → `faq` → `mar26-highlights` → `mar26-whats-included` → `mar26-testimonials` → `mar26-best-sellers` | [bt-brooms.md](file:///C:/code/BrightTools/docs/documentation/product-pages/bt-brooms.md) |
-| `bt-bundles` | Pending | TBD | Pending |
-| `bt-cleaningproducts` | Pending | TBD | Pending |
-| `bt-dustpans` | Pending | TBD | Pending |
-| `bt-floor-wipes` | Pending | TBD | Pending |
-| `bt-microfibre` | Pending | TBD | Pending |
-| `bt-mops` | Pending | TBD | Pending |
-| `bt-shop-all` | Pending | TBD | Pending |
-| `bt-squeegees` | Pending | TBD | Pending |
-| `bt-toilet` | Pending | TBD | Pending |
-| `bt-windows-care` | Pending | TBD | Pending |
+| `bt-brooms` | 🔴 Active | `custom-liquid` → `Top Product Info` → `video` → `media-with-text` → `faq` → `mar26-highlights` → `mar26-whats-included` → `mar26-testimonials` → `mar26-best-sellers` | [Editor Link](https://admin.shopify.com/store/brighttools-au/themes/180366573842/editor?previewPath=%2Fproducts%2Ftest-product%3Fview%3Dbt-brooms) |
+| `bt-bundles` | 🔴 Active | `custom-liquid` → `Top Product Info` → `video` → `media-with-text` → `faq` → `mar26-highlights` → `mar26-whats-included` → `mar26-testimonials` → `mar26-best-sellers` | [Editor Link](https://admin.shopify.com/store/brighttools-au/themes/180366573842/editor?previewPath=%2Fproducts%2Ftest-product%3Fview%3Dbt-bundles) |
+| `bt-cleaningproducts` | 🔴 Active | `custom-liquid` → `Top Product Info` → `video` → `media-with-text` → `faq` → `mar26-highlights` → `mar26-whats-included` → `mar26-testimonials` → `mar26-best-sellers` | [Editor Link](https://admin.shopify.com/store/brighttools-au/themes/180366573842/editor?previewPath=%2Fproducts%2Ftest-product%3Fview%3Dbt-cleaningproducts) |
+| `bt-dustpans` | 🔴 Active | `custom-liquid` → `Top Product Info` → `video` → `media-with-text` → `faq` → `mar26-highlights` → `mar26-whats-included` → `mar26-testimonials` → `mar26-best-sellers` | [Editor Link](https://admin.shopify.com/store/brighttools-au/themes/180366573842/editor?previewPath=%2Fproducts%2Ftest-product%3Fview%3Dbt-dustpans) |
+| `bt-floor-wipes` | 🔴 Active | `custom-liquid` → `Top Product Info` → `video` → `media-with-text` → `faq` → `mar26-highlights` → `mar26-whats-included` → `mar26-testimonials` → `mar26-best-sellers` | [Editor Link](https://admin.shopify.com/store/brighttools-au/themes/180366573842/editor?previewPath=%2Fproducts%2Ftest-product%3Fview%3Dbt-floor-wipes) |
+| `bt-microfibre` | 🔴 Active | `custom-liquid` → `Top Product Info` → `video` → `media-with-text` → `faq` → `mar26-highlights` → `mar26-whats-included` → `mar26-testimonials` → `mar26-best-sellers` | [Editor Link](https://admin.shopify.com/store/brighttools-au/themes/180366573842/editor?previewPath=%2Fproducts%2Ftest-product%3Fview%3Dbt-microfibre) |
+| `bt-mops` | 🔴 Active | `custom-liquid` → `Top Product Info` → `video` → `media-with-text` → `faq` → `mar26-highlights` → `mar26-whats-included` → `mar26-testimonials` → `mar26-best-sellers` | [Editor Link](https://admin.shopify.com/store/brighttools-au/themes/180366573842/editor?previewPath=%2Fproducts%2Ftest-product%3Fview%3Dbt-mops) |
+| `bt-squeegees` | 🔴 Active | `custom-liquid` → `Top Product Info` → `video` → `media-with-text` → `faq` → `mar26-highlights` → `mar26-whats-included` → `mar26-testimonials` → `mar26-best-sellers` | [Editor Link](https://admin.shopify.com/store/brighttools-au/themes/180366573842/editor?previewPath=%2Fproducts%2Ftest-product%3Fview%3Dbt-squeegees) |
+| `bt-toilet` | 🔴 Active | `custom-liquid` → `Top Product Info` → `video` → `media-with-text` → `faq` → `mar26-highlights` → `mar26-whats-included` → `mar26-testimonials` → `mar26-best-sellers` | [Editor Link](https://admin.shopify.com/store/brighttools-au/themes/180366573842/editor?previewPath=%2Fproducts%2Ftest-product%3Fview%3Dbt-toilet) |
+| `bt-windows-care` | 🔴 Active | `custom-liquid` → `Top Product Info` → `video` → `media-with-text` → `faq` → `mar26-highlights` → `mar26-whats-included` → `mar26-testimonials` → `mar26-best-sellers` | [Editor Link](https://admin.shopify.com/store/brighttools-au/themes/180366573842/editor?previewPath=%2Fproducts%2Ftest-product%3Fview%3Dbt-windows-care) |

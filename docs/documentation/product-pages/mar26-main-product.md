@@ -22,6 +22,7 @@ This section drives the product page layout, mobile orchestration sequencing, an
 | **Separator** | `separator` | None | Adds visual divider lines between block elements. |
 | **Description** | `description` | 1 | Displays product description text (collapsible). |
 | **Variant picker** | `variant_picker` | 1 | Renders swatches and dropdown selectors. |
+| **Inventory** | `inventory` | 1 | Displays real-time stock status based on variant. |
 | **Quantity selector** | `quantity_selector` | 1 | Standalone quantity picker widget. |
 | **Buy buttons** | `buy_buttons` | 1 | Standard Add to Cart & dynamic checkout buttons. |
 | **MAR26 Short Description** | `mar26_short_description` | 1 | Renders details alongside three custom bullet highlights. |
@@ -92,6 +93,10 @@ This section drives the product page layout, mobile orchestration sequencing, an
   - Desktop (≥1000px): Aligns stepper, Add to Cart, and Shop Pay in 1 horizontal row with 55px synchronized height.
   - Mobile (<1000px): Stacks stepper and buttons vertically with 100% full width for mobile touch optimization.
   - Retains Montserrat font family (`var(--font-heading-family)`) for the `Quantity:` label.
+
+* **Inventory (`inventory`)**
+  - Displays stock status indicator (e.g. green "In stock" or red "Low stock - X left") dynamically based on variant quantity.
+  - Settings: `low_inventory_threshold` (range 0–100, default 0).
 
 * **Buy buttons (`buy_buttons`)**
   - Add to Cart and checkout buttons rendered via `snippets/buy-buttons.liquid`.
