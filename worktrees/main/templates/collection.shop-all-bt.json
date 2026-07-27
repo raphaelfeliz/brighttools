@@ -337,6 +337,136 @@
       ],
       "settings": {}
     },
+    "b5385aeb-4a34-4a6d-a487-108e7124135c": {
+      "type": "video",
+      "blocks": {
+        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-play-1": {
+          "type": "play",
+          "settings": {}
+        },
+        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "",
+            "heading_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-play-1",
+        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-heading-1"
+      ],
+      "settings": {
+        "full_width": false,
+        "allow_transparent_header": false,
+        "autoplay": true,
+        "video_size": "md",
+        "video": "shopify://files/videos/window-cleaner-optmized.mp4",
+        "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "rich_text_zi6Wjd": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_rpXief": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        },
+        "heading_CizMbW": {
+          "type": "heading",
+          "settings": {
+            "text": "Magnetic Window Cleaners",
+            "heading_tag": "h2",
+            "text_color": "",
+            "gradient": ""
+          }
+        },
+        "richtext_P3nXP4": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Our innovative window cleaning products are specially designed with you in mind to make every window within reach.</p><p>The revolutionary solution for double-sided windows and high windows in your home, our unique magnetic gliders and extendable window cleaners are efficient, effective, and sustainable to use on your own.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_rpXief",
+        "heading_CizMbW",
+        "richtext_P3nXP4"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_width": "medium",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "media_with_text_naB3qr": {
+      "type": "media-with-text",
+      "blocks": {
+        "image_UgxkAx": {
+          "type": "image",
+          "settings": {
+            "media_width": 30,
+            "media_position": "start",
+            "text_position": "place-self-center text-center",
+            "icon": "none",
+            "icon_width": 32,
+            "subheading": "",
+            "title": "",
+            "content": "<h4>🧹 Sweep & Squeegee in One</h4><h4></h4><h4>🔄 Reaches Tight Spaces</h4><h4></h4><h4>💪 Tough & Surface-Safe</h4><p></p><p>Clean faster with one tool built for every mess.<br/>Strong, versatile, and made to last — the Tyroler 2-in-1 is a cleaning essential.</p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "#8d5b97",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        },
+        "video_block": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/Brightswipes AD1 MOBILE_6278ab51-3742-482c-bb63-52d3139bd2eb.mp4",
+            "external_video_url": "https://www.youtube.com/watch?v=oDjHs1ZLcss",
+            "autoplay": true,
+            "media_width": 55,
+            "media_position": "end",
+            "text_position": "place-self-center text-center",
+            "icon": "none",
+            "icon_width": 32,
+            "subheading": "",
+            "title": "",
+            "content": "<h4>🧹 Sweep & Squeegee in One</h4><h4></h4><h4>🔄 Reaches Tight Spaces</h4><h4></h4><h4>💪 Tough & Surface-Safe</h4><p></p><p>Clean faster with one tool built for every mess.<br/>Strong, versatile, and made to last — the Tyroler 2-in-1 is a cleaning essential.</p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "#0f172a",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "#e11d48",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "image_UgxkAx",
+        "video_block"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "alternate_media_position": false,
+        "spacing": "none"
+      }
+    },
     "video_promo": {
       "type": "video",
       "blocks": {
@@ -356,61 +486,17 @@
         "template--19575487660306__397d7191-df1d-4a09-a3f1-c28dc3293eba-16877765676bfd419b-0",
         "template--19575487660306__397d7191-df1d-4a09-a3f1-c28dc3293eba-16877765676bfd419b-1"
       ],
+      "disabled": true,
       "settings": {
         "full_width": false,
         "allow_transparent_header": false,
         "autoplay": true,
-        "video_size": "auto",
-        "video": "shopify://files/videos/Brightswipes AD1 MOBILE_6278ab51-3742-482c-bb63-52d3139bd2eb.mp4",
+        "video_size": "lg",
+        "video": "shopify://files/videos/clean-floor-wipes-optimized.mp4",
         "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
         "text_color": "#ffffff",
         "overlay_color": "#000000",
         "overlay_opacity": 0
-      }
-    },
-    "best_sellers": {
-      "type": "mar26-best-sellers",
-      "blocks": {
-        "prod_1": {
-          "type": "product",
-          "settings": {
-            "product": "bright-broom-bundle-blue-edition"
-          }
-        },
-        "prod_2": {
-          "type": "product",
-          "settings": {
-            "product": "easy-cleaning-bundle-for-limited-mobility"
-          }
-        },
-        "prod_3": {
-          "type": "product",
-          "settings": {
-            "product": "adjustable-dust-blade-rubber-broom-squeegee"
-          }
-        },
-        "prod_4": {
-          "type": "product",
-          "settings": {
-            "product": "jet-all-purpose-cleaning-spray-with-vinegar-and-lavender-copy"
-          }
-        }
-      },
-      "block_order": [
-        "prod_1",
-        "prod_2",
-        "prod_3",
-        "prod_4"
-      ],
-      "settings": {
-        "badge_text": "Bright On - Dust Off",
-        "primary_text": "Better Cleaning",
-        "highlight_text": "Best Sellers",
-        "autoplay_enabled": true,
-        "color_background": "#f8fafc",
-        "color_primary_text": "#0f172a",
-        "color_highlight": "#f81f2f",
-        "color_badge_text": "#f81b27"
       }
     },
     "d9e91537-6225-4b57-bd84-e5d10e8558b3": {
@@ -474,134 +560,50 @@
         "accordion_text_color": ""
       }
     },
-    "b5385aeb-4a34-4a6d-a487-108e7124135c": {
-      "type": "video",
+    "best_sellers": {
+      "type": "mar26-best-sellers",
       "blocks": {
-        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-play-1": {
-          "type": "play",
-          "settings": {}
-        },
-        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-heading-1": {
-          "type": "heading",
+        "prod_1": {
+          "type": "product",
           "settings": {
-            "text": "",
-            "heading_tag": "h1"
+            "product": "bright-broom-bundle-blue-edition"
+          }
+        },
+        "prod_2": {
+          "type": "product",
+          "settings": {
+            "product": "easy-cleaning-bundle-for-limited-mobility"
+          }
+        },
+        "prod_3": {
+          "type": "product",
+          "settings": {
+            "product": "adjustable-dust-blade-rubber-broom-squeegee"
+          }
+        },
+        "prod_4": {
+          "type": "product",
+          "settings": {
+            "product": "jet-all-purpose-cleaning-spray-with-vinegar-and-lavender-copy"
           }
         }
       },
       "block_order": [
-        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-play-1",
-        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-heading-1"
+        "prod_1",
+        "prod_2",
+        "prod_3",
+        "prod_4"
       ],
+      "disabled": true,
       "settings": {
-        "full_width": true,
-        "allow_transparent_header": false,
-        "autoplay": true,
-        "video_size": "sm",
-        "video": "shopify://files/videos/window-cleaner-optmized.mp4",
-        "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "text_color": "#ffffff",
-        "overlay_color": "#000000",
-        "overlay_opacity": 0
-      }
-    },
-    "rich_text_zi6Wjd": {
-      "type": "rich-text",
-      "blocks": {
-        "subheading_rpXief": {
-          "type": "subheading",
-          "settings": {
-            "text": ""
-          }
-        },
-        "heading_CizMbW": {
-          "type": "heading",
-          "settings": {
-            "text": "Magnetic Window Cleaners",
-            "heading_tag": "h2",
-            "text_color": "",
-            "gradient": ""
-          }
-        },
-        "richtext_P3nXP4": {
-          "type": "richtext",
-          "settings": {
-            "content": "<p>Our innovative window cleaning products are specially designed with you in mind to make every window within reach.</p><p>The revolutionary solution for double-sided windows and high windows in your home, our unique magnetic gliders and extendable window cleaners are efficient, effective, and sustainable to use on your own.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "subheading_rpXief",
-        "heading_CizMbW",
-        "richtext_P3nXP4"
-      ],
-      "settings": {
-        "full_width": true,
-        "content_width": "medium",
-        "text_position": "center",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
-      }
-    },
-    "media_with_text_naB3qr": {
-      "type": "media-with-text",
-      "blocks": {
-        "image_UgxkAx": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/bt_delete.png",
-            "media_width": 30,
-            "media_position": "start",
-            "text_position": "place-self-center text-center",
-            "icon": "none",
-            "icon_width": 32,
-            "subheading": "",
-            "title": "",
-            "content": "<h4>🧹 Sweep & Squeegee in One</h4><h4></h4><h4>🔄 Reaches Tight Spaces</h4><h4></h4><h4>💪 Tough & Surface-Safe</h4><p></p><p>Clean faster with one tool built for every mess.<br/>Strong, versatile, and made to last — the Tyroler 2-in-1 is a cleaning essential.</p>",
-            "link_text": "",
-            "link_url": "",
-            "background": "#8d5b97",
-            "background_gradient": "",
-            "text_color": "#ffffff",
-            "text_gradient": "",
-            "button_background": "",
-            "button_text_color": ""
-          }
-        },
-        "video_block": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/Brightswipes AD1 MOBILE_6278ab51-3742-482c-bb63-52d3139bd2eb.mp4",
-            "external_video_url": "https://www.youtube.com/watch?v=oDjHs1ZLcss",
-            "autoplay": true,
-            "media_width": 55,
-            "media_position": "end",
-            "text_position": "place-self-center text-center",
-            "icon": "none",
-            "icon_width": 32,
-            "subheading": "",
-            "title": "",
-            "content": "<h4>🧹 Sweep & Squeegee in One</h4><h4></h4><h4>🔄 Reaches Tight Spaces</h4><h4></h4><h4>💪 Tough & Surface-Safe</h4><p></p><p>Clean faster with one tool built for every mess.<br/>Strong, versatile, and made to last — the Tyroler 2-in-1 is a cleaning essential.</p>",
-            "link_text": "",
-            "link_url": "",
-            "background": "#0f172a",
-            "background_gradient": "",
-            "text_color": "#ffffff",
-            "text_gradient": "",
-            "button_background": "#e11d48",
-            "button_text_color": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "image_UgxkAx",
-        "video_block"
-      ],
-      "settings": {
-        "full_width": false,
-        "alternate_media_position": false,
-        "spacing": "none"
+        "badge_text": "Bright On - Dust Off",
+        "primary_text": "Better Cleaning",
+        "highlight_text": "Best Sellers",
+        "autoplay_enabled": true,
+        "color_background": "#f8fafc",
+        "color_primary_text": "#0f172a",
+        "color_highlight": "#f81f2f",
+        "color_badge_text": "#f81b27"
       }
     },
     "mar26-highlights": {

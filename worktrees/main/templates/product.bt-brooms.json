@@ -45,11 +45,11 @@
           "type": "mar26_short_description",
           "settings": {
             "description": "",
-            "highlight_1": "180° pivot head",
-            "highlight_2": "Dust catcher system",
-            "highlight_3": "Non-stick bristles",
+            "highlight_1": "<p><strong>Reach More, Move Less: </strong>180° Pivot</p>",
+            "highlight_2": "<p><strong>Trap Dust:</strong> Exclusive System</p>",
+            "highlight_3": "<p><strong>Less Mess: </strong>Non-Stick Bristles</p>",
             "icon_color": "#e11d48",
-            "background_color": "#EFEFEF"
+            "background_color": "#efefef"
           }
         },
         "mar26_gradient_title_RMQCET": {
