@@ -88,11 +88,14 @@ This section drives the product page layout, mobile orchestration sequencing, an
   - Settings: `hide_sold_out_variants` (bool), `stack_blocks` (bool), `selector_style` (select), `swatch_selector_style` (select).
 
 * **Quantity selector (`quantity_selector`)**
-  - Standard quantity picker.
-  - No settings.
+  - Custom inline MAR26 layout combining quantity stepper, Add to Cart, and dynamic checkout buttons.
+  - Desktop (≥1000px): Aligns stepper, Add to Cart, and Shop Pay in 1 horizontal row with 55px synchronized height.
+  - Mobile (<1000px): Stacks stepper and buttons vertically with 100% full width for mobile touch optimization.
+  - Retains Montserrat font family (`var(--font-heading-family)`) for the `Quantity:` label.
 
 * **Buy buttons (`buy_buttons`)**
-  - Add to Cart and checkout buttons.
+  - Add to Cart and checkout buttons rendered via `snippets/buy-buttons.liquid`.
+  - Overridden with solid navy (`#0F172A`) pill background and white text to prevent default red outline styling when dynamic checkout buttons are enabled.
   - Settings: `show_payment_button` (bool), `atc_button_background` (color), `atc_button_text_color` (color).
 
 * **MAR26 Short Description (`mar26_short_description`)**
