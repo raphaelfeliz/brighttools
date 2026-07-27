@@ -1,9 +1,9 @@
 {%- comment -%}
 ----------------------------------------------------------------------------------------------------------------------
 file-summary: Custom fork of product info for MAR26 layout. Handles rendering of product blocks with specific overrides.
-version-name: Configurable Title Tags Live
-version-number: 2.1.0
-version-summary: Uses the unified title-and-tags block in the live theme snippet and keeps Theme Check-safe string wrappers for grouped blocks.
+version-name: Default Quantity Selector Fully Restored
+version-number: 2.2.1
+version-summary: Restored full default quantity_selector HTML and Liquid rendering logic from native theme product-info.liquid.
 ----------------------------------------------------------------------------------------------------------------------
 {%- endcomment -%}
 
@@ -165,13 +165,6 @@ version-summary: Uses the unified title-and-tags block in the live theme snippet
             </div>
           {%- endif -%}
 
-        {%- when 'mar26_quantity_price' -%}
-          {%- if product.selected_or_first_available_variant != nil -%}
-            <div class="product-info__price">
-              {%- render 'mar26-quantity-buy', product: product, product_form_id: product_form_id, block: block -%}
-            </div>
-          {%- endif -%}
-
         {%- when 'rating' -%}
           {%- if previous_block.type != 'price' -%}
             <div class="product-info__rating">
@@ -296,7 +289,44 @@ version-summary: Uses the unified title-and-tags block in the live theme snippet
           {%- endif -%}
 
         {%- when 'quantity_selector' -%}
-          {%- comment -%}Quantity selector is rendered inside mar26-quantity-price when the price block is present.{%- endcomment -%}
+          {%- if product.available -%}
+            {%- assign variant = product.selected_or_first_available_variant -%}
+
+            <div class="product-info__quantity-selector">
+              <div class="form-control">
+                <label for="{{ product_form_id }}-quantity" class="block-label text-subdued">{{- 'product.quantity.label' | t -}}:</label>
+
+                <quantity-selector class="quantity-selector">
+                  <button type="button" tabindex="-1" class="quantity-selector__button" aria-label="{{ 'product.quantity.decrease_quantity' | t }}">{% render 'icon' with 'minus', width: 10, height: 2 %}</button>
+                  <input id="{{ product_form_id }}-quantity" type="number" is="quantity-input" inputmode="numeric" class="quantity-selector__input" name="quantity" form="{{ product_form_id }}" value="{{ variant.quantity_rule.min | default: 1 }}" step="{{ variant.quantity_rule.increment }}" min="{{ variant.quantity_rule.min }}" {% if variant.quantity_rule.max != nil %}max="{{ variant.quantity_rule.max }}"{% endif %} autocomplete="off">
+                  <button type="button" tabindex="-1" class="quantity-selector__button" aria-label="{{ 'product.quantity.increase_quantity' | t }}">{% render 'icon' with 'plus', width: 10, height: 10 %}</button>
+                </quantity-selector>
+              </div>
+
+              {%- liquid
+                assign quantity_rules = ''
+
+                if variant.quantity_rule.min > 1
+                  assign rule = 'product.quantity.minimum_of' | t: min: variant.quantity_rule.min
+                  assign quantity_rules = quantity_rules | append: ' / ' | append: rule
+                endif
+
+                if variant.quantity_rule.max != nil
+                  assign rule = 'product.quantity.maximum_of' | t: max: variant.quantity_rule.max
+                  assign quantity_rules = quantity_rules | append: ' / ' | append: rule
+                endif
+
+                if variant.quantity_rule.increment > 1
+                  assign rule = 'product.quantity.increment_of' | t: step: variant.quantity_rule.increment
+                  assign quantity_rules = quantity_rules | append: ' / ' | append: rule
+                endif
+              -%}
+
+              {%- if quantity_rules != blank -%}
+                <p class="text-subdued text-sm">{{ quantity_rules | remove_first: ' / ' | capitalize }}</p>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
 
         {%- when 'volume_pricing' -%}
           {%- render 'volume-pricing-table', variant: product.selected_or_first_available_variant -%}

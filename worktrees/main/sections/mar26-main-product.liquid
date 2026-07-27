@@ -3,9 +3,9 @@
 file-summary: MAR26 main product section. Drives MAR26 mobile ordering, gallery layout variables, and product info composition.
 
 # Version Block (SOP: Always update for real changes)
-version-name: Highlights Richtext Conversion
-version-number: 1.7.8
-version-summary: Converts Highlights 1, 2, and 3 settings to rich text for rich formatting support.
+version-name: Default Quantity Selector Fully Restored
+version-number: 1.8.5
+version-summary: Restored native standalone quantity_selector block in section schema and rendering in product info snippet.
 
 # Change rationale:
 # - Normal state: Black background / White text.
@@ -774,14 +774,6 @@ version-summary: Converts Highlights 1, 2, and 3 settings to rich text for rich 
     { "type": "price", "name": "Price", "limit": 1, "settings": [
         { "type": "checkbox", "id": "show_taxes_notice", "label": "Show taxes notice", "default": false }
       ] 
-    },
-    { "type": "mar26_quantity_price", "name": "MAR26 Quantity + Buy", "limit": 1, "settings": [
-        { "type": "checkbox", "id": "show_payment_button", "label": "Show dynamic checkout button", "default": true },
-        { "type": "color", "id": "atc_button_background", "label": "Add to cart background" },
-        { "type": "color", "id": "atc_button_text_color", "label": "Add to cart color" },
-        { "type": "color", "id": "payment_button_background", "label": "Dynamic checkout background" },
-        { "type": "color", "id": "payment_button_text_color", "label": "Dynamic checkout color" }
-      ]
     },
     { "type": "payment_terms", "name": "Payment installments", "limit": 1 },
     { "type": "rating", "name": "Rating", "limit": 1 },
