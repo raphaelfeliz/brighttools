@@ -99,6 +99,7 @@
         },
         "buy_buttons_KpKVCY": {
           "type": "buy_buttons",
+          "disabled": true,
           "settings": {
             "show_payment_button": true,
             "atc_button_background": "#000000",
@@ -407,7 +408,6 @@
       "block_order": [
         "mar26_videos_JrNLDC"
       ],
-      "disabled": true,
       "name": "mar26-videos",
       "settings": {
         "full_width": true,
@@ -491,6 +491,9 @@
         "testi_1": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "David R.",
             "country": "australia",
             "content": "<p>Fantastic results on my 60th floor windows. I was nervous about using it so high up but the safety string gave me total confidence.</p>",
@@ -501,6 +504,9 @@
         "testi_2": {
           "type": "testimonial",
           "settings": {
+            "product": "bright-broom-bundle-broom-squeegee-1pk-quick-mop-floor-wipes",
+            "product_name": "",
+            "custom_link": "",
             "author": "Michelle T.",
             "country": "australia",
             "content": "<p>I have sparkling streak-free windows. The key is not to have the magnets too tight — once you get the technique it's effortless.</p>",
@@ -511,6 +517,9 @@
         "testi_3": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "Peter K.",
             "country": "australia",
             "content": "<p>We were able to easily clean windows which are very high on the outside. Bought 3 for our staff. Saves us calling rope-access cleaners.</p>",
@@ -563,7 +572,6 @@
         "prod_3",
         "prod_4"
       ],
-      "disabled": true,
       "settings": {
         "badge_text": "Bright On - Dust Off",
         "primary_text": "Better Cleaning",

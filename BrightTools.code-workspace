@@ -1,13 +1,10 @@
 {
-	"folders": [
-		{
-			"path": "."
-		},
-		{
-			"path": "../PM-2"
-		}
-	],
-	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "BrightTools"
-	}
+  "folders": [
+    {
+      "path": ".",
+    },
+  ],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "BrightTools",
+  },
 }

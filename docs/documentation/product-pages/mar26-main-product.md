@@ -99,7 +99,8 @@ This section drives the product page layout, mobile orchestration sequencing, an
   - Settings: `show_payment_button` (bool), `atc_button_background` (color), `atc_button_text_color` (color).
 
 * **MAR26 Short Description (`mar26_short_description`)**
-  - Displays rich text and up to three highlight bullet points.
+  - Displays compact description card and up to three highlight bullet points.
+  - Automatically pulls product metafields `custom.mar26_highlight_1`, `custom.mar26_highlight_2`, and `custom.mar26_highlight_3` when populated on the product, falling back to block settings `highlight_1`, `highlight_2`, `highlight_3`.
   - Settings: `description` (richtext), `highlight_1` (text), `highlight_2` (text), `highlight_3` (text), `icon_color` (color).
 
 * **Share buttons (`share_buttons`)**
