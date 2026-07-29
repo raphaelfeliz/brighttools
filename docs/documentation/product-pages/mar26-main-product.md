@@ -22,6 +22,7 @@ This section drives the product page layout, mobile orchestration sequencing, an
 | **Separator** | `separator` | None | Adds visual divider lines between block elements. |
 | **Description** | `description` | 1 | Displays product description text (collapsible). |
 | **Variant picker** | `variant_picker` | 1 | Renders swatches and dropdown selectors. |
+| **Text** | `text` | Unlimited | Renders rich text content with links, bolding, and formatting. |
 | **Inventory** | `inventory` | 1 | Displays real-time stock status based on variant. |
 | **Quantity selector** | `quantity_selector` | 1 | Standalone quantity picker widget. |
 | **Buy buttons** | `buy_buttons` | 1 | Standard Add to Cart & dynamic checkout buttons. |

@@ -1,15 +1,14 @@
 {%- comment -%}
 ----------------------------------------------------------------------------------------------------------------------
 MAR26 WHAT'S INCLUDED
-VERSION: 1.3.0 - Product Binding Enhancement
+VERSION: 1.7.0 - Centered Image & Equal Padding
 ----------------------------------------------------------------------------------------------------------------------
 A grid-based "What's Included" section supporting manual block items, metaobject lists,
-and direct product objects (auto-pulling title, featured image, custom.short_description,
-and mar26_highlight_1..3).
+and direct product objects (compact layout: auto-pulling title, featured image, and mar26_highlight_1..3).
 {%- endcomment -%}
 
 <script>
-  console.log("MAR26 What's Included - Version: 1.3.0");
+  console.log("MAR26 What's Included - Version: 1.7.0");
 </script>
 
 <style>
@@ -140,7 +139,7 @@ and mar26_highlight_1..3).
     width: 100%;
     aspect-ratio: 1 / 1;
     background-color: #ffffff;
-    padding: 1.5rem;
+    padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -152,7 +151,7 @@ and mar26_highlight_1..3).
   #shopify-section-{{ section.id }} .mar26-included-card-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 10px; /* Geometric Nesting Standard */
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   }
@@ -173,7 +172,7 @@ and mar26_highlight_1..3).
 
   /* Card Body */
   #shopify-section-{{ section.id }} .mar26-included-card-body {
-    padding: 1.5rem;
+    padding: 0.375rem 1.25rem 1rem 1.25rem;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -191,7 +190,7 @@ and mar26_highlight_1..3).
     border-radius: 0.25rem;
     display: inline-block;
     width: max-content;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.375rem;
   }
 
   #shopify-section-{{ section.id }} .mar26-included-card-name {
@@ -200,35 +199,21 @@ and mar26_highlight_1..3).
     font-family: var(--heading-font-family, "Montserrat", sans-serif);
     color: #0f172a;
     line-height: 1.2;
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 0.75rem 0;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
 
-  #shopify-section-{{ section.id }} .mar26-included-card-desc {
-    font-size: 0.875rem;
-    font-weight: 400;
-    color: #475569;
-    line-height: 1.6;
-    margin: 0 0 1.5rem 0;
-    flex-grow: 1;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  #shopify-section-{{ section.id }} .mar26-included-card-desc p { margin: 0; }
-
   /* Specs */
   #shopify-section-{{ section.id }} .mar26-included-card-specs {
-    border-top: 1px solid #f1f5f9;
-    padding-top: 1rem;
-    margin-top: auto;
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.375rem;
   }
 
   #shopify-section-{{ section.id }} .mar26-included-spec {
@@ -390,10 +375,6 @@ and mar26_highlight_1..3).
                 <h3 class="mar26-included-card-name">{{ card_title | escape }}</h3>
               {%- endif -%}
 
-              {%- if card_desc != blank -%}
-                <div class="mar26-included-card-desc">{{ card_desc }}</div>
-              {%- endif -%}
-
               {%- if card_spec_1 != blank or card_spec_2 != blank or card_spec_3 != blank -%}
                 <div class="mar26-included-card-specs">
                   {%- if card_spec_1 != blank -%}
@@ -461,10 +442,6 @@ and mar26_highlight_1..3).
 
               {%- if card_title != blank -%}
                 <h3 class="mar26-included-card-name">{{ card_title | escape }}</h3>
-              {%- endif -%}
-
-              {%- if card_desc != blank -%}
-                <div class="mar26-included-card-desc">{{ card_desc }}</div>
               {%- endif -%}
 
               {%- if card_spec_1 != blank or card_spec_2 != blank or card_spec_3 != blank -%}
@@ -587,12 +564,6 @@ and mar26_highlight_1..3).
           "default": "Item Name"
         },
         {
-          "type": "richtext",
-          "id": "description",
-          "label": "Description",
-          "default": "<p>A short description of what this item is and why it's included.</p>"
-        },
-        {
           "type": "text",
           "id": "spec_1",
           "label": "Spec 1 (optional)"
@@ -624,7 +595,6 @@ and mar26_highlight_1..3).
           "type": "item",
           "settings": {
             "title": "Japanese Silicone Broom (30cm)",
-            "description": "<p>100% silicone bristles create static electricity to quickly gather dust, hair, and crumbs.</p>",
             "spec_1": "Adjustable Knuckle Joint",
             "spec_2": "Furniture-Safe Soft Edge"
           }
@@ -633,7 +603,6 @@ and mar26_highlight_1..3).
           "type": "item",
           "settings": {
             "title": "Silicone Squeegee (30cm)",
-            "description": "<p>Single cast 100% silicone for extreme durability without flimsy rubber strips.</p>",
             "spec_1": "Multi-surface Use",
             "spec_2": "Zero Water Streaks"
           }
@@ -642,7 +611,6 @@ and mar26_highlight_1..3).
           "type": "item",
           "settings": {
             "title": "Stick-to-floor Dustpan",
-            "description": "<p>Crafted from a single piece of high-quality silicone that sticks entirely to the floor.</p>",
             "spec_1": "Sweep without holding",
             "spec_2": "Attaches to handles"
           }
@@ -651,7 +619,6 @@ and mar26_highlight_1..3).
           "type": "item",
           "settings": {
             "title": "Quick Mop Floor Wipes",
-            "description": "<p>Supersized wet wipes safe for all floors. Poke the broom handle through and polish.</p>",
             "spec_1": "5 Awesome Scents",
             "spec_2": "Instantly discard after use"
           }

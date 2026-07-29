@@ -44,10 +44,10 @@
         "mar26_short_description_tARAbB": {
           "type": "mar26_short_description",
           "settings": {
-            "description": "",
-            "highlight_1": "<p><strong>Reach More, Move Less: </strong>180° Pivot</p>",
-            "highlight_2": "<p><strong>Trap Dust:</strong> Exclusive System</p>",
-            "highlight_3": "<p><strong>Less Mess: </strong>Non-Stick Bristles</p>",
+            "description": "<p>{{ product.metafields.custom.short_description.value }}</p>",
+            "highlight_1": "<p>{{ product.metafields.custom.mar26_highlight_1.value }}</p>",
+            "highlight_2": "<p>{{ product.metafields.custom.mar26_highlight_2.value }}</p>",
+            "highlight_3": "<p>{{ product.metafields.custom.mar26_highlight_3.value }} </p>",
             "icon_color": "#e11d48",
             "background_color": "#efefef"
           }
@@ -160,7 +160,8 @@
         "allow_transparent_header": false,
         "autoplay": true,
         "video_size": "md",
-        "video": "shopify://files/videos/06SiliconeRubberBroom.mp4",
+        "video": "{{ product.metafields.custom.product_video.value }}",
+        "mobile_video": "{{ product.metafields.custom.mobile_product_video.value }}",
         "external_video_url": "",
         "text_color": "#ffffff",
         "overlay_color": "#000000",
@@ -424,6 +425,7 @@
         "item_mPaejM": {
           "type": "item",
           "settings": {
+            "product": "adjustable-dust-blade-rubber-broom-squeegee",
             "title": "Japanese Silicone Broom (30cm)",
             "description": "<p>100% silicone bristles create static electricity to quickly gather dust, hair, and crumbs.</p>",
             "spec_1": "Adjustable Knuckle Joint",
@@ -435,6 +437,7 @@
         "item_6YK7ta": {
           "type": "item",
           "settings": {
+            "product": "",
             "title": "Silicone Squeegee (30cm)",
             "description": "<p>Single cast 100% silicone for extreme durability without flimsy rubber strips.</p>",
             "spec_1": "Multi-surface Use",
@@ -446,6 +449,7 @@
         "item_7krkje": {
           "type": "item",
           "settings": {
+            "product": "",
             "title": "Stick-to-floor Dustpan",
             "description": "<p>Crafted from a single piece of high-quality silicone that sticks entirely to the floor.</p>",
             "spec_1": "Sweep without holding",
@@ -457,6 +461,7 @@
         "item_XfYzVT": {
           "type": "item",
           "settings": {
+            "product": "",
             "title": "Quick Mop Floor Wipes",
             "description": "<p>Supersized wet wipes safe for all floors. Poke the broom handle through and polish.</p>",
             "spec_1": "5 Awesome Scents",

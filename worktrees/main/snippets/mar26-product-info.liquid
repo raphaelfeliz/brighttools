@@ -488,7 +488,7 @@ version-summary: Re-adds Quantity label with Montserrat font tokens and override
 
         {%- when 'text' -%}
           {%- if block.settings.text != blank -%}
-            <div class="product-info__text">
+            <div class="product-info__text" {{ block.shopify_attributes }}>
               <div class="prose">
                 {{- block.settings.text -}}
               </div>
