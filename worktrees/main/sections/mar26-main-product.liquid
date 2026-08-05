@@ -3,9 +3,9 @@
 file-summary: MAR26 main product section. Drives MAR26 mobile ordering, gallery layout variables, and product info composition.
 
 # Version Block (SOP: Always update for real changes)
-version-name: Default Quantity Selector Fully Restored
-  version-number: 1.8.6
-version-summary: Restored native standalone quantity_selector block in section schema and rendering in product info snippet.
+version-name: Sticky Header Offset Alignment Fix
+  version-number: 2.1.0
+version-summary: Updated desktop sticky top offset to calc(var(--header-height, 80px) + 20px) so gallery locks immediately below sticky header.
 
 # Change rationale:
 # - Normal state: Black background / White text.
@@ -53,6 +53,12 @@ version-summary: Restored native standalone quantity_selector block in section s
       --product-gallery-media-list-grid: {% if section.settings.desktop_media_layout contains 'grid' %}auto-flow dense / repeat({% if section.settings.desktop_media_layout == 'grid_one' %}1{% else %}2{% endif %}, minmax(0, 1fr)){% else %}auto / auto-flow 100%{% endif %};
       --product-gallery-media-list-gap: calc(var(--grid-gutter) / 2);
       --section-spacing-block-start: 0px !important;
+    }
+
+    #shopify-section-{{ section.id }} safe-sticky.product-gallery-column {
+      position: sticky !important;
+      top: calc(var(--header-height, 80px) + 20px) !important;
+      align-self: start !important;
     }
 
     #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy-buttons"],
@@ -488,7 +494,7 @@ version-summary: Restored native standalone quantity_selector block in section s
     <div class="product">
       <script>
       (function() {
-        var VERSION = 'v1.6.5';
+        var VERSION = 'v2.1.0';
         console.log('MAR26 Product Section: ' + VERSION + ' loaded');
 
         // Gate: only run diagnostics if ?debug=true is in the URL
@@ -612,7 +618,7 @@ version-summary: Restored native standalone quantity_selector block in section s
       </script>
       {%- assign highlights_block = section.blocks | where: 'type', 'mar26_short_description' | first -%}
       {%- if product.media.size > 0 -%}
-        <div class="product-gallery-column v-stack gap-4">
+        <safe-sticky class="product-gallery-column v-stack gap-4">
           {%- if product.media.size > 0 -%}
             {%- render 'mar26-product-gallery', product: product, product_form_id: product_form_id -%}
           {%- endif -%}
@@ -622,7 +628,7 @@ version-summary: Restored native standalone quantity_selector block in section s
               {%- render 'mar26-short-description', block: highlights_block, product: product -%}
             </div>
           {%- endif -%}
-        </div>
+        </safe-sticky>
       {%- endif -%}
 
       {%- render 'mar26-product-info', 

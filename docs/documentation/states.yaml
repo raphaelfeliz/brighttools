@@ -1,7 +1,7 @@
 theme:
   store: brighttools-au.myshopify.com
   active_id: 180366573842
-  active_name: "[live] July 1 2026"
+  active_name: "[live] Aug 5  2026"
   backup_id: 180462649618
   backup_name: "Backup [LIVE] May 27 2026"
   copy_id: 180483850514
@@ -11,11 +11,10 @@ git:
   local_root: "C:\\code\\BrightTools"
   remote: "git@github.com:raphaelfeliz/brighttools.git"
   branch: "main"
-  head_commit: "0e13b9d"
+  head_commit: "4e0077b"
   summary: >
-    Synchronized live Shopify Customizer editor changes for 5 JSON templates (collection.microfibre-bt,
-    collection.mops-bt, collection.shop-all-bt, collection.toilet-bt, product.bt-brooms), established
-    isolated worktrees/pull workspace retention, and hardened theme pull SOP.
+    Updated Shopify CLI to 4.6.0, executed fresh theme pull of live theme '[live] Aug 5 2026'
+    (#180366573842) into worktrees/pull workspace, and recorded execution receipt.
 
 
 components:

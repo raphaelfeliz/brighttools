@@ -1,14 +1,14 @@
 {%- comment -%}
   ----------------------------------------------------------------------------------------------------------------------
   MAR26 REVOLUTION TESTIMONIALS
-  VERSION: 2.0.0 - Revert to Single Inline Star Header
+  VERSION: 2.2.2 - Reduce spacing between header and track container by 50%
   ----------------------------------------------------------------------------------------------------------------------
   A high-impact, premium testimonial section with an SVG "Revolution" background
   and an infinite-looping spotlight carousel.
 {%- endcomment -%}
 
 <script>
-  console.log('MAR26 Testimonials - Version: 2.0.0');
+  console.log('MAR26 Testimonials - Version: 2.2.2');
 </script>
 
 <style>
@@ -41,14 +41,23 @@
       padding-bottom: 2rem;
     }
 
-    .mar26-testi-header h2 {
-      font-size: 1.5rem !important;
-      gap: 0.5rem;
+    .mar26-testi-header {
+      padding: 0 12px !important;
     }
 
-    .mar26-testi-header h2 svg {
-      width: 32px !important;
-      height: 32px !important;
+    .mar26-testi-header h2 {
+      font-size: 1.3rem !important;
+      margin-bottom: 0.2rem !important;
+    }
+
+    .mar26-title-inline {
+      white-space: nowrap;
+    }
+
+    .mar26-title-inline svg {
+      width: 24px !important;
+      height: 24px !important;
+      margin-right: 12px !important;
     }
 
     .mar26-testi-controls {
@@ -72,7 +81,7 @@
   /* Header Styles */
   .mar26-testi-header {
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
     width: 100%;
     max-width: 64rem;
     padding: 0 1.5rem;
@@ -87,12 +96,26 @@
     text-transform: uppercase;
     letter-spacing: -0.05em;
     line-height: 1;
-    margin-bottom: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.8rem;
+    margin-top: 0;
+    margin-bottom: 0.4rem;
     color: var(--mar26-clr-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .mar26-title-inline {
+    position: relative;
+    display: inline-block;
+  }
+  .mar26-title-inline svg {
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%) rotate(-15deg);
+    margin-right: 12px;
+    width: 52px;
+    height: 52px;
   }
   @media (min-width: 768px) {
     .mar26-testi-header h2 {
@@ -107,6 +130,7 @@
     max-width: 60rem;
     margin: 0 auto;
     text-align: center;
+    display: inline-block;
   }
 
   /* Carousel Layout */
@@ -125,7 +149,8 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-    padding: 2.5rem 0; /* space for scaling */
+    padding-top: 1.25rem;
+    padding-bottom: 2.5rem; /* space for scaling */
   }
 
   .mar26-testi-track {
@@ -377,22 +402,25 @@
 
   {%- comment -%} MAIN CONTENT {%- endcomment -%}
   <mar26-testimonials class="mar26-testimonials-wrapper" data-total="{{ section.blocks.size }}">
-    <header class="mar26-testi-header">
-      <h2 class="mar26-title">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="52"
-          height="52"
-          viewBox="0 0 24 24"
-          fill="var(--mar26-clr-pink)"
-          stroke="none"
-          style="transform: rotate(-15deg); flex-shrink: 0;"
-        >
-          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-        </svg>
-        {{ section.settings.title | escape }}
+    <header class="mar26-testi-header" data-ai-name="Header Container" data-ai-desc="Outer block container for the testimonials section header">
+      <h2 class="mar26-title" data-ai-name="Title Bounding Box" data-ai-desc="Heading block containing the inline-flex title wrapper">
+        <span class="mar26-title-inline" data-ai-name="Inline-Flex Title Group" data-ai-desc="Inline-flex wrapper grouping the star icon and title text to isolate their visual boundaries">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="52"
+            height="52"
+            viewBox="0 0 24 24"
+            fill="var(--mar26-clr-pink)"
+            stroke="none"
+            data-ai-name="Left Accent Star"
+            data-ai-desc="Star decoration icon positioned inline to the left of the title"
+          >
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+          <span data-ai-name="Title Text Element" data-ai-desc="Title text wrapped in a span to prevent text-node whitespace bugs">{{ section.settings.title | escape | strip }}</span>
+        </span>
       </h2>
-      <p>{{ section.settings.subheading | escape }}</p>
+      <p data-ai-name="Subtitle Block" data-ai-desc="Subheading text set to inline-block to shrink-wrap its bounding box around the text">{{ section.settings.subheading | escape | strip }}</p>
     </header>
 
     <div class="mar26-testi-track-container" data-carousel-container>

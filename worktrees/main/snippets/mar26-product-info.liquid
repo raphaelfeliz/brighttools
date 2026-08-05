@@ -1,15 +1,15 @@
 {%- comment -%}
 ----------------------------------------------------------------------------------------------------------------------
 file-summary: Custom fork of product info for MAR26 layout. Handles rendering of product blocks with specific overrides.
-version-name: Montserrat Label & Zero Padding Alignment Fix
-version-number: 2.4.5
-version-summary: Re-adds Quantity label with Montserrat font tokens and overrides 5px padding on buy-buttons--multiple for perfect bottom baseline alignment.
+version-name: Sticky Gallery Transfer & Standard Product Info Wrapper
+version-number: 2.5.0
+version-summary: Removed safe-sticky from product-info so right-side column scrolls naturally while left media gallery remains fixed.
 ----------------------------------------------------------------------------------------------------------------------
 {%- endcomment -%}
 
 
 
-<safe-sticky class="product-info">
+<div class="product-info">
   {%- assign unified_title_tags_block = section.blocks | where: 'type', 'mar26_title_and_tags' | first -%}
   {%- assign short_description_position = short_description_position | default: 'left' -%}
   {%- assign inside_block_group_context = false -%}
@@ -635,4 +635,4 @@ version-summary: Re-adds Quantity label with Montserrat font tokens and override
       <input type="hidden" disabled name="id" value="{{ product.selected_or_first_available_variant.id }}">
     {%- endform -%}
   {%- endunless -%}
-</safe-sticky>
+</div>
