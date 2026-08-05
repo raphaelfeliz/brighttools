@@ -3,9 +3,9 @@
 file-summary: MAR26 main product section. Drives MAR26 mobile ordering, gallery layout variables, and product info composition.
 
 # Version Block (SOP: Always update for real changes)
-version-name: Sticky Header Offset Alignment Fix
-  version-number: 2.1.0
-version-summary: Updated desktop sticky top offset to calc(var(--header-height, 80px) + 20px) so gallery locks immediately below sticky header.
+version-name: Mobile Quantity Selector Order Fix
+  version-number: 2.3.0
+version-summary: Assigned quantity-selector block types to order: 2 in mobile sequence map.
 
 # Change rationale:
 # - Normal state: Black background / White text.
@@ -313,24 +313,24 @@ version-summary: Updated desktop sticky top offset to calc(var(--header-height, 
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26_gradient_title"],
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="title"] { order: 1 !important; }
 
-    /* Order 2: Value Proposition (Price) */
+    /* Order 2: Value Proposition (Price & Quantity/Buy Selector) */
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="price"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="quantity-selector"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="quantity_selector"],
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26-quantity-price"],
-    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26_quantity_price"] { order: 2 !important; }
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26_quantity_price"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="buy_buttons"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="buy-buttons"] { order: 2 !important; }
 
-    /* Order 3: Social Proof (Reviews / Apps) */
+    /* Order 4: Social Proof (Reviews / Apps) */
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="@app"],
-    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="rating"] { order: 3 !important; }
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="rating"] { order: 4 !important; }
 
-    /* Order 4: Details (Description) */
+    /* Order 5: Details (Description) */
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="description"],
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26-short-description"],
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26_short_description"],
-    #shopify-section-{{ section.id }} .product .mar26-description-card { order: 4 !important; }
-
-    /* Order 5: Call to Action (Add to cart) */
-    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="buy_buttons"],
-    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="buy-buttons"] { order: 5 !important; }
+    #shopify-section-{{ section.id }} .product .mar26-description-card { order: 5 !important; }
 
     /* Secondary / Utility Blocks */
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="separator"] { order: 6 !important; }
@@ -494,8 +494,8 @@ version-summary: Updated desktop sticky top offset to calc(var(--header-height, 
     <div class="product">
       <script>
       (function() {
-        var VERSION = 'v2.1.0';
-        console.log('MAR26 Product Section: ' + VERSION + ' loaded');
+        var VERSION = 'v2.3.0';
+        console.log('%c[MAR26 Product Section] Version: ' + VERSION + ' loaded', 'background: #0F172A; color: #ffffff; padding: 4px 8px; font-weight: bold; border-radius: 4px;');
 
         // Gate: only run diagnostics if ?debug=true is in the URL
         if (new URLSearchParams(window.location.search).get('debug') !== 'true') return;
