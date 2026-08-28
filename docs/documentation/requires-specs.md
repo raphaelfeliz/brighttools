@@ -1,5 +1,8 @@
 # REQUIRES SPECS — Product Metafield Pattern
 
+> [!WARNING]
+> **MERGE DEBT** — `fix-add-wipes` branch contains the live implementation of this pattern in `snippets/mar26-product-card-catalogv.liquid` (v1.6.1). That branch has **not yet been merged into `main`**. Once the fix is verified on Shopify, merge `fix-add-wipes` → `main` and remove this notice.
+
 ## Purpose
 
 `custom.requires_specs` is a boolean product metafield that signals to the Catalog Card component that a product **requires user selection before it can be added to the cart**.
