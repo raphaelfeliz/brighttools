@@ -1,0 +1,471 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h2"
+          }
+        },
+        "ce4dfcc3-25d6-462a-be54-e9d3662f7ecc": {
+          "type": "text",
+          "settings": {
+            "text": "<p>EAN: {{ product.metafields.custom.ean.value }}</p>"
+          }
+        },
+        "badges": {
+          "type": "badges",
+          "settings": {}
+        },
+        "17058414-3a21-480c-b032-4d4f48fa8431": {
+          "type": "sku",
+          "disabled": true,
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "15d8ec07-a634-405e-af3e-46aaee2d75e0": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ product.metafields.custom.selling_points | metafield_tag }}</p>"
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {
+            "show_empty": true
+          }
+        },
+        "payment_terms": {
+          "type": "payment_terms",
+          "settings": {}
+        },
+        "separator": {
+          "type": "separator",
+          "settings": {}
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "e61e426c-407a-45aa-9616-04c8f4cd0237": {
+          "type": "inventory",
+          "settings": {
+            "low_inventory_threshold": 0
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "size_chart_page": ""
+          }
+        },
+        "68e6d3ec-2864-452e-87d9-456ba0974a56": {
+          "type": "shopify://apps/selleasy/blocks/lb-upsell-addon-block/790c1a03-a71f-4bc1-9869-00dad526d3c2",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "show_gift_card_recipient": true,
+            "atc_button_background": "#d80925",
+            "atc_button_text_color": "#ffffff",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "c56cbf9f-dbd5-4b49-b209-862319158955": {
+          "type": "offer",
+          "settings": {
+            "text_alignment": "start",
+            "icon_position": "aligned",
+            "icon": "picto-timer",
+            "custom_icon": "shopify://shop_images/website-icons.png",
+            "icon_width": 32,
+            "title": "Fast Shipping",
+            "content": "<p>Orders dispatched within <a href=\"https://brighttools-au.myshopify.com/policies/shipping-policy\" title=\"Shipping Policy\"><strong>24 hours</strong></a></p>",
+            "background": "#f0f0f0",
+            "text_color": "#000000"
+          }
+        },
+        "cb13e52a-aaac-4a85-b16d-4649199dfc46": {
+          "type": "associated_products",
+          "settings": {
+            "title": "Buy it with",
+            "stack_products": true,
+            "products_count": 3,
+            "background": "",
+            "text_color": "#000000"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "ce4dfcc3-25d6-462a-be54-e9d3662f7ecc",
+        "badges",
+        "17058414-3a21-480c-b032-4d4f48fa8431",
+        "price",
+        "15d8ec07-a634-405e-af3e-46aaee2d75e0",
+        "rating",
+        "payment_terms",
+        "separator",
+        "quantity_selector",
+        "e61e426c-407a-45aa-9616-04c8f4cd0237",
+        "variant_picker",
+        "68e6d3ec-2864-452e-87d9-456ba0974a56",
+        "buy_buttons",
+        "c56cbf9f-dbd5-4b49-b209-862319158955",
+        "cb13e52a-aaac-4a85-b16d-4649199dfc46",
+        "description"
+      ],
+      "settings": {
+        "full_width": false,
+        "show_fixed_add_to_cart": true,
+        "desktop_media_width": 50,
+        "desktop_media_layout": "carousel_thumbnails_left",
+        "mobile_media_size": "contained",
+        "mobile_carousel_control": "dots",
+        "enable_video_autoplay": false,
+        "enable_video_looping": true,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3,
+        "background": "#ffffff",
+        "background_gradient": "",
+        "text_color": "",
+        "input_background": "rgba(0,0,0,0)",
+        "input_text_color": ""
+      }
+    },
+    "c4a43766-4a19-4d00-9898-bcd0d58a97ac": {
+      "type": "media-with-text",
+      "blocks": {
+        "template--19202935849234__c4a43766-4a19-4d00-9898-bcd0d58a97ac-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/quick_mop_floor_wipes_blue4.jpg",
+            "media_width": 50,
+            "media_position": "start",
+            "text_position": "place-self-start-center text-center",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "",
+            "title": "Quick Mop Wipes",
+            "content": "<p>Quick Mop Floor Wipes is the fast, easy, brand sparkling new way to maintain your floors daily.</p><p>A step-up from other wet floor wipes, Quick Mop Floor Wipes are supersized to cover more surface with every glide, fresh home scented for instant crisp air, and will fit the household brooms and cleaning tools you already have at home.</p><p><strong>Revive your home quickly with minimum effort and maximum shine.</strong></p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "#f0f0f0",
+            "background_gradient": "",
+            "text_color": "#1a1a1a",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        },
+        "24914991-fa73-43c6-b37f-c8942b6ea5f4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/floor_wipes_quick_mop_blue_5.jpg",
+            "media_width": 50,
+            "media_position": "end",
+            "text_position": "place-self-start-center text-center",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "",
+            "title": "",
+            "content": "<p><strong>Unexpected visitors? Muddy paw-prints from the park? Kids crumbs all over the floor? </strong></p><h4>Don’t stress the mess</h4><p>Quick Mop Floor Wipes are a cutting edge cleaning solution that give you a brilliant clean every time.</p><p>No Water, No buckets, easily disposable Swipes and safe to use on all floor surfaces. </p><p>You’re one swipe away from your freshest home. Revive your home quickly with minimum effort and maximum shine.</p><h4><strong>Not Your Average Floor Wipes.</strong></h4><p><em><strong>*Recommended use with the BrightTools range of brooms and floor squeegees for an optimal cleaning system.</strong></em></p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "#f0f0f0",
+            "background_gradient": "",
+            "text_color": "#1a1a1a",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--19202935849234__c4a43766-4a19-4d00-9898-bcd0d58a97ac-image-1",
+        "24914991-fa73-43c6-b37f-c8942b6ea5f4"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "spacing": "small"
+      }
+    },
+    "5713877b-7f32-4b02-9506-0d4105301c00": {
+      "type": "video",
+      "blocks": {
+        "template--19202935849234__5713877b-7f32-4b02-9506-0d4105301c00-play-1": {
+          "type": "play",
+          "settings": {}
+        },
+        "template--19202935849234__5713877b-7f32-4b02-9506-0d4105301c00-heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "",
+            "heading_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "template--19202935849234__5713877b-7f32-4b02-9506-0d4105301c00-play-1",
+        "template--19202935849234__5713877b-7f32-4b02-9506-0d4105301c00-heading-1"
+      ],
+      "settings": {
+        "full_width": false,
+        "allow_transparent_header": false,
+        "autoplay": true,
+        "video_size": "auto",
+        "external_video_url": "https://youtu.be/BHNXU-ecLlg",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 15
+      }
+    },
+    "1688642188a9c7bb7d": {
+      "type": "apps",
+      "blocks": {
+        "ff35ce0e-0a35-448d-9e7a-6a4e259b11b4": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "b5105084-2bb1-4862-8681-a2147b658640": {
+          "type": "shopify://apps/judge-me-reviews/blocks/featured_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {
+            "maxwidth": 1080
+          }
+        },
+        "b7e2de39-0094-44a6-a7cf-4c0719648fda": {
+          "type": "shopify://apps/judge-me-reviews/blocks/ugc_media_grid/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {}
+        },
+        "f073b0fc-6f34-4513-bf5d-c787eb4b6cf1": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "ff35ce0e-0a35-448d-9e7a-6a4e259b11b4",
+        "b5105084-2bb1-4862-8681-a2147b658640",
+        "b7e2de39-0094-44a6-a7cf-4c0719648fda",
+        "f073b0fc-6f34-4513-bf5d-c787eb4b6cf1"
+      ],
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "background": "#f0f0f0",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "2cc557d9-4240-49af-87a6-619ffb9c14fe": {
+      "type": "related-products",
+      "settings": {
+        "recommendations_count": 6,
+        "products": [],
+        "full_width": true,
+        "stack_products": false,
+        "show_progress_bar": false,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 3,
+        "subheading": "",
+        "title": "You may also like",
+        "content": "",
+        "background": "#ffffff",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "product_card_background": "",
+        "product_card_text_color": ""
+      }
+    },
+    "beeafe09-2cb1-4ed4-9a41-c04f9f65c5d4": {
+      "type": "faq",
+      "blocks": {
+        "template--19202935849234__beeafe09-2cb1-4ed4-9a41-c04f9f65c5d4-168657506649ab31c8-0": {
+          "type": "item",
+          "settings": {
+            "title": "Are Bright Tools products suitable for both professionals and amateurs?",
+            "content": "<p>Absolutely! Our tools are designed to cater to the needs of professionals as well as hobbyists and DIY enthusiasts. We strive to offer products that are user-friendly, reliable, and suitable for various skill levels.</p>"
+          }
+        },
+        "template--19202935849234__beeafe09-2cb1-4ed4-9a41-c04f9f65c5d4-168657506649ab31c8-1": {
+          "type": "item",
+          "settings": {
+            "title": "Can I track the status of my order?",
+            "content": "<p>Yes, once your order is confirmed, we will provide you with a tracking number. You can use this number to track the status of your shipment. We also send regular updates via email, keeping you informed about the progress of your order.</p>"
+          }
+        },
+        "template--19202935849234__beeafe09-2cb1-4ed4-9a41-c04f9f65c5d4-168657506649ab31c8-2": {
+          "type": "item",
+          "settings": {
+            "title": "What payment options are available?",
+            "content": "<p>We accept various payment methods, including major credit cards (Visa, Mastercard, American Express), PayPal, and bank transfers. Rest assured that all transactions are securely processed to protect your sensitive information.</p>"
+          }
+        },
+        "fc47d9e3-e809-41ad-a3a4-afa79b9bd8ba": {
+          "type": "item",
+          "settings": {
+            "title": "Do you offer international shipping?",
+            "content": "<p>Yes, we offer international shipping to select countries. However, please note that shipping fees and delivery times may vary depending on the destination. During the checkout process, you can enter your location to view the available shipping options and associated costs.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--19202935849234__beeafe09-2cb1-4ed4-9a41-c04f9f65c5d4-168657506649ab31c8-0",
+        "template--19202935849234__beeafe09-2cb1-4ed4-9a41-c04f9f65c5d4-168657506649ab31c8-1",
+        "template--19202935849234__beeafe09-2cb1-4ed4-9a41-c04f9f65c5d4-168657506649ab31c8-2",
+        "fc47d9e3-e809-41ad-a3a4-afa79b9bd8ba"
+      ],
+      "settings": {
+        "full_width": true,
+        "subheading": "FAQs",
+        "title": "Have a question?",
+        "content": "",
+        "team_avatar": "shopify://shop_images/team-fff.webp",
+        "team_avatar_width": 160,
+        "support_hours": "Our customer support is available monday to friday: 8am-8:30pm.",
+        "answer_time": "Average answer time: 24h",
+        "button_text": "Contact us",
+        "button_url": "shopify://pages/contact",
+        "text_position": "start",
+        "background": "#f0f0f0",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "#1a1a1a",
+        "button_text_color": "",
+        "accordion_background": "",
+        "accordion_text_color": ""
+      }
+    },
+    "4dd2b973-8a00-4f25-9139-08a7467cbda6": {
+      "type": "testimonials",
+      "blocks": {
+        "template--19202935849234__4dd2b973-8a00-4f25-9139-08a7467cbda6-1686575320f0560e2c-0": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "John S.",
+            "title": "Testimonial 1",
+            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+          }
+        },
+        "template--19202935849234__4dd2b973-8a00-4f25-9139-08a7467cbda6-1686575320f0560e2c-1": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Mary U.",
+            "title": "Testimonial 2",
+            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+          }
+        },
+        "template--19202935849234__4dd2b973-8a00-4f25-9139-08a7467cbda6-1686575320f0560e2c-2": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Joshua A.",
+            "title": "Testimonial 3",
+            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--19202935849234__4dd2b973-8a00-4f25-9139-08a7467cbda6-1686575320f0560e2c-0",
+        "template--19202935849234__4dd2b973-8a00-4f25-9139-08a7467cbda6-1686575320f0560e2c-1",
+        "template--19202935849234__4dd2b973-8a00-4f25-9139-08a7467cbda6-1686575320f0560e2c-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "stack_testimonials": true,
+        "subheading": "",
+        "title": "Customer Reviews",
+        "content": "",
+        "link_url": "",
+        "link_text": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "testimonial_card_background": "",
+        "testimonial_card_text_color": ""
+      }
+    },
+    "1688645804e1409c6c": {
+      "type": "apps",
+      "blocks": {
+        "af3d4355-c90a-4b67-b95d-467c035d0c5b": {
+          "type": "shopify://apps/selleasy/blocks/lb-upsell-fbt-block/790c1a03-a71f-4bc1-9869-00dad526d3c2",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "af3d4355-c90a-4b67-b95d-467c035d0c5b"
+      ],
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "c4a43766-4a19-4d00-9898-bcd0d58a97ac",
+    "5713877b-7f32-4b02-9506-0d4105301c00",
+    "1688642188a9c7bb7d",
+    "2cc557d9-4240-49af-87a6-619ffb9c14fe",
+    "beeafe09-2cb1-4ed4-9a41-c04f9f65c5d4",
+    "4dd2b973-8a00-4f25-9139-08a7467cbda6",
+    "1688645804e1409c6c"
+  ]
+}

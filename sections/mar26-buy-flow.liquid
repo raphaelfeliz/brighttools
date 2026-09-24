@@ -1,0 +1,571 @@
+{%- comment -%}
+----------------------------------------------------------------------------------------------------------------------
+MAR26 BUY FLOW SECTION (ADD-ONS & CHECKOUT)
+VERSION: 0.3.0 (Spacing Refinement)
+Dedicated section for the "Save Extra 15%" widget and multi-item checkout flow.
+----------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<style>
+  /* ── Outer Section & Container ─────────────────────────────── */
+  .mar26-buy-flow-section {
+    background: #f9fafb;
+    padding: 1.5rem 1.5rem 3rem 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .mar26-buy-flow-container {
+    max-width: 680px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 1.875rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  }
+
+  /* ── Header ───────────────────────────────────────────────── */
+  .mar26-buy-header h2 {
+    font-size: 1.625rem;
+    font-weight: 900;
+    color: #111111;
+    margin: 0 0 0.375rem;
+    line-height: 1.2;
+  }
+
+  .mar26-buy-header h2 span {
+    color: #e11d48;
+  }
+
+  .mar26-buy-header > p {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin: 0 0 0.9375rem;
+  }
+
+  /* ── Instruction Box ──────────────────────────────────────── */
+  .mar26-instruction-box {
+    background: #fff1f2;
+    border: 1px solid #fecdd3;
+    border-radius: 14px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.125rem;
+  }
+
+  .mar26-instruction-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .mar26-instruction-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #374151;
+  }
+
+  .mar26-step-bead {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: #e11d48;
+    color: white;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  /* ── Product Cards Area ───────────────────────────────────── */
+  .mar26-addon-list {
+    margin-top: 1.125rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5625rem;
+  }
+
+  .mar26-addon-card {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background: #ffffff;
+    border: 1px solid #f3f4f6;
+    border-radius: 16px;
+    gap: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+
+  .mar26-addon-card:hover {
+    border-color: rgba(225, 29, 72, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  }
+
+  .mar26-addon-card.is-selected {
+    border-color: var(--mar26-red);
+    background-color: #fff9fa;
+  }
+
+  /* Custom Checkbox */
+  .mar26-checkbox-wrapper {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .mar26-addon-toggle {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #d1d5db;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin: 0;
+    display: block;
+  }
+
+  .mar26-addon-toggle:checked {
+    background-color: var(--mar26-red);
+    border-color: var(--mar26-red);
+  }
+
+  .mar26-addon-toggle:checked::after {
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    font-weight: 900;
+  }
+
+  .mar26-addon-image-box {
+    width: 64px;
+    height: 64px;
+    background: #f9fafb;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mar26-addon-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .mar26-addon-details {
+    flex-grow: 1;
+  }
+
+  .mar26-addon-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--mar26-slate);
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
+  }
+
+  /* Quantity Selector */
+  .mar26-qty-wrap {
+    display: flex;
+    align-items: center;
+    background: #f3f4f6;
+    border-radius: 6px;
+    padding: 2px;
+    width: max-content;
+  }
+
+  .mar26-qty-btn {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 700;
+    color: #4b5563;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .mar26-qty-btn:hover {
+    background: #ffffff;
+    color: var(--mar26-red);
+  }
+
+  .mar26-qty-val {
+    width: 24px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--mar26-slate);
+  }
+
+  .mar26-addon-pricing {
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .mar26-price-old {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    text-decoration: line-through;
+    margin-bottom: 2px;
+  }
+
+  .mar26-price-new {
+    font-size: 1.0625rem;
+    font-weight: 800;
+    color: var(--mar26-red);
+    line-height: 1;
+  }
+
+  /* Checkout Buttons */
+  .mar26-checkout-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .mar26-checkout-footer {
+      flex-direction: row;
+    }
+    .mar26-btn-atc, .mar26-dynamic-checkout {
+      flex: 1;
+    }
+  }
+
+  .mar26-btn-atc {
+    background: #000000;
+    color: white;
+    border: none;
+    border-radius: 100px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    gap: 0.5rem;
+  }
+
+  .mar26-btn-atc:hover {
+    background: #333333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    .mar26-buy-flow-container {
+      padding: 1.125rem;
+    }
+    .mar26-buy-header h2 {
+      font-size: 1.375rem;
+    }
+  }
+</style>
+
+<div id="addon-section" class="mar26-buy-flow-section">
+  <div class="mar26-buy-flow-container" id="widget-box">
+    
+    <div class="mar26-buy-header">
+      <h2>Complete your set and <span>save 15%!</span></h2>
+      <p>You’re one step away. Before adding your bundle to cart, take a look at the optional add-ons below.</p>
+      
+      <div class="mar26-instruction-box">
+        <ul class="mar26-instruction-list">
+          <li class="mar26-instruction-item">
+            <span class="mar26-step-bead">1</span>
+            Pick any extras you’d like
+          </li>
+          <li class="mar26-instruction-item">
+            <span class="mar26-step-bead">2</span>
+            Click Add to Cart
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mar26-addon-list">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'addon' -%}
+          {%- assign addon_product = block.settings.product -%}
+          {%- if addon_product != blank -%}
+            {%- assign addon_variant = addon_product.selected_or_first_available_variant -%}
+            <div class="mar26-addon-card" {{ block.shopify_attributes }} onclick="this.querySelector('.mar26-addon-toggle').click()">
+              <div class="mar26-checkbox-wrapper">
+                <input type="checkbox" class="mar26-addon-toggle" 
+                  data-variant-id="{{ addon_variant.id }}"
+                  onclick="event.stopPropagation()">
+              </div>
+              
+              <div class="mar26-addon-image-box">
+                <img src="{{ addon_product.featured_image | img_url: '128x128', crop: 'center' }}" alt="{{ addon_product.title }}" loading="lazy">
+              </div>
+              
+              <div class="mar26-addon-details">
+                <h3 class="mar26-addon-title">{{ addon_product.title }}</h3>
+                <div class="mar26-qty-wrap" onclick="event.stopPropagation()">
+                  <button class="mar26-qty-btn" type="button" onclick="mar26UpdateQty(this, -1)">−</button>
+                  <span class="mar26-qty-val">1</span>
+                  <button class="mar26-qty-btn" type="button" onclick="mar26UpdateQty(this, 1)">+</button>
+                </div>
+              </div>
+
+              <div class="mar26-addon-pricing">
+                {%- if addon_variant.compare_at_price > addon_variant.price -%}
+                  <div class="mar26-price-old">{{ addon_variant.compare_at_price | money }}</div>
+                {%- endif -%}
+                <div class="mar26-price-new">{{ addon_variant.price | money }}</div>
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- assign product_form_id = 'product-form-' | append: section.id -%}
+    {%- form 'product', product, id: product_form_id, class: 'mar26-checkout-form' -%}
+      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+      
+      <div class="mar26-price-summary" id="mar26-price-summary">
+        <div class="mar26-summary-row">
+          <span>Subtotal</span>
+          <span id="mar26-subtotal-val">$0.00</span>
+        </div>
+        <div class="mar26-summary-row highlight">
+          <span>Bundle Discount (15% off add-ons)</span>
+          <span id="mar26-discount-val">-$0.00</span>
+        </div>
+        <div class="mar26-summary-row total">
+          <span>Total</span>
+          <span id="mar26-total-val">$0.00</span>
+        </div>
+      </div>
+      
+      <div class="mar26-checkout-footer">
+        <button type="button" class="mar26-btn-atc" id="mar26-main-atc">Add to Cart</button>
+        
+        <div class="mar26-dynamic-checkout">
+          {{- form | payment_button -}}
+        </div>
+      </div>
+
+      <style>
+        .mar26-dynamic-checkout .shopify-payment-button__button--unbranded {
+          background-color: #5a31f4 !important;
+          border-radius: 100px !important;
+          font-weight: 700 !important;
+          text-transform: uppercase !important;
+          font-size: 0.875rem !important;
+          height: 55px !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          padding: 0 1.5rem !important;
+        }
+        .mar26-dynamic-checkout .shopify-payment-button__more-options {
+          font-size: 0.75rem !important;
+          margin-top: 0.5rem !important;
+          color: #6b7280 !important;
+        }
+
+        .mar26-price-summary {
+          margin-top: 1.5rem;
+          margin-bottom: 1.125rem;
+          padding: 1.25rem;
+          background: #f8fafc;
+          border-radius: 16px;
+          border: 1px dashed #e2e8f0;
+        }
+        .mar26-summary-row {
+          display: flex;
+          justify-content: space-between;
+          font-size: 0.9375rem;
+          color: #64748b;
+          margin-bottom: 0.5rem;
+        }
+        .mar26-summary-row.highlight {
+          color: #e11d48;
+          font-weight: 700;
+        }
+        .mar26-summary-row.total {
+          margin-top: 0.75rem;
+          padding-top: 0.75rem;
+          border-top: 1px solid #e2e8f0;
+          font-size: 1.125rem;
+          font-weight: 900;
+          color: #111111;
+        }
+      </style>
+    {%- endform -%}
+
+  </div>
+</div>
+
+<script>
+  function mar26UpdateQty(btn, delta) {
+    const valEl = btn.parentElement.querySelector('.mar26-qty-val');
+    let val = parseInt(valEl.innerText);
+    val = Math.max(1, val + delta);
+    valEl.innerText = val;
+    mar26UpdateCalculations();
+  }
+
+  // Toggle card class on checkbox change
+  document.querySelectorAll('.mar26-addon-toggle').forEach(input => {
+    input.addEventListener('change', () => {
+      const card = input.closest('.mar26-addon-card');
+      if (input.checked) {
+        card.classList.add('is-selected');
+      } else {
+        card.classList.remove('is-selected');
+      }
+      mar26UpdateCalculations();
+    });
+  });
+
+  const BASE_PRODUCT_PRICE = {{ product.selected_or_first_available_variant.price | divided_by: 100.0 }};
+  
+  function mar26UpdateCalculations() {
+    let subtotal = BASE_PRODUCT_PRICE;
+    let addonDiscount = 0;
+
+    document.querySelectorAll('.mar26-addon-toggle:checked').forEach(toggle => {
+      const card = toggle.closest('.mar26-addon-card');
+      const qty = parseInt(card.querySelector('.mar26-qty-val').innerText);
+      const priceStr = card.querySelector('.mar26-price-new').innerText.replace(/[^0-9.]/g, '');
+      const price = parseFloat(priceStr);
+      
+      const lineTotal = price * qty;
+      subtotal += lineTotal;
+      addonDiscount += lineTotal * 0.15; // 15% discount on add-ons
+    });
+
+    const total = subtotal - addonDiscount;
+
+    document.getElementById('mar26-subtotal-val').innerText = '$' + subtotal.toFixed(2);
+    document.getElementById('mar26-discount-val').innerText = '-$' + addonDiscount.toFixed(2);
+    document.getElementById('mar26-total-val').innerText = '$' + total.toFixed(2);
+    
+    // Update button text to reflect total
+    const atcBtn = document.getElementById('mar26-main-atc');
+    if (addonDiscount > 0) {
+      atcBtn.innerText = `ADD TO CART • $${total.toFixed(2)}`;
+    } else {
+      atcBtn.innerText = 'ADD TO CART';
+    }
+  }
+
+  // Initial calc
+  mar26UpdateCalculations();
+
+  // AJAX Cart Submission
+  document.getElementById('mar26-main-atc').addEventListener('click', async function() {
+    const btn = this;
+    const originalText = btn.innerText;
+    btn.disabled = true;
+    btn.innerText = 'ADDING...';
+
+    const items = [];
+    
+    // 1. Add Main Product (The "Bundle")
+    items.push({
+      id: {{ product.selected_or_first_available_variant.id }},
+      quantity: 1
+    });
+
+    // 2. Add Checked Add-ons
+    document.querySelectorAll('.mar26-addon-toggle:checked').forEach(toggle => {
+      const card = toggle.closest('.mar26-addon-card');
+      const qty = parseInt(card.querySelector('.mar26-qty-val').innerText);
+      items.push({
+        id: toggle.dataset.variantId,
+        quantity: qty
+      });
+    });
+
+    try {
+      const response = await fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items: items })
+      });
+
+      if (response.ok) {
+        // Success: Redirect to checkout with discount code
+        window.location.href = '/checkout?discount=MAR26SAVE15';
+      } else {
+        const err = await response.json();
+        alert('Error: ' + err.description);
+        btn.disabled = false;
+        btn.innerText = originalText;
+      }
+    } catch (e) {
+      console.error('Cart Error:', e);
+      alert('Something went wrong. Please try again.');
+      btn.disabled = false;
+      btn.innerText = originalText;
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "MAR26 Buy Flow",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Complete your set"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "addon",
+      "name": "Add-on Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "MAR26 Buy Flow",
+      "blocks": [
+        { "type": "addon" },
+        { "type": "addon" }
+      ]
+    }
+  ]
+}
+{% endschema %}

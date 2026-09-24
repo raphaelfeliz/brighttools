@@ -1,0 +1,415 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero_shell": {
+      "type": "mar26-main-special-product",
+      "blocks": {
+        "gallery_image_L8DEmE": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/Caravan__enhance__62002_v9.png"
+          }
+        },
+        "gallery_image_YdYhix": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/Banner_HERO_BT_v5_MOBILE.png"
+          }
+        }
+      },
+      "block_order": [
+        "gallery_image_L8DEmE",
+        "gallery_image_YdYhix"
+      ],
+      "settings": {
+        "pre_title": "Cleaning Performance",
+        "title_line_1": "Caravan",
+        "title_line_2": "CLEANING",
+        "title_line_3": "BUNDLE",
+        "description": "Your time matters. Spend it enjoying your caravan, not cleaning it. Fast, effective tools for even the smallest spaces.",
+        "btn_primary_text": "Get Your Bundle",
+        "btn_secondary_text": "Included"
+      }
+    },
+    "bundle_items": {
+      "type": "mar26-bundle-items",
+      "settings": {
+        "heading": "Inside Your Bundle"
+      }
+    },
+    "buy_flow": {
+      "type": "mar26-buy-flow",
+      "blocks": {
+        "addon_1": {
+          "type": "addon",
+          "settings": {
+            "product": "jet-all-purpose-cleaning-spray-with-vinegar-and-lavender-copy"
+          }
+        },
+        "addon_2": {
+          "type": "addon",
+          "settings": {
+            "product": "microfibre-floor-cloth-xl-extra-wide"
+          }
+        }
+      },
+      "block_order": [
+        "addon_1",
+        "addon_2"
+      ],
+      "settings": {
+        "title": "Complete your set"
+      }
+    },
+    "whats_included": {
+      "type": "mar26-whats-included",
+      "blocks": {
+        "item_wkMbQJ": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/rubber-broom-boutique-floor-wipes-red-handle_3f1dd018-a0a3-49ad-a724-ae9b8b45e873.jpg",
+            "title": "Item Name",
+            "description": "<p>A short description of what this item is and why it's included.</p>",
+            "spec_1": "",
+            "spec_2": "",
+            "spec_3": "",
+            "accent_color": "#e2e8f0"
+          }
+        },
+        "item_wJpXV4": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/rubber-broom-boutique-floor-wipes-red-handle_3f1dd018-a0a3-49ad-a724-ae9b8b45e873.jpg",
+            "title": "Item Name",
+            "description": "<p>A short description of what this item is and why it's included.</p>",
+            "spec_1": "",
+            "spec_2": "",
+            "spec_3": "",
+            "accent_color": "#e2e8f0"
+          }
+        },
+        "item_AxBiam": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/rubber-broom-boutique-floor-wipes-red-handle_3f1dd018-a0a3-49ad-a724-ae9b8b45e873.jpg",
+            "title": "Item Name",
+            "description": "<p>A short description of what this item is and why it's included.</p>",
+            "spec_1": "",
+            "spec_2": "",
+            "spec_3": "",
+            "accent_color": "#e2e8f0"
+          }
+        }
+      },
+      "block_order": [
+        "item_wkMbQJ",
+        "item_wJpXV4",
+        "item_AxBiam"
+      ],
+      "settings": {
+        "pre_title": "Complete System",
+        "pre_title_color": "#2563eb",
+        "black_title": "What's",
+        "gradient_title": "Included?",
+        "gradient_left_color": "#f43f5e",
+        "gradient_right_color": "#be123c",
+        "subheading": "Everything you need for an effortless, water-saving clean on the road.",
+        "columns": "4",
+        "outline_color": "#e2e8f0"
+      }
+    },
+    "mar26_highlights": {
+      "type": "mar26-highlights",
+      "blocks": {
+        "card_1": {
+          "type": "highlight_card",
+          "settings": {
+            "image": "shopify://shop_images/steel-bucket-full.png",
+            "bg_color": "#e8eaeb",
+            "color_text_1": "#000000",
+            "color_text_2": "#f81b27",
+            "top_title": "RARE EARTH",
+            "gradient_title": "MAGNETS",
+            "subtitle_1": "Military-grade neodymium",
+            "subtitle_2": "for unbreakable grip."
+          }
+        },
+        "card_2": {
+          "type": "highlight_card",
+          "settings": {
+            "image": "shopify://shop_images/floor_wipes_quick_mop_home13_d00a91c3-6769-4b49-a937-4654c1dda80f.webp",
+            "bg_color": "#e8eaeb",
+            "color_text_1": "#000000",
+            "color_text_2": "#f81b27",
+            "top_title": "ZERO",
+            "gradient_title": "STREAKS",
+            "subtitle_1": "4 rubber squeegees",
+            "subtitle_2": "clean both sides at once."
+          }
+        },
+        "card_3": {
+          "type": "highlight_card",
+          "settings": {
+            "image": "shopify://shop_images/2-year-warranty.png",
+            "bg_color": "#e8eaeb",
+            "color_text_1": "#000000",
+            "color_text_2": "#f81b27",
+            "top_title": "300+",
+            "gradient_title": "WASHES",
+            "subtitle_1": "Microfibre cloths that",
+            "subtitle_2": "last years, not weeks."
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3"
+      ],
+      "settings": {
+        "section_subtitle": "Engineered Performance",
+        "section_title_black": "Built",
+        "section_title_gradient": "Different.",
+        "section_grad_color_1": "#2563eb",
+        "section_grad_color_2": "#93c5fd",
+        "color_background": "#f8fafc"
+      }
+    },
+    "video_demo": {
+      "type": "media-with-text",
+      "blocks": {
+        "image_UgxkAx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/bt_delete.png",
+            "media_width": 50,
+            "media_position": "start",
+            "text_position": "place-self-center text-center",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "",
+            "title": "",
+            "content": "<h4>🧹 Sweep & Squeegee in One</h4><h4></h4><h4>🔄 Reaches Tight Spaces</h4><h4></h4><h4>💪 Tough & Surface-Safe</h4><p></p><p>Clean faster with one tool built for every mess.<br/>Strong, versatile, and made to last — the Tyroler 2-in-1 is a cleaning essential.</p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "#8d5b97",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        },
+        "video_block": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/clean-floor-wipes-optimized.mp4",
+            "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "autoplay": true,
+            "media_width": 60,
+            "media_position": "end",
+            "text_position": "place-self-center text-center",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "",
+            "title": "",
+            "content": "<p>{{ product.metafields.custom.media_text_box_2_rich_text | metafield_tag }}</p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "#0f172a",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "#e11d48",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "image_UgxkAx",
+        "video_block"
+      ],
+      "settings": {
+        "full_width": false,
+        "alternate_media_position": false,
+        "spacing": "small"
+      }
+    },
+    "mar26_testimonials": {
+      "type": "mar26-testimonials",
+      "blocks": {
+        "testi_1": {
+          "type": "testimonial",
+          "settings": {
+            "author": "David R.",
+            "role": "60th Floor Resident",
+            "content": "<p>Fantastic results on my 60th floor windows. I was nervous about using it so high up but the safety string gave me total confidence.</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testi_2": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Michelle T.",
+            "role": "Home Owner",
+            "content": "<p>I have sparkling streak-free windows. The key is not to have the magnets too tight — once you get the technique it's effortless.</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testi_3": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Peter K.",
+            "role": "Property Manager",
+            "content": "<p>We were able to easily clean windows which are very high on the outside. Bought 3 for our staff. Saves us calling rope-access cleaners.</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "testi_1",
+        "testi_2",
+        "testi_3"
+      ],
+      "settings": {
+        "title": "What They're Saying",
+        "subheading": "Real results from real customers — from high-rise apartments to hard-to-reach home windows."
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "faq_1": {
+          "type": "item",
+          "settings": {
+            "title": "Is the Glider S-1 safe for high-rise windows?",
+            "content": "<p>Yes. Only open your window enough to place the outer half through. The included safety string keeps the Glider attached at all times. The magnets are strong enough to hold firm even in wind.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "item",
+          "settings": {
+            "title": "How do I clean the outside if I can't reach it?",
+            "content": "<p>Spray cleaning solution along the window edge nearest to you. As you glide the S-1, the blades spread the solution across the entire surface. You can also pre-wet the microfibre cloths before attaching them.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "item",
+          "settings": {
+            "title": "What window thickness does the S-1 support?",
+            "content": "<p>Single-glazed windows from 2mm to 8mm thick. If you're unsure of your window thickness, check our measurement guide for step-by-step instructions.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "item",
+          "settings": {
+            "title": "How long do the microfibre cloths last?",
+            "content": "<p>Each cloth can be washed and reused up to 300 times with zero loss in cleaning performance.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "item",
+          "settings": {
+            "title": "Is this the genuine Glider?",
+            "content": "<p>Yes. This is the original Glider by Tyroler Bright Tools with a 2-year warranty and 30-day money-back guarantee. Beware of low-quality imitation products which look the same but use inferior magnets and materials.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5"
+      ],
+      "settings": {
+        "full_width": true,
+        "subheading": "",
+        "title": "Common Questions",
+        "content": "<p>Use this text to share information about your product or shipping policies.</p>",
+        "team_avatar_width": 160,
+        "support_hours": "Our customer support is available Monday to Friday: 8am-8:30pm.",
+        "answer_time": "Average answer time: 24h",
+        "button_text": "",
+        "button_url": "",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "",
+        "button_text_color": "",
+        "accordion_background": "",
+        "accordion_text_color": ""
+      }
+    },
+    "mar26_best_sellers": {
+      "type": "mar26-best-sellers",
+      "blocks": {
+        "prod_1": {
+          "type": "product",
+          "settings": {
+            "product": "bright-broom-bundle-blue-edition"
+          }
+        },
+        "prod_2": {
+          "type": "product",
+          "settings": {
+            "product": "easy-cleaning-bundle-for-limited-mobility"
+          }
+        },
+        "prod_3": {
+          "type": "product",
+          "settings": {
+            "product": "adjustable-dust-blade-rubber-broom-squeegee"
+          }
+        },
+        "prod_4": {
+          "type": "product",
+          "settings": {
+            "product": "jet-all-purpose-cleaning-spray-with-vinegar-and-lavender-copy"
+          }
+        }
+      },
+      "block_order": [
+        "prod_1",
+        "prod_2",
+        "prod_3",
+        "prod_4"
+      ],
+      "settings": {
+        "badge_text": "Bright On - Dust Off",
+        "primary_text": "Better Cleaning",
+        "highlight_text": "Best Sellers",
+        "autoplay_enabled": true,
+        "color_background": "#e8ebf0",
+        "color_primary_text": "#11141c",
+        "color_highlight": "#f81f2f",
+        "color_badge_text": "#a0a6b5"
+      }
+    }
+  },
+  "order": [
+    "hero_shell",
+    "bundle_items",
+    "buy_flow",
+    "whats_included",
+    "mar26_highlights",
+    "video_demo",
+    "mar26_testimonials",
+    "faq",
+    "mar26_best_sellers"
+  ]
+}

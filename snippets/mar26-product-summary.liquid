@@ -1,0 +1,70 @@
+{%- comment -%}
+* Version: 1.3.1
+* Change: Replaces mock ratings with Judge.me metafield badges and dynamic preview wrapper.
+{%- endcomment -%}
+{%- liquid
+  assign summary_product = product
+  assign summary_title = title | default: summary_product.title | default: fallback_title
+  assign summary_description = ''
+  if summary_product != blank
+    assign summary_description = summary_product.metafields.custom.short_description.value | default: ''
+  endif
+  assign summary_description = summary_description | strip_html
+  assign summary_description_words = description_words | default: 12
+  assign summary_review_count = review_count | default: 248
+  assign summary_price_fallback = fallback_price | default: '$59.95'
+  assign summary_price_size = price_size | default: 'lg'
+  assign summary_modifier = modifier | default: ''
+  assign summary_state_class = ''
+  if stable_slots
+    assign summary_state_class = 'mar26-summary--stable-slots'
+  endif
+-%}
+
+<div class="mar26-summary {{ summary_modifier }} {{ summary_state_class }}" data-mar26-element="product-summary">
+  <div class="mar26-summary__content" data-mar26-element="summary-content">
+    <div class="mar26-summary__text-wrap">
+      <h3 class="mar26-summary__title">
+        {{ summary_title }}
+      </h3>
+
+      {%- if summary_description != blank or stable_slots -%}
+        <p class="mar26-summary__description">
+          {{ summary_description | truncatewords: summary_description_words }}
+        </p>
+      {%- endif -%}
+    </div>
+
+    {% render 'mar26-product-tags', product: summary_product, render_empty: stable_slots %}
+  </div>
+
+  <div class="mar26-summary__meta" data-mar26-element="summary-meta">
+    <div class="mar26-summary__rating">
+      {%- if summary_product != blank -%}
+        <!-- Start of Judge.me code -->
+        <div class="jdgm-widget jdgm-preview-badge" data-id="{{ summary_product.id }}">
+          {{ summary_product.metafields.judgeme.badge }}
+        </div>
+        <!-- End of Judge.me code -->
+      {%- else -%}
+        <div class="mar26-summary__stars">
+          {%- for i in (1..5) -%}
+            <svg fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+            </svg>
+          {%- endfor -%}
+        </div>
+        <span class="mar26-summary__review-count">({{ summary_review_count }})</span>
+      {%- endif -%}
+    </div>
+
+    <div class="mar26-summary__price">
+      {%- if summary_product != blank -%}
+        {%- capture summary_price_markup -%}{%- render 'price-list', product: summary_product, size: summary_price_size -%}{%- endcapture -%}
+        {{ summary_price_markup | replace: ' AUD', '' | replace: 'AUD', '' }}
+      {%- else -%}
+        {{ summary_price_fallback }}
+      {%- endif -%}
+    </div>
+  </div>
+</div>

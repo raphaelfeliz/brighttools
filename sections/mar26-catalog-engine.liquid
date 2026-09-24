@@ -1,0 +1,597 @@
+{% comment %}
+  Name: sections/mar26-catalog-engine.liquid
+  Version: 2.4.1 (Catalogv Card Variation)
+  Description: Groups products by Category Banner blocks and provides anchor navigation.
+  Changelog:
+    - 2.4.1: Supported 5-row height locked alignment.
+    - 2.4.0: Added selected_products block setting of type product_list to enable customizer-driven manual product listings and overlaps.
+    - 2.3.2: Implemented client-side ResizeObserver fallback rows logic.
+    - 2.3.1: Isolated 2-column mobile layout for catalogv card.
+    - 2.3.0: Added catalogv card variation toggle and dynamic snippet routing.
+{% endcomment %}
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+  #mar26-catalog-{{ section.id }} {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  #mar26-catalog-{{ section.id }} .mar26-category-block {
+    margin-bottom: 60px;
+    scroll-margin-top: 80px; /* Offset for banner */
+  }
+
+  .mar26-products-grid {
+    scroll-margin-top: 120px; /* DEEPER OFFSET: Lands on the first product */
+  }
+
+  /* --- BANNER STYLING --- */
+  #mar26-catalog-{{ section.id }} .mar26-category-banner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 15px; /* Added Top Margin */
+    margin-bottom: 15px; /* Tightened from 32px */
+    border: none !important;
+    padding: 24px;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 15px;
+    box-shadow: 0 15px 20px -15px rgba(0,0,0,0.2); /* Boosted Banner Shadow */
+  }
+
+  @media (min-width: 768px) {
+    #mar26-catalog-{{ section.id }} .mar26-category-banner {
+      flex-direction: row;
+      align-items: center;
+      border: none !important;
+      border-radius: 20px; /* Banners get slightly more on desktop */
+      padding: 30px 40px;
+      gap: 40px;
+    }
+  }
+
+  #mar26-catalog-{{ section.id }} .mar26-cat-banner-text {
+    flex: 1;
+    text-align: left;
+    padding: 0 10px; /* Side margins for the text block */
+  }
+
+  #mar26-catalog-{{ section.id }} .mar26-pre-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px; /* Reduced */
+  }
+
+  #mar26-catalog-{{ section.id }} .mar26-pre-title-line {
+    width: 24px;
+    height: 3px;
+    background-color: currentColor;
+  }
+
+  #mar26-catalog-{{ section.id }} .mar26-pre-title-text {
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: none;
+    letter-spacing: 0.1em;
+  }
+
+  #mar26-catalog-{{ section.id }} .mar26-category-title {
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem); /* Slightly smaller/tighter */
+    font-weight: 900;
+    text-transform: none;
+    letter-spacing: -0.01em;
+    margin: 0 0 8px 0; /* Tighter margin */
+    line-height: 1.1;
+  }
+
+  #mar26-catalog-{{ section.id }} .mar26-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Calibrated: 300px */
+    gap: 20px;
+    align-items: stretch; /* Allow cards to stretch to the same height */
+  }
+
+  /* Catalogv specific layout: 2 columns on mobile, 3 on tablet, 4 on desktop */
+  #mar26-catalog-{{ section.id }} .mar26-products-grid--catalogv {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    row-gap: 40px;
+  }
+
+  @media (min-width: 768px) {
+    #mar26-catalog-{{ section.id }} .mar26-products-grid--catalogv {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      row-gap: 48px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    #mar26-catalog-{{ section.id }} .mar26-products-grid--catalogv {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  /* --- PRODUCT CARD ALIGNMENT (Commented out - migrated to mar26-foundation.css.liquid)
+  #mar26-catalog-{{ section.id }} .mar26-card-wrapper {
+    background-color: #ffffff;
+    border-radius: 1.25rem;
+    padding: 0.75rem;
+    box-shadow: var(--mar26-shadow-light);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+  }
+  
+  #mar26-catalog-{{ section.id }} .mar26-mobile-top-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  
+  #mar26-catalog-{{ section.id }} .mar26-card-image-box {
+    width: 90px;
+    height: 90px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  
+  #mar26-catalog-{{ section.id }} .mar26-product-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  
+  #mar26-catalog-{{ section.id }} .mar26-card-content {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  #mar26-catalog-{{ section.id }} .mar26-summary--catalog .mar26-summary__meta {
+    display: none !important;
+  }
+  
+  #mar26-catalog-{{ section.id }} .mar26-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-top: 1px solid #f3f4f6;
+    padding-top: 12px;
+  }
+  
+  #mar26-catalog-{{ section.id }} .mar26-pricing {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #mar26-catalog-{{ section.id }} .mar26-current-price {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--mar26-clr-black);
+  }
+  
+  #mar26-catalog-{{ section.id }} .mar26-compare-price {
+    font-size: 12px;
+    text-decoration: line-through;
+    color: #9ca3af;
+  }
+  
+  #mar26-catalog-{{ section.id }} .mar26-actions-wrap {
+    display: flex;
+    gap: 8px;
+  }
+  
+  #mar26-catalog-{{ section.id }} .mar26-actions-wrap .mar26-add-btn-form {
+    margin: 0;
+  }
+  
+  #mar26-catalog-{{ section.id }} .mar26-add-btn,
+  #mar26-catalog-{{ section.id }} .mar26-view-btn {
+    padding: 8px 12px !important;
+    font-size: 12px !important;
+    border-radius: 8px !important;
+    font-weight: 800;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 1;
+  }
+  
+  #mar26-catalog-{{ section.id }} .mar26-add-btn {
+    background-color: var(--mar26-clr-red);
+    color: var(--mar26-clr-white);
+    border: none;
+  }
+  
+  #mar26-catalog-{{ section.id }} .mar26-view-btn {
+    background-color: var(--mar26-clr-white);
+    color: var(--mar26-clr-black);
+    border: 1px solid #e5e7eb;
+  }
+
+  @media (min-width: 768px) {
+    #mar26-catalog-{{ section.id }} .mar26-card-wrapper {
+      display: grid;
+      grid-template-rows: 258px 1fr auto;
+      row-gap: 1.2rem;
+      height: 535px;
+      padding: 0.75rem;
+      box-shadow: var(--mar26-shadow-standard) !important;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    #mar26-catalog-{{ section.id }} .mar26-card-wrapper:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--mar26-shadow-stronger) !important;
+    }
+    
+    #mar26-catalog-{{ section.id }} .mar26-mobile-top-row {
+      display: contents;
+    }
+    
+    #mar26-catalog-{{ section.id }} .mar26-card-image-box {
+      width: 100%;
+      height: 100%;
+      border-radius: 16px;
+    }
+    
+    #mar26-catalog-{{ section.id }} .mar26-card-image-box a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+    
+    #mar26-catalog-{{ section.id }} .mar26-product-img {
+      width: auto;
+      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
+    }
+    
+    #mar26-catalog-{{ section.id }} .mar26-card-content {
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+    
+    #mar26-catalog-{{ section.id }} .mar26-card-content .mar26-summary {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 0.714rem;
+    }
+    
+    #mar26-catalog-{{ section.id }} .mar26-summary--catalog .mar26-summary__meta {
+      display: flex !important;
+      margin-top: auto;
+    }
+    
+    #mar26-catalog-{{ section.id }} .mar26-card-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      border-top: none;
+      padding-top: 0;
+    }
+    
+    #mar26-catalog-{{ section.id }} .mar26-pricing {
+      display: none;
+    }
+    
+    #mar26-catalog-{{ section.id }} .mar26-actions-wrap {
+      display: flex;
+      gap: 1.02rem;
+      width: 100%;
+    }
+    
+    #mar26-catalog-{{ section.id }} .mar26-actions-wrap .mar26-add-btn-form,
+    #mar26-catalog-{{ section.id }} .mar26-actions-wrap .mar26-view-btn {
+      flex: 1;
+      width: 50% !important;
+    }
+    
+    #mar26-catalog-{{ section.id }} .mar26-add-btn,
+    #mar26-catalog-{{ section.id }} .mar26-view-btn {
+      width: 100% !important;
+      padding: 10px !important;
+      font-size: 13px !important;
+      border-radius: 10px !important;
+      justify-content: center;
+    }
+  }
+  */
+
+  /* --- NAVIGATION --- */
+  #mar26-catalog-{{ section.id }} .mar26-nav-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px; /* Slightly more gap */
+    margin-top: 0px; /* Zero Margin */
+    margin-bottom: 0px; /* Zero Bottom Margin */
+    justify-content: flex-start; /* Aligned Left */
+    border-bottom: none;
+    padding-bottom: 5px; 
+  }
+
+  #mar26-catalog-{{ section.id }} .mar26-nav-link {
+    padding: 8px 12px; /* Reduced sides (40% down from 20px is 12px) */
+    border: none;
+    border-radius: 8px; /* Industrial rounded-square */
+    font-size: 12px; /* Standardized 12px */
+    font-weight: 700;
+    text-transform: none; 
+    text-decoration: none;
+    color: #ffffff; /* White text on blue */
+    background-color: #2A3B56; /* Industrial Blue */
+    transition: all 0.2s ease;
+  }
+
+  /* --- NAV WRAPPER --- */
+  #mar26-catalog-{{ section.id }} .mar26-nav-wrapper {
+    margin: 0;
+    padding: 15px;
+  }
+
+  /* --- SEARCH PROMPT --- */
+  #mar26-catalog-{{ section.id }} .mar26-nav-heading {
+    font-size: 1.25rem;
+    font-weight: 900;
+    margin: 0 0 16px 0; /* Margin bottom added globally */
+    padding: 0;
+    color: #1E293B;
+  }
+
+  @media (max-width: 767px) {
+    #mar26-catalog-{{ section.id }} {
+      padding: 10px 10px 20px 10px !important; /* Tightened top container padding */
+    }
+
+    #mar26-catalog-{{ section.id }} .mar26-nav-wrapper {
+      padding: 5px 0px !important; /* Tightened wrapper padding */
+    }
+
+    #mar26-catalog-{{ section.id }} .mar26-nav-bar {
+      display: flex !important;
+      flex-wrap: nowrap !important; /* Force single row for scroll */
+      overflow-x: auto !important; /* Horizontal overflow scroll */
+      -webkit-overflow-scrolling: touch !important; /* Inertial scroll on iOS */
+      justify-content: flex-start !important; /* Left scroll start boundary */
+      padding: 5px 10px 15px 10px !important; /* Extra bottom padding for hidden scrollbar area */
+      scrollbar-width: none; /* Hide default scrollbar track Firefox */
+    }
+
+    #mar26-catalog-{{ section.id }} .mar26-nav-bar::-webkit-scrollbar {
+      display: none !important; /* Hide scrollbar Webkit */
+    }
+
+    #mar26-catalog-{{ section.id }} .mar26-nav-link {
+      flex: 0 0 auto !important; /* Keep width and prevent wrapping/shrink */
+    }
+
+    #mar26-catalog-{{ section.id }} .mar26-nav-heading {
+      text-align: center; /* Center on mobile to match layout */
+      font-size: 1.1rem;
+      padding: 0; 
+      margin-bottom: 12px !important; /* Mobile vertical gap */
+    }
+  }
+</style>
+
+<div class="mar26-catalog-container" id="mar26-catalog-{{ section.id }}">
+  <!-- Navigation Header (Dynamic from Blocks) -->
+  <div class="mar26-nav-wrapper">
+    <h3 class="mar26-nav-heading">What are you looking for today?</h3>
+    <nav class="mar26-nav-bar">
+      {% for block in section.blocks %}
+        {% if block.type == 'category_banner' %}
+          <a href="#grid-{{ block.id }}" class="mar26-nav-link" data-scroll-to>
+            {{- block.settings.title | default: "Category" -}}
+          </a>
+        {% endif %}
+      {% endfor %}
+    </nav>
+  </div>
+
+  {% paginate collection.products by 250 %}
+    {% for block in section.blocks %}
+      {% if block.type == 'category_banner' %}
+        <div class="mar26-category-block" id="cat-{{ block.id }}" {{ block.shopify_attributes }}>
+          <!-- Banner Section -->
+          <div
+            class="mar26-category-banner"
+            style="
+              background-color: {{ block.settings.bg_color }};
+              color: {{ block.settings.text_color }};
+            "
+          >
+            {% if block.settings.video != blank %}
+              <div class="mar26-cat-banner-media">
+                {{ block.settings.video | video_tag: autoplay: true, loop: true, muted: true, playsinline: true }}
+              </div>
+            {% elsif block.settings.image != blank %}
+              <div class="mar26-cat-banner-media">
+                {{ block.settings.image | image_url: width: 1000 | image_tag }}
+              </div>
+            {% endif %}
+
+            <div class="mar26-cat-banner-text">
+              {% if block.settings.pre_title != blank %}
+                <div class="mar26-pre-title-wrap">
+                  <div class="mar26-pre-title-line"></div>
+                  <span class="mar26-pre-title-text">{{ block.settings.pre_title }}</span>
+                </div>
+              {% endif %}
+              <h2 class="mar26-category-title">{{ block.settings.title }}</h2>
+              <div class="mar26-category-desc">{{ block.settings.description }}</div>
+            </div>
+          </div>
+
+          <div class="mar26-products-grid mar26-products-grid--catalogv" id="grid-{{ block.id }}">
+            {% assign found_products = false %}
+            {% assign products_to_render = block.settings.selected_products %}
+
+            {% if products_to_render != blank %}
+              {% for product in products_to_render %}
+                {% render 'mar26-product-card-catalogv',
+                  product: product
+                %}
+                {% assign found_products = true %}
+              {% endfor %}
+            {% endif %}
+
+            {% if found_products == false %}
+              <p style="grid-column: 1/-1; opacity: 0.5; font-style: italic;">
+                No products found in this category.
+              </p>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% endpaginate %}
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('[data-scroll-to]').forEach((anchor) => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          });
+        }
+      });
+    });
+
+    // Fallback rows logic for catalogv card layout
+    const adjustCatalogvCard = (title) => {
+      const group = title.closest('[data-catalogv-text-group]');
+      if (!group) return;
+
+      // Force inline styles reset to measure true scroll height
+      title.style.webkitLineClamp = 'none';
+      title.style.display = 'block';
+      title.style.height = 'auto';
+
+      const lh = parseFloat(window.getComputedStyle(title).lineHeight) || 20;
+      const scrollHeight = title.scrollHeight;
+      const lines = Math.round(scrollHeight / lh);
+
+      // Clean inline styles to fall back to CSS declarations
+      title.style.webkitLineClamp = '';
+      title.style.display = '';
+      title.style.height = '';
+
+      if (lines >= 3) {
+        group.classList.remove('has-2-lines');
+        group.classList.add('has-3-lines');
+      } else if (lines === 2) {
+        group.classList.remove('has-3-lines');
+        group.classList.add('has-2-lines');
+      } else {
+        group.classList.remove('has-2-lines', 'has-3-lines');
+      }
+    };
+
+    const titles = document.querySelectorAll('[data-catalogv-title]');
+    if (titles.length > 0 && typeof ResizeObserver !== 'undefined') {
+      const observer = new ResizeObserver((entries) => {
+        entries.forEach((entry) => {
+          adjustCatalogvCard(entry.target);
+        });
+      });
+      titles.forEach((title) => observer.observe(title));
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "MAR26 Catalog Engine",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "category_banner",
+      "name": "Category Banner",
+      "settings": [
+        {
+          "type": "product_list",
+          "id": "selected_products",
+          "label": "Select Products for this Category",
+          "info": "Explicitly select products for this category."
+        },
+        {
+          "type": "text",
+          "id": "pre_title",
+          "label": "Pre-Title",
+          "default": "SERIES"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Background Color",
+          "default": "#F8FBFF"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#1E293B"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "MAR26 Catalog Engine"
+    }
+  ]
+}
+{% endschema %}

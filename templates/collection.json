@@ -1,0 +1,240 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "6d9821d0-9b6c-4de4-854a-1bdb36a222bd": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "template--19202935587090__6d9821d0-9b6c-4de4-854a-1bdb36a222bd-1686730398910c9c90-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Bundels",
+            "heading_tag": "h1"
+          }
+        },
+        "template--19202935587090__6d9821d0-9b6c-4de4-854a-1bdb36a222bd-1686730398910c9c90-2": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>BrightTools Brooms are made from 100% natural rubber and silicone, ensuring durability and longevity.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--19202935587090__6d9821d0-9b6c-4de4-854a-1bdb36a222bd-1686730398910c9c90-1",
+        "template--19202935587090__6d9821d0-9b6c-4de4-854a-1bdb36a222bd-1686730398910c9c90-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "image_size": "md",
+        "image": "shopify://shop_images/Untitled_design_2_1.png",
+        "mobile_image": "shopify://shop_images/Untitled_1300_x_1500_px_1.png",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 10
+      }
+    },
+    "banner": {
+      "type": "collection-banner",
+      "settings": {
+        "full_width": false,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "show_collection_title": false,
+        "show_collection_description": false,
+        "show_collection_image": false,
+        "collection_title_size": "h1",
+        "image_size": "lg",
+        "image": "shopify://shop_images/cleaning_product_bundle_brighttools.jpg",
+        "mobile_image": "shopify://shop_images/cleaning_product_bundle_brighttools.jpg",
+        "mobile_text_position": "place-self-end-start text-start",
+        "desktop_text_position": "sm:place-self-center-start sm:text-start",
+        "featured_product": "",
+        "featured_product_heading": "Featured product",
+        "text_color": "#000000",
+        "overlay_color": "#ffffff",
+        "overlay_opacity": 43
+      }
+    },
+    "slideshow_pjCyDK": {
+      "type": "slideshow",
+      "blocks": {
+        "image_pDhrQY": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/toilet_brush_silicone_main_colaction_page.jpg",
+            "mobile_image": "shopify://shop_images/toilet_brush_silicone_main1.jpg",
+            "content_max_width": 780,
+            "mobile_text_position": "place-self-start-end text-end",
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "subheading": "Fresh anti-stick effect",
+            "title": "Toilet Brush",
+            "heading_tag": "h1",
+            "button_text": "",
+            "button_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "background": "",
+            "background_gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_pDhrQY"
+      ],
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": true,
+        "show_initial_transition": false,
+        "image_size": "auto",
+        "controls_type": "dots",
+        "transition_type": "fade_with_text",
+        "autoplay": false,
+        "cycle_speed": 6,
+        "background": "#f2f2f2",
+        "background_gradient": ""
+      }
+    },
+    "slideshow_UwWwaD": {
+      "type": "slideshow",
+      "blocks": {
+        "image_gyPLen": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_43.jpg",
+            "mobile_image": "shopify://shop_images/toilet_brush_silicone_main1.jpg",
+            "content_max_width": 780,
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "subheading": "Fresh anti-stick effect",
+            "title": "Toilet Brush",
+            "heading_tag": "h2",
+            "button_text": "",
+            "button_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "background": "#605e5e",
+            "background_gradient": "linear-gradient(180deg, rgba(107, 108, 108, 1), rgba(245, 245, 245, 1) 100%)"
+          }
+        }
+      },
+      "block_order": [
+        "image_gyPLen"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "allow_transparent_header": true,
+        "show_initial_transition": false,
+        "image_size": "auto",
+        "controls_type": "dots",
+        "transition_type": "fade_with_text",
+        "autoplay": false,
+        "cycle_speed": 6,
+        "background": "#f2f2f2",
+        "background_gradient": ""
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "products_per_page": 48,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "filter_layout": "horizontal",
+        "show_sort_by": false,
+        "show_filters": false,
+        "show_filter_group_name": true,
+        "show_filter_values_count": true,
+        "open_first_filter_group": true
+      }
+    },
+    "d9e91537-6225-4b57-bd84-e5d10e8558b3": {
+      "type": "faq",
+      "blocks": {
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-0": {
+          "type": "item",
+          "settings": {
+            "title": "Are BrightTools products suitable for both professionals and amateurs?",
+            "content": "<p>Absolutely! Our tools are designed to cater to the needs of professionals as well as hobbyists and DIY enthusiasts. We strive to offer products that are user-friendly, reliable, and suitable for various skill levels.</p>"
+          }
+        },
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-1": {
+          "type": "item",
+          "settings": {
+            "title": "Can I track the status of my order?",
+            "content": "<p>Yes, once your order is confirmed, we will provide you with a tracking number. You can use this number to track the status of your shipment. We also send regular updates via email, keeping you informed about the progress of your order.</p>"
+          }
+        },
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-2": {
+          "type": "item",
+          "settings": {
+            "title": "What payment options are available?",
+            "content": "<p>We accept various payment methods, including major credit cards (Visa, Mastercard, American Express), PayPal, and bank transfers. Rest assured that all transactions are securely processed to protect your sensitive information.</p>"
+          }
+        },
+        "dc709b98-8f74-4f10-9911-a3d0da4bdcf4": {
+          "type": "item",
+          "settings": {
+            "title": "Do you offer international shipping?",
+            "content": "<p>Yes, we offer international shipping to select countries. However, please note that shipping fees and delivery times may vary depending on the destination. During the checkout process, you can enter your location to view the available shipping options and associated costs.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-0",
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-1",
+        "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-2",
+        "dc709b98-8f74-4f10-9911-a3d0da4bdcf4"
+      ],
+      "settings": {
+        "full_width": false,
+        "subheading": "FAQ",
+        "title": "Have a question?",
+        "content": "",
+        "team_avatar": "shopify://shop_images/team-fff.webp",
+        "team_avatar_width": 160,
+        "support_hours": "Our customer support is available monday to friday: 8am-8:30pm.",
+        "answer_time": "Average answer time: 24h",
+        "button_text": "Contact us",
+        "button_url": "shopify://pages/contact",
+        "text_position": "start",
+        "background": "#ffffff",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "#1a1a1a",
+        "button_text_color": "",
+        "accordion_background": "",
+        "accordion_text_color": ""
+      }
+    }
+  },
+  "order": [
+    "6d9821d0-9b6c-4de4-854a-1bdb36a222bd",
+    "banner",
+    "slideshow_pjCyDK",
+    "slideshow_UwWwaD",
+    "main",
+    "d9e91537-6225-4b57-bd84-e5d10e8558b3"
+  ]
+}

@@ -1,0 +1,239 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_width": "80ch"
+      }
+    },
+    "a3ad2559-64dc-449a-b568-b920eb3a0a3f": {
+      "type": "impact-text",
+      "blocks": {
+        "template--19202935718162__a3ad2559-64dc-449a-b568-b920eb3a0a3f-1688637748a8130c01-0": {
+          "type": "item",
+          "settings": {
+            "title": "FAQs",
+            "subheading": "",
+            "content": "",
+            "button_text": "",
+            "button_url": "",
+            "animate_impact_text": false,
+            "animate_impact_text_duration": 2
+          }
+        }
+      },
+      "block_order": [
+        "template--19202935718162__a3ad2559-64dc-449a-b568-b920eb3a0a3f-1688637748a8130c01-0"
+      ],
+      "settings": {
+        "full_width": true,
+        "stack_mobile": true,
+        "text_alignment": "center",
+        "impact_text_style": "fill",
+        "text_divider": "none",
+        "impact_text_size_ratio": 1,
+        "background": "",
+        "background_gradient": "",
+        "heading_text_color": "",
+        "heading_gradient": "",
+        "text_color": "#d0d0d0",
+        "button_background": "",
+        "button_text_color": ""
+      }
+    },
+    "753ac891-1535-4bd0-894c-f819891378dd": {
+      "type": "faq",
+      "blocks": {
+        "template--19202935718162__753ac891-1535-4bd0-894c-f819891378dd-16886379183cc9731c-0": {
+          "type": "item",
+          "settings": {
+            "title": "Do you ship overseas?",
+            "content": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+          }
+        },
+        "template--19202935718162__753ac891-1535-4bd0-894c-f819891378dd-16886379183cc9731c-1": {
+          "type": "item",
+          "settings": {
+            "title": "How long will it take to get my orders?",
+            "content": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+          }
+        },
+        "template--19202935718162__753ac891-1535-4bd0-894c-f819891378dd-16886379183cc9731c-2": {
+          "type": "item",
+          "settings": {
+            "title": "Any question?",
+            "content": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--19202935718162__753ac891-1535-4bd0-894c-f819891378dd-16886379183cc9731c-0",
+        "template--19202935718162__753ac891-1535-4bd0-894c-f819891378dd-16886379183cc9731c-1",
+        "template--19202935718162__753ac891-1535-4bd0-894c-f819891378dd-16886379183cc9731c-2"
+      ],
+      "settings": {
+        "full_width": true,
+        "subheading": "",
+        "title": "Shopping",
+        "content": "<p>All questions regarding your shopping experience on the store and the payment process.</p>",
+        "team_avatar_width": 160,
+        "support_hours": "",
+        "answer_time": "",
+        "button_text": "",
+        "button_url": "",
+        "text_position": "start",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "",
+        "button_text_color": "",
+        "accordion_background": "#ffffff",
+        "accordion_text_color": ""
+      }
+    },
+    "a2fe73cf-8dc2-4566-9aa5-8b7623a59bcb": {
+      "type": "faq",
+      "blocks": {
+        "63ee3464-595e-4ebd-9b02-63922fd2fb23": {
+          "type": "item",
+          "settings": {
+            "title": "Do you ship overseas?",
+            "content": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+          }
+        },
+        "fb7ec14f-08f9-4b0f-915c-767749c5bee9": {
+          "type": "item",
+          "settings": {
+            "title": "How long will it take to get my orders?",
+            "content": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+          }
+        },
+        "f3bef331-6431-47e6-a4b4-3592651166b7": {
+          "type": "item",
+          "settings": {
+            "title": "Any question?",
+            "content": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "63ee3464-595e-4ebd-9b02-63922fd2fb23",
+        "fb7ec14f-08f9-4b0f-915c-767749c5bee9",
+        "f3bef331-6431-47e6-a4b4-3592651166b7"
+      ],
+      "settings": {
+        "full_width": true,
+        "subheading": "",
+        "title": "Shipping, Returns, & Warranty",
+        "content": "<p>Learn more about our shipping and return policy as well as the products warranty.</p>",
+        "team_avatar_width": 160,
+        "support_hours": "",
+        "answer_time": "",
+        "button_text": "",
+        "button_url": "",
+        "text_position": "start",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "",
+        "button_text_color": "",
+        "accordion_background": "#ffffff",
+        "accordion_text_color": ""
+      }
+    },
+    "fdbfeca9-52af-4ff6-8084-6bcf9c671604": {
+      "type": "faq",
+      "blocks": {
+        "e7281ad8-1667-4cb5-841a-fdbcacf4de00": {
+          "type": "item",
+          "settings": {
+            "title": "Do you ship overseas?",
+            "content": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+          }
+        },
+        "179108bd-c4ed-4da2-b2d7-7d242bea6dc0": {
+          "type": "item",
+          "settings": {
+            "title": "How long will it take to get my orders?",
+            "content": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+          }
+        },
+        "a4d746dc-1c16-4aaa-b882-a7aef5d99679": {
+          "type": "item",
+          "settings": {
+            "title": "Any question?",
+            "content": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "e7281ad8-1667-4cb5-841a-fdbcacf4de00",
+        "179108bd-c4ed-4da2-b2d7-7d242bea6dc0",
+        "a4d746dc-1c16-4aaa-b882-a7aef5d99679"
+      ],
+      "settings": {
+        "full_width": true,
+        "subheading": "",
+        "title": "Account",
+        "content": "<p>You can create an account to track your orders and start a return process if you need to.</p>",
+        "team_avatar_width": 160,
+        "support_hours": "",
+        "answer_time": "",
+        "button_text": "",
+        "button_url": "",
+        "text_position": "start",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "",
+        "button_text_color": "",
+        "accordion_background": "#ffffff",
+        "accordion_text_color": ""
+      }
+    },
+    "6c70ec51-09c0-492b-a20c-d7a8d189af52": {
+      "type": "contact",
+      "settings": {
+        "full_width": false,
+        "subheading": "Contact Us",
+        "title": "Still couldn't find what you're looking for?",
+        "content": "<p>If you do not find the answer to your question in our FAQ, you can send us a message by filling out the form below.</p>",
+        "text_position": "start",
+        "contact_form_size": "large",
+        "background": "#ffffff",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "contact_background": "",
+        "contact_text_color": "",
+        "button_background": "",
+        "button_text_color": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "a3ad2559-64dc-449a-b568-b920eb3a0a3f",
+    "753ac891-1535-4bd0-894c-f819891378dd",
+    "a2fe73cf-8dc2-4566-9aa5-8b7623a59bcb",
+    "fdbfeca9-52af-4ff6-8084-6bcf9c671604",
+    "6c70ec51-09c0-492b-a20c-d7a8d189af52"
+  ]
+}

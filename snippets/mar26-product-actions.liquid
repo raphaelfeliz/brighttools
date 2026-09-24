@@ -1,0 +1,65 @@
+{%- comment -%}
+  Name: snippets/mar26-product-actions.liquid
+  Version: 1.0.0
+  Description: Renders standardized buy and view buttons for MAR26 layout cards (e.g., catalog, best sellers, bundles).
+               Hooks into the theme's AJAX ProductForm handler to prevent page reloads.
+
+  Parameters:
+    product             {Object}  — Shopify Product object. (Required)
+    class               {String}  — CSS class for the outer wrapper element. Defaults to 'mar26-actions-wrap'.
+    form_class          {String}  — CSS class for the form wrapper. Defaults to 'm26-btn mar26-add-btn-form'.
+    form_style          {String}  — Inline style for the form wrapper. Defaults to 'margin:0;'.
+    add_button_class    {String}  — CSS class for the Add button. Defaults to 'mar26-add-btn'.
+    add_button_style    {String}  — Inline style for the Add button.
+    view_button_class   {String}  — CSS class for the View button. Defaults to 'm26-btn m26-btn--outline'.
+    view_button_style   {String}  — Inline style for the View button.
+{%- endcomment -%}
+
+{%- if product != blank -%}
+  {%- liquid
+    assign wrapper_class = class | default: 'mar26-actions-wrap'
+    assign f_class = form_class | default: 'm26-btn mar26-add-btn-form'
+    assign f_style = form_style | default: 'margin:0;'
+    assign add_btn_class = add_button_class | default: 'mar26-add-btn'
+    assign add_btn_style = add_button_style | default: ''
+    assign view_btn_class = view_button_class | default: 'm26-btn m26-btn--outline'
+    assign view_btn_style = view_button_style | default: ''
+  -%}
+
+  <div class="{{ wrapper_class }}" id="mar26-actions-{{ product.id }}" data-mar26-element="action-panel">
+    
+    {%- comment -%} AJAX Add to Cart Form {%- endcomment -%}
+    {%- form 'product', product, is: 'product-form', class: f_class, style: f_style -%}
+      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+      <button 
+        type="submit" 
+        class="{{ add_btn_class }}" 
+        style="{{ add_btn_style }}"
+        {% unless product.available %}disabled{% endunless %}
+      >
+        <span class="m26-btn__icon" aria-hidden="true" style="margin-right: 4px;">
+          <svg style="width:16px; height:16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 4v16m8-8H4"></path>
+          </svg>
+        </span>
+        <span class="m26-btn__text">{%- if product.available -%}Add{%- else -%}Out{%- endif -%}</span>
+      </button>
+    {%- endform -%}
+
+    {%- comment -%} View Details Button {%- endcomment -%}
+    <a 
+      href="{{ product.url }}" 
+      class="mar26-view-btn {{ view_btn_class }}"
+      style="{{ view_btn_style }}"
+    >
+      <span class="m26-btn__icon" aria-hidden="true" style="margin-right: 4px;">
+        <svg style="width:18px; height:18px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+        </svg>
+      </span>
+      <span class="m26-btn__text">View</span>
+    </a>
+
+  </div>
+{%- endif -%}

@@ -1,0 +1,374 @@
+{%- comment -%}
+  ----------------------------------------------------------------------------------------------------------------------
+  MAR26 HERO
+  VERSION: 3.5.0 - Vertical Scale Expansion
+  ----------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<script>
+  console.log('MAR26 Hero - Version: 3.5.0');
+</script>
+
+{%- style -%}
+  /* CSS Variables for this section */
+  :root {
+    --img-aspect: 1.5; /* default placeholder */
+  }
+
+  /* Override Shopify's default section wrapper spacing */
+  #shopify-section-{{ section.id }} {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100vw;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  /* Reset & Typography variables */
+  .mar26-hero {
+    font-family: var(--mar26-font-stack);
+    background-color: var(--mar26-clr-white);
+  }
+
+  .mar26-hero__container {
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    min-height: auto; /* Unlocked for mobile content flow */
+    overflow: hidden;
+    box-shadow: var(--mar26-shadow-stronger);
+  }
+
+  @media (min-width: 768px) {
+    .mar26-hero__container {
+      flex-wrap: nowrap;
+      height: auto;
+    }
+  }
+
+  .mar26-hero__content-cell {
+    background-color: var(--mar26-clr-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    min-height: auto; /* Reduced from 450px */
+    flex: 1 1 300px;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 768px) {
+    .mar26-hero__content-cell {
+      padding: 2rem; /* Reduced from 3rem */
+      flex: 0 0 35%; /* Restored 35/65 asymmetrical split */
+    }
+  }
+
+  .mar26-hero__content-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: fit-content;
+    max-width: 100%;
+    box-sizing: border-box;
+    gap: 0.75rem; /* Matched to Headline tight distribution */
+  }
+
+  .mar26-hero__tagline {
+    color: var(--mar26-clr-white);
+  }
+
+  .mar26-hero__headline {
+    font-weight: var(--mar26-fw-extrabold);
+    line-height: 1.0;
+    letter-spacing: -0.05em;
+    margin: 0; /* Managed by stack gap */
+    font-size: clamp(2.5rem, 10vw, 4.5rem);
+  }
+
+  @media (min-width: 768px) {
+    .mar26-hero__headline {
+      font-size: clamp(2rem, 5.5vw, 3.5rem); /* Reduced 30% from 2.5-4.5rem */
+    }
+  }
+
+  .mar26-hero__headline-line1 {
+    display: block;
+    color: var(--mar26-clr-black); /* Standard Black */
+  }
+
+  .mar26-hero__headline-line2 {
+    display: block;
+    color: var(--mar26-clr-white);
+  }
+
+  .mar26-hero__headline-line3 {
+    display: block;
+    color: var(--mar26-clr-pink); /* Standard Pink */
+  }
+
+  .mar26-hero__buttons-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .mar26-hero__image-cell {
+    flex: 0 0 auto;
+    background-color: #e5e7eb;
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .mar26-hero__image-cell {
+      flex: 0 0 65%;
+      width: auto;
+      display: block;
+    }
+  }
+
+  .mar26-hero__img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    .mar26-hero__img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+    @media (max-width: 767px) {
+      .mar26-hero__image-cell {
+        width: 100% !important;
+        height: auto !important;
+      }
+    }
+
+    /* Responsive Visibility */
+    .mar26-hero__img--mobile {
+      display: block;
+    }
+    .mar26-hero__img--desktop {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      .mar26-hero__img--mobile {
+        display: none !important;
+      }
+      .mar26-hero__img--desktop {
+        display: block !important;
+      }
+    }
+
+    /* Fallback: If no mobile image is provided, show desktop image on mobile */
+    .mar26-hero__img--desktop.no-mobile-image {
+      display: block !important;
+    }
+{%- endstyle -%}
+
+
+<div class="mar26-hero" id="mar26-hero-section-{{ section.id }}" data-mar26-element="section-shell">
+  <section id="hero-{{ section.id }}" class="mar26-hero__container" data-mar26-element="hero-container">
+    <!-- Cell Left: Content stack -->
+    <div class="mar26-hero__content-cell" id="mar26-hero-content-{{ section.id }}" data-mar26-element="info-panel">
+      <div class="mar26-hero__content-stack" id="mar26-hero-stack-{{ section.id }}" data-mar26-element="content-stack">
+        <!-- Modular Tag Pill -->
+        <div class="mar26-hero__tagline-wrapper">
+          <span 
+            class="mar26-tag-pill mar26-hero__tagline" 
+            id="mar26-hero-tagline-{{ section.id }}" 
+            data-mar26-element="tagline"
+            style="background: transparent; color: var(--mar26-clr-white); font-weight: 700; box-shadow: none;"
+          >
+            <span class="mar26-tag-icon" style="transform: rotate(-12deg);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+              </svg>
+            </span>
+            {{ section.settings.subheading }}
+          </span>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="mar26-hero__headline" id="mar26-hero-headline-{{ section.id }}" data-mar26-element="headline">
+          <span class="mar26-hero__headline-line1" id="mar26-hero-line1-{{ section.id }}" data-mar26-element="headline-line">{{ section.settings.headline_line_1 }}</span>
+          <span class="mar26-hero__headline-line2" id="mar26-hero-line2-{{ section.id }}" data-mar26-element="headline-line">{{ section.settings.headline_line_2 }}</span>
+          <span class="mar26-hero__headline-line3" id="mar26-hero-line3-{{ section.id }}" data-mar26-element="headline-line">{{ section.settings.headline_line_3 }}</span>
+        </h1>
+
+        <!-- Buttons Stack -->
+        <div class="mar26-hero__buttons-stack" id="mar26-hero-buttons-{{ section.id }}" data-mar26-element="action-panel">
+          <!-- Primary Button -->
+          <a 
+            href="{{ section.settings.button_1_link }}" 
+            class="m26-btn m26-btn--medium m26-btn--long m26-btn--no-icon" 
+            id="mar26-hero-cta-1-{{ section.id }}" 
+            data-mar26-element="cta-primary"
+            style="background-color: var(--mar26-clr-black); color: var(--mar26-clr-white); box-shadow: var(--mar26-shadow-light);"
+          >
+            <span class="m26-btn__text">{{ section.settings.button_1_text }}</span>
+            <span class="m26-btn__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </span>
+          </a>
+
+          <!-- Secondary Button -->
+          <a 
+            href="{{ section.settings.button_2_link }}" 
+            class="m26-btn m26-btn--medium m26-btn--long m26-btn--outline" 
+            id="mar26-hero-cta-2-{{ section.id }}" 
+            data-mar26-element="cta-secondary"
+            style="background-color: transparent; color: var(--mar26-clr-white); box-shadow: var(--mar26-shadow-light);"
+          >
+            <span class="m26-btn__text">{{ section.settings.button_2_text }}</span>
+            <span class="m26-btn__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M11 2v14.5l-5 1.5c-1 .3-1.5 1.2-1.5 2V22h15v-2c0-.8-.5-1.7-1.5-2l-5-1.5V2h-2z" />
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {%- assign img_aspect_ratio = section.settings.hero_image.aspect_ratio | default: '1.5' -%}
+    <!-- Cell Right: Image cell -->
+    <div class="mar26-hero__image-cell" style="--img-aspect: {{ img_aspect_ratio }};" id="mar26-hero-image-panel-{{ section.id }}" data-mar26-element="image-panel">
+      {%- if section.settings.hero_image_mobile != blank -%}
+        <img 
+          src="{{ section.settings.hero_image_mobile | image_url: width: 1000 }}"
+          class="mar26-hero__img mar26-hero__img--mobile"
+          loading="eager"
+          alt="{{ section.settings.hero_image_mobile.alt | escape }}"
+          id="mar26-hero-mobile-img-{{ section.id }}"
+          data-mar26-element="hero-image-mobile"
+          width="1000"
+          height="{{ 1000 | divided_by: section.settings.hero_image_mobile.aspect_ratio | round }}"
+        >
+      {%- endif -%}
+
+      {%- assign desktop_img_class = 'mar26-hero__img mar26-hero__img--desktop' -%}
+      {%- if section.settings.hero_image_mobile == blank -%}
+        {%- assign desktop_img_class = desktop_img_class | append: ' no-mobile-image' -%}
+      {%- endif -%}
+
+      {%- if section.settings.hero_image != blank -%}
+        <img 
+          src="{{ section.settings.hero_image | image_url: width: 2000 }}"
+          class="{{ desktop_img_class }}"
+          loading="eager"
+          alt="{{ section.settings.hero_image.alt | escape }}"
+          id="mar26-hero-desktop-img-{{ section.id }}"
+          data-mar26-element="hero-image-desktop"
+          width="2000"
+          height="{{ 2000 | divided_by: section.settings.hero_image.aspect_ratio | round }}"
+        >
+      {%- else -%}
+        <img
+          src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+          alt="Placeholder"
+          class="{{ desktop_img_class }}"
+          id="mar26-hero-placeholder-img-{{ section.id }}"
+          data-mar26-element="hero-image-placeholder"
+        >
+      {%- endif -%}
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "MAR26 Hero",
+  "class": "shopify-section--mar26-hero section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Your new favorite!"
+    },
+    {
+      "type": "text",
+      "id": "headline_line_1",
+      "label": "Headline Line 1",
+      "default": "FASTER"
+    },
+    {
+      "type": "text",
+      "id": "headline_line_2",
+      "label": "Headline Line 2",
+      "default": "CLEANER"
+    },
+    {
+      "type": "text",
+      "id": "headline_line_3",
+      "label": "Headline Line 3",
+      "default": "SMARTER."
+    },
+    {
+      "type": "header",
+      "content": "Button 1 (Primary)"
+    },
+    {
+      "type": "text",
+      "id": "button_1_text",
+      "label": "Text",
+      "default": "WIPE BUNDLES"
+    },
+    {
+      "type": "url",
+      "id": "button_1_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Button 2 (Secondary)"
+    },
+    {
+      "type": "text",
+      "id": "button_2_text",
+      "label": "Text",
+      "default": "DISCOVER TOOLS"
+    },
+    {
+      "type": "url",
+      "id": "button_2_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Imagery"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image (Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image_mobile",
+      "label": "Hero Image (Mobile)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "MAR26 Hero",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}

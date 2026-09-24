@@ -1,0 +1,51 @@
+{%- comment -%}
+* Version: 1.0.3 - Added conditional is-promo class
+{%- endcomment -%}
+{%- liquid
+  assign card_modifier = modifier | default: ''
+  assign card_summary_modifier = summary_modifier | default: ''
+-%}
+<div class="mar26-card-wrapper {{ card_modifier }}">
+  
+  {%- comment -%} TOP ROW (Flex on Mobile) {%- endcomment -%}
+  <div class="mar26-mobile-top-row">
+    {%- comment -%} IMAGE AREA {%- endcomment -%}
+    <div class="mar26-card-image-box">
+      <a href="{{ product.url }}">
+        {%- if product.featured_media -%}
+          {{ product.featured_media | image_url: width: 600 | image_tag: loading: 'lazy', class: 'mar26-product-img' }}
+        {%- else -%}
+          {{ 'product-1' | placeholder_svg_tag: 'mar26-product-img' }}
+        {%- endif -%}
+      </a>
+    </div>
+
+    {%- comment -%} CONTENT AREA {%- endcomment -%}
+    <div class="mar26-card-content">
+      {% render 'mar26-product-summary',
+        product: product,
+        fallback_title: 'Japanese Rubber Broom<br>30x7cm',
+        fallback_price: '$59.95',
+        review_count: 248,
+        modifier: card_summary_modifier,
+        description_words: 12
+      %}
+    </div>
+  </div>
+
+  {%- comment -%} FOOTER AREA (Single Row) {%- endcomment -%}
+  <div class="mar26-card-footer">
+    <div class="mar26-pricing">
+      <span class="mar26-current-price{% if product.compare_at_price > product.price %} is-promo{% endif %}">
+        {{ product.price | money }}
+      </span>
+      {%- if product.compare_at_price > product.price -%}
+        <span class="mar26-compare-price">
+          {{ product.compare_at_price | money }}
+        </span>
+      {%- endif -%}
+    </div>
+
+    {% render 'mar26-product-actions', product: product, class: 'mar26-actions-wrap' %}
+  </div>
+</div>
