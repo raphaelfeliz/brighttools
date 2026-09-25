@@ -28,6 +28,7 @@
             "selected_products": [
               "choose-your-bundle-of-3-packs-quick-mop-floor-wipes-1",
               "choose-your-bundle-of-5-packs-quick-mop-floor-wipes-1",
+              "quick-mop-floor-wipes-biovibe-plant-based",
               "quick-mop-floor-wipes-fresh-home-scent-copy",
               "quick-mop-floor-wipes-ultra-fresh-scent",
               "quick-mop-floor-wipes-lavender-scent",
@@ -858,6 +859,9 @@
         "template--20493668090130__2f1c8e4a-0b18-41f5-a174-e98ba708c08a-testimonial-1": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "Scicluna Lily",
             "country": "australia",
             "content": "<p>Products do what they are advertised to do, exceptional quality tools, I would not hesitate to recommend to my family and friends.<br/>Exceptional customer service.</p>",
@@ -868,6 +872,9 @@
         "3081704d-686f-4d7a-a86a-a94d3e194c7f": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "Kate Smith",
             "country": "australia",
             "content": "<p>Absolutely thrilled with all the products purchased, take it from me throw away all you useless mops that are a complete waste of money. My favourite bright tool is \"The Broom\" which becomes a mop with the throw over divine smelling cloth. The squeeze side is brilliant on my wood floors hardly need to get out the vac. all handled both broom and mop can be made to the height required so if you're tall no more bending over.<br/>I highly recommend all the products</p>",
@@ -878,6 +885,9 @@
         "00dae38f-bcf3-456f-b277-e6f64edf9a16": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "Ines",
             "country": "australia",
             "content": "<p>I was after something I can use to clean the floors in between the regular cleaning. The wipes are absolutely perfect for this.<br/>Great big size and I love the hole in them for the broomstick.</p>",
@@ -888,6 +898,9 @@
         "d24802f7-83b4-4e65-b9b6-a0d5203739ea": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "Di",
             "country": "australia",
             "content": "<p>Large wet wipes, stay damp to do a large area for a streak free finish. Perfect for a tidy up between thorough deep cleans.</p>",
@@ -898,6 +911,9 @@
         "template--20493668090130__2f1c8e4a-0b18-41f5-a174-e98ba708c08a-testimonial-2": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "Carol Mackay",
             "country": "australia",
             "content": "<p>So easy to use, much better than mop and bucket</p>",
@@ -908,6 +924,9 @@
         "693c4952-4e7c-4036-b1cf-64be4a97f731": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "Margaret Barnes",
             "country": "australia",
             "content": "<p>Smell great & cleans up messes fast & easily!!</p>",
@@ -918,6 +937,9 @@
         "0a5ac9a3-1159-45e6-9cb0-3ff18f53820c": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "April Jeffery",
             "country": "australia",
             "content": "<p>Love the fresh scent makes my house smell lovely have just ordered my second lot</p>",
@@ -928,6 +950,9 @@
         "ef66ab81-f7fd-42bc-bcd5-6501112f0d3d": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "Matilde Abade",
             "country": "australia",
             "content": "<p>Love them, Excellent product, cleans the floors quickly without getting out the mop.<br/>too easy</p>",
@@ -938,6 +963,9 @@
         "9ef84153-5135-4c16-aadf-572e3977ef0e": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "Rima",
             "country": "australia",
             "content": "<p>I love how easy and lightweight this product is to use. My floors co</p>",
@@ -948,6 +976,9 @@
         "adba3df5-40c3-4f9a-bce4-8012abcdcee6": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "Ushtana Antia",
             "country": "australia",
             "content": "<p>A handy tool to have. Narrow so it gets into small gaps like behind the fridge. Flexible with swivel head or fixed as needed</p>",
@@ -958,6 +989,9 @@
         "template--20493668090130__2f1c8e4a-0b18-41f5-a174-e98ba708c08a-testimonial-3": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "Barb Hartmann",
             "country": "australia",
             "content": "<p>Great product. Saves time and keeps the floor clean. House smells so clean and fresh</p>",
@@ -968,6 +1002,9 @@
         "b55e8b6f-b131-4878-9d57-60b87d4b21b7": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "Zeena Anwar",
             "country": "australia",
             "content": "<p>A must for every household. Easy to use, floor wet wipes are just amazing.</p>",

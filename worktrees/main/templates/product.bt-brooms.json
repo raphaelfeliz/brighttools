@@ -44,7 +44,7 @@
         "mar26_short_description_tARAbB": {
           "type": "mar26_short_description",
           "settings": {
-            "description": "<p>{{ product.metafields.custom.short_description.value }}</p>",
+            "description": "<p>{{ product.metafields.custom.short_description.value }} </p>",
             "highlight_1": "<p>{{ product.metafields.custom.mar26_highlight_1.value }}</p>",
             "highlight_2": "<p>{{ product.metafields.custom.mar26_highlight_2.value }}</p>",
             "highlight_3": "<p>{{ product.metafields.custom.mar26_highlight_3.value }} </p>",
@@ -81,7 +81,6 @@
         },
         "description": {
           "type": "description",
-          "disabled": true,
           "settings": {
             "icon": "none",
             "icon_width": 20,
@@ -295,64 +294,6 @@
         "accordion_text_color": ""
       }
     },
-    "mar26_highlights_djAVBa": {
-      "type": "mar26-highlights",
-      "blocks": {
-        "highlight_card_KiyRqg": {
-          "type": "highlight_card",
-          "settings": {
-            "image": "shopify://shop_images/arms.png",
-            "bg_color": "#e8eaeb",
-            "color_text_1": "#000000",
-            "color_text_2": "#f81b27",
-            "top_title": "HEAVY",
-            "gradient_title": "DUTY",
-            "subtitle_1": "PRO-GRADE TOOLS",
-            "subtitle_2": "for everyday messes."
-          }
-        },
-        "highlight_card_CyY4Fq": {
-          "type": "highlight_card",
-          "settings": {
-            "image": "shopify://shop_images/love-or-return.png",
-            "bg_color": "#fba5ac",
-            "color_text_1": "#000000",
-            "color_text_2": "#f81b27",
-            "top_title": "ZERO",
-            "gradient_title": "RISK",
-            "subtitle_1": "PRO-GRADE TOOLS",
-            "subtitle_2": "for everyday messes."
-          }
-        },
-        "highlight_card_p8UcQ6": {
-          "type": "highlight_card",
-          "settings": {
-            "image": "shopify://shop_images/2-year-warranty.png",
-            "bg_color": "#000000",
-            "color_text_1": "#ffffff",
-            "color_text_2": "#f81b27",
-            "top_title": "WORRY",
-            "gradient_title": "FREE",
-            "subtitle_1": "PRO-GRADE TOOLS",
-            "subtitle_2": "for everyday messes."
-          }
-        }
-      },
-      "block_order": [
-        "highlight_card_KiyRqg",
-        "highlight_card_CyY4Fq",
-        "highlight_card_p8UcQ6"
-      ],
-      "name": "MAR26 Highlights",
-      "settings": {
-        "section_subtitle": "PREMIUM STANDARDS",
-        "section_title_black": "Built",
-        "section_title_gradient": "Different.",
-        "section_grad_color_1": "#fba5ac",
-        "section_grad_color_2": "#fba5ac",
-        "color_background": "#f8fafc"
-      }
-    },
     "rich_text_JhBcCr": {
       "type": "rich-text",
       "blocks": {
@@ -426,8 +367,7 @@
           "type": "item",
           "settings": {
             "product": "adjustable-dust-blade-rubber-broom-squeegee",
-            "title": "Japanese Silicone Broom (30cm)",
-            "description": "<p>100% silicone bristles create static electricity to quickly gather dust, hair, and crumbs.</p>",
+            "title": "",
             "spec_1": "Adjustable Knuckle Joint",
             "spec_2": "Furniture-Safe Soft Edge",
             "spec_3": "",
@@ -439,7 +379,6 @@
           "settings": {
             "product": "",
             "title": "Silicone Squeegee (30cm)",
-            "description": "<p>Single cast 100% silicone for extreme durability without flimsy rubber strips.</p>",
             "spec_1": "Multi-surface Use",
             "spec_2": "Zero Water Streaks",
             "spec_3": "",
@@ -451,7 +390,6 @@
           "settings": {
             "product": "",
             "title": "Stick-to-floor Dustpan",
-            "description": "<p>Crafted from a single piece of high-quality silicone that sticks entirely to the floor.</p>",
             "spec_1": "Sweep without holding",
             "spec_2": "Attaches to handles",
             "spec_3": "",
@@ -463,7 +401,6 @@
           "settings": {
             "product": "",
             "title": "Quick Mop Floor Wipes",
-            "description": "<p>Supersized wet wipes safe for all floors. Poke the broom handle through and polish.</p>",
             "spec_1": "5 Awesome Scents",
             "spec_2": "Instantly discard after use",
             "spec_3": "",
@@ -488,6 +425,109 @@
         "subheading": "Everything you need for an effortless, water-saving clean on the road.",
         "columns": "4",
         "outline_color": "#e2e8f0"
+      }
+    },
+    "mar26_best_sellers": {
+      "type": "mar26-best-sellers",
+      "blocks": {
+        "prod_1": {
+          "type": "product",
+          "settings": {
+            "product": "bright-broom-bundle-blue-edition"
+          }
+        },
+        "prod_2": {
+          "type": "product",
+          "settings": {
+            "product": "easy-cleaning-bundle-for-limited-mobility"
+          }
+        },
+        "prod_3": {
+          "type": "product",
+          "settings": {
+            "product": "adjustable-dust-blade-rubber-broom-squeegee"
+          }
+        },
+        "prod_4": {
+          "type": "product",
+          "settings": {
+            "product": "jet-all-purpose-cleaning-spray-with-vinegar-and-lavender-copy"
+          }
+        }
+      },
+      "block_order": [
+        "prod_1",
+        "prod_2",
+        "prod_3",
+        "prod_4"
+      ],
+      "settings": {
+        "badge_text": "Bright On - Dust Off",
+        "primary_text": "Better Cleaning",
+        "highlight_text": "Best Sellers",
+        "autoplay_enabled": true,
+        "color_background": "#f8fafc",
+        "color_primary_text": "#0f172a",
+        "color_highlight": "#f81f2f",
+        "color_badge_text": "#f81b27"
+      }
+    },
+    "mar26_highlights_djAVBa": {
+      "type": "mar26-highlights",
+      "blocks": {
+        "highlight_card_KiyRqg": {
+          "type": "highlight_card",
+          "settings": {
+            "image": "shopify://shop_images/arms.png",
+            "bg_color": "#e8eaeb",
+            "color_text_1": "#000000",
+            "color_text_2": "#f81b27",
+            "top_title": "HEAVY",
+            "gradient_title": "DUTY",
+            "subtitle_1": "PRO-GRADE TOOLS",
+            "subtitle_2": "for everyday messes."
+          }
+        },
+        "highlight_card_CyY4Fq": {
+          "type": "highlight_card",
+          "settings": {
+            "image": "shopify://shop_images/love-or-return.png",
+            "bg_color": "#fba5ac",
+            "color_text_1": "#000000",
+            "color_text_2": "#f81b27",
+            "top_title": "ZERO",
+            "gradient_title": "RISK",
+            "subtitle_1": "PRO-GRADE TOOLS",
+            "subtitle_2": "for everyday messes."
+          }
+        },
+        "highlight_card_p8UcQ6": {
+          "type": "highlight_card",
+          "settings": {
+            "image": "shopify://shop_images/2-year-warranty.png",
+            "bg_color": "#000000",
+            "color_text_1": "#ffffff",
+            "color_text_2": "#f81b27",
+            "top_title": "WORRY",
+            "gradient_title": "FREE",
+            "subtitle_1": "PRO-GRADE TOOLS",
+            "subtitle_2": "for everyday messes."
+          }
+        }
+      },
+      "block_order": [
+        "highlight_card_KiyRqg",
+        "highlight_card_CyY4Fq",
+        "highlight_card_p8UcQ6"
+      ],
+      "name": "MAR26 Highlights",
+      "settings": {
+        "section_subtitle": "PREMIUM STANDARDS",
+        "section_title_black": "Built",
+        "section_title_gradient": "Different.",
+        "section_grad_color_1": "#fba5ac",
+        "section_grad_color_2": "#fba5ac",
+        "color_background": "#f8fafc"
       }
     },
     "mar26_testimonials": {
@@ -542,51 +582,6 @@
         "title": "What They're Saying",
         "subheading": "Real results from real customers — from high-rise apartments to hard-to-reach home windows."
       }
-    },
-    "mar26_best_sellers": {
-      "type": "mar26-best-sellers",
-      "blocks": {
-        "prod_1": {
-          "type": "product",
-          "settings": {
-            "product": "bright-broom-bundle-blue-edition"
-          }
-        },
-        "prod_2": {
-          "type": "product",
-          "settings": {
-            "product": "easy-cleaning-bundle-for-limited-mobility"
-          }
-        },
-        "prod_3": {
-          "type": "product",
-          "settings": {
-            "product": "adjustable-dust-blade-rubber-broom-squeegee"
-          }
-        },
-        "prod_4": {
-          "type": "product",
-          "settings": {
-            "product": "jet-all-purpose-cleaning-spray-with-vinegar-and-lavender-copy"
-          }
-        }
-      },
-      "block_order": [
-        "prod_1",
-        "prod_2",
-        "prod_3",
-        "prod_4"
-      ],
-      "settings": {
-        "badge_text": "Bright On - Dust Off",
-        "primary_text": "Better Cleaning",
-        "highlight_text": "Best Sellers",
-        "autoplay_enabled": true,
-        "color_background": "#f8fafc",
-        "color_primary_text": "#0f172a",
-        "color_highlight": "#f81f2f",
-        "color_badge_text": "#f81b27"
-      }
     }
   },
   "order": [
@@ -595,11 +590,11 @@
     "video_PBmR83",
     "video_demo",
     "faq",
-    "mar26_highlights_djAVBa",
     "rich_text_JhBcCr",
     "blocks_jiJwFP",
     "mar26_whats_included_hwC8XQ",
-    "mar26_testimonials",
-    "mar26_best_sellers"
+    "mar26_best_sellers",
+    "mar26_highlights_djAVBa",
+    "mar26_testimonials"
   ]
 }

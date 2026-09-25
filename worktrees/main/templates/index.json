@@ -369,7 +369,7 @@
         "full_width": false,
         "remove_vertical_spacing": false,
         "remove_horizontal_spacing": false,
-        "background": "#FFFFFF",
+        "background": "#ffffff",
         "background_gradient": "",
         "text_color": ""
       }
@@ -779,6 +779,9 @@
         "testimonial_63cUpE": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "Easy Cleaning Bundle",
+            "custom_link": "",
             "author": "Evelyn M.",
             "country": "australia",
             "content": "<p>This Wipes have been brilliant for me as I’ve got sciatica and using this floor mop has done a great job of cleaning the house without too much effort.</p>",
@@ -789,6 +792,9 @@
         "testimonial_agixfB": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "Bright Broom Bundle",
+            "custom_link": "",
             "author": "Carmen",
             "country": "australia",
             "content": "<p>Time saver! 100% easier than a mop and bucket, left my home sparkling & smelling beautifully fresh. Highly recommend!</p>",
@@ -799,6 +805,9 @@
         "testimonial_KAnGUX": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "Glider D-3 AFC",
+            "custom_link": "",
             "author": "Sylvie V.",
             "country": "new_zealand",
             "content": "<p>I love my magnetic window cleaner! I have windows very hard to clean from the outside and now they’re super clean!</p>",
@@ -809,6 +818,9 @@
         "testimonial_dARCyM": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "Quick Mop Floor Wipes",
+            "custom_link": "",
             "author": "Sonia",
             "country": "australia",
             "content": "<p>The floor wipes leave my home smelling so fresh. I have a dog and I use these every night once he goes to bed to freshen his play area.</p>",
@@ -819,6 +831,9 @@
         "testimonial_zm3YtV": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "Bright Squeegee Pack",
+            "custom_link": "",
             "author": "Tracy A.",
             "country": "australia",
             "content": "<p>The mop I didn’t know I needed! This has made quick clean ups so much easier and works perfectly along our skirting boards / walls </p>",
@@ -829,6 +844,9 @@
         "testimonial_gLrFHM": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "James Anderson",
             "country": "australia",
             "content": "<p>The Japanese Rubber Broom changed how I handle large floor areas. It's indispensable.</p>",
@@ -839,6 +857,9 @@
         "testimonial_DbHRyQ": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "David R.",
             "country": "new_zealand",
             "content": "<p>The Caravan Kit is brilliant. No buckets, no mess, stores away perfectly.</p>",

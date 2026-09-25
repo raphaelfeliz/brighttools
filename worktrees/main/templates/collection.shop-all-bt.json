@@ -12,7 +12,7 @@
     "mar26_top_image": {
       "type": "mar26-top-image",
       "settings": {
-        "full_width": false,
+        "full_width": true,
         "image": "shopify://shop_images/DESKTOP_BANNER_-_SHOP_ALL.png",
         "mobile_image": "shopify://shop_images/MOBILE_BANNER_-_SHOP_ALL.png",
         "max_width": 1400,
@@ -22,6 +22,23 @@
     "main": {
       "type": "mar26-catalog-engine",
       "blocks": {
+        "category_banner_qymQTD": {
+          "type": "category_banner",
+          "settings": {
+            "selected_products": [
+              "biovibe-complete-wipes-bundle",
+              "quick-mop-floor-wipes-biovibe-plant-based",
+              "biovibe-botanic-all-purpose-wipes",
+              "biovibe-degreasing-wipes",
+              "biovibe-window-wipes"
+            ],
+            "pre_title": "SERIES",
+            "title": "New Arrival - Biovibe",
+            "description": "",
+            "bg_color": "#f8fbff",
+            "text_color": "#1e293b"
+          }
+        },
         "category_banner_qi4tBe": {
           "type": "category_banner",
           "settings": {
@@ -104,7 +121,8 @@
               "high-window-cleaner-microfiber-cloth-x-4",
               "replacement-microfiber-cleaning-cloth-for-glider-magnetic-window-cleaner-pack-of-2-pc",
               "the-glider-magnetic-window-cleaner-microfiber-cloth-x-4",
-              "microfiber-cloth-for-glider-window-cleaner-4-pack-copy"
+              "microfiber-cloth-for-glider-window-cleaner-4-pack-copy",
+              "biovibe-window-wipes"
             ],
             "pre_title": "SERIES",
             "title": "Windows Care",
@@ -157,6 +175,7 @@
               "easy-cleaning-bundle-for-limited-mobility",
               "choose-your-bundle-of-3-packs-quick-mop-floor-wipes-1",
               "choose-your-bundle-of-5-packs-quick-mop-floor-wipes-1",
+              "quick-mop-floor-wipes-biovibe-plant-based",
               "quick-mop-floor-wipes-fresh-home-scent-copy",
               "quick-mop-floor-wipes-ultra-fresh-scent",
               "quick-mop-floor-wipes-lavender-scent",
@@ -323,6 +342,7 @@
         }
       },
       "block_order": [
+        "category_banner_qymQTD",
         "category_banner_qi4tBe",
         "windows",
         "quick_mop",
@@ -669,6 +689,9 @@
         "testimonial_agixfB": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "James Anderson",
             "country": "australia",
             "content": "<p>The Japanese Rubber Broom changed how I handle large floor areas. It's indestructible.</p>",
@@ -679,6 +702,9 @@
         "testimonial_KAnGUX": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "Sarah Jenkins",
             "country": "new_zealand",
             "content": "<p>I've tried every cleaner on the market, but the Glider S-1 is the only one that delivers.</p>",
@@ -689,6 +715,9 @@
         "testimonial_dARCyM": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "Emma Watson",
             "country": "australia",
             "content": "<p>If you have a dog that sheds, you need these tools. It literally pulls fur out of carpets.</p>",
@@ -699,6 +728,9 @@
         "testimonial_zm3YtV": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "Michael Chen",
             "country": "australia",
             "content": "<p>The build quality is industrial-grade. Durability is honestly unmatched.</p>",
@@ -709,6 +741,9 @@
         "testimonial_DbHRyQ": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "David Ross",
             "country": "new_zealand",
             "content": "<p>The Caravan Kit is brilliant. No buckets, no mess, stores away perfectly.</p>",

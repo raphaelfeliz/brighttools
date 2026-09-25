@@ -20,6 +20,18 @@ Supported variables
   {%- assign current_block_group_name = '' -%}
 
   {%- for block in section.blocks -%}
+    {%- comment -%}
+      ------------------------------------------------------------------------
+      [SURGICAL OVERRIDE: DEALEASY BYPASS]
+      Skips rendering Dealasy DOM blocks so app script cannot inject widgets.
+      TO REVERSE: Remove the 3-line if block below.
+      Git commit reference: c4b3a3d
+      ------------------------------------------------------------------------
+    {%- endcomment -%}
+    {%- if block.type contains 'dealeasy' -%}
+      {%- continue -%}
+    {%- endif -%}
+
     {%- liquid
       assign previous_block_index = forloop.index0 | minus: 1
       assign next_block_index = forloop.index0 | plus: 1

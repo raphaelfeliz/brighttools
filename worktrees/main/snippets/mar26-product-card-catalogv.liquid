@@ -1,7 +1,11 @@
 {%- comment -%}
   Name: snippets/mar26-product-card-catalogv.liquid
-  Version: 1.5.4
+  Version: 1.6.1
   Description: Renders the Catalog Version product card layout. Features a dynamic 5-row fallback layout with conditional is-promo class and Sold out badge.
+  Changelog:
+    - 1.6.1: CTA gate switched from variants.size to custom.requires_specs boolean metafield. Covers app-managed selection products (e.g. Dealasy bundles) where variant count is not a reliable signal.
+    - 1.6.0: CTA button now gates on product.variants.size. Single-variant products use direct ATC form; multi-variant products render a PDP link.
+    - 1.5.4: Supported 5-row height locked alignment.
 {%- endcomment -%}
 
 <div class="mar26-card-catalogv-wrapper">
@@ -19,22 +23,37 @@
       {%- endif -%}
     </a>
     
-    {%- comment -%} Red circle AJAX button overlay (bottom-right) {%- endcomment -%}
+    {%- comment -%} Red circle CTA button overlay (bottom-right) {%- endcomment -%}
     <div class="mar26-card-catalogv-cta">
       {%- if product != blank -%}
-        {%- form 'product', product, is: 'product-form', class: 'mar26-add-btn-form-catalogv', style: 'margin:0; display:flex;' -%}
-          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-          <button 
-            type="submit" 
-            class="mar26-card-catalogv-btn" 
-            {% unless product.available %}disabled{% endunless %}
-            aria-label="{%- if product.available -%}Add to Cart{%- else -%}Out of Stock{%- endif -%}"
+        {%- assign requires_specs = product.metafields.custom.requires_specs.value -%}
+        {%- if requires_specs == true -%}
+          {%- comment -%} Product requires user selection (e.g. Dealasy bundles, scent pickers): redirect to PDP {%- endcomment -%}
+          <a 
+            href="{{ product.url }}" 
+            class="mar26-card-catalogv-btn"
+            aria-label="Choose options for {{ product.title | escape }}"
           >
             <svg style="width:20px; height:20px;" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
             </svg>
-          </button>
-        {%- endform -%}
+          </a>
+        {%- else -%}
+          {%- comment -%} Standard product: direct Add to Cart {%- endcomment -%}
+          {%- form 'product', product, is: 'product-form', class: 'mar26-add-btn-form-catalogv', style: 'margin:0; display:flex;' -%}
+            <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+            <button 
+              type="submit" 
+              class="mar26-card-catalogv-btn" 
+              {% unless product.available %}disabled{% endunless %}
+              aria-label="{%- if product.available -%}Add to Cart{%- else -%}Out of Stock{%- endif -%}"
+            >
+              <svg style="width:20px; height:20px;" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </button>
+          {%- endform -%}
+        {%- endif -%}
       {%- endif -%}
     </div>
   </div>
@@ -104,3 +123,11 @@
   </div>
 
 </div>
+
+{%- comment -%} Version log — fires once per page load {%- endcomment -%}
+<script>
+  if (!window.__mar26_catalogv_logged) {
+    window.__mar26_catalogv_logged = true;
+    console.log('[fix-package-add-to-cart] mar26-product-card-catalogv v1.6.1');
+  }
+</script>

@@ -1,9 +1,10 @@
 {%- comment -%}
 ----------------------------------------------------------------------------------------------------------------------
 file-summary: Custom fork of product info for MAR26 layout. Handles rendering of product blocks with specific overrides.
-version-name: Sticky Gallery Transfer & Standard Product Info Wrapper
-version-number: 2.5.0
-version-summary: Removed safe-sticky from product-info so right-side column scrolls naturally while left media gallery remains fixed.
+version-name: Suppress Dealasy App Blocks
+version-number: 2.6.0
+version-summary: Suppressed Dealasy app block rendering with restore reference commit c4b3a3d.
+# Previous commit containing original Dealasy code/state: c4b3a3d
 ----------------------------------------------------------------------------------------------------------------------
 {%- endcomment -%}
 
@@ -16,6 +17,18 @@ version-summary: Removed safe-sticky from product-info so right-side column scro
   {%- assign current_block_group_name = '' -%}
 
   {%- for block in section.blocks -%}
+    {%- comment -%}
+      ------------------------------------------------------------------------
+      [SURGICAL OVERRIDE: DEALEASY BYPASS]
+      Skips rendering Dealasy DOM blocks so app script cannot inject widgets.
+      TO REVERSE: Remove the 3-line if block below.
+      Git commit reference: c4b3a3d
+      ------------------------------------------------------------------------
+    {%- endcomment -%}
+    {%- if block.type contains 'dealeasy' -%}
+      {%- continue -%}
+    {%- endif -%}
+
     {%- liquid
       assign previous_block_index = forloop.index0 | minus: 1
       assign next_block_index = forloop.index0 | plus: 1
