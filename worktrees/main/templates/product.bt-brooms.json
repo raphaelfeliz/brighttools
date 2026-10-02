@@ -1,13 +1,4 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
-{
+﻿{
   "sections": {
     "custom_liquid_bYgJK7": {
       "type": "custom-liquid",
@@ -105,15 +96,22 @@
             "atc_button_background": "#000000",
             "atc_button_text_color": "#000000"
           }
+        },
+        "inventory": {
+          "type": "inventory",
+          "settings": {
+            "low_inventory_threshold": 25
+          }
         }
       },
       "block_order": [
         "mar26_title_and_tags_5z3hZR",
         "judge_me_reviews_preview_badge_kG7NLt",
         "price",
+        "inventory",
+        "quantity_selector_dgjkJg",
         "mar26_short_description_tARAbB",
         "mar26_gradient_title_RMQCET",
-        "quantity_selector_dgjkJg",
         "dealeasy_mm_bundle_builder_dCNcYL",
         "description",
         "variant_picker",
