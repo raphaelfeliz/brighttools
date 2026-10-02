@@ -45,9 +45,9 @@
           "type": "mar26_short_description",
           "settings": {
             "description": "<p>{{ product.metafields.custom.short_description.value }}</p>",
-            "highlight_1": "<p>{{ product.metafields.custom.mar26_highlight_1.value }}</p>",
-            "highlight_2": "<p>{{ product.metafields.custom.mar26_highlight_2.value }}</p>",
-            "highlight_3": "<p>{{ product.metafields.custom.mar26_highlight_3.value }} </p>",
+            "highlight_1": "<p>{{ product.metafields.custom.mar26_highlight_1.value }}XL for greater floor coverage</p>",
+            "highlight_2": "<p>{{ product.metafields.custom.mar26_highlight_2.value }}Fits any broom, squeegee or mop</p>",
+            "highlight_3": "<p>{{ product.metafields.custom.mar26_highlight_3.value }} Long lasting fresh scent</p>",
             "icon_color": "#e11d48",
             "background_color": "#efefef"
           }
@@ -81,7 +81,6 @@
         },
         "description": {
           "type": "description",
-          "disabled": true,
           "settings": {
             "icon": "none",
             "icon_width": 20,
@@ -154,6 +153,7 @@
       "block_order": [
         "heading_6VXJqE"
       ],
+      "disabled": true,
       "name": "Video",
       "settings": {
         "full_width": false,
@@ -196,7 +196,7 @@
           "type": "video",
           "settings": {
             "video": "{{ product.metafields.custom.media_text_box_2_video.value }}",
-            "external_video_url": "https://www.youtube.com/watch?v=oDjHs1ZLcss",
+            "external_video_url": "https://www.youtube.com/watch?v=BHNXU-ecLlg&t=8s",
             "autoplay": true,
             "media_width": 55,
             "media_position": "end",
@@ -205,7 +205,7 @@
             "icon_width": 32,
             "subheading": "",
             "title": "",
-            "content": "<p>{{ product.metafields.custom.media_text_box_2_rich_text | metafield_tag }}</p><h4>🧹 Sweep & Squeegee in One</h4><h4></h4><h4>🔄 Reaches Tight Spaces</h4><h4></h4><h4>💪 Tough & Surface-Safe</h4><p></p><p>Clean faster with one tool built for every mess.<br/>Strong, versatile, and made to last — the Tyroler 2-in-1 is a cleaning essential.</p>",
+            "content": "{{ product.metafields.custom.media_text_box_2_rich_text | metafield_tag }}<h4>🧹 Sweep & Squeegee in One</h4><h4></h4><h4>🔄 Reaches Tight Spaces</h4><h4></h4><h4>💪 Tough & Surface-Safe</h4><p></p><p>Clean faster with one tool built for every mess.<br/>Strong, versatile, and made to last — the Tyroler 2-in-1 is a cleaning essential.</p>",
             "link_text": "",
             "link_url": "",
             "background": "#0f172a",
@@ -230,57 +230,169 @@
     "faq": {
       "type": "faq",
       "blocks": {
+        "item_bpzjdN": {
+          "type": "item",
+          "settings": {
+            "title": "What are the scents like and which scent is the nicest?",
+            "content": "<p>This is a question of personal taste! All of the scents are pleasant and will leave your space smelling fresh.&nbsp;The Sano Fresh Home range is likened to a fresh hotel lobby type scent, Sano Ultra Fresh is like a fabric softener type of scent, whereas BioVibe has a natural citrus type scent.</p>"
+          }
+        },
+        "item_Ct8RJV": {
+          "type": "item",
+          "settings": {
+            "title": "What is the most ideal floor cleaning solution for small spaces such as caravans / tiny homes / bathrooms?",
+            "content": "<p>The Compact Squeegee Pack! It comes with our narrowest 30cm Squeegee with knuckle-joint that can easily manoeuver around tight spaces. The Squeegee has a 4-part handle, which can be disassembled for easy storage.&nbsp;</p>"
+          }
+        },
+        "item_6WmCHE": {
+          "type": "item",
+          "settings": {
+            "title": "Are your Wipes Environmentally friendly / biodegradable /compostable?",
+            "content": "<p>Our new plant-based range BioVibe is made with natural biodegradable fibres, is 100% plastic-free and its packaging is recyclable.&nbsp;</p>"
+          }
+        },
+        "item_DnVQWp": {
+          "type": "item",
+          "settings": {
+            "title": "Are the Wipes made to replace a deep clean?",
+            "content": "<p>No. The Wipes are for daily floor cleaning maintenance. Whilst many of our customers do use the Wipes in place of a regular floor mop, we recommend our Microfibre Silicone Mop in addition to the Wipes for a weekly deep clean.</p>"
+          }
+        },
+        "item_aL8hKr": {
+          "type": "item",
+          "settings": {
+            "title": "Do the Wipes have a chemical odour?",
+            "content": "<p>Our answer is no, however as with all fragrances, they are a<br/>matter of personal taste. Our Wipes have been trialled and tested and the feedback from our customers is that they love the smell of our<br/>Wipes. The strength of the fragrances fade a short time after application and leave a pleasant and fresh odour in the space. Our plant-based range BioVibe is only lightly scented with a natural citrus blend.</p>"
+          }
+        },
+        "item_BEC4yr": {
+          "type": "item",
+          "settings": {
+            "title": "Do you have any fragrance-free Wipes?",
+            "content": "<p>No, not at this stage. Our Wipes have been trialled and tested for many years and the scents have been perfected based on our customers’ feedback. The strength of the fragrances diminish a short time after application and leave a pleasant and fresh odour in the space. Our plant-based range BioVibe is lightly scented with a natural citrus blend.</p>"
+          }
+        },
+        "item_XWmjFa": {
+          "type": "item",
+          "settings": {
+            "title": "How many Wipes are in a pack?",
+            "content": "<p>Each pack comes with 10 supersized wipes. You can also purchase one of our bundles and save (i.e. 3 Pack or 5 Pack Bundle)! We are currently working on a subscription platform, which will give you the opportunity to replenish your wipes according to need, offering substantial discounts.&nbsp;</p>"
+          }
+        },
+        "item_H4gYnh": {
+          "type": "item",
+          "settings": {
+            "title": "Do the Wipes leave residue?",
+            "content": "<p>No! Upon application the Wipes leave the floors moist, however will dry up in a few short minutes.</p>"
+          }
+        },
+        "item_rxmBkB": {
+          "type": "item",
+          "settings": {
+            "title": "How should I use BrightTools Quick Mop Floor Wipes?",
+            "content": "<p>Using BrightTools Wipes is super easy! Simply remove a wipe from the packaging, using the hole in the middle of the Wipe place it over the &nbsp;cleaning tool handle you are using and gently glide it over the surface you want to clean. For stubborn stains or spills, you can apply a bit of pressure. Once you're done, toss the used wipe in the trash. It's that simple!</p>"
+          }
+        },
+        "item_hDtf3V": {
+          "type": "item",
+          "settings": {
+            "title": "Can I use the floor Wipes for other surfaces besides floors?",
+            "content": "<p>Absolutely! While our wet floor wipes are primarily designed for floors, they can also be used on other surfaces. Feel free to use them on countertops, tables, and other hard surfaces that need a quick and effective clean. Just make sure to follow the instructions and test a small area first.</p>"
+          }
+        },
+        "item_aFAz6w": {
+          "type": "item",
+          "settings": {
+            "title": "Are the scents overwhelming?",
+            "content": "<p>The scents of the Sano floor Wipes are quite strong when initially applied, however the strength of the odour begin to fade over time and leave a pleasant and fresh odour in the space.&nbsp;Our plant-based range BioVibe is lightly scented with a natural citrus blend.</p>"
+          }
+        },
+        "item_RLyMDE": {
+          "type": "item",
+          "settings": {
+            "title": "What are the benefits of the Quick Mop Floor Wipes cleaning system over traditional mopping?",
+            "content": "<p>Safer – no water or spills!</p><p>Easier – don’t need to bend, carry heavy buckers!</p><p>Effective & quick - can get behind fridge and under<br/>furniture without bending!</p><p>More hygienic – doesn’t continue to spread germs around the<br/>house, use after use!</p>"
+          }
+        },
+        "item_GXK397": {
+          "type": "item",
+          "settings": {
+            "title": "Where should I begin my clean?",
+            "content": "<p>Anywhere around the house, except for the bathroom! Begin cleaning in lounge room, dining room, kitchen, bedrooms and corridors before finishing off in bathroom. We recommend the bathroom as the last place to clean so that germs from the toilet don’t get spread around the house.&nbsp;</p>"
+          }
+        },
         "faq_1": {
           "type": "item",
           "settings": {
-            "title": "Is the Glider S-1 safe for high-rise windows?",
-            "content": "<p>Yes. Only open your window enough to place the outer half through. The included safety string keeps the Glider attached at all times. The magnets are strong enough to hold firm even in wind.</p>"
+            "title": "How can I make the most of my clean?",
+            "content": "<p>Clean until you find that the Wipe is dry and or dirty, and then flip the tool 360 degrees to use the other side of the wipe. Once both<br/>sides are dirty, you can remove the Wipe completely and put it back over the handle inside-out to use the other side. If you feel that the Wipe is too dry, but not yet dirty, you can also run the Wipe briefly under water to further moisten it.</p>"
           }
         },
         "faq_2": {
           "type": "item",
           "settings": {
-            "title": "How do I clean the outside if I can't reach it?",
-            "content": "<p>Spray cleaning solution along the window edge nearest to you. As you glide the S-1, the blades spread the solution across the entire surface. You can also pre-wet the microfibre cloths before attaching them.</p>"
+            "title": "Do the Wipes leave the floors wet / slippery?",
+            "content": "<p>Upon application the Wipes leave the floors moist, however will dry up in a few short minutes and will not leave the floors slippery.&nbsp;</p>"
           }
         },
         "faq_3": {
           "type": "item",
           "settings": {
-            "title": "What window thickness does the S-1 support?",
-            "content": "<p>Single-glazed windows from 2mm to 8mm thick. If you're unsure of your window thickness, check our measurement guide for step-by-step instructions.</p>"
+            "title": "What makes Quick Mop Floor Wipes superior to other wipes on the market?",
+            "content": "<p>Our Wipes are supersized to cover more floor surface, have the perfect amount of moisture, and smell awesome! Our Wipes have an in-built hole in the middle to slot over any cleaning tool handle. To put it simply, our Wipes are a step above the rest, and will leave your floors looking and smelling fresh in moments.&nbsp;</p>"
           }
         },
         "faq_4": {
           "type": "item",
           "settings": {
-            "title": "How long do the microfibre cloths last?",
-            "content": "<p>Each cloth can be washed and reused up to 300 times with zero loss in cleaning performance.</p>"
+            "title": "Can the Wipes be used on the cleaning tool I already have at home?",
+            "content": "<p>Yes! Our Quick Mop Floor Wipes can be placed over the handle of the broom / squeegee you already have at home. However, for ultimate results, we suggest them to be paired with our BrightTools range of Brooms and or Squeegees.</p>"
           }
         },
         "faq_5": {
           "type": "item",
           "settings": {
-            "title": "Is this the genuine Glider?",
-            "content": "<p>Yes. This is the original Glider by Tyroler Bright Tools with a 2-year warranty and 30-day money-back guarantee. Beware of low-quality imitation products which look the same but use inferior magnets and materials.</p>"
+            "title": "Are the Wipes safe for my pets and or children?",
+            "content": "<p>Yes! Our Wipes have been trialled and tested for many years and are made from a special mix of ingredients that are safe to use around animals and children. If you have a pet and or child who are sensitive to chemicals, we suggest removing the pet and or child from the space whilst using the Wipes and waiting a few minutes for the floors to dry before bringing them<br/>back into the room. If you are concerned you can also check out our plant-based range BioVibe, which is made from natural biodegradable fibres, lightly scented with a natural citrus blend and is dermatologically tested.&nbsp;</p>"
+          }
+        },
+        "item_GfnQf8": {
+          "type": "item",
+          "settings": {
+            "title": "Can I use the Poliwix on tiles or other floor types that aren’t wooden?",
+            "content": "<p>Yes! Out of our range of Wipes, Poliwix were crafted with a special mix of ingredients that maintain the natural shine of the wood and are most effective for cleaning wooden floors. However, they will work effectively on other floor types too (tiles, parquet, cement, etc). At the same time, many customers use our other scents for wooden floors, and are very happy with the results too.&nbsp;</p>"
           }
         }
       },
       "block_order": [
+        "item_bpzjdN",
+        "item_Ct8RJV",
+        "item_6WmCHE",
+        "item_DnVQWp",
+        "item_aL8hKr",
+        "item_BEC4yr",
+        "item_XWmjFa",
+        "item_H4gYnh",
+        "item_rxmBkB",
+        "item_hDtf3V",
+        "item_aFAz6w",
+        "item_RLyMDE",
+        "item_GXK397",
         "faq_1",
         "faq_2",
         "faq_3",
         "faq_4",
-        "faq_5"
+        "faq_5",
+        "item_GfnQf8"
       ],
       "settings": {
         "full_width": true,
         "subheading": "",
-        "title": "Common Questions",
-        "content": "<p>Use this text to share information about your product or shipping policies.</p>",
+        "title": "Have a question?",
+        "content": "",
         "team_avatar_width": 160,
-        "support_hours": "Our customer support is available Monday to Friday: 8am-8:30pm.",
-        "answer_time": "Average answer time: 24h",
+        "support_hours": "Need a little more help? If you need any further information, our team is always happy to help. Simply email us at info@brighttools.com.au",
+        "answer_time": "",
         "button_text": "",
         "button_url": "",
         "text_position": "center",
@@ -320,8 +432,8 @@
             "color_text_2": "#f81b27",
             "top_title": "ZERO",
             "gradient_title": "RISK",
-            "subtitle_1": "PRO-GRADE TOOLS",
-            "subtitle_2": "for everyday messes."
+            "subtitle_1": "LOVE IT OR SEND IT BACK",
+            "subtitle_2": "we make returns simple."
           }
         },
         "highlight_card_p8UcQ6": {
@@ -331,10 +443,10 @@
             "bg_color": "#000000",
             "color_text_1": "#ffffff",
             "color_text_2": "#f81b27",
-            "top_title": "WORRY",
-            "gradient_title": "FREE",
-            "subtitle_1": "PRO-GRADE TOOLS",
-            "subtitle_2": "for everyday messes."
+            "top_title": "FULLY",
+            "gradient_title": "COVERED",
+            "subtitle_1": "FULL 2 YEAR WARRANTY",
+            "subtitle_2": "on all tools."
           }
         }
       },
@@ -422,26 +534,24 @@
     "mar26_whats_included_hwC8XQ": {
       "type": "mar26-whats-included",
       "blocks": {
-        "item_mPaejM": {
+        "item_6YK7ta": {
           "type": "item",
           "settings": {
-            "product": "adjustable-dust-blade-rubber-broom-squeegee",
-            "title": "Japanese Silicone Broom (30cm)",
-            "description": "<p>100% silicone bristles create static electricity to quickly gather dust, hair, and crumbs.</p>",
-            "spec_1": "Adjustable Knuckle Joint",
-            "spec_2": "Furniture-Safe Soft Edge",
+            "product": "bright-broom-bundle-blue-edition",
+            "title": "Bright Broom Bundle - Blue Edition",
+            "spec_1": "",
+            "spec_2": "",
             "spec_3": "",
             "accent_color": "#e2e8f0"
           }
         },
-        "item_6YK7ta": {
+        "item_mPaejM": {
           "type": "item",
           "settings": {
-            "product": "",
-            "title": "Silicone Squeegee (30cm)",
-            "description": "<p>Single cast 100% silicone for extreme durability without flimsy rubber strips.</p>",
-            "spec_1": "Multi-surface Use",
-            "spec_2": "Zero Water Streaks",
+            "product": "toilet-cleaner-for-the-water-tank-2-pack-copy",
+            "title": "Toilet Cleaner - 3 Pack",
+            "spec_1": "Adjustable Knuckle Joint",
+            "spec_2": "",
             "spec_3": "",
             "accent_color": "#e2e8f0"
           }
@@ -449,9 +559,8 @@
         "item_7krkje": {
           "type": "item",
           "settings": {
-            "product": "",
-            "title": "Stick-to-floor Dustpan",
-            "description": "<p>Crafted from a single piece of high-quality silicone that sticks entirely to the floor.</p>",
+            "product": "professional-microfiber-cloth-2pk-xxl-80cmx60cm",
+            "title": "Quick Mop Microfibre Floor Cloths - 2 Pack",
             "spec_1": "Sweep without holding",
             "spec_2": "Attaches to handles",
             "spec_3": "",
@@ -460,10 +569,10 @@
         },
         "item_XfYzVT": {
           "type": "item",
+          "disabled": true,
           "settings": {
             "product": "",
             "title": "Quick Mop Floor Wipes",
-            "description": "<p>Supersized wet wipes safe for all floors. Poke the broom handle through and polish.</p>",
             "spec_1": "5 Awesome Scents",
             "spec_2": "Instantly discard after use",
             "spec_3": "",
@@ -472,20 +581,20 @@
         }
       },
       "block_order": [
-        "item_mPaejM",
         "item_6YK7ta",
+        "item_mPaejM",
         "item_7krkje",
         "item_XfYzVT"
       ],
       "name": "MAR26 What's Included",
       "settings": {
-        "pre_title": "Complete System",
+        "pre_title": "",
         "pre_title_color": "#2563eb",
-        "black_title": "What's",
-        "gradient_title": "Included?",
+        "black_title": "COMPLETE YOUR",
+        "gradient_title": "CLEAN?",
         "gradient_left_color": "#f43f5e",
         "gradient_right_color": "#be123c",
-        "subheading": "Everything you need for an effortless, water-saving clean on the road.",
+        "subheading": "Add these to make cleaning easier.",
         "columns": "4",
         "outline_color": "#e2e8f0"
       }
@@ -493,11 +602,24 @@
     "mar26_testimonials": {
       "type": "mar26-testimonials",
       "blocks": {
+        "testimonial_7UWRch": {
+          "type": "testimonial",
+          "settings": {
+            "product": "japanese-silicone-broom-30cm-knuckle-joint",
+            "product_name": "",
+            "custom_link": "",
+            "author": "James Anderson",
+            "country": "australia",
+            "content": "<p>The Japanese Rubber Broom changed how I handle large floor areas. It's indispensable.</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
         "testi_1": {
           "type": "testimonial",
           "settings": {
-            "product": "",
-            "product_name": "",
+            "product": "glider-d-4-afc-magnetic-window-cleaner-2-40mm",
+            "product_name": "Glider D-4 AFC",
             "custom_link": "",
             "author": "David R.",
             "country": "australia",
@@ -522,8 +644,8 @@
         "testi_3": {
           "type": "testimonial",
           "settings": {
-            "product": "",
-            "product_name": "",
+            "product": "high-window-cleaner",
+            "product_name": "Telescopic High Window Cleaner",
             "custom_link": "",
             "author": "Peter K.",
             "country": "australia",
@@ -534,6 +656,7 @@
         }
       },
       "block_order": [
+        "testimonial_7UWRch",
         "testi_1",
         "testi_2",
         "testi_3"
@@ -546,10 +669,28 @@
     "mar26_best_sellers": {
       "type": "mar26-best-sellers",
       "blocks": {
+        "product_gB36Pp": {
+          "type": "product",
+          "settings": {
+            "product": "high-window-cleaner"
+          }
+        },
+        "product_Yk99aP": {
+          "type": "product",
+          "settings": {
+            "product": "handheld-silicone-squeegee-copy"
+          }
+        },
+        "product_VGcrm7": {
+          "type": "product",
+          "settings": {
+            "product": "home-cleaning-bundle"
+          }
+        },
         "prod_1": {
           "type": "product",
           "settings": {
-            "product": "bright-broom-bundle-blue-edition"
+            "product": "bright-broom-bundle-broom-squeegee-1pk-quick-mop-floor-wipes"
           }
         },
         "prod_2": {
@@ -563,19 +704,15 @@
           "settings": {
             "product": "adjustable-dust-blade-rubber-broom-squeegee"
           }
-        },
-        "prod_4": {
-          "type": "product",
-          "settings": {
-            "product": "jet-all-purpose-cleaning-spray-with-vinegar-and-lavender-copy"
-          }
         }
       },
       "block_order": [
+        "product_gB36Pp",
+        "product_Yk99aP",
+        "product_VGcrm7",
         "prod_1",
         "prod_2",
-        "prod_3",
-        "prod_4"
+        "prod_3"
       ],
       "settings": {
         "badge_text": "Bright On - Dust Off",

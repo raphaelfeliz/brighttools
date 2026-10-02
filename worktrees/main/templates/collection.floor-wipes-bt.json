@@ -78,6 +78,27 @@
             "text_color": "#1e293b"
           }
         },
+        "category_banner_JeaRXU": {
+          "type": "category_banner",
+          "settings": {
+            "selected_products": [
+              "biovibe-botanic-all-purpose-wipes",
+              "biovibe-complete-wipes-bundle",
+              "biovibe-degreasing-wipes",
+              "quick-mop-floor-wipes-biovibe-plant-based",
+              "biovibe-window-wipes",
+              "bright-broom-bundle-broom-squeegee-1pk-quick-mop-floor-wipes",
+              "bright-broom-bundle-blue-edition",
+              "bright-squeegee-pack-squeegee-quick-mop-floor-wipes",
+              "bright-squeegee-pack-copy"
+            ],
+            "pre_title": "PLANT-BASED",
+            "title": "BioVibe",
+            "description": "",
+            "bg_color": "#f8fbff",
+            "text_color": "#1e293b"
+          }
+        },
         "quick_cloth": {
           "type": "category_banner",
           "settings": {
@@ -86,7 +107,7 @@
               "professional-microfiber-cloth-2pk-xxl-80cmx60cm"
             ],
             "pre_title": "QUICK MOP",
-            "title": "Microfiber Cloths",
+            "title": "Microfibre Cloths",
             "description": "",
             "bg_color": "#faf8fc",
             "text_color": "#1e293b"
@@ -142,6 +163,7 @@
         "floor_wipes",
         "starter_kits",
         "bundles",
+        "category_banner_JeaRXU",
         "quick_cloth",
         "caravan",
         "home"

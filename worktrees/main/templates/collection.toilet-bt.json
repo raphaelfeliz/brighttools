@@ -31,7 +31,8 @@
               "antibacterial-toilet-brush-white",
               "toilet-cleaner-for-the-water-tank-green-copy",
               "hygienic-toilet-cleaner-for-the-water-tank-blue",
-              "hygienic-toilet-cleaner-for-the-water-tank-green"
+              "hygienic-toilet-cleaner-for-the-water-tank-green",
+              "toilet-cleaner-for-the-water-tank-2-pack-copy"
             ],
             "pre_title": "Toilet Brush Sets & Cleaners",
             "title": "Toilet Cleaners",
@@ -735,6 +736,9 @@
         "testimonial_agixfB": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "James Anderson",
             "country": "australia",
             "content": "<p>The Japanese Rubber Broom changed how I handle large floor areas. It's indestructible.</p>",
@@ -745,6 +749,9 @@
         "testimonial_KAnGUX": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "Sarah Jenkins",
             "country": "new_zealand",
             "content": "<p>I've tried every cleaner on the market, but the Glider S-1 is the only one that delivers.</p>",
@@ -755,6 +762,9 @@
         "testimonial_dARCyM": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "Emma Watson",
             "country": "australia",
             "content": "<p>If you have a dog that sheds, you need these tools. It literally pulls fur out of carpets.</p>",
@@ -765,6 +775,9 @@
         "testimonial_zm3YtV": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "Michael Chen",
             "country": "australia",
             "content": "<p>The build quality is industrial-grade. Durability is honestly unmatched.</p>",
@@ -775,6 +788,9 @@
         "testimonial_DbHRyQ": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "David Ross",
             "country": "new_zealand",
             "content": "<p>The Caravan Kit is brilliant. No buckets, no mess, stores away perfectly.</p>",
