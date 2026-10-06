@@ -1,9 +1,9 @@
 {%- comment -%}
 ----------------------------------------------------------------------------------------------------------------------
 file-summary: Custom fork of product info for MAR26 layout. Handles rendering of product blocks with specific overrides.
-version-name: Suppress Dealasy App Blocks
-version-number: 2.6.0
-version-summary: Suppressed Dealasy app block rendering with restore reference commit c4b3a3d.
+version-name: Hide Mobile Quantity Stepper
+version-number: 2.7.0
+version-summary: Hid quantity selector stepper on mobile while preserving it on desktop.
 # Previous commit containing original Dealasy code/state: c4b3a3d
 ----------------------------------------------------------------------------------------------------------------------
 {%- endcomment -%}
@@ -315,10 +315,7 @@ version-summary: Suppressed Dealasy app block rendering with restore reference c
                 margin-bottom: 0 !important;
               }
               .mar26-quantity-inline-row .form-control {
-                flex: 1 1 auto !important;
-                display: flex !important;
-                flex-direction: column !important;
-                align-items: flex-start !important;
+                display: none !important;
                 margin: 0 !important;
                 padding: 0 !important;
               }
@@ -408,8 +405,13 @@ version-summary: Suppressed Dealasy app block rendering with restore reference c
                   gap: 0.5rem !important;
                 }
                 .mar26-quantity-inline-row .form-control {
+                  display: flex !important;
+                  flex-direction: column !important;
+                  align-items: flex-start !important;
                   flex: 0 0 auto !important;
                   justify-content: flex-end !important;
+                  margin: 0 !important;
+                  padding: 0 !important;
                 }
                 .mar26-quantity-inline-row .quantity-selector {
                   width: auto !important;
