@@ -41,6 +41,25 @@
             "show_taxes_notice": false
           }
         },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch"
+          }
+        },
+        "inventory": {
+          "type": "inventory",
+          "settings": {
+            "low_inventory_threshold": 25
+          }
+        },
+        "quantity_selector_dgjkJg": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
         "mar26_short_description_tARAbB": {
           "type": "mar26_short_description",
           "settings": {
@@ -67,10 +86,6 @@
             "font_weight": "900"
           }
         },
-        "quantity_selector_dgjkJg": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
         "dealeasy_mm_bundle_builder_dCNcYL": {
           "type": "shopify://apps/dealeasy/blocks/mm-bundle-builder/e47a8634-0496-480d-9e46-6f7fafd34b30",
           "disabled": true,
@@ -87,15 +102,6 @@
             "collapse_content": false
           }
         },
-        "variant_picker": {
-          "type": "variant_picker",
-          "settings": {
-            "hide_sold_out_variants": false,
-            "stack_blocks": true,
-            "selector_style": "block",
-            "swatch_selector_style": "swatch"
-          }
-        },
         "buy_buttons_KpKVCY": {
           "type": "buy_buttons",
           "disabled": true,
@@ -104,25 +110,19 @@
             "atc_button_background": "#000000",
             "atc_button_text_color": "#000000"
           }
-        },
-        "inventory": {
-          "type": "inventory",
-          "settings": {
-            "low_inventory_threshold": 25
-          }
         }
       },
       "block_order": [
         "mar26_title_and_tags_5z3hZR",
         "judge_me_reviews_preview_badge_kG7NLt",
         "price",
+        "variant_picker",
         "inventory",
         "quantity_selector_dgjkJg",
         "mar26_short_description_tARAbB",
         "mar26_gradient_title_RMQCET",
         "dealeasy_mm_bundle_builder_dCNcYL",
         "description",
-        "variant_picker",
         "buy_buttons_KpKVCY"
       ],
       "settings": {
