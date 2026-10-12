@@ -56,6 +56,10 @@
             "low_inventory_threshold": 25
           }
         },
+        "selleasy_lb_upsell_widget_pal_mCVBx9": {
+          "type": "shopify://apps/selleasy/blocks/lb-upsell-widget-pal/790c1a03-a71f-4bc1-9869-00dad526d3c2",
+          "settings": {}
+        },
         "quantity_selector_dgjkJg": {
           "type": "quantity_selector",
           "settings": {}
@@ -118,6 +122,7 @@
         "price",
         "variant_picker",
         "inventory",
+        "selleasy_lb_upsell_widget_pal_mCVBx9",
         "quantity_selector_dgjkJg",
         "mar26_short_description_tARAbB",
         "mar26_gradient_title_RMQCET",

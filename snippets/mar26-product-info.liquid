@@ -1,9 +1,9 @@
 {%- comment -%}
 ----------------------------------------------------------------------------------------------------------------------
 file-summary: Custom fork of product info for MAR26 layout. Handles rendering of product blocks with specific overrides.
-version-name: Mobile Volume Discount Selector Flex Order Fix
-version-number: 3.6.1
-version-summary: Removed order: 4 override on lb-vd-qty-selector in mar26-main-product.liquid and enforced order: -1 inside mar26-inline-buy-buttons across mobile and desktop.
+version-name: Position Selleasy Add-On Upsell Widget Above Buy Buttons
+version-number: 3.7.0
+version-summary: Extended inline buy button flex ordering and contents rules to include lb-upsell-widget and lb-widget-pal so add-ons stack above the buy buttons on desktop and mobile.
 # Previous commit containing original Dealasy code/state: c4b3a3d
 ----------------------------------------------------------------------------------------------------------------------
 {%- endcomment -%}
@@ -441,7 +441,11 @@ version-summary: Removed order: 4 override on lb-vd-qty-selector in mar26-main-p
                 min-height: auto !important;
               }
               .mar26-quantity-inline-row lb-vd-qty-selector,
-              .mar26-quantity-inline-row .mar26-inline-buy-buttons lb-vd-qty-selector {
+              .mar26-quantity-inline-row .mar26-inline-buy-buttons lb-vd-qty-selector,
+              .mar26-quantity-inline-row lb-upsell-widget,
+              .mar26-quantity-inline-row .mar26-inline-buy-buttons lb-upsell-widget,
+              .mar26-quantity-inline-row .lb-widget-pal,
+              .mar26-quantity-inline-row .mar26-inline-buy-buttons .lb-widget-pal {
                 order: -1 !important;
                 width: 100% !important;
                 flex: 0 0 100% !important;
@@ -478,10 +482,10 @@ version-summary: Removed order: 4 override on lb-vd-qty-selector in mar26-main-p
                   margin: 0 !important;
                   padding: 0 !important;
                 }
-                .mar26-quantity-inline-row .mar26-inline-buy-buttons:has(lb-vd-qty-selector) {
+                .mar26-quantity-inline-row .mar26-inline-buy-buttons:has(lb-vd-qty-selector, lb-upsell-widget, .lb-widget-pal) {
                   display: contents !important;
                 }
-                .mar26-quantity-inline-row .mar26-inline-buy-buttons:has(lb-vd-qty-selector) > form {
+                .mar26-quantity-inline-row .mar26-inline-buy-buttons:has(lb-vd-qty-selector, lb-upsell-widget, .lb-widget-pal) > form {
                   flex: 1 1 0% !important;
                   min-width: 0 !important;
                 }
