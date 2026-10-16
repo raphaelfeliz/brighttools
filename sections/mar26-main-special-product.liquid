@@ -1,10 +1,7 @@
 <!-- 
   MAR26 SPECIAL PRODUCT HERO SHELL 
-  Version: 0.0.8 - "Sync Audit Reconciliation"
-  - Added: Dynamic Price Rendering (Hero Position)
-  - Added: Compare-at Price Support (Sale Logic)
-  - Locked: Primary Button to Anchor Link (#bundle-breakdown)
-  - Refined: Price styling for maximum visual impact (Montserrat 900)
+  Version: 0.1.2 - "Enforce Hero CTA Button Height and Pill Geometry"
+  - Updated: Scoped hero CTA buttons (.mar26-hero-btn) with explicit 55px height, 3.75rem border radius, and !important to prevent global foundation overrides
 -->
 
 {{ 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap' | stylesheet_tag }}
@@ -102,23 +99,52 @@
     .mar26-pre-title { margin-bottom: 0.4rem; }
   }
 
+  .mar26-title-row {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .mar26-title-row {
+      margin-bottom: 0.6rem;
+    }
+  }
+
   .mar26-title {
     font-size: clamp(2.5rem, 8vw, 4.5rem);
     font-weight: 900;
     line-height: 0.9;
     text-transform: uppercase;
     letter-spacing: -0.04em;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
   }
 
   @media (min-width: 768px) {
     .mar26-title {
       font-size: clamp(1.8rem, 4.5vw, 3rem);
-      margin-bottom: 0.6rem;
     }
   }
   .mar26-title span.slate { color: var(--mar26-slate); }
   .mar26-title span.pink { color: var(--mar26-pink); }
+
+  .mar26-hero-warranty-badge {
+    transform: rotate(15deg);
+    width: 150px;
+    max-width: 35vw;
+    height: auto;
+    object-fit: contain;
+    pointer-events: none;
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 768px) {
+    .mar26-hero-warranty-badge {
+      width: 180px;
+      max-width: none;
+    }
+  }
 
   .mar26-description {
     font-weight: 700;
@@ -170,7 +196,7 @@
   .mar26-hero-actions {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.875rem;
     width: 100%;
     max-width: 500px;
   }
@@ -179,42 +205,50 @@
     .mar26-hero-actions { flex-direction: row; }
   }
 
+  .mar26-special-hero .mar26-hero-btn,
   .btn-mar26 {
     flex: 1;
-    height: 3.75rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 14px;
-    font-weight: 900;
-    font-size: 15px;
-    text-transform: uppercase;
-    text-decoration: none;
+    height: 55px !important;
+    min-height: 55px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 3.75rem !important;
+    font-weight: 900 !important;
+    font-size: 15px !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     gap: 0.75rem;
     white-space: nowrap;
-    padding: 0 1.5rem;
+    padding: 0 1.5rem !important;
+    box-sizing: border-box !important;
+    line-height: normal !important;
   }
 
   @media (min-width: 768px) {
+    .mar26-special-hero .mar26-hero-btn,
     .btn-mar26 {
-      height: 3rem;
-      font-size: 13px;
-      border-radius: 10px;
-      padding: 0 1rem;
+      height: 55px !important;
+      min-height: 55px !important;
+      font-size: 14px !important;
+      border-radius: 3.75rem !important;
+      padding: 0 1.25rem !important;
     }
   }
 
   .btn-primary {
-    background: white;
-    color: var(--mar26-red);
+    background: white !important;
+    color: var(--mar26-red) !important;
+    border: none !important;
     box-shadow: 0 12px 24px -6px rgba(0,0,0,0.2);
   }
 
   .btn-secondary {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
+    background: transparent !important;
+    color: white !important;
+    border: 2px solid white !important;
   }
 
   .btn-icon { width: 22px; height: 22px; flex-shrink: 0; }
@@ -280,11 +314,21 @@
         </div>
       {% endif %}
 
-      <h1 class="mar26-title">
-        {{ section.settings.title_line_1 }}<br>
-        <span class="slate">{{ section.settings.title_line_2 }}</span><br>
-        <span class="pink">{{ section.settings.title_line_3 }}</span>
-      </h1>
+      <div class="mar26-title-row">
+        <h1 class="mar26-title">
+          {{ section.settings.title_line_1 }}<br>
+          <span class="slate">{{ section.settings.title_line_2 }}</span><br>
+          <span class="pink">{{ section.settings.title_line_3 }}</span>
+        </h1>
+        <img
+          src="{{ '2-year-warranty.png' | file_img_url: '400x' }}"
+          alt="2-Year Warranty"
+          class="mar26-hero-warranty-badge"
+          loading="eager"
+          width="180"
+          height="180"
+        >
+      </div>
 
       {% if section.settings.description != blank %}
         <p class="mar26-description">
@@ -310,11 +354,11 @@
       </div>
 
       <div class="mar26-hero-actions">
-         <a href="#addon-section" class="btn-mar26 btn-primary">
+         <a href="#addon-section" class="btn-mar26 mar26-hero-btn btn-primary">
             <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
             {{ section.settings.btn_primary_text | default: "Get Your Bundle" }}
          </a>
-         <a href="#bundle-breakdown" class="btn-mar26 btn-secondary">
+         <a href="#bundle-breakdown" class="btn-mar26 mar26-hero-btn btn-secondary">
             <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
             {{ section.settings.btn_secondary_text | default: "Included" }}
          </a>

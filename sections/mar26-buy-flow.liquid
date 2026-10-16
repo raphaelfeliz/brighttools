@@ -1,8 +1,9 @@
 {%- comment -%}
 ----------------------------------------------------------------------------------------------------------------------
 MAR26 BUY FLOW SECTION (ADD-ONS & CHECKOUT)
-VERSION: 0.3.0 (Spacing Refinement)
+VERSION: 0.6.0 (Revert Badge to Hero)
 Dedicated section for the "Save Extra 15%" widget and multi-item checkout flow.
+- Reverted: Warranty badge relocated to Hero section per design request
 ----------------------------------------------------------------------------------------------------------------------
 {%- endcomment -%}
 
@@ -260,7 +261,7 @@ Dedicated section for the "Save Extra 15%" widget and multi-item checkout flow.
     color: white;
     border: none;
     border-radius: 100px;
-    height: 55px;
+    height: 52px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -316,13 +317,7 @@ Dedicated section for the "Save Extra 15%" widget and multi-item checkout flow.
           {%- assign addon_product = block.settings.product -%}
           {%- if addon_product != blank -%}
             {%- assign addon_variant = addon_product.selected_or_first_available_variant -%}
-            <div class="mar26-addon-card" {{ block.shopify_attributes }} onclick="this.querySelector('.mar26-addon-toggle').click()">
-              <div class="mar26-checkbox-wrapper">
-                <input type="checkbox" class="mar26-addon-toggle" 
-                  data-variant-id="{{ addon_variant.id }}"
-                  onclick="event.stopPropagation()">
-              </div>
-              
+            <div class="mar26-addon-card" data-variant-id="{{ addon_variant.id }}" {{ block.shopify_attributes }}>
               <div class="mar26-addon-image-box">
                 <img src="{{ addon_product.featured_image | img_url: '128x128', crop: 'center' }}" alt="{{ addon_product.title }}" loading="lazy">
               </div>
@@ -331,7 +326,7 @@ Dedicated section for the "Save Extra 15%" widget and multi-item checkout flow.
                 <h3 class="mar26-addon-title">{{ addon_product.title }}</h3>
                 <div class="mar26-qty-wrap" onclick="event.stopPropagation()">
                   <button class="mar26-qty-btn" type="button" onclick="mar26UpdateQty(this, -1)">−</button>
-                  <span class="mar26-qty-val">1</span>
+                  <span class="mar26-qty-val">0</span>
                   <button class="mar26-qty-btn" type="button" onclick="mar26UpdateQty(this, 1)">+</button>
                 </div>
               </div>
@@ -382,7 +377,7 @@ Dedicated section for the "Save Extra 15%" widget and multi-item checkout flow.
           font-weight: 700 !important;
           text-transform: uppercase !important;
           font-size: 0.875rem !important;
-          height: 55px !important;
+          height: 52px !important;
           display: flex !important;
           align-items: center !important;
           justify-content: center !important;
@@ -430,24 +425,21 @@ Dedicated section for the "Save Extra 15%" widget and multi-item checkout flow.
 <script>
   function mar26UpdateQty(btn, delta) {
     const valEl = btn.parentElement.querySelector('.mar26-qty-val');
-    let val = parseInt(valEl.innerText);
-    val = Math.max(1, val + delta);
+    let val = parseInt(valEl.innerText) || 0;
+    val = Math.max(0, val + delta);
     valEl.innerText = val;
-    mar26UpdateCalculations();
-  }
 
-  // Toggle card class on checkbox change
-  document.querySelectorAll('.mar26-addon-toggle').forEach(input => {
-    input.addEventListener('change', () => {
-      const card = input.closest('.mar26-addon-card');
-      if (input.checked) {
+    const card = btn.closest('.mar26-addon-card');
+    if (card) {
+      if (val > 0) {
         card.classList.add('is-selected');
       } else {
         card.classList.remove('is-selected');
       }
-      mar26UpdateCalculations();
-    });
-  });
+    }
+
+    mar26UpdateCalculations();
+  }
 
   const BASE_PRODUCT_PRICE = {{ product.selected_or_first_available_variant.price | divided_by: 100.0 }};
   
@@ -455,15 +447,16 @@ Dedicated section for the "Save Extra 15%" widget and multi-item checkout flow.
     let subtotal = BASE_PRODUCT_PRICE;
     let addonDiscount = 0;
 
-    document.querySelectorAll('.mar26-addon-toggle:checked').forEach(toggle => {
-      const card = toggle.closest('.mar26-addon-card');
-      const qty = parseInt(card.querySelector('.mar26-qty-val').innerText);
-      const priceStr = card.querySelector('.mar26-price-new').innerText.replace(/[^0-9.]/g, '');
-      const price = parseFloat(priceStr);
-      
-      const lineTotal = price * qty;
-      subtotal += lineTotal;
-      addonDiscount += lineTotal * 0.15; // 15% discount on add-ons
+    document.querySelectorAll('.mar26-addon-card').forEach(card => {
+      const qtyEl = card.querySelector('.mar26-qty-val');
+      const qty = qtyEl ? parseInt(qtyEl.innerText) || 0 : 0;
+      if (qty > 0) {
+        const priceStr = card.querySelector('.mar26-price-new').innerText.replace(/[^0-9.]/g, '');
+        const price = parseFloat(priceStr);
+        const lineTotal = price * qty;
+        subtotal += lineTotal;
+        addonDiscount += lineTotal * 0.15; // 15% discount on add-ons
+      }
     });
 
     const total = subtotal - addonDiscount;
@@ -499,14 +492,17 @@ Dedicated section for the "Save Extra 15%" widget and multi-item checkout flow.
       quantity: 1
     });
 
-    // 2. Add Checked Add-ons
-    document.querySelectorAll('.mar26-addon-toggle:checked').forEach(toggle => {
-      const card = toggle.closest('.mar26-addon-card');
-      const qty = parseInt(card.querySelector('.mar26-qty-val').innerText);
-      items.push({
-        id: toggle.dataset.variantId,
-        quantity: qty
-      });
+    // 2. Add Checked Add-ons (any card with qty > 0)
+    document.querySelectorAll('.mar26-addon-card').forEach(card => {
+      const qtyEl = card.querySelector('.mar26-qty-val');
+      const qty = qtyEl ? parseInt(qtyEl.innerText) || 0 : 0;
+      const variantId = card.dataset.variantId;
+      if (qty > 0 && variantId) {
+        items.push({
+          id: variantId,
+          quantity: qty
+        });
+      }
     });
 
     try {
