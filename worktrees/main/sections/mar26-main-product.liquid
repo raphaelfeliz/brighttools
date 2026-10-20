@@ -3,9 +3,9 @@
 file-summary: MAR26 main product section. Drives MAR26 mobile ordering, gallery layout variables, and product info composition.
 
 # Version Block (SOP: Always update for real changes)
-version-name: Position scent and variant picker before add-on apps on desktop and mobile
-version-number: 3.12.0
-version-summary: Enforced variant picker order: 5 directly above add-on widgets (order: 6) on desktop and mobile, ensuring scent selectors display before upsell and bundle widgets.
+version-name: Position 3 selling points card directly under price on desktop and mobile
+version-number: 3.13.0
+version-summary: v3.13.0 - Position 3 selling points card (mar26_short_description) directly under price at order: 4 (desktop + mobile).
 
 # Change rationale:
 # - Normal state: Black background / White text.
@@ -109,7 +109,9 @@ version-summary: Enforced variant picker order: 5 directly above add-on widgets 
     #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="price"],
     #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26-quantity-price"],
     #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26_quantity_price"] { order: 3 !important; }
-    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="inventory"] { order: 4 !important; }
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="inventory"],
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26-short-description"],
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26_short_description"] { order: 4 !important; }
     #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="variant-picker"],
     #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="variant_picker"],
     #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="product-variations"],
@@ -127,8 +129,6 @@ version-summary: Enforced variant picker order: 5 directly above add-on widgets 
     #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="quantity_selector"],
     #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy-buttons"],
     #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy_buttons"] { order: 7 !important; }
-    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26-short-description"],
-    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26_short_description"],
     #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="description"] { order: 8 !important; }
     #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="separator"] { order: 9 !important; }
     #shopify-section-{{ section.id }} .product-info__block-item { order: 10; }
@@ -379,8 +379,10 @@ version-summary: Enforced variant picker order: 5 directly above add-on widgets 
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26-quantity-price"],
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26_quantity_price"] { order: 3 !important; }
 
-    /* Order 4: Inventory / In Stock */
-    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="inventory"] { order: 4 !important; }
+    /* Order 4: Inventory / In Stock & Selling Points */
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="inventory"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26-short-description"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26_short_description"] { order: 4 !important; }
 
     /* Order 5: Scent / Variant Picker (BEFORE Add-ons) */
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="variant-picker"],
@@ -409,8 +411,6 @@ version-summary: Enforced variant picker order: 5 directly above add-on widgets 
 
     /* Order 8: Details (Description) */
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="description"],
-    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26-short-description"],
-    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26_short_description"],
     #shopify-section-{{ section.id }} .product .mar26-description-card { order: 8 !important; }
 
     /* Secondary / Utility Blocks */
