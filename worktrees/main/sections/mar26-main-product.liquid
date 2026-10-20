@@ -3,9 +3,9 @@
 file-summary: MAR26 main product section. Drives MAR26 mobile ordering, gallery layout variables, and product info composition.
 
 # Version Block (SOP: Always update for real changes)
-version-name: Fix DealEasy App Block Flex Containment and Multi-Column Grid
-version-number: 3.11.0
-version-summary: Excluded DealEasy and Selleasy from Judge.me left-aligned flex rule. Forced block item and app block to 100% width block display, and set .lb-bb-products-wrap to responsive multi-column 1fr grid with centered cards.
+version-name: Position scent and variant picker before add-on apps on desktop and mobile
+version-number: 3.12.0
+version-summary: Enforced variant picker order: 5 directly above add-on widgets (order: 6) on desktop and mobile, ensuring scent selectors display before upsell and bundle widgets.
 
 # Change rationale:
 # - Normal state: Black background / White text.
@@ -109,21 +109,28 @@ version-summary: Excluded DealEasy and Selleasy from Judge.me left-aligned flex 
     #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="price"],
     #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26-quantity-price"],
     #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26_quantity_price"] { order: 3 !important; }
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="inventory"] { order: 4 !important; }
     #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="variant-picker"],
     #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="variant_picker"],
-    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="inventory"] { order: 4 !important; }
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="product-variations"],
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="product_variations"] { order: 5 !important; }
     #shopify-section-{{ section.id }} .product-info__block-item:has(.lb-widget-pal),
     #shopify-section-{{ section.id }} .product-info__block-item:has(lb-upsell-widget),
     #shopify-section-{{ section.id }} .product-info__block-item:has(lb-vd-qty-selector),
     #shopify-section-{{ section.id }} .product-info__block-item:has(#lb-bundle-builder),
-    #shopify-section-{{ section.id }} .product-info__block-item:has(lb-bundle-builder) { order: 4 !important; }
+    #shopify-section-{{ section.id }} .product-info__block-item:has(lb-bundle-builder),
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="vd-cards"],
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="dealeasy_vd_cards"],
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mm-bundle-builder"],
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="dealeasy_mm_bundle_builder"] { order: 6 !important; }
     #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="quantity-selector"],
     #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="quantity_selector"],
     #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy-buttons"],
-    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy_buttons"] { order: 5 !important; }
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy_buttons"] { order: 7 !important; }
     #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26-short-description"],
     #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26_short_description"],
-    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="description"],
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="description"] { order: 8 !important; }
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="separator"] { order: 9 !important; }
     #shopify-section-{{ section.id }} .product-info__block-item { order: 10; }
   }
 
@@ -375,7 +382,13 @@ version-summary: Excluded DealEasy and Selleasy from Judge.me left-aligned flex 
     /* Order 4: Inventory / In Stock */
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="inventory"] { order: 4 !important; }
 
-    /* Volume Discounts / Upsell Add-Ons / Quantity Tier Selectors (Above Buy Buttons) */
+    /* Order 5: Scent / Variant Picker (BEFORE Add-ons) */
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="variant-picker"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="variant_picker"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="product-variations"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="product_variations"] { order: 5 !important; }
+
+    /* Order 6: Volume Discounts / Upsell Add-Ons / Quantity Tier Selectors (Above Buy Buttons) */
     #shopify-section-{{ section.id }} .product lb-vd-qty-selector,
     #shopify-section-{{ section.id }} .product lb-upsell-widget,
     #shopify-section-{{ section.id }} .product lb-bundle-builder { order: -1 !important; }
@@ -386,22 +399,22 @@ version-summary: Excluded DealEasy and Selleasy from Judge.me left-aligned flex 
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="vd-cards"],
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="dealeasy_vd_cards"],
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mm-bundle-builder"],
-    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="dealeasy_mm_bundle_builder"] { order: 4 !important; }
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="dealeasy_mm_bundle_builder"] { order: 6 !important; }
 
-    /* Order 5: Quantity & Buy Action */
+    /* Order 7: Quantity & Buy Action */
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="quantity-selector"],
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="quantity_selector"],
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="buy_buttons"],
-    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="buy-buttons"] { order: 5 !important; }
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="buy-buttons"] { order: 7 !important; }
 
-    /* Order 6: Details (Description) */
+    /* Order 8: Details (Description) */
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="description"],
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26-short-description"],
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26_short_description"],
-    #shopify-section-{{ section.id }} .product .mar26-description-card { order: 6 !important; }
+    #shopify-section-{{ section.id }} .product .mar26-description-card { order: 8 !important; }
 
     /* Secondary / Utility Blocks */
-    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="separator"] { order: 7 !important; }
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="separator"] { order: 9 !important; }
 
     /* Flatten columns to allow reordering of children */
     #shopify-section-{{ section.id }} .product-gallery-column,
