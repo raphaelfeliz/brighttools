@@ -1,9 +1,9 @@
 {%- comment -%}
 ----------------------------------------------------------------------------------------------------------------------
 file-summary: Custom fork of product info for MAR26 layout. Handles rendering of product blocks with specific overrides.
-version-name: Position Selleasy Add-On Upsell Widget Above Buy Buttons
-version-number: 3.7.0
-version-summary: Extended inline buy button flex ordering and contents rules to include lb-upsell-widget and lb-widget-pal so add-ons stack above the buy buttons on desktop and mobile.
+version-name: Center DealEasy Bundle Builder Widget in Inline Buy Buttons
+version-number: 3.11.0
+version-summary: Added CSS rules to center lb-bundle-builder grid, headers, and progress wrap inside mar26-quantity-inline-row.
 # Previous commit containing original Dealasy code/state: c4b3a3d
 ----------------------------------------------------------------------------------------------------------------------
 {%- endcomment -%}
@@ -372,13 +372,15 @@ version-summary: Extended inline buy button flex ordering and contents rules to 
                 border-radius: 9999px !important;
                 height: 52px !important;
                 min-height: 52px !important;
+                font-size: var(--mar26-fs-body, 14px) !important;
+                padding: 12px 24px !important;
                 font-weight: 700 !important;
                 text-transform: uppercase !important;
                 letter-spacing: 0.05em !important;
                 width: 100% !important;
                 min-width: 0 !important;
                 max-width: 100% !important;
-                flex: none !important;
+                flex: 1 1 auto !important;
                 white-space: nowrap !important;
                 display: inline-flex !important;
                 align-items: center !important;
@@ -445,11 +447,41 @@ version-summary: Extended inline buy button flex ordering and contents rules to 
               .mar26-quantity-inline-row lb-upsell-widget,
               .mar26-quantity-inline-row .mar26-inline-buy-buttons lb-upsell-widget,
               .mar26-quantity-inline-row .lb-widget-pal,
-              .mar26-quantity-inline-row .mar26-inline-buy-buttons .lb-widget-pal {
+              .mar26-quantity-inline-row .mar26-inline-buy-buttons .lb-widget-pal,
+              .mar26-quantity-inline-row #lb-bundle-builder,
+              .mar26-quantity-inline-row lb-bundle-builder,
+              .mar26-quantity-inline-row .mar26-inline-buy-buttons #lb-bundle-builder,
+              .mar26-quantity-inline-row .mar26-inline-buy-buttons lb-bundle-builder {
                 order: -1 !important;
                 width: 100% !important;
                 flex: 0 0 100% !important;
                 margin-bottom: 12px !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+              }
+              .mar26-quantity-inline-row #lb-bundle-builder .lb-bb-products-wrap,
+              .mar26-quantity-inline-row lb-bundle-builder .lb-bb-products-wrap {
+                width: 100% !important;
+                display: grid !important;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+                justify-content: center !important;
+                justify-items: center !important;
+                gap: 12px !important;
+                box-sizing: border-box !important;
+              }
+              .mar26-quantity-inline-row #lb-bundle-builder .lb-bb-header-wrap,
+              .mar26-quantity-inline-row lb-bundle-builder .lb-bb-header-wrap {
+                text-align: center !important;
+                align-items: center !important;
+                justify-content: center !important;
+              }
+              .mar26-quantity-inline-row #lb-bundle-builder .lb-bb-sub-header-wrap,
+              .mar26-quantity-inline-row lb-bundle-builder .lb-bb-sub-header-wrap,
+              .mar26-quantity-inline-row #lb-bundle-builder .lb-bb-progress-wrap,
+              .mar26-quantity-inline-row lb-bundle-builder .lb-bb-progress-wrap {
+                justify-content: center !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
               }
 
               @media screen and (min-width: 1000px) {
@@ -482,10 +514,10 @@ version-summary: Extended inline buy button flex ordering and contents rules to 
                   margin: 0 !important;
                   padding: 0 !important;
                 }
-                .mar26-quantity-inline-row .mar26-inline-buy-buttons:has(lb-vd-qty-selector, lb-upsell-widget, .lb-widget-pal) {
+                .mar26-quantity-inline-row .mar26-inline-buy-buttons:has(lb-vd-qty-selector, lb-upsell-widget, .lb-widget-pal, #lb-bundle-builder, lb-bundle-builder) {
                   display: contents !important;
                 }
-                .mar26-quantity-inline-row .mar26-inline-buy-buttons:has(lb-vd-qty-selector, lb-upsell-widget, .lb-widget-pal) > form {
+                .mar26-quantity-inline-row .mar26-inline-buy-buttons:has(lb-vd-qty-selector, lb-upsell-widget, .lb-widget-pal, #lb-bundle-builder, lb-bundle-builder) > form {
                   flex: 1 1 0% !important;
                   min-width: 0 !important;
                 }
@@ -504,25 +536,36 @@ version-summary: Extended inline buy button flex ordering and contents rules to 
                   padding: 0 !important;
                 }
                 .mar26-quantity-inline-row .mar26-inline-buy-buttons .button {
-                  width: auto !important;
-                  max-width: none !important;
+                  width: 100% !important;
+                  max-width: 100% !important;
                   min-width: 0 !important;
                   flex: 1 1 0% !important;
                   margin: 0 !important;
+                  font-size: var(--mar26-fs-body, 14px) !important;
+                  padding: 12px 20px !important;
+                  height: 52px !important;
+                  min-height: 52px !important;
+                  border-radius: 9999px !important;
+                  box-sizing: border-box !important;
                 }
                 .mar26-quantity-inline-row .mar26-inline-buy-buttons .shopify-payment-button {
-                  width: auto !important;
-                  max-width: none !important;
+                  width: 100% !important;
+                  max-width: 100% !important;
                   min-width: 0 !important;
                   flex: 1 1 0% !important;
                   margin: 0 !important;
                   position: static !important;
+                  box-sizing: border-box !important;
                 }
                 .mar26-quantity-inline-row .mar26-inline-buy-buttons .shopify-payment-button__button {
                   width: 100% !important;
-                  max-width: none !important;
+                  max-width: 100% !important;
                   min-width: 0 !important;
                   margin: 0 !important;
+                  height: 52px !important;
+                  min-height: 52px !important;
+                  border-radius: 9999px !important;
+                  box-sizing: border-box !important;
                 }
                 .mar26-quantity-inline-row .mar26-inline-buy-buttons .shopify-payment-button__more-options {
                   position: absolute !important;

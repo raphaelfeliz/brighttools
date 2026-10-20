@@ -57,7 +57,7 @@
         "addon_2": {
           "type": "addon",
           "settings": {
-            "product": "microfibre-floor-cloth-xl-extra-wide"
+            "product": "professional-microfiber-cloth-2pk-xxl-80cmx60cm"
           }
         }
       },
@@ -77,7 +77,6 @@
           "settings": {
             "image": "shopify://shop_images/rubber-broom-boutique-floor-wipes-red-handle_3f1dd018-a0a3-49ad-a724-ae9b8b45e873.jpg",
             "title": "Item Name",
-            "description": "<p>A short description of what this item is and why it's included.</p>",
             "spec_1": "",
             "spec_2": "",
             "spec_3": "",
@@ -89,7 +88,6 @@
           "settings": {
             "image": "shopify://shop_images/rubber-broom-boutique-floor-wipes-red-handle_3f1dd018-a0a3-49ad-a724-ae9b8b45e873.jpg",
             "title": "Item Name",
-            "description": "<p>A short description of what this item is and why it's included.</p>",
             "spec_1": "",
             "spec_2": "",
             "spec_3": "",
@@ -101,7 +99,6 @@
           "settings": {
             "image": "shopify://shop_images/rubber-broom-boutique-floor-wipes-red-handle_3f1dd018-a0a3-49ad-a724-ae9b8b45e873.jpg",
             "title": "Item Name",
-            "description": "<p>A short description of what this item is and why it's included.</p>",
             "spec_1": "",
             "spec_2": "",
             "spec_3": "",
@@ -250,7 +247,6 @@
           "type": "testimonial",
           "settings": {
             "author": "David R.",
-            "role": "60th Floor Resident",
             "content": "<p>Fantastic results on my 60th floor windows. I was nervous about using it so high up but the safety string gave me total confidence.</p>",
             "show_rating": true,
             "rating": 5
@@ -260,7 +256,6 @@
           "type": "testimonial",
           "settings": {
             "author": "Michelle T.",
-            "role": "Home Owner",
             "content": "<p>I have sparkling streak-free windows. The key is not to have the magnets too tight — once you get the technique it's effortless.</p>",
             "show_rating": true,
             "rating": 5
@@ -270,7 +265,6 @@
           "type": "testimonial",
           "settings": {
             "author": "Peter K.",
-            "role": "Property Manager",
             "content": "<p>We were able to easily clean windows which are very high on the outside. Bought 3 for our staff. Saves us calling rope-access cleaners.</p>",
             "show_rating": true,
             "rating": 5

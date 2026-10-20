@@ -9,46 +9,27 @@
  */
 {
   "sections": {
+    "custom_liquid_bYgJK7": {
+      "type": "custom-liquid",
+      "name": "Scroll to Top",
+      "settings": {
+        "full_width": false,
+        "remove_vertical_spacing": true,
+        "remove_horizontal_spacing": true,
+        "liquid": "<style>\n  .scroll-to-top {\n    position: fixed;\n    bottom: 20px;\n    right: 20px;\n    background-color: #000;\n    color: #fff;\n    border: none;\n    border-radius: 8px;\n    padding: 12px 16px;\n    font-size: 14px;\n    cursor: pointer;\n    display: none;\n    z-index: 9999; /* Increased to stay above Shopify layers */\n    font-weight: 600;\n    align-items: center;\n    justify-content: center;\n    gap: 8px;\n    white-space: nowrap;\n  }\n  .scroll-to-top.show {\n    display: flex;\n  }\n  .scroll-to-top:hover {\n    background-color: #333;\n  }\n</style>\n\n<button class=\"scroll-to-top\" id=\"scrollToTopBtn\"><span>↑</span><span>shop</span></button>\n\n<script>\n  (function() {\n    const btn = document.getElementById('scrollToTopBtn');\n\n    window.addEventListener('scroll', function() {\n      if (window.pageYOffset > 300) {\n        btn.classList.add('show');\n      } else {\n        btn.classList.remove('show');\n      }\n    });\n\n    btn.addEventListener('click', function() {\n      // We look for the element INSIDE the click function \n      // so it finds it even if the page loaded slowly.\n      const target = document.querySelector('product-info.mar26-addons-buy');\n\n      if (target) {\n        // Calculate header height from your CSS variables (--header-height: 120px)\n        const headerOffset = 130; \n        const elementPosition = target.getBoundingClientRect().top;\n        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;\n\n        window.scrollTo({\n          top: offsetPosition,\n          behavior: 'smooth'\n        });\n      } else {\n        // If the specific class isn't found, try finding ANY product-info\n        const backupTarget = document.querySelector('product-info');\n        if (backupTarget) {\n           backupTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });\n        } else {\n           window.scrollTo({ top: 0, behavior: 'smooth' });\n        }\n      }\n    });\n  })();\n</script>",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "main": {
-      "type": "main-product",
+      "type": "mar26-main-product",
       "blocks": {
-        "vendor": {
-          "type": "vendor",
-          "disabled": true,
-          "settings": {}
-        },
-        "title": {
-          "type": "title",
+        "mar26_title_and_tags_5z3hZR": {
+          "type": "mar26_title_and_tags",
           "settings": {
-            "heading_tag": "h2"
+            "heading_tag": "h3"
           }
-        },
-        "634d1b35-6dc5-46dc-aef4-50491431091b": {
-          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
-        },
-        "rating": {
-          "type": "rating",
-          "disabled": true,
-          "settings": {
-            "show_empty": true
-          }
-        },
-        "ce4dfcc3-25d6-462a-be54-e9d3662f7ecc": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "<p>EAN: {{ product.metafields.custom.ean.value }}</p>"
-          }
-        },
-        "badges": {
-          "type": "badges",
-          "settings": {}
-        },
-        "17058414-3a21-480c-b032-4d4f48fa8431": {
-          "type": "sku",
-          "disabled": true,
-          "settings": {}
         },
         "price": {
           "type": "price",
@@ -56,36 +37,55 @@
             "show_taxes_notice": false
           }
         },
-        "e61e426c-407a-45aa-9616-04c8f4cd0237": {
-          "type": "inventory",
-          "settings": {
-            "low_inventory_threshold": 25
-          }
-        },
-        "payment_terms": {
-          "type": "payment_terms",
+        "judge_me_reviews_preview_badge_kG7NLt": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {}
         },
-        "separator": {
-          "type": "separator",
-          "settings": {}
-        },
-        "15d8ec07-a634-405e-af3e-46aaee2d75e0": {
-          "type": "text",
+        "mar26_short_description_tARAbB": {
+          "type": "mar26_short_description",
           "settings": {
-            "text": "<p>{{ product.metafields.custom.selling_points | metafield_tag }}</p>"
+            "description": "<p>{{ product.metafields.custom.short_description.value }}</p>",
+            "highlight_1": "<p>{{ product.metafields.custom.mar26_highlight_1.value }}</p>",
+            "highlight_2": "<p>{{ product.metafields.custom.mar26_highlight_2.value }}</p>",
+            "highlight_3": "<p>{{ product.metafields.custom.mar26_highlight_3.value }} </p>",
+            "icon_color": "#e11d48",
+            "background_color": "#efefef"
           }
         },
-        "dealeasy_mm_bundle_builder_fmBMLK": {
+        "mar26_gradient_title_RMQCET": {
+          "type": "mar26_gradient_title",
+          "disabled": true,
+          "settings": {
+            "show_on_mobile": false,
+            "show_on_desktop": true,
+            "text_top": "No Water.",
+            "text": "No Stress.",
+            "color_1": "#e11d48",
+            "color_2": "#ff0076",
+            "font_size": 40,
+            "font_size_mobile": 40,
+            "font_weight": "900"
+          }
+        },
+        "quantity_selector_dgjkJg": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "dealeasy_mm_bundle_builder_dCNcYL": {
           "type": "shopify://apps/dealeasy/blocks/mm-bundle-builder/e47a8634-0496-480d-9e46-6f7fafd34b30",
           "settings": {
             "lb-product-handle": "",
             "lb-product-id": ""
           }
         },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {}
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "collapse_content": false
+          }
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -93,495 +93,334 @@
             "hide_sold_out_variants": false,
             "stack_blocks": true,
             "selector_style": "block",
-            "swatch_selector_style": "swatch",
-            "variant_image_options": "",
-            "size_chart_page": ""
+            "swatch_selector_style": "swatch"
+          }
+        },
+        "buy_buttons_KpKVCY": {
+          "type": "buy_buttons",
+          "disabled": true,
+          "settings": {
+            "show_payment_button": true,
+            "atc_button_background": "#000000",
+            "atc_button_text_color": "#000000"
+          }
+        },
+        "inventory": {
+          "type": "inventory",
+          "settings": {
+            "low_inventory_threshold": 25
           }
         },
         "selleasy_lb_upsell_widget_pal_mCVBx9": {
           "type": "shopify://apps/selleasy/blocks/lb-upsell-widget-pal/790c1a03-a71f-4bc1-9869-00dad526d3c2",
           "settings": {}
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_payment_button": true,
-            "show_gift_card_recipient": true,
-            "atc_button_background": "#f2f2f2",
-            "atc_button_text_color": "#d80925",
-            "payment_button_background": "",
-            "payment_button_text_color": ""
-          }
-        },
-        "dealeasy_vd_cards_RDTz3J": {
-          "type": "shopify://apps/dealeasy/blocks/vd-cards/e47a8634-0496-480d-9e46-6f7fafd34b30",
-          "settings": {
-            "lb-product-handle": "",
-            "lb-product-id": ""
-          }
-        },
-        "dealeasy_app_block_AyxLph": {
-          "type": "shopify://apps/dealeasy/blocks/app-block/e47a8634-0496-480d-9e46-6f7fafd34b30",
-          "settings": {
-            "lb-product-handle": "",
-            "lb-product-id": ""
-          }
-        },
-        "c56cbf9f-dbd5-4b49-b209-862319158955": {
-          "type": "offer",
-          "settings": {
-            "text_alignment": "start",
-            "icon_position": "aligned",
-            "icon": "picto-timer",
-            "custom_icon": "shopify://shop_images/website-icons.png",
-            "icon_width": 32,
-            "title": "Fast Shipping",
-            "content": "<p>Dispatched in <a href=\"/policies/shipping-policy\" target=\"_blank\" title=\"Shipping Policy\">24hrs</a> from Our Melbourne Warehouse</p>",
-            "background": "#f0f0f0",
-            "text_color": "#000000"
-          }
-        },
-        "selleasy_lb_upsell_widget_cpal_3p8djb": {
-          "type": "shopify://apps/selleasy/blocks/lb-upsell-widget-cpal/790c1a03-a71f-4bc1-9869-00dad526d3c2",
-          "settings": {}
-        },
-        "cb13e52a-aaac-4a85-b16d-4649199dfc46": {
-          "type": "associated_products",
-          "settings": {
-            "title": "Buy it with",
-            "stack_products": true,
-            "products_count": 3,
-            "background": "",
-            "text_color": "#000000"
-          }
-        },
-        "description": {
-          "type": "description",
-          "settings": {
-            "icon": "none",
-            "icon_width": 20,
-            "collapse_content": false
-          }
-        },
-        "dealeasy_mm_bundle_builder_CaEWD8": {
-          "type": "shopify://apps/dealeasy/blocks/mm-bundle-builder/e47a8634-0496-480d-9e46-6f7fafd34b30",
-          "settings": {
-            "lb-product-handle": "",
-            "lb-product-id": ""
-          }
-        },
-        "dealeasy_vd_cards_GyDHKk": {
-          "type": "shopify://apps/dealeasy/blocks/vd-cards/e47a8634-0496-480d-9e46-6f7fafd34b30",
-          "settings": {
-            "lb-product-handle": "",
-            "lb-product-id": ""
-          }
         }
       },
       "block_order": [
-        "vendor",
-        "title",
-        "634d1b35-6dc5-46dc-aef4-50491431091b",
-        "rating",
-        "ce4dfcc3-25d6-462a-be54-e9d3662f7ecc",
-        "badges",
-        "17058414-3a21-480c-b032-4d4f48fa8431",
+        "mar26_title_and_tags_5z3hZR",
+        "judge_me_reviews_preview_badge_kG7NLt",
         "price",
-        "e61e426c-407a-45aa-9616-04c8f4cd0237",
-        "payment_terms",
-        "separator",
-        "15d8ec07-a634-405e-af3e-46aaee2d75e0",
-        "dealeasy_mm_bundle_builder_fmBMLK",
-        "quantity_selector",
-        "variant_picker",
+        "inventory",
+        "dealeasy_mm_bundle_builder_dCNcYL",
         "selleasy_lb_upsell_widget_pal_mCVBx9",
-        "buy_buttons",
-        "dealeasy_vd_cards_RDTz3J",
-        "dealeasy_app_block_AyxLph",
-        "c56cbf9f-dbd5-4b49-b209-862319158955",
-        "selleasy_lb_upsell_widget_cpal_3p8djb",
-        "cb13e52a-aaac-4a85-b16d-4649199dfc46",
+        "quantity_selector_dgjkJg",
+        "mar26_short_description_tARAbB",
+        "mar26_gradient_title_RMQCET",
         "description",
-        "dealeasy_mm_bundle_builder_CaEWD8",
-        "dealeasy_vd_cards_GyDHKk"
+        "variant_picker",
+        "buy_buttons_KpKVCY"
       ],
       "settings": {
         "full_width": false,
         "show_fixed_add_to_cart": true,
+        "short_description_position": "right",
         "desktop_media_width": 50,
         "desktop_media_layout": "carousel_thumbnails_left",
         "mobile_media_size": "contained",
-        "mobile_carousel_control": "dots",
-        "enable_video_autoplay": false,
+        "mobile_carousel_control": "free_scroll",
+        "enable_video_autoplay": true,
         "enable_video_looping": true,
         "enable_image_zoom": true,
         "max_image_zoom_level": 3,
+        "show_nav_icons_desktop": true,
+        "show_nav_icons_mobile": false,
         "background": "#ffffff",
         "background_gradient": "",
-        "text_color": "",
+        "text_color": "#000000",
         "input_background": "rgba(0,0,0,0)",
         "input_text_color": ""
       }
     },
-    "image_with_text_overlay_PN3fEk": {
-      "type": "image-with-text-overlay",
+    "video_PBmR83": {
+      "type": "video",
       "blocks": {
-        "subheading_y8iDRa": {
-          "type": "subheading",
-          "settings": {
-            "text": ""
-          }
-        },
-        "heading_dPtqMt": {
+        "heading_6VXJqE": {
           "type": "heading",
           "settings": {
-            "text": "How to Use the Window Cleaner",
-            "heading_tag": "h3"
-          }
-        },
-        "richtext_fVaJJC": {
-          "type": "richtext",
-          "settings": {
-            "content": "<p>Super Simple Steps to Crystal-Clear Windows  </p>"
+            "text": "",
+            "heading_tag": "h1"
           }
         }
       },
       "block_order": [
-        "subheading_y8iDRa",
-        "heading_dPtqMt",
-        "richtext_fVaJJC"
+        "heading_6VXJqE"
       ],
-      "disabled": true,
+      "name": "Video",
       "settings": {
         "full_width": false,
         "allow_transparent_header": false,
-        "enable_parallax": false,
-        "image_size": "auto",
-        "image": "shopify://shop_images/hand_held_multi_surface_cleaner_window.jpg",
-        "mobile_image": "shopify://shop_images/hand_held_multi_surface_cleaner_window_mobile.jpg",
-        "mobile_text_position": "place-self-center-start text-start",
-        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "autoplay": true,
+        "video_size": "md",
+        "video": "{{ product.metafields.custom.product_video.value }}",
+        "mobile_video": "{{ product.metafields.custom.mobile_product_video.value }}",
+        "external_video_url": "",
         "text_color": "#ffffff",
         "overlay_color": "#000000",
         "overlay_opacity": 30
       }
     },
-    "image_link_blocks_XVQbdn": {
-      "type": "image-link-blocks",
-      "blocks": {
-        "item_YW3yP9": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/03_Slider_1_2_800x600_a67ce395-671b-43f6-9c2e-6672b95809de.jpg",
-            "stretch_image": true,
-            "link_text": "",
-            "link_url": "",
-            "background": "",
-            "text_color": "#000000",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "item_6hJiYR": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/03_Slider_1_3_800x600_3c655e79-f70f-41cd-81fd-9ffe1e891787.jpg",
-            "stretch_image": true,
-            "link_text": "",
-            "link_url": "",
-            "background": "",
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "item_nmyqBC": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/03_Slider_1_4_800x600_db11a349-a395-4109-a02b-6914fc2bd1b2.jpg",
-            "stretch_image": true,
-            "link_text": "",
-            "link_url": "",
-            "background": "",
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "item_EQPiWf": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/03_Slider_1_5_800x600_20cac6c7-250b-4353-8e1b-8a608a899959.jpg",
-            "stretch_image": true,
-            "link_text": "",
-            "link_url": "",
-            "background": "",
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        }
-      },
-      "block_order": [
-        "item_YW3yP9",
-        "item_6hJiYR",
-        "item_nmyqBC",
-        "item_EQPiWf"
-      ],
-      "disabled": true,
-      "settings": {
-        "full_width": false,
-        "block_size": "large",
-        "subheading": "",
-        "title": "",
-        "content": "",
-        "link_url": "",
-        "link_text": "",
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_gradient": ""
-      }
-    },
-    "1753838657087a16ba": {
-      "type": "apps",
-      "blocks": {
-        "selleasy_lb_upsell_widget_bl_kEkG69": {
-          "type": "shopify://apps/selleasy/blocks/lb-upsell-widget-bl/790c1a03-a71f-4bc1-9869-00dad526d3c2",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "selleasy_lb_upsell_widget_bl_kEkG69"
-      ],
-      "settings": {
-        "full_width": true,
-        "remove_vertical_spacing": false,
-        "remove_horizontal_spacing": false,
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
-      }
-    },
-    "c4a43766-4a19-4d00-9898-bcd0d58a97ac": {
+    "video_demo": {
       "type": "media-with-text",
+      "blocks": {
+        "image_UgxkAx": {
+          "type": "image",
+          "settings": {
+            "media_width": 30,
+            "media_position": "start",
+            "text_position": "place-self-center text-center",
+            "icon": "none",
+            "icon_width": 32,
+            "subheading": "",
+            "title": "",
+            "content": "<h4>🧹 Sweep & Squeegee in One</h4><h4></h4><h4>🔄 Reaches Tight Spaces</h4><h4></h4><h4>💪 Tough & Surface-Safe</h4><p></p><p>Clean faster with one tool built for every mess.<br/>Strong, versatile, and made to last — the Tyroler 2-in-1 is a cleaning essential.</p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "#8d5b97",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        },
+        "video_block": {
+          "type": "video",
+          "settings": {
+            "video": "{{ product.metafields.custom.media_text_box_2_video.value }}",
+            "external_video_url": "https://www.youtube.com/watch?v=oDjHs1ZLcss",
+            "autoplay": true,
+            "media_width": 55,
+            "media_position": "end",
+            "text_position": "place-self-center text-center",
+            "icon": "none",
+            "icon_width": 32,
+            "subheading": "",
+            "title": "",
+            "content": "<p>{{ product.metafields.custom.media_text_box_2_rich_text | metafield_tag }}</p><h4>🧹 Sweep & Squeegee in One</h4><h4></h4><h4>🔄 Reaches Tight Spaces</h4><h4></h4><h4>💪 Tough & Surface-Safe</h4><p></p><p>Clean faster with one tool built for every mess.<br/>Strong, versatile, and made to last — the Tyroler 2-in-1 is a cleaning essential.</p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "#0f172a",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "#e11d48",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "image_UgxkAx",
+        "video_block"
+      ],
       "settings": {
         "full_width": false,
         "alternate_media_position": false,
         "spacing": "small"
       }
     },
-    "17485239401e7c4d52": {
-      "type": "apps",
-      "settings": {
-        "full_width": true,
-        "remove_vertical_spacing": false,
-        "remove_horizontal_spacing": false,
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
-      }
-    },
-    "1688642188a9c7bb7d": {
-      "type": "apps",
-      "blocks": {
-        "ff35ce0e-0a35-448d-9e7a-6a4e259b11b4": {
-          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
-        },
-        "b5105084-2bb1-4862-8681-a2147b658640": {
-          "type": "shopify://apps/judge-me-reviews/blocks/featured_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "disabled": true,
-          "settings": {
-            "maxwidth": 1080
-          }
-        },
-        "b7e2de39-0094-44a6-a7cf-4c0719648fda": {
-          "type": "shopify://apps/judge-me-reviews/blocks/ugc_media_grid/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "disabled": true,
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "ff35ce0e-0a35-448d-9e7a-6a4e259b11b4",
-        "b5105084-2bb1-4862-8681-a2147b658640",
-        "b7e2de39-0094-44a6-a7cf-4c0719648fda"
-      ],
-      "settings": {
-        "full_width": true,
-        "remove_vertical_spacing": false,
-        "remove_horizontal_spacing": false,
-        "background": "#f0f0f0",
-        "background_gradient": "",
-        "text_color": ""
-      }
-    },
-    "2cc557d9-4240-49af-87a6-619ffb9c14fe": {
-      "type": "related-products",
-      "settings": {
-        "recommendations_count": 10,
-        "products": "{{ product.metafields[\"shopify--discovery--product_recommendation\"].complementary_products.value }}",
-        "full_width": true,
-        "stack_products": false,
-        "show_progress_bar": true,
-        "products_per_row_mobile": "2",
-        "products_per_row_desktop": 4,
-        "subheading": "",
-        "title": "You may also like",
-        "content": "",
-        "background": "#f0f0f0",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_gradient": "",
-        "product_card_background": "",
-        "product_card_text_color": ""
-      }
-    },
-    "beeafe09-2cb1-4ed4-9a41-c04f9f65c5d4": {
+    "faq": {
       "type": "faq",
       "blocks": {
-        "template--19202935849234__beeafe09-2cb1-4ed4-9a41-c04f9f65c5d4-168657506649ab31c8-0": {
+        "faq_1": {
           "type": "item",
           "settings": {
-            "title": "Are Bright Tools products suitable for both professionals and amateurs?",
-            "content": "<p>Absolutely! Our tools are designed to cater to the needs of professionals as well as hobbyists and DIY enthusiasts. We strive to offer products that are user-friendly, reliable, and suitable for various skill levels.</p>"
+            "title": "Is the Glider S-1 safe for high-rise windows?",
+            "content": "<p>Yes. Only open your window enough to place the outer half through. The included safety string keeps the Glider attached at all times. The magnets are strong enough to hold firm even in wind.</p>"
           }
         },
-        "template--19202935849234__beeafe09-2cb1-4ed4-9a41-c04f9f65c5d4-168657506649ab31c8-1": {
+        "faq_2": {
           "type": "item",
           "settings": {
-            "title": "How quickly do you dispatch orders within Australia, and what shipping options do you offer?",
-            "content": "<p>We dispatch all orders Australia-wide within 24 hours, so your cleaning tools will arrive at your door without delay. Our products are sent via trackable Australia Post and with express options available you can feel secure in our fast shipping delivery. </p>"
+            "title": "How do I clean the outside if I can't reach it?",
+            "content": "<p>Spray cleaning solution along the window edge nearest to you. As you glide the S-1, the blades spread the solution across the entire surface. You can also pre-wet the microfibre cloths before attaching them.</p>"
           }
         },
-        "fc47d9e3-e809-41ad-a3a4-afa79b9bd8ba": {
+        "faq_3": {
           "type": "item",
           "settings": {
-            "title": "Is it possible to receive a full refund or exchange for a product if I am not satisfied with my purchase?",
-            "content": "<p>We’re here to make your life easier. If you’re not fully satisfied with any Bright Tools product we offer a full refund or exchange with proof of purchase within 30 days. We’re so confident in our range and giving you the best cleaning experience at home, if you’re not floored, then we make returns easy. </p>"
+            "title": "What window thickness does the S-1 support?",
+            "content": "<p>Single-glazed windows from 2mm to 8mm thick. If you're unsure of your window thickness, check our measurement guide for step-by-step instructions.</p>"
           }
         },
-        "e478ad9a-f406-475f-be47-70bbcc894202": {
+        "faq_4": {
           "type": "item",
           "settings": {
-            "title": "What is the warranty duration for Bright Tools' household cleaning products, and what sets your warranty and product longevity apart from other cleaning brands in Australia?",
-            "content": "<p>Bright Tools offer a unique 2 year warranty on all of our household cleaning products. We stand behind the quality and durability of our superior tools and our sustainable silicone. Unlike any other cleaning brand in Australia, you’ll get guaranteed longevity with every product purchase. </p>"
+            "title": "How long do the microfibre cloths last?",
+            "content": "<p>Each cloth can be washed and reused up to 300 times with zero loss in cleaning performance.</p>"
           }
         },
-        "template--19202935849234__beeafe09-2cb1-4ed4-9a41-c04f9f65c5d4-168657506649ab31c8-2": {
+        "faq_5": {
           "type": "item",
           "settings": {
-            "title": "What payment options are available?",
-            "content": "<p>We accept various payment methods, including major credit cards (Visa, Mastercard, American Express), PayPal, and bank transfers. Rest assured that all transactions are securely processed to protect your sensitive information.</p>"
+            "title": "Is this the genuine Glider?",
+            "content": "<p>Yes. This is the original Glider by Tyroler Bright Tools with a 2-year warranty and 30-day money-back guarantee. Beware of low-quality imitation products which look the same but use inferior magnets and materials.</p>"
           }
         }
       },
       "block_order": [
-        "template--19202935849234__beeafe09-2cb1-4ed4-9a41-c04f9f65c5d4-168657506649ab31c8-0",
-        "template--19202935849234__beeafe09-2cb1-4ed4-9a41-c04f9f65c5d4-168657506649ab31c8-1",
-        "fc47d9e3-e809-41ad-a3a4-afa79b9bd8ba",
-        "e478ad9a-f406-475f-be47-70bbcc894202",
-        "template--19202935849234__beeafe09-2cb1-4ed4-9a41-c04f9f65c5d4-168657506649ab31c8-2"
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5"
       ],
       "settings": {
         "full_width": true,
-        "subheading": "FAQs",
-        "title": "Have a question?",
-        "content": "",
-        "team_avatar": "shopify://shop_images/team-fff.webp",
+        "subheading": "",
+        "title": "Common Questions",
+        "content": "<p>Use this text to share information about your product or shipping policies.</p>",
         "team_avatar_width": 160,
-        "support_hours": "Our customer support is available monday to friday: 8am-8:30pm.",
+        "support_hours": "Our customer support is available Monday to Friday: 8am-8:30pm.",
         "answer_time": "Average answer time: 24h",
-        "button_text": "Contact us",
-        "button_url": "shopify://pages/contact",
-        "text_position": "start",
-        "background": "#f0f0f0",
+        "button_text": "",
+        "button_url": "",
+        "text_position": "center",
+        "background": "",
         "background_gradient": "",
         "text_color": "",
         "heading_color": "",
         "heading_gradient": "",
-        "button_background": "#1a1a1a",
+        "button_background": "",
         "button_text_color": "",
         "accordion_background": "",
         "accordion_text_color": ""
       }
     },
-    "4dd2b973-8a00-4f25-9139-08a7467cbda6": {
-      "type": "testimonials",
+    "mar26_highlights_djAVBa": {
+      "type": "mar26-highlights",
       "blocks": {
-        "template--19202935849234__4dd2b973-8a00-4f25-9139-08a7467cbda6-1686575320f0560e2c-0": {
-          "type": "testimonial",
+        "highlight_card_KiyRqg": {
+          "type": "highlight_card",
           "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 5,
-            "author": "John S.",
-            "title": "Testimonial 1",
-            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+            "image": "shopify://shop_images/arms.png",
+            "bg_color": "#e8eaeb",
+            "color_text_1": "#000000",
+            "color_text_2": "#f81b27",
+            "top_title": "HEAVY",
+            "gradient_title": "DUTY",
+            "subtitle_1": "PRO-GRADE TOOLS",
+            "subtitle_2": "for everyday messes."
           }
         },
-        "template--19202935849234__4dd2b973-8a00-4f25-9139-08a7467cbda6-1686575320f0560e2c-2": {
-          "type": "testimonial",
+        "highlight_card_CyY4Fq": {
+          "type": "highlight_card",
           "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 5,
-            "author": "Joshua A.",
-            "title": "Testimonial 3",
-            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+            "image": "shopify://shop_images/love-or-return.png",
+            "bg_color": "#fba5ac",
+            "color_text_1": "#000000",
+            "color_text_2": "#f81b27",
+            "top_title": "ZERO",
+            "gradient_title": "RISK",
+            "subtitle_1": "PRO-GRADE TOOLS",
+            "subtitle_2": "for everyday messes."
           }
         },
-        "template--19202935849234__4dd2b973-8a00-4f25-9139-08a7467cbda6-1686575320f0560e2c-1": {
-          "type": "testimonial",
+        "highlight_card_p8UcQ6": {
+          "type": "highlight_card",
           "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 5,
-            "author": "Mary U.",
-            "title": "Testimonial 2",
-            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
-          }
-        },
-        "d19e8bc6-3478-4836-ae5b-d6f7793f42f8": {
-          "type": "testimonial",
-          "settings": {
-            "round_avatar": true,
-            "show_rating": true,
-            "rating": 4,
-            "author": "",
-            "title": "Testimonial",
-            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>"
+            "image": "shopify://shop_images/2-year-warranty.png",
+            "bg_color": "#000000",
+            "color_text_1": "#ffffff",
+            "color_text_2": "#f81b27",
+            "top_title": "WORRY",
+            "gradient_title": "FREE",
+            "subtitle_1": "PRO-GRADE TOOLS",
+            "subtitle_2": "for everyday messes."
           }
         }
       },
       "block_order": [
-        "template--19202935849234__4dd2b973-8a00-4f25-9139-08a7467cbda6-1686575320f0560e2c-0",
-        "template--19202935849234__4dd2b973-8a00-4f25-9139-08a7467cbda6-1686575320f0560e2c-2",
-        "template--19202935849234__4dd2b973-8a00-4f25-9139-08a7467cbda6-1686575320f0560e2c-1",
-        "d19e8bc6-3478-4836-ae5b-d6f7793f42f8"
+        "highlight_card_KiyRqg",
+        "highlight_card_CyY4Fq",
+        "highlight_card_p8UcQ6"
       ],
-      "disabled": true,
+      "name": "MAR26 Highlights",
       "settings": {
-        "full_width": true,
-        "stack_testimonials": true,
-        "subheading": "",
-        "title": "Customer Reviews",
-        "content": "",
-        "link_url": "",
-        "link_text": "",
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_gradient": "",
-        "testimonial_card_background": "",
-        "testimonial_card_text_color": ""
+        "section_subtitle": "PREMIUM STANDARDS",
+        "section_title_black": "Built",
+        "section_title_gradient": "Different.",
+        "section_grad_color_1": "#fba5ac",
+        "section_grad_color_2": "#fba5ac",
+        "color_background": "#f8fafc"
       }
     },
-    "1688645804e1409c6c": {
-      "type": "apps",
+    "rich_text_JhBcCr": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_wjG8e9": {
+          "type": "heading",
+          "settings": {
+            "text": "Watch It Working",
+            "heading_tag": "h1",
+            "text_color": "",
+            "gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_wjG8e9"
+      ],
+      "disabled": true,
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "blocks_jiJwFP": {
+      "type": "_blocks",
+      "blocks": {
+        "mar26_videos_JrNLDC": {
+          "type": "mar26-videos",
+          "settings": {
+            "video_1": "shopify://files/videos/clean-floor-wipes-optimized.mp4",
+            "video_2": "shopify://files/videos/202403022354.mp4",
+            "video_3": "shopify://files/videos/Mop_squeegee_video.mp4",
+            "video_4": "shopify://files/videos/BrightswipesAD1HD.mp4",
+            "autoplay": true,
+            "loop": true,
+            "muted": true,
+            "controls": false,
+            "pause_on_exit": true,
+            "desktop_width_percent": 100,
+            "video_gap": 16,
+            "section_padding": 40,
+            "columns_mobile": "2",
+            "video_border_radius": 24,
+            "placeholder_background": "#f4f4f4",
+            "placeholder_text_color": "#666666"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "mar26_videos_JrNLDC"
+      ],
+      "name": "mar26-videos",
       "settings": {
         "full_width": true,
         "remove_vertical_spacing": false,
@@ -590,19 +429,184 @@
         "background_gradient": "",
         "text_color": ""
       }
+    },
+    "mar26_whats_included_hwC8XQ": {
+      "type": "mar26-whats-included",
+      "blocks": {
+        "item_mPaejM": {
+          "type": "item",
+          "settings": {
+            "product": "adjustable-dust-blade-rubber-broom-squeegee",
+            "title": "Japanese Silicone Broom (30cm)",
+            "spec_1": "Adjustable Knuckle Joint",
+            "spec_2": "Furniture-Safe Soft Edge",
+            "spec_3": "",
+            "accent_color": "#e2e8f0"
+          }
+        },
+        "item_6YK7ta": {
+          "type": "item",
+          "settings": {
+            "product": "",
+            "title": "Silicone Squeegee (30cm)",
+            "spec_1": "Multi-surface Use",
+            "spec_2": "Zero Water Streaks",
+            "spec_3": "",
+            "accent_color": "#e2e8f0"
+          }
+        },
+        "item_7krkje": {
+          "type": "item",
+          "settings": {
+            "product": "",
+            "title": "Stick-to-floor Dustpan",
+            "spec_1": "Sweep without holding",
+            "spec_2": "Attaches to handles",
+            "spec_3": "",
+            "accent_color": "#e2e8f0"
+          }
+        },
+        "item_XfYzVT": {
+          "type": "item",
+          "settings": {
+            "product": "",
+            "title": "Quick Mop Floor Wipes",
+            "spec_1": "5 Awesome Scents",
+            "spec_2": "Instantly discard after use",
+            "spec_3": "",
+            "accent_color": "#e2e8f0"
+          }
+        }
+      },
+      "block_order": [
+        "item_mPaejM",
+        "item_6YK7ta",
+        "item_7krkje",
+        "item_XfYzVT"
+      ],
+      "name": "MAR26 What's Included",
+      "settings": {
+        "pre_title": "Complete System",
+        "pre_title_color": "#2563eb",
+        "black_title": "What's",
+        "gradient_title": "Included?",
+        "gradient_left_color": "#f43f5e",
+        "gradient_right_color": "#be123c",
+        "subheading": "Everything you need for an effortless, water-saving clean on the road.",
+        "columns": "4",
+        "outline_color": "#e2e8f0"
+      }
+    },
+    "mar26_testimonials": {
+      "type": "mar26-testimonials",
+      "blocks": {
+        "testi_1": {
+          "type": "testimonial",
+          "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
+            "author": "David R.",
+            "country": "australia",
+            "content": "<p>Fantastic results on my 60th floor windows. I was nervous about using it so high up but the safety string gave me total confidence.</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testi_2": {
+          "type": "testimonial",
+          "settings": {
+            "product": "bright-broom-bundle-broom-squeegee-1pk-quick-mop-floor-wipes",
+            "product_name": "",
+            "custom_link": "",
+            "author": "Michelle T.",
+            "country": "australia",
+            "content": "<p>I have sparkling streak-free windows. The key is not to have the magnets too tight — once you get the technique it's effortless.</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testi_3": {
+          "type": "testimonial",
+          "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
+            "author": "Peter K.",
+            "country": "australia",
+            "content": "<p>We were able to easily clean windows which are very high on the outside. Bought 3 for our staff. Saves us calling rope-access cleaners.</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "testi_1",
+        "testi_2",
+        "testi_3"
+      ],
+      "settings": {
+        "title": "What They're Saying",
+        "subheading": "Real results from real customers — from high-rise apartments to hard-to-reach home windows."
+      }
+    },
+    "mar26_best_sellers": {
+      "type": "mar26-best-sellers",
+      "blocks": {
+        "prod_1": {
+          "type": "product",
+          "settings": {
+            "product": "bright-broom-bundle-blue-edition"
+          }
+        },
+        "prod_2": {
+          "type": "product",
+          "settings": {
+            "product": "easy-cleaning-bundle-for-limited-mobility"
+          }
+        },
+        "prod_3": {
+          "type": "product",
+          "settings": {
+            "product": "adjustable-dust-blade-rubber-broom-squeegee"
+          }
+        },
+        "prod_4": {
+          "type": "product",
+          "settings": {
+            "product": "jet-all-purpose-cleaning-spray-with-vinegar-and-lavender-copy"
+          }
+        }
+      },
+      "block_order": [
+        "prod_1",
+        "prod_2",
+        "prod_3",
+        "prod_4"
+      ],
+      "settings": {
+        "badge_text": "Bright On - Dust Off",
+        "primary_text": "Better Cleaning",
+        "highlight_text": "Best Sellers",
+        "autoplay_enabled": true,
+        "color_background": "#f8fafc",
+        "color_primary_text": "#0f172a",
+        "color_highlight": "#f81f2f",
+        "color_badge_text": "#f81b27"
+      }
     }
   },
   "order": [
+    "custom_liquid_bYgJK7",
     "main",
-    "image_with_text_overlay_PN3fEk",
-    "image_link_blocks_XVQbdn",
-    "1753838657087a16ba",
-    "c4a43766-4a19-4d00-9898-bcd0d58a97ac",
-    "17485239401e7c4d52",
-    "1688642188a9c7bb7d",
-    "2cc557d9-4240-49af-87a6-619ffb9c14fe",
-    "beeafe09-2cb1-4ed4-9a41-c04f9f65c5d4",
-    "4dd2b973-8a00-4f25-9139-08a7467cbda6",
-    "1688645804e1409c6c"
+    "video_PBmR83",
+    "video_demo",
+    "faq",
+    "mar26_highlights_djAVBa",
+    "rich_text_JhBcCr",
+    "blocks_jiJwFP",
+    "mar26_whats_included_hwC8XQ",
+    "mar26_testimonials",
+    "mar26_best_sellers"
   ]
 }
