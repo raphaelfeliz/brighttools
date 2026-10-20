@@ -52,6 +52,36 @@
             "background_color": "#efefef"
           }
         },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch"
+          }
+        },
+        "inventory": {
+          "type": "inventory",
+          "settings": {
+            "low_inventory_threshold": 25
+          }
+        },
+        "dealeasy_mm_bundle_builder_dCNcYL": {
+          "type": "shopify://apps/dealeasy/blocks/mm-bundle-builder/e47a8634-0496-480d-9e46-6f7fafd34b30",
+          "settings": {
+            "lb-product-handle": "",
+            "lb-product-id": ""
+          }
+        },
+        "selleasy_lb_upsell_widget_pal_mCVBx9": {
+          "type": "shopify://apps/selleasy/blocks/lb-upsell-widget-pal/790c1a03-a71f-4bc1-9869-00dad526d3c2",
+          "settings": {}
+        },
+        "quantity_selector_dgjkJg": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
         "mar26_gradient_title_RMQCET": {
           "type": "mar26_gradient_title",
           "disabled": true,
@@ -67,33 +97,12 @@
             "font_weight": "900"
           }
         },
-        "quantity_selector_dgjkJg": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
-        "dealeasy_mm_bundle_builder_dCNcYL": {
-          "type": "shopify://apps/dealeasy/blocks/mm-bundle-builder/e47a8634-0496-480d-9e46-6f7fafd34b30",
-          "disabled": true,
-          "settings": {
-            "lb-product-handle": "",
-            "lb-product-id": ""
-          }
-        },
         "description": {
           "type": "description",
           "settings": {
             "icon": "none",
             "icon_width": 20,
             "collapse_content": false
-          }
-        },
-        "variant_picker": {
-          "type": "variant_picker",
-          "settings": {
-            "hide_sold_out_variants": false,
-            "stack_blocks": true,
-            "selector_style": "block",
-            "swatch_selector_style": "swatch"
           }
         },
         "buy_buttons_KpKVCY": {
@@ -104,25 +113,20 @@
             "atc_button_background": "#000000",
             "atc_button_text_color": "#000000"
           }
-        },
-        "inventory": {
-          "type": "inventory",
-          "settings": {
-            "low_inventory_threshold": 25
-          }
         }
       },
       "block_order": [
         "mar26_title_and_tags_5z3hZR",
         "judge_me_reviews_preview_badge_kG7NLt",
         "price",
-        "inventory",
-        "quantity_selector_dgjkJg",
         "mar26_short_description_tARAbB",
-        "mar26_gradient_title_RMQCET",
-        "dealeasy_mm_bundle_builder_dCNcYL",
-        "description",
         "variant_picker",
+        "inventory",
+        "dealeasy_mm_bundle_builder_dCNcYL",
+        "selleasy_lb_upsell_widget_pal_mCVBx9",
+        "quantity_selector_dgjkJg",
+        "mar26_gradient_title_RMQCET",
+        "description",
         "buy_buttons_KpKVCY"
       ],
       "settings": {

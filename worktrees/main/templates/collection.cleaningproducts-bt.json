@@ -57,49 +57,133 @@
       ],
       "settings": {}
     },
-    "best_sellers": {
-      "type": "mar26-best-sellers",
+    "b5385aeb-4a34-4a6d-a487-108e7124135c": {
+      "type": "video",
       "blocks": {
-        "prod_1": {
-          "type": "product",
-          "settings": {
-            "product": "bright-broom-bundle-blue-edition"
-          }
+        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-play-1": {
+          "type": "play",
+          "settings": {}
         },
-        "prod_2": {
-          "type": "product",
+        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-heading-1": {
+          "type": "heading",
           "settings": {
-            "product": "easy-cleaning-bundle-for-limited-mobility"
-          }
-        },
-        "prod_3": {
-          "type": "product",
-          "settings": {
-            "product": "adjustable-dust-blade-rubber-broom-squeegee"
-          }
-        },
-        "prod_4": {
-          "type": "product",
-          "settings": {
-            "product": "jet-all-purpose-cleaning-spray-with-vinegar-and-lavender-copy"
+            "text": "",
+            "heading_tag": "h1"
           }
         }
       },
       "block_order": [
-        "prod_1",
-        "prod_2",
-        "prod_3",
-        "prod_4"
+        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-play-1",
+        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-heading-1"
       ],
       "settings": {
-        "badge_text": "Bright On - Dust Off",
-        "primary_text": "Better Cleaning",
-        "highlight_text": "Best Sellers",
-        "autoplay_enabled": true,
-        "color_background": "#f8fafc",
-        "color_primary_text": "#0f172a",
-        "color_highlight": "#f81f2f",
-        "color_badge_text": "#f81b27"
+        "full_width": true,
+        "allow_transparent_header": false,
+        "autoplay": true,
+        "video_size": "sm",
+        "video": "shopify://files/videos/window-cleaner-optmized.mp4",
+        "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "rich_text_zi6Wjd": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_rpXief": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        },
+        "heading_CizMbW": {
+          "type": "heading",
+          "settings": {
+            "text": "Magnetic Window Cleaners",
+            "heading_tag": "h2",
+            "text_color": "",
+            "gradient": ""
+          }
+        },
+        "richtext_P3nXP4": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Our innovative window cleaning products are specially designed with you in mind to make every window within reach.</p><p>The revolutionary solution for double-sided windows and high windows in your home, our unique magnetic gliders and extendable window cleaners are efficient, effective, and sustainable to use on your own.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_rpXief",
+        "heading_CizMbW",
+        "richtext_P3nXP4"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_width": "medium",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "media_with_text_naB3qr": {
+      "type": "media-with-text",
+      "blocks": {
+        "image_UgxkAx": {
+          "type": "image",
+          "settings": {
+            "media_width": 30,
+            "media_position": "start",
+            "text_position": "place-self-center text-center",
+            "icon": "none",
+            "icon_width": 32,
+            "subheading": "",
+            "title": "",
+            "content": "<h4>🧹 Sweep & Squeegee in One</h4><h4></h4><h4>🔄 Reaches Tight Spaces</h4><h4></h4><h4>💪 Tough & Surface-Safe</h4><p></p><p>Clean faster with one tool built for every mess.<br/>Strong, versatile, and made to last — the Tyroler 2-in-1 is a cleaning essential.</p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "#8d5b97",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        },
+        "video_block": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/Brightswipes AD1 MOBILE_6278ab51-3742-482c-bb63-52d3139bd2eb.mp4",
+            "external_video_url": "https://www.youtube.com/watch?v=oDjHs1ZLcss",
+            "autoplay": true,
+            "media_width": 55,
+            "media_position": "end",
+            "text_position": "place-self-center text-center",
+            "icon": "none",
+            "icon_width": 32,
+            "subheading": "",
+            "title": "",
+            "content": "<h4>🧹 Sweep & Squeegee in One</h4><h4></h4><h4>🔄 Reaches Tight Spaces</h4><h4></h4><h4>💪 Tough & Surface-Safe</h4><p></p><p>Clean faster with one tool built for every mess.<br/>Strong, versatile, and made to last — the Tyroler 2-in-1 is a cleaning essential.</p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "#0f172a",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "#e11d48",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "image_UgxkAx",
+        "video_block"
+      ],
+      "settings": {
+        "full_width": false,
+        "alternate_media_position": false,
+        "spacing": "none"
       }
     },
     "d9e91537-6225-4b57-bd84-e5d10e8558b3": {
@@ -137,7 +221,7 @@
           "type": "item",
           "settings": {
             "title": "Are the Wipes safe for my pets and or children?",
-            "content": "<p>Yes! Our Wipes have been trialled and tested for many years and are made from a special mix of ingredients that are safe to use around animals and children. If you have a pet and or child who are sensitive to chemicals, we suggest removing the pet and or child from the space whilst using the Wipes and waiting a few minutes for the floors to dry before bringing them<br/>back into the room. </p>"
+            "content": "<p>Our Quick Mop Floor Wipes have been tried and tested for years and are formulated for everyday household cleaning, including homes with pets and children.</p><p>If your pet or child is particularly sensitive to cleaning products or fragrances, we recommend keeping them out of the area while cleaning and allowing the floors to dry completely before they return.</p><p>For those seeking a plant-based option, our new <strong>BioVibe</strong> floor wipes are made with 100% plant-based, biodegradable fibres, feature a natural citrus fragrance blend and have been dermatologically tested.</p>"
           }
         },
         "item_JiUKf8": {
@@ -165,7 +249,7 @@
           "type": "item",
           "settings": {
             "title": "Are the scents overwhelming?",
-            "content": "<p>The scents of the floor Wipes are quite strong when initially applied, however the strength of the odour begin to fade over time and leave a pleasant and fresh odour in the space. </p>"
+            "content": "<p>The scents of the floor Wipes are quite strong when initially applied, however the strength of the odour begin to fade over time and leave a pleasant and fresh odour in the space.&nbsp;</p><p>If you prefer something more lightly scented, our new <strong>BioVibe</strong> floor wipes feature a natural citrus fragrance blend for a subtle, refreshing scent.</p>"
           }
         },
         "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-0": {
@@ -200,14 +284,14 @@
           "type": "item",
           "settings": {
             "title": "Do you have any fragrance-free Wipes?",
-            "content": "<p>No, not at this stage. Our Wipes have been trialled and tested for many years and the scents have been perfected based on our customers’ feedback. The strength of the fragrances fade a short time after application and leave a pleasant and fresh odour in the space.</p>"
+            "content": "<p>No, not at this stage. Our Wipes have been trialled and tested for many years and the scents have been perfected based on our customers’ feedback. The strength of the fragrances fade a short time after application and leave a pleasant and fresh odour in the space.</p><p>If you prefer something more lightly scented, our new <strong>BioVibe</strong> floor wipes feature a natural citrus fragrance blend for a subtle, refreshing scent.</p>"
           }
         },
         "item_RRDBJH": {
           "type": "item",
           "settings": {
             "title": "Do the Wipes have a chemical odour?",
-            "content": "<p>Our answer is no, however as with all fragrances, they are a<br/>matter of personal taste. Our Wipes have been trialled and tested and the feedback from our customers is that they love the smell of our<br/>Wipes. The strength of the fragrances fade a short time after application and leave a pleasant and fresh odour in the space.</p>"
+            "content": "<p>Our answer is no, however as with all fragrances, they are a<br/>matter of personal taste. Our Wipes have been trialled and tested and the feedback from our customers is that they love the smell of our<br/>Wipes. The strength of the fragrances fade a short time after application and leave a pleasant and fresh odour in the space.</p><p>If you prefer something more lightly scented, our new <strong>BioVibe</strong> floor wipes feature a natural citrus fragrance blend for a subtle, refreshing scent.</p>"
           }
         },
         "item_treNRt": {
@@ -220,15 +304,15 @@
         "item_6rFt8d": {
           "type": "item",
           "settings": {
-            "title": "Are your Wipes Environmentally friendly / biodegradable /compostable?",
-            "content": "<p>Unfortunately not. We are currently working with our manufacturer to develop a product that matches the quality of our current Wipes that are environmentally friendly. Whilst we do so, a positive environmental<br/>factor to consider is the amount of water our Wipes save in comparison to traditional floor cleaning methods. </p>"
+            "title": "Are your Quick Mop Floor Wipes biodegradable or environmentally friendly?",
+            "content": "<p>We're pleased to introduce <strong>BioVibe</strong>, our newest Quick Mop Floor Wipes fragrance, made with 100% plant-based, biodegradable fibres.</p><p>BioVibe offers a more environmentally conscious option for customers who love the convenience of our Quick Mop Floor Wipes.</p>"
           }
         },
         "item_XdrFyG": {
           "type": "item",
           "settings": {
             "title": "Where is our warehouse located?",
-            "content": "<p>Our warehouse is located in Elsternwick, Melbourne. </p>"
+            "content": "<p>Our warehouse is located in Cheltenham, Melbourne.&nbsp;</p>"
           }
         },
         "item_aTBcVY": {
@@ -251,14 +335,14 @@
           "disabled": true,
           "settings": {
             "title": "I have a question that is not listed here. How can I get in touch with BrightTools?",
-            "content": "<p>No problem at all! We're here to help. If you have any additional questions or need further assistance, simply visit our <a href=\"/pages/contact\" target=\"_blank\" title=\"Contact\">contact page.</a></p>"
+            "content": "<p>No problem at all! We're here to help. If you have any additional questions or need further assistance, please get in touch with us via email at: info@brighttools.com.au</p>"
           }
         },
         "item_tYHJ9Q": {
           "type": "item",
           "settings": {
             "title": "Which scent is the nicest?",
-            "content": "<p>This is a question of personal taste! All of the scents are pleasant and will leave your floors smelling fresh. </p>"
+            "content": "<p>Fragrance is a matter of personal preference, and all seven of our scents leave your floors smelling beautifully fresh.</p><p>If you prefer something more lightly scented, our new <strong>BioVibe</strong> floor wipes feature a natural citrus fragrance blend for a subtle, refreshing scent.</p>"
           }
         }
       },
@@ -291,11 +375,10 @@
         "subheading": "",
         "title": "Have a question?",
         "content": "",
-        "team_avatar": "shopify://shop_images/team-fff.webp",
         "team_avatar_width": 160,
-        "support_hours": "Our customer support is available monday to friday: 8am-8:30pm.",
-        "answer_time": "Average answer time: 24h",
-        "button_text": "Contacts us",
+        "support_hours": "Still have a question?",
+        "answer_time": "We're happy to help. If you haven't found the answer you're looking for please get in touch at: info@brighttools.com.au",
+        "button_text": "Contact us",
         "button_url": "shopify://pages/contact",
         "text_position": "center",
         "background": "#ffffff",
@@ -551,134 +634,49 @@
         "button_text_color": ""
       }
     },
-    "b5385aeb-4a34-4a6d-a487-108e7124135c": {
-      "type": "video",
+    "best_sellers": {
+      "type": "mar26-best-sellers",
       "blocks": {
-        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-play-1": {
-          "type": "play",
-          "settings": {}
-        },
-        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-heading-1": {
-          "type": "heading",
+        "prod_1": {
+          "type": "product",
           "settings": {
-            "text": "",
-            "heading_tag": "h1"
+            "product": "bright-broom-bundle-blue-edition"
+          }
+        },
+        "prod_2": {
+          "type": "product",
+          "settings": {
+            "product": "easy-cleaning-bundle-for-limited-mobility"
+          }
+        },
+        "prod_3": {
+          "type": "product",
+          "settings": {
+            "product": "adjustable-dust-blade-rubber-broom-squeegee"
+          }
+        },
+        "prod_4": {
+          "type": "product",
+          "settings": {
+            "product": "jet-all-purpose-cleaning-spray-with-vinegar-and-lavender-copy"
           }
         }
       },
       "block_order": [
-        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-play-1",
-        "template--20493667369234__b5385aeb-4a34-4a6d-a487-108e7124135c-heading-1"
+        "prod_1",
+        "prod_2",
+        "prod_3",
+        "prod_4"
       ],
       "settings": {
-        "full_width": true,
-        "allow_transparent_header": false,
-        "autoplay": true,
-        "video_size": "sm",
-        "video": "shopify://files/videos/window-cleaner-optmized.mp4",
-        "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "text_color": "#ffffff",
-        "overlay_color": "#000000",
-        "overlay_opacity": 0
-      }
-    },
-    "rich_text_zi6Wjd": {
-      "type": "rich-text",
-      "blocks": {
-        "subheading_rpXief": {
-          "type": "subheading",
-          "settings": {
-            "text": ""
-          }
-        },
-        "heading_CizMbW": {
-          "type": "heading",
-          "settings": {
-            "text": "Magnetic Window Cleaners",
-            "heading_tag": "h2",
-            "text_color": "",
-            "gradient": ""
-          }
-        },
-        "richtext_P3nXP4": {
-          "type": "richtext",
-          "settings": {
-            "content": "<p>Our innovative window cleaning products are specially designed with you in mind to make every window within reach.</p><p>The revolutionary solution for double-sided windows and high windows in your home, our unique magnetic gliders and extendable window cleaners are efficient, effective, and sustainable to use on your own.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "subheading_rpXief",
-        "heading_CizMbW",
-        "richtext_P3nXP4"
-      ],
-      "settings": {
-        "full_width": true,
-        "content_width": "medium",
-        "text_position": "center",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
-      }
-    },
-    "media_with_text_naB3qr": {
-      "type": "media-with-text",
-      "blocks": {
-        "image_UgxkAx": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/bt_delete.png",
-            "media_width": 30,
-            "media_position": "start",
-            "text_position": "place-self-center text-center",
-            "icon": "none",
-            "icon_width": 32,
-            "subheading": "",
-            "title": "",
-            "content": "<h4>🧹 Sweep & Squeegee in One</h4><h4></h4><h4>🔄 Reaches Tight Spaces</h4><h4></h4><h4>💪 Tough & Surface-Safe</h4><p></p><p>Clean faster with one tool built for every mess.<br/>Strong, versatile, and made to last — the Tyroler 2-in-1 is a cleaning essential.</p>",
-            "link_text": "",
-            "link_url": "",
-            "background": "#8d5b97",
-            "background_gradient": "",
-            "text_color": "#ffffff",
-            "text_gradient": "",
-            "button_background": "",
-            "button_text_color": ""
-          }
-        },
-        "video_block": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/Brightswipes AD1 MOBILE_6278ab51-3742-482c-bb63-52d3139bd2eb.mp4",
-            "external_video_url": "https://www.youtube.com/watch?v=oDjHs1ZLcss",
-            "autoplay": true,
-            "media_width": 55,
-            "media_position": "end",
-            "text_position": "place-self-center text-center",
-            "icon": "none",
-            "icon_width": 32,
-            "subheading": "",
-            "title": "",
-            "content": "<h4>🧹 Sweep & Squeegee in One</h4><h4></h4><h4>🔄 Reaches Tight Spaces</h4><h4></h4><h4>💪 Tough & Surface-Safe</h4><p></p><p>Clean faster with one tool built for every mess.<br/>Strong, versatile, and made to last — the Tyroler 2-in-1 is a cleaning essential.</p>",
-            "link_text": "",
-            "link_url": "",
-            "background": "#0f172a",
-            "background_gradient": "",
-            "text_color": "#ffffff",
-            "text_gradient": "",
-            "button_background": "#e11d48",
-            "button_text_color": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "image_UgxkAx",
-        "video_block"
-      ],
-      "settings": {
-        "full_width": false,
-        "alternate_media_position": false,
-        "spacing": "none"
+        "badge_text": "Bright On - Dust Off",
+        "primary_text": "Better Cleaning",
+        "highlight_text": "Best Sellers",
+        "autoplay_enabled": true,
+        "color_background": "#f8fafc",
+        "color_primary_text": "#0f172a",
+        "color_highlight": "#f81f2f",
+        "color_badge_text": "#f81b27"
       }
     },
     "mar26-highlights": {
@@ -744,6 +742,9 @@
         "testimonial_agixfB": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "James Anderson",
             "country": "australia",
             "content": "<p>The Japanese Rubber Broom changed how I handle large floor areas. It's indestructible.</p>",
@@ -754,6 +755,9 @@
         "testimonial_KAnGUX": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "Sarah Jenkins",
             "country": "new_zealand",
             "content": "<p>I've tried every cleaner on the market, but the Glider S-1 is the only one that delivers.</p>",
@@ -764,6 +768,9 @@
         "testimonial_dARCyM": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "Emma Watson",
             "country": "australia",
             "content": "<p>If you have a dog that sheds, you need these tools. It literally pulls fur out of carpets.</p>",
@@ -774,6 +781,9 @@
         "testimonial_zm3YtV": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "Michael Chen",
             "country": "australia",
             "content": "<p>The build quality is industrial-grade. Durability is honestly unmatched.</p>",
@@ -784,6 +794,9 @@
         "testimonial_DbHRyQ": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "David Ross",
             "country": "new_zealand",
             "content": "<p>The Caravan Kit is brilliant. No buckets, no mess, stores away perfectly.</p>",

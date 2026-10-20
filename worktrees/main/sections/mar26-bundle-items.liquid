@@ -1,8 +1,9 @@
 {% comment %}
-  MAR26 - INSIDE YOUR BUNDLE (TABBED CAROUSEL)
+  MAR26 - INSIDE YOUR BUNDLE (CAROUSEL)
   Parity Target: caravan-v4-b.html [Line 377]
-  Version: v0.4.0 — Added Mouse-Swipe (Click-to-Drag) interaction for desktop users.
-                   Improved card layout and layout-bleed.
+  Version: v0.8.0 — Removed Product Chips / Streamlined Card Carousel
+  - Removed: Product chips/tab buttons above the carousel
+  - Retained: Interactive product cards carousel with smooth scroll down to #mar26-included-heading
 {% endcomment %}
 
 <style>
@@ -140,6 +141,7 @@
     overflow: hidden;
     scroll-snap-align: center;
     box-shadow: 0 20px 40px -10px rgba(0,0,0,0.25);
+    cursor: pointer;
   }
 
   @media (min-width: 768px) {
@@ -157,6 +159,8 @@
     justify-content: center;
     height: 100%;
     overflow: hidden;
+    margin-left: 8px;
+    border-radius: 1.5rem;
   }
 
   .mar26-panel-image img {
@@ -173,11 +177,11 @@
   }
 
   .mar26-panel-content h3 {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 900;
     text-transform: uppercase;
     margin: 0 0 4px 0;
-    line-height: 1;
+    line-height: 1.15;
     font-family: 'Montserrat', sans-serif;
   }
 
@@ -258,6 +262,14 @@
   }
 </style>
 
+{%- liquid
+  assign meta_items = product.metafields.custom.included_products.value
+  assign has_meta_items = false
+  if meta_items != blank and meta_items.count > 0
+    assign has_meta_items = true
+  endif
+-%}
+
 <section id="bundle-breakdown" class="mar26-bundle-breakdown">
   <div class="max-w-[1200px] mx-auto">
     
@@ -271,47 +283,57 @@
     </button>
 
     <div id="mar26-bundle-body" class="mar26-bundle-content hidden">
-      <!-- Tabs -->
-      <div class="mar26-tab-controls">
-        {% for block in section.blocks %}
-          <button 
-            class="mar26-tab-btn {% if forloop.first %}active{% endif %}" 
-            data-index="{{ forloop.index0 }}"
-            onclick="mar26SwitchTab({{ forloop.index0 }})"
-          >
-            {{ block.settings.tab_label }}
-          </button>
-        {% endfor %}
-      </div>
-
       <!-- Carousel -->
       <div id="mar26-tab-carousel" class="mar26-tab-carousel">
-        {% for block in section.blocks %}
-          <div 
-            class="mar26-tab-panel {% if forloop.first %}active{% endif %}" 
-            data-index="{{ forloop.index0 }}"
-          >
-            <div class="mar26-panel-image">
-              {% if block.settings.image != blank %}
-                <img src="{{ block.settings.image | image_url: width: 400 }}" alt="{{ block.settings.title }}">
-              {% else %}
-                <div class="w-full h-24 bg-gray-200 flex items-center justify-center rounded">Image</div>
-              {% endif %}
+        {%- if has_meta_items -%}
+          {%- for item in meta_items -%}
+            {%- liquid
+              assign item_img = item.featured_image | default: item.image
+            -%}
+            <div 
+              class="mar26-tab-panel {% if forloop.first %}active{% endif %}" 
+              data-index="{{ forloop.index0 }}"
+            >
+              <div class="mar26-panel-image">
+                {%- if item_img != blank -%}
+                  <img src="{{ item_img | image_url: width: 400 }}" alt="{{ item.title | escape }}">
+                {%- else -%}
+                  <div class="w-full h-24 bg-gray-200 flex items-center justify-center rounded">Image</div>
+                {%- endif -%}
+              </div>
+              <div class="mar26-panel-content">
+                <h3>{{ item.title }}</h3>
+                <div class="mar26-panel-accent"></div>
+              </div>
             </div>
-            <div class="mar26-panel-content">
-              <h3>{{ block.settings.title }}</h3>
-              <p>{{ block.settings.description }}</p>
-              <div class="mar26-panel-accent"></div>
+          {%- endfor -%}
+        {%- else -%}
+          {%- for block in section.blocks -%}
+            <div 
+              class="mar26-tab-panel {% if forloop.first %}active{% endif %}" 
+              data-index="{{ forloop.index0 }}"
+            >
+              <div class="mar26-panel-image">
+                {%- if block.settings.image != blank -%}
+                  <img src="{{ block.settings.image | image_url: width: 400 }}" alt="{{ block.settings.title | escape }}">
+                {%- else -%}
+                  <div class="w-full h-24 bg-gray-200 flex items-center justify-center rounded">Image</div>
+                {%- endif -%}
+              </div>
+              <div class="mar26-panel-content">
+                <h3>{{ block.settings.title }}</h3>
+                <div class="mar26-panel-accent"></div>
+              </div>
             </div>
-          </div>
-        {% endfor %}
+          {%- endfor -%}
+        {%- endif -%}
       </div>
     </div>
   </div>
 </section>
 
 <script>
-  const MAR26_BUNDLE_VERSION = 'v0.4.0';
+  const MAR26_BUNDLE_VERSION = 'v0.8.0';
   const MAR26_TAG = '[mar26-bundle-items]';
   const mar26Log = (level, label, data) => {
     const ts = new Date().toISOString().substring(11, 23);
@@ -321,19 +343,6 @@
   };
   mar26Log('log', '[BOOT] Script loaded — version: ' + MAR26_BUNDLE_VERSION);
 
-  function mar26SwitchTab(index) {
-    const carousel = document.getElementById('mar26-tab-carousel');
-    const panels = carousel.querySelectorAll('.mar26-tab-panel');
-    const targetPanel = Array.from(panels).find(p => parseInt(p.dataset.index) === index);
-    if (targetPanel) {
-      const scrollTarget = targetPanel.offsetLeft - (carousel.clientWidth / 2) + (targetPanel.clientWidth / 2);
-      carousel.scrollTo({ left: scrollTarget, behavior: 'smooth' });
-      mar26Log('log', `[TAB] switchTab → index:${index} | scrollTarget:${scrollTarget}`);
-    } else {
-      mar26Log('warn', `[TAB] switchTab → NO PANEL for index:${index}`);
-    }
-  }
-
   document.addEventListener("DOMContentLoaded", () => {
     mar26Log('log', '[INIT] DOMContentLoaded — initializing…');
 
@@ -342,16 +351,15 @@
     const body = document.getElementById('mar26-bundle-body');
     const icon = toggleBtn ? toggleBtn.querySelector('.mar26-bundle-icon') : null;
     const panels = document.querySelectorAll('.mar26-tab-panel');
-    const tabBtns = document.querySelectorAll('.mar26-tab-btn');
 
     mar26Log('log', '[INIT] DOM nodes', {
       carousel: !!carousel, toggleBtn: !!toggleBtn, body: !!body, icon: !!icon,
-      panelCount: panels.length, tabBtnCount: tabBtns.length,
+      panelCount: panels.length,
       bodyInitialHidden: body ? body.classList.contains('hidden') : 'n/a'
     });
 
-    if (!carousel || !toggleBtn || !body || panels.length === 0) {
-      mar26Log('error', '[INIT] ABORT — required DOM nodes missing.');
+    if (!toggleBtn || !body) {
+      mar26Log('error', '[INIT] ABORT — accordion toggle button or body missing.');
       return;
     }
 
@@ -362,10 +370,7 @@
       userAgent: navigator.userAgent.substring(0, 80)
     });
 
-    /* ───────── Animation trigger (no IntersectionObserver) ─────────
-       Root cause of prior failure: when accordion has `.hidden` (max-height:0;
-       overflow:hidden), panels have 0 visible area → IO intersectionRatio=0 forever.
-       New approach: trigger on the semantic signal we already control — accordion open. */
+    /* ───────── Animation trigger (no IntersectionObserver) ───────── */
     let animationTriggered = false;
 
     const triggerEntranceAnimation = (source) => {
@@ -442,20 +447,21 @@
       });
     });
 
-    /* Tab sync observer — unchanged; only watches carousel center-point. */
-    const tabSyncObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const index = parseInt(entry.target.dataset.index);
-          tabBtns.forEach((btn, i) => btn.classList.toggle('active', i === index));
-          panels.forEach(panel => {
-            panel.classList.toggle('active', parseInt(panel.dataset.index) === index);
-          });
-        }
-      });
-    }, { root: carousel, threshold: 0.6 });
-    panels.forEach(panel => tabSyncObserver.observe(panel));
-    mar26Log('log', `[INIT] tabSyncObserver attached to ${panels.length} panels`);
+    /* Panel sync observer — watches carousel center-point to highlight active panel */
+    if (carousel && panels.length > 0) {
+      const panelSyncObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const index = parseInt(entry.target.dataset.index);
+            panels.forEach(panel => {
+              panel.classList.toggle('active', parseInt(panel.dataset.index) === index);
+            });
+          }
+        });
+      }, { root: carousel, threshold: 0.6 });
+      panels.forEach(panel => panelSyncObserver.observe(panel));
+      mar26Log('log', `[INIT] panelSyncObserver attached to ${panels.length} panels`);
+    }
 
     /* If accordion is already open at init (not hidden), trigger immediately. */
     if (!body.classList.contains('hidden')) {
@@ -481,6 +487,7 @@
 
     carousel.addEventListener('mousedown', (e) => {
       isDown = true;
+      walk = 0;
       carousel.classList.add('is-dragging');
       startX = e.pageX - carousel.offsetLeft;
       scrollLeft = carousel.scrollLeft;
@@ -509,7 +516,25 @@
       carousel.scrollLeft = scrollLeft - walk;
     });
 
-    mar26Log('log', '[INIT] ✓ complete — Mouse Swipe Active');
+    /* ───────── Panel Click Navigation to .mar26-included-heading ───────── */
+    panels.forEach(panel => {
+      panel.addEventListener('click', (e) => {
+        // If user was dragging more than 6px, ignore click
+        if (Math.abs(walk) > 6) {
+          mar26Log('log', '[CLICK] Ignored due to drag gesture', { walk });
+          return;
+        }
+        const target = document.querySelector('.mar26-included-heading');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          mar26Log('log', '[CLICK] Scrolled to .mar26-included-heading');
+        } else {
+          mar26Log('warn', '[CLICK] .mar26-included-heading not found on page');
+        }
+      });
+    });
+
+    mar26Log('log', '[INIT] ✓ complete — Mouse Swipe & Heading Scroll Active');
   });
 </script>
 

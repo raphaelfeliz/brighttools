@@ -1,13 +1,13 @@
 /* 
   MAR26 FOUNDATION CSS
   ----------------------------------------------------------------------------------------------------------------------
-  VERSION: 0.8.10 - Remove border outline on primary buy buttons
+  VERSION: 0.9.0 - Introduce standardized 5-tier typographic scale tokens and utility classes
   This file serves as the single source of truth for the MAR26 design system.
   ----------------------------------------------------------------------------------------------------------------------
 */
 
 :root {
-  --mar26-foundation-version: '0.8.10';
+  --mar26-foundation-version: '0.9.0';
 
   /* Official Brand Colors */
   --mar26-clr-red: #f81b27;
@@ -71,6 +71,13 @@
   --mar26-font-weight-body: var(--mar26-fw-medium);
   --mar26-font-weight-button: var(--mar26-fw-semibold);
 
+  /* 5-Tier Typographic Scale (Mobile Defaults) */
+  --mar26-fs-display: 24px;   /* Tier 1: Main Product / Hero Titles */
+  --mar26-fs-section: 20px;   /* Tier 2: Section Headings */
+  --mar26-fs-emphasis: 16px;  /* Tier 3: Subheadings, Prices, Highlights */
+  --mar26-fs-body: 14px;      /* Tier 4: Body text, CTAs, Form inputs */
+  --mar26-fs-caption: 12px;   /* Tier 5: Badges, Tags, Metadata, Reviews */
+
   /* 
     4. SHADOW TOKENS (Omnidirectional)
     Standardized glows for consistent depth across the theme.
@@ -85,9 +92,27 @@
   --mar26-header-margin-bottom: 2.5rem;
 }
 
+/* 5-Tier Typographic Scale Desktop Overrides */
+@media screen and (min-width: 1000px) {
+  :root {
+    --mar26-fs-display: 28px;
+    --mar26-fs-section: 22px;
+    --mar26-fs-emphasis: 18px;
+    --mar26-fs-body: 15px;
+    --mar26-fs-caption: 12px;
+  }
+}
+
 /* 
   4. GLOBAL UTILITY CLASSES 
 */
+
+/* Standardized 5-Tier Typography Utility Classes */
+.mar26-text-display  { font-size: var(--mar26-fs-display) !important; }
+.mar26-text-section  { font-size: var(--mar26-fs-section) !important; }
+.mar26-text-emphasis { font-size: var(--mar26-fs-emphasis) !important; }
+.mar26-text-body     { font-size: var(--mar26-fs-body) !important; }
+.mar26-text-caption  { font-size: var(--mar26-fs-caption) !important; }
 
 /* Global Section Titles (Standardized Heading) */
 .mar26-section-title {

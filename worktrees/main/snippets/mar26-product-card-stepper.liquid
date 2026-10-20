@@ -1,0 +1,172 @@
+{%- comment -%}
+----------------------------------------------------------------------------------------------------------------------
+MAR26 PRODUCT CARD STEPPER
+VERSION: 2.0.0 (Modular Layouts: Horizontal & Vertical)
+Reusable product card with quantity stepper and pricing.
+- 'horizontal' (default): Row 1 image + title/desc, Row 2 stepper + price
+- 'vertical': Image top, title below, compact clean ratio, stepper + price + optional CTA button
+Parameters:
+  - card_product: ProductDrop (required)
+  - card_title: string (optional override)
+  - card_image: ImageDrop (optional override)
+  - layout: string ('horizontal' | 'vertical', default: 'horizontal')
+  - show_desc: boolean (default: true for horizontal, false for vertical)
+  - show_cta: boolean (default: false, renders CTA button if true)
+  - cta_text: string (default: 'Add to Bundle')
+  - is_bundle: boolean (default: false)
+  - initial_qty: integer (default: 0, or 1 if is_bundle)
+  - min_qty: integer (default: 0, or 1 if is_bundle)
+  - shopify_attributes: string (optional block attributes)
+  - modifier: string (optional css classes)
+----------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+{%- liquid
+  assign item_product = card_product | default: product
+  if item_product == blank
+    break
+  endif
+
+  assign item_variant = item_product.selected_or_first_available_variant
+  assign is_bundle_item = is_bundle | default: false
+  assign card_layout = layout | default: 'horizontal'
+  
+  if is_bundle_item
+    assign default_qty = initial_qty | default: 1
+    assign minimum_qty = min_qty | default: 1
+  else
+    assign default_qty = initial_qty | default: 0
+    assign minimum_qty = min_qty | default: 0
+  endif
+
+  assign display_title = card_title | default: item_product.title
+  assign display_image = card_image | default: item_product.featured_image
+
+  if show_desc == nil
+    if card_layout == 'vertical'
+      assign render_desc = false
+    else
+      assign render_desc = true
+    endif
+  else
+    assign render_desc = show_desc
+  endif
+
+  if render_desc
+    assign item_short_desc = item_product.metafields.custom.short_description.value
+    if item_short_desc == blank
+      assign item_short_desc = item_product.description | strip_html | truncatewords: 25
+    else
+      assign item_short_desc = item_short_desc | strip_html
+    endif
+  endif
+-%}
+
+<div 
+  class="mar26-stepper-card mar26-stepper-card--{{ card_layout }} {% if is_bundle_item %}mar26-stepper-card--bundle is-selected{% else %}mar26-stepper-card--addon{% if default_qty > 0 %} is-selected{% endif %}{% endif %} {{ modifier }}"
+  data-variant-id="{{ item_variant.id }}"
+  data-price="{{ item_variant.price | divided_by: 100.0 }}"
+  data-is-bundle="{% if is_bundle_item %}true{% else %}false{% endif %}"
+  data-min-qty="{{ minimum_qty }}"
+  {{ shopify_attributes }}
+>
+  {%- if card_layout == 'vertical' -%}
+    <!-- Vertical Layout: Clean proportions, top image, title below, bottom row stepper + pricing + optional CTA -->
+    <div class="mar26-stepper-card__media-top">
+      {%- if display_image != blank -%}
+        <img 
+          src="{{ display_image | image_url: width: 480 }}" 
+          alt="{{ display_title | escape }}" 
+          loading="lazy"
+          width="240"
+          height="180"
+        >
+      {%- else -%}
+        <div class="mar26-stepper-card__media-placeholder">
+          {{ 'product-1' | placeholder_svg_tag: 'mar26-product-img' }}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="mar26-stepper-card__content">
+      <h3 class="mar26-stepper-card__title">{{ display_title }}</h3>
+      {%- if render_desc and item_short_desc != blank -%}
+        <p class="mar26-stepper-card__desc">{{ item_short_desc }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="mar26-stepper-card__row-bottom">
+      <div class="mar26-stepper-card__controls">
+        <div class="mar26-qty-wrap" onclick="event.stopPropagation()">
+          <button class="mar26-qty-btn" type="button" onclick="mar26UpdateStepperQty(this, -1)" aria-label="Decrease quantity of {{ display_title | escape }}">−</button>
+          <span class="mar26-qty-val" {% if is_bundle_item %}id="mar26-bundle-qty"{% endif %}>{{ default_qty }}</span>
+          <button class="mar26-qty-btn" type="button" onclick="mar26UpdateStepperQty(this, 1)" aria-label="Increase quantity of {{ display_title | escape }}">+</button>
+        </div>
+
+        {%- if show_cta -%}
+          <button 
+            class="mar26-card-cta-btn {% if default_qty > 0 %}is-added{% endif %}" 
+            type="button" 
+            data-variant-id="{{ item_variant.id }}"
+            onclick="mar26CardCtaClick(this)"
+          >
+            {%- if default_qty > 0 -%}
+              Added ({{ default_qty }})
+            {%- else -%}
+              {{ cta_text | default: 'Add to Bundle' }}
+            {%- endif -%}
+          </button>
+        {%- endif -%}
+      </div>
+
+      <div class="mar26-stepper-card__pricing">
+        {%- if item_variant.compare_at_price > item_variant.price -%}
+          <span class="mar26-price-old">{{ item_variant.compare_at_price | money }}</span>
+        {%- endif -%}
+        <span class="mar26-price-new">{{ item_variant.price | money }}</span>
+      </div>
+    </div>
+
+  {%- else -%}
+    <!-- Horizontal Layout (Default for Buy Flow) -->
+    <!-- Row 1: Image + Title and description below -->
+    <div class="mar26-stepper-card__row-main">
+      <div class="mar26-stepper-card__image-box">
+        {%- if display_image != blank -%}
+          <img 
+            src="{{ display_image | img_url: '300x300', crop: 'center' }}" 
+            alt="{{ display_title | escape }}" 
+            loading="{% if is_bundle_item %}eager{% else %}lazy{% endif %}"
+            width="128"
+            height="128"
+          >
+        {%- else -%}
+          {{ 'product-1' | placeholder_svg_tag: 'mar26-product-img' }}
+        {%- endif -%}
+      </div>
+
+      <div class="mar26-stepper-card__info">
+        <h3 class="mar26-stepper-card__title">{{ display_title }}</h3>
+        {%- if render_desc and item_short_desc != blank -%}
+          <p class="mar26-stepper-card__desc">{{ item_short_desc }}</p>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <!-- Row 2: Quantity selector and price -->
+    <div class="mar26-stepper-card__row-bottom">
+      <div class="mar26-qty-wrap" onclick="event.stopPropagation()">
+        <button class="mar26-qty-btn" type="button" onclick="mar26UpdateStepperQty(this, -1)" aria-label="Decrease quantity of {{ display_title | escape }}">−</button>
+        <span class="mar26-qty-val" {% if is_bundle_item %}id="mar26-bundle-qty"{% endif %}>{{ default_qty }}</span>
+        <button class="mar26-qty-btn" type="button" onclick="mar26UpdateStepperQty(this, 1)" aria-label="Increase quantity of {{ display_title | escape }}">+</button>
+      </div>
+
+      <div class="mar26-stepper-card__pricing">
+        {%- if item_variant.compare_at_price > item_variant.price -%}
+          <span class="mar26-price-old">{{ item_variant.compare_at_price | money }}</span>
+        {%- endif -%}
+        <span class="mar26-price-new">{{ item_variant.price | money }}</span>
+      </div>
+    </div>
+  {%- endif -%}
+</div>

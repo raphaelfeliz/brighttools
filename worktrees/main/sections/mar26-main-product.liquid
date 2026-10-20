@@ -3,9 +3,9 @@
 file-summary: MAR26 main product section. Drives MAR26 mobile ordering, gallery layout variables, and product info composition.
 
 # Version Block (SOP: Always update for real changes)
-version-name: Mobile Disposition Order Update
-  version-number: 2.4.0
-version-summary: Updated mobile sequence map to Title -> Rating -> Price -> In Stock -> Quantity -> Description.
+version-name: Fix DealEasy App Block Flex Containment and Multi-Column Grid
+version-number: 3.11.0
+version-summary: Excluded DealEasy and Selleasy from Judge.me left-aligned flex rule. Forced block item and app block to 100% width block display, and set .lb-bb-products-wrap to responsive multi-column 1fr grid with centered cards.
 
 # Change rationale:
 # - Normal state: Black background / White text.
@@ -85,9 +85,9 @@ version-summary: Updated mobile sequence map to Title -> Rating -> Price -> In S
     }
 
     #shopify-section-{{ section.id }} .product-info__title {
-      font-size: 34px !important;
+      font-size: var(--mar26-fs-display) !important;
       font-weight: 600 !important;
-      line-height: 1.02 !important;
+      line-height: 1.05 !important;
     }
 
     #shopify-section-{{ section.id }} .product-info__vendor,
@@ -96,6 +96,35 @@ version-summary: Updated mobile sequence map to Title -> Rating -> Price -> In S
     #shopify-section-{{ section.id }} .product-info .text-xs {
       line-height: 1.35 !important;
     }
+
+    #shopify-section-{{ section.id }} .product-info {
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26-title-and-tags"],
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26_title_and_tags"],
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="title"] { order: 1 !important; }
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="@app"],
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="rating"] { order: 2 !important; }
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="price"],
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26-quantity-price"],
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26_quantity_price"] { order: 3 !important; }
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="variant-picker"],
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="variant_picker"],
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="inventory"] { order: 4 !important; }
+    #shopify-section-{{ section.id }} .product-info__block-item:has(.lb-widget-pal),
+    #shopify-section-{{ section.id }} .product-info__block-item:has(lb-upsell-widget),
+    #shopify-section-{{ section.id }} .product-info__block-item:has(lb-vd-qty-selector),
+    #shopify-section-{{ section.id }} .product-info__block-item:has(#lb-bundle-builder),
+    #shopify-section-{{ section.id }} .product-info__block-item:has(lb-bundle-builder) { order: 4 !important; }
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="quantity-selector"],
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="quantity_selector"],
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy-buttons"],
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="buy_buttons"] { order: 5 !important; }
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26-short-description"],
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26_short_description"],
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="description"],
+    #shopify-section-{{ section.id }} .product-info__block-item { order: 10; }
   }
 
   @media screen and (min-width: 1400px) {
@@ -164,29 +193,46 @@ version-summary: Updated mobile sequence map to Title -> Rating -> Price -> In S
   .product-info__buy-buttons buy-buttons .button,
   .product-info__buy-buttons buy-buttons .shopify-payment-button__button {
     width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    flex: 1 1 0% !important;
     padding-left: 24px !important;
     padding-right: 24px !important;
-    flex: 0 0 auto !important;
     margin: 0 !important;
   }
 
   .product-info__buy-buttons .shopify-payment-button {
     width: auto !important;
-    flex: 0 0 auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    flex: 1 1 0% !important;
     margin: 0 !important;
     padding: 0 !important;
+    position: relative !important;
   }
 
   /* Ensure the "More payment options" link doesn't break button-to-button vertical alignment */
   .shopify-payment-button__more-options {
-    position: absolute !important;
-    top: calc(100% + 5px) !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    width: max-content !important;
-    font-size: 10px !important;
+    position: static !important;
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    font-size: 14px !important;
     text-align: center !important;
-    margin: 0 !important;
+    margin: 16px auto 24px auto !important;
+    display: block !important;
+  }
+
+  @media screen and (min-width: 1000px) {
+    .shopify-payment-button__more-options {
+      position: absolute !important;
+      top: calc(100% + 12px) !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      width: max-content !important;
+      margin: 0 !important;
+    }
   }
 
   .section.section--tight.section-blends.section-full {
@@ -261,8 +307,12 @@ version-summary: Updated mobile sequence map to Title -> Rating -> Price -> In S
     margin-bottom: 30px !important; /* Pushes subsequent sections down to accommodate absolute-positioned options link */
   }
 
-  #shopify-section-{{ section.id }} buy-buttons.buy-buttons--multiple {
-    padding: 5px !important;
+  #shopify-section-{{ section.id }} buy-buttons.buy-buttons--multiple,
+  #shopify-section-{{ section.id }} .buy-buttons--multiple,
+  #shopify-section-{{ section.id }} buy-buttons,
+  #shopify-section-{{ section.id }} .buy-buttons {
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   @media screen and (max-width: 999px) {
@@ -325,6 +375,19 @@ version-summary: Updated mobile sequence map to Title -> Rating -> Price -> In S
     /* Order 4: Inventory / In Stock */
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="inventory"] { order: 4 !important; }
 
+    /* Volume Discounts / Upsell Add-Ons / Quantity Tier Selectors (Above Buy Buttons) */
+    #shopify-section-{{ section.id }} .product lb-vd-qty-selector,
+    #shopify-section-{{ section.id }} .product lb-upsell-widget,
+    #shopify-section-{{ section.id }} .product lb-bundle-builder { order: -1 !important; }
+    #shopify-section-{{ section.id }} .product .product-info__block-item:has(.lb-widget-pal),
+    #shopify-section-{{ section.id }} .product .product-info__block-item:has(lb-upsell-widget),
+    #shopify-section-{{ section.id }} .product .product-info__block-item:has(#lb-bundle-builder),
+    #shopify-section-{{ section.id }} .product .product-info__block-item:has(lb-bundle-builder),
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="vd-cards"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="dealeasy_vd_cards"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mm-bundle-builder"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="dealeasy_mm_bundle_builder"] { order: 4 !important; }
+
     /* Order 5: Quantity & Buy Action */
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="quantity-selector"],
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="quantity_selector"],
@@ -347,21 +410,51 @@ version-summary: Updated mobile sequence map to Title -> Rating -> Price -> In S
     }
 
     /* 1. Gallery (Main Media + Thumbnails) */
-    /* 2. Standardized Block Gaps (Mobile) */
+    /* 1. Gallery (Main Media + Thumbnails) */
+    /* 2. Standardized Block Gaps & Side Margins (Mobile) */
     #shopify-section-{{ section.id }} .product-info__block-item {
-      padding: 0 var(--container-gutter) !important;
+      padding-left: 28px !important;
+      padding-right: 28px !important;
+      padding-inline: 28px !important;
       margin-top: 2px !important;
       margin-bottom: 0 !important;
       width: 100% !important;
+      box-sizing: border-box !important;
     }
 
     #shopify-section-{{ section.id }} .product-info__block-item:first-child {
       margin-top: 0 !important;
     }
 
-    /* 2.1 MAR26 Gradient Title */
-    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26-gradient-title"] {
-      margin-top: 0 !important; /* Always zero if it's first in logic */
+    /* 2.1 Title: Box Centered with Side Margins, Text Left-Aligned */
+    #shopify-section-{{ section.id }} .product-info__title,
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="title"] h1,
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="title"] h2,
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="title"],
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26-gradient-title"],
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26_gradient_title"],
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26-title-and-tags"],
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26_title_and_tags"],
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26-tags"],
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26_tags"] {
+      text-align: left !important;
+      justify-content: flex-start !important;
+      margin-left: 0 !important;
+      margin-right: auto !important;
+      width: 100% !important;
+    }
+
+    #shopify-section-{{ section.id }} .product-info__gradient-title-wrapper {
+      display: flex !important;
+      justify-content: flex-start !important;
+      align-items: center !important;
+      width: 100% !important;
+    }
+
+    #shopify-section-{{ section.id }} .product-info__gradient-title {
+      justify-content: flex-start !important;
+      text-align: left !important;
+      width: 100% !important;
     }
 
     /* 2.15 MAR26 Tags & Unified Title */
@@ -377,19 +470,52 @@ version-summary: Updated mobile sequence map to Title -> Rating -> Price -> In S
       padding-bottom: 0 !important;
     }
 
-    /* App blocks (Judge.me badge etc.) and native rating block */
-    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="@app"],
-    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="rating"] {
+    /* App blocks (Judge.me badge etc.) and native rating block: Left-Aligned */
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="@app"]:not(:has(#lb-bundle-builder, lb-bundle-builder, .lb-widget-pal, lb-upsell-widget)),
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="rating"],
+    #shopify-section-{{ section.id }} .product-info__rating,
+    #shopify-section-{{ section.id }} .product-info__rating .rating-with-text,
+    #shopify-section-{{ section.id }} .jdgm-widget,
+    #shopify-section-{{ section.id }} .jdgm-preview-badge,
+    #shopify-section-{{ section.id }} .jdgm-prev-badge {
+      display: flex !important;
+      justify-content: flex-start !important;
+      align-items: center !important;
+      gap: 8px !important;
+      line-height: 1 !important;
+      text-align: left !important;
       margin-top: 2px !important;
       margin-bottom: 0 !important;
+      margin-left: 0 !important;
+      margin-right: auto !important;
+      width: 100% !important;
     }
 
-
-    /* 2.2 Standard Title (Fallback) */
-    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="title"] {
+    #shopify-section-{{ section.id }} .jdgm-prev-badge__stars {
+      display: inline-flex !important;
+      align-items: center !important;
+      line-height: 1 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      transform: translateY(-2px) !important;
     }
 
+    #shopify-section-{{ section.id }} .jdgm-star {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      line-height: 1 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
 
+    #shopify-section-{{ section.id }} .jdgm-prev-badge__text {
+      display: inline-flex !important;
+      align-items: center !important;
+      line-height: 1 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
 
     /* 2.25 MAR26 Short Description (Visual Polish - Mobile Edge-to-Edge) */
     #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26_short_description"],
@@ -413,44 +539,76 @@ version-summary: Updated mobile sequence map to Title -> Rating -> Price -> In S
       margin-left: var(--container-gutter) !important;
       margin-right: var(--container-gutter) !important;
       padding: 5px !important;
+      text-align: left !important;
     }
 
     #shopify-section-{{ section.id }} .mar26-short-description-card {
-      margin-top: 0 !important;
+      margin-top: 16px !important;
       margin-bottom: 0 !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
       width: 100% !important;
       max-width: 100% !important;
       border-radius: 1rem !important;
       padding: 16px var(--container-gutter) !important;
+      text-align: left !important;
     }
 
     /* 4. Mobile Typography Overrides */
     #shopify-section-{{ section.id }} .product-info__title {
-      font-size: calc((var(--text-h1) + 2px) * 0.9) !important;
+      font-size: var(--mar26-fs-display) !important;
+      text-align: left !important;
     }
 
     #shopify-section-{{ section.id }} .mar26-short-description-text,
     #shopify-section-{{ section.id }} .mar26-short-description-item {
-      font-size: 18px !important;
+      font-size: 14px !important;
+      text-align: left !important;
     }
 
-    /* 5. Pricing */
-    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="price"] {
-      padding: 0 var(--container-gutter) !important;
+    /* 5. Pricing: Left-Aligned */
+    #shopify-section-{{ section.id }} .product-info__price,
+    #shopify-section-{{ section.id }} .product-info__price .rating-with-text,
+    #shopify-section-{{ section.id }} .product-info__price .price-list,
+    #shopify-section-{{ section.id }} price-list,
+    #shopify-section-{{ section.id }} .price-list {
+      padding: 0 !important;
       margin-top: 5px !important;
+      margin-bottom: 0 !important;
+      margin-left: 0 !important;
+      margin-right: auto !important;
+      display: flex !important;
+      justify-content: flex-start !important;
+      align-items: center !important;
+      text-align: left !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
     }
 
-    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="mar26-quantity-price"] {
-      padding: 0 var(--container-gutter) !important;
-      margin-top: 5px !important;
+    /* 5.5 Inventory ("In stock"): Left-Aligned */
+    #shopify-section-{{ section.id }} .product-info__inventory,
+    #shopify-section-{{ section.id }} variant-inventory,
+    #shopify-section-{{ section.id }} .product-info__inventory .text-with-icon,
+    #shopify-section-{{ section.id }} variant-inventory .text-with-icon {
+      padding: 0 !important;
+      margin: 0 !important;
+      display: flex !important;
+      justify-content: flex-start !important;
+      align-items: center !important;
+      text-align: left !important;
+      margin-left: 0 !important;
+      margin-right: auto !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
     }
 
     /* 6. Everything Else (Buy Buttons, Variants, etc.) */
     #shopify-section-{{ section.id }} .product-info__block-item {
-      padding: 0 var(--container-gutter) !important;
+      padding-left: 28px !important;
+      padding-right: 28px !important;
+      padding-inline: 28px !important;
       width: 100% !important;
+      box-sizing: border-box !important;
     }
 
     /* 7. Complementary Products (Mobile High-Density) */
@@ -488,6 +646,98 @@ version-summary: Updated mobile sequence map to Title -> Rating -> Price -> In S
     #shopify-section-{{ section.id }} .horizontal-product__info .v-stack {
       flex: 1 1 auto !important;
     }
+  }
+
+  /* DealEasy Bundle Builder Centering & Layout Alignment */
+  #shopify-section-{{ section.id }} .product-info__block-item:has(#lb-bundle-builder, lb-bundle-builder) {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+    box-sizing: border-box !important;
+  }
+
+  #shopify-section-{{ section.id }} .product-info__block-item:has(#lb-bundle-builder, lb-bundle-builder) > .shopify-app-block,
+  #shopify-section-{{ section.id }} #lb-bundle-builder,
+  #shopify-section-{{ section.id }} lb-bundle-builder {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  #shopify-section-{{ section.id }} lb-bundle-builder .lb-bb-step-wrap,
+  #shopify-section-{{ section.id }} lb-bundle-builder .lb-bb-step-content,
+  #shopify-section-{{ section.id }} lb-bundle-builder .lb-bb-components-wrap,
+  #shopify-section-{{ section.id }} #lb-bundle-builder .lb-bb-step-wrap,
+  #shopify-section-{{ section.id }} #lb-bundle-builder .lb-bb-step-content,
+  #shopify-section-{{ section.id }} #lb-bundle-builder .lb-bb-components-wrap {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  #shopify-section-{{ section.id }} lb-bundle-builder .lb-bb-header-wrap,
+  #shopify-section-{{ section.id }} #lb-bundle-builder .lb-bb-header-wrap {
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  #shopify-section-{{ section.id }} lb-bundle-builder .lb-bb-sub-header-wrap,
+  #shopify-section-{{ section.id }} lb-bundle-builder .lb-bb-progress-wrap,
+  #shopify-section-{{ section.id }} #lb-bundle-builder .lb-bb-sub-header-wrap,
+  #shopify-section-{{ section.id }} #lb-bundle-builder .lb-bb-progress-wrap {
+    justify-content: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  #shopify-section-{{ section.id }} lb-bundle-builder .lb-bb-products-wrap,
+  #shopify-section-{{ section.id }} #lb-bundle-builder .lb-bb-products-wrap {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+    justify-content: center !important;
+    justify-items: center !important;
+    gap: 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  #shopify-section-{{ section.id }} lb-bundle-builder .lb-bb-product-card,
+  #shopify-section-{{ section.id }} #lb-bundle-builder .lb-bb-product-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  #shopify-section-{{ section.id }} lb-bundle-builder .lb-bb-product-details,
+  #shopify-section-{{ section.id }} #lb-bundle-builder .lb-bb-product-details {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  #shopify-section-{{ section.id }} lb-bundle-builder .lb-bb-product-title,
+  #shopify-section-{{ section.id }} #lb-bundle-builder .lb-bb-product-title {
+    text-align: center !important;
+  }
+
+  #shopify-section-{{ section.id }} lb-bundle-builder .lb-bb-product-picker-btn,
+  #shopify-section-{{ section.id }} #lb-bundle-builder .lb-bb-product-picker-btn {
+    width: 100% !important;
   }
 </style>
 
