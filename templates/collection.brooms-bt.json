@@ -228,7 +228,7 @@
         "item_DLntwV": {
           "type": "item",
           "settings": {
-            "title": " Should I wash my broom?",
+            "title": " Can I wash my broom?",
             "content": "<p>For regular brooms, it is not recommended to wash the bristle because it destroys the hairs. But rubber broom and silicone brooms can easily be washed with water, detergents and even bleach to keep them hygienic.</p>"
           }
         },
@@ -299,7 +299,7 @@
           "type": "item",
           "settings": {
             "title": "What is the difference between the rubber and silicone brooms?",
-            "content": "<p>Not all that much - some would say that  rubber is a bit firmer for tougher cleaning, while silicone is somewhat softer for lighter, everyday<strong> </strong>use. Both are highly durable, easy to clean with water, and far more effective than traditional brooms for picking up hair and fine particles.</p>"
+            "content": "<p>Not all that much - some would say that &nbsp;rubber is a bit firmer for tougher cleaning, while silicone is somewhat softer for lighter, everyday<strong> </strong>use. Both are highly durable, easy to clean with water, and far more effective than traditional brooms for picking up hair and fine particles.</p>"
           }
         },
         "item_aTBcVY": {
@@ -313,14 +313,13 @@
           "type": "item",
           "settings": {
             "title": "Where is our warehouse located?",
-            "content": "<p>Our warehouse is located in Cheltenham, Melbourne. </p>"
+            "content": "<p>Our warehouse is located in Cheltenham, Melbourne.&nbsp;</p>"
           }
         },
         "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-2": {
           "type": "item",
-          "disabled": true,
           "settings": {
-            "title": "Do BrightTools Squeegees come with a warranty?",
+            "title": "Do BrightTools Brooms come with a warranty?",
             "content": "<p>Absolutely! We stand behind the quality of our squeegees. Each one is backed by a 2 year <a href=\"/pages/warranty\" target=\"_blank\" title=\"Warranty\">warranty</a>.</p>"
           }
         },
@@ -329,7 +328,7 @@
           "disabled": true,
           "settings": {
             "title": "I have a question that is not listed here. How can I get in touch with BrightTools?",
-            "content": "<p>No problem at all! We're here to help. If you have any additional questions or need further assistance, simply visit our <a href=\"/pages/contact\" target=\"_blank\" title=\"Contact\">contact page.</a></p>"
+            "content": "<p>No problem at all! We're here to help. Please get in touch with us via email at: info@brighttools.com.au</p>"
           }
         }
       },
@@ -356,11 +355,10 @@
         "subheading": "",
         "title": "Have a question?",
         "content": "",
-        "team_avatar": "shopify://shop_images/team-fff.webp",
         "team_avatar_width": 160,
-        "support_hours": "Our customer support is available monday to friday: 8am-8:30pm.",
-        "answer_time": "Average answer time: 24h",
-        "button_text": "Contacts us",
+        "support_hours": "Still have a question?",
+        "answer_time": "We're happy to help. If you haven't found the answer you're looking for please get in touch at: info@brighttools.com.au",
+        "button_text": "Contact us",
         "button_url": "shopify://pages/contact",
         "text_position": "center",
         "background": "#ffffff",
@@ -725,6 +723,9 @@
         "testimonial_agixfB": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "James Anderson",
             "country": "australia",
             "content": "<p>The Japanese Rubber Broom changed how I handle large floor areas. It's indestructible.</p>",
@@ -735,6 +736,9 @@
         "testimonial_KAnGUX": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "Sarah Jenkins",
             "country": "new_zealand",
             "content": "<p>I've tried every cleaner on the market, but the Glider S-1 is the only one that delivers.</p>",
@@ -745,6 +749,9 @@
         "testimonial_dARCyM": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "Emma Watson",
             "country": "australia",
             "content": "<p>If you have a dog that sheds, you need these tools. It literally pulls fur out of carpets.</p>",
@@ -755,6 +762,9 @@
         "testimonial_zm3YtV": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "Michael Chen",
             "country": "australia",
             "content": "<p>The build quality is industrial-grade. Durability is honestly unmatched.</p>",
@@ -765,6 +775,9 @@
         "testimonial_DbHRyQ": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "David Ross",
             "country": "new_zealand",
             "content": "<p>The Caravan Kit is brilliant. No buckets, no mess, stores away perfectly.</p>",

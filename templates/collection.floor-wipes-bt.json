@@ -400,7 +400,7 @@
           "type": "item",
           "settings": {
             "title": "Are the Wipes safe for my pets and or children?",
-            "content": "<p>Yes! Our Floor Wipes have been thoroughly tested over many years and are made with a carefully selected blend of ingredients that are safe to use around children and pets when used as directed.</p><p>If your child or pet has sensitivities to cleaning products or chemicals, we recommend keeping them out of the area while cleaning and allowing the floor to dry completely before they return.</p>"
+            "content": "<p>Our Quick Mop Floor Wipes have been tried and tested for years and are formulated for everyday household cleaning, including homes with pets and children.</p><p>If your pet or child is particularly sensitive to cleaning products or fragrances, we recommend keeping them out of the area while cleaning and allowing the floors to dry completely before they return.</p><p>For those seeking a plant-based option, our new <strong>BioVibe</strong> floor wipes are made with 100% plant-based, biodegradable fibres, feature a natural citrus fragrance blend and have been dermatologically tested.</p>"
           }
         },
         "item_JiUKf8": {
@@ -435,7 +435,7 @@
           "type": "item",
           "settings": {
             "title": "Are the scents overwhelming?",
-            "content": "<p>Our Floor Wipes have a fresh fragrance that is most noticeable when first used. As the floor dries, the scent softens, leaving behind a light, clean and refreshing aroma. It's one of the features our customers love most!</p>"
+            "content": "<p>Our Floor Wipes have a fresh fragrance that is most noticeable when first used. As the floor dries, the scent softens, leaving behind a light, clean and refreshing aroma. It's one of the features our customers love most!</p><p>If you prefer something more lightly scented, our new <strong>BioVibe</strong> floor wipes feature a natural citrus fragrance blend for a subtle, refreshing scent.</p>"
           }
         },
         "template--19202935587090__d9e91537-6225-4b57-bd84-e5d10e8558b3-1686662624baccc985-0": {
@@ -470,7 +470,7 @@
           "type": "item",
           "settings": {
             "title": "Do you have any fragrance-free Wipes?",
-            "content": "<p>No, not at this stage. Our Wipes have been trialled and tested for many years and the scents have been perfected based on our customers’ feedback. The strength of the fragrances fade a short time after application and leave a pleasant and fresh odour in the space.</p>"
+            "content": "<p>No, not at this stage. Our Wipes have been trialled and tested for many years and the scents have been perfected based on our customers’ feedback. The strength of the fragrances fade a short time after application and leave a pleasant and fresh odour in the space.</p><p>If you prefer something more lightly scented, our new <strong>BioVibe</strong> floor wipes feature a natural citrus fragrance blend for a subtle, refreshing scent.</p>"
           }
         },
         "item_RRDBJH": {
@@ -490,8 +490,8 @@
         "item_6rFt8d": {
           "type": "item",
           "settings": {
-            "title": "Are your Wipes Environmentally friendly / biodegradable /compostable?",
-            "content": "<p>Unfortunately not. We are currently working with our manufacturer to develop a product that matches the quality of our current Wipes that are environmentally friendly. Whilst we do so, a positive environmental<br/>factor to consider is the amount of water our Wipes save in comparison to traditional floor cleaning methods. </p>"
+            "title": "Are your Quick Mop Floor Wipes biodegradable or environmentally friendly?",
+            "content": "<p>We're pleased to introduce <strong>BioVibe</strong>, our newest Quick Mop Floor Wipes fragrance, made with 100% plant-based, biodegradable fibres.</p><p>BioVibe offers a more environmentally conscious option for customers who love the convenience of our Quick Mop Floor Wipes.</p>"
           }
         },
         "item_XdrFyG": {
@@ -528,7 +528,7 @@
           "type": "item",
           "settings": {
             "title": "Which scent is the nicest?",
-            "content": "<p>This is a question of personal taste! All of the scents are pleasant and will leave your floors smelling fresh. </p>"
+            "content": "<p>Fragrance is a matter of personal preference, and all seven of our scents leave your floors smelling beautifully fresh.</p><p>If you prefer something more lightly scented, our new <strong>BioVibe</strong> floor wipes feature a natural citrus fragrance blend for a subtle, refreshing scent.</p>"
           }
         }
       },
@@ -563,11 +563,10 @@
         "subheading": "",
         "title": "Have a question?",
         "content": "",
-        "team_avatar": "shopify://shop_images/team-fff.webp",
         "team_avatar_width": 160,
-        "support_hours": "Our customer support is available monday to friday: 8am-8:30pm.",
-        "answer_time": "Average answer time: 24h",
-        "button_text": "Contacts us",
+        "support_hours": "Still have a question?",
+        "answer_time": "We're happy to help. If you haven't found the answer you're looking for please get in touch at: info@brighttools.com.au",
+        "button_text": "Contact us",
         "button_url": "shopify://pages/contact",
         "text_position": "center",
         "background": "#ffffff",

@@ -28,16 +28,6 @@
     "image-link-blocks": {
       "type": "mar26-carousel",
       "blocks": {
-        "1664424046b00c932c-0": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/window_cleaner_main.webp",
-            "link_text": "WINDOWS CARE",
-            "link_url": "shopify://collections/magnetic-window",
-            "card_background": "#f8fafc",
-            "gradient_base_color": "#13809e"
-          }
-        },
         "e4a0ef18-1856-4ddd-83d8-871a60d7acac": {
           "type": "item",
           "settings": {
@@ -45,7 +35,7 @@
             "link_text": "FLOOR WIPES",
             "link_url": "shopify://collections/wipes",
             "card_background": "#f8fafc",
-            "gradient_base_color": "#9a69a7"
+            "gradient_base_color": "#13809E"
           }
         },
         "1664424046b00c932c-3": {
@@ -56,6 +46,16 @@
             "link_url": "shopify://collections/bundles",
             "card_background": "#f8fafc",
             "gradient_base_color": "#f81b27"
+          }
+        },
+        "1664424046b00c932c-0": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/window_cleaner_main.webp",
+            "link_text": "WINDOWS CARE",
+            "link_url": "shopify://collections/magnetic-window",
+            "card_background": "#f8fafc",
+            "gradient_base_color": "#9A69A7"
           }
         },
         "ea90b8ec-3ee5-494e-88a3-341fa8d41a73": {
@@ -120,9 +120,9 @@
         }
       },
       "block_order": [
-        "1664424046b00c932c-0",
         "e4a0ef18-1856-4ddd-83d8-871a60d7acac",
         "1664424046b00c932c-3",
+        "1664424046b00c932c-0",
         "ea90b8ec-3ee5-494e-88a3-341fa8d41a73",
         "1664424046b00c932c-2",
         "item_C8WtrN",

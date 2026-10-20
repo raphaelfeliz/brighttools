@@ -13,8 +13,8 @@
       "type": "mar26-top-image",
       "settings": {
         "full_width": true,
-        "image": "shopify://shop_images/DESKTOP_BANNER_-_BUNDLES.png",
-        "mobile_image": "shopify://shop_images/MOBILE_BANNER_-_BUNDLES.png",
+        "image": "shopify://shop_images/bundles_cleaning_floor_wipes_brighttools.png",
+        "mobile_image": "shopify://shop_images/bundles_mobile_cleaning_tools_wipes.png",
         "max_width": 1400,
         "border_radius": 24
       }
@@ -32,7 +32,7 @@
               "bright-broom-bundle-blue-edition",
               "compact-squeegee-pack"
             ],
-            "pre_title": "SERIES",
+            "pre_title": "",
             "title": "Starter Kits",
             "description": "<p>Broom & Squeegee starter kits for a fresh sweep and dry.</p>",
             "bg_color": "#f8fbff",
@@ -46,7 +46,7 @@
               "choose-your-bundle-of-3-packs-quick-mop-floor-wipes-1",
               "choose-your-bundle-of-5-packs-quick-mop-floor-wipes-1"
             ],
-            "pre_title": "SERIES",
+            "pre_title": "",
             "title": "Floor Wipes",
             "description": "<p>Bulk packs and bundle deals on our wet floor wipes.</p>",
             "bg_color": "#f8fbff",
@@ -290,51 +290,89 @@
     "faq_AqqhVz": {
       "type": "faq",
       "blocks": {
+        "item_nAjFPL": {
+          "type": "item",
+          "settings": {
+            "title": "Which cleaning bundle is best for pet owners?",
+            "content": "<p>If you're looking for a starter kit, the <strong>Bright Broom Bundle</strong> is a great place to start. Its specially designed rubber bristles lift stubborn pet hair, dust and dirt from floors and carpets, while the included Quick Mop Floor Wipes make refreshing your floors quick and convenient.</p><p>For a more complete cleaning solution, our <strong>Pet Cleaning Bundle</strong> brings together a wider range of products specifically selected to help pet owners stay on top of everyday mess.</p>"
+          }
+        },
+        "item_mGEjxN": {
+          "type": "item",
+          "settings": {
+            "title": "Which BrightTools bundle should I choose?",
+            "content": "<p>It depends on your cleaning needs. Whether you're cleaning a larger space, such as your home, or a more compact area, like a caravan or motorhome, we have bundles tailored to suit different spaces.</p><p>You'll also want to consider whether you're looking for a quick floor refresh using our Quick Mop Floor Wipes or a versatile system that lets you sweep and mop.</p><p>We recommend exploring our bundle range to find the combination that best suits your space and cleaning routine.</p>"
+          }
+        },
+        "item_K6NM8G": {
+          "type": "item",
+          "settings": {
+            "title": "Which cleaning bundle is best for smaller spaces, caravans and motorhomes?",
+            "content": "<p>For compact spaces such as caravans, motorhomes, tiny homes and bathrooms, our <strong>Compact Squeegee Pack</strong> is a great choice. Its compact design makes it easy to manoeuvre in tighter areas.</p><p>If you're looking for a more comprehensive cleaning solution, our <strong>Caravan Cleaning Bundle</strong> includes a wider range of products to help keep your smaller space clean and fresh.</p>"
+          }
+        },
         "item_mrzeBW": {
           "type": "item",
           "settings": {
-            "title": "Are BrightTools products suitable for both professionals and amateurs?",
-            "content": "<p>Absolutely! Our tools are designed to cater to the needs of professionals as well as hobbyists and DIY enthusiasts. We strive to offer products that are user-friendly, reliable, and suitable for various skill levels.</p>"
+            "title": "Why choose a BrightTools cleaning bundle?",
+            "content": "<p>Our cleaning bundles bring together complementary products designed to work beautifully together. They're a convenient way to build your everyday cleaning routine, whether you're stocking up on favourites or discovering something new.</p>"
           }
         },
         "item_JYdJqe": {
           "type": "item",
           "settings": {
-            "title": "Can I track the status of my order?",
-            "content": "<p>Yes, once your order is confirmed, we will provide you with a tracking number. You can use this number to track the status of your shipment. We also send regular updates via email, keeping you informed about the progress of your order.</p>"
+            "title": "Is it better value to buy a bundle?",
+            "content": "<p>Yes! Our BrightTools bundles are offered at a discounted price compared to purchasing each product individually. It's a great way to save while getting more of your favourite cleaning essentials.</p>"
+          }
+        },
+        "item_UDgKCD": {
+          "type": "item",
+          "settings": {
+            "title": "Which cleaning bundle is best for people with limited mobility?",
+            "content": "<p>Our <strong>Easy Cleaning Bundle for Limited Mobility</strong> is specifically designed to make everyday floor cleaning more manageable, with lightweight, easy-to-use tools that help minimise heavy lifting and bending.</p><p>It's a thoughtful cleaning solution for anyone looking to reduce physical effort while keeping their floors clean and fresh.</p>"
           }
         },
         "item_BYHJxD": {
           "type": "item",
           "settings": {
-            "title": "What payment options are available?",
-            "content": "<p>We accept various payment methods, including major credit cards (Visa, Mastercard, American Express), PayPal, and bank transfers. Rest assured that all transactions are securely processed to protect your sensitive information.</p>"
+            "title": "Which cleaning bundle is best for larger spaces and homes?",
+            "content": "<p>For a complete cleaning solution, our <strong>Home Cleaning Bundle</strong> is the ideal choice, bringing together a wider range of BrightTools products for everyday cleaning throughout your home.</p><p>If you're looking for a smaller starter kit, the <strong>Bright Squeegee Pack</strong> or <strong>Bright Broom Bundle</strong> are both excellent options for keeping your floors clean and fresh.</p>"
           }
         },
         "item_Hz6HUG": {
           "type": "item",
           "settings": {
-            "title": "Do you offer international shipping?",
-            "content": "<p>Yes, we offer international shipping to select countries. However, please note that shipping fees and delivery times may vary depending on the destination. During the checkout process, you can enter your location to view the available shipping options and associated costs.</p>"
+            "title": "What's the difference between the Bright Squeegee Pack and the Bright Broom Bundle?",
+            "content": "<p>Both work beautifully with our Quick Mop Floor Wipes, but the main difference is how you prefer to clean.</p><p>The <strong>Bright Broom Bundle</strong> gives you the versatility of sweeping away pet hair, dust and dirt before transforming your broom into a lightweight mop.</p><p>The <strong>Bright Squeegee Pack</strong> is designed primarily for use with our Quick Mop Floor Wipes, making it ideal for a quick, convenient floor refresh without traditional mopping.</p>"
+          }
+        },
+        "item_kwhppT": {
+          "type": "item",
+          "settings": {
+            "title": "Are Quick Mop Floor Wipes suitable for everyday cleaning?",
+            "content": "<p>Yes. Our supersized wet floor wipes are designed for convenient everyday floor maintenance, helping you stay on top of dust, footprints and daily mess with minimal effort.</p>"
           }
         }
       },
       "block_order": [
+        "item_nAjFPL",
+        "item_mGEjxN",
+        "item_K6NM8G",
         "item_mrzeBW",
         "item_JYdJqe",
+        "item_UDgKCD",
         "item_BYHJxD",
-        "item_Hz6HUG"
+        "item_Hz6HUG",
+        "item_kwhppT"
       ],
-      "disabled": true,
       "settings": {
         "full_width": false,
-        "subheading": "FAQ",
+        "subheading": "",
         "title": "Have a question?",
         "content": "",
-        "team_avatar": "shopify://shop_images/team-fff.webp",
         "team_avatar_width": 160,
-        "support_hours": "Our customer support is available monday to friday: 8am-8:30pm.",
-        "answer_time": "Average answer time: 24h",
+        "support_hours": "We're happy to help. If you haven't found the answer you're looking for please get in touch at: info@brighttools.com.au",
+        "answer_time": "",
         "button_text": "Contact us",
         "button_url": "shopify://pages/contact",
         "text_position": "start",
@@ -553,6 +591,9 @@
         "testimonial_agixfB": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "James Anderson",
             "country": "australia",
             "content": "<p>The Japanese Rubber Broom changed how I handle large floor areas. It's indestructible.</p>",
@@ -563,6 +604,9 @@
         "testimonial_KAnGUX": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "Sarah Jenkins",
             "country": "new_zealand",
             "content": "<p>I've tried every cleaner on the market, but the Glider S-1 is the only one that delivers.</p>",
@@ -573,6 +617,9 @@
         "testimonial_dARCyM": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "Emma Watson",
             "country": "australia",
             "content": "<p>If you have a dog that sheds, you need these tools. It literally pulls fur out of carpets.</p>",
@@ -583,6 +630,9 @@
         "testimonial_zm3YtV": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "Michael Chen",
             "country": "australia",
             "content": "<p>The build quality is industrial-grade. Durability is honestly unmatched.</p>",
@@ -593,6 +643,9 @@
         "testimonial_DbHRyQ": {
           "type": "testimonial",
           "settings": {
+            "product": "",
+            "product_name": "",
+            "custom_link": "",
             "author": "David Ross",
             "country": "new_zealand",
             "content": "<p>The Caravan Kit is brilliant. No buckets, no mess, stores away perfectly.</p>",
