@@ -1,16 +1,18 @@
 {%- comment -%}
 ----------------------------------------------------------------------------------------------------------------------
 MAR26 PRODUCT CARD STEPPER
-VERSION: 2.0.0 (Modular Layouts: Horizontal & Vertical)
+VERSION: 2.4.0 (Unified Universal Quantity Stepper Architecture)
 Reusable product card with quantity stepper and pricing.
 - 'horizontal' (default): Row 1 image + title/desc, Row 2 stepper + price
 - 'vertical': Image top, title below, compact clean ratio, stepper + price + optional CTA button
+- 'main-bundle': Left image occupying full height, right content stack
+- Single unified quantity selector dimensions, styling, and behavior across all instances.
 Parameters:
   - card_product: ProductDrop (required)
   - card_title: string (optional override)
   - card_image: ImageDrop (optional override)
-  - layout: string ('horizontal' | 'vertical', default: 'horizontal')
-  - show_desc: boolean (default: true for horizontal, false for vertical)
+  - layout: string ('horizontal' | 'vertical' | 'main-bundle', default: 'horizontal')
+  - show_desc: boolean (default: true for horizontal/main-bundle, false for vertical)
   - show_cta: boolean (default: false, renders CTA button if true)
   - cta_text: string (default: 'Add to Bundle')
   - is_bundle: boolean (default: false)
@@ -20,6 +22,91 @@ Parameters:
   - modifier: string (optional css classes)
 ----------------------------------------------------------------------------------------------------------------------
 {%- endcomment -%}
+
+{%- unless mar26_stepper_styles_rendered -%}
+  {%- assign mar26_stepper_styles_rendered = true -%}
+  <style>
+    /* ── Single Unified Universal Quantity Selector Component ── */
+    .mar26-qty-wrap {
+      display: inline-flex !important;
+      align-items: center !important;
+      background: #f3f4f6 !important;
+      border: 1px solid #e5e7eb !important;
+      border-radius: 8px !important;
+      padding: 2px !important;
+      width: max-content !important;
+      box-sizing: border-box !important;
+      user-select: none !important;
+      vertical-align: middle !important;
+    }
+
+    .mar26-qty-btn {
+      width: 32px !important;
+      height: 32px !important;
+      min-width: 32px !important;
+      min-height: 32px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      border: none !important;
+      background: transparent !important;
+      font-size: 18px !important;
+      font-weight: 700 !important;
+      line-height: 1 !important;
+      color: #374151 !important;
+      cursor: pointer !important;
+      border-radius: 6px !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      transition: background-color 0.15s ease, color 0.15s ease, transform 0.1s ease !important;
+    }
+
+    .mar26-qty-btn:hover {
+      background: #ffffff !important;
+      color: var(--mar26-red, #ff101f) !important;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    .mar26-qty-btn:active {
+      transform: scale(0.92) !important;
+      background: #e5e7eb !important;
+    }
+
+    .mar26-qty-val {
+      width: 28px !important;
+      min-width: 28px !important;
+      text-align: center !important;
+      font-size: 14px !important;
+      font-weight: 800 !important;
+      line-height: 1 !important;
+      color: #111827 !important;
+      padding: 0 2px !important;
+    }
+
+    /* Mobile Ergonomics (Sweet spot: 42px touch targets) */
+    @media (max-width: 768px) {
+      .mar26-qty-wrap {
+        border-radius: 10px !important;
+        padding: 2px !important;
+      }
+
+      .mar26-qty-btn {
+        width: 42px !important;
+        height: 42px !important;
+        min-width: 42px !important;
+        min-height: 42px !important;
+        font-size: 22px !important;
+        border-radius: 8px !important;
+      }
+
+      .mar26-qty-val {
+        width: 34px !important;
+        min-width: 34px !important;
+        font-size: 16px !important;
+      }
+    }
+  </style>
+{%- endunless -%}
 
 {%- liquid
   assign item_product = card_product | default: product
@@ -89,7 +176,7 @@ Parameters:
     </div>
 
     <div class="mar26-stepper-card__content">
-      <h3 class="mar26-stepper-card__title">{{ display_title }}</h3>
+      <h3 class="mar26-stepper-card__title">{{ display_title | replace: ' – ', '<br>' | replace: ' - ', '<br>' }}</h3>
       {%- if render_desc and item_short_desc != blank -%}
         <p class="mar26-stepper-card__desc">{{ item_short_desc }}</p>
       {%- endif -%}
@@ -128,44 +215,44 @@ Parameters:
     </div>
 
   {%- else -%}
-    <!-- Horizontal Layout (Default for Buy Flow) -->
-    <!-- Row 1: Image + Title and description below -->
-    <div class="mar26-stepper-card__row-main">
-      <div class="mar26-stepper-card__image-box">
-        {%- if display_image != blank -%}
-          <img 
-            src="{{ display_image | img_url: '300x300', crop: 'center' }}" 
-            alt="{{ display_title | escape }}" 
-            loading="{% if is_bundle_item %}eager{% else %}lazy{% endif %}"
-            width="128"
-            height="128"
-          >
-        {%- else -%}
+    <!-- Horizontal & Main Bundle Layout (Standardized Layout: Left image, right content stack) -->
+    <div class="mar26-stepper-card__media-side">
+      {%- if display_image != blank -%}
+        <img 
+          src="{{ display_image | image_url: width: 600 }}" 
+          alt="{{ display_title | escape }}" 
+          loading="{% if is_bundle_item %}eager{% else %}lazy{% endif %}"
+          width="300"
+          height="300"
+        >
+      {%- else -%}
+        <div class="mar26-stepper-card__media-placeholder">
           {{ 'product-1' | placeholder_svg_tag: 'mar26-product-img' }}
-        {%- endif -%}
-      </div>
+        </div>
+      {%- endif -%}
+    </div>
 
-      <div class="mar26-stepper-card__info">
+    <div class="mar26-stepper-card__body">
+      <div class="mar26-stepper-card__details">
         <h3 class="mar26-stepper-card__title">{{ display_title }}</h3>
         {%- if render_desc and item_short_desc != blank -%}
           <p class="mar26-stepper-card__desc">{{ item_short_desc }}</p>
         {%- endif -%}
       </div>
-    </div>
 
-    <!-- Row 2: Quantity selector and price -->
-    <div class="mar26-stepper-card__row-bottom">
-      <div class="mar26-qty-wrap" onclick="event.stopPropagation()">
-        <button class="mar26-qty-btn" type="button" onclick="mar26UpdateStepperQty(this, -1)" aria-label="Decrease quantity of {{ display_title | escape }}">−</button>
-        <span class="mar26-qty-val" {% if is_bundle_item %}id="mar26-bundle-qty"{% endif %}>{{ default_qty }}</span>
-        <button class="mar26-qty-btn" type="button" onclick="mar26UpdateStepperQty(this, 1)" aria-label="Increase quantity of {{ display_title | escape }}">+</button>
-      </div>
+      <div class="mar26-stepper-card__footer">
+        <div class="mar26-qty-wrap" onclick="event.stopPropagation()">
+          <button class="mar26-qty-btn" type="button" onclick="mar26UpdateStepperQty(this, -1)" aria-label="Decrease quantity of {{ display_title | escape }}">−</button>
+          <span class="mar26-qty-val" {% if is_bundle_item %}id="mar26-bundle-qty"{% endif %}>{{ default_qty }}</span>
+          <button class="mar26-qty-btn" type="button" onclick="mar26UpdateStepperQty(this, 1)" aria-label="Increase quantity of {{ display_title | escape }}">+</button>
+        </div>
 
-      <div class="mar26-stepper-card__pricing">
-        {%- if item_variant.compare_at_price > item_variant.price -%}
-          <span class="mar26-price-old">{{ item_variant.compare_at_price | money }}</span>
-        {%- endif -%}
-        <span class="mar26-price-new">{{ item_variant.price | money }}</span>
+        <div class="mar26-stepper-card__pricing">
+          {%- if item_variant.compare_at_price > item_variant.price -%}
+            <span class="mar26-price-old">{{ item_variant.compare_at_price | money }}</span>
+          {%- endif -%}
+          <span class="mar26-price-new">{{ item_variant.price | money }}</span>
+        </div>
       </div>
     </div>
   {%- endif -%}
