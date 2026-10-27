@@ -186,11 +186,9 @@ version-summary: v3.13.0 - Position 3 selling points card (mar26_short_descripti
 
   .product-info__buy-buttons buy-buttons {
     width: 100% !important;
-    max-width: 440px !important;
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    gap: 8px !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    gap: 10px !important;
     justify-content: flex-start !important;
     align-items: flex-start !important;
     position: relative !important;
@@ -198,24 +196,28 @@ version-summary: v3.13.0 - Position 3 selling points card (mar26_short_descripti
   }
 
   .product-info__buy-buttons buy-buttons .button,
-  .product-info__buy-buttons buy-buttons .shopify-payment-button__button {
-    width: auto !important;
+  .product-info__buy-buttons buy-buttons .shopify-payment-button__button,
+  .product-info__buy-buttons buy-buttons shopify-accelerated-checkout,
+  .product-info__buy-buttons buy-buttons .gravity-button,
+  .product-info__buy-buttons buy-buttons .shopify-payment-button button {
+    width: 100% !important;
     min-width: 0 !important;
-    max-width: none !important;
-    flex: 1 1 0% !important;
-    padding-left: 24px !important;
-    padding-right: 24px !important;
+    max-width: 100% !important;
+    height: 52px !important;
+    min-height: 52px !important;
+    border-radius: 9999px !important;
+    box-sizing: border-box !important;
     margin: 0 !important;
   }
 
   .product-info__buy-buttons .shopify-payment-button {
-    width: auto !important;
+    width: 100% !important;
     min-width: 0 !important;
-    max-width: none !important;
-    flex: 1 1 0% !important;
+    max-width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
     position: relative !important;
+    box-sizing: border-box !important;
   }
 
   /* Ensure the "More payment options" link doesn't break button-to-button vertical alignment */
@@ -335,7 +337,7 @@ version-summary: v3.13.0 - Position 3 selling points card (mar26_short_descripti
     #shopify-section-{{ section.id }} .product-info__buy-buttons buy-buttons {
       display: flex !important;
       flex-direction: column !important;
-      gap: 12px !important;
+      gap: 10px !important;
       width: 100% !important;
       max-width: 100% !important;
       align-items: stretch !important;
@@ -553,7 +555,7 @@ version-summary: v3.13.0 - Position 3 selling points card (mar26_short_descripti
     }
 
     #shopify-section-{{ section.id }} .mar26-short-description-card {
-      margin-top: 16px !important;
+      margin-top: 18px !important;
       margin-bottom: 0 !important;
       margin-left: auto !important;
       margin-right: auto !important;
@@ -583,7 +585,7 @@ version-summary: v3.13.0 - Position 3 selling points card (mar26_short_descripti
     #shopify-section-{{ section.id }} price-list,
     #shopify-section-{{ section.id }} .price-list {
       padding: 0 !important;
-      margin-top: 5px !important;
+      margin-top: 8px !important;
       margin-bottom: 0 !important;
       margin-left: 0 !important;
       margin-right: auto !important;
@@ -619,6 +621,18 @@ version-summary: v3.13.0 - Position 3 selling points card (mar26_short_descripti
       padding-inline: 20px !important;
       width: 100% !important;
       box-sizing: border-box !important;
+    }
+
+    /* 6.1 Buy Action Block Item (Tall separation: 24px total) */
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="buy-buttons"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="buy_buttons"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="quantity-selector"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="quantity_selector"] {
+      margin-top: 18px !important;
+    }
+
+    #shopify-section-{{ section.id }} .shopify-payment-button__more-options {
+      margin: 10px auto 20px auto !important;
     }
 
     /* 7. Complementary Products (Mobile High-Density) */

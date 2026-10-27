@@ -358,7 +358,7 @@ version-summary: Added CSS rules to center lb-bundle-builder grid, headers, and 
                 display: flex !important;
                 flex-direction: column !important;
                 align-items: stretch !important;
-                gap: 0.5rem !important;
+                gap: 10px !important;
                 width: 100% !important;
                 margin: 0 !important;
                 padding: 0 !important;
@@ -434,7 +434,7 @@ version-summary: Added CSS rules to center lb-bundle-builder grid, headers, and 
                 left: auto !important;
                 font-size: 14px !important;
                 text-align: center !important;
-                margin-top: 14px !important;
+                margin-top: 10px !important;
                 margin-bottom: 20px !important;
                 display: block !important;
                 width: 100% !important;
@@ -490,7 +490,7 @@ version-summary: Added CSS rules to center lb-bundle-builder grid, headers, and 
                   flex-direction: row !important;
                   flex-wrap: wrap !important;
                   align-items: flex-end !important;
-                  gap: 0.5rem !important;
+                  gap: 10px !important;
                   margin-bottom: 54px !important;
                 }
                 .mar26-quantity-inline-row .form-control {
@@ -525,12 +525,24 @@ version-summary: Added CSS rules to center lb-bundle-builder grid, headers, and 
                 .mar26-quantity-inline-row .mar26-inline-buy-buttons .v-stack,
                 .mar26-quantity-inline-row .mar26-inline-buy-buttons form,
                 .mar26-quantity-inline-row .mar26-inline-buy-buttons [is="product-form"],
-                .mar26-quantity-inline-row .mar26-inline-buy-buttons .product-info__buy-buttons,
+                .mar26-quantity-inline-row .mar26-inline-buy-buttons .product-info__buy-buttons {
+                  position: static !important;
+                  display: flex !important;
+                  flex: 1 1 auto !important;
+                  width: 100% !important;
+                  flex-direction: row !important;
+                  align-items: flex-end !important;
+                  margin: 0 !important;
+                  padding: 0 !important;
+                }
                 .mar26-quantity-inline-row .mar26-inline-buy-buttons buy-buttons,
                 .mar26-quantity-inline-row .mar26-inline-buy-buttons .buy-buttons,
                 .mar26-quantity-inline-row .mar26-inline-buy-buttons .buy-buttons--multiple {
                   position: static !important;
-                  flex-direction: row !important;
+                  display: grid !important;
+                  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+                  gap: 10px !important;
+                  width: 100% !important;
                   align-items: flex-end !important;
                   margin: 0 !important;
                   padding: 0 !important;
@@ -539,7 +551,7 @@ version-summary: Added CSS rules to center lb-bundle-builder grid, headers, and 
                   width: 100% !important;
                   max-width: 100% !important;
                   min-width: 0 !important;
-                  flex: 1 1 0% !important;
+                  flex: none !important;
                   margin: 0 !important;
                   font-size: var(--mar26-fs-body, 14px) !important;
                   padding: 12px 20px !important;
@@ -552,12 +564,17 @@ version-summary: Added CSS rules to center lb-bundle-builder grid, headers, and 
                   width: 100% !important;
                   max-width: 100% !important;
                   min-width: 0 !important;
-                  flex: 1 1 0% !important;
+                  flex: none !important;
                   margin: 0 !important;
                   position: static !important;
                   box-sizing: border-box !important;
                 }
-                .mar26-quantity-inline-row .mar26-inline-buy-buttons .shopify-payment-button__button {
+                .mar26-quantity-inline-row .mar26-inline-buy-buttons shopify-accelerated-checkout,
+                .mar26-quantity-inline-row .mar26-inline-buy-buttons .shopify-payment-button__button,
+                .mar26-quantity-inline-row .mar26-inline-buy-buttons .shopify-payment-button iframe,
+                .mar26-quantity-inline-row .mar26-inline-buy-buttons shopify-buy-it-now-button,
+                .mar26-quantity-inline-row .mar26-inline-buy-buttons .gravity-button,
+                .mar26-quantity-inline-row .mar26-inline-buy-buttons .shopify-payment-button button {
                   width: 100% !important;
                   max-width: 100% !important;
                   min-width: 0 !important;
@@ -566,6 +583,7 @@ version-summary: Added CSS rules to center lb-bundle-builder grid, headers, and 
                   min-height: 52px !important;
                   border-radius: 9999px !important;
                   box-sizing: border-box !important;
+                  display: block !important;
                 }
                 .mar26-quantity-inline-row .mar26-inline-buy-buttons .shopify-payment-button__more-options {
                   position: absolute !important;
