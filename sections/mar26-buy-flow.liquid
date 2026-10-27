@@ -501,35 +501,31 @@ Dedicated section for the "Save Extra 15%" widget and multi-item checkout flow.
     }
 
     .mar26-addon-list {
-      gap: 1.5rem;
+      gap: 1rem;
       background: transparent !important;
       width: 100% !important;
       max-width: 100% !important;
       padding: 0 !important;
     }
 
-    .mar26-stepper-card,
-    .mar26-stepper-card--bundle,
     .mar26-addon-list .mar26-stepper-card--addon {
-      background: transparent !important;
-      border: none !important;
-      border-bottom: 1.5px solid #9ca3af !important;
-      border-radius: 0 !important;
+      background: #ffffff !important;
+      border: 1.5px solid #9ca3af !important;
+      border-radius: 16px !important;
+      overflow: hidden !important;
+      padding: 0 !important;
       box-shadow: none !important;
-      padding: 1.25rem 0 !important;
+      transition: border-color 0.25s ease, background-color 0.25s ease;
     }
 
-    .mar26-stepper-card:hover,
-    .mar26-stepper-card--bundle:hover,
-    .mar26-addon-list .mar26-stepper-card--addon:hover {
-      border-color: transparent !important;
-      border-bottom-color: #9ca3af !important;
+    .mar26-addon-list .mar26-stepper-card--addon:hover,
+    .mar26-addon-list .mar26-stepper-card--addon:active {
+      border-color: var(--mar26-red, #ff101f) !important;
     }
 
     .mar26-addon-list .mar26-stepper-card--addon.is-selected {
-      background: transparent !important;
-      border: none !important;
-      border-bottom: 1.5px solid #9ca3af !important;
+      background-color: #fff9fa !important;
+      border-color: var(--mar26-red, #ff101f) !important;
     }
 
     .mar26-buy-header h2 {
