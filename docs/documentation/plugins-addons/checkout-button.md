@@ -3,11 +3,11 @@
 Name: Add to Cart Button (Primary Checkout Button)
 Purpose: Submits the product form to add the selected variant and quantity to the cart.
 Code: (if available to edit)
-- **Base CSS Styles**: [theme.css](file:///C:/code/BrightTools/worktrees/main/assets/theme.css#L569-L590) (governs base `.button`, `.btn` variables)
-- **March 2026 Layout Overrides**: [mar26-foundation.css.liquid](file:///C:/code/BrightTools/worktrees/main/assets/mar26-foundation.css.liquid#L1225-L1245) (contains global style matches for height, font, and spacing)
-- **Section Specific Overrides**: [mar26-main-product.liquid](file:///C:/code/BrightTools/worktrees/main/sections/mar26-main-product.liquid#L170-L190) (overrides border-radius, background, borders, and shadows to prevent outline halos)
-- **Snippet Template**: [button.liquid](file:///C:/code/BrightTools/worktrees/main/snippets/button.liquid) (generates button wrapper element)
-- **Product Form Render**: [buy-buttons.liquid](file:///C:/code/BrightTools/worktrees/main/snippets/buy-buttons.liquid#L80) (passes configuration and classes)
+- **Base CSS Styles**: [theme.css](file:///C:/code/BrightTools/assets/theme.css#L569-L590) (governs base `.button`, `.btn` variables)
+- **March 2026 Layout Overrides**: [mar26-foundation.css.liquid](file:///C:/code/BrightTools/assets/mar26-foundation.css.liquid#L1225-L1245) (contains global style matches for height, font, and spacing)
+- **Section Specific Overrides**: [mar26-main-product.liquid](file:///C:/code/BrightTools/sections/mar26-main-product.liquid#L170-L190) (overrides border-radius, background, borders, and shadows to prevent outline halos)
+- **Snippet Template**: [button.liquid](file:///C:/code/BrightTools/snippets/button.liquid) (generates button wrapper element)
+- **Product Form Render**: [buy-buttons.liquid](file:///C:/code/BrightTools/snippets/buy-buttons.liquid#L80) (passes configuration and classes)
 
 used on:
 - Product Detail Pages (PDP templates via `mar26-main-product.liquid` main block)

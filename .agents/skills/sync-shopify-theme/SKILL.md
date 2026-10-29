@@ -7,8 +7,8 @@ description: Pull, reconcile, selectively push (--only), and verify Shopify them
 
 ## Preconditions
 - Store identifier: `brighttools-au.myshopify.com`.
-- Source path: `worktrees/main/`.
-- Snapshot worktree: `worktrees/pull/` on the orphan `shopify-pulls` branch.
+- Source path: repository root (`C:\code\BrightTools`) on `main`.
+- Snapshot worktree: `worktrees/pull/` on the `shopify-pulls` branch.
 - Receipt path: `worktrees/receipts/` on `main`.
 - Follow `docs/SOPs/push-shopify.md` for decision and approval gates.
 
@@ -23,16 +23,16 @@ description: Pull, reconcile, selectively push (--only), and verify Shopify them
      `shopify theme pull --theme <THEME_ID> --path C:\code\BrightTools\worktrees\pull --store brighttools-au.myshopify.com`
    - Commit the snapshot on `shopify-pulls`; use a dated empty commit if the file content is unchanged.
    - Save `<timestamp>.pull.md` on `main` with UTC timestamp, theme ID/name/status, outcome, file count, and snapshot SHA.
-   - Compare file sets and contents against `worktrees/main/`. Separate line-ending differences from substantive changes.
+   - Compare file sets and contents against the repository root. Separate line-ending differences from substantive changes.
    - Present differences with recommendations in batches or individually. Apply only user-approved reconciliation changes and commit the baseline on `main`.
-   - Save and commit `<timestamp>.handover.md` on `main` with decisions, snapshot and main commit SHAs, exceptions, and outcome. Never merge the archival branch wholesale.
+   - Save and commit `<timestamp>.handover.md` on `main` with decisions, snapshot and main commit SHAs, exceptions, and outcome. Merge the committed pull snapshot branch into `main` and commit the merge.
 3. **Selective Push (`--only`)**:
    - Execute push specifying each file with its own discrete `--only` flag:
-     `shopify theme push --theme <THEME_ID> --path C:\code\BrightTools\worktrees\main --store brighttools-au.myshopify.com --only <FILE_1> --only <FILE_2>`
+     `shopify theme push --theme <THEME_ID> --path C:\code\BrightTools --store brighttools-au.myshopify.com --only <FILE_1> --only <FILE_2>`
 4. **Post-Push Verification Pull**:
    - Immediately pull the exact changed files into `worktrees/pull/`:
      `shopify theme pull --theme <THEME_ID> --path C:\code\BrightTools\worktrees\pull --store brighttools-au.myshopify.com --only <FILE_1> --only <FILE_2>`
-   - Perform byte-for-byte comparison against `worktrees/main/`. Require exact match.
+   - Perform byte-for-byte comparison against the repository root. Require exact match.
 5. **Receipt & Commit**:
    - Record post-push verification in `worktrees/receipts/<timestamp>.push.md` on `main`.
    - Commit the verification pull on `shopify-pulls` and receipt on `main`.

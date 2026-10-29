@@ -3,7 +3,7 @@
 Summarizes the architecture, features, and design tokens of the March 2026 custom short description storefront component.
 
 ## Summary
-The short description component displays a compact, rich text overview of the product followed by a list of up to three bulleted key highlights (features/selling points). It is rendered via the snippet [mar26-short-description.liquid](file:///C:/code/BrightTools/worktrees/main/snippets/mar26-short-description.liquid) and is managed as a theme section block.
+The short description component displays a compact, rich text overview of the product followed by a list of up to three bulleted key highlights (features/selling points). It is rendered via the snippet [mar26-short-description.liquid](file:///C:/code/BrightTools/snippets/mar26-short-description.liquid) and is managed as a theme section block.
 
 ## Layout & Architecture
 * **Metafields Integration**: Displays description content dynamically sourced from the product metafield `product.metafields.custom.mar_26_highlights_description.value`, falling back to `block.settings.description`.

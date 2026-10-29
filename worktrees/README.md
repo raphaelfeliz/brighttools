@@ -1,16 +1,5 @@
-# System
+# Worktrees
 
-Actual project code goes here.
-
-## Rule
-Use this root for apps, services, scripts, packages, and twin applications.
-
-Example:
-```text
-system/
-  app-a/
-  app-b/
-  shared/
-```
-
-Work management does not belong here.
+- The repository root is the source checkout on `main`.
+- `worktrees/pull/` is the only auxiliary checkout, on `shopify-pulls`.
+- Do not create `worktrees/main/`; it duplicates the source checkout and causes branch confusion.

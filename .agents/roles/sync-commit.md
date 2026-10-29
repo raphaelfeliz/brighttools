@@ -16,5 +16,5 @@
 - Forbidden: Pushing to live themes without explicit user authorization; omitting post-push verification.
 
 ## Completion & Handoff
-- Post-push verification pull confirms 100% byte-for-byte match with `worktrees/main/`.
+- Post-push verification pull confirms 100% byte-for-byte match with the repository root on `main`.
 - Git commit hash and sync receipt recorded in `worktrees/receipts/`.

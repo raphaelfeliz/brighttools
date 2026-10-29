@@ -5,7 +5,7 @@
 - **Purpose**: Developing and maintaining custom modular features (e.g., product card layouts, collection grid filtering, and catalog engine) on the Shopify storefront.
 - **Namespaces**: Core custom components use prefix namespaces `mar26-` and `bt-` to isolate custom functionality from default theme code.
 - **Repository Structure**:
-  - `worktrees/main/`: Holds the active Shopify theme source codebase (layouts, snippets, sections, config, templates, etc.).
+  - Repository root: Holds the active Shopify theme source codebase (layouts, snippets, sections, config, templates, etc.) on `main`.
   - `docs/`: Stores project specifications, architecture guidelines, and SOPs.
   - `work/`: Tracks project tasks, increments, and sync metadata (initiatives).
 
@@ -28,12 +28,12 @@ $env:Path = 'C:\Users\rapha\AppData\Local\nvm\v24.13.0;' + $env:Path
 1. Local Root: `C:\code\BrightTools`
 2. Sync Staging Theme:
    ```powershell
-   shopify theme pull --theme 180366573842 --path C:\code\BrightTools\worktrees\main --store brighttools-au.myshopify.com
+   shopify theme pull --theme 180366573842 --path C:\code\BrightTools --store brighttools-au.myshopify.com
    ```
 
 ## Development Sync Workflow
 
-Follow the pull, reconciliation, testing, push, and verification procedure in [the Shopify theme SOP](../SOPs/push-shopify.md). Pull snapshots are versioned on the `shopify-pulls` branch; the maintained theme and approved code changes live under `worktrees/main/` on `main`.
+Follow the pull, reconciliation, testing, push, and verification procedure in [the Shopify theme SOP](../SOPs/push-shopify.md). Pull snapshots are committed on `shopify-pulls` and merged into `main`; the maintained theme and approved code changes live at the repository root.
 
 ### Pushing Changes
 Push updated files via Shopify CLI or sync configuration script:

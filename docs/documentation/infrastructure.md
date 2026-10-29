@@ -7,7 +7,7 @@
 
 ## Workspace Directory Mapping
 - Root: `C:\code\BrightTools`
-- Production / Working Theme: `C:\code\BrightTools\worktrees\main`
+- Production / Working Theme: `C:\code\BrightTools` (repository root on `main`)
 - Shared/SOP Docs: `C:\code\BrightTools\docs`
 - Task Management Tiers: `C:\code\BrightTools\work`
 - Automation Scripts: `C:\code\BrightTools\scripts`

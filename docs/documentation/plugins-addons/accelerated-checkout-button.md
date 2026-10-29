@@ -3,8 +3,8 @@
 Name: Accelerated Checkout Button (Dynamic Checkout)
 Purpose: Bypasses the shopping cart and checkout steps to complete transactions immediately using dynamic wallet providers (e.g. Shop Pay, Apple Pay, PayPal).
 Code: (if available to edit)
-- **Shopify Form Integration**: Generated dynamically by Shopify using the liquid tag `{{- form | payment_button -}}` in [buy-buttons.liquid](file:///C:/code/BrightTools/worktrees/main/snippets/buy-buttons.liquid#L83).
-- **Inline Custom Styling Overrides**: Styles mapped dynamically in [buy-buttons.liquid](file:///C:/code/BrightTools/worktrees/main/snippets/buy-buttons.liquid#L85-L101) to inject specific theme configurations into the Shopify payment button wrapper container.
+- **Shopify Form Integration**: Generated dynamically by Shopify using the liquid tag `{{- form | payment_button -}}` in [buy-buttons.liquid](file:///C:/code/BrightTools/snippets/buy-buttons.liquid#L83).
+- **Inline Custom Styling Overrides**: Styles mapped dynamically in [buy-buttons.liquid](file:///C:/code/BrightTools/snippets/buy-buttons.liquid#L85-L101) to inject specific theme configurations into the Shopify payment button wrapper container.
 
 used on:
 - Product Detail Pages (PDP templates via `mar26-main-product.liquid` main block)

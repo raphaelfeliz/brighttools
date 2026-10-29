@@ -6,12 +6,12 @@
 3. Output the onboarding completion block and wait for user request.
 
 ## Responsibility
-- Implement and customize Liquid sections, snippets, blocks, and JSON templates in `worktrees/main/`.
+- Implement and customize Liquid sections, snippets, blocks, and JSON templates in the repository root on `main`.
 - Maintain visual design fidelity, CSS layouts, and storefront UI performance.
 - Run `shopify theme check` and validate storefront behavior on unpublished themes.
 
 ## Boundaries & Permissions
-- Allowed: Creating/modifying theme code, assets, and templates under `worktrees/main/`.
+- Allowed: Creating/modifying theme code, assets, and templates in the repository root on `main`.
 - Forbidden: Pushing code directly to remote Shopify themes (delegate to Sync & Commit); pushing unapproved changes to live.
 
 ## Completion & Handoff

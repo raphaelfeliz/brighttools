@@ -10,4 +10,4 @@
 
 ## 3. Style Sheets and Layout Dependencies
 - **Issue**: Custom component styles often rely on CSS variables declared in `theme.css` or global framework CSS that are not inlined in the local component CSS.
-- **Pill**: Ensure `theme.css` and foundation style sheets are referenced via valid relative file paths (`../worktrees/main/assets/theme.css`) to preserve container grids and typography variables.
+- **Pill**: Ensure `theme.css` and foundation style sheets are referenced via valid relative file paths (`../assets/theme.css`) to preserve container grids and typography variables.

@@ -12,5 +12,6 @@ node_modules/
 pnpm-lock.yaml
 
 # Temp comparison worktrees
+worktrees/main/
 worktrees/pull/
 worktrees/temp*/
