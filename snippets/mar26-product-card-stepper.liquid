@@ -1,7 +1,7 @@
 {%- comment -%}
 ----------------------------------------------------------------------------------------------------------------------
 MAR26 PRODUCT CARD STEPPER
-VERSION: 2.4.0 (Unified Universal Quantity Stepper Architecture)
+VERSION: 2.5.0 (Standardized mobile quantity selector sizing)
 Reusable product card with quantity stepper and pricing.
 - 'horizontal' (default): Row 1 image + title/desc, Row 2 stepper + price
 - 'vertical': Image top, title below, compact clean ratio, stepper + price + optional CTA button
@@ -83,26 +83,26 @@ Parameters:
       padding: 0 2px !important;
     }
 
-    /* Mobile Ergonomics (Sweet spot: 42px touch targets) */
+    /* Standardized mobile quantity selector sizing */
     @media (max-width: 768px) {
       .mar26-qty-wrap {
         border-radius: 10px !important;
-        padding: 2px !important;
+        padding: 1px !important;
       }
 
       .mar26-qty-btn {
-        width: 42px !important;
-        height: 42px !important;
-        min-width: 42px !important;
-        min-height: 42px !important;
-        font-size: 22px !important;
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px !important;
+        min-height: 36px !important;
+        font-size: 19px !important;
         border-radius: 8px !important;
       }
 
       .mar26-qty-val {
-        width: 34px !important;
-        min-width: 34px !important;
-        font-size: 16px !important;
+        width: 29px !important;
+        min-width: 29px !important;
+        font-size: 14px !important;
       }
     }
   </style>

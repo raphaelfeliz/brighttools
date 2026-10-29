@@ -1,7 +1,7 @@
 {%- comment -%}
 ----------------------------------------------------------------------------------------------------------------------
 MAR26 BUY FLOW SECTION (ADD-ONS & CHECKOUT)
-VERSION: 0.9.13 (Match selected bundle image insets on all sides)
+VERSION: 0.9.19 (Round main card and right-align controls)
 Dedicated section for the "Save Extra 15%" widget and multi-item checkout flow.
 - Desktop: items have soft rounded edges, mid-grey outline all around, turning red on hover
 - Layout: Unified horizontal card layout with left image occupying full height and right content stack
@@ -57,7 +57,7 @@ Dedicated section for the "Save Extra 15%" widget and multi-item checkout flow.
     overflow: hidden;
     background: #ffffff;
     border: 1.5px solid #9ca3af;
-    border-radius: 20px;
+    border-radius: 16px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
     transition: border-color 0.25s ease, box-shadow 0.25s ease;
   }
@@ -158,6 +158,9 @@ Dedicated section for the "Save Extra 15%" widget and multi-item checkout flow.
   .mar26-stepper-card--addon.mar26-stepper-card--horizontal .mar26-stepper-card__media-side {
     min-height: 100px;
     padding: 0.5rem;
+    align-self: stretch;
+    align-items: center;
+    justify-content: center;
   }
 
   .mar26-stepper-card--horizontal .mar26-stepper-card__media-side img,
@@ -203,7 +206,7 @@ Dedicated section for the "Save Extra 15%" widget and multi-item checkout flow.
   }
 
   .mar26-stepper-card--addon.mar26-stepper-card--horizontal .mar26-stepper-card__title {
-    font-size: 0.95rem;
+    font-size: 0.875rem;
     margin: 0;
     line-height: 1.2;
   }
@@ -211,6 +214,14 @@ Dedicated section for the "Save Extra 15%" widget and multi-item checkout flow.
   .mar26-stepper-card--bundle .mar26-stepper-card__title {
     font-size: 1.25rem;
     font-weight: 900;
+  }
+
+  .mar26-stepper-card--addon.mar26-stepper-card--horizontal .mar26-stepper-card__title,
+  .mar26-stepper-card--main-bundle.mar26-stepper-card--bundle .mar26-stepper-card__title {
+    font-size: 0.875rem;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.2;
   }
 
   .mar26-stepper-card--horizontal .mar26-stepper-card__desc,
@@ -226,9 +237,13 @@ Dedicated section for the "Save Extra 15%" widget and multi-item checkout flow.
   }
 
   .mar26-stepper-card--addon.mar26-stepper-card--horizontal .mar26-stepper-card__desc {
-    font-size: 0.78rem;
-    line-height: 1.3;
     -webkit-line-clamp: 1;
+  }
+
+  .mar26-stepper-card--addon.mar26-stepper-card--horizontal .mar26-stepper-card__desc,
+  .mar26-stepper-card--main-bundle .mar26-stepper-card__desc {
+    font-size: 0.8125rem;
+    line-height: 1.3;
   }
 
   .mar26-stepper-card--horizontal .mar26-stepper-card__footer,
@@ -247,13 +262,21 @@ Dedicated section for the "Save Extra 15%" widget and multi-item checkout flow.
     gap: 0.5rem;
   }
 
+  .mar26-stepper-card--addon.mar26-stepper-card--horizontal .mar26-price-new,
+  .mar26-stepper-card--main-bundle.mar26-stepper-card--bundle .mar26-stepper-card__pricing .mar26-price-new {
+    font-size: 0.875rem;
+  }
+
   @media (max-width: 768px) {
     .mar26-stepper-card--horizontal,
     .mar26-stepper-card--main-bundle {
       grid-template-columns: 1fr;
     }
     .mar26-stepper-card--addon.mar26-stepper-card--horizontal {
-      grid-template-columns: 1fr;
+      grid-template-columns: 100px minmax(0, 1fr);
+    }
+    .mar26-stepper-card.mar26-stepper-card--main-bundle.mar26-stepper-card--bundle.is-selected {
+      grid-template-columns: 210px minmax(0, 1fr);
     }
     .mar26-stepper-card--horizontal .mar26-stepper-card__media-side,
     .mar26-stepper-card--main-bundle .mar26-stepper-card__media-side {
@@ -261,8 +284,27 @@ Dedicated section for the "Save Extra 15%" widget and multi-item checkout flow.
       padding: 0.75rem;
     }
     .mar26-stepper-card.mar26-stepper-card--main-bundle.mar26-stepper-card--bundle.is-selected .mar26-stepper-card__media-side {
-      height: 196px;
-      min-height: 196px;
+      height: 230px;
+      min-height: 230px;
+      padding: 1rem;
+    }
+    .mar26-stepper-card.mar26-stepper-card--main-bundle.mar26-stepper-card--bundle.is-selected .mar26-stepper-card__media-side img {
+      max-height: 198px;
+    }
+    .mar26-stepper-card.mar26-stepper-card--main-bundle.mar26-stepper-card--bundle.is-selected .mar26-stepper-card__body {
+      padding: 1rem 0.5rem;
+    }
+    .mar26-stepper-card.mar26-stepper-card--main-bundle.mar26-stepper-card--bundle.is-selected .mar26-stepper-card__footer {
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: flex-start;
+      width: 100%;
+      gap: 0.5rem;
+    }
+    .mar26-stepper-card.mar26-stepper-card--main-bundle.mar26-stepper-card--bundle.is-selected .mar26-stepper-card__pricing {
+      width: 100%;
+      text-align: right;
+      justify-content: flex-end;
     }
     .mar26-stepper-card--addon.mar26-stepper-card--horizontal .mar26-stepper-card__media-side {
       height: 105px;
@@ -516,6 +558,11 @@ Dedicated section for the "Save Extra 15%" widget and multi-item checkout flow.
       box-shadow: none !important;
       border-radius: 0 !important;
       padding: 0 !important;
+    }
+
+    .mar26-buy-flow-container.mar26-bundle-card-container {
+      border-radius: 16px !important;
+      overflow: hidden !important;
     }
 
     .mar26-bundle-card-container {
