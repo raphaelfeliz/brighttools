@@ -3,9 +3,9 @@
 file-summary: MAR26 main product section. Drives MAR26 mobile ordering, gallery layout variables, and product info composition.
 
 # Version Block (SOP: Always update for real changes)
-version-name: Position 3 selling points card directly under price on desktop and mobile
-version-number: 3.13.0
-version-summary: v3.13.0 - Position 3 selling points card (mar26_short_description) directly under price at order: 4 (desktop + mobile).
+version-name: Equalize desktop vertical spacing above and below short description card
+version-number: 3.14.0
+version-summary: v3.14.0 - Harmonize desktop margins on short description card and quantity selector (18px) and suppress empty block-items.
 
 # Change rationale:
 # - Normal state: Black background / White text.
@@ -132,6 +132,40 @@ version-summary: v3.13.0 - Position 3 selling points card (mar26_short_descripti
     #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="description"] { order: 8 !important; }
     #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="separator"] { order: 9 !important; }
     #shopify-section-{{ section.id }} .product-info__block-item { order: 10; }
+
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26_short_description"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="mar26-short-description"] {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
+
+    #shopify-section-{{ section.id }} .mar26-short-description-card {
+      margin-top: 18px !important;
+      margin-bottom: 0 !important;
+    }
+
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="quantity-selector"],
+    #shopify-section-{{ section.id }} .product .product-info__block-item[data-block-type="quantity_selector"] {
+      margin-top: 18px !important;
+    }
+
+    #shopify-section-{{ section.id }} .product-info__block-item:empty,
+    #shopify-section-{{ section.id }} .product-info__block-item:has(> .product-info__variant-picker:empty),
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="inventory"]:has(variant-inventory:empty),
+    #shopify-section-{{ section.id }} .product-info__block-item[data-block-type="inventory"]:not(:has(.text-with-icon)),
+    #shopify-section-{{ section.id }} .product-info__block-item:has(#lb-bundle-builder:empty),
+    #shopify-section-{{ section.id }} .product-info__block-item:has(lb-bundle-builder:empty),
+    #shopify-section-{{ section.id }} .product-info__block-item:has(.lb-widget-pal:empty),
+    #shopify-section-{{ section.id }} .product-info__block-item:has(lb-upsell-widget:empty),
+    #shopify-section-{{ section.id }} .product-info__block-item:has(lb-vd-qty-selector:empty),
+    #shopify-section-{{ section.id }} .product-info__block-item:has(.shopify-app-block:empty),
+    #shopify-section-{{ section.id }} .product-info__block-item:has(.shopify-app-block > :only-child:empty) {
+      display: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      height: 0 !important;
+      min-height: 0 !important;
+    }
   }
 
   @media screen and (min-width: 1400px) {

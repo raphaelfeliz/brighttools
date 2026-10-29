@@ -1,9 +1,9 @@
 {%- comment -%}
 ----------------------------------------------------------------------------------------------------------------------
 file-summary: Custom fork of product info for MAR26 layout. Handles rendering of product blocks with specific overrides.
-version-name: Center DealEasy Bundle Builder Widget in Inline Buy Buttons
-version-number: 3.11.0
-version-summary: Added CSS rules to center lb-bundle-builder grid, headers, and progress wrap inside mar26-quantity-inline-row.
+version-name: Omit empty product blocks and conditionalize single-variant picker
+version-number: 3.12.0
+version-summary: Suppress empty block items and guard variant-picker against single-variant products to prevent phantom spacing.
 # Previous commit containing original Dealasy code/state: c4b3a3d
 ----------------------------------------------------------------------------------------------------------------------
 {%- endcomment -%}
@@ -218,15 +218,17 @@ version-summary: Added CSS rules to center lb-bundle-builder grid, headers, and 
           {%- endif -%}
 
         {%- when 'variant_picker' -%}
-          <div class="product-info__variant-picker">
-            {%- render 'variant-picker', 
-              product: product, 
-              form_id: product_form_id,
-              update_url: update_url, 
-              hide_sold_out_variants: block.settings.hide_sold_out_variants, 
-              block: block 
-            -%}
-          </div>
+          {%- unless product.has_only_default_variant -%}
+            <div class="product-info__variant-picker">
+              {%- render 'variant-picker', 
+                product: product, 
+                form_id: product_form_id,
+                update_url: update_url, 
+                hide_sold_out_variants: block.settings.hide_sold_out_variants, 
+                block: block 
+              -%}
+            </div>
+          {%- endunless -%}
 
         {%- when 'product_variations' -%}
           {%- assign contains_product = false -%}
@@ -795,9 +797,12 @@ version-summary: Added CSS rules to center lb-bundle-builder grid, headers, and 
       {{- '</div>' -}}
     {%- endif -%}
 
-    <div class="product-info__block-item" data-block-id="{{ block.id }}" data-block-type="{{ block.type | replace: '_', '-' }}" {% unless block.type == '@app' or block.type == 'accordion' %}{{ block.shopify_attributes }}{% endunless %}>
-      {{- block_content -}}
-    </div>
+    {%- assign stripped_block_content = block_content | strip -%}
+    {%- if stripped_block_content != blank or request.design_mode -%}
+      <div class="product-info__block-item" data-block-id="{{ block.id }}" data-block-type="{{ block.type | replace: '_', '-' }}" {% unless block.type == '@app' or block.type == 'accordion' %}{{ block.shopify_attributes }}{% endunless %}>
+        {{- block_content -}}
+      </div>
+    {%- endif -%}
 {%- endfor -%}
   
   {%- if inside_block_group_context -%}
