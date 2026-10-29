@@ -1,7 +1,7 @@
 {%- comment -%}
 ----------------------------------------------------------------------------------------------------------------------
 MAR26 BUY FLOW SECTION (ADD-ONS & CHECKOUT)
-VERSION: 0.9.9 (Unified Horizontal Layout for Bundle & Add-ons + Bundle Header Requirement)
+VERSION: 0.9.13 (Match selected bundle image insets on all sides)
 Dedicated section for the "Save Extra 15%" widget and multi-item checkout flow.
 - Desktop: items have soft rounded edges, mid-grey outline all around, turning red on hover
 - Layout: Unified horizontal card layout with left image occupying full height and right content stack
@@ -117,6 +117,24 @@ Dedicated section for the "Save Extra 15%" widget and multi-item checkout flow.
     margin: 0;
     gap: 0;
     background: #ffffff;
+  }
+
+  .mar26-stepper-card.mar26-stepper-card--main-bundle.mar26-stepper-card--bundle.is-selected {
+    min-height: 230px;
+  }
+
+  @media (min-width: 769px) {
+    .mar26-stepper-card.mar26-stepper-card--main-bundle.mar26-stepper-card--bundle.is-selected {
+      grid-template-columns: 229px 1fr;
+    }
+
+    .mar26-stepper-card.mar26-stepper-card--main-bundle.mar26-stepper-card--bundle.is-selected .mar26-stepper-card__media-side {
+      padding: 1rem 1.375rem;
+    }
+
+    .mar26-stepper-card.mar26-stepper-card--main-bundle.mar26-stepper-card--bundle.is-selected .mar26-stepper-card__media-side img {
+      max-height: 198px;
+    }
   }
 
   /* Specific compact sizing for add-on cards (-40% height) */
@@ -241,6 +259,10 @@ Dedicated section for the "Save Extra 15%" widget and multi-item checkout flow.
     .mar26-stepper-card--main-bundle .mar26-stepper-card__media-side {
       height: 170px;
       padding: 0.75rem;
+    }
+    .mar26-stepper-card.mar26-stepper-card--main-bundle.mar26-stepper-card--bundle.is-selected .mar26-stepper-card__media-side {
+      height: 196px;
+      min-height: 196px;
     }
     .mar26-stepper-card--addon.mar26-stepper-card--horizontal .mar26-stepper-card__media-side {
       height: 105px;
