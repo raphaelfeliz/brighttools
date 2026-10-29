@@ -1,0 +1,437 @@
+{%- comment -%}
+----------------------------------------------------------------------------------------------------------------------
+file-summary: MAR26 Highlights Cards section. Displays a grid of pro-grade tool highlights.
+version-name: Sticky Header Overlap Fix
+version-number: 1.8.1
+version-summary: Add z-index: 1 to the highlights card container to prevent card content from overlapping the sticky header.
+----------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap');
+
+  #shopify-section-{{ section.id }} {
+    padding: 30px 0 !important;
+    background-color: {{ section.settings.color_background | default: '#f8fafc' }};
+    margin: 0 !important;
+  }
+
+  <script>
+    console.log('MAR26 Highlights - Version: 1.8.1');
+  </script>
+
+  #shopify-section-{{ section.id }} .mar26-section {
+    --mar26-section-bg: {{ section.settings.color_background | default: '#f8fafc' }};
+    font-family: var(--mar26-font-stack);
+  }
+
+  /* Standardized Container Limits */
+  #shopify-section-{{ section.id }} .mar26-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.25rem; /* Standard mobile horizontal gutter */
+    width: 100%;
+  }
+  @media (min-width: 640px) {
+    #shopify-section-{{ section.id }} .mar26-container {
+      padding: 0 1.5rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    #shopify-section-{{ section.id }} .mar26-container {
+      padding: 0 2rem;
+    }
+  }
+
+  /* Force stretch the grid */
+  #shopify-section-{{ section.id }} .mar26-highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1.875rem;
+  }
+  @media (min-width: 768px) {
+    #shopify-section-{{ section.id }} .mar26-highlights-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.875rem;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  /* The Card */
+  .mar26-card--highlight {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 1.25rem !important; /* Standardized brand radius (20px) */
+    padding: 2.5rem 1.5rem;
+    height: 380px;
+    background-color: #ffffff;
+    border: none !important;
+    transition: transform 300ms ease, box-shadow 300ms ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Standard Premium Shadow */
+    box-shadow: var(--mar26-shadow-standard) !important;
+  }
+  .mar26-card--highlight:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--mar26-shadow-stronger) !important;
+  }
+
+  /* Content Wrapper */
+  .mar26-card--highlight-content {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Standard Typography */
+  .mar26-card--highlight-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+    text-transform: none;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .mar26-card--highlight-title-highlight {
+     display: block;
+     color: #f81b27 !important;
+  }
+
+  .mar26-card--highlight-desc-wrap {
+    margin-top: 0.75rem;
+    max-width: 100%;
+  }
+
+  .mar26-card--highlight-desc {
+    color: #1e293b;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: none;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+    margin: 0;
+    opacity: 0.8;
+  }
+
+  /* Image Absolute Container */
+  .mar26-card--highlight-img-wrap {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+  .mar26-card--highlight-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 500ms ease;
+  }
+
+  .mar26-card--highlight:hover .mar26-card--highlight-img {
+    transform: scale(1.05);
+  }
+
+  /* MOBILE-ONLY: Horizontal High-Density Highlights */
+  @media (max-width: 767px) {
+    #shopify-section-{{ section.id }} .mar26-section {
+      padding: 1.5rem 0 !important;
+    }
+    #shopify-section-{{ section.id }} .mar26-highlights-grid {
+      gap: 1rem !important;
+    }
+    .mar26-card--highlight {
+      flex-direction: row !important;
+      height: auto !important;
+      min-height: 0 !important;
+      padding: 10px !important;
+      align-items: center !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+    }
+    .mar26-card--highlight-content {
+      flex-direction: row !important;
+      align-items: center !important;
+      text-align: left !important;
+      gap: 15px !important;
+    }
+    .mar26-highlight-text-stack {
+      display: flex !important;
+      flex-direction: column !important;
+      flex: 1 1 auto !important;
+      width: 100% !important;
+    }
+    .mar26-card--highlight-title {
+      font-size: 1.15rem !important;
+      align-items: center !important;
+      flex-direction: row !important;
+      flex-wrap: wrap !important;
+      gap: 5px !important;
+      width: 100% !important;
+      line-height: 1 !important;
+      margin-bottom: 2px !important;
+    }
+    .mar26-card--highlight-title-highlight {
+      display: inline-block !important;
+    }
+    .mar26-card--highlight-desc-wrap {
+      display: block !important;
+      margin-top: 5px !important;
+    }
+    .mar26-card--highlight-desc {
+       display: flex !important;
+       flex-direction: column !important;
+       gap: 2px !important;
+       font-size: 0.7rem !important;
+       line-height: 1.1 !important;
+       font-weight: 700 !important;
+    }
+    .mar26-card--highlight-img-wrap {
+      position: relative !important;
+      bottom: auto !important;
+      left: auto !important;
+      transform: none !important;
+      width: 70px !important;
+      height: 70px !important;
+      flex: 0 0 70px !important;
+      order: -1 !important;
+      margin: 0 !important;
+    }
+  }
+</style>
+
+<div class="mar26-section">
+  <div class="grain-overlay"></div>
+  <div class="mar26-container">
+    
+    {% render 'mar26-section-header',
+      section_id: section.id,
+      pre_title: section.settings.section_subtitle,
+      title: section.settings.section_title_black,
+      highlight: section.settings.section_title_gradient
+    %}
+
+    <div class="mar26-highlights-grid" data-mar26-element="highlights-grid">
+      {% for block in section.blocks %}
+        {% assign bg_color = block.settings.bg_color %}
+        {% assign text_1 = block.settings.color_text_1 %}
+        {% assign text_2 = block.settings.color_text_2 %}
+
+        <div class="mar26-card--highlight" style="background-color: {{ bg_color }};" data-mar26-element="highlight-card" {{ block.shopify_attributes }}>
+          
+          <div class="mar26-card--highlight-content">
+            
+            <div class="mar26-highlight-text-stack">
+              <h3 class="mar26-card--highlight-title" style="color: {{ text_1 }};">
+                {% if block.settings.top_title != blank %}
+                  <span>{{ block.settings.top_title }}</span>
+                {% endif %}
+                
+                {% if block.settings.gradient_title != blank %}
+                  <span class="mar26-card--highlight-title-highlight" style="color: {{ text_2 }} !important;">
+                    {{ block.settings.gradient_title }}
+                  </span>
+                {% endif %}
+              </h3>
+
+              <!-- Description Wrapper -->
+              <div class="mar26-card--highlight-desc-wrap">
+                <p class="mar26-card--highlight-desc" style="color: {{ text_1 }}; opacity: 0.8;">
+                  {% if block.settings.subtitle_1 != blank %}
+                    <span class="mar26-sub-1">{{ block.settings.subtitle_1 }}</span>
+                  {% endif %}
+                  
+                  {% if block.settings.subtitle_2 != blank %}
+                    <span class="block mar26-sub-2" style="color: {{ text_2 }}; font-weight: 800; opacity: 1;">
+                      {{ block.settings.subtitle_2 }}
+                    </span>
+                  {% endif %}
+                </p>
+              </div>
+            </div>
+            
+            <div class="mar26-card--highlight-img-wrap">
+              {% if block.settings.image != blank %}
+                {{ block.settings.image | image_url: width: 600 | image_tag: class: 'mar26-card--highlight-img' }}
+              {% endif %}
+            </div>
+
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "MAR26 Highlights",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 3,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Header"
+    },
+    {
+      "type": "text",
+      "id": "section_subtitle",
+      "label": "Section Subtitle",
+      "default": "❤️ Love every purchase, guaranteed."
+    },
+    {
+      "type": "text",
+      "id": "section_title_black",
+      "label": "Title (Black)",
+      "default": "Stress-Free"
+    },
+    {
+      "type": "text",
+      "id": "section_title_gradient",
+      "label": "Title (Gradient)",
+      "default": "Shopping"
+    },
+    {
+      "type": "color",
+      "id": "section_grad_color_1",
+      "label": "Gradient Color 1",
+      "default": "#2563eb"
+    },
+    {
+      "type": "color",
+      "id": "section_grad_color_2",
+      "label": "Gradient Color 2",
+      "default": "#93c5fd"
+    },
+    {
+      "type": "color",
+      "id": "color_background",
+      "label": "Section Background",
+      "default": "#f8fafc"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "highlight_card",
+      "name": "MAR26 Highlight Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Background Color",
+          "default": "#E8EAEB"
+        },
+        {
+          "type": "color",
+          "id": "color_text_1",
+          "label": "Text 1 Color",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "color_text_2",
+          "label": "Text 2 Color",
+          "default": "#f81b27"
+        },
+        {
+          "type": "text",
+          "id": "top_title",
+          "label": "Top Title (Black)",
+          "default": "HEAVY"
+        },
+        {
+          "type": "text",
+          "id": "gradient_title",
+          "label": "Gradient Title",
+          "default": "DUTY"
+        },
+        {
+          "type": "text",
+          "id": "subtitle_1",
+          "label": "Subtitle 1 (Black)",
+          "default": "PRO-GRADE TOOLS"
+        },
+        {
+          "type": "text",
+          "id": "subtitle_2",
+          "label": "Subtitle 2 (Theme Color)",
+          "default": "for everyday messes."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "MAR26 Highlights",
+      "settings": {
+        "section_subtitle": "PREMIUM STANDARDS",
+        "section_title_black": "Built",
+        "section_title_gradient": "Different.",
+        "color_background": "#f8fafc"
+      },
+      "blocks": [
+        {
+          "type": "highlight_card",
+          "settings": {
+            "top_title": "Heavy",
+            "gradient_title": "Duty",
+            "subtitle_1": "Pro-Grade Tools",
+            "subtitle_2": "for everyday messes.",
+            "bg_color": "#ffffff",
+            "color_text_1": "#000000",
+            "color_text_2": "#f81b27"
+          }
+        },
+        {
+          "type": "highlight_card",
+          "settings": {
+            "top_title": "Worry",
+            "gradient_title": "Free",
+            "subtitle_1": "Comprehensive warranty",
+            "subtitle_2": "on all core tools.",
+            "bg_color": "#ffc9cd",
+            "color_text_1": "#000000",
+            "color_text_2": "#f81b27"
+          }
+        },
+        {
+          "type": "highlight_card",
+          "settings": {
+            "top_title": "Zero",
+            "gradient_title": "Risk",
+            "subtitle_1": "Love it or send it back.",
+            "subtitle_2": "We make returns simple.",
+            "bg_color": "#000000",
+            "color_text_1": "#ffffff",
+            "color_text_2": "#f81b27"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

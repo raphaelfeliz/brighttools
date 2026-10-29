@@ -1,0 +1,602 @@
+{%- comment -%}
+MAR26 Bundles
+v3.14.0 | Stable Bundle Summary Layout
+
+Logic & Data Sources:
+- Source: Main Bundle Product (Selected in Theme Editor Block)
+- Included Items: Pulled from 'custom.included_products' metafield list on Main Bundle
+- Item Content: Pulls Image, Title, and 'custom.short_description' (Fallback to standard Desc)
+- Tag Automation: Dynamically renders 'custom.color_tags' metaobjects for all items
+
+Architecture & UX:
+- Layout: 35/65 desktop split | mobile vertical stack
+- Animation: Smooth-scroll (snap-override) | 2.5s interaction cooldown | hover-pause
+- Styling: Best-Sellers alignment (Montserrat, 20px radius, premium shadow)
+- Editor: Autoplay toggle, primary/highlight text, section backgrounds, manual review count
+- Summary: Stable optional-content slots keep rating, price, and actions aligned
+{%- endcomment -%}
+
+{%- liquid
+assign text_color = section.settings.text_color
+assign highlight_color = section.settings.highlight_color
+-%}
+
+<script>
+console.log('MAR26 Bundles - Version: 3.14.0');
+</script>
+
+<style>
+/* ─── Section Shell ──────────────────────────────────────── */
+#shopify-section-{{ section.id }} .mar26-section {
+  padding: 50px 1.5rem;
+  background-color: {{ section.settings.color_background }};
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#shopify-section-{{ section.id }} .mar26-container {
+  width: 100%;
+  max-width: 1300px;
+}
+
+/* ─── Bundle List ────────────────────────────────────────── */
+.mar26-bundle-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ─── Bundle Card: POC wireframe structure ───────────────── */
+.mar26-card--bundle {
+  background-color: var(--mar26-clr-white);
+  border-radius: 20px;
+  box-shadow: var(--mar26-shadow-stronger);
+  display: flex;
+  flex-direction: column;      /* Mobile: stacked */
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .mar26-card--bundle {
+    flex-direction: row;       /* Desktop: side-by-side */
+  }
+}
+
+/* ─── Info Panel (left on desktop, top on mobile) ────────── */
+.mar26-card--bundle-info {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #f8f9fb;
+}
+
+@media (min-width: 768px) {
+  .mar26-card--bundle-info {
+    flex: 0 0 35%;
+    border-right: 1px solid rgba(243, 244, 246, 0.8);
+    justify-content: space-between;
+  }
+}
+
+/* Bundle presentation variant for the shared product summary */
+.mar26-summary--bundle .mar26-product-tags {
+  order: -1;
+  min-height: 19px;
+}
+
+.mar26-summary--bundle .mar26-product-tag {
+  padding: 4px 10px;
+  font-size: 10px;
+}
+
+.mar26-summary--bundle .mar26-summary__description {
+  line-height: 1.6;
+  height: calc(2 * 1.6em);
+  -webkit-line-clamp: 2;
+}
+
+.mar26-summary--bundle .mar26-summary__rating {
+  gap: 6px;
+}
+
+.mar26-summary--bundle .mar26-summary__stars {
+  gap: 1px;
+}
+
+.mar26-summary--bundle .mar26-summary__review-count {
+  font-weight: 700;
+}
+
+.mar26-summary.mar26-summary--bundle.mar26-summary--stable-slots {
+  margin: 2px;
+}
+
+@media (min-width: 768px) {
+  .mar26-summary--bundle,
+  .mar26-summary--bundle .mar26-summary__meta {
+    display: contents;
+  }
+
+  .mar26-summary--bundle .mar26-summary__content {
+    gap: 1rem;
+  }
+
+  .mar26-summary--bundle .mar26-summary__title {
+    font-size: 20px;
+    line-height: 1.2;
+    min-height: 24px;
+  }
+}
+
+.mar26-bundle-view-btn {
+  min-width: 130px;
+  justify-content: center;
+  box-shadow: var(--mar26-shadow-light);
+}
+
+/* Icon Size Refinement (50% Increase) */
+.m26-btn--medium .m26-btn__icon svg {
+  width: 1.05rem !important;
+  height: 1.05rem !important;
+}
+
+.mar26-card--bundle-actions {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .mar26-card--bundle-actions {
+    justify-content: flex-start;
+  }
+}
+
+
+/* ─── Gallery Panel (right on desktop, bottom on mobile) ─── */
+.mar26-bundle-gallery-wrapper {
+  padding: 1.75rem;
+  display: flex;
+  align-items: flex-start;
+  min-width: 0; /* KEY: allows this flex child to shrink below content size */
+}
+
+@media (min-width: 768px) {
+  .mar26-bundle-gallery-wrapper {
+    flex: 1;
+  }
+}
+
+/* ─── The Scroll Track ───────────────────────────────────── */
+  .mar26-bundle-gallery-scroll {
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-top: -25px;
+    margin-bottom: -25px;
+  }
+.mar26-bundle-gallery-scroll::-webkit-scrollbar { display: none; }
+
+/* ─── Individual Product Cards inside carousel ───────────── */
+.mar26-bundle-item-card {
+  flex: 0 0 240px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  background-color: var(--mar26-clr-white);
+  border-radius: 16px;
+  border: 1px solid rgba(243, 244, 246, 0.8);
+  box-shadow: var(--mar26-shadow-standard);
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mar26-bundle-item-image {
+  background-color: #f8f9fb;
+  border-radius: 12px;
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.mar26-bundle-item-image img,
+.mar26-bundle-item-image svg {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.mar26-bundle-item-image img {
+  mix-blend-mode: multiply;
+}
+
+.mar26-bundle-item-title {
+  font-size: 12px;
+  font-weight: var(--mar26-fw-extrabold);
+  color: var(--mar26-clr-black);
+  line-height: 1.3;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.mar26-bundle-item-desc {
+  font-size: 11px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ─── Included label ─────────────────────────────────────── */
+.mar26-bundle-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #a0a6b5;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+/* ─── Gallery outer: relative for nav button positioning ─── */
+.mar26-gallery-outer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* ─── Nav Buttons (from mar26-carousel.liquid) ───────────── */
+.mar26-bundle-nav {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--mar26-clr-black);
+  color: var(--mar26-clr-white);
+  border: 1px solid #1e293b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+}
+.mar26-bundle-nav svg { width: 18px; height: 18px; }
+.mar26-bundle-nav.prev { margin-right: 0.5rem; }
+.mar26-bundle-nav.next { margin-left: 0.5rem; }
+
+/* Hide nav on mobile, show on desktop */
+.mar26-bundle-nav { display: none; }
+@media (min-width: 768px) {
+  .mar26-bundle-nav { display: flex; }
+}
+
+</style>
+
+<div class="mar26-section" id="mar26-bundles-section-{{ section.id }}" data-mar26-element="section-shell">
+<div class="mar26-container" id="mar26-bundles-container-{{ section.id }}">
+
+  {%- comment -%} Section Header Standard v3.4.0 {%- endcomment -%}
+  {% render 'mar26-section-header',
+    section_id: section.id,
+    pre_title: section.settings.badge_text,
+    title: section.settings.primary_text,
+    highlight: section.settings.highlight_text,
+    highlight_color: section.settings.color_highlight,
+    alignment: 'center'
+  %}
+
+  {%- if section.settings.cta_text != blank and section.settings.cta_link != blank -%}
+    <div class="mar26-bundles-cta" id="mar26-bundles-cta-{{ section.id }}" data-mar26-element="section-cta" style="display:flex; justify-content:center; margin: 0 0 2rem;">
+      {%- render 'mar26-button',
+        href: section.settings.cta_link,
+        text: section.settings.cta_text,
+        size: 'big',
+        bg_color: section.settings.cta_color,
+        text_color: section.settings.cta_text_color,
+        icon: 'no',
+        class: 'mar26-bundles-cta-button'
+      -%}
+    </div>
+  {%- endif -%}
+
+  {%- comment -%} Bundle List {%- endcomment -%}
+  <div class="mar26-bundle-list" id="mar26-bundles-list-{{ section.id }}" data-mar26-element="bundle-list">
+    {%- for block in section.blocks -%}
+      {%- assign main_product = block.settings.product -%}
+
+      <div class="mar26-card--bundle" id="mar26-bundle-card-{{ block.id }}" data-mar26-element="bundle-card" {{ block.shopify_attributes }}>
+
+        {%- comment -%} LEFT / TOP: Info Panel {%- endcomment -%}
+        <div class="mar26-card--bundle-info" id="mar26-bundle-info-panel-{{ block.id }}" data-mar26-element="info-panel">
+          {% render 'mar26-product-summary',
+            product: main_product,
+            fallback_title: 'Bundle Product',
+            description: main_product.metafields.custom.short_description.value,
+            fallback_description: 'Professional-grade cleaning bundle curated for maximum results.',
+            fallback_price: '$99.95',
+            review_count: block.settings.reviews,
+            modifier: 'mar26-summary--bundle',
+            stable_slots: true,
+            description_words: 18
+          %}
+
+          {%- if main_product != blank -%}
+            {% render 'mar26-product-actions',
+              product: main_product,
+              class: 'mar26-card--bundle-actions',
+              form_class: 'm26-btn mar26-add-btn-form',
+              form_style: 'margin:0; display:flex;',
+              add_button_class: 'm26-btn m26-btn--medium m26-btn--no-icon',
+              add_button_style: 'background-color: var(--mar26-clr-red); color: var(--mar26-clr-white); min-width: 130px; justify-content: center; box-shadow: var(--mar26-shadow-light);',
+              view_button_class: 'm26-btn m26-btn--medium m26-btn--no-icon mar26-bundle-view-btn',
+              view_button_style: 'background-color: var(--mar26-clr-white); color: var(--mar26-clr-black); border: 1px solid #f3f4f6;'
+            %}
+          {%- else -%}
+            <div class="mar26-card--bundle-actions" id="mar26-bundle-actions-{{ block.id }}" data-mar26-element="action-panel">
+              <button class="m26-btn m26-btn--medium m26-btn--no-icon" style="background-color: var(--mar26-clr-red); color: var(--mar26-clr-white); min-width: 130px; justify-content: center; box-shadow: var(--mar26-shadow-light);" disabled><span class="m26-btn__text">Add</span></button>
+            </div>
+          {%- endif -%}
+        </div>
+
+        {%- comment -%} RIGHT / BOTTOM: Gallery Carousel {%- endcomment -%}
+            {%- liquid
+            assign meta_items = main_product.metafields.custom.included_products.value
+            assign has_meta_items = false
+            if meta_items != blank and meta_items.count > 0
+              assign has_meta_items = true
+            endif
+          -%}
+
+          <div class="mar26-bundle-gallery-wrapper" id="mar26-bundle-gallery-wrapper-{{ block.id }}" data-mar26-element="gallery-wrapper">
+            <div class="mar26-gallery-outer" id="mar26-bundle-gallery-outer-{{ block.id }}">
+
+              {%- comment -%} Prev Nav Button {%- endcomment -%}
+              <button class="mar26-bundle-nav prev" id="mar26-bundle-nav-prev-{{ block.id }}" data-dir="prev" data-target="gallery-{{ block.id }}" aria-label="Previous" type="button" data-mar26-element="nav-button">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+              </button>
+
+              <div 
+                class="mar26-bundle-gallery-scroll" 
+                id="gallery-{{ block.id }}"
+                data-mar26-element="scroll-track"
+              >
+                {%- comment -%} First card: main bundle product image {%- endcomment -%}
+                {%- if main_product != blank -%}
+                  <div class="mar26-bundle-item-card" id="mar26-bundle-item-main-{{ block.id }}" data-mar26-element="item-card">
+                    <div class="mar26-bundle-item-image">
+                      {%- if main_product.featured_image != blank -%}
+                        <img src="{{ main_product.featured_image | image_url: width: 400 }}" alt="{{ main_product.title | escape }}" loading="lazy">
+                      {%- else -%}
+                        {{ 'product-1' | placeholder_svg_tag }}
+                      {%- endif -%}
+                    </div>
+                    <div class="mar26-bundle-item-info">
+                      <h4 class="mar26-bundle-item-title">{{ main_product.title }}</h4>
+                      <p class="mar26-bundle-item-desc mar26-description">{{ main_product.metafields.custom.short_description.value | strip_html | truncate: 60 }}</p>
+                    </div>
+                  </div>
+                {%- endif -%}
+
+                {%- if has_meta_items -%}
+                  {%- for item in meta_items -%}
+                    <div class="mar26-bundle-item-card" id="mar26-bundle-item-{{ block.id }}-{{ forloop.index }}" data-mar26-element="item-card">
+                      <div class="mar26-bundle-item-image" id="mar26-bundle-item-img-wrapper-{{ block.id }}-{{ forloop.index }}">
+                        {%- if item.image != blank -%}
+                          <img src="{{ item.image | image_url: width: 400 }}" alt="{{ item.title | escape }}" loading="lazy" id="mar26-bundle-item-img-{{ block.id }}-{{ forloop.index }}">
+                        {%- elsif item.featured_image != blank -%}
+                          <img src="{{ item.featured_image | image_url: width: 400 }}" alt="{{ item.title | escape }}" loading="lazy" id="mar26-bundle-item-img-{{ block.id }}-{{ forloop.index }}">
+                        {%- else -%}
+                          {{ 'product-1' | placeholder_svg_tag }}
+                        {%- endif -%}
+
+                      </div>
+                      <div class="mar26-bundle-item-info" id="mar26-bundle-item-info-{{ block.id }}-{{ forloop.index }}">
+                        <h4 class="mar26-bundle-item-title" id="mar26-bundle-item-title-{{ block.id }}-{{ forloop.index }}">{{ item.title }}</h4>
+                        {%- liquid
+                          assign i_desc = item.short_description | default: item.metafields.custom.short_description.value | default: item.description | default: item.content | strip_html | truncate: 60
+                        -%}
+                        <p class="mar26-bundle-item-desc mar26-description">{{ i_desc }}</p>
+                      </div>
+                    </div>
+                  {%- endfor -%}
+                {%- else -%}
+                  {%- comment -%} Simple Fallback if no metafields exist {%- endcomment -%}
+                  {%- for i in (1..3) -%}
+                    <div class="mar26-bundle-item-card">
+                      <div class="mar26-bundle-item-image">
+                        {{ 'product-' | append: i | placeholder_svg_tag }}
+                      </div>
+                      <div class="mar26-bundle-item-info">
+                        <h4 class="mar26-bundle-item-title">Sample Item {{ i }}</h4>
+                        <p class="mar26-bundle-item-desc">Add included items via the 'mar26_included_items' metafield.</p>
+                      </div>
+                    </div>
+                  {%- endfor -%}
+                {%- endif -%}
+              </div>
+
+              {%- comment -%} Next Nav Button {%- endcomment -%}
+              <button class="mar26-bundle-nav next" id="mar26-bundle-nav-next-{{ block.id }}" data-dir="next" data-target="gallery-{{ block.id }}" aria-label="Next" type="button" data-mar26-element="nav-button">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+              </button>
+
+            </div>
+          </div>
+
+      </div>
+    {%- endfor -%}
+  </div>
+
+</div>
+</div>
+
+<script>
+(function() {
+  document.querySelectorAll('.mar26-bundle-gallery-scroll').forEach(function(track) {
+    const trackId = track.id;
+    document.querySelectorAll('.mar26-bundle-nav[data-target="' + trackId + '"]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const firstItem = track.querySelector('.mar26-bundle-item-card');
+        if (!firstItem) return;
+        const itemWidth = firstItem.clientWidth + parseFloat(window.getComputedStyle(track).gap) || 12;
+        const isNext = btn.getAttribute('data-dir') === 'next';
+        
+        const maxScroll = track.scrollWidth - track.clientWidth;
+        const currentScroll = track.scrollLeft;
+
+        let targetScroll;
+        if (isNext) {
+          // Loop back to start if at the end
+          targetScroll = (currentScroll >= maxScroll - 5) ? 0 : currentScroll + itemWidth;
+        } else {
+          // Loop to end if at the start
+          targetScroll = (currentScroll <= 5) ? maxScroll : currentScroll - itemWidth;
+        }
+
+        track.scrollTo({ left: targetScroll, behavior: 'smooth' });
+      });
+    });
+  });
+})();
+</script>
+
+{% schema %}
+{
+"name": "MAR26 Bundles",
+"tag": "section",
+"settings": [
+  {
+    "type": "header",
+    "content": "Typography"
+  },
+  {
+    "type": "text",
+    "id": "badge_text",
+    "label": "Small Pill Badge",
+    "default": "BRIGHT ON - DUST OFF"
+  },
+  {
+    "type": "text",
+    "id": "primary_text",
+    "label": "Primary Black Text",
+    "default": "Professional"
+  },
+  {
+    "type": "text",
+    "id": "highlight_text",
+    "label": "Highlight Text",
+    "default": "Bundles"
+  },
+{
+    "type": "header",
+    "content": "Colors"
+  },
+  {
+    "type": "color",
+    "id": "color_background",
+    "label": "Section Background",
+    "default": "#e8ebf0"
+  },
+  {
+    "type": "color",
+    "id": "color_primary_text",
+    "label": "Primary Title",
+    "default": "#11141c"
+  },
+  {
+    "type": "color",
+    "id": "color_highlight",
+    "label": "Highlight Text Color",
+    "default": "#f81b27"
+  },
+  {
+    "type": "color",
+    "id": "color_badge_text",
+    "label": "Badge Text",
+    "default": "#7c7c7c"
+  },
+  {
+    "type": "header",
+    "content": "Section Button"
+  },
+  {
+    "type": "text",
+    "id": "cta_text",
+    "label": "Button Text",
+    "default": "Shop Bundles"
+  },
+  {
+    "type": "url",
+    "id": "cta_link",
+    "label": "Button Link"
+  },
+  {
+    "type": "color",
+    "id": "cta_color",
+    "label": "Button Color",
+    "default": "#0f172a"
+  },
+  {
+    "type": "select",
+    "id": "cta_text_color",
+    "label": "Button Text Color",
+    "options": [
+      { "value": "white", "label": "White" },
+      { "value": "black", "label": "Black" }
+    ],
+    "default": "white"
+  }
+],
+"blocks": [
+  {
+    "type": "bundle",
+    "name": "Bundle",
+    "settings": [
+      {
+        "type": "product",
+        "id": "product",
+        "label": "Main Bundle Product"
+      },
+      {
+        "type": "number",
+        "id": "reviews",
+        "label": "Review Count",
+        "default": 120
+      }
+    ]
+  }
+],
+"presets": [
+  {
+    "name": "MAR26 Bundles",
+    "category": "March 2026 Layouts",
+    "blocks": [
+      { "type": "bundle" },
+      { "type": "bundle" }
+    ]
+  }
+]
+}
+{% endschema %}

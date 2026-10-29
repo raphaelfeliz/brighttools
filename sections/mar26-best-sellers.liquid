@@ -1,0 +1,423 @@
+{%- comment -%}
+  ----------------------------------------------------------------------------------------------------------------------
+  MAR26 BEST SELLERS (Isolated Section)
+  VERSION: 1.9.0 - Catalogv card rendering
+  ----------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<script>
+  console.log('MAR26 Best Sellers - Version: 1.9.0');
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap');
+
+  #shopify-section-{{ section.id }} {
+    margin: 50px !important;
+  }
+
+  @media (max-width: 639px) {
+    #shopify-section-{{ section.id }} {
+      margin: 50px 0 !important;
+      overflow: hidden;
+    }
+    #shopify-section-{{ section.id }} .mar26-container {
+      padding: 0 !important;
+      max-width: 100% !important;
+      overflow: hidden;
+    }
+    .mar26-carousel-track {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .mar26-section {
+    --mar26-section-bg: {{ section.settings.color_background }};
+    font-family: var(--mar26-font-stack);
+  }
+
+  /* Standardized Container Limits */
+  #shopify-section-{{ section.id }} .mar26-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.25rem; /* Standard mobile horizontal gutter */
+    width: 100%;
+  }
+  @media (min-width: 640px) {
+    #shopify-section-{{ section.id }} .mar26-container {
+      padding: 0 1.5rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    #shopify-section-{{ section.id }} .mar26-container {
+      padding: 0 2rem;
+    }
+  }
+
+  /* Premium Carousel Styles */
+  mar26-carousel {
+    display: block;
+    position: relative;
+  }
+  .mar26-carousel-track {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 2rem; /* Space for shadow */
+    padding-top: 1rem;
+    -webkit-overflow-scrolling: touch;
+  }
+  .mar26-carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+  .mar26-carousel-item {
+    flex: 0 0 calc(85% - 1.25rem);
+    min-width: 280px;
+  }
+  @media (min-width: 640px) {
+    .mar26-carousel-item { flex: 0 0 calc(50% - 1.25rem); }
+  }
+  @media (min-width: 1024px) {
+    .mar26-carousel-item { flex: 0 0 calc(25% - 1.25rem); }
+  }
+
+  /* Hide Nav Buttons to match clean UI, but keep for JS */
+  .mar26-nav-buttons { display: none; }
+
+  /* Product Card UI (Commented out - migrated to mar26-foundation.css.liquid)
+  .mar26-card--product {
+    background-color: var(--mar26-clr-white);
+    border-radius: 1.25rem !important;
+    padding: 0.75rem;
+    display: grid;
+    grid-template-rows: 258px 1fr auto;
+    row-gap: 1.2rem;
+    height: 535px;
+    box-shadow: var(--mar26-shadow-standard) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+  }
+
+  .mar26-card--product:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--mar26-shadow-stronger) !important;
+  }
+
+  .mar26-card--product-image-cell {
+    height: 100%;
+    aspect-ratio: auto;
+    min-height: 0;
+    background-color: #ffffff;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .mar26-card--product-img {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .mar26-card--product .mar26-summary {
+    justify-content: flex-start;
+  }
+
+  .mar26-card--product .mar26-summary__meta {
+    margin-top: auto;
+  }
+
+  .mar26-card--product-actions {
+    display: flex;
+    gap: 1.02rem;
+  }
+
+  .mar26-card--product-actions .m26-btn {
+    flex: 1;
+    padding: 10px !important;
+    font-size: 13px !important;
+    border-radius: 10px !important;
+    transition: background-color 0.2s;
+  }
+
+  @media (max-width: 639px) {
+    .mar26-card--product {
+      grid-template-rows: 246px 1fr auto;
+      row-gap: 1.2rem;
+      height: 535px;
+    }
+
+  }
+  */
+</style>
+
+<div class="mar26-section">
+  <div class="mar26-container">
+    {% render 'mar26-section-header',
+      section_id: section.id,
+      pre_title: section.settings.badge_text,
+      title: section.settings.primary_text,
+      highlight: section.settings.highlight_text,
+      highlight_color: section.settings.color_highlight
+    %}
+
+    <mar26-carousel data-mar26-element="best-sellers-carousel">
+      {%- comment -%} Hidden Nav Buttons for JS {%- endcomment -%}
+      <div class="mar26-nav-buttons">
+        <button name="previous"></button>
+        <button name="next"></button>
+      </div>
+
+      {%- comment -%} PRODUCT CAROUSEL TRACK {%- endcomment -%}
+      <div class="mar26-carousel-track" id="Slider-{{ section.id }}" data-mar26-element="carousel-track">
+        {%- if section.blocks.size > 0 -%}
+          {%- for block in section.blocks -%}
+            {%- assign product = block.settings.product -%}
+
+            <div class="mar26-carousel-item" data-mar26-element="carousel-item" {{ block.shopify_attributes }}>
+              {% render 'mar26-product-card-catalogv', product: product %}
+            </div>
+          {%- endfor -%}
+        {%- endif -%}
+      </div>
+    </mar26-carousel>
+  </div>
+</div>
+
+<script>
+  if (!customElements.get('mar26-carousel')) {
+    customElements.define('mar26-carousel', class extends HTMLElement {
+      constructor() {
+        super();
+        this.track = this.querySelector('.mar26-carousel-track');
+        this.prevBtn = this.querySelector('button[name="previous"]');
+        this.nextBtn = this.querySelector('button[name="next"]');
+
+        if (!this.track) return;
+
+        const items = Array.from(this.track.children);
+        if (items.length === 0) return;
+
+        items.forEach(item => {
+          const clone = item.cloneNode(true);
+          clone.setAttribute('aria-hidden', 'true');
+          this.track.appendChild(clone);
+        });
+
+        this.isPausedByHover = false;
+        this.isPausedByInteraction = false;
+        this.interactionTimeout = null;
+        this.rafId = null;
+        this.lastTimestamp = 0;
+        this.scrollPos = 0;
+
+        this.updateWidths();
+
+        if(this.prevBtn) this.prevBtn.addEventListener('click', () => this.manualScroll('prev'));
+        if(this.nextBtn) this.nextBtn.addEventListener('click', () => this.manualScroll('next'));
+
+        this.track.addEventListener('mouseenter', () => this.isPausedByHover = true);
+        this.track.addEventListener('mouseleave', () => {
+          this.isPausedByHover = false;
+          this.lastTimestamp = 0;
+        });
+
+        this.track.addEventListener('touchstart', () => this.triggerInteractionPause(), { passive: true });
+        this.track.addEventListener('mousedown', () => this.triggerInteractionPause());
+
+        window.addEventListener('resize', () => this.updateWidths());
+
+        this.autoplayEnabled = {{ section.settings.autoplay_enabled | json }};
+        if (this.autoplayEnabled) {
+          this.startMarquee();
+        }
+      }
+
+      triggerInteractionPause() {
+        this.isPausedByInteraction = true;
+        this.lastTimestamp = 0;
+        if (this.interactionTimeout) clearTimeout(this.interactionTimeout);
+        this.interactionTimeout = setTimeout(() => {
+          this.isPausedByInteraction = false;
+          this.scrollPos = this.track.scrollLeft;
+          this.lastTimestamp = 0;
+        }, 2500);
+      }
+
+      updateWidths() {
+        this.originalWidth = this.track.scrollWidth / 2;
+      }
+
+      startMarquee() {
+        const step = (timestamp) => {
+          if (!this.lastTimestamp) this.lastTimestamp = timestamp;
+          const delta = timestamp - this.lastTimestamp;
+          this.lastTimestamp = timestamp;
+
+          if (!this.isPausedByHover && !this.isPausedByInteraction) {
+            const speed = 0.0512;
+            this.scrollPos += speed * delta;
+
+            if (this.scrollPos >= this.originalWidth) {
+              this.scrollPos -= this.originalWidth;
+              this.track.scrollLeft = this.scrollPos;
+            } else {
+              this.track.scrollLeft = this.scrollPos;
+            }
+          }
+          this.rafId = requestAnimationFrame(step);
+        };
+        this.rafId = requestAnimationFrame(step);
+      }
+
+      manualScroll(direction) {
+        this.triggerInteractionPause();
+        const items = this.track.querySelectorAll('.mar26-carousel-item');
+        const gap = 20;
+        const itemWidth = items[0].clientWidth + gap;
+        const scrollAmount = direction === 'next' ? itemWidth : -itemWidth;
+        this.track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        setTimeout(() => { this.scrollPos = this.track.scrollLeft; }, 600);
+      }
+    });
+  }
+</script>
+
+<script>
+  (() => {
+    const section = document.getElementById('shopify-section-{{ section.id }}');
+    if (!section) return;
+
+    const adjustCatalogvCard = (title) => {
+      const group = title.closest('[data-catalogv-text-group]');
+      if (!group) return;
+
+      title.style.webkitLineClamp = 'none';
+      title.style.display = 'block';
+      title.style.height = 'auto';
+
+      const lineHeight = parseFloat(window.getComputedStyle(title).lineHeight) || 20;
+      const lines = Math.round(title.scrollHeight / lineHeight);
+
+      title.style.webkitLineClamp = '';
+      title.style.display = '';
+      title.style.height = '';
+
+      if (lines >= 3) {
+        group.classList.remove('has-2-lines');
+        group.classList.add('has-3-lines');
+      } else if (lines === 2) {
+        group.classList.remove('has-3-lines');
+        group.classList.add('has-2-lines');
+      } else {
+        group.classList.remove('has-2-lines', 'has-3-lines');
+      }
+    };
+
+    const adjustAllCatalogvCards = () => {
+      section.querySelectorAll('[data-catalogv-title]').forEach(adjustCatalogvCard);
+    };
+
+    adjustAllCatalogvCards();
+    window.addEventListener('resize', adjustAllCatalogvCards);
+
+    if (typeof ResizeObserver !== 'undefined') {
+      const observer = new ResizeObserver((entries) => {
+        entries.forEach((entry) => adjustCatalogvCard(entry.target));
+      });
+      section.querySelectorAll('[data-catalogv-title]').forEach((title) => observer.observe(title));
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "MAR26 Best Sellers UI",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Typography Options"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Small Pill Badge",
+      "default": "BRIGHT ON - DUST OFF"
+    },
+    {
+      "type": "text",
+      "id": "primary_text",
+      "label": "Primary Black Text",
+      "default": "Better Cleaning"
+    },
+    {
+      "type": "text",
+      "id": "highlight_text",
+      "label": "Color highlight text",
+      "default": "Setter Sallers"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay_enabled",
+      "label": "Enable Auto Scroll",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Color Controls"
+    },
+    {
+      "type": "color",
+      "id": "color_background",
+      "label": "Section Background",
+      "default": "#e8ebf0"
+    },
+    {
+      "type": "color",
+      "id": "color_primary_text",
+      "label": "Primary Title",
+      "default": "#11141c"
+    },
+    {
+      "type": "color",
+      "id": "color_highlight",
+      "label": "Highlight Text Color",
+      "default": "#f81b27"
+    },
+    {
+      "type": "color",
+      "id": "color_badge_text",
+      "label": "Badge Text",
+      "default": "#7c7c7c"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "MAR26 Featured Product",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Select Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "MAR26 Best Sellers UI",
+      "category": "March 2026 Layouts",
+      "blocks": [{ "type": "product" }, { "type": "product" }, { "type": "product" }, { "type": "product" }]
+    }
+  ]
+}
+{% endschema %}

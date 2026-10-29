@@ -1,0 +1,832 @@
+{%- comment -%}
+----------------------------------------------------------------------------------------------------------------------
+MAR26 BUY FLOW SECTION (ADD-ONS & CHECKOUT)
+VERSION: 0.9.9 (Unified Horizontal Layout for Bundle & Add-ons + Bundle Header Requirement)
+Dedicated section for the "Save Extra 15%" widget and multi-item checkout flow.
+- Desktop: items have soft rounded edges, mid-grey outline all around, turning red on hover
+- Layout: Unified horizontal card layout with left image occupying full height and right content stack
+- Main Bundle: Includes required discount guidance header above the bundle container
+- Mobile: items have no border radius, bottom outline only in mid-grey
+----------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<style>
+  /* ── Outer Section & Container ─────────────────────────────── */
+  .mar26-buy-flow-section {
+    background: #f9fafb;
+    padding: 1.5rem 1.5rem 3rem 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .mar26-buy-flow-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 1.875rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  }
+
+  /* Main Bundle Header */
+  .mar26-bundle-header {
+    max-width: 800px;
+    margin: 0 auto 0.75rem auto;
+    padding: 0 0.5rem;
+  }
+
+  .mar26-bundle-header h3 {
+    font-size: 1.125rem;
+    font-weight: 800;
+    color: var(--mar26-slate, #111827);
+    margin: 0;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .mar26-bundle-header span.mar26-bundle-note {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #e11d48;
+  }
+
+  .mar26-bundle-card-container {
+    margin-bottom: 1.25rem;
+    padding: 0 !important;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1.5px solid #9ca3af;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .mar26-bundle-card-container:hover {
+    border-color: var(--mar26-red, #ff101f);
+  }
+
+  /* ── Stepper Product Card Component ───────────────────────── */
+  .mar26-stepper-card {
+    background: #ffffff;
+    border: 1.5px solid #9ca3af;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .mar26-stepper-card:hover {
+    border-color: var(--mar26-red, #ff101f);
+  }
+
+  .mar26-stepper-card--addon {
+    background: #ffffff;
+    border: 1.5px solid #9ca3af;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .mar26-stepper-card--addon:hover {
+    border-color: var(--mar26-red, #ff101f);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  }
+
+  .mar26-stepper-card--addon.is-selected {
+    background-color: #fff9fa;
+  }
+
+  .mar26-stepper-card--bundle {
+    background: transparent;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .mar26-stepper-card--bundle:hover {
+    border-color: transparent !important;
+  }
+
+  /* ── Layout: horizontal & main-bundle (Left image, right content stack) ── */
+  .mar26-stepper-card--horizontal,
+  .mar26-stepper-card--main-bundle {
+    display: grid !important;
+    grid-template-columns: 200px 1fr;
+    align-items: stretch;
+    width: 100%;
+    margin: 0;
+    gap: 0;
+    background: #ffffff;
+  }
+
+  /* Specific compact sizing for add-on cards (-40% height) */
+  .mar26-stepper-card--addon.mar26-stepper-card--horizontal {
+    grid-template-columns: 120px 1fr;
+  }
+
+  .mar26-stepper-card--horizontal .mar26-stepper-card__media-side,
+  .mar26-stepper-card--main-bundle .mar26-stepper-card__media-side {
+    position: relative;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 1rem;
+    min-height: 160px;
+    border: none;
+  }
+
+  .mar26-stepper-card--addon.mar26-stepper-card--horizontal .mar26-stepper-card__media-side {
+    min-height: 100px;
+    padding: 0.5rem;
+  }
+
+  .mar26-stepper-card--horizontal .mar26-stepper-card__media-side img,
+  .mar26-stepper-card--main-bundle .mar26-stepper-card__media-side img {
+    width: 100%;
+    height: 100%;
+    max-height: 180px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+
+  .mar26-stepper-card--addon.mar26-stepper-card--horizontal .mar26-stepper-card__media-side img {
+    max-height: 95px;
+  }
+
+  .mar26-stepper-card--horizontal:hover .mar26-stepper-card__media-side img,
+  .mar26-stepper-card--main-bundle:hover .mar26-stepper-card__media-side img {
+    transform: scale(1.03);
+  }
+
+  .mar26-stepper-card--horizontal .mar26-stepper-card__body,
+  .mar26-stepper-card--main-bundle .mar26-stepper-card__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.125rem 1.25rem;
+    gap: 0.5rem;
+    min-width: 0;
+  }
+
+  .mar26-stepper-card--addon.mar26-stepper-card--horizontal .mar26-stepper-card__body {
+    padding: 0.625rem 1rem;
+    gap: 0.25rem;
+  }
+
+  .mar26-stepper-card--horizontal .mar26-stepper-card__title,
+  .mar26-stepper-card--main-bundle .mar26-stepper-card__title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--mar26-slate, #111827);
+    margin: 0 0 0.25rem 0;
+    line-height: 1.25;
+  }
+
+  .mar26-stepper-card--addon.mar26-stepper-card--horizontal .mar26-stepper-card__title {
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .mar26-stepper-card--bundle .mar26-stepper-card__title {
+    font-size: 1.25rem;
+    font-weight: 900;
+  }
+
+  .mar26-stepper-card--horizontal .mar26-stepper-card__desc,
+  .mar26-stepper-card--main-bundle .mar26-stepper-card__desc {
+    font-size: 0.85rem;
+    color: #4b5563;
+    line-height: 1.4;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .mar26-stepper-card--addon.mar26-stepper-card--horizontal .mar26-stepper-card__desc {
+    font-size: 0.78rem;
+    line-height: 1.3;
+    -webkit-line-clamp: 1;
+  }
+
+  .mar26-stepper-card--horizontal .mar26-stepper-card__footer,
+  .mar26-stepper-card--main-bundle .mar26-stepper-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 0.625rem;
+    border-top: 1px solid #f1f5f9;
+    margin-top: auto;
+  }
+
+  .mar26-stepper-card--addon.mar26-stepper-card--horizontal .mar26-stepper-card__footer {
+    padding-top: 0.375rem;
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .mar26-stepper-card--horizontal,
+    .mar26-stepper-card--main-bundle {
+      grid-template-columns: 1fr;
+    }
+    .mar26-stepper-card--addon.mar26-stepper-card--horizontal {
+      grid-template-columns: 1fr;
+    }
+    .mar26-stepper-card--horizontal .mar26-stepper-card__media-side,
+    .mar26-stepper-card--main-bundle .mar26-stepper-card__media-side {
+      height: 170px;
+      padding: 0.75rem;
+    }
+    .mar26-stepper-card--addon.mar26-stepper-card--horizontal .mar26-stepper-card__media-side {
+      height: 105px;
+      padding: 0.5rem;
+    }
+    .mar26-stepper-card--horizontal .mar26-stepper-card__body,
+    .mar26-stepper-card--main-bundle .mar26-stepper-card__body {
+      padding: 1rem;
+    }
+    .mar26-stepper-card--addon.mar26-stepper-card--horizontal .mar26-stepper-card__body {
+      padding: 0.625rem 0.75rem;
+    }
+  }
+
+  /* Row 1: Image + Title & Short Description */
+  .mar26-stepper-card__row-main {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .mar26-stepper-card__image-box {
+    width: clamp(96px, 25vw, 128px);
+    height: clamp(96px, 25vw, 128px);
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+  }
+
+  .mar26-stepper-card__image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .mar26-stepper-card__info {
+    flex-grow: 1;
+    min-width: 0;
+  }
+
+  .mar26-stepper-card__title {
+    font-size: clamp(1.05rem, 3.2vw, 1.25rem);
+    font-weight: 800;
+    color: var(--mar26-slate);
+    margin: 0 0 0.375rem 0;
+    line-height: 1.25;
+  }
+
+  .mar26-stepper-card--bundle .mar26-stepper-card__title {
+    font-size: clamp(1.15rem, 3.5vw, 1.35rem);
+    font-weight: 900;
+  }
+
+  .mar26-stepper-card__desc {
+    font-size: 0.875rem;
+    color: #4b5563;
+    line-height: 1.45;
+    margin: 0;
+  }
+
+  /* Row 2: Quantity Selector and Price */
+  .mar26-stepper-card__row-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+    border-top: 1px solid #f3f4f6;
+  }
+
+  .mar26-stepper-card__pricing {
+    text-align: right;
+    flex-shrink: 0;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+
+  .mar26-stepper-card__pricing .mar26-price-old,
+  .mar26-price-old {
+    font-size: 0.875rem;
+    color: #9ca3af;
+    text-decoration: line-through;
+    margin-bottom: 0;
+  }
+
+  .mar26-stepper-card__pricing .mar26-price-new,
+  .mar26-price-new {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--mar26-red);
+    line-height: 1;
+  }
+
+  .mar26-stepper-card--bundle .mar26-stepper-card__pricing .mar26-price-new {
+    font-size: 1.25rem;
+  }
+
+  /* ── Header ───────────────────────────────────────────────── */
+  .mar26-buy-header h2 {
+    font-size: 1.625rem;
+    font-weight: 900;
+    color: #111111;
+    margin: 0 0 0.375rem;
+    line-height: 1.2;
+  }
+
+  .mar26-buy-header h2 span {
+    color: #e11d48;
+  }
+
+  .mar26-buy-header > p {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin: 0 0 0.9375rem;
+  }
+
+  /* ── Instruction Box ──────────────────────────────────────── */
+  .mar26-instruction-box {
+    background: #fff1f2;
+    border: 1px solid #fecdd3;
+    border-radius: 14px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.125rem;
+  }
+
+  .mar26-instruction-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .mar26-instruction-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #374151;
+  }
+
+  .mar26-step-bead {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: #e11d48;
+    color: white;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  /* ── Product Cards Area ───────────────────────────────────── */
+  .mar26-addon-list {
+    margin-top: 1.125rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+
+  .mar26-addon-pricing {
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .mar26-price-old {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    text-decoration: line-through;
+    margin-bottom: 2px;
+  }
+
+  .mar26-price-new {
+    font-size: 1.0625rem;
+    font-weight: 800;
+    color: var(--mar26-red);
+    line-height: 1;
+  }
+
+  /* Checkout Buttons */
+  .mar26-checkout-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .mar26-checkout-footer {
+      flex-direction: row;
+    }
+    .mar26-btn-atc, .mar26-dynamic-checkout {
+      flex: 1;
+    }
+  }
+
+  .mar26-btn-atc {
+    background: #000000;
+    color: white;
+    border: none;
+    border-radius: 100px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    gap: 0.5rem;
+  }
+
+  .mar26-btn-atc:hover {
+    background: #333333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    .mar26-buy-flow-section {
+      padding: 1.25rem 1rem 2.5rem 1rem;
+    }
+
+    .mar26-bundle-card-container {
+      width: 100% !important;
+      max-width: 100% !important;
+      background: #ffffff !important;
+      box-shadow: none !important;
+      border: 1.5px solid #9ca3af !important;
+      border-radius: 16px !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+    }
+
+    .mar26-buy-flow-container {
+      width: 100% !important;
+      max-width: 100% !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      border-radius: 0 !important;
+      padding: 0 !important;
+    }
+
+    .mar26-bundle-card-container {
+      margin-bottom: 1.5rem;
+    }
+
+    .mar26-addon-list {
+      gap: 1rem;
+      background: transparent !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 0 !important;
+    }
+
+    .mar26-addon-list .mar26-stepper-card--addon {
+      background: #ffffff !important;
+      border: 1.5px solid #9ca3af !important;
+      border-radius: 16px !important;
+      overflow: hidden !important;
+      padding: 0 !important;
+      box-shadow: none !important;
+      transition: border-color 0.25s ease, background-color 0.25s ease;
+    }
+
+    .mar26-addon-list .mar26-stepper-card--addon:hover,
+    .mar26-addon-list .mar26-stepper-card--addon:active {
+      border-color: var(--mar26-red, #ff101f) !important;
+    }
+
+    .mar26-addon-list .mar26-stepper-card--addon.is-selected {
+      background-color: #fff9fa !important;
+      border-color: var(--mar26-red, #ff101f) !important;
+    }
+
+    .mar26-buy-header h2 {
+      font-size: 1.375rem;
+    }
+  }
+</style>
+
+<div id="addon-section" class="mar26-buy-flow-section">
+  <!-- 1. Main Bundle Card -->
+  <div class="mar26-buy-flow-container mar26-bundle-card-container">
+    {% render 'mar26-product-card-stepper',
+      card_product: product,
+      layout: 'main-bundle',
+      is_bundle: true,
+      initial_qty: 1,
+      min_qty: 1
+    %}
+  </div>
+
+  <div class="mar26-buy-flow-container" id="widget-box">
+    
+    <div class="mar26-buy-header">
+      <h2>Complete your set and <span>save 15%!</span></h2>
+      
+      <div class="mar26-instruction-box">
+        <ul class="mar26-instruction-list">
+          <li class="mar26-instruction-item">
+            <span class="mar26-step-bead">1</span>
+            Pick any extras you’d like
+          </li>
+          <li class="mar26-instruction-item">
+            <span class="mar26-step-bead">2</span>
+            Click Add to Cart
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mar26-addon-list">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'addon' -%}
+          {%- assign addon_product = block.settings.product -%}
+          {%- if addon_product != blank -%}
+            {% render 'mar26-product-card-stepper',
+              card_product: addon_product,
+              is_bundle: false,
+              initial_qty: 0,
+              min_qty: 0,
+              shopify_attributes: block.shopify_attributes
+            %}
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- assign product_form_id = 'product-form-' | append: section.id -%}
+    {%- form 'product', product, id: product_form_id, class: 'mar26-checkout-form' -%}
+      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+      
+      <div class="mar26-price-summary" id="mar26-price-summary">
+        <div class="mar26-summary-row">
+          <span>Subtotal</span>
+          <span id="mar26-subtotal-val">$0.00</span>
+        </div>
+        <div class="mar26-summary-row highlight">
+          <span>Bundle Discount (15% off add-ons)</span>
+          <span id="mar26-discount-val">-$0.00</span>
+        </div>
+        <div class="mar26-summary-row total">
+          <span>Total</span>
+          <span id="mar26-total-val">$0.00</span>
+        </div>
+      </div>
+      
+      <div class="mar26-checkout-footer">
+        <button type="button" class="mar26-btn-atc" id="mar26-main-atc">Add to Cart</button>
+        
+        <div class="mar26-dynamic-checkout">
+          {{- form | payment_button -}}
+        </div>
+      </div>
+
+      <style>
+        .mar26-dynamic-checkout .shopify-payment-button__button--unbranded {
+          background-color: #5a31f4 !important;
+          border-radius: 100px !important;
+          font-weight: 700 !important;
+          text-transform: uppercase !important;
+          font-size: 0.875rem !important;
+          height: 52px !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          padding: 0 1.5rem !important;
+        }
+        .mar26-dynamic-checkout .shopify-payment-button__more-options {
+          font-size: 0.75rem !important;
+          margin-top: 0.5rem !important;
+          color: #6b7280 !important;
+        }
+
+        .mar26-price-summary {
+          margin-top: 1.5rem;
+          margin-bottom: 1.125rem;
+          padding: 1.25rem;
+          background: #f8fafc;
+          border-radius: 16px;
+          border: 1px dashed #e2e8f0;
+        }
+        .mar26-summary-row {
+          display: flex;
+          justify-content: space-between;
+          font-size: 0.9375rem;
+          color: #64748b;
+          margin-bottom: 0.5rem;
+        }
+        .mar26-summary-row.highlight {
+          color: #e11d48;
+          font-weight: 700;
+        }
+        .mar26-summary-row.total {
+          margin-top: 0.75rem;
+          padding-top: 0.75rem;
+          border-top: 1px solid #e2e8f0;
+          font-size: 1.125rem;
+          font-weight: 900;
+          color: #111111;
+        }
+      </style>
+    {%- endform -%}
+
+  </div>
+</div>
+
+<script>
+  let bundleQuantity = 1;
+
+  function mar26UpdateStepperQty(btn, delta) {
+    const card = btn.closest('.mar26-stepper-card');
+    if (!card) return;
+
+    const valEl = card.querySelector('.mar26-qty-val');
+    const minQty = parseInt(card.dataset.minQty || '0', 10);
+    let val = parseInt(valEl.innerText, 10) || 0;
+    val = Math.max(minQty, val + delta);
+    valEl.innerText = val;
+
+    const isBundle = card.dataset.isBundle === 'true';
+    if (isBundle) {
+      bundleQuantity = val;
+    } else {
+      if (val > 0) {
+        card.classList.add('is-selected');
+      } else {
+        card.classList.remove('is-selected');
+      }
+    }
+
+    mar26UpdateCalculations();
+  }
+
+  // Backwards compatibility wrappers
+  function mar26UpdateBundleQty(delta) {
+    const bundleCard = document.querySelector('.mar26-stepper-card[data-is-bundle="true"]');
+    if (bundleCard) {
+      const btn = bundleCard.querySelector('.mar26-qty-btn');
+      if (btn) mar26UpdateStepperQty(btn, delta);
+    }
+  }
+
+  function mar26UpdateQty(btn, delta) {
+    mar26UpdateStepperQty(btn, delta);
+  }
+
+  const BASE_PRODUCT_PRICE = {{ product.selected_or_first_available_variant.price | divided_by: 100.0 }};
+  
+  function mar26UpdateCalculations() {
+    // 1. Bundle Subtotal
+    const bundleCard = document.querySelector('.mar26-stepper-card[data-is-bundle="true"]');
+    const bundleQty = bundleCard ? (parseInt(bundleCard.querySelector('.mar26-qty-val').innerText, 10) || 1) : bundleQuantity;
+    bundleQuantity = bundleQty;
+    let subtotal = BASE_PRODUCT_PRICE * bundleQuantity;
+    let addonDiscount = 0;
+
+    // 2. Add-on Cards
+    document.querySelectorAll('.mar26-stepper-card[data-is-bundle="false"]').forEach(card => {
+      const qtyEl = card.querySelector('.mar26-qty-val');
+      const qty = qtyEl ? (parseInt(qtyEl.innerText, 10) || 0) : 0;
+      if (qty > 0) {
+        const priceStr = card.querySelector('.mar26-price-new').innerText.replace(/[^0-9.]/g, '');
+        const price = parseFloat(priceStr);
+        const lineTotal = price * qty;
+        subtotal += lineTotal;
+        addonDiscount += lineTotal * 0.15; // 15% discount on add-ons
+      }
+    });
+
+    const total = subtotal - addonDiscount;
+
+    document.getElementById('mar26-subtotal-val').innerText = '$' + subtotal.toFixed(2);
+    document.getElementById('mar26-discount-val').innerText = '-$' + addonDiscount.toFixed(2);
+    document.getElementById('mar26-total-val').innerText = '$' + total.toFixed(2);
+    
+    // Update button text to reflect total
+    const atcBtn = document.getElementById('mar26-main-atc');
+    if (addonDiscount > 0) {
+      atcBtn.innerText = `ADD TO CART • $${total.toFixed(2)}`;
+    } else {
+      atcBtn.innerText = 'ADD TO CART';
+    }
+  }
+
+  // Initial calc
+  mar26UpdateCalculations();
+
+  // AJAX Cart Submission
+  document.getElementById('mar26-main-atc').addEventListener('click', async function() {
+    const btn = this;
+    const originalText = btn.innerText;
+    btn.disabled = true;
+    btn.innerText = 'ADDING...';
+
+    const items = [];
+    
+    // 1. Add Main Product (The "Bundle") with dynamic quantity (minimum 1)
+    items.push({
+      id: {{ product.selected_or_first_available_variant.id }},
+      quantity: bundleQuantity
+    });
+
+    // 2. Add Checked Add-ons (any card with qty > 0)
+    document.querySelectorAll('.mar26-stepper-card[data-is-bundle="false"]').forEach(card => {
+      const qtyEl = card.querySelector('.mar26-qty-val');
+      const qty = qtyEl ? (parseInt(qtyEl.innerText, 10) || 0) : 0;
+      const variantId = card.dataset.variantId;
+      if (qty > 0 && variantId) {
+        items.push({
+          id: variantId,
+          quantity: qty
+        });
+      }
+    });
+
+    try {
+      const response = await fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items: items })
+      });
+
+      if (response.ok) {
+        // Success: Redirect to checkout with discount code
+        window.location.href = '/checkout?discount=MAR26SAVE15';
+      } else {
+        const err = await response.json();
+        alert('Error: ' + err.description);
+        btn.disabled = false;
+        btn.innerText = originalText;
+      }
+    } catch (e) {
+      console.error('Cart Error:', e);
+      alert('Something went wrong. Please try again.');
+      btn.disabled = false;
+      btn.innerText = originalText;
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "MAR26 Buy Flow",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Complete your set"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "addon",
+      "name": "Add-on Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "MAR26 Buy Flow",
+      "blocks": [
+        { "type": "addon" },
+        { "type": "addon" }
+      ]
+    }
+  ]
+}
+{% endschema %}

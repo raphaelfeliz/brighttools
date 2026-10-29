@@ -1,0 +1,54 @@
+{%- comment -%}
+  🛡️ MAR26 SECTION HEADER SNIPPET
+  v3.4.0 | Triple-Pillar Architecture
+  
+  Parameters:
+  - section_id (required): Unique ID for DOM traceability
+  - pre_title (optional): Badge text
+  - title (required): Main heading text
+  - highlight (optional): Color accented text
+  - highlight_color (optional): Hex for highlight (defaults to MAR26 Red)
+  - alignment (optional): 'center' or 'left' (default: 'center')
+  - h_tag (optional): Heading tag (default: 'h2')
+{%- endcomment -%}
+
+{%- liquid
+  assign align_class = 'text-center'
+  if alignment == 'left'
+    assign align_class = 'text-left'
+  endif
+  
+  if no_margin
+    assign margin_class = 'mar26-header--no-margin'
+  endif
+  
+  assign heading_tag = h_tag | default: 'h2'
+-%}
+
+<div class="mar26-header {{ align_class }} {{ margin_class }}" id="mar26-header-{{ section_id }}" data-mar26-element="section-header">
+  {%- if pre_title != blank -%}
+    <div class="mar26-header-badge mar26-pre-title" id="mar26-badge-{{ section_id }}" data-mar26-element="header-badge">
+      &bull;
+      <span class="mar26-header-badge-text">{{ pre_title | escape }}</span>
+      &bull;
+    </div>
+  {%- endif -%}
+
+  <{{ heading_tag }} class="mar26-section-title" id="mar26-title-{{ section_id }}" data-mar26-element="section-title">
+    {%- if title != blank -%}
+      <span>{{ title | escape }}</span>
+    {%- endif -%}
+
+    {%- if title != blank and highlight != blank -%}&nbsp;{%- endif -%}
+
+    {%- if highlight != blank -%}
+      <span 
+        class="mar26-section-title--highlight" 
+        style="--mar26-title-highlight-color: {{ highlight_color | default: 'var(--mar26-clr-red)' }};"
+        data-mar26-element="title-highlight"
+      >
+        {{ highlight | escape }}
+      </span>
+    {%- endif -%}
+  </{{ heading_tag }}>
+</div>

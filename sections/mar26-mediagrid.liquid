@@ -1,0 +1,320 @@
+{%- comment -%}
+----------------------------------------------------------------------------------------------------------------------
+file-summary: MAR26 Media Grid. Full-width video hero with mar26-button + 4-card image grid.
+version-name: Initial Build
+version-number: 1.0.0
+version-summary: Full-width video top, 4 cards bottom. Desktop: 1 row. Mobile: 2x2 grid.
+----------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<script>
+  console.log('MAR26 Media Grid - Version: 1.0.0');
+</script>
+
+<style>
+  /* ---- Section ---- */
+#shopify-section-{{ section.id }} {
+    margin: 50px auto 80px !important;
+    max-width: 1300px;
+    padding: 0 24px !important;
+  }
+
+  /* ---- Wrapper ---- */
+  #shopify-section-{{ section.id }} .mar26mg-wrapper {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0;
+  }
+
+  /* ---- Video Hero ---- */
+  #shopify-section-{{ section.id }} .mar26mg-video-wrap {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    aspect-ratio: 16 / 6;
+    border-radius: 18px;
+  }
+
+  @media screen and (max-width: 767px) {
+    #shopify-section-{{ section.id }} {
+      margin: 12px 12px 60px !important;
+    }
+
+    #shopify-section-{{ section.id }} .mar26mg-video-wrap {
+      aspect-ratio: 1 / 1;
+    }
+
+    #shopify-section-{{ section.id }} .mar26mg-cards {
+      gap: 0.5rem;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .mar26mg-video-wrap video-media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  #shopify-section-{{ section.id }} .mar26mg-video-wrap video-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* ---- Center overlay ---- */
+  #shopify-section-{{ section.id }} .mar26mg-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0.75rem;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.18) 100%);
+  }
+
+  #shopify-section-{{ section.id }} .mar26mg-overlay-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .mar26mg-overlay-title {
+    margin: 0;
+    font-size: clamp(1.5rem, 4.5vw, 3rem);
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+  }
+
+  #shopify-section-{{ section.id }} .mar26mg-overlay .m26-btn {
+    box-shadow: none;
+    border-width: 2px;
+  }
+
+  /* ---- Cards Grid ---- */
+  #shopify-section-{{ section.id }} .mar26mg-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+  }
+
+  @media screen and (max-width: 767px) {
+    #shopify-section-{{ section.id }} .mar26mg-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  #shopify-section-{{ section.id }} .mar26mg-card {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 12;
+    display: block;
+    background-color: #18181b;
+    border-radius: 14px;
+  }
+
+  #shopify-section-{{ section.id }} .mar26mg-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 600ms ease;
+  }
+
+  #shopify-section-{{ section.id }} .mar26mg-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 40%, rgba(0, 0, 0, 0.28) 100%);
+    pointer-events: none;
+  }
+
+  #shopify-section-{{ section.id }} .mar26mg-card:hover img {
+    transform: scale(1.05);
+  }
+</style>
+
+<div class="mar26mg-wrapper">
+
+  <!-- Video Hero -->
+  <div class="mar26mg-video-wrap">
+    {%- if section.settings.video != blank -%}
+      <video-media autoplay style="--aspect-ratio: auto">
+        {{- section.settings.video | video_tag: playsinline: true, muted: true, loop: true, controls: false, preload: 'metadata', class: 'object-cover' -}}
+      </video-media>
+    {%- elsif section.settings.external_video_url != blank -%}
+      <video-media host="{{ section.settings.external_video_url.type }}" autoplay class="pointer-events-none">
+        <template>
+          {%- if section.settings.external_video_url.type == 'youtube' -%}
+            <iframe src="https://www.youtube.com/embed/{{ section.settings.external_video_url.id }}?playsinline=1&autoplay=1&controls=0&mute=1&loop=1&playlist={{ section.settings.external_video_url.id }}&enablejsapi=1&rel=0&modestbranding=1&origin={{ 'https://' | append: request.host | url_encode }}" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
+          {%- elsif section.settings.external_video_url.type == 'vimeo' -%}
+            <iframe src="https://player.vimeo.com/video/{{ section.settings.external_video_url.id }}?autoplay=1&autopause=1&background=1&loop=1&muted=1&transparent=0&responsive=1&portrait=0&title=0&byline=0" allow="autoplay; encrypted-media;" allowfullscreen="allowfullscreen"></iframe>
+          {%- endif -%}
+        </template>
+      </video-media>
+    {%- endif -%}
+
+    {%- if section.settings.btn_text != blank -%}
+      <div class="mar26mg-overlay">
+        <div class="mar26mg-overlay-inner">
+          {%- if section.settings.hero_title != blank -%}
+            <h2 class="mar26mg-overlay-title">{{ section.settings.hero_title }}</h2>
+          {%- endif -%}
+        {%- render 'mar26-button',
+          href: section.settings.btn_link,
+          text: section.settings.btn_text,
+          size: 'medium',
+          bg_color: section.settings.btn_bg_color,
+          text_color: 'white',
+          icon: 'no'
+        -%}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+
+  <!-- 4 Cards -->
+  <div class="mar26mg-cards">
+    {%- for i in (1..4) -%}
+      {%- assign img_key  = 'card_' | append: i | append: '_image' -%}
+      {%- assign link_key = 'card_' | append: i | append: '_link' -%}
+      {%- assign img  = section.settings[img_key] -%}
+      {%- assign link = section.settings[link_key] -%}
+
+      <a class="mar26mg-card" {% if link != blank %}href="{{ link }}"{% endif %}>
+        {%- if img != blank -%}
+          {{ img | image_url: width: 800 | image_tag: loading: 'lazy', widths: '400,600,800,1000', sizes: '(max-width:767px) 50vw, 25vw' }}
+        {%- endif -%}
+      </a>
+    {%- endfor -%}
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "MAR26 Media Grid",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "custom.overlay"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Video"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video file",
+      "info": "MP4 recommended. Replaces external URL if both are set."
+    },
+    {
+      "type": "video_url",
+      "id": "external_video_url",
+      "accept": ["youtube", "vimeo"],
+      "label": "External video URL"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button text",
+      "default": "SHOP WIPES"
+    },
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Hero title",
+      "default": "Quick Mop Floor Wipes"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button link"
+    },
+    {
+      "type": "color",
+      "id": "btn_bg_color",
+      "label": "Button color",
+      "default": "#9a69a7"
+    },
+    {
+      "type": "header",
+      "content": "Card 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "card_1_image",
+      "label": "Image"
+    },
+    {
+      "type": "url",
+      "id": "card_1_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Card 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "card_2_image",
+      "label": "Image"
+    },
+    {
+      "type": "url",
+      "id": "card_2_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Card 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "card_3_image",
+      "label": "Image"
+    },
+    {
+      "type": "url",
+      "id": "card_3_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Card 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "card_4_image",
+      "label": "Image"
+    },
+    {
+      "type": "url",
+      "id": "card_4_link",
+      "label": "Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "MAR26 Media Grid",
+      "settings": {
+        "btn_text": "SHOP WIPES",
+        "btn_bg_color": "#9a69a7"
+      }
+    }
+  ]
+}
+{% endschema %}

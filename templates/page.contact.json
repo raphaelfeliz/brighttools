@@ -1,0 +1,57 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_width": "80ch"
+      }
+    },
+    "contact": {
+      "type": "contact",
+      "blocks": {
+        "09626b11-d9f7-4134-a08a-d7ad0a83dbc0": {
+          "type": "text",
+          "settings": {
+            "title": "Phone number",
+            "use_long_text": false,
+            "required": false
+          }
+        }
+      },
+      "block_order": [
+        "09626b11-d9f7-4134-a08a-d7ad0a83dbc0"
+      ],
+      "settings": {
+        "full_width": true,
+        "subheading": "Contact Us",
+        "title": "Innovative commercial and home cleaning tools for you!",
+        "content": "<p>387–389 Glen Huntly Rd,<br/>Elsternwick VIC 3185</p><p></p><p>info@brighttools.com.au<br/>Call us: 1300 246 979</p>",
+        "text_position": "start",
+        "contact_form_size": "large",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "contact_background": "",
+        "contact_text_color": "",
+        "button_background": "",
+        "button_text_color": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "contact"
+  ]
+}

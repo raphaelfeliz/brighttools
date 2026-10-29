@@ -1,0 +1,25 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "mar26_bestsellerpage_hero": {
+      "type": "mar26-bestsellerpage-hero",
+      "settings": {}
+    },
+    "mar26_bestsellerpage_included_grid": {
+      "type": "mar26-bestsellerpage-included-grid",
+      "settings": {}
+    }
+  },
+  "order": [
+    "mar26_bestsellerpage_hero",
+    "mar26_bestsellerpage_included_grid"
+  ]
+}

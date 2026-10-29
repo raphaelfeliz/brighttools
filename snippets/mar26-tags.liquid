@@ -1,0 +1,96 @@
+{%- comment -%}
+----------------------------------------------------------------------------------------------------------------------
+file-summary: MAR26 title tags block. Renders compact merchant-configurable tags above the product title.
+version-name: Configurable Dense Title Tags
+version-number: 0.0.2
+version-summary: Adds manual, product-tag, and metafield-backed sources with dense filled-pill styling.
+----------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+
+{%- liquid
+  assign tags_source = block.settings.tags_source | default: 'product_tags'
+  assign max_tags = block.settings.max_tags | default: 6
+  assign raw_tags = ''
+
+  if tags_source == 'manual'
+    assign raw_tags = block.settings.manual_tags
+  elsif tags_source == 'metafield_text'
+    assign metafield_namespace = block.settings.metafield_namespace | strip
+    assign metafield_key = block.settings.metafield_key | strip
+    if metafield_namespace != blank and metafield_key != blank and product.metafields[metafield_namespace][metafield_key] != blank
+      assign raw_tags = product.metafields[metafield_namespace][metafield_key].value
+    endif
+  endif
+
+  assign normalized_tags = raw_tags | default: '' | newline_to_br | replace: '<br />', ',' | replace: '<br/>', ',' | replace: '<br>', ','
+  assign parsed_tags = normalized_tags | split: ','
+-%}
+
+{%- capture tag_items -%}
+  {%- if tags_source == 'manual' or tags_source == 'metafield_text' -%}
+    {%- for tag in parsed_tags limit: max_tags -%}
+      {%- assign normalized_tag = tag | strip -%}
+      {%- if normalized_tag != blank -%}
+        <span class="mar26-title-tags__tag">{{ normalized_tag | escape }}</span>
+      {%- endif -%}
+    {%- endfor -%}
+  {%- else -%}
+    {%- for tag in product.tags limit: max_tags -%}
+      {%- assign normalized_tag = tag | strip -%}
+      {%- if normalized_tag != blank -%}
+        <span class="mar26-title-tags__tag">{{ normalized_tag | escape }}</span>
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+{%- endcapture -%}
+
+{%- if tag_items != blank -%}
+  <style>
+    #block-{{ block.id }}.mar26-title-tags-block {
+      margin: 0;
+    }
+
+    #block-{{ block.id }} .mar26-title-tags {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.375rem;
+    }
+
+    #block-{{ block.id }} .mar26-title-tags__tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 1.625rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background: {{ block.settings.tag_background | default: '#f3f4f6' }};
+      color: {{ block.settings.tag_text_color | default: '#111827' }};
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.1), 0 3px 8px rgba(15, 23, 42, 0.04);
+      font-size: 0.72rem;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    @media screen and (max-width: 999px) {
+      #block-{{ block.id }} .mar26-title-tags {
+        gap: 0.3125rem;
+      }
+
+      #block-{{ block.id }} .mar26-title-tags__tag {
+        min-height: 1.5rem;
+        padding: 0.18rem 0.5rem;
+        font-size: 0.68rem;
+      }
+    }
+  </style>
+
+  <div id="block-{{ block.id }}" class="mar26-title-tags-block {% unless block.settings.show_on_mobile %}hidden{% endunless %} {% if block.settings.show_on_desktop %}md:block{% else %}md:hidden{% endif %}">
+    <div class="mar26-title-tags" aria-label="Product tags">
+      {{- tag_items -}}
+    </div>
+  </div>
+{%- endif -%}
