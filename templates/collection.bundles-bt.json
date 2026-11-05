@@ -318,6 +318,13 @@
             "content": "<p>Our cleaning bundles bring together complementary products designed to work beautifully together. They're a convenient way to build your everyday cleaning routine, whether you're stocking up on favourites or discovering something new.</p>"
           }
         },
+        "item_BqHqDp": {
+          "type": "item",
+          "settings": {
+            "title": "Can I buy replacement wipes or use a reusable cloth?",
+            "content": "<p>Absolutely! Quick Mop Floor Wipes are available separately, so you can replenish your supply without replacing your tools. For a reusable option, our <strong>Quick Mop Microfibre Floor Cloth</strong> also pairs with our brooms and squeegees, can be used wet or dry and is machine-washable. Microfibre cloths are sold separately.</p>"
+          }
+        },
         "item_JYdJqe": {
           "type": "item",
           "settings": {
@@ -359,6 +366,7 @@
         "item_mGEjxN",
         "item_K6NM8G",
         "item_mrzeBW",
+        "item_BqHqDp",
         "item_JYdJqe",
         "item_UDgKCD",
         "item_BYHJxD",
@@ -588,15 +596,41 @@
     "mar26_testimonials_73q9Ud": {
       "type": "mar26-testimonials",
       "blocks": {
+        "testimonial_WATxVh": {
+          "type": "testimonial",
+          "settings": {
+            "product": "",
+            "product_name": "Pet Cleaning Bundle",
+            "custom_link": "shopify://products/pet-cleaning-bundle",
+            "author": "Kim J.",
+            "country": "new_zealand",
+            "content": "<p>This broom is incredible. I thought my floors were clean until I swept the floor with this broom. I found so much dog hair I didn't know was there. And the lavender wipes leave a lovely smell.</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_XnMwaE": {
+          "type": "testimonial",
+          "settings": {
+            "product": "",
+            "product_name": "Caravan Cleaning Bundle",
+            "custom_link": "shopify://products/caravan-cleaning-bundle",
+            "author": "Karen P.",
+            "country": "australia",
+            "content": "<p>I love the way it grabs every little bit of dirt, dust and sand and leaves the floor clean, in every corner and hard to get space. Easy to pack away. Very handy kit.</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
         "testimonial_agixfB": {
           "type": "testimonial",
           "settings": {
             "product": "",
-            "product_name": "",
-            "custom_link": "",
-            "author": "James Anderson",
-            "country": "australia",
-            "content": "<p>The Japanese Rubber Broom changed how I handle large floor areas. It's indestructible.</p>",
+            "product_name": "Easy Cleaning Bundle",
+            "custom_link": "shopify://products/easy-cleaning-bundle-for-limited-mobility",
+            "author": "Sue Y.",
+            "country": "new_zealand",
+            "content": "<p>No more sore back! Bought this item as I have a bad back and cannot bend to clean the floor. This makes is easy and doable. It's light and easy to get around. Wipes smell great too!</p>",
             "show_rating": true,
             "rating": 5
           }
@@ -605,11 +639,11 @@
           "type": "testimonial",
           "settings": {
             "product": "",
-            "product_name": "",
-            "custom_link": "",
-            "author": "Sarah Jenkins",
-            "country": "new_zealand",
-            "content": "<p>I've tried every cleaner on the market, but the Glider S-1 is the only one that delivers.</p>",
+            "product_name": "Bright Broom Bundle",
+            "custom_link": "shopify://products/bright-broom-bundle-broom-squeegee-1pk-quick-mop-floor-wipes",
+            "author": "Ines P.",
+            "country": "australia",
+            "content": "<p>I was after something I can use to clean the floors in between the regular cleaning. The wipes are absolutely perfect for this.<br/>Great big size and I love the hole in them for the broomstick.</p>",
             "show_rating": true,
             "rating": 5
           }
@@ -618,11 +652,11 @@
           "type": "testimonial",
           "settings": {
             "product": "",
-            "product_name": "",
-            "custom_link": "",
-            "author": "Emma Watson",
+            "product_name": "Compact Squeegee Pack",
+            "custom_link": "shopify://products/compact-squeegee-pack",
+            "author": "Matilde A.",
             "country": "australia",
-            "content": "<p>If you have a dog that sheds, you need these tools. It literally pulls fur out of carpets.</p>",
+            "content": "<p>Excellent product, cleans the floors quickly without getting out the mop. Gets under the couch and bed easily. Also good for windows</p>",
             "show_rating": true,
             "rating": 5
           }
@@ -631,11 +665,11 @@
           "type": "testimonial",
           "settings": {
             "product": "",
-            "product_name": "",
-            "custom_link": "",
-            "author": "Michael Chen",
+            "product_name": "Bright Squeegee Pack",
+            "custom_link": "shopify://products/bright-squeegee-pack-copy",
+            "author": "Carol M.",
             "country": "australia",
-            "content": "<p>The build quality is industrial-grade. Durability is honestly unmatched.</p>",
+            "content": "<p>So easy to use, much better than mop and bucket. Knuckle-joint gets under furniture, around fridge. Wipes smell great!</p>",
             "show_rating": true,
             "rating": 5
           }
@@ -644,17 +678,19 @@
           "type": "testimonial",
           "settings": {
             "product": "",
-            "product_name": "",
-            "custom_link": "",
-            "author": "David Ross",
-            "country": "new_zealand",
-            "content": "<p>The Caravan Kit is brilliant. No buckets, no mess, stores away perfectly.</p>",
+            "product_name": "Quick Mop Floor Wipes",
+            "custom_link": "shopify://products/choose-your-bundle-of-3-packs-quick-mop-floor-wipes-1",
+            "author": "Di B.",
+            "country": "australia",
+            "content": "<p>Large wet wipes, stay damp to do a large area. Perfect for a tidy up between thorough deep cleans. House smells great!&nbsp;</p>",
             "show_rating": true,
             "rating": 5
           }
         }
       },
       "block_order": [
+        "testimonial_WATxVh",
+        "testimonial_XnMwaE",
         "testimonial_agixfB",
         "testimonial_KAnGUX",
         "testimonial_dARCyM",
@@ -663,8 +699,8 @@
       ],
       "name": "MAR26 Testimonials",
       "settings": {
-        "title": "What they're saying",
-        "subheading": "Join thousands already cleaning faster, easier, and better with BrightTools."
+        "title": "loved by thousands",
+        "subheading": "Real reviews from customers who are already cleaning better with BrightTools."
       }
     },
     "29eb21bf-ae72-415f-9b8e-771ecae14071": {

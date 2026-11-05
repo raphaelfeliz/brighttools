@@ -31,14 +31,35 @@
             "heading_tag": "h3"
           }
         },
+        "judge_me_reviews_preview_badge_kG7NLt": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
         "price": {
           "type": "price",
           "settings": {
             "show_taxes_notice": false
           }
         },
-        "judge_me_reviews_preview_badge_kG7NLt": {
-          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "inventory": {
+          "type": "inventory",
+          "settings": {
+            "low_inventory_threshold": 25
+          }
+        },
+        "dealeasy_mm_bundle_builder_dCNcYL": {
+          "type": "shopify://apps/dealeasy/blocks/mm-bundle-builder/e47a8634-0496-480d-9e46-6f7fafd34b30",
+          "settings": {
+            "lb-product-handle": "",
+            "lb-product-id": ""
+          }
+        },
+        "selleasy_lb_upsell_widget_pal_mCVBx9": {
+          "type": "shopify://apps/selleasy/blocks/lb-upsell-widget-pal/790c1a03-a71f-4bc1-9869-00dad526d3c2",
+          "settings": {}
+        },
+        "quantity_selector_dgjkJg": {
+          "type": "quantity_selector",
           "settings": {}
         },
         "mar26_short_description_tARAbB": {
@@ -67,17 +88,6 @@
             "font_weight": "900"
           }
         },
-        "quantity_selector_dgjkJg": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
-        "dealeasy_mm_bundle_builder_dCNcYL": {
-          "type": "shopify://apps/dealeasy/blocks/mm-bundle-builder/e47a8634-0496-480d-9e46-6f7fafd34b30",
-          "settings": {
-            "lb-product-handle": "",
-            "lb-product-id": ""
-          }
-        },
         "description": {
           "type": "description",
           "disabled": true,
@@ -104,16 +114,6 @@
             "atc_button_background": "#000000",
             "atc_button_text_color": "#000000"
           }
-        },
-        "inventory": {
-          "type": "inventory",
-          "settings": {
-            "low_inventory_threshold": 25
-          }
-        },
-        "selleasy_lb_upsell_widget_pal_mCVBx9": {
-          "type": "shopify://apps/selleasy/blocks/lb-upsell-widget-pal/790c1a03-a71f-4bc1-9869-00dad526d3c2",
-          "settings": {}
         }
       },
       "block_order": [
@@ -287,11 +287,11 @@
       "settings": {
         "full_width": true,
         "subheading": "",
-        "title": "Common Questions",
-        "content": "<p>Use this text to share information about your product or shipping policies.</p>",
+        "title": "Have a question?",
+        "content": "",
         "team_avatar_width": 160,
-        "support_hours": "Our customer support is available Monday to Friday: 8am-8:30pm.",
-        "answer_time": "Average answer time: 24h",
+        "support_hours": "We're happy to help. If you haven't found the answer you're looking for please get in touch at: info@brighttools.com.au",
+        "answer_time": "",
         "button_text": "",
         "button_url": "",
         "text_position": "center",

@@ -30,11 +30,11 @@
         "gallery_image_YdYhix"
       ],
       "settings": {
-        "pre_title": "Cleaning Performance",
+        "pre_title": "Built To Last",
         "title_line_1": "Caravan",
         "title_line_2": "CLEANING",
         "title_line_3": "BUNDLE",
-        "description": "Your time matters. Spend it enjoying your caravan, not cleaning it. Fast, effective tools for even the smallest spaces.",
+        "description": "Clever cleaning for life on the road. Everything you need to keep your caravan clean and fresh, all packed neatly away in one bag.",
         "btn_primary_text": "Get Your Bundle",
         "btn_secondary_text": "Included"
       }
@@ -48,20 +48,27 @@
     "buy_flow": {
       "type": "mar26-buy-flow",
       "blocks": {
+        "addon_Rf7pan": {
+          "type": "addon",
+          "settings": {
+            "product": "high-window-cleaner-telescopic-copy"
+          }
+        },
         "addon_YCz6Ey": {
           "type": "addon",
           "settings": {
-            "product": "jet-all-purpose-cleaning-gel"
+            "product": "professional-microfiber-cloth-2pk-xxl-80cmx60cm"
           }
         },
         "addon_QxixWP": {
           "type": "addon",
           "settings": {
-            "product": "biovibe-complete-wipes-bundle"
+            "product": "quick-mop-floor-wipes-biovibe-plant-based"
           }
         }
       },
       "block_order": [
+        "addon_Rf7pan",
         "addon_YCz6Ey",
         "addon_QxixWP"
       ],
@@ -71,57 +78,49 @@
     },
     "whats_included": {
       "type": "mar26-whats-included",
-      "blocks": {
-        "item_wkMbQJ": {
-          "type": "item",
-          "settings": {
-            "product": "adjustable-dust-blade-rubber-broom-squeegee",
-            "title": "Item Name",
-            "spec_1": "",
-            "spec_2": "",
-            "spec_3": "",
-            "accent_color": "#e2e8f0"
-          }
-        },
-        "item_wJpXV4": {
-          "type": "item",
-          "settings": {
-            "product": "biovibe-botanic-all-purpose-wipes",
-            "title": "Item Name",
-            "spec_1": "",
-            "spec_2": "",
-            "spec_3": "",
-            "accent_color": "#e2e8f0"
-          }
-        },
-        "item_AxBiam": {
-          "type": "item",
-          "settings": {
-            "product": "adjustable-dust-blade-rubber-broom-squeegee",
-            "image": "shopify://shop_images/rubber-broom-boutique-floor-wipes-red-handle_3f1dd018-a0a3-49ad-a724-ae9b8b45e873.jpg",
-            "title": "Item Name",
-            "spec_1": "",
-            "spec_2": "",
-            "spec_3": "",
-            "accent_color": "#e2e8f0"
-          }
-        }
-      },
-      "block_order": [
-        "item_wkMbQJ",
-        "item_wJpXV4",
-        "item_AxBiam"
-      ],
       "settings": {
         "pre_title": "",
         "pre_title_color": "#2563eb",
-        "black_title": "What's",
-        "gradient_title": "Included?",
+        "black_title": "Pairs Well",
+        "gradient_title": "With",
         "gradient_left_color": "#f43f5e",
         "gradient_right_color": "#be123c",
         "subheading": "Everything you need for an effortless, water-saving clean on the road.",
         "columns": "4",
         "outline_color": "#e2e8f0"
+      }
+    },
+    "rich_text_3GUMWi": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_CKA8HX": {
+          "type": "heading",
+          "settings": {
+            "text": "One compact system. Made for life on the road.",
+            "heading_tag": "h2",
+            "text_color": "",
+            "gradient": ""
+          }
+        },
+        "richtext_tTKQFd": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p></p>{{ product.description }}"
+          }
+        }
+      },
+      "block_order": [
+        "heading_CKA8HX",
+        "richtext_tTKQFd"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
       }
     },
     "mar26_highlights": {
@@ -173,7 +172,7 @@
         "card_3"
       ],
       "settings": {
-        "section_subtitle": "Engineered Performance",
+        "section_subtitle": "PREMIUM STANDARDS",
         "section_title_black": "Built",
         "section_title_gradient": "Different.",
         "section_grad_color_1": "#2563eb",
@@ -186,6 +185,7 @@
       "blocks": {
         "image_UgxkAx": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "media_width": 50,
             "media_position": "start",
@@ -218,10 +218,10 @@
             "icon_width": 48,
             "subheading": "",
             "title": "",
-            "content": "<p>{{ product.metafields.custom.media_text_box_2_rich_text | metafield_tag }}</p>",
+            "content": "{{ product.metafields.custom.media_text_box_2_rich_text | metafield_tag }}",
             "link_text": "",
             "link_url": "",
-            "background": "#0f172a",
+            "background": "#ffffff",
             "background_gradient": "",
             "text_color": "#ffffff",
             "text_gradient": "",
@@ -290,49 +290,97 @@
       ],
       "settings": {
         "title": "What They're Saying",
-        "subheading": "Real results from real customers — from high-rise apartments to hard-to-reach home windows."
+        "subheading": ""
       }
     },
     "faq": {
       "type": "faq",
       "blocks": {
+        "item_JLWzit": {
+          "type": "item",
+          "settings": {
+            "title": "Is the High Reach Van Cleaner included in the Caravan Cleaning Bundle?",
+            "content": "<p>No, the <strong>High Reach Van Cleaner</strong> is available as an optional add-on. It’s sold as a <strong>cleaning head only</strong> and attaches to the four-part handle included in your Caravan Cleaning Bundle, so there’s no need for a separate handle.</p><p>It also fits neatly into the bundle’s storage bag alongside the rest of your cleaning kit, keeping everything together and easy to pack away.</p>"
+          }
+        },
+        "item_8ee8eh": {
+          "type": "item",
+          "settings": {
+            "title": "Can I buy replacement wipes or use a reusable cloth?",
+            "content": "<p>Absolutely! Quick Mop Floor Wipes are available separately, so you can replenish your supply without replacing your tools. For a reusable option, our <strong>Quick Mop Microfibre Floor Cloth</strong> also pairs with the broom or squeegee, can be used wet or dry and is machine-washable. Microfibre cloths are sold separately and are also available as add-ons on the Caravan Cleaning Bundle product page.</p>"
+          }
+        },
+        "item_m9VmdG": {
+          "type": "item",
+          "settings": {
+            "title": "How many floor wipes are included, and which scents will I receive?",
+            "content": "<p>The bundle includes <strong>three packs of Quick Mop Floor Wipes, with 10 wipes per pack—that’s 30 wipes altogether</strong>. The scents supplied may vary depending on availability.</p>"
+          }
+        },
+        "item_WcyC6a": {
+          "type": "item",
+          "settings": {
+            "title": "Can I use the squeegee on windows and other wet surfaces?",
+            "content": "<p>Absolutely. The silicone squeegee can remove excess water from floors, windows and awnings. Its compact head and adjustable joint help you work in smaller spaces and reach awkward angles, making it useful for more than just your caravan floor.&nbsp;</p>"
+          }
+        },
+        "item_M3FVfk": {
+          "type": "item",
+          "settings": {
+            "title": "Does the bundle pack away easily?",
+            "content": "<p>Yes. The stainless steel handle separates into four sections, and the one handle connects interchangeably to the broom, squeegee and dustpan. The entire bundle fits into the included storage bag.&nbsp;</p>"
+          }
+        },
+        "item_VDEwLU": {
+          "type": "item",
+          "settings": {
+            "title": "Will the broom included in the Bundle pick up sand, dust and pet hair?",
+            "content": "<p>Yes! The Japanese Broom has a special dust-catching mechanism and is designed to collect fine sand, dust, hair and everyday debris. Its flexible silicone bristles also help lift pet hair from carpets—handy when your four-legged travel companion comes along for the adventure.&nbsp;</p>"
+          }
+        },
         "faq_1": {
           "type": "item",
           "settings": {
-            "title": "Is the Glider S-1 safe for high-rise windows?",
-            "content": "<p>Yes. Only open your window enough to place the outer half through. The included safety string keeps the Glider attached at all times. The magnets are strong enough to hold firm even in wind.</p>"
+            "title": "What’s included in the Caravan Cleaning Bundle?",
+            "content": "<p>You’ll receive a 30cm Japanese Silicone Broom head, a 30cm Silicone Squeegee head, a Stick-to-Floor Compact Silicone Dustpan, one interchangeable four-part stainless steel handle, three packs of Quick Mop Floor Wipes and a complimentary durable storage bag to keep everything together.</p>"
           }
         },
         "faq_2": {
           "type": "item",
           "settings": {
-            "title": "How do I clean the outside if I can't reach it?",
-            "content": "<p>Spray cleaning solution along the window edge nearest to you. As you glide the S-1, the blades spread the solution across the entire surface. You can also pre-wet the microfibre cloths before attaching them.</p>"
+            "title": "How do I clean the outside of the caravan, the solar panels. awnings and other difficult to reach areas?",
+            "content": "<p>Our High Reach Van Cleaner is the perfect tool to clean difficult to reach areas. It is offered as an add-on to the Caravan Cleaning Bundle and it attaches to the same handle provided with the Bundle (it is sold as the cleaning head only, without a handle). It has both a scrubbing side and a squeegee side to remove dirt/excess water. It also fits into the storage bag provided with the Bundle for easy pack away.</p>"
           }
         },
         "faq_3": {
           "type": "item",
           "settings": {
-            "title": "What window thickness does the S-1 support?",
-            "content": "<p>Single-glazed windows from 2mm to 8mm thick. If you're unsure of your window thickness, check our measurement guide for step-by-step instructions.</p>"
+            "title": "Do I need a mop, bucket or extra water?",
+            "content": "<p>No bucket or added water is needed when cleaning with our ready-to-use Quick Mop Floor Wipes. Sweep up loose dirt first, then slip a wipe over the broom or squeegee handle using its centre opening and position it on the tool head.&nbsp;</p>"
           }
         },
         "faq_4": {
           "type": "item",
           "settings": {
-            "title": "How long do the microfibre cloths last?",
-            "content": "<p>Each cloth can be washed and reused up to 300 times with zero loss in cleaning performance.</p>"
+            "title": "Which cleaning bundle is best for smaller spaces, caravans and motorhomes?",
+            "content": "<p>For compact spaces such as caravans, motorhomes, tiny homes and bathrooms, our <strong>Compact Squeegee Pack</strong> is a great choice. Its compact design makes it easy to manoeuvre in tighter areas.</p><p>If you're looking for a more comprehensive cleaning solution, our <strong>Caravan Cleaning Bundle</strong> includes a wider range of products to help keep your smaller space clean and fresh.</p>"
           }
         },
         "faq_5": {
           "type": "item",
           "settings": {
-            "title": "Is this the genuine Glider?",
-            "content": "<p>Yes. This is the original Glider by Tyroler Bright Tools with a 2-year warranty and 30-day money-back guarantee. Beware of low-quality imitation products which look the same but use inferior magnets and materials.</p>"
+            "title": "Is the bundle suitable for my caravan’s flooring?",
+            "content": "<p>Our Quick Mop Floor Wipes can be used on most sealed hard flooring, including vinyl, hybrid, laminate, timber and tiles. If you are concerned you can try a wipe on a small, hidden section first.&nbsp;</p>"
           }
         }
       },
       "block_order": [
+        "item_JLWzit",
+        "item_8ee8eh",
+        "item_m9VmdG",
+        "item_WcyC6a",
+        "item_M3FVfk",
+        "item_VDEwLU",
         "faq_1",
         "faq_2",
         "faq_3",
@@ -342,13 +390,13 @@
       "settings": {
         "full_width": true,
         "subheading": "",
-        "title": "Common Questions",
-        "content": "<p>Use this text to share information about your product or shipping policies.</p>",
+        "title": "Have a question?",
+        "content": "",
         "team_avatar_width": 160,
-        "support_hours": "Our customer support is available Monday to Friday: 8am-8:30pm.",
-        "answer_time": "Average answer time: 24h",
-        "button_text": "",
-        "button_url": "",
+        "support_hours": "We're happy to help. If you haven't found the answer you're looking for please get in touch at: info@brighttools.com.au",
+        "answer_time": "",
+        "button_text": "Contact us",
+        "button_url": "shopify://pages/contact",
         "text_position": "center",
         "background": "",
         "background_gradient": "",
@@ -364,6 +412,12 @@
     "mar26_best_sellers": {
       "type": "mar26-best-sellers",
       "blocks": {
+        "product_9U4Fgy": {
+          "type": "product",
+          "settings": {
+            "product": "long-handle-dustpan-brush-made-of-100-natural-rubber"
+          }
+        },
         "prod_1": {
           "type": "product",
           "settings": {
@@ -379,17 +433,18 @@
         "prod_3": {
           "type": "product",
           "settings": {
-            "product": "adjustable-dust-blade-rubber-broom-squeegee"
+            "product": "handheld-silicone-squeegee-copy"
           }
         },
         "prod_4": {
           "type": "product",
           "settings": {
-            "product": "jet-all-purpose-cleaning-spray-with-vinegar-and-lavender-copy"
+            "product": "bright-squeegee-pack-squeegee-quick-mop-floor-wipes"
           }
         }
       },
       "block_order": [
+        "product_9U4Fgy",
         "prod_1",
         "prod_2",
         "prod_3",
@@ -412,6 +467,7 @@
     "bundle_items",
     "buy_flow",
     "whats_included",
+    "rich_text_3GUMWi",
     "mar26_highlights",
     "video_demo",
     "mar26_testimonials",

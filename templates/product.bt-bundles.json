@@ -90,7 +90,6 @@
         },
         "description": {
           "type": "description",
-          "disabled": true,
           "settings": {
             "icon": "none",
             "icon_width": 20,
@@ -165,6 +164,7 @@
       "block_order": [
         "heading_6VXJqE"
       ],
+      "disabled": true,
       "name": "Video",
       "settings": {
         "full_width": false,
@@ -184,6 +184,7 @@
       "blocks": {
         "image_UgxkAx": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "media_width": 30,
             "media_position": "start",
@@ -205,6 +206,7 @@
         },
         "video_block": {
           "type": "video",
+          "disabled": true,
           "settings": {
             "video": "{{ product.metafields.custom.media_text_box_2_video.value }}",
             "external_video_url": "https://www.youtube.com/watch?v=oDjHs1ZLcss",
@@ -216,7 +218,7 @@
             "icon_width": 32,
             "subheading": "",
             "title": "",
-            "content": "<p>{{ product.metafields.custom.media_text_box_2_rich_text | metafield_tag }}</p><h4>🧹 Sweep & Squeegee in One</h4><h4></h4><h4>🔄 Reaches Tight Spaces</h4><h4></h4><h4>💪 Tough & Surface-Safe</h4><p></p><p>Clean faster with one tool built for every mess.<br/>Strong, versatile, and made to last — the Tyroler 2-in-1 is a cleaning essential.</p>",
+            "content": "{{ product.metafields.custom.media_text_box_2_rich_text | metafield_tag }}<h4>🧹 Sweep & Squeegee in One</h4><h4></h4><h4>🔄 Reaches Tight Spaces</h4><h4></h4><h4>💪 Tough & Surface-Safe</h4><p></p><p>Clean faster with one tool built for every mess.<br/>Strong, versatile, and made to last — the Tyroler 2-in-1 is a cleaning essential.</p>",
             "link_text": "",
             "link_url": "",
             "background": "#0f172a",
@@ -232,54 +234,208 @@
         "image_UgxkAx",
         "video_block"
       ],
+      "disabled": true,
       "settings": {
         "full_width": false,
         "alternate_media_position": false,
         "spacing": "small"
       }
     },
+    "mar26_whats_included_hwC8XQ": {
+      "type": "mar26-whats-included",
+      "blocks": {
+        "item_NTBqE3": {
+          "type": "item",
+          "settings": {
+            "product": "biovibe-complete-wipes-bundle",
+            "title": "BioVibe Bundle of Wipes",
+            "spec_1": "",
+            "spec_2": "",
+            "spec_3": "",
+            "accent_color": "#e2e8f0"
+          }
+        },
+        "item_mPaejM": {
+          "type": "item",
+          "settings": {
+            "product": "rubber-magic-dustpan-copy",
+            "title": "Silicone Magic Dustpan",
+            "spec_1": "Adjustable Knuckle Joint",
+            "spec_2": "Furniture-Safe Soft Edge",
+            "spec_3": "",
+            "accent_color": "#e2e8f0"
+          }
+        },
+        "item_6YK7ta": {
+          "type": "item",
+          "settings": {
+            "product": "choose-your-bundle-of-3-packs-quick-mop-floor-wipes-1",
+            "title": "Quick Mop Floor Wipes 3 Pack",
+            "spec_1": "Multi-surface Use",
+            "spec_2": "Zero Water Streaks",
+            "spec_3": "",
+            "accent_color": "#e2e8f0"
+          }
+        },
+        "item_7krkje": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "product": "",
+            "title": "Stick-to-floor Dustpan",
+            "spec_1": "Sweep without holding",
+            "spec_2": "Attaches to handles",
+            "spec_3": "",
+            "accent_color": "#e2e8f0"
+          }
+        },
+        "item_XfYzVT": {
+          "type": "item",
+          "settings": {
+            "product": "stick-to-floor-compact-silicone-dustpan",
+            "title": "Stick to Floor Compact Dustpan",
+            "spec_1": "",
+            "spec_2": "",
+            "spec_3": "",
+            "accent_color": "#e2e8f0"
+          }
+        }
+      },
+      "block_order": [
+        "item_NTBqE3",
+        "item_mPaejM",
+        "item_6YK7ta",
+        "item_7krkje",
+        "item_XfYzVT"
+      ],
+      "custom_css": [],
+      "name": "MAR26 What's Included",
+      "settings": {
+        "pre_title": "",
+        "pre_title_color": "#2563eb",
+        "black_title": "Pairs",
+        "gradient_title": "well with",
+        "gradient_left_color": "#f43f5e",
+        "gradient_right_color": "#be123c",
+        "subheading": "",
+        "columns": "4",
+        "outline_color": "#e2e8f0"
+      }
+    },
     "faq": {
       "type": "faq",
       "blocks": {
+        "item_6UtJPb": {
+          "type": "item",
+          "settings": {
+            "title": "Can I choose the scents of my Quick Mop Floor Wipes?",
+            "content": "<p>We offer seven fresh-smelling scents across our Quick Mop Floor Wipes range.</p><p>Our Bundles of 3 and 5 allow you to mix and match your favourite scents, while the Bright Broom Bundle lets you choose one preferred scent.</p><p>Some of our other cleaning packs include preselected scents, which may vary depending on availability. Please refer to the individual product page for scent selection options.</p>"
+          }
+        },
+        "item_3fxib8": {
+          "type": "item",
+          "settings": {
+            "title": "What makes Quick Mop Floor Wipes different from ordinary floor wipes?",
+            "content": "<p>Our Quick Mop Floor Wipes are supersized XL wipes, designed to cover more floor with every glide.</p><p>They're pre-moistened, fresh-smelling and ready to use, making everyday floor cleaning quicker, easier and more hygienic.</p><p>Simply attach a wipe to your BrightTools broom or squeegee, clean your floors and dispose of it when finished. No rinsing or washing dirty mop heads required.</p>"
+          }
+        },
+        "item_QjDgmr": {
+          "type": "item",
+          "settings": {
+            "title": "Can I use my BrightTools broom or squeegee without the floor wipes?",
+            "content": "<p>Absolutely! Our cleaning tools are designed to work beautifully on their own or together with our Quick Mop Floor Wipes.</p><p>The Rubber Broom is excellent for sweeping pet hair, dust and dirt from floors and carpets, while its built-in wiper helps clear wet spills.</p><p>Our Silicone Squeegees are ideal for removing excess water from floors, shower screens and windows.</p><p>Simply add a floor wipe whenever your floors need a quick refresh.</p>"
+          }
+        },
+        "item_wygi3A": {
+          "type": "item",
+          "settings": {
+            "title": "Which BrightTools floor cleaning bundle is right for me?",
+            "content": "<p>It depends on your cleaning needs!</p><p>The Bright Broom Bundle is ideal for sweeping away pet hair, dust and dirt, while also transforming into a lightweight mop.</p><p>The Bright Squeegee Pack is a great choice for everyday floor washing and refreshing, while the Compact Squeegee Pack is particularly handy for bathrooms, caravans, motorhomes and smaller spaces.</p><p>Already have a BrightTools broom or squeegee? Our Quick Mop Floor Wipes Bundles of 3 or 5 are perfect for stocking up on your favourite floor wipes.</p>"
+          }
+        },
+        "item_jHJFci": {
+          "type": "item",
+          "settings": {
+            "title": "How much floor space can I clean with one Quick Mop Floor Wipe?",
+            "content": "<p>Our supersized XL wipes are designed to cover more floor with every glide, helping you clean larger areas with fewer wipe changes.</p><p>Coverage will vary depending on the size of your space, the floor surface and how dirty your floors are. You can also briefly run the Wipe under warm water if it begins to dry out before you have completely finished your clean.&nbsp;</p>"
+          }
+        },
+        "item_T7Rxc4": {
+          "type": "item",
+          "settings": {
+            "title": "How do I turn my BrightTools broom or squeegee into a mop?",
+            "content": "<p>It's simple! Slide a Quick Mop Floor Wipe over the handle through the wipe's centre opening and position it over the broom or squeegee head.</p><p>Your cleaning tool instantly transforms into a lightweight mop, ready to refresh your floors without the hassle of a traditional mop and bucket.</p>"
+          }
+        },
+        "item_7yk9CY": {
+          "type": "item",
+          "settings": {
+            "title": "Do I need a bucket, water or cleaning solution to mop my floors?",
+            "content": "<p>No! Our Quick Mop Floor Wipes are pre-moistened and ready to use, so there's no need for a bucket, additional water or cleaning solution.</p><p>Simply attach a wipe, refresh your floors and dispose of the used wipe in the bin. It's a quick, convenient and hygienic way to maintain clean floors.</p>"
+          }
+        },
         "faq_1": {
           "type": "item",
           "settings": {
-            "title": "Is the Glider S-1 safe for high-rise windows?",
-            "content": "<p>Yes. Only open your window enough to place the outer half through. The included safety string keeps the Glider attached at all times. The magnets are strong enough to hold firm even in wind.</p>"
+            "title": "What's included in the Bright Broom Bundle?",
+            "content": "<p>The Bright Broom Bundle includes our premium 37cm Rubber Broom with built-in wiper, a four-part stainless steel handle and one pack of supersized Quick Mop Floor Wipes.</p><p>Together, they create a versatile 3-in-1 cleaning system for sweeping, mopping and clearing wet spills.</p>"
           }
         },
         "faq_2": {
           "type": "item",
           "settings": {
-            "title": "How do I clean the outside if I can't reach it?",
-            "content": "<p>Spray cleaning solution along the window edge nearest to you. As you glide the S-1, the blades spread the solution across the entire surface. You can also pre-wet the microfibre cloths before attaching them.</p>"
+            "title": "How does the broom turn into a mop?",
+            "content": "<p>It's simple! Just slide a Quick Mop Floor Wipe over the broom handle through the wipe's centre opening and position it over the broom head.</p><p>Your broom instantly transforms into a lightweight mop, allowing you to refresh your floors without a bucket, heavy mop or additional water.</p>"
+          }
+        },
+        "item_yGFYj9": {
+          "type": "item",
+          "settings": {
+            "title": "Can I purchase replacement Quick Mop Floor Wipes?",
+            "content": "<p>Yes. Our Quick Mop Floor Wipes are available to purchase separately, so you can continue using your BrightTools broom as a lightweight mop whenever needed.</p><p>Choose from our range of fresh-smelling scents to keep your floors clean and your home smelling fresh - available in individual packs or in Bundles with savings.</p>"
+          }
+        },
+        "item_mPNj7U": {
+          "type": "item",
+          "settings": {
+            "title": "What is the built-in wiper used for?",
+            "content": "<p>The Rubber Broom features an integrated rubber wiper on the broom head, allowing you to clear excess water and wet spills from hard floors.</p><p>This gives you three cleaning functions in one clever system: sweep with the rubber bristles, mop with the Quick Mop Floor Wipes and clear water with the built-in wiper.</p>"
           }
         },
         "faq_3": {
           "type": "item",
           "settings": {
-            "title": "What window thickness does the S-1 support?",
-            "content": "<p>Single-glazed windows from 2mm to 8mm thick. If you're unsure of your window thickness, check our measurement guide for step-by-step instructions.</p>"
+            "title": "Are BrightTools floor cleaning products suitable for different floor types?",
+            "content": "<p>Yes. Our Rubber Broom is gentle on floor surfaces and can also be used on carpets to help remove stubborn pet hair and debris.</p><p>Our Silicone Squeegees can be used on a range of hard surfaces, while Quick Mop Floor Wipes are designed for everyday hard-floor cleaning.</p>"
           }
         },
         "faq_4": {
           "type": "item",
           "settings": {
-            "title": "How long do the microfibre cloths last?",
-            "content": "<p>Each cloth can be washed and reused up to 300 times with zero loss in cleaning performance.</p>"
+            "title": "Does the Rubber Broom really pick up pet hair better than a vacuum?",
+            "content": "<p>The specially designed rubber bristles are excellent at gathering stubborn pet hair, dust and dirt from floors and carpets that traditional vacuum cleaners can sometimes leave behind.</p><p>It's particularly handy for pet owners who want a quick way to tackle everyday shedding without pulling out the vacuum.</p>"
           }
         },
         "faq_5": {
           "type": "item",
           "settings": {
-            "title": "Is this the genuine Glider?",
-            "content": "<p>Yes. This is the original Glider by Tyroler Bright Tools with a 2-year warranty and 30-day money-back guarantee. Beware of low-quality imitation products which look the same but use inferior magnets and materials.</p>"
+            "title": "What makes our floor cleaning kits lightweight and easy to use?",
+            "content": "<p>Our cleaning kits feature lightweight, four-part stainless steel handles and slimline cleaning heads that are easy to manoeuvre around furniture, along skirting boards, under beds and into tight corners.</p><p>When you add a Quick Mop Floor Wipe, there's no heavy mop or bucket of water to carry around. Simply glide across your floors for a quick, convenient and hygienic clean.</p>"
           }
         }
       },
       "block_order": [
+        "item_6UtJPb",
+        "item_3fxib8",
+        "item_QjDgmr",
+        "item_wygi3A",
+        "item_jHJFci",
+        "item_T7Rxc4",
+        "item_7yk9CY",
         "faq_1",
         "faq_2",
+        "item_yGFYj9",
+        "item_mPNj7U",
         "faq_3",
         "faq_4",
         "faq_5"
@@ -287,14 +443,14 @@
       "settings": {
         "full_width": true,
         "subheading": "",
-        "title": "Common Questions",
-        "content": "<p>Use this text to share information about your product or shipping policies.</p>",
+        "title": "Have a question?",
+        "content": "",
         "team_avatar_width": 160,
-        "support_hours": "Our customer support is available Monday to Friday: 8am-8:30pm.",
-        "answer_time": "Average answer time: 24h",
+        "support_hours": "We're happy to help. If you haven't found the answer you're looking for please get in touch at: info@brighttools.com.au",
+        "answer_time": "",
         "button_text": "",
         "button_url": "",
-        "text_position": "center",
+        "text_position": "start",
         "background": "",
         "background_gradient": "",
         "text_color": "",
@@ -304,6 +460,72 @@
         "button_text_color": "",
         "accordion_background": "",
         "accordion_text_color": ""
+      }
+    },
+    "mar26_best_sellers": {
+      "type": "mar26-best-sellers",
+      "blocks": {
+        "product_6UNtaG": {
+          "type": "product",
+          "settings": {
+            "product": "handheld-silicone-squeegee-copy"
+          }
+        },
+        "product_y8Axf4": {
+          "type": "product",
+          "settings": {
+            "product": "compact-squeegee-pack"
+          }
+        },
+        "product_rxhBWj": {
+          "type": "product",
+          "settings": {
+            "product": "long-handle-dustpan-brush-made-of-100-natural-rubber"
+          }
+        },
+        "prod_1": {
+          "type": "product",
+          "settings": {
+            "product": "bright-broom-bundle-blue-edition"
+          }
+        },
+        "prod_2": {
+          "type": "product",
+          "settings": {
+            "product": "easy-cleaning-bundle-for-limited-mobility"
+          }
+        },
+        "prod_3": {
+          "type": "product",
+          "settings": {
+            "product": "toilet-cleaner-for-the-water-tank-green-copy"
+          }
+        },
+        "prod_4": {
+          "type": "product",
+          "settings": {
+            "product": "high-window-cleaner"
+          }
+        }
+      },
+      "block_order": [
+        "product_6UNtaG",
+        "product_y8Axf4",
+        "product_rxhBWj",
+        "prod_1",
+        "prod_2",
+        "prod_3",
+        "prod_4"
+      ],
+      "settings": {
+        "badge_text": "Bright On - Dust Off",
+        "primary_text": "Better Cleaning",
+        "highlight_text": "Best Sellers",
+        "autoplay_enabled": true,
+        "color_background": "#f8fafc",
+        "color_primary_text": "#0f172a",
+        "color_highlight": "#f81f2f",
+        "color_badge_text": "#f81b27"
       }
     },
     "mar26_highlights_djAVBa": {
@@ -331,8 +553,8 @@
             "color_text_2": "#f81b27",
             "top_title": "ZERO",
             "gradient_title": "RISK",
-            "subtitle_1": "PRO-GRADE TOOLS",
-            "subtitle_2": "for everyday messes."
+            "subtitle_1": "LOVE IT OR SEND IT BACK",
+            "subtitle_2": "we make returns simple."
           }
         },
         "highlight_card_p8UcQ6": {
@@ -342,10 +564,10 @@
             "bg_color": "#000000",
             "color_text_1": "#ffffff",
             "color_text_2": "#f81b27",
-            "top_title": "WORRY",
-            "gradient_title": "FREE",
-            "subtitle_1": "PRO-GRADE TOOLS",
-            "subtitle_2": "for everyday messes."
+            "top_title": "FULLY",
+            "gradient_title": "COVERED",
+            "subtitle_1": "2 YEAR WARRANTY",
+            "subtitle_2": "on all tools."
           }
         }
       },
@@ -420,6 +642,7 @@
       "block_order": [
         "mar26_videos_JrNLDC"
       ],
+      "disabled": true,
       "name": "mar26-videos",
       "settings": {
         "full_width": true,
@@ -430,85 +653,57 @@
         "text_color": ""
       }
     },
-    "mar26_whats_included_hwC8XQ": {
-      "type": "mar26-whats-included",
-      "blocks": {
-        "item_mPaejM": {
-          "type": "item",
-          "settings": {
-            "product": "adjustable-dust-blade-rubber-broom-squeegee",
-            "title": "Japanese Silicone Broom (30cm)",
-            "spec_1": "Adjustable Knuckle Joint",
-            "spec_2": "Furniture-Safe Soft Edge",
-            "spec_3": "",
-            "accent_color": "#e2e8f0"
-          }
-        },
-        "item_6YK7ta": {
-          "type": "item",
-          "settings": {
-            "product": "",
-            "title": "Silicone Squeegee (30cm)",
-            "spec_1": "Multi-surface Use",
-            "spec_2": "Zero Water Streaks",
-            "spec_3": "",
-            "accent_color": "#e2e8f0"
-          }
-        },
-        "item_7krkje": {
-          "type": "item",
-          "settings": {
-            "product": "",
-            "title": "Stick-to-floor Dustpan",
-            "spec_1": "Sweep without holding",
-            "spec_2": "Attaches to handles",
-            "spec_3": "",
-            "accent_color": "#e2e8f0"
-          }
-        },
-        "item_XfYzVT": {
-          "type": "item",
-          "settings": {
-            "product": "",
-            "title": "Quick Mop Floor Wipes",
-            "spec_1": "5 Awesome Scents",
-            "spec_2": "Instantly discard after use",
-            "spec_3": "",
-            "accent_color": "#e2e8f0"
-          }
-        }
-      },
-      "block_order": [
-        "item_mPaejM",
-        "item_6YK7ta",
-        "item_7krkje",
-        "item_XfYzVT"
-      ],
-      "name": "MAR26 What's Included",
-      "settings": {
-        "pre_title": "Complete System",
-        "pre_title_color": "#2563eb",
-        "black_title": "What's",
-        "gradient_title": "Included?",
-        "gradient_left_color": "#f43f5e",
-        "gradient_right_color": "#be123c",
-        "subheading": "Everything you need for an effortless, water-saving clean on the road.",
-        "columns": "4",
-        "outline_color": "#e2e8f0"
-      }
-    },
     "mar26_testimonials": {
       "type": "mar26-testimonials",
       "blocks": {
+        "testimonial_m9JAV4": {
+          "type": "testimonial",
+          "settings": {
+            "product": "",
+            "product_name": "Pet Cleaning Bundle",
+            "custom_link": "shopify://products/pet-cleaning-bundle",
+            "author": "Kim J.",
+            "country": "new_zealand",
+            "content": "<p>This broom is incredible. I thought my floors were clean until I swept the floor with this broom. I found so much dog hair I didn't know was there. And the lavender wipes leave a lovely smell.</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_PX84FT": {
+          "type": "testimonial",
+          "settings": {
+            "product": "",
+            "product_name": "Bright Squeegee Pack",
+            "custom_link": "shopify://products/bright-squeegee-pack-copy",
+            "author": "Carol M.",
+            "country": "australia",
+            "content": "<p>So easy to use, much better than mop and bucket. Knuckle-joint gets under furniture, around fridge. Wipes smell great!</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_qPzrbY": {
+          "type": "testimonial",
+          "settings": {
+            "product": "",
+            "product_name": "Easy Cleaning Bundle",
+            "custom_link": "shopify://products/easy-cleaning-bundle-for-limited-mobility",
+            "author": "Sue Y.",
+            "country": "new_zealand",
+            "content": "<p>No more sore back! Bought this item as I have a bad back and cannot bend to clean the floor. This makes is easy and doable. It's light and easy to get around. Wipes smell great too!</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
         "testi_1": {
           "type": "testimonial",
           "settings": {
             "product": "",
-            "product_name": "",
-            "custom_link": "",
-            "author": "David R.",
+            "product_name": "Quick Mop Floor Wipes",
+            "custom_link": "shopify://products/choose-your-bundle-of-3-packs-quick-mop-floor-wipes-1",
+            "author": "Di B.",
             "country": "australia",
-            "content": "<p>Fantastic results on my 60th floor windows. I was nervous about using it so high up but the safety string gave me total confidence.</p>",
+            "content": "<p>Large wet wipes, stay damp to do a large area. Perfect for a tidy up between thorough deep cleans. House smells great!&nbsp;</p>",
             "show_rating": true,
             "rating": 5
           }
@@ -518,10 +713,10 @@
           "settings": {
             "product": "bright-broom-bundle-broom-squeegee-1pk-quick-mop-floor-wipes",
             "product_name": "",
-            "custom_link": "",
-            "author": "Michelle T.",
+            "custom_link": "shopify://products/bright-broom-bundle-broom-squeegee-1pk-quick-mop-floor-wipes",
+            "author": "Ines P.",
             "country": "australia",
-            "content": "<p>I have sparkling streak-free windows. The key is not to have the magnets too tight — once you get the technique it's effortless.</p>",
+            "content": "<p>I was after something I can use to clean the floors in between the regular cleaning. The wipes are absolutely perfect for this.<br/>Great big size and I love the hole in them for the broomstick.</p>",
             "show_rating": true,
             "rating": 5
           }
@@ -529,70 +724,28 @@
         "testi_3": {
           "type": "testimonial",
           "settings": {
-            "product": "",
+            "product": "compact-squeegee-pack",
             "product_name": "",
-            "custom_link": "",
-            "author": "Peter K.",
+            "custom_link": "shopify://products/compact-squeegee-pack",
+            "author": "Matilde A.",
             "country": "australia",
-            "content": "<p>We were able to easily clean windows which are very high on the outside. Bought 3 for our staff. Saves us calling rope-access cleaners.</p>",
+            "content": "<p>Excellent product, cleans the floors quickly without getting out the mop. Gets under the couch and bed easily. Also good for windows</p>",
             "show_rating": true,
             "rating": 5
           }
         }
       },
       "block_order": [
+        "testimonial_m9JAV4",
+        "testimonial_PX84FT",
+        "testimonial_qPzrbY",
         "testi_1",
         "testi_2",
         "testi_3"
       ],
       "settings": {
-        "title": "What They're Saying",
-        "subheading": "Real results from real customers — from high-rise apartments to hard-to-reach home windows."
-      }
-    },
-    "mar26_best_sellers": {
-      "type": "mar26-best-sellers",
-      "blocks": {
-        "prod_1": {
-          "type": "product",
-          "settings": {
-            "product": "bright-broom-bundle-blue-edition"
-          }
-        },
-        "prod_2": {
-          "type": "product",
-          "settings": {
-            "product": "easy-cleaning-bundle-for-limited-mobility"
-          }
-        },
-        "prod_3": {
-          "type": "product",
-          "settings": {
-            "product": "adjustable-dust-blade-rubber-broom-squeegee"
-          }
-        },
-        "prod_4": {
-          "type": "product",
-          "settings": {
-            "product": "jet-all-purpose-cleaning-spray-with-vinegar-and-lavender-copy"
-          }
-        }
-      },
-      "block_order": [
-        "prod_1",
-        "prod_2",
-        "prod_3",
-        "prod_4"
-      ],
-      "settings": {
-        "badge_text": "Bright On - Dust Off",
-        "primary_text": "Better Cleaning",
-        "highlight_text": "Best Sellers",
-        "autoplay_enabled": true,
-        "color_background": "#f8fafc",
-        "color_primary_text": "#0f172a",
-        "color_highlight": "#f81f2f",
-        "color_badge_text": "#f81b27"
+        "title": "Loved by thousands",
+        "subheading": "Real reviews from customers who are already cleaning better with BrightTools."
       }
     }
   },
@@ -601,12 +754,12 @@
     "main",
     "video_PBmR83",
     "video_demo",
+    "mar26_whats_included_hwC8XQ",
     "faq",
+    "mar26_best_sellers",
     "mar26_highlights_djAVBa",
     "rich_text_JhBcCr",
     "blocks_jiJwFP",
-    "mar26_whats_included_hwC8XQ",
-    "mar26_testimonials",
-    "mar26_best_sellers"
+    "mar26_testimonials"
   ]
 }

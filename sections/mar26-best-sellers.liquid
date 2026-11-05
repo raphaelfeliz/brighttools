@@ -1,12 +1,12 @@
 {%- comment -%}
   ----------------------------------------------------------------------------------------------------------------------
   MAR26 BEST SELLERS (Isolated Section)
-  VERSION: 1.9.0 - Catalogv card rendering
+  VERSION: 1.9.1 - Center best-sellers eyebrow
   ----------------------------------------------------------------------------------------------------------------------
 {%- endcomment -%}
 
 <script>
-  console.log('MAR26 Best Sellers - Version: 1.9.0');
+  console.log('MAR26 Best Sellers - Version: 1.9.1');
 </script>
 
 <style>
@@ -30,6 +30,15 @@
       padding-left: 0 !important;
       padding-right: 0 !important;
     }
+  }
+
+  #shopify-section-{{ section.id }} .mar26-header-badge {
+    display: flex !important;
+    align-items: center;
+    justify-content: center !important;
+    width: 100%;
+    margin-inline: auto;
+    text-align: center !important;
   }
 
   #shopify-section-{{ section.id }} .mar26-section {

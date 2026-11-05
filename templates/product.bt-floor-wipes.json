@@ -45,9 +45,9 @@
           "type": "mar26_short_description",
           "settings": {
             "description": "<p>{{ product.metafields.custom.short_description.value }}</p>",
-            "highlight_1": "<p>{{ product.metafields.custom.mar26_highlight_1.value }}XL for greater floor coverage</p>",
-            "highlight_2": "<p>{{ product.metafields.custom.mar26_highlight_2.value }}Fits any broom, squeegee or mop</p>",
-            "highlight_3": "<p>{{ product.metafields.custom.mar26_highlight_3.value }} Long lasting fresh scent</p>",
+            "highlight_1": "<p>{{ product.metafields.custom.mar26_highlight_1.value }}</p>",
+            "highlight_2": "<p>{{ product.metafields.custom.mar26_highlight_2.value }}</p>",
+            "highlight_3": "<p>{{ product.metafields.custom.mar26_highlight_3.value }}&nbsp;</p>",
             "icon_color": "#e11d48",
             "background_color": "#efefef"
           }
@@ -67,16 +67,20 @@
             "font_weight": "900"
           }
         },
-        "quantity_selector_dgjkJg": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
         "dealeasy_mm_bundle_builder_dCNcYL": {
           "type": "shopify://apps/dealeasy/blocks/mm-bundle-builder/e47a8634-0496-480d-9e46-6f7fafd34b30",
           "settings": {
             "lb-product-handle": "",
             "lb-product-id": ""
           }
+        },
+        "selleasy_lb_upsell_widget_pal_mCVBx9": {
+          "type": "shopify://apps/selleasy/blocks/lb-upsell-widget-pal/790c1a03-a71f-4bc1-9869-00dad526d3c2",
+          "settings": {}
+        },
+        "quantity_selector_dgjkJg": {
+          "type": "quantity_selector",
+          "settings": {}
         },
         "description": {
           "type": "description",
@@ -103,10 +107,6 @@
             "atc_button_background": "#000000",
             "atc_button_text_color": "#000000"
           }
-        },
-        "selleasy_lb_upsell_widget_pal_mCVBx9": {
-          "type": "shopify://apps/selleasy/blocks/lb-upsell-widget-pal/790c1a03-a71f-4bc1-9869-00dad526d3c2",
-          "settings": {}
         }
       },
       "block_order": [
@@ -177,6 +177,7 @@
       "blocks": {
         "image_UgxkAx": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "media_width": 30,
             "media_position": "start",
@@ -198,6 +199,7 @@
         },
         "video_block": {
           "type": "video",
+          "disabled": true,
           "settings": {
             "video": "{{ product.metafields.custom.media_text_box_2_video.value }}",
             "external_video_url": "https://www.youtube.com/watch?v=BHNXU-ecLlg&t=8s",
@@ -225,6 +227,7 @@
         "image_UgxkAx",
         "video_block"
       ],
+      "disabled": true,
       "settings": {
         "full_width": false,
         "alternate_media_position": false,
@@ -357,7 +360,7 @@
           "type": "item",
           "settings": {
             "title": "Are the Wipes safe for my pets and or children?",
-            "content": "<p>Yes! Our Wipes have been trialled and tested for many years and are made from a special mix of ingredients that are safe to use around animals and children. If you have a pet and or child who are sensitive to chemicals, we suggest removing the pet and or child from the space whilst using the Wipes and waiting a few minutes for the floors to dry before bringing them<br/>back into the room. If you are concerned you can also check out our plant-based range BioVibe, which is made from natural biodegradable fibres, lightly scented with a natural citrus blend and is dermatologically tested.&nbsp;</p>"
+            "content": "<p>Our Wipes have been trialled and tested for many years and are made from a special mix of ingredients that are deemed safe to use around animals and children. If you have a pet and or child who are sensitive to chemicals, we suggest removing the pet and or child from the space whilst using the Wipes and waiting a few minutes for the floors to dry before bringing them<br/>back into the room.</p>"
           }
         },
         "item_GfnQf8": {
@@ -552,9 +555,9 @@
         "item_mPaejM": {
           "type": "item",
           "settings": {
-            "product": "toilet-cleaner-for-the-water-tank-2-pack-copy",
-            "title": "Toilet Cleaner - 3 Pack",
-            "spec_1": "Adjustable Knuckle Joint",
+            "product": "floor-silicone-squeegee-knuckle-joint-45cm",
+            "title": "Silicone Squeegee 45cm",
+            "spec_1": "",
             "spec_2": "",
             "spec_3": "",
             "accent_color": "#e2e8f0"
@@ -573,10 +576,9 @@
         },
         "item_XfYzVT": {
           "type": "item",
-          "disabled": true,
           "settings": {
-            "product": "",
-            "title": "Quick Mop Floor Wipes",
+            "product": "biovibe-complete-wipes-bundle",
+            "title": "BioVibe Bundle of 5 Wipes",
             "spec_1": "5 Awesome Scents",
             "spec_2": "Instantly discard after use",
             "spec_3": "",
@@ -594,11 +596,11 @@
       "settings": {
         "pre_title": "",
         "pre_title_color": "#2563eb",
-        "black_title": "COMPLETE YOUR",
-        "gradient_title": "CLEAN?",
+        "black_title": "pairs well",
+        "gradient_title": "with",
         "gradient_left_color": "#f43f5e",
         "gradient_right_color": "#be123c",
-        "subheading": "Add these to make cleaning easier.",
+        "subheading": "",
         "columns": "4",
         "outline_color": "#e2e8f0"
       }
@@ -606,15 +608,41 @@
     "mar26_testimonials": {
       "type": "mar26-testimonials",
       "blocks": {
+        "testimonial_kDR7gY": {
+          "type": "testimonial",
+          "settings": {
+            "product": "",
+            "product_name": "BioVibe Floor Wipes",
+            "custom_link": "shopify://products/quick-mop-floor-wipes-biovibe-plant-based",
+            "author": "Jill S.",
+            "country": "australia",
+            "content": "<p>These are so easy to do a quick clean up & the scent isn't over powering. Happy to have a more environmental option in the range.</p><p></p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_CrhEwD": {
+          "type": "testimonial",
+          "settings": {
+            "product": "",
+            "product_name": "Boutique Hotel Floor Wipes",
+            "custom_link": "shopify://products/quick-mop-floor-wipes-fresh-home-scent",
+            "author": "April J.",
+            "country": "australia",
+            "content": "<p>Love the fresh scent, makes my house smell lovely & have just ordered my second lot</p>",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
         "testimonial_7UWRch": {
           "type": "testimonial",
           "settings": {
-            "product": "japanese-silicone-broom-30cm-knuckle-joint",
-            "product_name": "",
-            "custom_link": "",
-            "author": "James Anderson",
-            "country": "australia",
-            "content": "<p>The Japanese Rubber Broom changed how I handle large floor areas. It's indispensable.</p>",
+            "product": "",
+            "product_name": "Toilet Cleaner for Water Tank",
+            "custom_link": "shopify://products/toilet-cleaner-for-the-water-tank-green-copy",
+            "author": "Erica B.",
+            "country": "new_zealand",
+            "content": "<p>Lasts forever. Put one in my toilet weeks ago and it’s still going strong. Just ordered another 4. It seems to be keeping the stains away</p>",
             "show_rating": true,
             "rating": 5
           }
@@ -622,12 +650,12 @@
         "testi_1": {
           "type": "testimonial",
           "settings": {
-            "product": "glider-d-4-afc-magnetic-window-cleaner-2-40mm",
-            "product_name": "Glider D-4 AFC",
-            "custom_link": "",
-            "author": "David R.",
+            "product": "",
+            "product_name": "Bright Broom Bundle",
+            "custom_link": "shopify://products/bright-broom-bundle-broom-squeegee-1pk-quick-mop-floor-wipes",
+            "author": "Ines P.",
             "country": "australia",
-            "content": "<p>Fantastic results on my 60th floor windows. I was nervous about using it so high up but the safety string gave me total confidence.</p>",
+            "content": "<p>I was after something I can use to clean the floors in between the regular cleaning. The wipes are absolutely perfect for this.<br/>Great big size and I love the hole in them for the broomstick.</p>",
             "show_rating": true,
             "rating": 5
           }
@@ -635,12 +663,12 @@
         "testi_2": {
           "type": "testimonial",
           "settings": {
-            "product": "bright-broom-bundle-broom-squeegee-1pk-quick-mop-floor-wipes",
-            "product_name": "",
-            "custom_link": "",
-            "author": "Michelle T.",
+            "product": "",
+            "product_name": "Telescopic High Window Cleaner",
+            "custom_link": "shopify://products/high-window-cleaner",
+            "author": "Matthew O.",
             "country": "australia",
-            "content": "<p>I have sparkling streak-free windows. The key is not to have the magnets too tight — once you get the technique it's effortless.</p>",
+            "content": "<p>Super easy, streak-free, great tool! Long handle reaches high windows, & the squeegee leaves no streaks. Easy to use and very effective—highly recommend!</p>",
             "show_rating": true,
             "rating": 5
           }
@@ -648,18 +676,20 @@
         "testi_3": {
           "type": "testimonial",
           "settings": {
-            "product": "high-window-cleaner",
-            "product_name": "Telescopic High Window Cleaner",
-            "custom_link": "",
-            "author": "Peter K.",
+            "product": "",
+            "product_name": "Quick Mop Floor Wipes",
+            "custom_link": "shopify://products/choose-your-bundle-of-5-packs-quick-mop-floor-wipes-1",
+            "author": "Di B.",
             "country": "australia",
-            "content": "<p>We were able to easily clean windows which are very high on the outside. Bought 3 for our staff. Saves us calling rope-access cleaners.</p>",
+            "content": "<p>Large wet wipes, stay damp to do a large area. Perfect for a tidy up between thorough deep cleans. House smells great!&nbsp;</p>",
             "show_rating": true,
             "rating": 5
           }
         }
       },
       "block_order": [
+        "testimonial_kDR7gY",
+        "testimonial_CrhEwD",
         "testimonial_7UWRch",
         "testi_1",
         "testi_2",

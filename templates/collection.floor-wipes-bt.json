@@ -881,11 +881,11 @@
           "type": "testimonial",
           "settings": {
             "product": "",
-            "product_name": "",
-            "custom_link": "",
-            "author": "Scicluna Lily",
+            "product_name": "High Window Cleaner",
+            "custom_link": "shopify://products/high-window-cleaner",
+            "author": "Matthew O.",
             "country": "australia",
-            "content": "<p>Products do what they are advertised to do, exceptional quality tools, I would not hesitate to recommend to my family and friends.<br/>Exceptional customer service.</p>",
+            "content": "<p>Super easy, streak-free, great tool! Long handle reaches high windows, & the squeegee leaves no streaks. Easy to use and very effective—highly recommend!</p>",
             "show_rating": true,
             "rating": 5
           }
@@ -894,11 +894,11 @@
           "type": "testimonial",
           "settings": {
             "product": "",
-            "product_name": "",
-            "custom_link": "",
-            "author": "Kate Smith",
-            "country": "australia",
-            "content": "<p>Absolutely thrilled with all the products purchased, take it from me throw away all you useless mops that are a complete waste of money. My favourite bright tool is \"The Broom\" which becomes a mop with the throw over divine smelling cloth. The squeeze side is brilliant on my wood floors hardly need to get out the vac. all handled both broom and mop can be made to the height required so if you're tall no more bending over.<br/>I highly recommend all the products</p>",
+            "product_name": "Easy Cleaning Bundle",
+            "custom_link": "shopify://products/easy-cleaning-bundle-for-limited-mobility",
+            "author": "Sue Y.",
+            "country": "new_zealand",
+            "content": "<p>No more sore back! Bought this item as I have a bad back and cannot bend to clean the floor. This makes is easy and doable. It's light and easy to get around. Wipes smell great too!</p>",
             "show_rating": true,
             "rating": 5
           }
@@ -907,9 +907,9 @@
           "type": "testimonial",
           "settings": {
             "product": "",
-            "product_name": "",
-            "custom_link": "",
-            "author": "Ines",
+            "product_name": "Bright Broom Bundle",
+            "custom_link": "shopify://products/bright-broom-bundle-blue-edition",
+            "author": "Ines P.",
             "country": "australia",
             "content": "<p>I was after something I can use to clean the floors in between the regular cleaning. The wipes are absolutely perfect for this.<br/>Great big size and I love the hole in them for the broomstick.</p>",
             "show_rating": true,
@@ -920,11 +920,11 @@
           "type": "testimonial",
           "settings": {
             "product": "",
-            "product_name": "",
-            "custom_link": "",
-            "author": "Di",
+            "product_name": "Quick Mop Floor Wipes",
+            "custom_link": "shopify://products/choose-your-bundle-of-5-packs-quick-mop-floor-wipes-1",
+            "author": "Di B.",
             "country": "australia",
-            "content": "<p>Large wet wipes, stay damp to do a large area for a streak free finish. Perfect for a tidy up between thorough deep cleans.</p>",
+            "content": "<p>Large wet wipes, stay damp to do a large area. Perfect for a tidy up between thorough deep cleans. House smells great!&nbsp;</p>",
             "show_rating": true,
             "rating": 5
           }
@@ -933,24 +933,11 @@
           "type": "testimonial",
           "settings": {
             "product": "",
-            "product_name": "",
-            "custom_link": "",
-            "author": "Carol Mackay",
+            "product_name": "Bright Squeegee Pack",
+            "custom_link": "shopify://products/bright-squeegee-pack-squeegee-quick-mop-floor-wipes",
+            "author": "Carol M.",
             "country": "australia",
-            "content": "<p>So easy to use, much better than mop and bucket</p>",
-            "show_rating": true,
-            "rating": 5
-          }
-        },
-        "693c4952-4e7c-4036-b1cf-64be4a97f731": {
-          "type": "testimonial",
-          "settings": {
-            "product": "",
-            "product_name": "",
-            "custom_link": "",
-            "author": "Margaret Barnes",
-            "country": "australia",
-            "content": "<p>Smell great & cleans up messes fast & easily!!</p>",
+            "content": "<p>So easy to use, much better than mop and bucket. Knuckle-joint gets under furniture, around fridge. Wipes smell great!</p>",
             "show_rating": true,
             "rating": 5
           }
@@ -959,11 +946,11 @@
           "type": "testimonial",
           "settings": {
             "product": "",
-            "product_name": "",
-            "custom_link": "",
-            "author": "April Jeffery",
+            "product_name": "Boutique Hotel Floor Wipes",
+            "custom_link": "shopify://products/quick-mop-floor-wipes-fresh-home-scent",
+            "author": "April J.",
             "country": "australia",
-            "content": "<p>Love the fresh scent makes my house smell lovely have just ordered my second lot</p>",
+            "content": "<p>Love the fresh scent, makes my house smell lovely & have just ordered my second lot</p>",
             "show_rating": true,
             "rating": 5
           }
@@ -972,37 +959,11 @@
           "type": "testimonial",
           "settings": {
             "product": "",
-            "product_name": "",
-            "custom_link": "",
-            "author": "Matilde Abade",
-            "country": "australia",
-            "content": "<p>Love them, Excellent product, cleans the floors quickly without getting out the mop.<br/>too easy</p>",
-            "show_rating": true,
-            "rating": 5
-          }
-        },
-        "9ef84153-5135-4c16-aadf-572e3977ef0e": {
-          "type": "testimonial",
-          "settings": {
-            "product": "",
-            "product_name": "",
-            "custom_link": "",
-            "author": "Rima",
-            "country": "australia",
-            "content": "<p>I love how easy and lightweight this product is to use. My floors co</p>",
-            "show_rating": true,
-            "rating": 5
-          }
-        },
-        "adba3df5-40c3-4f9a-bce4-8012abcdcee6": {
-          "type": "testimonial",
-          "settings": {
-            "product": "",
-            "product_name": "",
-            "custom_link": "",
-            "author": "Ushtana Antia",
-            "country": "australia",
-            "content": "<p>A handy tool to have. Narrow so it gets into small gaps like behind the fridge. Flexible with swivel head or fixed as needed</p>",
+            "product_name": "Compact Squeegee Pack",
+            "custom_link": "shopify://products/compact-squeegee-pack",
+            "author": "Matilde A.",
+            "country": "new_zealand",
+            "content": "<p>Excellent product, cleans the floors quickly without getting out the mop. Gets under the couch and bed easily. Also good for windows</p>",
             "show_rating": true,
             "rating": 5
           }
@@ -1011,11 +972,11 @@
           "type": "testimonial",
           "settings": {
             "product": "",
-            "product_name": "",
-            "custom_link": "",
-            "author": "Barb Hartmann",
+            "product_name": "Microfibre Floor Cloths",
+            "custom_link": "shopify://products/professional-microfiber-cloth-2pk-xxl-80cmx60cm",
+            "author": "Nina A.",
             "country": "australia",
-            "content": "<p>Great product. Saves time and keeps the floor clean. House smells so clean and fresh</p>",
+            "content": "<p>Love this product! It’s so easy to use and can be reused again and again. It collects dust and wipes surfaces clean at the same time. Simply wash it after use and it’s ready to go again.</p>",
             "show_rating": true,
             "rating": 5
           }
@@ -1024,11 +985,11 @@
           "type": "testimonial",
           "settings": {
             "product": "",
-            "product_name": "",
-            "custom_link": "",
-            "author": "Zeena Anwar",
+            "product_name": "Toilet Cleaner for Water Tank",
+            "custom_link": "shopify://products/toilet-cleaner-for-the-water-tank-green-copy",
+            "author": "Erica B.",
             "country": "australia",
-            "content": "<p>A must for every household. Easy to use, floor wet wipes are just amazing.</p>",
+            "content": "<p>Lasts forever. Put one in my toilet weeks ago and it’s still going strong. Just ordered another 4. It seems to be keeping the stains away</p><p></p>",
             "show_rating": true,
             "rating": 5
           }
@@ -1040,11 +1001,8 @@
         "00dae38f-bcf3-456f-b277-e6f64edf9a16",
         "d24802f7-83b4-4e65-b9b6-a0d5203739ea",
         "template--20493668090130__2f1c8e4a-0b18-41f5-a174-e98ba708c08a-testimonial-2",
-        "693c4952-4e7c-4036-b1cf-64be4a97f731",
         "0a5ac9a3-1159-45e6-9cb0-3ff18f53820c",
         "ef66ab81-f7fd-42bc-bcd5-6501112f0d3d",
-        "9ef84153-5135-4c16-aadf-572e3977ef0e",
-        "adba3df5-40c3-4f9a-bce4-8012abcdcee6",
         "template--20493668090130__2f1c8e4a-0b18-41f5-a174-e98ba708c08a-testimonial-3",
         "b55e8b6f-b131-4878-9d57-60b87d4b21b7"
       ],

@@ -1,9 +1,9 @@
 {%- comment -%}
 ----------------------------------------------------------------------------------------------------------------------
 file-summary: MAR26 Highlights Cards section. Displays a grid of pro-grade tool highlights.
-version-name: Sticky Header Overlap Fix
-version-number: 1.8.1
-version-summary: Add z-index: 1 to the highlights card container to prevent card content from overlapping the sticky header.
+version-name: Center highlights eyebrow
+version-number: 1.8.3
+version-summary: Center the highlights header and eyebrow on mobile and desktop.
 ----------------------------------------------------------------------------------------------------------------------
 {%- endcomment -%}
 
@@ -16,9 +16,22 @@ version-summary: Add z-index: 1 to the highlights card container to prevent card
     margin: 0 !important;
   }
 
-  <script>
-    console.log('MAR26 Highlights - Version: 1.8.1');
-  </script>
+  #shopify-section-{{ section.id }} .mar26-header {
+    text-align: center !important;
+  }
+
+  #shopify-section-{{ section.id }} .mar26-header-badge {
+    display: flex !important;
+    align-items: center;
+    justify-content: center !important;
+    width: 100%;
+    margin-inline: auto !important;
+    text-align: center !important;
+  }
+
+  #shopify-section-{{ section.id }} .mar26-section-title {
+    text-align: center !important;
+  }
 
   #shopify-section-{{ section.id }} .mar26-section {
     --mar26-section-bg: {{ section.settings.color_background | default: '#f8fafc' }};
@@ -217,6 +230,10 @@ version-summary: Add z-index: 1 to the highlights card container to prevent card
     }
   }
 </style>
+
+<script>
+  console.log('MAR26 Highlights - Version: 1.8.3');
+</script>
 
 <div class="mar26-section">
   <div class="grain-overlay"></div>
