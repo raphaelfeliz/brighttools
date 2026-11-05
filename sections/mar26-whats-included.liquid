@@ -339,7 +339,10 @@ VERSION: 3.2.0 - Centered Title & Halved Gaps Optimization
             card_image: c_image,
             layout: 'vertical',
             show_desc: false,
-            show_cta: false,
+            show_cta: true,
+            cta_text: 'ADD',
+            initial_qty: 1,
+            min_qty: 1,
             modifier: 'mar26-included-card-stepper'
           -%}
         {%- endfor -%}
@@ -363,7 +366,10 @@ VERSION: 3.2.0 - Centered Title & Halved Gaps Optimization
           card_image: c_image,
           layout: 'vertical',
           show_desc: false,
-          show_cta: false,
+          show_cta: true,
+          cta_text: 'ADD',
+          initial_qty: 1,
+          min_qty: 1,
           modifier: 'mar26-included-card-stepper',
           shopify_attributes: block.shopify_attributes
         -%}
@@ -460,42 +466,56 @@ VERSION: 3.2.0 - Centered Title & Halved Gaps Optimization
 
       if (typeof mar26UpdateCalculations === 'function') {
         mar26UpdateCalculations();
-        return;
       }
     }
 
-    // If no buy-flow widget on page, add to cart directly
-    if (typeof mar26UpdateCalculations !== 'function') {
-      const variantId = btn.dataset.variantId;
-      if (!variantId) return;
+    // Direct add to cart
+    const variantId = card.dataset.variantId || btn.dataset.variantId;
+    if (!variantId) return;
 
-      const originalText = btn.innerText;
-      btn.disabled = true;
-      btn.innerText = '...';
+    const addQty = Math.max(1, val);
+    const originalText = btn.innerText;
+    btn.disabled = true;
+    btn.innerText = '...';
 
-      try {
-        const res = await fetch('/cart/add.js', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            items: [{ id: variantId, quantity: val }]
-          })
-        });
-        if (res.ok) {
-          btn.classList.add('is-added');
-          btn.innerText = `Added (${val})`;
-          btn.disabled = false;
-        } else {
-          const err = await res.json();
-          alert('Could not add item: ' + (err.description || err.message));
-          btn.disabled = false;
-          btn.innerText = originalText;
-        }
-      } catch (e) {
-        console.error(e);
+    try {
+      const res = await fetch(`${(window.Shopify && window.Shopify.routes && window.Shopify.routes.root) || '/'}cart/add.js`, {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest'
+        },
+        body: JSON.stringify({
+          items: [{ id: variantId, quantity: addQty }]
+        })
+      });
+      if (res.ok) {
+        const responseJson = await res.json();
+        btn.classList.add('is-added');
+        btn.innerText = `ADDED (${addQty})`;
+        btn.disabled = false;
+
+        // Refresh cart drawer / state
+        const cartContent = await (await fetch(`${(window.Shopify && window.Shopify.routes && window.Shopify.routes.root) || '/'}cart.js`)).json();
+        document.documentElement.dispatchEvent(new CustomEvent('cart:change', {
+          bubbles: true,
+          detail: {
+            baseEvent: 'variant:add',
+            items: responseJson.hasOwnProperty('items') ? responseJson.items : [responseJson],
+            cart: cartContent
+          }
+        }));
+        document.dispatchEvent(new CustomEvent('cart:refresh'));
+      } else {
+        const err = await res.json();
+        alert('Could not add item: ' + (err.description || err.message));
         btn.disabled = false;
         btn.innerText = originalText;
       }
+    } catch (e) {
+      console.error(e);
+      btn.disabled = false;
+      btn.innerText = originalText;
     }
   }
 
