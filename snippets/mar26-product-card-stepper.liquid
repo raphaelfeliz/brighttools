@@ -192,16 +192,13 @@ Parameters:
 
         {%- if show_cta -%}
           <button 
-            class="mar26-card-cta-btn {% if default_qty > 0 %}is-added{% endif %}" 
+            class="mar26-card-cta-btn" 
             type="button" 
             data-variant-id="{{ item_variant.id }}"
+            data-default-text="{{ cta_text | default: 'Add to Bundle' }}"
             onclick="mar26CardCtaClick(this)"
           >
-            {%- if default_qty > 0 -%}
-              Added ({{ default_qty }})
-            {%- else -%}
-              {{ cta_text | default: 'Add to Bundle' }}
-            {%- endif -%}
+            {{ cta_text | default: 'Add to Bundle' }}
           </button>
         {%- endif -%}
       </div>

@@ -390,17 +390,6 @@ VERSION: 3.2.0 - Centered Title & Halved Gaps Optimization
     val = Math.max(minQty, val + delta);
     valEl.innerText = val;
 
-    const ctaBtn = card.querySelector('.mar26-card-cta-btn');
-    if (ctaBtn) {
-      if (val > 0) {
-        ctaBtn.innerText = `Added (${val})`;
-        ctaBtn.classList.add('is-added');
-      } else {
-        ctaBtn.innerText = 'Add to Bundle';
-        ctaBtn.classList.remove('is-added');
-      }
-    }
-
     if (val > 0) {
       card.classList.add('is-selected');
     } else if (card.dataset.isBundle !== 'true') {
@@ -414,16 +403,6 @@ VERSION: 3.2.0 - Centered Title & Halved Gaps Optimization
         if (otherCard !== card) {
           const otherQty = otherCard.querySelector('.mar26-qty-val');
           if (otherQty) otherQty.innerText = val;
-          const otherCta = otherCard.querySelector('.mar26-card-cta-btn');
-          if (otherCta) {
-            if (val > 0) {
-              otherCta.innerText = `Added (${val})`;
-              otherCta.classList.add('is-added');
-            } else {
-              otherCta.innerText = 'Add to Bundle';
-              otherCta.classList.remove('is-added');
-            }
-          }
           if (val > 0) otherCard.classList.add('is-selected');
           else if (otherCard.dataset.isBundle !== 'true') otherCard.classList.remove('is-selected');
         }
@@ -444,8 +423,6 @@ VERSION: 3.2.0 - Centered Title & Halved Gaps Optimization
     if (val === 0) {
       val = 1;
       valEl.innerText = val;
-      btn.innerText = `Added (${val})`;
-      btn.classList.add('is-added');
       card.classList.add('is-selected');
 
       const variantId = card.dataset.variantId;
@@ -454,11 +431,6 @@ VERSION: 3.2.0 - Centered Title & Halved Gaps Optimization
           if (otherCard !== card) {
             const otherQty = otherCard.querySelector('.mar26-qty-val');
             if (otherQty) otherQty.innerText = val;
-            const otherCta = otherCard.querySelector('.mar26-card-cta-btn');
-            if (otherCta) {
-              otherCta.innerText = `Added (${val})`;
-              otherCta.classList.add('is-added');
-            }
             otherCard.classList.add('is-selected');
           }
         });
@@ -474,7 +446,8 @@ VERSION: 3.2.0 - Centered Title & Halved Gaps Optimization
     if (!variantId) return;
 
     const addQty = Math.max(1, val);
-    const originalText = btn.innerText;
+    const originalText = btn.dataset.defaultText || 'ADD';
+    btn.dataset.defaultText = originalText;
     btn.disabled = true;
     btn.innerText = '...';
 
@@ -494,6 +467,12 @@ VERSION: 3.2.0 - Centered Title & Halved Gaps Optimization
         btn.classList.add('is-added');
         btn.innerText = `ADDED (${addQty})`;
         btn.disabled = false;
+
+        // Revert back to ADD and red color after 1000ms
+        setTimeout(() => {
+          btn.classList.remove('is-added');
+          btn.innerText = originalText;
+        }, 1000);
 
         // Refresh cart drawer / state
         const cartContent = await (await fetch(`${(window.Shopify && window.Shopify.routes && window.Shopify.routes.root) || '/'}cart.js`)).json();

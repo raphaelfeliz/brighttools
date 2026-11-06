@@ -103,6 +103,9 @@
         "other": "{{ count }} kleuren beschikbaar"
       }
     },
+    "disclosures": {
+      "title": "Kennisgevingen"
+    },
     "gallery": {
       "close": "Galerie sluiten",
       "zoom": "In-\/uitzoomen",

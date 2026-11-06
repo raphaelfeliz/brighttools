@@ -24,7 +24,7 @@ html {
   -webkit-text-size-adjust: 100%;
   tab-size: 4;
   interpolate-size: allow-keywords;
-  scroll-padding-block-start: calc(var(--sticky-area-height)  + 20px);
+  scroll-padding-block-start: calc(var(--sticky-area-height) + 20px);
   line-height: 1.5;
 }
 
@@ -214,6 +214,12 @@ video {
   display: none !important;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*) {
+    animation-duration: 0s;
+  }
+}
+
 height-observer, visibility-progress, scroll-area, video-media, model-media, media-carousel, impact-text, recently-viewed-products {
   display: block;
 }
@@ -283,7 +289,8 @@ height-observer, visibility-progress, scroll-area, video-media, model-media, med
 }
 
 .pswp--click-to-zoom.pswp--zoom-allowed .pswp__img {
-  cursor: var(--cursor-zoom-in-svg-url) 28 28, zoom-in;
+  cursor: var(--cursor-zoom-in-svg-url) 28 28,
+    zoom-in;
 }
 
 .pswp--click-to-zoom.pswp--zoomed-in .pswp__img {
@@ -295,7 +302,8 @@ height-observer, visibility-progress, scroll-area, video-media, model-media, med
 }
 
 .pswp--no-mouse-drag.pswp--zoomed-in .pswp__img, .pswp--no-mouse-drag.pswp--zoomed-in .pswp__img:active, .pswp__img {
-  cursor: var(--cursor-zoom-out-svg-url) 28 28, zoom-out;
+  cursor: var(--cursor-zoom-out-svg-url) 28 28,
+    zoom-out;
 }
 
 .pswp__container, .pswp__img, .pswp__button {
@@ -838,8 +846,11 @@ scroll-carousel {
 }
 
 .content-over-media {
-  grid-template: 0 minmax(0, 1fr) 0 / minmax(0, 1fr) minmax(0, min(var(--container-max-width), 100% - var(--content-over-media-gap, var(--content-over-media-column-gap, var(--container-gutter))) * 2)) minmax(0, 1fr);
-  gap: var(--content-over-media-row-gap, var(--content-over-media-gap, var(--container-gutter))) var(--content-over-media-column-gap, var(--content-over-media-gap, var(--container-gutter)));
+  grid-template: 0 minmax(0, 1fr) 0 / minmax(0, 1fr) minmax(0,
+      min(var(--container-max-width), 100% - var(--content-over-media-gap, var(--content-over-media-column-gap, var(--container-gutter))) * 2))
+    minmax(0, 1fr);
+  gap: var(--content-over-media-row-gap, var(--content-over-media-gap, var(--container-gutter)))
+    var(--content-over-media-column-gap, var(--content-over-media-gap, var(--container-gutter)));
   place-items: center;
   display: grid;
   position: relative;
@@ -1141,7 +1152,8 @@ scroll-carousel {
 
 .popover::part(overlay) {
   min-height: 100lvh;
-  cursor: var(--cursor-close-svg-url) 28 28, auto;
+  cursor: var(--cursor-close-svg-url) 28 28,
+      auto;
   background: #0006;
   position: fixed;
   top: 0;
@@ -1267,7 +1279,8 @@ scroll-carousel {
 }
 
 .drawer.show-close-cursor::part(overlay) {
-  cursor: var(--cursor-close-svg-url) 28 28, auto;
+  cursor: var(--cursor-close-svg-url) 28 28,
+      auto;
 }
 
 .drawer::part(content) {
@@ -1680,7 +1693,7 @@ scroll-carousel {
 }
 
 .input.is-floating, .select.is-floating {
-  height: calc(var(--input-height)  + .625rem);
+  height: calc(var(--input-height) + .625rem);
   padding-block-start: var(--spacing-4);
 }
 
@@ -1729,7 +1742,7 @@ scroll-carousel {
 }
 
 .floating-label {
-  height: calc(var(--input-height)  + .625rem);
+  height: calc(var(--input-height) + .625rem);
   top: 0;
   opacity: .5;
   pointer-events: none;
@@ -1964,8 +1977,8 @@ scroll-carousel {
 }
 
 .container {
-  --container-inner-width: min((100vw - var(--scrollbar-width, 0px))  - var(--container-gutter) * 2, var(--container-max-width));
-  --container-outer-width: calc(((100vw - var(--scrollbar-width, 0px))  - var(--container-inner-width)) / 2);
+  --container-inner-width: min((100vw - var(--scrollbar-width, 0px)) - var(--container-gutter) * 2, var(--container-max-width));
+  --container-outer-width: calc(((100vw - var(--scrollbar-width, 0px)) - var(--container-inner-width)) / 2);
   margin-inline-start: max(var(--container-gutter), 50% - var(--container-max-width) / 2);
   margin-inline-end: max(var(--container-gutter), 50% - var(--container-max-width) / 2);
 }
@@ -1976,8 +1989,8 @@ scroll-carousel {
 
 @media screen and (min-width: 700px) {
   .sm\:container {
-    --container-inner-width: min((100vw - var(--scrollbar-width, 0px))  - var(--container-gutter) * 2, var(--container-max-width));
-    --container-outer-width: calc(((100vw - var(--scrollbar-width, 0px))  - var(--container-inner-width)) / 2);
+    --container-inner-width: min((100vw - var(--scrollbar-width, 0px)) - var(--container-gutter) * 2, var(--container-max-width));
+    --container-outer-width: calc(((100vw - var(--scrollbar-width, 0px)) - var(--container-inner-width)) / 2);
     margin-inline-start: max(var(--container-gutter), 50% - var(--container-max-width) / 2);
     margin-inline-end: max(var(--container-gutter), 50% - var(--container-max-width) / 2);
   }
@@ -2030,7 +2043,7 @@ scroll-carousel {
 
 [role="main"] .shopify-section {
   --section-is-first: 0;
-  --hash-difference: calc(var(--section-background-hash)  - var(--previous-section-background-hash, -1));
+  --hash-difference: calc(var(--section-background-hash) - var(--previous-section-background-hash, -1));
   --hash-difference-abs: max(var(--hash-difference), -1 * var(--hash-difference));
   --background-differs-from-previous: max(0, min(var(--hash-difference-abs, 1), 1));
   background: rgb(var(--background));
@@ -2056,8 +2069,8 @@ scroll-carousel {
   --calculated-section-spacing-block-start: var(--section-spacing-block-start, var(--section-spacing-block, var(--context-section-spacing-block-start)));
   --calculated-section-spacing-block-end: var(--section-spacing-block-end, var(--section-spacing-block, var(--context-section-spacing-block-end)));
   --calculated-section-spacing-inline: var(--section-spacing-inline, var(--context-section-spacing-inline));
-  --container-inner-width: min((100vw - var(--scrollbar-width, 0px))  - var(--calculated-section-spacing-inline, 0px) * 2, var(--container-max-width));
-  --container-outer-width: calc(((100vw - var(--scrollbar-width, 0px))  - var(--container-inner-width, 0px)) / 2);
+  --container-inner-width: min((100vw - var(--scrollbar-width, 0px)) - var(--calculated-section-spacing-inline, 0px) * 2, var(--container-max-width));
+  --container-outer-width: calc(((100vw - var(--scrollbar-width, 0px)) - var(--container-inner-width, 0px)) / 2);
   --section-stack-spacing-inline: var(--section-inner-spacing-inline, 0px);
   padding-inline-start: max(var(--calculated-section-spacing-inline), 50% - var(--container-max-width) / 2);
   padding-inline-end: max(var(--calculated-section-spacing-inline), 50% - var(--container-max-width) / 2);
@@ -2088,7 +2101,7 @@ scroll-carousel {
     --context-section-spacing-block-start: min(var(--section-inner-max-spacing-block, var(--section-outer-spacing-block)));
     --context-section-spacing-block-end: min(var(--section-inner-max-spacing-block, var(--section-outer-spacing-block)));
     --context-section-spacing-inline: var(--section-inner-spacing-inline);
-    --container-inner-width: calc(var(--container-max-width)  - var(--container-outer-width) * 2);
+    --container-inner-width: calc(var(--container-max-width) - var(--container-outer-width) * 2);
     --container-outer-width: var(--calculated-section-spacing-inline);
     border-radius: var(--rounded-lg);
     box-shadow: var(--shadow-block);
@@ -2385,11 +2398,11 @@ video-media::part(play-button) {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%)scale(1);
+  transform: translate(-50%, -50%) scale(1);
 }
 
 video-media:hover::part(play-button) {
-  transform: translate(-50%, -50%)scale(1.1);
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 @media screen and (min-width: 700px) {
@@ -2411,7 +2424,6 @@ model-media model-viewer, model-media .shopify-model-viewer-ui {
 .video-play-button {
   --play-button-shadow-size: 12px;
   filter: drop-shadow(0 16px 50px #0000000d);
-  pointer-events: auto;
   position: relative;
 }
 
@@ -2620,7 +2632,11 @@ model-media model-viewer, model-media .shopify-model-viewer-ui {
 }
 
 .range-group {
-  background: linear-gradient(to var(--transform-origin-end), rgb(var(--text-color) / .12) var(--range-min), rgb(var(--text-color)) var(--range-min), rgb(var(--text-color)) var(--range-max), rgb(var(--text-color) / .12) var(--range-max));
+  background: linear-gradient(to var(--transform-origin-end),
+    rgb(var(--text-color) / .12) var(--range-min),
+    rgb(var(--text-color)) var(--range-min),
+    rgb(var(--text-color)) var(--range-max),
+    rgb(var(--text-color) / .12) var(--range-max));
   border-radius: 2px;
   height: 4px;
   position: relative;
@@ -2737,7 +2753,7 @@ model-media model-viewer, model-media .shopify-model-viewer-ui {
 .product-list {
   grid: var(--product-list-grid);
   gap: var(--product-list-gap);
-  scroll-padding-top: calc(var(--sticky-area-height)  + 20px);
+  scroll-padding-top: calc(var(--sticky-area-height) + 20px);
   display: grid;
   position: relative;
 }
@@ -3751,7 +3767,7 @@ tfoot td {
   width: var(--swatch-size);
   height: var(--swatch-size);
   margin: var(--swatch-margin);
-  background: var(--swatch-background) center / cover;
+  background: var(--swatch-background) center/cover;
   flex-shrink: 0;
   place-items: center;
   display: grid;
@@ -3759,7 +3775,8 @@ tfoot td {
 }
 
 .color-swatch.is-disabled {
-  background: linear-gradient(to bottom right, transparent calc(50% - 1px), rgb(var(--background)) calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px)), var(--swatch-background) center / cover;
+  background: linear-gradient(to bottom right, transparent calc(50% - 1px), rgb(var(--background)) calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px)),
+      var(--swatch-background) center/cover;
 }
 
 :disabled + .color-swatch {
@@ -3949,7 +3966,7 @@ tfoot td {
   width: var(--spacing-3-5);
   height: var(--spacing-3-5);
   border-radius: var(--rounded-full);
-  background: var(--swatch-background) center / cover;
+  background: var(--swatch-background) center/cover;
 }
 
 @media screen and (min-width: 700px) {
@@ -4011,14 +4028,14 @@ tfoot td {
     transition: opacity .2s ease-in-out, visibility .2s ease-in-out, transform .2s ease-in-out;
     position: absolute;
     left: 50%;
-    transform: translateX(-50%)scale(.9);
+    transform: translateX(-50%) scale(.9);
   }
 
   [data-tooltip]:hover:after {
     visibility: visible;
     opacity: 1;
     will-change: transform;
-    transform: translateX(-50%)scale(1);
+    transform: translateX(-50%) scale(1);
   }
 }
 
@@ -4137,7 +4154,7 @@ tfoot td {
 
 .offset-icon {
   --icon-baseline-distance: calc(1em * 1.6);
-  --icon-offset: calc((var(--icon-baseline-distance)  - var(--icon-height)) / 2);
+  --icon-offset: calc((var(--icon-baseline-distance) - var(--icon-height)) / 2);
   top: var(--icon-offset);
   position: relative;
 }
@@ -4404,7 +4421,7 @@ product-rerender {
 @media screen and (min-width: 700px) {
   .addresses-list {
     --addresses-per-row: 2;
-    grid-template-columns: repeat(auto-fit, minmax(0, calc(100% / var(--addresses-per-row)  - var(--spacing-6) / var(--addresses-per-row) * (var(--addresses-per-row)  - 1))));
+    grid-template-columns: repeat(auto-fit, minmax(0, calc(100% / var(--addresses-per-row) - var(--spacing-6) / var(--addresses-per-row) * (var(--addresses-per-row) - 1))));
     gap: var(--spacing-6);
     justify-content: center;
     justify-items: center;
@@ -4773,7 +4790,7 @@ product-rerender {
 }
 
 .before-after__after-image {
-  clip-path: inset(0 0 0 calc(var(--before-after-initial-drag-position, 50%)  + var(--clip-path-offset, 0px)));
+  clip-path: inset(0 0 0 calc(var(--before-after-initial-drag-position, 50%) + var(--clip-path-offset, 0px)));
   position: absolute;
   top: 0;
   bottom: 0;
@@ -4782,7 +4799,7 @@ product-rerender {
 }
 
 [dir="rtl"] .before-after__after-image {
-  clip-path: inset(0 calc(var(--before-after-initial-drag-position, 50%)  - var(--clip-path-offset, 0px)) 0 0);
+  clip-path: inset(0 calc(var(--before-after-initial-drag-position, 50%) - var(--clip-path-offset, 0px)) 0 0);
 }
 
 .before-after__cursor-wrapper {
@@ -4999,7 +5016,7 @@ product-rerender {
   }
 
   .cart-order__recap {
-    top: calc(var(--sticky-area-height)  + 20px);
+    top: calc(var(--sticky-area-height) + 20px);
     position: sticky;
   }
 }
@@ -5176,7 +5193,7 @@ product-rerender {
 }
 
 .collection__results {
-  scroll-padding-top: calc(var(--sticky-area-height)  + 20px);
+  scroll-padding-top: calc(var(--sticky-area-height) + 20px);
   transition: opacity .1s;
 }
 
@@ -5230,7 +5247,7 @@ product-rerender {
   .collection__facets-scroller {
     display: block;
     position: sticky;
-    top: calc(var(--sticky-area-height)  + 20px);
+    top: calc(var(--sticky-area-height) + 20px);
   }
 
   .collection__pagination {
@@ -6247,6 +6264,22 @@ product-rerender {
   }
 }
 
+shopify-account {
+  --shopify-account-font-heading: var(--heading-font-family);
+  --shopify-account-font-heading-weight: var(--heading-font-weight);
+  --shopify-account-font-body: var(--text-font-family);
+  --shopify-account-font-body-weight: var(--text-font-weight);
+  --shopify-account-radius-button: var(--rounded-button);
+  --shopify-account-radius-input: var(--rounded-input);
+  --shopify-account-radius-dialog: var(--rounded-block);
+  --shopify-account-color-background: rgb(var(--dialog-background));
+  --shopify-account-color-text: rgb(var(--text-primary));
+  --shopify-account-signed-in-avatar-color-background: rgb(var(--text-color));
+  --shopify-account-signed-in-avatar-color-text: rgb(from rgb(var(--text-color)) calc(255 - r) calc(255 - g) calc(255 - b));
+  --shopify-account-signed-in-avatar-size: 24px;
+  --shopify-account-avatar-size: none;
+}
+
 .dropdown-menu {
   gap: var(--spacing-3);
   width: max-content;
@@ -6256,7 +6289,8 @@ product-rerender {
   color: rgb(var(--header-text));
   border-radius: var(--rounded-sm);
   opacity: 0;
-  box-shadow: var(--shadow), 0 0 0 1px rgb(var(--text-color) / .12);
+  box-shadow: var(--shadow),
+    0 0 0 1px rgb(var(--text-color) / .12);
   z-index: 1;
   display: grid;
   position: absolute;
@@ -6354,7 +6388,7 @@ product-rerender {
   justify-content: var(--mega-menu-justify-content);
   width: 100%;
   padding: var(--mega-menu-block-padding) max(var(--container-gutter), 50% - var(--container-max-width) / 2);
-  max-height: calc(100vh - var(--sticky-announcement-bar-enabled, 0) * var(--announcement-bar-height, 0px)  - var(--header-height, 0px)  - 20px);
+  max-height: calc(100vh - var(--sticky-announcement-bar-enabled, 0) * var(--announcement-bar-height, 0px) - var(--header-height, 0px) - 20px);
   overscroll-behavior-y: contain;
   opacity: 0;
   background: rgb(var(--header-background));
@@ -6916,7 +6950,7 @@ product-rerender {
 }
 
 .images-scrolling-desktop__media-wrapper {
-  top: calc(var(--sticky-area-height)  + 20px);
+  top: calc(var(--sticky-area-height) + 20px);
   grid-column: media;
   position: sticky;
 }
@@ -6928,12 +6962,12 @@ product-rerender {
 }
 
 .images-scrolling-desktop__media-wrapper > :first-child {
-  max-height: calc(100vh - var(--sticky-area-height)  - 40px);
+  max-height: calc(100vh - var(--sticky-area-height) - 40px);
 }
 
 @supports (max-height: 100svh) {
   .images-scrolling-desktop__media-wrapper > :first-child {
-    max-height: calc(100svh - var(--sticky-area-height)  - 40px);
+    max-height: calc(100svh - var(--sticky-area-height) - 40px);
   }
 }
 
@@ -7745,7 +7779,7 @@ product-rerender {
 
 @media screen and (min-width: 1000px) {
   .product-info {
-    top: calc(var(--sticky-area-height)  + 20px);
+    top: calc(var(--sticky-area-height) + 20px);
     z-index: 1;
     position: sticky;
   }
@@ -8434,8 +8468,8 @@ product-rerender {
 
 .shop-the-look__dot {
   --dot-size: 10px;
-  top: calc(var(--shop-the-look-dot-top)  - (var(--dot-size) / 2));
-  left: calc(var(--shop-the-look-dot-left)  - (var(--dot-size) / 2));
+  top: calc(var(--shop-the-look-dot-top) - (var(--dot-size) / 2));
+  left: calc(var(--shop-the-look-dot-left) - (var(--dot-size) / 2));
   width: var(--dot-size);
   height: var(--dot-size);
   border-radius: var(--rounded-full);

@@ -106,6 +106,9 @@
         "other": "{{ count }} farieb k dispozícii"
       }
     },
+    "disclosures": {
+      "title": "Upozornenia"
+    },
     "gallery": {
       "close": "Zatvoriť galériu",
       "zoom": "Priblížiť",

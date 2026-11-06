@@ -1,0 +1,386 @@
+summary:
+  total_theme_files: 309
+  identical: 35
+  line_endings_only: 70
+  fork_collisions_count: 9
+  template_config_drift_count: 30
+  pure_vendor_upgrades_count: 161
+  new_in_upstream_count: 3
+  local_only_count: 1
+fork_collisions:
+- file: assets/theme.css
+  custom_indicators:
+  - mar26
+  custom_filename: false
+  custom_commits: []
+  sample_removed_in_pull:
+  - .mar26-title-tags {
+  diff_summary: +56 lines unique to main
+- file: layout/theme.liquid
+  custom_indicators:
+  - bt-
+  - jdgm
+  - mar26
+  custom_filename: false
+  custom_commits: []
+  sample_removed_in_pull:
+  - '{{- ''mar26-foundation.css'' | asset_url | stylesheet_tag -}}'
+  - <style>
+  - .product-card .jdgm-preview-badge .jdgm-star.jdgm-star {
+  - .product-card .jdgm-widget.jdgm-preview-badge.jdgm--done-setup, .jdgm-stars-collections
+    {
+  - </style>
+  - '{%- sections ''bt-header-group'' -%}'
+  - '{%- sections ''mar26-footer-group'' -%}'
+  diff_summary: +24 lines unique to main
+- file: sections/footer.liquid
+  custom_indicators:
+  - mar26
+  custom_filename: false
+  custom_commits: []
+  sample_removed_in_pull:
+  - <style>
+  - '--footer-font-family: var(--mar26-font-stack);'
+  - '--footer-fw-semibold: var(--mar26-fw-semibold);'
+  - '--footer-fw-extrabold: var(--mar26-fw-extrabold);'
+  - .footer .mar26-newsletter-title {
+  - /* MAR26 Newsletter Spotlight Styling */
+  - .mar26-newsletter-title {
+  - .mar26-newsletter-title span.accent {
+  diff_summary: +205 lines unique to main
+- file: sections/header.liquid
+  custom_indicators:
+  - mar26
+  custom_filename: false
+  custom_commits: []
+  sample_removed_in_pull:
+  - '--header-font-family: var(--mar26-font-stack);'
+  - '--header-font-weight: var(--mar26-fw-semibold);'
+  - 'font-weight: var(--mar26-fw-extrabold) !important;'
+  - 'font-weight: var(--mar26-fw-semibold) !important;'
+  - <span class="header__logo-text mar26-title">{{ shop.name }}</span>
+  diff_summary: +96 lines unique to main
+- file: snippets/inventory.liquid
+  custom_indicators: []
+  custom_filename: false
+  custom_commits:
+  - '320ba2a feat(product): scale title typography, sync atc/shop pay buttons, integrate
+    dealeasy and selleasy across 10 bt-* templates, and center dealeasy grid layout'
+  sample_removed_in_pull: []
+  diff_summary: +25 lines unique to main
+- file: snippets/option-value.liquid
+  custom_indicators:
+  - mar26
+  custom_filename: false
+  custom_commits: []
+  sample_removed_in_pull:
+  - <span class="mar26-savings-badge">SAVE {{ savings }}%</span>
+  - '<{{ option_value_tag }} class="color-swatch {% if settings.color_swatch_style
+    == ''rectangle'' %}color-swatch--rectangle{% endif %} {% if size == ''sm'' %}color-swatch--sm{%
+    endif %} {% if disabled %}is-disabled{% endif %} {% if selected and option_value_tag
+    == ''a'' %}is-selected{% endif %} {% if white_label_list contains downcase_label
+    %}ring-inset{% endif %} {% if settings.color_swatch_style == ''round'' %}rounded-full{%
+    endif %}" {% if show_tooltip %}data-tooltip="{{ label | default: value | escape
+    }}"{% endif %} style="{{ swatch_style }}" {{ attributes }}>'
+  diff_summary: +54 lines unique to main
+- file: snippets/price-list.liquid
+  custom_indicators:
+  - mar26
+  custom_filename: false
+  custom_commits: []
+  sample_removed_in_pull:
+  - MAR26 FORKED PRODUCT PRICE
+  diff_summary: +64 lines unique to main
+- file: snippets/product-card.liquid
+  custom_indicators:
+  - jdgm
+  - judgeme
+  custom_filename: false
+  custom_commits: []
+  sample_removed_in_pull:
+  - <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'>
+  - '{{ product.metafields.judgeme.badge }}'
+  - <fieldset class="product-card__swatch-list h-stack {% if settings.color_swatch_style
+    == 'rectangle' %}gap-2.5{% else %}gap-0.5{% endif %}" data-option-position="{{
+    product_option.position }}">
+  - '<a href="{{ product.url }}" data-instant class="color-swatch__view-more {% if
+    settings.color_swatch_style == ''round'' %}rounded-full{% endif %} text-xxs text-subdued">+{{
+    product_option.values.size | minus: 4 }}</a>'
+  diff_summary: +52 lines unique to main
+- file: snippets/product-info.liquid
+  custom_indicators:
+  - mar26
+  custom_filename: false
+  custom_commits: []
+  sample_removed_in_pull:
+  - '{%- when ''mar26_gradient_title'' -%}'
+  - <style>
+  - </style>
+  - '<div class="product-info__gradient-title v-stack gap-0" style="font-weight: {{
+    block.settings.font_weight }}; letter-spacing: -0.04em;">'
+  - '<span class="mar26-solid-title" style="color: rgb(var(--text-color));">{{ top_text
+    }}</span>'
+  - '<span class="mar26-gradient-title" style="--gradient-color-1: {{ block.settings.color_1
+    }}; --gradient-color-2: {{ block.settings.color_2 }}; font-size: inherit; font-weight:
+    inherit; padding-bottom: 0.15em; margin-bottom: -0.15em;">'
+  - '{%- case block.settings.selector_style -%}'
+  diff_summary: +93 lines unique to main
+template_config_drift:
+- file: config/settings_schema.json
+  lines_main: 935
+  lines_pull: 941
+- file: templates/collection.brooms-bt.json
+  lines_main: 818
+  lines_pull: 756
+- file: templates/collection.bundles-bt.json
+  lines_main: 968
+  lines_pull: 889
+- file: templates/collection.cleaning-products.json
+  lines_main: 551
+  lines_pull: 295
+- file: templates/collection.cleaningproducts-bt.json
+  lines_main: 837
+  lines_pull: 803
+- file: templates/collection.dustpans-bt.json
+  lines_main: 840
+  lines_pull: 817
+- file: templates/collection.floor-wipes-bt.json
+  lines_main: 1031
+  lines_pull: 884
+- file: templates/collection.floor-wipes.json
+  lines_main: 917
+  lines_pull: 793
+- file: templates/collection.mar26-catalog.json
+  lines_main: 804
+  lines_pull: 725
+- file: templates/collection.microfibre-bt.json
+  lines_main: 807
+  lines_pull: 776
+- file: templates/collection.mops-bt.json
+  lines_main: 847
+  lines_pull: 792
+- file: templates/collection.shop-all-bt.json
+  lines_main: 784
+  lines_pull: 452
+- file: templates/collection.squeegees-bt.json
+  lines_main: 741
+  lines_pull: 695
+- file: templates/collection.toilet-bt.json
+  lines_main: 831
+  lines_pull: 807
+- file: templates/collection.windows-care-bt.json
+  lines_main: 1171
+  lines_pull: 1108
+- file: templates/gift_card.liquid
+  lines_main: 1
+  lines_pull: 1
+- file: templates/product.bt-brooms.json
+  lines_main: 611
+  lines_pull: 555
+- file: templates/product.bt-bundles.json
+  lines_main: 765
+  lines_pull: 709
+- file: templates/product.bt-cleaningproducts.json
+  lines_main: 612
+  lines_pull: 555
+- file: templates/product.bt-dustpans.json
+  lines_main: 612
+  lines_pull: 555
+- file: templates/product.bt-floor-wipes.json
+  lines_main: 776
+  lines_pull: 727
+- file: templates/product.bt-microfibre.json
+  lines_main: 612
+  lines_pull: 555
+- file: templates/product.bt-mops.json
+  lines_main: 612
+  lines_pull: 555
+- file: templates/product.bt-squeegees.json
+  lines_main: 612
+  lines_pull: 555
+- file: templates/product.bt-toilet.json
+  lines_main: 612
+  lines_pull: 555
+- file: templates/product.bt-windows-care.json
+  lines_main: 612
+  lines_pull: 555
+- file: templates/product.caravan-c-b-page.json
+  lines_main: 477
+  lines_pull: 550
+- file: templates/product.mar26-caravan-bundle-page.json
+  lines_main: 25
+  lines_pull: 98
+- file: templates/product.mar26-with-bundle-builder.json
+  lines_main: 603
+  lines_pull: 552
+- file: templates/product.mar26.json
+  lines_main: 583
+  lines_pull: 535
+new_in_upstream:
+- assets/mar26-foundation copy.css
+- snippets/cart-disclosures.liquid
+- snippets/product-disclosures.liquid
+local_only:
+- assets/collections-top-banner.png
+pure_vendor_upgrades:
+- assets/checkmark.svg.liquid
+- assets/country-flags.css.liquid
+- assets/cursor-close.svg.liquid
+- assets/cursor-zoom-in.svg.liquid
+- assets/cursor-zoom-out.svg.liquid
+- assets/theme.js
+- assets/vendor.min.js
+- blocks/accordion.liquid
+- blocks/badge.liquid
+- blocks/button-group.liquid
+- blocks/button.liquid
+- blocks/heading.liquid
+- blocks/icon.liquid
+- blocks/image.liquid
+- blocks/liquid.liquid
+- blocks/page-content.liquid
+- blocks/rich-text.liquid
+- blocks/video.liquid
+- locales/ar.json
+- locales/cs.json
+- locales/da.json
+- locales/de.json
+- locales/el.json
+- locales/en.default.json
+- locales/es.json
+- locales/fi.json
+- locales/fr.json
+- locales/he.json
+- locales/it.json
+- locales/ja.json
+- locales/ko.json
+- locales/lt.json
+- locales/lv.json
+- locales/nb.json
+- locales/nl.json
+- locales/pl.json
+- locales/pt-BR.json
+- locales/ro.json
+- locales/ru.json
+- locales/sk.json
+- locales/sl.json
+- locales/sv.json
+- locales/tr.json
+- locales/uk.json
+- locales/zh-CN.json
+- locales/zh-TW.json
+- sections/_blocks.liquid
+- sections/accordion-content.liquid
+- sections/account-banner.liquid
+- sections/announcement-bar.liquid
+- sections/before-after-image.liquid
+- sections/blog-posts.liquid
+- sections/cart-drawer.liquid
+- sections/collection-banner.liquid
+- sections/collection-list.liquid
+- sections/comparison-table.liquid
+- sections/contact.liquid
+- sections/faq.liquid
+- sections/feature-chart.liquid
+- sections/featured-collection.liquid
+- sections/featured-product.liquid
+- sections/hot-spots.liquid
+- sections/image-link-blocks.liquid
+- sections/image-with-text-overlay.liquid
+- sections/images-with-text-scrolling.liquid
+- sections/impact-text.liquid
+- sections/logo-list.liquid
+- sections/main-article.liquid
+- sections/main-blog.liquid
+- sections/main-cart.liquid
+- sections/main-collection.liquid
+- sections/main-customers-account.liquid
+- sections/main-customers-activate-account.liquid
+- sections/main-customers-addresses.liquid
+- sections/main-customers-login.liquid
+- sections/main-customers-order.liquid
+- sections/main-customers-register.liquid
+- sections/main-customers-reset-password.liquid
+- sections/main-gift-card.liquid
+- sections/main-list-collections.liquid
+- sections/main-not-found.liquid
+- sections/main-page.liquid
+- sections/main-password.liquid
+- sections/main-product.liquid
+- sections/main-search.liquid
+- sections/media-grid.liquid
+- sections/media-with-text.liquid
+- sections/multi-column.liquid
+- sections/multiple-images-with-text.liquid
+- sections/newsletter-popup.liquid
+- sections/newsletter.liquid
+- sections/press.liquid
+- sections/privacy-banner.liquid
+- sections/recently-viewed-products.liquid
+- sections/related-products.liquid
+- sections/revealed-image-on-scroll.liquid
+- sections/rich-text.liquid
+- sections/scrolling-text.liquid
+- sections/search-drawer.liquid
+- sections/shop-the-look.liquid
+- sections/slideshow.liquid
+- sections/specification-table.liquid
+- sections/tabs.liquid
+- sections/testimonials.liquid
+- sections/text-with-icons.liquid
+- sections/timeline.liquid
+- sections/variant-added.liquid
+- sections/video.liquid
+- snippets/accordion.liquid
+- snippets/active-facets.liquid
+- snippets/address-form.liquid
+- snippets/article-banner.liquid
+- snippets/article-comments.liquid
+- snippets/article-navigation.liquid
+- snippets/banner.liquid
+- snippets/blog-post-card.liquid
+- snippets/button.liquid
+- snippets/buy-buttons.liquid
+- snippets/cart-discount.liquid
+- snippets/checkbox.liquid
+- snippets/collection-top-bar.liquid
+- snippets/css-variables.liquid
+- snippets/direction.liquid
+- snippets/facets-vertical.liquid
+- snippets/free-shipping-bar.liquid
+- snippets/horizontal-product.liquid
+- snippets/icon.liquid
+- snippets/input.liquid
+- snippets/js-variables.liquid
+- snippets/line-item.liquid
+- snippets/localization-selector.liquid
+- snippets/media.liquid
+- snippets/mega-menu-horizontal.liquid
+- snippets/microdata-schema.liquid
+- snippets/navigation-panel.liquid
+- snippets/navigation-promo-block.liquid
+- snippets/offer.liquid
+- snippets/pagination.liquid
+- snippets/pickup-availability.liquid
+- snippets/predictive-search-result-item.liquid
+- snippets/price-range.liquid
+- snippets/product-badges.liquid
+- snippets/product-card-placeholder.liquid
+- snippets/product-gallery.liquid
+- snippets/product-quick-buy.liquid
+- snippets/product-rating.liquid
+- snippets/scrollbar.liquid
+- snippets/section-header.liquid
+- snippets/section-properties.liquid
+- snippets/section-spacing-collapsing.liquid
+- snippets/select.liquid
+- snippets/shadow-dom-templates.liquid
+- snippets/share-link.liquid
+- snippets/shipping-estimator.liquid
+- snippets/social-media.liquid
+- snippets/social-meta-tags.liquid
+- snippets/styled-text.liquid
+- snippets/surface.liquid
+- snippets/variant-picker.liquid
+- snippets/vendor.liquid
+- snippets/volume-pricing-table.liquid

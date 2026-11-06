@@ -103,6 +103,9 @@
         "other": "{{ count }} renk mevcut"
       }
     },
+    "disclosures": {
+      "title": "Bildirimler"
+    },
     "gallery": {
       "close": "Galeriyi kapat",
       "zoom": "Yakınlaştır",

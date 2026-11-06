@@ -1,19 +1,19 @@
 {%- comment -%}
-----------------------------------------------------------------------------------------------------------------------
-PRODUCT BADGES COMPONENT
-----------------------------------------------------------------------------------------------------------------------
+  ----------------------------------------------------------------------------------------------------------------------
+  PRODUCT BADGES COMPONENT
+  ----------------------------------------------------------------------------------------------------------------------
 
-This component is used in product listing and product page to render the badges of a given product
+  This component is used in product listing and product page to render the badges of a given product
 
-********************************************
-Supported variables
-********************************************
+  ********************************************
+  Supported variables
+  ********************************************
 
-* product: the product to render the badges
-* variant: the specific variant to show the badge from
-* types: the types of badge to output. Can be "custom", "sold_out" or "discount" (or a combination separated by comma). If nothing is set, all badges are outputted.
-* context: can be "product" or "card"
-* class: an extra class added on the container
+  * product: the product to render the badges
+  * variant: the specific variant to show the badge from
+  * types: the types of badge to output. Can be "custom", "sold_out" or "discount" (or a combination separated by comma). If nothing is set, all badges are outputted.
+  * context: can be "product" or "card"
+  * class: an extra class added on the container
 {%- endcomment -%}
 
 {%- assign badge_types = types | default: 'custom, sold_out, discount' | split: ',' -%}
@@ -28,7 +28,7 @@ Supported variables
         {%- assign custom_badges = product.metafields.custom.badges.value | sort -%}
 
         {%- for custom_badge in custom_badges -%}
-          <span class="badge badge--primary">{{ custom_badge }}</span>
+          <span class="badge badge--primary badge--custom badge--{{ custom_badge | handle }}">{{ custom_badge }}</span>
         {%- endfor -%}
 
       {%- when 'sold_out' -%}

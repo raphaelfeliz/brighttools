@@ -27,9 +27,9 @@
         <div class="cart-order">
           <div class="cart-order__summary">
             {%- comment -%}
-            ----------------------------------------------------------------------------------------------------------------
-            ORDER SUMMARY
-            ----------------------------------------------------------------------------------------------------------------
+              ----------------------------------------------------------------------------------------------------------------
+              ORDER SUMMARY
+              ----------------------------------------------------------------------------------------------------------------
             {%- endcomment -%}
             <table class="order-summary">
               <thead class="order-summary__header">
@@ -43,19 +43,32 @@
               <tbody class="order-summary__body">
                 {%- for line_item in cart.items -%}
                   {% liquid
-                    assign max_quantity = nil
-                  
-                    if line_item.variant.quantity_rule.max != nil
+                    assign max_quantity = null
+
+                    if line_item.variant.quantity_rule.max != null
                       assign max_quantity = max_quantity | default: 999999 | at_most: line_item.variant.quantity_rule.max
                     endif
                   %}
 
                   <tr>
-                    <td>{%- render 'line-item', line_item: line_item -%}</td>
+                    <td>{%- render 'line-item', line_item: line_item, show_disclosures: true -%}</td>
 
                     <td class="hidden align-center text-center text-subdued sm:table-cell">
                       <line-item-quantity class="v-stack justify-center gap-2">
-                        <input class="quantity-input" type="number" is="quantity-input" inputmode="numeric" min="{{ line_item.variant.quantity_rule.min }}" step="{{ line_item.variant.quantity_rule.increment }}" {% if max_quantity != nil %}max="{{ max_quantity }}"{% endif %} data-line-key="{{ line_item.key }}" aria-label="{{ 'cart.order.change_quantity' | t | escape }}" value="{{ line_item.quantity }}">
+                        <input
+                          class="quantity-input"
+                          type="number"
+                          is="quantity-input"
+                          inputmode="numeric"
+                          min="{{ line_item.variant.quantity_rule.min }}"
+                          step="{{ line_item.variant.quantity_rule.increment }}"
+                          {% if max_quantity != null %}
+                            max="{{ max_quantity }}"
+                          {% endif %}
+                          data-line-key="{{ line_item.key }}"
+                          aria-label="{{ 'cart.order.change_quantity' | t | escape }}"
+                          value="{{ line_item.quantity }}"
+                        >
 
                         <span class="text-xs">
                           <a href="{{ line_item.url_to_remove }}" class="link" aria-label="{{ 'cart.order.remove_with_title' | t: title: line_item.title | escape }}">
@@ -72,9 +85,9 @@
             </table>
 
             {%- comment -%}
-            ----------------------------------------------------------------------------------------------------------------
-            SHIPPING ESTIMATOR
-            ----------------------------------------------------------------------------------------------------------------
+              ----------------------------------------------------------------------------------------------------------------
+              SHIPPING ESTIMATOR
+              ----------------------------------------------------------------------------------------------------------------
             {%- endcomment -%}
 
             {%- if section.settings.show_shipping_estimator and cart.requires_shipping -%}
@@ -105,7 +118,8 @@
                               {%- for discount_application in cart.cart_level_discount_applications -%}
                                 <div class="h-stack gap-4 justify-between">
                                   <div class="badge">
-                                    {%- render 'icon' with 'discount' -%} {{ discount_application.title }} (-{{ discount_application.total_allocated_amount | money }})
+                                    {%- render 'icon' with 'discount' -%}
+                                    {{ discount_application.title }} (-{{ discount_application.total_allocated_amount | money }})
 
                                     {%- if section.settings.allow_discount_application and discount_application.type != '' -%}
                                       <cart-discount-remove-button discount-code="{{ discount_application.title | escape }}" class="h-stack align-center">

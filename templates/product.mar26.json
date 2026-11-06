@@ -39,9 +39,9 @@
           "type": "mar26_short_description",
           "settings": {
             "description": "",
-            "highlight_1": "180° pivot head",
-            "highlight_2": "Dust catcher system",
-            "highlight_3": "Non-stick bristles",
+            "highlight_1": "<p>180° pivot head</p>",
+            "highlight_2": "<p>Dust catcher system</p>",
+            "highlight_3": "<p>Non-stick bristles</p>",
             "icon_color": "#e11d48",
             "background_color": "#FFFFFF"
           }
@@ -147,7 +147,6 @@
           "settings": {
             "image": "shopify://shop_images/rubber-broom-boutique-floor-wipes-red-handle_3f1dd018-a0a3-49ad-a724-ae9b8b45e873.jpg",
             "title": "Item Name",
-            "description": "<p>A short description of what this item is and why it's included.</p>",
             "spec_1": "",
             "spec_2": "",
             "spec_3": "",
@@ -159,7 +158,6 @@
           "settings": {
             "image": "shopify://shop_images/rubber-broom-boutique-floor-wipes-red-handle_3f1dd018-a0a3-49ad-a724-ae9b8b45e873.jpg",
             "title": "Item Name",
-            "description": "<p>A short description of what this item is and why it's included.</p>",
             "spec_1": "",
             "spec_2": "",
             "spec_3": "",
@@ -171,7 +169,6 @@
           "settings": {
             "image": "shopify://shop_images/rubber-broom-boutique-floor-wipes-red-handle_3f1dd018-a0a3-49ad-a724-ae9b8b45e873.jpg",
             "title": "Item Name",
-            "description": "<p>A short description of what this item is and why it's included.</p>",
             "spec_1": "",
             "spec_2": "",
             "spec_3": "",
