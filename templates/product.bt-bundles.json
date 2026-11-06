@@ -16,7 +16,7 @@
         "full_width": false,
         "remove_vertical_spacing": true,
         "remove_horizontal_spacing": true,
-        "liquid": "<style>\n  .scroll-to-top {\n    position: fixed;\n    bottom: 20px;\n    right: 20px;\n    background-color: #000;\n    color: #fff;\n    border: none;\n    border-radius: 8px;\n    padding: 12px 16px;\n    font-size: 14px;\n    cursor: pointer;\n    display: none;\n    z-index: 9999; /* Increased to stay above Shopify layers */\n    font-weight: 600;\n    align-items: center;\n    justify-content: center;\n    gap: 8px;\n    white-space: nowrap;\n  }\n  .scroll-to-top.show {\n    display: flex;\n  }\n  .scroll-to-top:hover {\n    background-color: #333;\n  }\n</style>\n\n<button class=\"scroll-to-top\" id=\"scrollToTopBtn\"><span>↑</span><span>shop</span></button>\n\n<script>\n  (function() {\n    const btn = document.getElementById('scrollToTopBtn');\n\n    window.addEventListener('scroll', function() {\n      if (window.pageYOffset > 300) {\n        btn.classList.add('show');\n      } else {\n        btn.classList.remove('show');\n      }\n    });\n\n    btn.addEventListener('click', function() {\n      // We look for the element INSIDE the click function \n      // so it finds it even if the page loaded slowly.\n      const target = document.querySelector('product-info.mar26-addons-buy');\n\n      if (target) {\n        // Calculate header height from your CSS variables (--header-height: 120px)\n        const headerOffset = 130; \n        const elementPosition = target.getBoundingClientRect().top;\n        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;\n\n        window.scrollTo({\n          top: offsetPosition,\n          behavior: 'smooth'\n        });\n      } else {\n        // If the specific class isn't found, try finding ANY product-info\n        const backupTarget = document.querySelector('product-info');\n        if (backupTarget) {\n           backupTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });\n        } else {\n           window.scrollTo({ top: 0, behavior: 'smooth' });\n        }\n      }\n    });\n  })();\n</script>",
+        "liquid": "<style>\n  .scroll-to-top {\n    position: fixed;\n    bottom: 20px;\n    right: 20px;\n    background-color: #000;\n    color: #fff;\n    border: none;\n    border-radius: 8px;\n    padding: 12px 16px;\n    font-size: 14px;\n    cursor: pointer;\n    display: none;\n    z-index: 9999; \n    font-weight: 600;\n    align-items: center;\n    justify-content: center;\n    gap: 8px;\n    white-space: nowrap;\n  }\n  .scroll-to-top.show {\n    display: flex;\n  }\n  .scroll-to-top:hover {\n    background-color: #333;\n  }\n</style>\n\n<button class=\"scroll-to-top\" id=\"scrollToTopBtn\"><span>\u2191</span><span>shop</span></button>\n\n<script>\n  (function() {\n    const btn = document.getElementById('scrollToTopBtn');\n\n    window.addEventListener('scroll', function() {\n      if (window.pageYOffset > 300) {\n        btn.classList.add('show');\n      } else {\n        btn.classList.remove('show');\n      }\n    });\n\n    btn.addEventListener('click', function() {\n      // We look for the element INSIDE the click function \n      // so it finds it even if the page loaded slowly.\n      const target = document.querySelector('product-info.mar26-addons-buy');\n\n      if (target) {\n        // Calculate header height from your CSS variables (--header-height: 120px)\n        const headerOffset = 130; \n        const elementPosition = target.getBoundingClientRect().top;\n        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;\n\n        window.scrollTo({\n          top: offsetPosition,\n          behavior: 'smooth'\n        });\n      } else {\n        // If the specific class isn't found, try finding ANY product-info\n        const backupTarget = document.querySelector('product-info');\n        if (backupTarget) {\n           backupTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });\n        } else {\n           window.scrollTo({ top: 0, behavior: 'smooth' });\n        }\n      }\n    });\n  })();\n</script>",
         "background": "",
         "background_gradient": "",
         "text_color": ""
@@ -193,7 +193,7 @@
             "icon_width": 32,
             "subheading": "",
             "title": "",
-            "content": "<h4>🧹 Sweep & Squeegee in One</h4><h4></h4><h4>🔄 Reaches Tight Spaces</h4><h4></h4><h4>💪 Tough & Surface-Safe</h4><p></p><p>Clean faster with one tool built for every mess.<br/>Strong, versatile, and made to last — the Tyroler 2-in-1 is a cleaning essential.</p>",
+            "content": "<h4>\ud83e\uddf9 Sweep & Squeegee in One</h4><h4></h4><h4>\ud83d\udd04 Reaches Tight Spaces</h4><h4></h4><h4>\ud83d\udcaa Tough & Surface-Safe</h4><p></p><p>Clean faster with one tool built for every mess.<br/>Strong, versatile, and made to last \u2014 the Tyroler 2-in-1 is a cleaning essential.</p>",
             "link_text": "",
             "link_url": "",
             "background": "#8d5b97",
@@ -218,7 +218,7 @@
             "icon_width": 32,
             "subheading": "",
             "title": "",
-            "content": "{{ product.metafields.custom.media_text_box_2_rich_text | metafield_tag }}<h4>🧹 Sweep & Squeegee in One</h4><h4></h4><h4>🔄 Reaches Tight Spaces</h4><h4></h4><h4>💪 Tough & Surface-Safe</h4><p></p><p>Clean faster with one tool built for every mess.<br/>Strong, versatile, and made to last — the Tyroler 2-in-1 is a cleaning essential.</p>",
+            "content": "{{ product.metafields.custom.media_text_box_2_rich_text | metafield_tag }}<h4>\ud83e\uddf9 Sweep & Squeegee in One</h4><h4></h4><h4>\ud83d\udd04 Reaches Tight Spaces</h4><h4></h4><h4>\ud83d\udcaa Tough & Surface-Safe</h4><p></p><p>Clean faster with one tool built for every mess.<br/>Strong, versatile, and made to last \u2014 the Tyroler 2-in-1 is a cleaning essential.</p>",
             "link_text": "",
             "link_url": "",
             "background": "#0f172a",
@@ -747,6 +747,40 @@
         "title": "Loved by thousands",
         "subheading": "Real reviews from customers who are already cleaning better with BrightTools."
       }
+    },
+    "1688642188a9c7bb7d": {
+      "type": "apps",
+      "blocks": {
+        "ff35ce0e-0a35-448d-9e7a-6a4e259b11b4": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "b5105084-2bb1-4862-8681-a2147b658640": {
+          "type": "shopify://apps/judge-me-reviews/blocks/featured_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {
+            "maxwidth": 1080
+          }
+        },
+        "b7e2de39-0094-44a6-a7cf-4c0719648fda": {
+          "type": "shopify://apps/judge-me-reviews/blocks/ugc_media_grid/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "ff35ce0e-0a35-448d-9e7a-6a4e259b11b4",
+        "b5105084-2bb1-4862-8681-a2147b658640",
+        "b7e2de39-0094-44a6-a7cf-4c0719648fda"
+      ],
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "background": "#f0f0f0",
+        "background_gradient": "",
+        "text_color": ""
+      }
     }
   },
   "order": [
@@ -760,6 +794,7 @@
     "mar26_highlights_djAVBa",
     "rich_text_JhBcCr",
     "blocks_jiJwFP",
-    "mar26_testimonials"
+    "mar26_testimonials",
+    "1688642188a9c7bb7d"
   ]
 }
