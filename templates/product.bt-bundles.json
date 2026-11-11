@@ -11,6 +11,7 @@
   "sections": {
     "custom_liquid_bYgJK7": {
       "type": "custom-liquid",
+      "disabled": true,
       "name": "Scroll to Top",
       "settings": {
         "full_width": false,
