@@ -3,9 +3,9 @@
 file-summary: MAR26 main product section. Drives MAR26 mobile ordering, gallery layout variables, and product info composition.
 
 # Version Block (SOP: Always update for real changes)
-version-name: Prevent mobile horizontal overflow and page swaying
-version-number: 3.15.0
-version-summary: v3.15.0 - Clip section horizontal overflow, neutralize mobile negative margin bleed, and prevent description card breakout on mobile screens.
+version-name: Enable sticky add-to-cart on scroll independently of standalone buy_buttons block
+version-number: 3.16.0
+version-summary: v3.16.0 - Allow sticky add-to-cart bar to render when show_fixed_add_to_cart is enabled even when standalone buy_buttons block is disabled.
 
 # Change rationale:
 # - Normal state: Black background / White text.
@@ -983,7 +983,7 @@ version-summary: v3.15.0 - Clip section horizontal overflow, neutralize mobile n
 
 {%- assign buy_buttons_block = section.blocks | where: 'type', 'buy_buttons' | first -%}
 
-{%- if section.settings.show_fixed_add_to_cart and product.available and buy_buttons_block != blank -%}
+{%- if section.settings.show_fixed_add_to_cart and product.available -%}
   <product-rerender id="{{ product_form_id }}-sticky-bar" observe-form="{{ product_form_id }}">
     {%- if product.selected_or_first_available_variant.available -%}
       <product-quick-add form="{{ product_form_id }}" class="product-quick-add">
