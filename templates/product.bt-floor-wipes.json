@@ -16,7 +16,7 @@
         "full_width": false,
         "remove_vertical_spacing": true,
         "remove_horizontal_spacing": true,
-        "liquid": "<style>\n  .scroll-to-top {\n    position: fixed;\n    bottom: 20px;\n    right: 20px;\n    background-color: #000;\n    color: #fff;\n    border: none;\n    border-radius: 8px;\n    padding: 12px 16px;\n    font-size: 14px;\n    cursor: pointer;\n    display: none;\n    z-index: 9999; \n    font-weight: 600;\n    align-items: center;\n    justify-content: center;\n    gap: 8px;\n    white-space: nowrap;\n  }\n  .scroll-to-top.show {\n    display: flex;\n  }\n  .scroll-to-top:hover {\n    background-color: #333;\n  }\n</style>\n\n<button class=\"scroll-to-top\" id=\"scrollToTopBtn\"><span>\u2191</span><span>shop</span></button>\n\n<script>\n  (function() {\n    const btn = document.getElementById('scrollToTopBtn');\n\n    window.addEventListener('scroll', function() {\n      if (window.pageYOffset > 300) {\n        btn.classList.add('show');\n      } else {\n        btn.classList.remove('show');\n      }\n    });\n\n    btn.addEventListener('click', function() {\n      // We look for the element INSIDE the click function \n      // so it finds it even if the page loaded slowly.\n      const target = document.querySelector('product-info.mar26-addons-buy');\n\n      if (target) {\n        // Calculate header height from your CSS variables (--header-height: 120px)\n        const headerOffset = 130; \n        const elementPosition = target.getBoundingClientRect().top;\n        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;\n\n        window.scrollTo({\n          top: offsetPosition,\n          behavior: 'smooth'\n        });\n      } else {\n        // If the specific class isn't found, try finding ANY product-info\n        const backupTarget = document.querySelector('product-info');\n        if (backupTarget) {\n           backupTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });\n        } else {\n           window.scrollTo({ top: 0, behavior: 'smooth' });\n        }\n      }\n    });\n  })();\n</script>",
+        "liquid": "<style>\n  .scroll-to-top {\n    position: fixed;\n    bottom: 20px;\n    right: 20px;\n    background-color: #000;\n    color: #fff;\n    border: none;\n    border-radius: 8px;\n    padding: 12px 16px;\n    font-size: 14px;\n    cursor: pointer;\n    display: none;\n    z-index: 9999; \n    font-weight: 600;\n    align-items: center;\n    justify-content: center;\n    gap: 8px;\n    white-space: nowrap;\n  }\n  .scroll-to-top.show {\n    display: flex;\n  }\n  .scroll-to-top:hover {\n    background-color: #333;\n  }\n</style>\n\n<button class=\"scroll-to-top\" id=\"scrollToTopBtn\"><span>↑</span><span>shop</span></button>\n\n<script>\n  (function() {\n    const btn = document.getElementById('scrollToTopBtn');\n\n    window.addEventListener('scroll', function() {\n      if (window.pageYOffset > 300) {\n        btn.classList.add('show');\n      } else {\n        btn.classList.remove('show');\n      }\n    });\n\n    btn.addEventListener('click', function() {\n      // We look for the element INSIDE the click function \n      // so it finds it even if the page loaded slowly.\n      const target = document.querySelector('product-info.mar26-addons-buy');\n\n      if (target) {\n        // Calculate header height from your CSS variables (--header-height: 120px)\n        const headerOffset = 130; \n        const elementPosition = target.getBoundingClientRect().top;\n        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;\n\n        window.scrollTo({\n          top: offsetPosition,\n          behavior: 'smooth'\n        });\n      } else {\n        // If the specific class isn't found, try finding ANY product-info\n        const backupTarget = document.querySelector('product-info');\n        if (backupTarget) {\n           backupTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });\n        } else {\n           window.scrollTo({ top: 0, behavior: 'smooth' });\n        }\n      }\n    });\n  })();\n</script>",
         "background": "",
         "background_gradient": "",
         "text_color": ""
@@ -143,6 +143,73 @@
         "input_text_color": ""
       }
     },
+    "mar26_whats_included_hwC8XQ": {
+      "type": "mar26-whats-included",
+      "blocks": {
+        "item_6YK7ta": {
+          "type": "item",
+          "settings": {
+            "product": "bright-broom-bundle-blue-edition",
+            "title": "Bright Broom Bundle - Blue Edition",
+            "spec_1": "",
+            "spec_2": "",
+            "spec_3": "",
+            "accent_color": "#e2e8f0"
+          }
+        },
+        "item_mPaejM": {
+          "type": "item",
+          "settings": {
+            "product": "floor-silicone-squeegee-knuckle-joint-45cm",
+            "title": "Silicone Squeegee 45cm",
+            "spec_1": "",
+            "spec_2": "",
+            "spec_3": "",
+            "accent_color": "#e2e8f0"
+          }
+        },
+        "item_7krkje": {
+          "type": "item",
+          "settings": {
+            "product": "professional-microfiber-cloth-2pk-xxl-80cmx60cm",
+            "title": "Quick Mop Microfibre Floor Cloths - 2 Pack",
+            "spec_1": "Sweep without holding",
+            "spec_2": "Attaches to handles",
+            "spec_3": "",
+            "accent_color": "#e2e8f0"
+          }
+        },
+        "item_XfYzVT": {
+          "type": "item",
+          "settings": {
+            "product": "biovibe-complete-wipes-bundle",
+            "title": "BioVibe Bundle of 5 Wipes",
+            "spec_1": "5 Awesome Scents",
+            "spec_2": "Instantly discard after use",
+            "spec_3": "",
+            "accent_color": "#e2e8f0"
+          }
+        }
+      },
+      "block_order": [
+        "item_6YK7ta",
+        "item_mPaejM",
+        "item_7krkje",
+        "item_XfYzVT"
+      ],
+      "name": "MAR26 What's Included",
+      "settings": {
+        "pre_title": "",
+        "pre_title_color": "#2563eb",
+        "black_title": "pairs well",
+        "gradient_title": "with",
+        "gradient_left_color": "#f43f5e",
+        "gradient_right_color": "#be123c",
+        "subheading": "",
+        "columns": "4",
+        "outline_color": "#e2e8f0"
+      }
+    },
     "video_PBmR83": {
       "type": "video",
       "blocks": {
@@ -186,7 +253,7 @@
             "icon_width": 32,
             "subheading": "",
             "title": "",
-            "content": "<h4>\ud83e\uddf9 Sweep & Squeegee in One</h4><h4></h4><h4>\ud83d\udd04 Reaches Tight Spaces</h4><h4></h4><h4>\ud83d\udcaa Tough & Surface-Safe</h4><p></p><p>Clean faster with one tool built for every mess.<br/>Strong, versatile, and made to last \u2014 the Tyroler 2-in-1 is a cleaning essential.</p>",
+            "content": "<h4>🧹 Sweep & Squeegee in One</h4><h4></h4><h4>🔄 Reaches Tight Spaces</h4><h4></h4><h4>💪 Tough & Surface-Safe</h4><p></p><p>Clean faster with one tool built for every mess.<br/>Strong, versatile, and made to last — the Tyroler 2-in-1 is a cleaning essential.</p>",
             "link_text": "",
             "link_url": "",
             "background": "#8d5b97",
@@ -211,7 +278,7 @@
             "icon_width": 32,
             "subheading": "",
             "title": "",
-            "content": "{{ product.metafields.custom.media_text_box_2_rich_text | metafield_tag }}<h4>\ud83e\uddf9 Sweep & Squeegee in One</h4><h4></h4><h4>\ud83d\udd04 Reaches Tight Spaces</h4><h4></h4><h4>\ud83d\udcaa Tough & Surface-Safe</h4><p></p><p>Clean faster with one tool built for every mess.<br/>Strong, versatile, and made to last \u2014 the Tyroler 2-in-1 is a cleaning essential.</p>",
+            "content": "{{ product.metafields.custom.media_text_box_2_rich_text | metafield_tag }}<h4>🧹 Sweep & Squeegee in One</h4><h4></h4><h4>🔄 Reaches Tight Spaces</h4><h4></h4><h4>💪 Tough & Surface-Safe</h4><p></p><p>Clean faster with one tool built for every mess.<br/>Strong, versatile, and made to last — the Tyroler 2-in-1 is a cleaning essential.</p>",
             "link_text": "",
             "link_url": "",
             "background": "#0f172a",
@@ -231,7 +298,16 @@
       "settings": {
         "full_width": false,
         "alternate_media_position": false,
-        "spacing": "small"
+        "spacing": "small",
+        "text_alignment": "center",
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": ""
       }
     },
     "faq": {
@@ -276,7 +352,7 @@
           "type": "item",
           "settings": {
             "title": "Do you have any fragrance-free Wipes?",
-            "content": "<p>No, not at this stage. Our Wipes have been trialled and tested for many years and the scents have been perfected based on our customers\u2019 feedback. The strength of the fragrances diminish a short time after application and leave a pleasant and fresh odour in the space. Our plant-based range BioVibe is lightly scented with a natural citrus blend.</p>"
+            "content": "<p>No, not at this stage. Our Wipes have been trialled and tested for many years and the scents have been perfected based on our customers’ feedback. The strength of the fragrances diminish a short time after application and leave a pleasant and fresh odour in the space. Our plant-based range BioVibe is lightly scented with a natural citrus blend.</p>"
           }
         },
         "item_XWmjFa": {
@@ -318,14 +394,14 @@
           "type": "item",
           "settings": {
             "title": "What are the benefits of the Quick Mop Floor Wipes cleaning system over traditional mopping?",
-            "content": "<p>Safer \u2013 no water or spills!</p><p>Easier \u2013 don\u2019t need to bend, carry heavy buckers!</p><p>Effective & quick - can get behind fridge and under<br/>furniture without bending!</p><p>More hygienic \u2013 doesn\u2019t continue to spread germs around the<br/>house, use after use!</p>"
+            "content": "<p>Safer – no water or spills!</p><p>Easier – don’t need to bend, carry heavy buckers!</p><p>Effective & quick - can get behind fridge and under<br/>furniture without bending!</p><p>More hygienic – doesn’t continue to spread germs around the<br/>house, use after use!</p>"
           }
         },
         "item_GXK397": {
           "type": "item",
           "settings": {
             "title": "Where should I begin my clean?",
-            "content": "<p>Anywhere around the house, except for the bathroom! Begin cleaning in lounge room, dining room, kitchen, bedrooms and corridors before finishing off in bathroom. We recommend the bathroom as the last place to clean so that germs from the toilet don\u2019t get spread around the house.&nbsp;</p>"
+            "content": "<p>Anywhere around the house, except for the bathroom! Begin cleaning in lounge room, dining room, kitchen, bedrooms and corridors before finishing off in bathroom. We recommend the bathroom as the last place to clean so that germs from the toilet don’t get spread around the house.&nbsp;</p>"
           }
         },
         "faq_1": {
@@ -366,7 +442,7 @@
         "item_GfnQf8": {
           "type": "item",
           "settings": {
-            "title": "Can I use the Poliwix on tiles or other floor types that aren\u2019t wooden?",
+            "title": "Can I use the Poliwix on tiles or other floor types that aren’t wooden?",
             "content": "<p>Yes! Out of our range of Wipes, Poliwix were crafted with a special mix of ingredients that maintain the natural shine of the wood and are most effective for cleaning wooden floors. However, they will work effectively on other floor types too (tiles, parquet, cement, etc). At the same time, many customers use our other scents for wooden floors, and are very happy with the results too.&nbsp;</p>"
           }
         }
@@ -397,12 +473,13 @@
         "subheading": "",
         "title": "Have a question?",
         "content": "",
+        "team_avatar": "shopify://shop_images/Friendly_Support_Team_Avatar_Cluster.png",
         "team_avatar_width": 160,
-        "support_hours": "Need a little more help? If you need any further information, our team is always happy to help. Simply email us at info@brighttools.com.au",
+        "support_hours": "Need a little more help? Our team is happy to help! Email us at info@brighttools.com.au",
         "answer_time": "",
-        "button_text": "",
-        "button_url": "",
-        "text_position": "center",
+        "button_text": "Contact us",
+        "button_url": "shopify://policies/contact-information",
+        "text_position": "start",
         "background": "",
         "background_gradient": "",
         "text_color": "",
@@ -412,6 +489,65 @@
         "button_text_color": "",
         "accordion_background": "",
         "accordion_text_color": ""
+      }
+    },
+    "mar26_best_sellers": {
+      "type": "mar26-best-sellers",
+      "blocks": {
+        "product_gB36Pp": {
+          "type": "product",
+          "settings": {
+            "product": "high-window-cleaner"
+          }
+        },
+        "product_Yk99aP": {
+          "type": "product",
+          "settings": {
+            "product": "handheld-silicone-squeegee-copy"
+          }
+        },
+        "product_VGcrm7": {
+          "type": "product",
+          "settings": {
+            "product": "home-cleaning-bundle"
+          }
+        },
+        "prod_1": {
+          "type": "product",
+          "settings": {
+            "product": "bright-broom-bundle-broom-squeegee-1pk-quick-mop-floor-wipes"
+          }
+        },
+        "prod_2": {
+          "type": "product",
+          "settings": {
+            "product": "easy-cleaning-bundle-for-limited-mobility"
+          }
+        },
+        "prod_3": {
+          "type": "product",
+          "settings": {
+            "product": "adjustable-dust-blade-rubber-broom-squeegee"
+          }
+        }
+      },
+      "block_order": [
+        "product_gB36Pp",
+        "product_Yk99aP",
+        "product_VGcrm7",
+        "prod_1",
+        "prod_2",
+        "prod_3"
+      ],
+      "settings": {
+        "badge_text": "Bright On - Dust Off",
+        "primary_text": "Better Cleaning",
+        "highlight_text": "Best Sellers",
+        "autoplay_enabled": true,
+        "color_background": "#f8fafc",
+        "color_primary_text": "#0f172a",
+        "color_highlight": "#f81f2f",
+        "color_badge_text": "#f81b27"
       }
     },
     "mar26_highlights_djAVBa": {
@@ -528,6 +664,7 @@
       "block_order": [
         "mar26_videos_JrNLDC"
       ],
+      "disabled": true,
       "name": "mar26-videos",
       "settings": {
         "full_width": true,
@@ -536,73 +673,6 @@
         "background": "",
         "background_gradient": "",
         "text_color": ""
-      }
-    },
-    "mar26_whats_included_hwC8XQ": {
-      "type": "mar26-whats-included",
-      "blocks": {
-        "item_6YK7ta": {
-          "type": "item",
-          "settings": {
-            "product": "bright-broom-bundle-blue-edition",
-            "title": "Bright Broom Bundle - Blue Edition",
-            "spec_1": "",
-            "spec_2": "",
-            "spec_3": "",
-            "accent_color": "#e2e8f0"
-          }
-        },
-        "item_mPaejM": {
-          "type": "item",
-          "settings": {
-            "product": "floor-silicone-squeegee-knuckle-joint-45cm",
-            "title": "Silicone Squeegee 45cm",
-            "spec_1": "",
-            "spec_2": "",
-            "spec_3": "",
-            "accent_color": "#e2e8f0"
-          }
-        },
-        "item_7krkje": {
-          "type": "item",
-          "settings": {
-            "product": "professional-microfiber-cloth-2pk-xxl-80cmx60cm",
-            "title": "Quick Mop Microfibre Floor Cloths - 2 Pack",
-            "spec_1": "Sweep without holding",
-            "spec_2": "Attaches to handles",
-            "spec_3": "",
-            "accent_color": "#e2e8f0"
-          }
-        },
-        "item_XfYzVT": {
-          "type": "item",
-          "settings": {
-            "product": "biovibe-complete-wipes-bundle",
-            "title": "BioVibe Bundle of 5 Wipes",
-            "spec_1": "5 Awesome Scents",
-            "spec_2": "Instantly discard after use",
-            "spec_3": "",
-            "accent_color": "#e2e8f0"
-          }
-        }
-      },
-      "block_order": [
-        "item_6YK7ta",
-        "item_mPaejM",
-        "item_7krkje",
-        "item_XfYzVT"
-      ],
-      "name": "MAR26 What's Included",
-      "settings": {
-        "pre_title": "",
-        "pre_title_color": "#2563eb",
-        "black_title": "pairs well",
-        "gradient_title": "with",
-        "gradient_left_color": "#f43f5e",
-        "gradient_right_color": "#be123c",
-        "subheading": "",
-        "columns": "4",
-        "outline_color": "#e2e8f0"
       }
     },
     "mar26_testimonials": {
@@ -642,7 +712,7 @@
             "custom_link": "shopify://products/toilet-cleaner-for-the-water-tank-green-copy",
             "author": "Erica B.",
             "country": "new_zealand",
-            "content": "<p>Lasts forever. Put one in my toilet weeks ago and it\u2019s still going strong. Just ordered another 4. It seems to be keeping the stains away</p>",
+            "content": "<p>Lasts forever. Put one in my toilet weeks ago and it’s still going strong. Just ordered another 4. It seems to be keeping the stains away</p>",
             "show_rating": true,
             "rating": 5
           }
@@ -668,7 +738,7 @@
             "custom_link": "shopify://products/high-window-cleaner",
             "author": "Matthew O.",
             "country": "australia",
-            "content": "<p>Super easy, streak-free, great tool! Long handle reaches high windows, & the squeegee leaves no streaks. Easy to use and very effective\u2014highly recommend!</p>",
+            "content": "<p>Super easy, streak-free, great tool! Long handle reaches high windows, & the squeegee leaves no streaks. Easy to use and very effective—highly recommend!</p>",
             "show_rating": true,
             "rating": 5
           }
@@ -697,66 +767,7 @@
       ],
       "settings": {
         "title": "What They're Saying",
-        "subheading": "Real results from real customers \u2014 from high-rise apartments to hard-to-reach home windows."
-      }
-    },
-    "mar26_best_sellers": {
-      "type": "mar26-best-sellers",
-      "blocks": {
-        "product_gB36Pp": {
-          "type": "product",
-          "settings": {
-            "product": "high-window-cleaner"
-          }
-        },
-        "product_Yk99aP": {
-          "type": "product",
-          "settings": {
-            "product": "handheld-silicone-squeegee-copy"
-          }
-        },
-        "product_VGcrm7": {
-          "type": "product",
-          "settings": {
-            "product": "home-cleaning-bundle"
-          }
-        },
-        "prod_1": {
-          "type": "product",
-          "settings": {
-            "product": "bright-broom-bundle-broom-squeegee-1pk-quick-mop-floor-wipes"
-          }
-        },
-        "prod_2": {
-          "type": "product",
-          "settings": {
-            "product": "easy-cleaning-bundle-for-limited-mobility"
-          }
-        },
-        "prod_3": {
-          "type": "product",
-          "settings": {
-            "product": "adjustable-dust-blade-rubber-broom-squeegee"
-          }
-        }
-      },
-      "block_order": [
-        "product_gB36Pp",
-        "product_Yk99aP",
-        "product_VGcrm7",
-        "prod_1",
-        "prod_2",
-        "prod_3"
-      ],
-      "settings": {
-        "badge_text": "Bright On - Dust Off",
-        "primary_text": "Better Cleaning",
-        "highlight_text": "Best Sellers",
-        "autoplay_enabled": true,
-        "color_background": "#f8fafc",
-        "color_primary_text": "#0f172a",
-        "color_highlight": "#f81f2f",
-        "color_badge_text": "#f81b27"
+        "subheading": "Real results from real customers — from high-rise apartments to hard-to-reach home windows."
       }
     },
     "1688642188a9c7bb7d": {
@@ -764,7 +775,12 @@
       "blocks": {
         "ff35ce0e-0a35-448d-9e7a-6a4e259b11b4": {
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
         },
         "b5105084-2bb1-4862-8681-a2147b658640": {
           "type": "shopify://apps/judge-me-reviews/blocks/featured_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
@@ -797,15 +813,15 @@
   "order": [
     "custom_liquid_bYgJK7",
     "main",
+    "mar26_whats_included_hwC8XQ",
     "video_PBmR83",
     "video_demo",
     "faq",
+    "mar26_best_sellers",
     "mar26_highlights_djAVBa",
     "rich_text_JhBcCr",
     "blocks_jiJwFP",
-    "mar26_whats_included_hwC8XQ",
     "mar26_testimonials",
-    "mar26_best_sellers",
     "1688642188a9c7bb7d"
   ]
 }

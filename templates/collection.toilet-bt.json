@@ -32,6 +32,7 @@
               "toilet-cleaner-for-the-water-tank-green-copy",
               "hygienic-toilet-cleaner-for-the-water-tank-blue",
               "hygienic-toilet-cleaner-for-the-water-tank-green",
+              "toilet-cleaner-for-the-water-tank-blue-copy",
               "toilet-cleaner-for-the-water-tank-2-pack-copy"
             ],
             "pre_title": "Toilet Brush Sets & Cleaners",
@@ -174,7 +175,16 @@
       "settings": {
         "full_width": false,
         "alternate_media_position": false,
-        "spacing": "none"
+        "spacing": "none",
+        "text_alignment": "center",
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": ""
       }
     },
     "d9e91537-6225-4b57-bd84-e5d10e8558b3": {
