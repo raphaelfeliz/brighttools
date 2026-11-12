@@ -63,7 +63,7 @@ shopify theme pull --theme <THEME_ID> --path C:\code\BrightTools\worktrees\pull 
 ## Example: push selected files
 
 ```powershell
-shopify theme push --theme 180366573842 --path C:\code\BrightTools --store brighttools-au.myshopify.com --only snippets/mar26-product-gallery.liquid --only templates/product.bt-brooms.json
+shopify theme push --theme 188300787986 --path C:\code\BrightTools --store brighttools-au.myshopify.com --only snippets/mar26-product-gallery.liquid --only templates/product.bt-brooms.json
 ```
 
 Shopify CLI reference: [theme pull](https://shopify.dev/docs/api/shopify-cli/theme/theme-pull), [theme push](https://shopify.dev/docs/api/shopify-cli/theme/theme-push), and [Theme Check](https://shopify.dev/docs/storefronts/themes/tools/theme-check).

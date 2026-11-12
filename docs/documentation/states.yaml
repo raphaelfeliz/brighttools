@@ -1,7 +1,9 @@
 theme:
   store: brighttools-au.myshopify.com
-  active_id: 180366573842
-  active_name: "[live] Aug 5  2026"
+  active_id: 188300787986
+  active_name: "Updated Theme - Nov 6"
+  previous_active_id: 180366573842
+  previous_active_name: "[live] Aug 5  2026"
   backup_id: 180462649618
   backup_name: "Backup [LIVE] May 27 2026"
   copy_id: 180483850514
@@ -11,10 +13,10 @@ git:
   local_root: "C:\\code\\BrightTools"
   remote: "git@github.com:raphaelfeliz/brighttools.git"
   branch: "main"
-  head_commit: "4e0077b"
+  head_commit: "56f8343"
   summary: >
-    Updated Shopify CLI to 4.6.0, executed fresh theme pull of live theme '[live] Aug 5 2026'
-    (#180366573842) into worktrees/pull workspace, and recorded execution receipt.
+    Deployed iOS mobile sway fix, sticky add-to-cart trigger, and template button adjustments to live theme
+    'Updated Theme - Nov 6' (#188300787986). Memorialized previous theme (#180366573842).
 
 
 components:

@@ -28,7 +28,7 @@ $env:Path = 'C:\Users\rapha\AppData\Local\nvm\v24.13.0;' + $env:Path
 1. Local Root: `C:\code\BrightTools`
 2. Sync Staging Theme:
    ```powershell
-   shopify theme pull --theme 180366573842 --path C:\code\BrightTools --store brighttools-au.myshopify.com
+   shopify theme pull --theme 188300787986 --path C:\code\BrightTools --store brighttools-au.myshopify.com
    ```
 
 ## Development Sync Workflow

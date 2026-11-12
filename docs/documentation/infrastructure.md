@@ -20,8 +20,8 @@ description: "Sync changes description"
 timestamp: "YYYY-MM-DDTHH:MM:SSZ"
 theme:
   store: "brighttools-au.myshopify.com"
-  id: 180366573842
-  name: "[live] July 1 2026"
+  id: 188300787986
+  name: "Updated Theme - Nov 6"
 files:
   - path: "shopify/snippets/mar26-product-card-catalogv.liquid"
     version: "1.5.4"
